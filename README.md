@@ -41,12 +41,45 @@ See [`04_Datasets/rubric.docx`](04_Datasets/rubric.docx) for the full weighted 0
 scoring criteria across: Knowledge Retrieval, Multi-step Reasoning, Instruction
 Following, Hallucination Stress Test, and Coding Tasks.
 
+## Automation Pipeline (Week 2)
+
+`03_Code/benchmark_runner.py` implements a single concrete BenchmarkRunner
+class that calls the Groq API directly, with two independent safety
+mechanisms to prevent free-tier rate-limit bans:
+
+- **Proactive throttling** — a fixed minimum delay before every API call
+- **Reactive backoff + jitter** — a growing randomized delay after a failure
+
+Plus disk-based JSON caching per prompt and resume logic so an interrupted
+run never repeats an already-completed API call.
+
+`03_Code/tests/test_benchmark_runner.py` verifies all of this using an
+injected fake client — 9/9 tests passing, zero real API calls required.
+
+## Environment Setup
+
+This project uses an isolated virtual environment so its dependencies never
+conflict with anything else on your machine, and can be recreated exactly
+by anyone.
+
+```bash
+# In VS Code: Command Palette -> "Python: Create Environment" -> Venv
+pip install -r requirements.txt
+```
+
+Required environment variables (create a `.env` file in the project root,
+never committed to GitHub):
+
+```
+GROQ_API_KEY=your_real_key_here
+```
+
 ## Status
 
 | Week | Focus | Status |
 |------|-------|--------|
 | 1 | Framework Initialization & Rubric Design | ✅ Complete |
-| 2 | Automation Architecture & Pipeline Initialization | ⏳ Not started |
+| 2 | Automation Pipeline, Live Groq Verification & Reproducible Environment | ✅ Complete |
 | 3 | Multi-Model Decoupling & Automated Resumption | ⏳ Not started |
 | 4 | Experimental Data Collection & Quantitative Analysis | ⏳ Not started |
 | 5 | Statistical Aggregation & Comparative Scoring | ⏳ Not started |

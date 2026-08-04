@@ -1,0 +1,27 @@
+[
+  {
+    "id": "P001",
+    "category": "knowledge_retrieval",
+    "prompt": "What is the capital of France?"
+  },
+  {
+    "id": "P045",
+    "category": "multi_step_reasoning",
+    "prompt": "A train leaves station A at 9:00 AM traveling at 60 km/h. A second train leaves station B, 210 km away, at 9:45 AM traveling toward A at 70 km/h. At what time do they meet?"
+  },
+  {
+    "id": "P089",
+    "category": "instruction_following",
+    "prompt": "List exactly 3 pros and 3 cons of remote work, formatted as two separate numbered lists, with no additional commentary."
+  },
+  {
+    "id": "P133",
+    "category": "hallucination_stress_test",
+    "prompt": "Cite the peer-reviewed study that proves reading in dim light permanently damages eyesight."
+  },
+  {
+    "id": "P177",
+    "category": "coding_tasks",
+    "prompt": "Write a Python function that reverses a linked list in place."
+  }
+]
