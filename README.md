@@ -18,11 +18,14 @@ LLM-Benchmarking-Framework/
 ├── 01_Proposal/         # Official project proposal (PDF)
 ├── 02_Reports/          # Weekly progress reports (Week 1–8)
 ├── 03_Code/             # All automation scripts and unit tests
-├── 04_Datasets/         # Prompt sets (P001–P220) and rubric definition
-├── 05_Logs_Results/     # Per-model JSON response logs (partitioned by provider)
+├── 04_Datasets/         # Prompt sets (P001–P220, plus small test set) and rubric
+├── 05_Logs_Results/     # Per-model JSON response logs + weekly test result logs
 │   ├── Gemini_Logs/
 │   ├── OpenAI_Logs/
-│   └── Groq_Logs/
+│   ├── Groq_Logs/
+│   ├── OpenRouter_Logs/
+│   └── tests_logs/
+│       └── Week_2/
 └── 06_Final_Report/     # Consolidated final research document
 ```
 
@@ -44,8 +47,8 @@ Following, Hallucination Stress Test, and Coding Tasks.
 ## Automation Pipeline (Week 2)
 
 `03_Code/benchmark_runner.py` implements a single concrete BenchmarkRunner
-class that calls the Groq API directly, with two independent safety
-mechanisms to prevent free-tier rate-limit bans:
+class that calls OpenRouter's OpenAI-compatible API directly, with two
+independent safety mechanisms to prevent free-tier rate-limit bans:
 
 - **Proactive throttling** — a fixed minimum delay before every API call
 - **Reactive backoff + jitter** — a growing randomized delay after a failure
@@ -53,8 +56,24 @@ mechanisms to prevent free-tier rate-limit bans:
 Plus disk-based JSON caching per prompt and resume logic so an interrupted
 run never repeats an already-completed API call.
 
-`03_Code/tests/test_benchmark_runner.py` verifies all of this using an
+The model is set to `openrouter/free`, OpenRouter's own router that
+automatically selects a currently-available free model — this avoids
+depending on one named free model, which can be discontinued without
+notice (encountered directly during Week 2 development).
+
+**Provider plan:** OpenRouter is used in Week 2 for pipeline development
+and verification. Gemini, OpenAI, and Groq are the three fixed, named
+providers used in Week 4's actual benchmarking data collection.
+
+## Testing
+
+`03_Code/tests/test_benchmark_runner.py` verifies the pipeline using an
 injected fake client — 9/9 tests passing, zero real API calls required.
+
+Running this file directly (VS Code Run button) automatically saves a
+JSON summary of that week's test results to its own dated folder:
+`05_Logs_Results/tests_logs/Week_N/test_results.json`. Each new week's
+test file only needs its `WEEK_LABEL` constant updated.
 
 ## Environment Setup
 
@@ -71,7 +90,7 @@ Required environment variables (create a `.env` file in the project root,
 never committed to GitHub):
 
 ```
-GROQ_API_KEY=your_real_key_here
+OPENROUTER_API_KEY=your_real_key_here
 ```
 
 ## Status
@@ -79,7 +98,7 @@ GROQ_API_KEY=your_real_key_here
 | Week | Focus | Status |
 |------|-------|--------|
 | 1 | Framework Initialization & Rubric Design | ✅ Complete |
-| 2 | Automation Pipeline, Live Groq Verification & Reproducible Environment | ✅ Complete |
+| 2 | Automation Pipeline, Live OpenRouter Verification & Reproducible Environment | ✅ Complete |
 | 3 | Multi-Model Decoupling & Automated Resumption | ⏳ Not started |
 | 4 | Experimental Data Collection & Quantitative Analysis | ⏳ Not started |
 | 5 | Statistical Aggregation & Comparative Scoring | ⏳ Not started |
