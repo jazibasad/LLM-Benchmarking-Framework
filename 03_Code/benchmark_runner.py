@@ -56,17 +56,11 @@ logging.basicConfig(
 )
 logger = logging.getLogger("openrouter_runner")
 
-# "openrouter/free" is OpenRouter's own router: it automatically selects a
-# currently-available free model for each request, instead of pointing at
-# one named free model that can get discontinued without notice (individual
-# ":free" model slugs on OpenRouter churn frequently - this happened during
-# Week 2 development, when a previously-working model was pulled).
-#
-# NOTE: because this is a random router, different calls may be answered by
-# different underlying models. That's fine for Week 2 (proving the pipeline
-# works end-to-end), but NOT appropriate for Week 4's real benchmarking data
-# collection, where each provider needs one fixed, named model for a valid
-# comparison. Week 4's runners will pin specific model names instead.
+# OpenRouter hosts many models behind one API. Check https://openrouter.ai/models
+# for the current list of free-tier ("::free") model identifiers - swap this
+# constant if your chosen model is retired or renamed.
+
+# MODEL_NAME = "meta-llama/llama-3.3-70b-instruct:free"
 MODEL_NAME = "openrouter/free"
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
 

@@ -1,0 +1,56 @@
+{
+  "week": "Week_2",
+  "run_timestamp_utc": "2026-08-04T12:28:28.305713+00:00",
+  "total_tests": 9,
+  "passed": 9,
+  "failed": 0,
+  "skipped": 0,
+  "exit_code": 0,
+  "tests": [
+    {
+      "test_name": "03_Code/tests/test_benchmark_runner.py::test_loads_prompts_correctly",
+      "outcome": "passed",
+      "duration_seconds": 0.0047
+    },
+    {
+      "test_name": "03_Code/tests/test_benchmark_runner.py::test_cache_path_format",
+      "outcome": "passed",
+      "duration_seconds": 0.0039
+    },
+    {
+      "test_name": "03_Code/tests/test_benchmark_runner.py::test_run_writes_one_json_per_prompt",
+      "outcome": "passed",
+      "duration_seconds": 0.0482
+    },
+    {
+      "test_name": "03_Code/tests/test_benchmark_runner.py::test_resume_logic_skips_cached_prompts",
+      "outcome": "passed",
+      "duration_seconds": 0.022
+    },
+    {
+      "test_name": "03_Code/tests/test_benchmark_runner.py::test_backoff_retries_then_succeeds",
+      "outcome": "passed",
+      "duration_seconds": 0.0775
+    },
+    {
+      "test_name": "03_Code/tests/test_benchmark_runner.py::test_backoff_gives_up_after_max_retries",
+      "outcome": "passed",
+      "duration_seconds": 0.1192
+    },
+    {
+      "test_name": "03_Code/tests/test_benchmark_runner.py::test_backoff_delay_grows_exponentially",
+      "outcome": "passed",
+      "duration_seconds": 0.5851
+    },
+    {
+      "test_name": "03_Code/tests/test_benchmark_runner.py::test_throttle_enforces_minimum_interval",
+      "outcome": "passed",
+      "duration_seconds": 0.2181
+    },
+    {
+      "test_name": "03_Code/tests/test_benchmark_runner.py::test_jitter_adds_randomness_to_delay",
+      "outcome": "passed",
+      "duration_seconds": 0.0031
+    }
+  ]
+}
