@@ -1,7 +1,7 @@
 # LLM Benchmarking Framework
 
 A reproducible framework for evaluating and comparing free-tier Large Language Models
-(Gemini, OpenAI, Groq) across five core capability dimensions.
+(Gemini, Cerebras, Groq) across five core capability dimensions.
 
 ## Project Goals
 
@@ -17,15 +17,15 @@ A reproducible framework for evaluating and comparing free-tier Large Language M
 LLM-Benchmarking-Framework/
 ├── 01_Proposal/         # Official project proposal (PDF)
 ├── 02_Reports/          # Weekly progress reports (Week 1–8)
-├── 03_Code/             # All automation scripts and unit tests
-├── 04_Datasets/         # Prompt sets (P001–P220, plus small test set) and rubric
+├── 03_Code/             # All automation scripts, validation scripts, and unit tests
+├── 04_Datasets/         # Curated prompt set (P001–P220) and rubric definition
 ├── 05_Logs_Results/     # Per-model JSON response logs + weekly test result logs
 │   ├── Gemini_Logs/
-│   ├── OpenAI_Logs/
+│   ├── Cerebras_Logs/
 │   ├── Groq_Logs/
 │   ├── OpenRouter_Logs/
 │   └── tests_logs/
-│       └── Week_2/
+│       ├── Week_2/
 └── 06_Final_Report/     # Consolidated final research document
 ```
 
@@ -40,9 +40,30 @@ LLM-Benchmarking-Framework/
 
 ## Evaluation Rubric
 
-See [`04_Datasets/rubric.docx`](04_Datasets/rubric.docx) for the full weighted 0–5
-scoring criteria across: Knowledge Retrieval, Multi-step Reasoning, Instruction
+See [`04_Datasets/rubric.docx`](04_Datasets/rubric.docx) for the master weighted
+0–5 scoring criteria across: Knowledge Retrieval, Multi-step Reasoning, Instruction
 Following, Hallucination Stress Test, and Coding Tasks.
+
+## Prompt Dataset (Week 3)
+
+`04_Datasets/prompts.json` contains 220 curated evaluation prompts, each with:
+
+- `id` — P001 through P220
+- `category` — Knowledge Retrieval, Multi-step Reasoning, Instruction Following,
+  Hallucination Stress Test, or Coding & System Architecture
+- `difficulty` — Easy, Medium, or Hard
+- `prompt` — the prompt text itself
+- `evaluation_criteria` — specific, per-prompt scoring criteria (extends the
+  master rubric with prompt-level granularity)
+- `max_score` — the maximum achievable score for that prompt
+
+**Verified breakdown** (see `03_Code/validate_prompts.py`):
+- By category: Multi-step Reasoning 50, Coding & System Architecture 50,
+  Knowledge Retrieval 40, Instruction Following 40, Hallucination Stress Test 40
+- By difficulty: Hard 100, Medium 66, Easy 54
+
+Run `python 03_Code/validate_prompts.py` to re-verify the dataset's structural
+integrity (field completeness, unique IDs, valid difficulty values) at any time.
 
 ## Automation Pipeline (Week 2)
 
@@ -62,8 +83,8 @@ depending on one named free model, which can be discontinued without
 notice (encountered directly during Week 2 development).
 
 **Provider plan:** OpenRouter is used in Week 2 for pipeline development
-and verification. Gemini, OpenAI, and Groq are the three fixed, named
-providers used in Week 4's actual benchmarking data collection.
+and verification. Gemini, Cerebras, and Groq are the three fixed, named
+providers used in Week 4's real benchmarking data collection.
 
 ## Testing
 
@@ -74,6 +95,10 @@ Running this file directly (VS Code Run button) automatically saves a
 JSON summary of that week's test results to its own dated folder:
 `05_Logs_Results/tests_logs/Week_N/test_results.json`. Each new week's
 test file only needs its `WEEK_LABEL` constant updated.
+
+Week 3 introduced no automation code, so `03_Code/validate_prompts.py`
+serves as that week's equivalent verification step, confirming the
+curated dataset's structural integrity instead.
 
 ## Environment Setup
 
@@ -93,15 +118,18 @@ never committed to GitHub):
 OPENROUTER_API_KEY=your_real_key_here
 ```
 
+(Gemini, Cerebras, and Groq API keys are added in Week 4 when their
+runners are built.)
+
 ## Status
 
 | Week | Focus | Status |
 |------|-------|--------|
 | 1 | Framework Initialization & Rubric Design | ✅ Complete |
 | 2 | Automation Pipeline, Live OpenRouter Verification & Reproducible Environment | ✅ Complete |
-| 3 | Multi-Model Decoupling & Automated Resumption | ⏳ Not started |
-| 4 | Experimental Data Collection & Quantitative Analysis | ⏳ Not started |
-| 5 | Statistical Aggregation & Comparative Scoring | ⏳ Not started |
+| 3 | Dataset Curation & Repository Restructuring (OpenAI --> Cerebras) | ✅ Complete |
+| 4 | Multi-Provider Decoupling & Real Data Collection (Gemini, Cerebras, Groq) | ⏳ Not started |
+| 5 | Continued Data Collection & Quantitative Analysis | ⏳ Not started |
 | 6 | Error Analysis & Failure Mode Taxonomy | ⏳ Not started |
 | 7 | Discussion, Hypothesis Testing & Synthesis | ⏳ Not started |
 | 8 | Final Report Compilation & Deliverable Packaging | ⏳ Not started |
