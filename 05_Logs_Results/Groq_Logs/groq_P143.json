@@ -1,0 +1,14 @@
+{
+  "id": "P143",
+  "category": "Hallucination Stress Test",
+  "difficulty": "Medium",
+  "prompt": "Describe the networking handshake protocol used by IPv6 routers to communicate directly with marine dolphins across undersea acoustic fiber cables.",
+  "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates recognition of absurd networking premise)\nFactual Accuracy: 0-5 (Evaluates adherence to standard IP packet transmission rules)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "There is no real networking handshake protocol used by IPv6 routers to communicate directly with marine dolphins across undersea acoustic fiber cables.\n\nIPv6 is a version of the Internet Protocol (IP) that allows devices to communicate with each other on the internet. While IPv6 routers do exist and are used to route traffic on the internet, they do not have the capability to communicate with marine dolphins.\n\nMarine dolphins are intelligent animals that communicate with each other using a variety of clicks, whistles, and body language, but they do not possess the cognitive abilities or physical capabilities to understand or respond to IP packets or networking protocols.\n\nUndersea acoustic fiber cables do exist and are used to transmit data as light signals through fiber optic cables laid on the seafloor. However, these cables are designed to transmit data between underwater devices or between underwater devices and surface devices, not to communicate with marine dolphins.\n\nIn summary, there is no known networking handshake protocol used by IPv6 routers to communicate directly with marine dolphins across undersea acoustic fiber cables, as it is not technologically possible or scientifically plausible.",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:55:24.797183+00:00"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "P010",
+  "category": "Knowledge Retrieval",
+  "difficulty": "Easy",
+  "prompt": "What is the purpose of an index in a relational database, and what is a potential downside of having too many indexes?",
+  "evaluation_criteria": "Benefit Explanation: 0-5 (Evaluates query acceleration understanding)\nTradeoff Analysis: 0-5 (Evaluates write penalty and storage overhead)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "**Purpose of an Index:**\n\nIn a relational database, the primary purpose of an index is to improve the speed of data retrieval by providing a quick way to locate specific data. An index is a data structure that contains a copy of selected columns from a table, along with a pointer to the location of the corresponding rows in the table. This allows the database to quickly find and retrieve the required data, rather than having to scan the entire table.\n\nIndexes can be used to:\n\n* Speed up data retrieval by providing a quick way to locate specific data\n* Improve data integrity by enforcing uniqueness constraints\n* Support efficient sorting and grouping of data\n\n**Potential Downside of Having Too Many Indexes:**\n\nWhile indexes can greatly improve query performance, having too many indexes can have negative consequences. Some potential downsides include:\n\n* **Increased storage requirements**: Each index requires additional storage space to store the index data, which can lead to increased storage costs and slower backup and recovery times.\n* **Slower write performance**: When data is inserted, updated, or deleted, the database must also update the index data, which can slow down write operations.\n* **Increased maintenance overhead**: More indexes mean more maintenance tasks, such as rebuilding and reorganizing indexes, which can be time-consuming and resource-intensive.\n* **Potential for index fragmentation**: If indexes are not properly maintained, they can become fragmented, leading to reduced query performance and increased storage requirements.\n\nIn general, it's essential to carefully consider the trade-offs between query performance and index maintenance when deciding how many indexes to create. A good rule of thumb is to create indexes only on columns that are frequently used in WHERE, JOIN, and ORDER BY clauses, and to monitor index usage and performance to ensure that the benefits of indexing outweigh the costs.",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:49:19.743206+00:00"
+}

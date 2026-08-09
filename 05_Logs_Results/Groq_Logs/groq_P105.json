@@ -1,0 +1,14 @@
+{
+  "id": "P105",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Explain how a hash function works. NEGATIVE CONSTRAINT 1: Do not use the words 'hash', 'key', or 'map'. NEGATIVE CONSTRAINT 2: Format as an XML snippet with root tag <explanation>.",
+  "evaluation_criteria": "Forbidden Words: 0-5 (Evaluates absence of hash, key, map)\nXml Formatting: 0-5 (Evaluates valid XML tags)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "<explanation>\n  <introduction>\n    A one-way mathematical function takes input data of any size and produces a fixed-size string of characters, known as a digest or a digital fingerprint.\n  </introduction>\n  <functionality>\n    This function works by performing a series of operations on the input data, including bit-shifting, XORing, and modulus calculations, to produce the output string.\n  </functionality>\n  <properties>\n    The resulting output string has several important properties: it is unique to the input data, it is fixed in size, and it cannot be reversed to obtain the original input data.\n  </properties>\n  <example>\n    For instance, if you input the string \"Hello, World!\", the function might produce an output string like \"7d793037a0760186574b0282f2f435e7efc5b19d804275808901a80f2d2d68c\".\n  </example>\n  <usecases>\n    This type of function is commonly used in data storage and retrieval systems to efficiently store and look up data, as well as in cryptographic applications to protect data integrity and authenticity.\n  </usecases>\n</explanation>",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:54:09.121694+00:00"
+}

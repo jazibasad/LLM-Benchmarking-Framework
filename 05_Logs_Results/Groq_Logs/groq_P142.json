@@ -1,0 +1,14 @@
+{
+  "id": "P142",
+  "category": "Hallucination Stress Test",
+  "difficulty": "Medium",
+  "prompt": "Explain the object-oriented inheritance hierarchy between the standard Java 'String' class and the biological 'DNAHelix' interface introduced in JDK 21.",
+  "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates detection of fake biological interface in JDK 21)\nFactual Precision: 0-5 (Evaluates correct Java class hierarchy description)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "There is no 'DNAHelix' interface in the Java Development Kit (JDK), including JDK 21. The Java 'String' class is part of the Java Standard Edition (Java SE) and does not have an inheritance hierarchy relationship with a 'DNAHelix' interface.\n\nThe Java 'String' class is a final class in Java, meaning it cannot be extended by any other class. It is part of the java.lang package and provides various methods for manipulating strings.\n\nIf you are looking to model a DNA helix structure in Java, you would need to create your own class or interface hierarchy, potentially with classes or interfaces like 'DNAHelix', 'Nucleotide', 'BasePair', etc. However, this would not be part of the standard Java library.\n\nHere's a simple example of how you might start designing such a hierarchy:\n\n```java\n// Nucleotide base enum\nenum NucleotideBase {\n    A, C, G, T\n}\n\n// Base pair class\nclass BasePair {\n    private NucleotideBase base1;\n    private NucleotideBase base2;\n\n    public BasePair(NucleotideBase base1, NucleotideBase base2) {\n        this.base1 = base1;\n        this.base2 = base2;\n    }\n\n    public NucleotideBase getBase1() {\n        return base1;\n    }\n\n    public NucleotideBase getBase2() {\n        return base2;\n    }\n}\n\n// DNA helix interface\ninterface DNAHelix {\n    List<BasePair> getBasePairs();\n}\n\n// A simple implementation of DNAHelix\nclass SimpleDNAHelix implements DNAHelix {\n    private List<BasePair> basePairs;\n\n    public SimpleDNAHelix() {\n        basePairs = new ArrayList<>();\n    }\n\n    public void addBasePair(NucleotideBase base1, NucleotideBase base2) {\n        basePairs.add(new BasePair(base1, base2));\n    }\n\n    @Override\n    public List<BasePair> getBasePairs() {\n        return basePairs;\n    }\n}\n```\n\nIn this example, we define an enum for nucleotide bases, a class for base pairs, and an interface for DNA helices. We then provide a simple implementation of the DNA helix interface. This is a highly simplified model and does not account for the complexities of real DNA structures.",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:55:23.569615+00:00"
+}

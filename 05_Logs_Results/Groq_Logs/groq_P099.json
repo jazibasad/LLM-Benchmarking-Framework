@@ -1,0 +1,14 @@
+{
+  "id": "P099",
+  "category": "Instruction Following",
+  "difficulty": "Easy",
+  "prompt": "Give a definition of RAM. NEGATIVE CONSTRAINT: Do not use the words 'memory', 'random', or 'access'.",
+  "evaluation_criteria": "Forbidden Words: 0-5 (Evaluates absence of target words)\nDefinition Quality: 0-5 (Evaluates clarity of volatile storage definition)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "RAM (Temporary Storage) refers to a type of computer component that temporarily holds data and applications while a device is running. It is a volatile storage medium, meaning that its contents are lost when the device is powered off. This component plays a crucial role in enabling a computer to perform tasks efficiently, by providing a high-speed storage area where the computer's processor can quickly retrieve and manipulate data.",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:53:56.425008+00:00"
+}

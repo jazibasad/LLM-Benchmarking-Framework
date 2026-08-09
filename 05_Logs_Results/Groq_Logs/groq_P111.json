@@ -1,0 +1,14 @@
+{
+  "id": "P111",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Provide a brief description of object-oriented polymorphism. NEGATIVE CONSTRAINT 1: Do not use verbs. NEGATIVE CONSTRAINT 2: Format as a semicolon-delimited single line.",
+  "evaluation_criteria": "No Verbs: 0-5 (Evaluates noun/adjective phrase structure)\nSemicolon Format: 0-5 (Evaluates single line semicolon layout)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "Object-oriented polymorphism; multiple forms; shared interface; different classes; same method name; different implementations; common base class; inherited properties; overridden methods; abstract classes; interfaces; method signatures.",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:54:20.284810+00:00"
+}

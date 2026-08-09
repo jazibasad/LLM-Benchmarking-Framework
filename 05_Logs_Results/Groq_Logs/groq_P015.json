@@ -1,0 +1,14 @@
+{
+  "id": "P015",
+  "category": "Knowledge Retrieval",
+  "difficulty": "Easy",
+  "prompt": "Define containerization in software development and name the core tool most widely used for it.",
+  "evaluation_criteria": "Definition Precision: 0-5 (Evaluates OS-level virtualization concept)\nTool Identification: 0-5 (Evaluates accurate identification of Docker)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "Containerization in software development is a lightweight and portable way to deploy applications, where an application and its dependencies are packaged together into a single container. This container includes the application code, libraries, frameworks, and runtime environment, allowing it to run consistently across different environments, such as development, testing, staging, and production.\n\nThe core tool most widely used for containerization is Docker. Docker provides a platform for creating, managing, and orchestrating containers, making it easier to develop, ship, and run applications. With Docker, developers can package their applications into containers, which can then be run on any system that supports Docker, without worrying about compatibility issues or dependencies.",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:49:29.569418+00:00"
+}

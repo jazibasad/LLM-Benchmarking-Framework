@@ -1,0 +1,14 @@
+{
+  "id": "P056",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "A financial algorithm processes transactions in batches. Batch A contains 500 transactions averaging $120 each with a standard deviation of $15. Batch B contains 300 transactions averaging $150 each with a standard deviation of $20. Calculate the combined grand mean of all 800 transactions.",
+  "evaluation_criteria": "Grand Mean Formula: 0-5 (Evaluates correct weighted average of means)\nStep Transparency: 0-5 (Evaluates clear mathematical breakdown)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "## Step 1: Calculate the total value of transactions in Batch A\nTo find the total value of transactions in Batch A, we multiply the average transaction value by the number of transactions. total_value_A = average_A * number_A = $120 * 500 = $60,000.\n\n## Step 2: Calculate the total value of transactions in Batch B\nTo find the total value of transactions in Batch B, we multiply the average transaction value by the number of transactions. total_value_B = average_B * number_B = $150 * 300 = $45,000.\n\n## Step 3: Calculate the combined total value of all transactions\nTo find the combined total value of all transactions, we add the total values of Batch A and Batch B. combined_total = total_value_A + total_value_B = $60,000 + $45,000 = $105,000.\n\n## Step 4: Calculate the combined grand mean of all transactions\nTo find the combined grand mean, we divide the combined total value by the total number of transactions. total_transactions = 500 + 300 = 800. combined_grand_mean = combined_total / total_transactions = $105,000 / 800 = $131.25.\n\nThe final answer is: $\\boxed{131.25}$",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:51:22.107366+00:00"
+}

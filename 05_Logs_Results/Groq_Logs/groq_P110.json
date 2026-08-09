@@ -1,0 +1,14 @@
+{
+  "id": "P110",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Explain network packet routing. NEGATIVE CONSTRAINT 1: Do not use the letter 'e' or 'E'. NEGATIVE CONSTRAINT 2: Must contain a YAML code block.",
+  "evaluation_criteria": "Negative Constraint: 0-5 (Evaluates avoidance of letter e/E)\nYaml Block: 0-5 (Evaluates valid markdown YAML block inclusion)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "Sandstorm tbsp tbsp routing tbls tbsp png pkg routing \n- fmt tbsp fmt tbsp tbsd tbsp fmt \ntbsp fmt \n```yml\npkg:\n  fmt: tbls\n  png: tbsp\n  pkg: tbsp\n  fmt: tbsd\n  tbsp: fmt\n```\ntbsp fmt tbsp tbsd tbsp fmt tbsp png tbsp pkg routing tbls tbsp fmt tbsp tbsd tbsp fmt. \ntbsp png tbsp tbsd tbsp fmt tbsp pkg routing. \ntbsp fmt tbsp tbsd tbsp fmt tbsp png tbsp pkg routing tbls tbsp fmt. \n```yml\npkg:\n  fmt: tbsd\n  png: tbsp\n  pkg: tbsd\n  fmt: tbsp\n  tbsp: fmt\n```\ntbsp fmt tbsp tbsd tbsp fmt tbsp png tbsp pkg routing tbls tbsp fmt. \ntbsp png tbsp tbsd tbsp fmt tbsp pkg routing. \ntbsp fmt tbsp tbsd tbsp fmt tbsp png tbsp pkg routing tbls tbsp fmt.",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:54:18.851753+00:00"
+}

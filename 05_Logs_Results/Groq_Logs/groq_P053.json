@@ -1,0 +1,14 @@
+{
+  "id": "P053",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Easy",
+  "prompt": "A database query cache has a hit ratio of 85% and takes 2ms to return data on a hit. A cache miss queries the disk, taking 45ms. Calculate the average query response time across 1,000 requests.",
+  "evaluation_criteria": "Weighted Average Math: 0-5 (Evaluates hit vs miss latency weighting)\nArithmetic Accuracy: 0-5 (Evaluates correct final average time)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "To calculate the average query response time, we need to consider both cache hits and cache misses.\n\nGiven:\n- Hit ratio: 85% (or 0.85)\n- Time for a cache hit: 2ms\n- Time for a cache miss: 45ms (includes the time to query the disk)\n- Total requests: 1,000\n\nFirst, calculate the number of cache hits and misses:\n- Cache hits: 85% of 1,000 = 0.85 * 1,000 = 850 hits\n- Cache misses: 15% of 1,000 = 0.15 * 1,000 = 150 misses\n\nNext, calculate the total time spent on cache hits and cache misses:\n- Total time for cache hits: 850 hits * 2ms/hit = 1,700ms\n- Total time for cache misses: 150 misses * 45ms/miss = 6,750ms\n\nNow, calculate the total time spent on all requests:\n- Total time = Total time for cache hits + Total time for cache misses\n- Total time = 1,700ms + 6,750ms = 8,450ms\n\nFinally, calculate the average query response time:\n- Average query response time = Total time / Total requests\n- Average query response time = 8,450ms / 1,000 = 8.45ms\n\nTherefore, the average query response time across 1,000 requests is 8.45ms.",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:51:14.940354+00:00"
+}

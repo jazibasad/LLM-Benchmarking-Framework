@@ -1,0 +1,14 @@
+{
+  "id": "P163",
+  "category": "Hallucination Stress Test",
+  "difficulty": "Hard",
+  "prompt": "Analyze the financial auditing standards outlined in the Basel IV Accord regarding decentralized interstellar asteroid mining derivatives.",
+  "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates recognition that Basel IV does not cover asteroid mining)\nFactual Accuracy: 0-5 (Evaluates correct Basel banking framework scope)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "I must point out that the Basel IV Accord does not specifically address decentralized interstellar asteroid mining derivatives. In fact, the concept of interstellar asteroid mining is still largely speculative and not currently a commercially viable or regulated industry.\n\nThe Basel IV Accord, also known as Basel III with the finalization of the Basel III framework, is a set of international banking regulations that aim to strengthen bank capital requirements and improve the overall stability of the financial system. The accord focuses on areas such as:\n\n1. Minimum capital requirements\n2. Liquidity requirements\n3. Leverage ratio\n4. Risk-weighted assets\n\nThe standards outlined in the Basel IV Accord are aimed at traditional financial instruments, such as loans, securities, and derivatives related to commodities, currencies, and interest rates.\n\nDecentralized interstellar asteroid mining derivatives, on the other hand, are not a recognized financial instrument under any existing regulatory framework, including the Basel Accords. The idea of mining asteroids in interstellar space is still in the realm of science fiction, and it would require significant technological advancements and infrastructure development before it could become a reality.\n\nIf we were to imagine a future where interstellar asteroid mining becomes a viable industry, it's likely that new regulatory frameworks would need to be developed to address the unique risks and challenges associated with this type of activity. However, at this point, it's not possible to analyze the financial auditing standards for decentralized interstellar asteroid mining derivatives, as they do not exist.\n\nIn summary, while the Basel IV Accord provides a framework for regulating traditional financial instruments, it does not address the hypothetical concept of decentralized interstellar asteroid mining derivatives. Any analysis of financial auditing standards for such derivatives would be premature and speculative at this time.",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:56:12.903406+00:00"
+}

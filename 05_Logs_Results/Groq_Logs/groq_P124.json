@@ -1,0 +1,14 @@
+{
+  "id": "P124",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Detail public-key cryptography mechanisms. NEGATIVE CONSTRAINT 1: Do not use the letter 't' or 'T'. NEGATIVE CONSTRAINT 2: Do not use the letter 'h' or 'H'. NEGATIVE CONSTRAINT 3: Format as a bulleted list.",
+  "evaluation_criteria": "Double Negative Letter: 0-5 (Evaluates absence of both T and H)\nFormatting: 0-5 (Evaluates bullet layout)",
+  "max_score": "15",
+  "model": "groq",
+  "response_text": "* Public-key cryptography mechanisms use pairs of keys: one private key and one public key\n* Each user has a unique pair of keys: private key for decryption and public key for encryption\n* Encryption process involves converting plaintext into unreadable ciphertext using public key\n* Decryption process involves converting ciphertext back into plaintext using private key\n* Key exchange occurs securely, allowing users to communicate without actually exchanging private keys\n* Mechanisms rely on complex mathematical algorithms, ensuring secure encryption and decryption processes\n* Users can verify identity of sender and integrity of message using digital signatures and public-key cryptography\n* Secure communication protocols, such as SSL and PGP, utilize public-key cryptography mechanisms\n* Key management systems ensure secure generation, distribution, and storage of public and private keys\n* Cryptographic protocols and standards, such as RSA and Elliptic Curve Cryptography, provide frameworks for public-key cryptography mechanisms",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:54:46.601223+00:00"
+}

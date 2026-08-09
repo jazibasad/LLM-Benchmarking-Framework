@@ -1,0 +1,14 @@
+{
+  "id": "P102",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Write a three-step guide on how to debug a software bug. NEGATIVE CONSTRAINT 1: Each step must start with an action verb ending in 'ing'. NEGATIVE CONSTRAINT 2: Do not use the letter 't' or 'T' anywhere in the response.",
+  "evaluation_criteria": "Gerund Starters: 0-5 (Evaluates steps starting with -ing verbs)\nForbidden Letter: 0-5 (Evaluates absence of letter t/T)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "Examining code line by line helps identify errors. \nFocusing on specific sections of code reduces complexity. \nRepeating same steps ensures accuracy in finding solution.",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:54:02.160042+00:00"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "P101",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Explain the concept of encapsulation in object-oriented programming. NEGATIVE CONSTRAINT 1: Do not use the words 'data', 'hide', or 'class'. NEGATIVE CONSTRAINT 2: Format the output as a Markdown table with two columns: 'Concept' and 'Description'.",
+  "evaluation_criteria": "Negative Constraints: 0-5 (Evaluates avoidance of forbidden words)\nMarkdown Table: 0-5 (Evaluates precise table formatting)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "### Encapsulation Concept\n| Concept | Description |\n| --- | --- |\n| Bundling | This involves combining multiple elements into a single unit, making it easier to manage and maintain. |\n| Abstraction | It is the practice of exposing only the necessary information to the outside world, while keeping the internal details private. |\n| Access Control | This refers to the ability to control how other parts of the program interact with an object's internal state, ensuring that it is modified only in a controlled manner. |\n| Information Concealment | The internal implementation details of an object are not directly accessible from outside, reducing the risk of unintended modifications. |\n| Modularization | Encapsulation promotes modular code, where each object is a self-contained module with its own internal state and behavior, making it easier to update or replace without affecting other parts of the program. |",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:54:00.929872+00:00"
+}

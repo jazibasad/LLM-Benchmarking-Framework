@@ -1,0 +1,14 @@
+{
+  "id": "P179",
+  "category": "Coding & System Architecture",
+  "difficulty": "Medium",
+  "prompt": "Design a custom generic Stack data structure in C# backed by a dynamic array that automatically resizes when capacity is exceeded.",
+  "evaluation_criteria": "Generics Usage: 0-5 (Evaluates proper <T> type parameterization)\nArray Resizing: 0-5 (Evaluates doubling array capacity logic)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "```csharp\nusing System;\n\npublic class Stack<T>\n{\n    private T[] stack;\n    private int top;\n\n    public Stack(int initialCapacity = 10)\n    {\n        stack = new T[initialCapacity];\n        top = -1;\n    }\n\n    public void Push(T item)\n    {\n        if (top == stack.Length - 1)\n        {\n            Resize(2 * stack.Length);\n        }\n        stack[++top] = item;\n    }\n\n    public T Pop()\n    {\n        if (IsEmpty())\n        {\n            throw new InvalidOperationException(\"Stack is empty\");\n        }\n        T item = stack[top];\n        stack[top] = default(T);\n        top -= 1;\n        if (top > 0 && top == stack.Length / 4)\n        {\n            Resize(stack.Length / 2);\n        }\n        return item;\n    }\n\n    public T Peek()\n    {\n        if (IsEmpty())\n        {\n            throw new InvalidOperationException(\"Stack is empty\");\n        }\n        return stack[top];\n    }\n\n    public bool IsEmpty()\n    {\n        return top == -1;\n    }\n\n    public int Size()\n    {\n        return top + 1;\n    }\n\n    private void Resize(int capacity)\n    {\n        T[] temp = new T[capacity];\n        for (int i = 0; i <= top; i++)\n        {\n            temp[i] = stack[i];\n        }\n        stack = temp;\n    }\n}\n\nclass Program\n{\n    static void Main(string[] args)\n    {\n        Stack<int> stack = new Stack<int>();\n        stack.Push(1);\n        stack.Push(2);\n        stack.Push(3);\n        Console.WriteLine(stack.Pop());  // prints: 3\n        Console.WriteLine(stack.Pop());  // prints: 2\n        Console.WriteLine(stack.Pop());  // prints: 1\n        try\n        {\n            Console.WriteLine(stack.Pop());  // raises exception: Stack is empty\n        }\n        catch (InvalidOperationException e)\n        {\n            Console.WriteLine(e.Message);  // prints: Stack is empty\n        }\n    }\n}\n```",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:56:53.937765+00:00"
+}

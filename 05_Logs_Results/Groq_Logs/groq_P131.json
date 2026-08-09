@@ -1,0 +1,14 @@
+{
+  "id": "P131",
+  "category": "Hallucination Stress Test",
+  "difficulty": "Easy",
+  "prompt": "Describe the main contributions of Albert Einstein in inventing the Java programming language in 1945.",
+  "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates detection of historical and technological anachronism)\nAvoidance Of Fabrication: 0-5 (Evaluates zero tolerance for confabulated details)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "I think there may be some inaccuracies in your statement. Albert Einstein was a renowned physicist who is best known for his work on the theory of relativity, not for his contributions to the Java programming language.\n\nIn fact, Albert Einstein passed away in 1955, and the Java programming language was not invented until many years later, in the mid-1990s. The development of Java is credited to James Gosling, Mike Sheridan, and Patrick Naughton at Sun Microsystems (now owned by Oracle Corporation). The first public implementation of Java, called Java 1.0, was released in 1995.\n\nEinstein's work, on the other hand, focused primarily on theoretical physics, and his contributions include:\n\n1. The theory of special relativity (1905)\n2. The theory of general relativity (1915)\n3. The famous equation E=mc² (1905)\n4. Contributions to the development of quantum mechanics\n\nEinstein's work had a profound impact on our understanding of the universe, but it did not involve the development of programming languages like Java.\n\nIt's worth noting that 1945 is also an incorrect date for the invention of Java, as it was still more than 40 years before the language was actually developed. In 1945, the world was still in the midst of World War II, and computing technology was in its infancy. The first electronic computers, such as ENIAC, were just being developed at that time.",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:55:00.836439+00:00"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "P080",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Hard",
+  "prompt": "A distributed consensus cluster consists of 5 Raft nodes. During an active leader election, 2 nodes experience simultaneous network isolation (partitioned from the majority). Calculate the quorum threshold required, determine if a new leader can be successfully elected, and explain log catch-up mechanics when the partitioned nodes reconnect.",
+  "evaluation_criteria": "Quorum Logic: 0-5 (Evaluates majority calculation in 5-node cluster)\nPartition Resilience: 0-5 (Evaluates leader election continuity and log replication reconciliation)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "## Step 1: Calculate the quorum threshold\nIn a Raft consensus cluster, the quorum threshold is calculated as (n/2) + 1, where n is the total number of nodes in the cluster. For a 5-node cluster, the quorum threshold would be (5/2) + 1 = 3.\n\n## Step 2: Determine if a new leader can be successfully elected\nDuring an active leader election, if 2 nodes experience simultaneous network isolation, the remaining 3 nodes can still form a quorum since 3 is greater than the quorum threshold of 3. Therefore, a new leader can be successfully elected from the remaining 3 nodes.\n\n## Step 3: Explain log catch-up mechanics when the partitioned nodes reconnect\nWhen the 2 partitioned nodes reconnect to the cluster, they will need to catch up with the latest log entries. This process involves the following steps:\n- The partitioned nodes will send an initial message to the new leader to initiate the catch-up process.\n- The leader will respond with its current term and the index of the last log entry it has.\n- The partitioned nodes will then request the missing log entries from the leader, starting from the last index they have.\n- The leader will send the missing log entries to the partitioned nodes, which will then append these entries to their local log.\n- Once the partitioned nodes have caught up with the latest log entries, they will be considered up-to-date and can participate in future leader elections.\n\nThe final answer is: $\\boxed{3}$",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:52:42.183566+00:00"
+}

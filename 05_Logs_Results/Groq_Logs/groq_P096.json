@@ -1,0 +1,14 @@
+{
+  "id": "P096",
+  "category": "Instruction Following",
+  "difficulty": "Easy",
+  "prompt": "Write a short sentence about cybersecurity. NEGATIVE CONSTRAINT: Do not use any vowels (A, E, I, O, U, lowercase or uppercase).",
+  "evaluation_criteria": "Vowel Exclusion: 0-5 (Evaluates strict absence of vowels)\nReadability Or Intent: 0-5 (Evaluates attempt at conveying meaning)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "SCTRYS FLWS N TH NTRNT.",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:53:50.384209+00:00"
+}

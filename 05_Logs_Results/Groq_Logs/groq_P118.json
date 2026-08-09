@@ -1,0 +1,14 @@
+{
+  "id": "P118",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Describe microservices architecture patterns. NEGATIVE CONSTRAINT 1: Every single word must contain an even number of letters. NEGATIVE CONSTRAINT 2: No punctuation except periods at sentence terminals. NEGATIVE CONSTRAINT 3: Exactly two sentences.",
+  "evaluation_criteria": "Even Letter Words: 0-5 (Evaluates word length parity check)\nPunctuation And Length: 0-5 (Evaluates sentence count and punctuation limits)",
+  "max_score": "15",
+  "model": "groq",
+  "response_text": "Microservices architecture patterns comprise modular modules made of leveled layers of even sized tokens. Modular modules enable flexible federation of leveled layers allowing seasoned experts to nicely optimize networks periods",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:54:34.316868+00:00"
+}

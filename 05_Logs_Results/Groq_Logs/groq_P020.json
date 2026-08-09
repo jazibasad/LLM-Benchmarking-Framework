@@ -1,0 +1,14 @@
+{
+  "id": "P020",
+  "category": "Knowledge Retrieval",
+  "difficulty": "Medium",
+  "prompt": "Describe the mechanics of deadlock in operating systems and list the four necessary and sufficient Coffman conditions.",
+  "evaluation_criteria": "Deadlock Definition: 0-5 (Evaluates circular wait and resource starvation)\nCoffman Conditions: 0-5 (Evaluates mutual exclusion, hold-and-wait, no preemption, circular wait)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "In operating systems, a deadlock is a situation where two or more processes are blocked indefinitely, each waiting for the other to release a resource. This can occur when multiple processes are competing for a shared resource, such as a file, device, or network connection. The mechanics of deadlock can be described as follows:\n\n1. **Resource allocation**: A process requests a resource, such as a file or device, and the operating system allocates it to the process if it is available.\n2. **Resource hold and wait**: A process holds a resource and waits for another resource to become available. If the second resource is held by another process, the first process will wait indefinitely.\n3. **Circular wait**: A process is waiting for a resource held by another process, which is in turn waiting for a resource held by the first process. This creates a circular dependency, where each process is waiting for the other to release a resource.\n\nThe four necessary and sufficient Coffman conditions, also known as the \"deadlock conditions,\" must be met for a deadlock to occur:\n\n1. **Mutual Exclusion (ME)**: At least one resource must be non-shareable, meaning that only one process can use it at a time.\n2. **Hold and Wait (HAW)**: A process must be holding a resource and waiting for another resource to become available.\n3. **No Preemption (NP)**: The operating system must not preempt a process holding a resource, even if another process needs the same resource.\n4. **Circular Wait (CW)**: A circular dependency must exist between two or more processes, where each process is waiting for a resource held by another process.\n\nIf all four Coffman conditions are met, a deadlock is guaranteed to occur. However, if any of these conditions are not met, a deadlock can be avoided. Operating systems use various techniques, such as deadlock prevention, avoidance, and detection, to prevent or recover from deadlocks.",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:49:42.064905+00:00"
+}

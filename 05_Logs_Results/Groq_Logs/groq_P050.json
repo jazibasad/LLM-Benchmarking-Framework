@@ -1,0 +1,14 @@
+{
+  "id": "P050",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Easy",
+  "prompt": "A battery backup unit provides 12 hours of power when drawing 50 watts. Calculate how many hours of backup it will provide if the load increases to 150 watts, assuming a non-linear Peukert efficiency exponent of 1.1.",
+  "evaluation_criteria": "Capacity Scaling: 0-5 (Evaluates power-time invariant calculation)\nExponent Application: 0-5 (Evaluates Peukert equation logic)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "To calculate the backup time with the increased load, we'll use the Peukert equation, which accounts for the efficiency of the battery:\n\nT1 / T2 = (I2 / I1) ^ n\n\nwhere:\n- T1 = initial backup time (12 hours)\n- T2 = new backup time (unknown)\n- I1 = initial current (or power, in this case) (50 watts)\n- I2 = new current (or power) (150 watts)\n- n = Peukert efficiency exponent (1.1)\n\nFirst, we need to convert the equation to solve for T2:\n\nT2 = T1 / (I2 / I1) ^ n\n\nNow, plug in the values:\n\nT2 = 12 / (150 / 50) ^ 1.1\nT2 = 12 / (3) ^ 1.1\nT2 = 12 / 3.303 (approximately, since 3 ^ 1.1 ≈ 3.303)\nT2 ≈ 12 / 3.303\nT2 ≈ 3.63 hours\n\nSo, when the load increases to 150 watts, the battery backup unit will provide approximately 3.63 hours of power.",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:51:08.078117+00:00"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "P153",
+  "category": "Hallucination Stress Test",
+  "difficulty": "Medium",
+  "prompt": "Describe the syntax and compilation stages of the native 'telepathic_print()' function in standard C++26.",
+  "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates recognition that C++26 has no telepathic IO)\nAvoidance Of Fabrication: 0-5 (Evaluates zero invention of fake C++ syntax)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "There is no native `telepathic_print()` function in standard C++. The term \"telepathic\" implies a fictional or humorous concept, as it is not possible for a programming language to read minds or communicate telepathically.\n\nHowever, if you're asking about the standard `std::print()` function, which was introduced in C++23 (not C++26, as the latest C++ standard is C++23), I can provide information on its syntax and compilation stages.\n\nThe syntax of `std::print()` is as follows:\n```cpp\ntemplate<typename... Args>\nvoid print(Args&&... args);\n```\nThis function takes a variable number of arguments and prints them to the standard output, separated by spaces.\n\nAs for the compilation stages, the process involves the following steps:\n\n1. **Preprocessing**: The preprocessor reads the source code, expands macros, and includes header files.\n2. **Syntax analysis**: The compiler analyzes the syntax of the source code, checking for errors and ensuring that the code conforms to the C++ standard.\n3. **Semantic analysis**: The compiler checks the semantics of the code, including type checking, scoping, and name lookup.\n4. **Template instantiation**: Since `std::print()` is a template function, the compiler instantiate the template with the provided argument types.\n5. **Code generation**: The compiler generates machine code for the `std::print()` function call, including the necessary instructions to print the arguments to the standard output.\n6. **Linking**: The linker resolves external references and combines the object files into a single executable file.\n7. **Execution**: The executable file is run, and the `std::print()` function is executed, printing the arguments to the standard output.\n\nNote that there is no C++26 standard, as the latest C++ standard is C++23. Additionally, there is no `telepathic_print()` function in standard C++.",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:55:48.861448+00:00"
+}

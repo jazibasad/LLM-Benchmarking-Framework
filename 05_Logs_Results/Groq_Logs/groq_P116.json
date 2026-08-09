@@ -1,0 +1,14 @@
+{
+  "id": "P116",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Write a technical overview of cloud computing security models. NEGATIVE CONSTRAINT 1: Do not use the word 'security' or its plural form. NEGATIVE CONSTRAINT 2: Every sentence must start with a vowel letter (A, E, I, O, U). Format the output as exactly three paragraphs.",
+  "evaluation_criteria": "Negative Constraint 1: 0-5 (Evaluates absolute absence of forbidden keywords)\nNegative Constraint 2: 0-5 (Evaluates syntactic compliance of sentence starters)\nStructural Formatting: 0-5 (Evaluates exact three-paragraph layout)",
+  "max_score": "15",
+  "model": "groq",
+  "response_text": "Often, organizations rely on cloud computing models to store and process sensitive data. Ensuring the integrity and confidentiality of this data is a top priority. Ideally, cloud computing models should be designed with built-in protection mechanisms to prevent unauthorized access. Usually, this involves implementing robust authentication and authorization protocols. Ease of use and flexibility are also essential considerations when designing cloud computing models.\n\nEvidently, the most effective cloud computing models are those that incorporate multiple layers of protection. Observing industry best practices and compliance standards is crucial in this regard. Understanding the potential vulnerabilities and threats associated with cloud computing is also vital. Ordinarily, this involves conducting regular risk assessments and penetration testing. Achieving a balance between accessibility and protection is a delicate task, requiring careful consideration of various factors. Ultimately, the goal is to create a cloud computing model that is both reliable and resilient.\n\nOptimizing cloud computing models for protection involves a range of strategies and techniques. Increasingly, organizations are adopting a proactive approach to protecting their cloud-based assets. Embracing emerging technologies such as artificial intelligence and machine learning can help to enhance protection capabilities. Obviously, this requires significant investment in resources and expertise. Auditing and monitoring cloud computing models regularly is essential to ensure that they remain effective and up-to-date. Undertaking a comprehensive review of cloud computing models on a regular basis can help to identify areas for improvement.",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:54:31.036643+00:00"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "P049",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Easy",
+  "prompt": "An API gateway processes requests with a base latency of 15ms plus 2ms per middleware layer executed. If request type Alpha passes through 3 layers and request type Beta passes through 7 layers, compute the latency difference and total time for 100 requests of each type processed sequentially.",
+  "evaluation_criteria": "Latency Computation: 0-5 (Evaluates individual request latency math)\nAggregate Computation: 0-5 (Evaluates multiplication across 100 requests)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "## Step 1: Calculate the total latency for a single Alpha request\nThe base latency is 15ms, and each middleware layer adds 2ms. Since an Alpha request passes through 3 layers, the total latency for an Alpha request is 15ms + (3 * 2ms) = 15ms + 6ms = 21ms.\n\n## Step 2: Calculate the total latency for a single Beta request\nSimilarly, for a Beta request that passes through 7 layers, the total latency is 15ms + (7 * 2ms) = 15ms + 14ms = 29ms.\n\n## Step 3: Calculate the latency difference between Alpha and Beta requests\nThe latency difference between Alpha and Beta requests is 29ms (Beta) - 21ms (Alpha) = 8ms.\n\n## Step 4: Calculate the total time for 100 Alpha requests\nSince each Alpha request takes 21ms, 100 Alpha requests will take 100 * 21ms = 2100ms.\n\n## Step 5: Calculate the total time for 100 Beta requests\nSince each Beta request takes 29ms, 100 Beta requests will take 100 * 29ms = 2900ms.\n\n## Step 6: Calculate the total time for 100 requests of each type processed sequentially\nThe total time for processing 100 Alpha requests and then 100 Beta requests sequentially is 2100ms (for Alpha) + 2900ms (for Beta) = 5000ms.\n\n## Step 7: Summarize the findings\n- The latency difference between Alpha and Beta requests is 8ms.\n- The total time for 100 requests of each type processed sequentially is 5000ms.\n\nThe final answer is: $\\boxed{5000}$",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:51:06.132205+00:00"
+}

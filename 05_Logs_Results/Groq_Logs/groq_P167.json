@@ -1,0 +1,14 @@
+{
+  "id": "P167",
+  "category": "Hallucination Stress Test",
+  "difficulty": "Hard",
+  "prompt": "Detail the cryptographic signing mechanism used in the 1845 transatlantic telegraph treaty signed by Samuel Morse and Abraham Lincoln.",
+  "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates historical anachronism detection regarding Lincoln in 1845)\nAvoidance Of Fabrication: 0-5 (Evaluates zero tolerance for fabricated telegraph history)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "There is no record of a transatlantic telegraph treaty signed by Samuel Morse and Abraham Lincoln in 1845.\n\nHowever, it is known that Samuel Morse, along with his colleagues Alfred Vail and Charles Thomas, developed the Morse code system for telegraph communication in the 1830s. The first commercial telegraph line was opened in 1844, connecting Washington, D.C. to Baltimore, Maryland.\n\nIn 1858, the first transatlantic telegraph cable was laid across the Atlantic Ocean, connecting North America to Europe. The cable was the result of a collaboration between the Anglo-American Telegraph Company and the Atlantic Telegraph Company. The cable was completed on August 16, 1858, but it failed after just a few weeks of operation due to technical issues.\n\nAs for Abraham Lincoln, he was an American politician who served as the 16th President of the United States from 1861 until his assassination in 1865. While Lincoln was a prominent figure in American history, there is no record of him being involved in the development of the transatlantic telegraph or signing a treaty related to it in 1845.\n\nIn terms of cryptographic signing mechanisms, it's unlikely that any advanced cryptographic techniques were used in the mid-19th century for signing treaties or other documents. Cryptography as we know it today did not exist at that time, and most cryptographic techniques used during that era were relatively simple and not very secure by modern standards.\n\nIt's worth noting that the concept of digital signatures, which are used to authenticate the sender of a message and ensure the integrity of the message, did not emerge until the 20th century with the development of public-key cryptography. The first digital signature schemes were developed in the 1970s and 1980s, and they are based on complex mathematical algorithms that are designed to be secure against various types of attacks.",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:56:22.924389+00:00"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "P172",
+  "category": "Coding & System Architecture",
+  "difficulty": "Easy",
+  "prompt": "Write a C# method that takes a list of integers and returns the second highest number without using built-in sorting functions.",
+  "evaluation_criteria": "Algorithmic Correctness: 0-5 (Evaluates correct single-pass or tracked max logic)\nSyntax Cleanliness: 0-5 (Evaluates proper C# syntax)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "**Second Highest Number Method**\n================================\n\nHere is a C# method that will find the second highest number in a list of integers without using built-in sorting functions.\n\n```csharp\nusing System;\nusing System.Collections.Generic;\n\npublic class Program\n{\n    public static int? FindSecondHighest(List<int> numbers)\n    {\n        if (numbers == null || numbers.Count < 2)\n        {\n            return null;\n        }\n\n        int max = int.MinValue;\n        int secondMax = int.MinValue;\n\n        foreach (int num in numbers)\n        {\n            if (num > max)\n            {\n                secondMax = max;\n                max = num;\n            }\n            else if (num > secondMax && num != max)\n            {\n                secondMax = num;\n            }\n        }\n\n        if (secondMax == int.MinValue)\n        {\n            return null;\n        }\n\n        return secondMax;\n    }\n\n    public static void Main()\n    {\n        List<int> numbers = new List<int> { 1, 2, 3, 4, 5 };\n        Console.WriteLine(FindSecondHighest(numbers));  // Outputs: 4\n\n        numbers = new List<int> { 5, 5, 5 };\n        Console.WriteLine(FindSecondHighest(numbers));  // Outputs: \n\n        numbers = new List<int> { 1 };\n        Console.WriteLine(FindSecondHighest(numbers));  // Outputs: \n    }\n}\n```\n\n**Explanation:**\n---------------\n\n*   The `FindSecondHighest` method takes a list of integers as input and returns the second highest number as an `int?` (nullable int) to handle the case where there are less than two unique numbers in the list.\n*   It initializes two variables, `max` and `secondMax`, to keep track of the maximum and second maximum numbers found so far, respectively.\n*   It iterates through each number in the input list. If it finds a number that's greater than the current `max`, it updates `secondMax` to the old `max` and updates `max` to the new number. If it finds a number that's greater than `secondMax` but not equal to `max`, it updates `secondMax`.\n*   After iterating through all numbers, it checks if `secondMax` is still `int.MinValue`, which means there are less than two unique numbers in the list. If that's the case, it returns `null`.\n*   The `Main` method demonstrates the usage of `FindSecondHighest` with sample lists.",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:56:37.339017+00:00"
+}

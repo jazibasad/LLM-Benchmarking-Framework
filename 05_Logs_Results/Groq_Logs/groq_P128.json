@@ -1,0 +1,14 @@
+{
+  "id": "P128",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Detail HTTP caching headers. NEGATIVE CONSTRAINT 1: Every word must start with the letter 'c' or 'C'. NEGATIVE CONSTRAINT 2: Exactly 10 words total.",
+  "evaluation_criteria": "C Starter Rule: 0-5 (Evaluates every word starting with C)\nExact Word Count: 0-5 (Evaluates exact 10-word length)",
+  "max_score": "15",
+  "model": "groq",
+  "response_text": "Carefully crafted caching controllers consistently capture crucial cacheable content chunks.",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:54:54.076031+00:00"
+}

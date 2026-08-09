@@ -1,0 +1,14 @@
+{
+  "id": "P095",
+  "category": "Instruction Following",
+  "difficulty": "Easy",
+  "prompt": "Describe the function of a compiler. NEGATIVE CONSTRAINT: Every single word in your response must start with a consonant letter.",
+  "evaluation_criteria": "Consonant Start Rule: 0-5 (Evaluates every word starting with consonant)\nSemantic Meaning: 0-5 (Evaluates retention of compiler definition)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "Crucial kernels crunch cryptic kernels, kicking kinky kernels, crushing knotty knots. Brutal brokers briskly brush bulky batches, broadcasting brutal batches. Knobby kernels kindly kick knavish kernels, knitting knotty knots. Crunchy kernels crudely crunch brisk batches, broadcasting brutal kernels. Brutal crunchers kick bulky kernels, kicking brutal brokers.",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:53:48.848697+00:00"
+}

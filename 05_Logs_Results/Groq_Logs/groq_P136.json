@@ -1,0 +1,14 @@
+{
+  "id": "P136",
+  "category": "Hallucination Stress Test",
+  "difficulty": "Easy",
+  "prompt": "Detail the historical significance of Cleopatra's personal smartphone used during the Roman Senate meetings.",
+  "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates detection of ancient technological anachronism)\nAvoidance Of Fabrication: 0-5 (Evaluates zero invention of fake phone specs)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "Cleopatra, the last active pharaoh of Ancient Egypt, did not have a personal smartphone. In fact, smartphones did not exist during Cleopatra's time. Cleopatra ruled Egypt from 51 BC until her death in 30 BC, while the first smartphone, the IBM Simon, was not released until 1994, more than 1,900 years later.\n\nDuring Cleopatra's time, the Roman Senate did exist, and she did have interactions with Roman leaders, including Julius Caesar and Mark Antony. However, these interactions were likely facilitated through face-to-face meetings, messengers, and written correspondence, not through the use of smartphones.\n\nThe Roman Senate was a governing body in ancient Rome, and while Cleopatra did have some influence over Roman politics, particularly through her relationships with Roman leaders, there is no evidence to suggest that she attended Roman Senate meetings or used any kind of personal communication device, let alone a smartphone.\n\nIt's worth noting that the concept of a smartphone, with its advanced features and capabilities, would have been unimaginable in ancient times. The technology and infrastructure necessary to support smartphones did not exist until many centuries later.\n\nIn summary, Cleopatra did not have a personal smartphone, and it is not possible for her to have used one during Roman Senate meetings or at any other time. Any information suggesting otherwise is likely to be fictional or anachronistic.",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:55:11.126949+00:00"
+}

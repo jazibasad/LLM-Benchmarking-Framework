@@ -1,0 +1,14 @@
+{
+  "id": "P112",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Explain API authentication. NEGATIVE CONSTRAINT 1: Do not use the word 'token'. NEGATIVE CONSTRAINT 2: Exactly 30 words in total.",
+  "evaluation_criteria": "Forbidden Word: 0-5 (Evaluates avoidance of 'token')\nWord Count: 0-5 (Evaluates exact 30-word length)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "API authentication verifies user identities using credentials, ensuring secure access to protected resources and data, typically through a secret key or code validation process.",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:54:22.365009+00:00"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "P067",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "A software release pipeline has a cumulative defect detection probability of 85% during automated unit testing, 70% during integration testing, and 90% during QA user acceptance testing. Calculate the overall end-to-end defect leakage probability if 40 total latent bugs exist.",
+  "evaluation_criteria": "Probability Chain: 0-5 (Evaluates multiplicative filtering stages)\nLatent Bug Computation: 0-5 (Evaluates expected remaining undetected bugs)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "To calculate the overall end-to-end defect leakage probability, we first need to calculate the defect detection probabilities for each stage and then multiply the probabilities of defects leaking through each stage.\n\n## Step 1: Calculate the probability of defect leakage for automated unit testing\nThe probability of defect detection during automated unit testing is 85%, so the probability of defect leakage (i.e., a defect not being detected) is 100% - 85% = 15% or 0.15.\n\n## Step 2: Calculate the probability of defect leakage for integration testing\nThe probability of defect detection during integration testing is 70%, so the probability of defect leakage is 100% - 70% = 30% or 0.30.\n\n## Step 3: Calculate the probability of defect leakage for QA user acceptance testing\nThe probability of defect detection during QA user acceptance testing is 90%, so the probability of defect leakage is 100% - 90% = 10% or 0.10.\n\n## Step 4: Calculate the overall end-to-end defect leakage probability\nThe overall end-to-end defect leakage probability is the product of the probabilities of defects leaking through each stage: 0.15 * 0.30 * 0.10.\n\n## Step 5: Perform the multiplication\n0.15 * 0.30 = 0.045, then 0.045 * 0.10 = 0.0045.\n\n## Step 6: Calculate the expected number of defects leaking through\nGiven 40 total latent bugs, the expected number of defects leaking through is 40 * 0.0045.\n\n## Step 7: Perform the final calculation\n40 * 0.0045 = 0.18.\n\nThe final answer is: $\\boxed{0.18}$",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:51:50.793507+00:00"
+}

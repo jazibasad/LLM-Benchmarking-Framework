@@ -1,0 +1,14 @@
+{
+  "id": "P125",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Explain distributed consensus protocols. NEGATIVE CONSTRAINT 1: Every word must have a prime number of letters (2, 3, 5, 7, 11). NEGATIVE CONSTRAINT 2: Maximum 20 words.",
+  "evaluation_criteria": "Prime Word Lengths: 0-5 (Evaluates letter count per word being prime)\nWord Limit: 0-5 (Evaluates length constraint)",
+  "max_score": "15",
+  "model": "groq",
+  "response_text": "Fun nod. Mad cap seven men tap.",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:54:48.137573+00:00"
+}

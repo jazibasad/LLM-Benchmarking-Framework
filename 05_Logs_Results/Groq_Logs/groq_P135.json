@@ -1,0 +1,14 @@
+{
+  "id": "P135",
+  "category": "Hallucination Stress Test",
+  "difficulty": "Easy",
+  "prompt": "Explain why the Pacific Ocean freezes solid every year on July 4th.",
+  "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates recognition of false meteorological premise)\nFactual Consistency: 0-5 (Evaluates correct temperature reality check)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "The Pacific Ocean does not freeze solid every year on July 4th. In fact, the Pacific Ocean, like the other oceans, is a vast body of saltwater that remains liquid throughout the year, with temperatures ranging from warm to cool, depending on the location and depth.\n\nThe Pacific Ocean covers an area of over 155 million square kilometers, spanning from the Arctic to the Antarctic, and its water temperature varies greatly depending on the region. While some areas of the Pacific may experience colder temperatures during certain times of the year, such as near the poles or in deeper waters, it does not freeze solid.\n\nJuly 4th is a date in the Northern Hemisphere's summer, which means the ocean temperatures are generally warmer, not colder. The idea that the Pacific Ocean freezes solid on July 4th is not supported by scientific evidence and is likely a misconception or a joke.\n\nIt's worth noting that some parts of the ocean, such as the Arctic Ocean, can experience sea ice formation during the winter months, but this is a natural process that occurs due to the cold air temperatures and not on a specific date like July 4th.",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:55:08.822187+00:00"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "P052",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Easy",
+  "prompt": "Three microservices report error rates: Service X fails 2% of 5,000 requests; Service Y fails 1.5% of 8,000 requests; Service Z fails 3% of 2,000 requests. Calculate the overall system error rate across all combined requests.",
+  "evaluation_criteria": "Failed Request Sum: 0-5 (Evaluates correct failure counts per service)\nOverall Percentage: 0-5 (Evaluates total failures divided by total requests)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "## Step 1: Calculate the number of failed requests for Service X\nService X fails 2% of 5,000 requests. So, the number of failed requests for Service X = 2% * 5,000 = 0.02 * 5,000 = 100.\n\n## Step 2: Calculate the number of failed requests for Service Y\nService Y fails 1.5% of 8,000 requests. So, the number of failed requests for Service Y = 1.5% * 8,000 = 0.015 * 8,000 = 120.\n\n## Step 3: Calculate the number of failed requests for Service Z\nService Z fails 3% of 2,000 requests. So, the number of failed requests for Service Z = 3% * 2,000 = 0.03 * 2,000 = 60.\n\n## Step 4: Calculate the total number of failed requests across all services\nTotal failed requests = failed requests for X + failed requests for Y + failed requests for Z = 100 + 120 + 60 = 280.\n\n## Step 5: Calculate the total number of requests across all services\nTotal requests = requests for X + requests for Y + requests for Z = 5,000 + 8,000 + 2,000 = 15,000.\n\n## Step 6: Calculate the overall system error rate\nOverall system error rate = (Total failed requests / Total requests) * 100 = (280 / 15,000) * 100.\n\n## Step 7: Perform the division and multiplication\nOverall system error rate = (280 / 15,000) * 100 = 0.01867 * 100 = 1.867%.\n\nThe final answer is: $\\boxed{1.867}$",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:51:14.119941+00:00"
+}

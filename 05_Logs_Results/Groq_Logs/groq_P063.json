@@ -1,0 +1,14 @@
+{
+  "id": "P063",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "A multi-region database replication setup experiences a network partition. Region A processes 500 writes, while Region B processes 300 writes concurrently. When the partition heals using a Last-Write-Wins (LWW) timestamp conflict resolution strategy, calculate the final data divergence count assuming 120 keys overlapped with conflicting timestamps.",
+  "evaluation_criteria": "Conflict Resolution Logic: 0-5 (Evaluates LWW timestamp overwrite mechanics)\nDivergence Analysis: 0-5 (Evaluates data loss and overwrite quantification)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "## Step 1: Determine the total number of writes in both regions\n Region A processed 500 writes and Region B processed 300 writes, resulting in a total of 500 + 300 = 800 writes.\n\n## Step 2: Identify the number of overlapping keys with conflicting timestamps\nThere are 120 keys that overlapped with conflicting timestamps.\n\n## Step 3: Apply the Last-Write-Wins (LWW) conflict resolution strategy\nIn the LWW strategy, the write with the latest timestamp wins. This means that for the 120 overlapping keys, the write from either Region A or Region B with the most recent timestamp will be considered the final version.\n\n## Step 4: Calculate the final data divergence count\nThe final data divergence count refers to the number of keys that had conflicting writes and were resolved. Since the LWW strategy resolves conflicts based on the timestamp, all 120 overlapping keys will have a single, final version after the partition heals. Therefore, the data divergence count after resolution is essentially the count of keys that were conflicting and have been resolved to a single version.\n\nThe final answer is: $\\boxed{120}$",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:51:37.569907+00:00"
+}

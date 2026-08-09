@@ -1,0 +1,14 @@
+{
+  "id": "P104",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Provide an overview of relational databases. NEGATIVE CONSTRAINT 1: Every sentence must contain exactly eight words. NEGATIVE CONSTRAINT 2: Do not use any lowercase letters; the entire response must be in UPPERCASE.",
+  "evaluation_criteria": "Sentence Length: 0-5 (Evaluates exact eight words per sentence)\nUppercase Rule: 0-5 (Evaluates ALL CAPS formatting)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "RELATIONAL DATABASES STORE DATA IN TABLES EFFECTIVELY.\nDATABASES USE STRUCTURED QUERY LANGUAGE ALWAYS SUCCESSFULLY.\nTABLES CONTAIN ROWS AND COLUMNS OF DATA TYPES.\nQUERIES RETRIEVE DATA FROM TABLES QUICKLY AND EFFICIENTLY.\nDATABASES MAINTAIN DATA INTEGRITY AND SECURITY ALWAYS.\nDATABASE SYSTEMS SUPPORT MULTIPLE USERS SIMULTANEOUSLY ALWAYS.\nRELATIONAL DATABASES USE KEYS TO LINK TABLES TOGETHER.\nDATABASES PROVIDE DATA CONSISTENCY AND ACID COMPLIANCE ALWAYS.",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:54:06.667030+00:00"
+}

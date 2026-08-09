@@ -1,0 +1,14 @@
+{
+  "id": "P055",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "A data streaming pipeline ingests records across four partitions. Partition 1 receives 450 records/sec with 99% validity; Partition 2 receives 600 records/sec with 95% validity; Partition 3 receives 300 records/sec with 98% validity; Partition 4 receives 750 records/sec with 90% validity. Calculate the weighted average validity percentage across all ingested streams.",
+  "evaluation_criteria": "Valid Record Sum: 0-5 (Evaluates accurate valid record multiplication per partition)\nWeighted Average: 0-5 (Evaluates total valid records divided by total ingestion rate)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "## Step 1: Calculate the number of valid records per second for Partition 1\nTo find the number of valid records per second for Partition 1, we multiply the total records per second by the validity percentage. So, for Partition 1: 450 records/sec * 0.99 = 445.5 valid records/sec.\n\n## Step 2: Calculate the number of valid records per second for Partition 2\nFor Partition 2: 600 records/sec * 0.95 = 570 valid records/sec.\n\n## Step 3: Calculate the number of valid records per second for Partition 3\nFor Partition 3: 300 records/sec * 0.98 = 294 valid records/sec.\n\n## Step 4: Calculate the number of valid records per second for Partition 4\nFor Partition 4: 750 records/sec * 0.90 = 675 valid records/sec.\n\n## Step 5: Calculate the total number of records per second across all partitions\nTotal records per second = 450 + 600 + 300 + 750 = 2100 records/sec.\n\n## Step 6: Calculate the total number of valid records per second across all partitions\nTotal valid records per second = 445.5 + 570 + 294 + 675 = 1984.5 valid records/sec.\n\n## Step 7: Calculate the weighted average validity percentage\nWeighted average validity percentage = (Total valid records per second / Total records per second) * 100 = (1984.5 / 2100) * 100.\n\n## Step 8: Perform the final calculation\nWeighted average validity percentage = (1984.5 / 2100) * 100 = 0.945 * 100 = 94.5%.\n\nThe final answer is: $\\boxed{94.5}$",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:51:21.391429+00:00"
+}

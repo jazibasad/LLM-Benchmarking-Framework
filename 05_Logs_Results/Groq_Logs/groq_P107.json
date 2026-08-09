@@ -1,0 +1,14 @@
+{
+  "id": "P107",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Detail the purpose of software unit testing. NEGATIVE CONSTRAINT 1: Do not use the words 'code', 'test', or 'bug'. NEGATIVE CONSTRAINT 2: Exactly two paragraphs.",
+  "evaluation_criteria": "Forbidden Words: 0-5 (Evaluates avoidance of code, test, bug)\nParagraph Count: 0-5 (Evaluates exact two paragraphs)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "The primary objective of evaluating individual software components is to ensure they function correctly and meet the required specifications. This process involves verifying that each component behaves as expected, given a specific set of inputs and conditions. By doing so, developers can identify and address any defects or inconsistencies in the component's behavior, which can help prevent larger issues from arising in the overall software system. This evaluation process also enables developers to validate their design decisions and confirm that the components interact correctly with one another.\n\nEvaluating individual software components is a crucial step in the software development process, as it helps to ensure the overall quality and reliability of the system. By verifying the correctness of each component, developers can build confidence in the system's ability to perform its intended functions. This, in turn, can reduce the likelihood of downstream problems and make it easier to maintain and update the software over time. Additionally, evaluating individual components can help developers to identify areas where the software may be vulnerable to errors or failures, allowing them to take proactive steps to mitigate these risks and improve the overall robustness of the system.",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:54:12.810148+00:00"
+}

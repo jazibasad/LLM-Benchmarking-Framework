@@ -1,0 +1,14 @@
+{
+  "id": "P106",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Summarize the client-server architecture model. NEGATIVE CONSTRAINT 1: Do not use the letter 'a' or 'A'. NEGATIVE CONSTRAINT 2: Format as a bulleted list of three items.",
+  "evaluation_criteria": "Negative Constraint: 0-5 (Evaluates absolute absence of letter a/A)\nFormatting: 0-5 (Evaluates bullet list)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "* Client sends requests to server, receiving responses in return\n* Server provides services, such As storage, processing, or security, to multiple clients\n* Server manages resources, controls access, ensuring consistency, security, or reliability of system",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:54:10.249011+00:00"
+}

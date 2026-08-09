@@ -1,0 +1,14 @@
+{
+  "id": "P117",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Explain asynchronous event loops in programming. NEGATIVE CONSTRAINT 1: Alternate sentence cases (Sentence 1 lowercase only, Sentence 2 UPPERCASE only, Sentence 3 lowercase only). NEGATIVE CONSTRAINT 2: Do not use the letter 'e'. NEGATIVE CONSTRAINT 3: Exactly four sentences.",
+  "evaluation_criteria": "Alternating Case: 0-5 (Evaluates strict lower/UPPER case alternation per sentence)\nForbidden Letter: 0-5 (Evaluates absence of letter e)\nSentence Count: 0-5 (Evaluates exact four sentences)",
+  "max_score": "15",
+  "model": "groq",
+  "response_text": "asynchronous programming allows for non-blocking operations, improving overall program performance by handling multiple tasks simultaneously. PROGRAMMERS OFTEN FIND THIS APPROACH USEFUL FOR HANDLING MULTIPLE TASKS AT ONCE. asynchronous loops work by switching btw tasks quickly, giving th impression of simultanous execution. PROGRAMS USING THIS TECHNIQUE CAN HANDLE MULTIPLE TASKS WITHOUT BLOCKING, THUS IMPROVING OVERALL SYSTEM PERFORMANCE",
+  "raw": {
+    "model": "llama-3.3-70b-versatile"
+  },
+  "timestamp_utc": "2026-08-09T08:54:32.395731+00:00"
+}
