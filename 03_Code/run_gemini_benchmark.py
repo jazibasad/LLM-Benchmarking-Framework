@@ -9,12 +9,16 @@ to its own partitioned log directory.
 SAFETY MECHANISMS:
   1. PROACTIVE THROTTLING - fixed minimum delay before every call.
   2. REACTIVE BACKOFF + JITTER - growing randomized delay after a failure.
-  3. QUOTA-EXHAUSTION DETECTION - if a prompt still fails after all retries
-     are exhausted, and the error looks like a persistent daily-quota issue
-     (not a one-off transient error), the ENTIRE RUN STOPS IMMEDIATELY rather
-     than burning through the remaining prompts, each failing after minutes
-     of futile retries. A clear message tells you exactly how many prompts
-     are done, how many remain, and when this provider's quota resets.
+  3. PERSISTENT-ERROR DETECTION - if a prompt still fails after all retries
+     are exhausted, and the error looks like a persistent issue (daily quota
+     exhausted, OR the model name has been retired/is no longer available -
+     both have actually happened during this project's development), the
+     ENTIRE RUN STOPS IMMEDIATELY rather than burning through the remaining
+     prompts, each failing after minutes of futile retries. As an extra
+     safety net, if even the FIRST prompt fails completely, the run also
+     stops immediately regardless of the error wording, since that's almost
+     always a systemic problem (bad model name, bad API key) rather than a
+     one-off per-prompt issue.
   4. ATOMIC CACHE WRITES - each response is written to a temp file then
      atomically renamed, so a hard interruption (Ctrl+C, crash, power loss)
      can never leave a corrupted, half-written cache file.
@@ -24,18 +28,23 @@ SAFETY MECHANISMS:
      all 220 prompts are complete. No manual bookkeeping needed.
 
 GEMINI QUOTA RESET: daily request quotas (RPD) reset at midnight PACIFIC
-TIME. Google significantly cut free-tier RPD limits in December 2025, and
-the exact current number varies by model and can change without notice -
-check the live limit shown in your Google AI Studio project rather than
-trusting any hardcoded figure. If this script stops early with a quota
-message, re-run it any time after midnight Pacific Time.
+TIME. Google significantly cut free-tier RPD limits in December 2025 and
+April 2026, and the exact current number varies by model and can change
+without notice - check the live limit shown in your Google AI Studio
+project rather than trusting any hardcoded figure.
+
+MODEL NAME CAVEAT: this project already hit a model retiring mid-development
+once (gemini-2.5-flash became unavailable to new projects). If MODEL_NAME
+below also 404s in the future, check ai.google.dev for Google's current
+recommended free-tier Flash model and update it here.
 
 HOW TO RUN FOR REAL (VS Code):
   1. Create a .env file in the project root:  GEMINI_API_KEY=your_real_key_here
   2. pip install -r requirements.txt   (one-time, in the VS Code terminal)
   3. Open this file -> click the Run button (top-right)
-  4. If it stops early due to quota, just re-run it after the reset time
-     shown - it will pick up exactly where it left off.
+  4. If it stops early due to quota, re-run after the reset time shown.
+     If it stops early due to a model/config error, fix MODEL_NAME or your
+     API key first, then re-run - either way it resumes from where it stopped.
 """
 
 import json
@@ -52,7 +61,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger("gemini_runner")
 
-MODEL_NAME = "gemini-2.5-flash"
+MODEL_NAME = "gemini-3.5-flash"
 RESET_INFO = "midnight Pacific Time (Gemini's daily RPD quota reset)"
 
 LOG_DIR = os.path.join(os.path.dirname(__file__), "..", "05_Logs_Results", "Gemini_Logs")
@@ -63,20 +72,31 @@ BASE_DELAY = 1.0
 MAX_DELAY = 60.0
 MIN_INTERVAL = 4.5  # seconds - keeps requests safely under Gemini's free-tier RPM cap
 
-QUOTA_KEYWORDS = ["quota", "resource_exhausted", "daily", "rate limit exceeded", "429", "exceeded"]
+# Broadened beyond just quota wording: model names get silently retired too
+# (this project already hit this exact failure mode twice - OpenRouter in
+# Week 2, and Gemini's gemini-2.5-flash being pulled from new projects in
+# Week 4). Any of these signal a PERSISTENT, non-recoverable error where
+# continuing to retry every remaining prompt would be pointless.
+PERSISTENT_ERROR_KEYWORDS = [
+    "quota", "resource_exhausted", "daily", "rate limit exceeded", "429", "exceeded",
+    "not_found", "no longer available", "model not found", "404",
+]
 
 
-def _looks_like_quota_exhausted(exc) -> bool:
+def _looks_like_persistent_error(exc) -> bool:
     """
     Heuristic: if a prompt still fails after ALL backoff retries have been
     exhausted (meaning we already waited through roughly a minute of growing
     delays), a transient per-minute rate limit would normally have cleared by
-    then. Persisting past that point, combined with quota-style wording in
-    the error, is a strong signal this is a genuine daily quota exhaustion
-    rather than a one-off blip.
+    then. Persisting past that point, combined with quota or "model
+    unavailable" wording in the error, is a strong signal this is a genuine
+    systemic problem (daily quota exhausted, or the model name is dead)
+    rather than a one-off blip - and every remaining prompt will fail the
+    exact same way, so the run should stop rather than grind through all of
+    them uselessly.
     """
     text = str(exc).lower()
-    return any(keyword in text for keyword in QUOTA_KEYWORDS)
+    return any(keyword in text for keyword in PERSISTENT_ERROR_KEYWORDS)
 
 
 class GeminiBenchmarkRunner:
@@ -181,22 +201,32 @@ class GeminiBenchmarkRunner:
             try:
                 result = self._call_with_backoff(item["prompt"])
             except RuntimeError as exc:
-                if _looks_like_quota_exhausted(exc):
+                systemic = _looks_like_persistent_error(exc) or completed == 0
+                if systemic:
                     remaining = total - completed - skipped
+                    reason = (
+                        "quota/model-availability wording detected"
+                        if _looks_like_persistent_error(exc)
+                        else "the very first prompt failed after all retries - "
+                             "likely a systemic issue (model name, API key, or endpoint), "
+                             "not a per-prompt problem"
+                    )
                     logger.error(
-                        "Quota exhaustion detected on %s after exhausting all retries: %s",
-                        prompt_id, exc,
+                        "Persistent error detected on %s after exhausting all retries (%s): %s",
+                        prompt_id, reason, exc,
                     )
                     logger.error(
                         "STOPPING RUN EARLY. %d completed, %d remaining. "
-                        "This provider resets at %s. Re-run this script after that "
-                        "time - already-completed prompts are cached and will be "
-                        "skipped automatically, so it will continue from %s.",
+                        "If this is a quota issue, this provider resets at %s. "
+                        "If this is a model/config issue, check MODEL_NAME and your "
+                        "API key before re-running. Already-completed prompts are "
+                        "cached and will be skipped automatically, so re-running "
+                        "will continue from %s.",
                         completed, remaining, RESET_INFO, prompt_id,
                     )
                     stopped_early = True
                     break
-                logger.error("Giving up on %s (non-quota error): %s", prompt_id, exc)
+                logger.error("Giving up on %s (isolated error): %s", prompt_id, exc)
                 failed += 1
                 continue
 

@@ -1,0 +1,14 @@
+{
+  "id": "P006",
+  "category": "Knowledge Retrieval",
+  "difficulty": "Easy",
+  "prompt": "Define what an HTTP status code in the 5xx range signifies and give two common examples.",
+  "evaluation_criteria": "Factual Accuracy: 0-5 (Evaluates server error classification)\nExample Precision: 0-5 (Evaluates correctness of examples like 500 or 503)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "An HTTP status code in the **5xx range** signifies a **Server Error**. \n\nIt indicates that the client’s request was valid, but the server encountered an error, failed, or is otherwise incapable of performing the request. In short, the problem is on the website's server side, not with the user's computer, internet connection, or browser.\n\nHere are two common examples of 5xx status codes:\n\n### 1. **500 Internal Server Error**\n* **What it means:** This is a generic \"catch-all\" error message. It is displayed when the server encounters an unexpected condition that prevents it from fulfilling the request, but the server cannot be more specific about what the actual problem is. \n* **Common cause:** A bug in the website's code, a misconfigured `.htaccess` file, or a temporary database connection failure.\n\n### 2. **503 Service Unavailable**\n* **What it means:** The server is temporarily unable to handle the request. This is usually a temporary state that will be resolved after some delay.\n* **Common cause:** The server is down for scheduled maintenance, or it is experiencing a sudden spike in traffic and is overloaded.",
+  "raw": {
+    "model": "gemini-3.5-flash"
+  },
+  "timestamp_utc": "2026-08-09T14:12:14.890682+00:00"
+}

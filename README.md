@@ -1,7 +1,7 @@
 # LLM Benchmarking Framework
 
 A reproducible framework for evaluating and comparing free-tier Large Language Models
-(Gemini, Cerebras, Groq) across five core capability dimensions.
+(Gemini, Mistral, Groq) across five core capability dimensions.
 
 ## Project Goals
 
@@ -21,11 +21,11 @@ LLM-Benchmarking-Framework/
 ├── 04_Datasets/         # Curated prompt set (P001–P220) and rubric definition
 ├── 05_Logs_Results/     # Per-model JSON response logs + weekly test result logs
 │   ├── Gemini_Logs/
-│   ├── Cerebras_Logs/
+│   ├── Mistral_Logs/
 │   ├── Groq_Logs/
 │   ├── OpenRouter_Logs/
 │   └── tests_logs/
-│       ├── Week_2/
+│       └── Week_2/
 └── 06_Final_Report/     # Consolidated final research document
 ```
 
@@ -53,52 +53,50 @@ Following, Hallucination Stress Test, and Coding Tasks.
   Hallucination Stress Test, or Coding & System Architecture
 - `difficulty` — Easy, Medium, or Hard
 - `prompt` — the prompt text itself
-- `evaluation_criteria` — specific, per-prompt scoring criteria (extends the
-  master rubric with prompt-level granularity)
+- `evaluation_criteria` — specific, per-prompt scoring criteria
 - `max_score` — the maximum achievable score for that prompt
 
-**Verified breakdown** (see `03_Code/validate_prompts.py`):
-- By category: Multi-step Reasoning 50, Coding & System Architecture 50,
-  Knowledge Retrieval 40, Instruction Following 40, Hallucination Stress Test 40
-- By difficulty: Hard 100, Medium 66, Easy 54
+Run `python 03_Code/validate_prompts.py` to verify the dataset's structural
+integrity at any time.
 
-Run `python 03_Code/validate_prompts.py` to re-verify the dataset's structural
-integrity (field completeness, unique IDs, valid difficulty values) at any time.
+## Data Collection Providers (Week 4)
+
+Real benchmarking data is collected across three providers, each with its own
+decoupled runner script and partitioned log folder:
+
+- **Gemini** (`run_gemini_benchmark.py` → `Gemini_Logs/`)
+- **Mistral** (`run_mistral_benchmark.py` → `Mistral_Logs/`)
+- **Groq** (`run_groq_benchmark.py` → `Groq_Logs/`)
+
+**Provider history note:** OpenAI was originally swapped for Cerebras in Week 3.
+During Week 4 development, Cerebras introduced a mandatory payment-method
+requirement to activate API access, and available local payment methods could
+not be authorized for international billing. Mistral AI was selected instead as
+a provider with a genuinely permanent free tier requiring no payment method.
 
 ## Automation Pipeline (Week 2)
 
-`03_Code/benchmark_runner.py` implements a single concrete BenchmarkRunner
-class that calls OpenRouter's OpenAI-compatible API directly, with two
-independent safety mechanisms to prevent free-tier rate-limit bans:
+`03_Code/benchmark_runner.py` implements the original pipeline pattern, calling
+OpenRouter's OpenAI-compatible API directly, with two independent safety
+mechanisms to prevent free-tier rate-limit bans:
 
 - **Proactive throttling** — a fixed minimum delay before every API call
 - **Reactive backoff + jitter** — a growing randomized delay after a failure
 
-Plus disk-based JSON caching per prompt and resume logic so an interrupted
-run never repeats an already-completed API call.
-
-The model is set to `openrouter/free`, OpenRouter's own router that
-automatically selects a currently-available free model — this avoids
-depending on one named free model, which can be discontinued without
-notice (encountered directly during Week 2 development).
-
-**Provider plan:** OpenRouter is used in Week 2 for pipeline development
-and verification. Gemini, Cerebras, and Groq are the three fixed, named
-providers used in Week 4's real benchmarking data collection.
+This same pattern is reused in each Week 4 provider runner, extended with:
+- **Persistent-error detection** — stops the run early (rather than retrying
+  every remaining prompt uselessly) if a quota is exhausted or a model has been
+  retired/is unavailable
+- **Atomic cache writes** — prevents corrupted cache files from a hard interrupt
+- **Resume-by-cache-file** — re-running a stopped script automatically picks up
+  exactly where it left off
 
 ## Testing
 
-`03_Code/tests/test_benchmark_runner.py` verifies the pipeline using an
-injected fake client — 9/9 tests passing, zero real API calls required.
-
-Running this file directly (VS Code Run button) automatically saves a
-JSON summary of that week's test results to its own dated folder:
-`05_Logs_Results/tests_logs/Week_N/test_results.json`. Each new week's
-test file only needs its `WEEK_LABEL` constant updated.
-
-Week 3 introduced no automation code, so `03_Code/validate_prompts.py`
-serves as that week's equivalent verification step, confirming the
-curated dataset's structural integrity instead.
+Each provider runner has a matching test file using an injected fake client —
+zero real API calls required to verify the automation logic. Running a test
+file directly (VS Code Run button) saves a JSON summary of that week's results
+to `05_Logs_Results/tests_logs/Week_N/`.
 
 ## Environment Setup
 
@@ -116,10 +114,10 @@ never committed to GitHub):
 
 ```
 OPENROUTER_API_KEY=your_real_key_here
+GEMINI_API_KEY=your_real_key_here
+MISTRAL_API_KEY=your_real_key_here
+GROQ_API_KEY=your_real_key_here
 ```
-
-(Gemini, Cerebras, and Groq API keys are added in Week 4 when their
-runners are built.)
 
 ## Status
 
@@ -127,8 +125,8 @@ runners are built.)
 |------|-------|--------|
 | 1 | Framework Initialization & Rubric Design | ✅ Complete |
 | 2 | Automation Pipeline, Live OpenRouter Verification & Reproducible Environment | ✅ Complete |
-| 3 | Dataset Curation & Repository Restructuring (OpenAI --> Cerebras) | ✅ Complete |
-| 4 | Multi-Provider Decoupling & Real Data Collection (Gemini, Cerebras, Groq) | ⏳ Not started |
+| 3 | Dataset Curation & Repository Restructuring | ✅ Complete |
+| 4 | Multi-Provider Decoupling & Real Data Collection (Gemini, Mistral, Groq) | ⏳ In progress |
 | 5 | Continued Data Collection & Quantitative Analysis | ⏳ Not started |
 | 6 | Error Analysis & Failure Mode Taxonomy | ⏳ Not started |
 | 7 | Discussion, Hypothesis Testing & Synthesis | ⏳ Not started |
