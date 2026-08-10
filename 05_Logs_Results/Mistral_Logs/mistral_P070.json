@@ -1,0 +1,14 @@
+{
+  "id": "P070",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "A distributed log aggregation system compresses log batches. Raw text size is 50MB. Compression stage 1 reduces size by 60%; stage 2 further reduces the remaining size by 40%; network serialization adds a 5% metadata header to the final compressed size. Calculate the final transmitted payload size in megabytes.",
+  "evaluation_criteria": "Sequential Reduction: 0-5 (Evaluates percentage reduction steps)\nHeader Addition: 0-5 (Evaluates correct metadata addition)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "Let's break down the compression and serialization steps to calculate the final transmitted payload size:\n\n1. **Initial Size:**\n   - Raw text size = 50 MB\n\n2. **Compression Stage 1 (60% reduction):**\n   - Reduction = 60% of 50 MB = 0.60 * 50 = 30 MB\n   - Remaining size = 50 MB - 30 MB = 20 MB\n\n3. **Compression Stage 2 (40% reduction of remaining size):**\n   - Reduction = 40% of 20 MB = 0.40 * 20 = 8 MB\n   - Remaining size = 20 MB - 8 MB = 12 MB\n\n4. **Network Serialization (5% metadata header):**\n   - Metadata header = 5% of 12 MB = 0.05 * 12 = 0.6 MB\n   - Final transmitted payload size = 12 MB + 0.6 MB = 12.6 MB\n\n**Final Answer:**\nThe final transmitted payload size is **12.6 MB**.",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "timestamp_utc": "2026-08-10T09:39:18.109270+00:00"
+}

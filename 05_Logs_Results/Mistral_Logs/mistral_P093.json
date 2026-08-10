@@ -1,0 +1,14 @@
+{
+  "id": "P093",
+  "category": "Instruction Following",
+  "difficulty": "Easy",
+  "prompt": "Explain what an algorithm is in two sentences. NEGATIVE CONSTRAINT: The response must not contain any punctuation marks except periods at the ends of sentences.",
+  "evaluation_criteria": "Sentence Count: 0-5 (Evaluates exact two-sentence rule)\nPunctuation Constraint: 0-5 (Evaluates absence of commas, hyphens, or apostrophes)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "An algorithm is a step-by-step set of instructions designed to solve a specific problem or perform a task efficiently. It acts as a clear and logical process that computers or humans can follow to achieve a desired outcome.",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "timestamp_utc": "2026-08-10T09:43:57.586440+00:00"
+}

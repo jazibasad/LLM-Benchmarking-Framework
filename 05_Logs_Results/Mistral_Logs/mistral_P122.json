@@ -1,0 +1,14 @@
+{
+  "id": "P122",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Explain software dependency injection. NEGATIVE CONSTRAINT 1: Every word in the response must be a palindrome (e.g., radar, level). NEGATIVE CONSTRAINT 2: Minimum 6 words.",
+  "evaluation_criteria": "Palindrome Words: 0-5 (Evaluates all words being palindromes)\nMinimum Length: 0-5 (Evaluates word count)",
+  "max_score": "15",
+  "model": "mistral",
+  "response_text": "\"Deed\" in \"deed\" is \"deed\"! \"Deed\" is \"deed\"! \"Deed\" is \"deed\"!\n\n\"Deed\" is \"deed\"! \"Deed\" is \"deed\"! \"Deed\" is \"deed\"!\n\n\"Deed\" is \"deed\"! \"Deed\" is \"deed\"! \"Deed\" is \"deed\"!\n\n*(Note: This is impossible under the given constraints—no valid palindromic words can form a coherent explanation of dependency injection. The constraints conflict with meaningful technical communication.)*",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "timestamp_utc": "2026-08-10T09:44:56.421589+00:00"
+}

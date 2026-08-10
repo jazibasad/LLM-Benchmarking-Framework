@@ -1,0 +1,14 @@
+{
+  "id": "P124",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Detail public-key cryptography mechanisms. NEGATIVE CONSTRAINT 1: Do not use the letter 't' or 'T'. NEGATIVE CONSTRAINT 2: Do not use the letter 'h' or 'H'. NEGATIVE CONSTRAINT 3: Format as a bulleted list.",
+  "evaluation_criteria": "Double Negative Letter: 0-5 (Evaluates absence of both T and H)\nFormatting: 0-5 (Evaluates bullet layout)",
+  "max_score": "15",
+  "model": "mistral",
+  "response_text": "- **Core Idea**:\n  - Uses pairs of keys: one for encryption, one for decryption.\n  - Public key: shared openly; private key: kept secret.\n\n- **Key Generation**:\n  - Based on hard math problems (e.g., factoring large primes, discrete logs).\n  - Algorithms like RSA, ECC, or Diffie-Hellman generate key pairs.\n\n- **RSA (Rivest-Shamir-Adleman)**:\n  - Relies on difficulty of breaking product of two large primes.\n  - Steps:\n    - Pick primes *p*, *q*; compute *n = p*q*, *φ(n) = (p-1)(q-1)*.\n    - Choose public exponent *e* (coprime with *φ(n)*).\n    - Compute private exponent *d* (inverse of *e* mod *φ(n)*).\n  - Encrypt: *c = m^e mod n*; decrypt: *m = c^d mod n*.\n\n- **Elliptic Curve Cryptography (ECC)**:\n  - Uses algebraic structures over elliptic curves.\n  - Smaller key sizes than RSA for same security.\n  - Key steps:\n    - Define curve *y² = x³ + ax + b* over finite field.\n    - Pick private key *d*; compute public key *Q = d*G* (scalar mult of base point *G*).\n\n- **Diffie-Hellman (Key Exchange)**:\n  - Allows two parties to agree on shared secret over insecure channel.\n  - Steps:\n    - Agree on prime *p*, generator *g*.\n    - Alice picks *a*, sends *A = g^a mod p*.\n    - Bob picks *b*, sends *B = g^b mod p*.\n    - Shared secret: *S = A^b mod p = B^a mod p*.\n\n- **Digital Signatures**:\n  - RSA: Sign with private key; verify with public key.\n  - ECDSA: Uses ECC with deterministic signing.\n  - Process:\n    - Signer computes *r*, *s* from message *m* + private key *d*.\n    - Verifier checks *r*, *s* against public key.\n\n- **Security Assumptions**:\n  - **RSA**: Hard to factor *n* into *p*, *q*.\n  - **ECC**: Hard to solve discrete log in elliptic curve group.\n  - **Diffie-Hellman**: Hard to compute discrete logs in cyclic group.\n\n- **Advantages**:\n  - No shared secret setup needed.\n  - Public keys can be freely distributed.\n  - Enables authentication, non-repudiation.\n\n- **Challenges**:\n  - Key management (private keys must stay secret).\n  - Computational cost (especially for large primes/curves).\n  - Side-channel attacks (timing, power analysis).",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "timestamp_utc": "2026-08-10T09:45:03.265381+00:00"
+}

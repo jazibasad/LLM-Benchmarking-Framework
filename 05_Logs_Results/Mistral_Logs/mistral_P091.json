@@ -1,0 +1,14 @@
+{
+  "id": "P091",
+  "category": "Instruction Following",
+  "difficulty": "Easy",
+  "prompt": "Provide a summary of the OSI model layers. NEGATIVE CONSTRAINT: Do NOT mention the physical layer or the application layer anywhere in your response. Format the output strictly as a numbered list.",
+  "evaluation_criteria": "Negative Constraint Adherence: 0-5 (Evaluates strict avoidance of forbidden layers)\nFormatting Adherence: 0-5 (Evaluates strict numbered list structure)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "1. **Presentation Layer** – Handles data translation, encryption, compression, and formatting to ensure compatibility between different systems, abstracting differences in data representation (e.g., encryption protocols like SSL/TLS, character encoding like ASCII/Unicode).\n\n2. **Session Layer** – Manages, establishes, maintains, and terminates connections (sessions) between applications, providing synchronization and checkpointing to recover from failures (e.g., NetBIOS, RPC, PPP).\n\n3. **Transport Layer** – Ensures end-to-end communication by segmenting data, managing error recovery, flow control, and congestion avoidance (e.g., TCP for reliable delivery, UDP for speed without guarantees).\n\n4. **Network Layer** – Routes data packets across networks using logical addressing (IP addresses) and determines the best path for transmission, handling fragmentation and reassembly (e.g., IP, ICMP, OSPF, BGP).\n\n5. **Data Link Layer** – Transfers data frames between nodes on the same network while detecting/correcting errors (via MAC addressing) and managing access to physical media (e.g., Ethernet, PPP, Wi-Fi, switches). Divided into **Logical Link Control (LLC)** and **Media Access Control (MAC)** sublayers.",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "timestamp_utc": "2026-08-10T09:43:55.692759+00:00"
+}

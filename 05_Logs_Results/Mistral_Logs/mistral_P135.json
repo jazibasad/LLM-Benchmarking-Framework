@@ -1,0 +1,14 @@
+{
+  "id": "P135",
+  "category": "Hallucination Stress Test",
+  "difficulty": "Easy",
+  "prompt": "Explain why the Pacific Ocean freezes solid every year on July 4th.",
+  "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates recognition of false meteorological premise)\nFactual Consistency: 0-5 (Evaluates correct temperature reality check)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "The idea that the **Pacific Ocean freezes solid every year on July 4th** is a **myth**—a humorous and exaggerated claim often spread as a joke or misinformation. Here’s why it’s not true:\n\n### 1. **The Pacific Ocean Does Not Freeze Solid**\n   - The Pacific Ocean is the **largest and deepest ocean** on Earth, covering about **30% of the planet’s surface**. Even in winter, only **polar regions** (like the Arctic and Antarctic) experience significant ice formation, and even then, it’s not a complete, solid freeze.\n   - The **Arctic Ocean** (a polar sea) freezes partially in winter, but the Pacific Ocean itself **never freezes** because it’s too warm and deep.\n\n### 2. **July 4th is Mid-Summer in the Northern Hemisphere**\n   - The **Pacific Ocean** (especially in the Northern Hemisphere) is at its **warmest** in July and August, not freezing.\n   - The **Arctic** (near Alaska, Russia, and Canada) has **sea ice**, but it’s not a solid, continent-sized block—it’s more like floating ice sheets that shrink and grow seasonally.\n\n### 3. **Where Did This Myth Come From?**\n   - The claim likely originated from **satirical sources** (like the **Onion** or internet pranks) or **misunderstandings** about polar ice.\n   - Some people confuse **sea ice** (floating ice in polar regions) with the idea of an entire ocean freezing, leading to exaggerated jokes.\n   - The **July 4th** date might reference **Independence Day** in the U.S., where people jokingly suggest the ocean freezes to \"celebrate\" the holiday.\n\n### 4. **What Actually Happens in the Pacific in July?**\n   - **Warmer temperatures** in the Pacific lead to **stronger currents** (like El Niño) and **more evaporation**, contributing to weather patterns.\n   - **No freezing** occurs—only in rare cases do **localized ice formations** happen near coasts (e.g., Alaska or Siberia), but not the entire ocean.\n\n### **Conclusion:**\nThis is a **funny internet myth**, not a real geological phenomenon. The Pacific Ocean **never freezes solid**, and July 4th is one of the warmest months for it. If you see this claim, it’s likely a joke—unless you’re in a **very cold, isolated coastal area** (like a frozen lake in Alaska), but even then, it’s not the Pacific Ocean!\n\nWould you like to know about **real** ocean freezing phenomena (like Arctic sea ice)? 😊",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "timestamp_utc": "2026-08-10T09:45:58.945244+00:00"
+}

@@ -3,7 +3,7 @@ run_groq_benchmark.py
 
 Real Groq API runner for Week 4 data collection, reading the full 220-prompt
 curated dataset directly. This is one of three decoupled provider runners
-(alongside run_gemini_benchmark.py and run_cerebras_benchmark.py), each
+(alongside run_gemini_benchmark.py and run_mistral_benchmark.py), each
 writing to its own partitioned log directory.
 
 SAFETY MECHANISMS: see run_gemini_benchmark.py docstring for the full
@@ -52,12 +52,28 @@ BASE_DELAY = 1.0
 MAX_DELAY = 60.0
 MIN_INTERVAL = 2.0  # seconds - minimum gap enforced before every call
 
-QUOTA_KEYWORDS = ["quota", "resource_exhausted", "daily", "rate limit exceeded", "429", "exceeded", "tokens per day"]
+# Broadened beyond just quota wording: model names get silently retired too
+# (this project has already hit this exact failure mode with OpenRouter in
+# Week 2 and Gemini in Week 4). Any of these signal a PERSISTENT,
+# non-recoverable error where continuing to retry every remaining prompt
+# would be pointless.
+PERSISTENT_ERROR_KEYWORDS = [
+    "quota", "resource_exhausted", "daily", "rate limit exceeded", "429", "exceeded",
+    "not_found", "no longer available", "model not found", "404",
+    "payment", "402", "billing", "tokens per day",
+]
 
 
-def _looks_like_quota_exhausted(exc) -> bool:
+def _looks_like_persistent_error(exc) -> bool:
+    """
+    Heuristic: if a prompt still fails after ALL backoff retries have been
+    exhausted, and the error contains quota/model-availability/billing
+    wording, every remaining prompt will almost certainly fail the exact
+    same way - so the run stops rather than grinding through all of them
+    uselessly.
+    """
     text = str(exc).lower()
-    return any(keyword in text for keyword in QUOTA_KEYWORDS)
+    return any(keyword in text for keyword in PERSISTENT_ERROR_KEYWORDS)
 
 
 class GroqBenchmarkRunner:
@@ -160,22 +176,32 @@ class GroqBenchmarkRunner:
             try:
                 result = self._call_with_backoff(item["prompt"])
             except RuntimeError as exc:
-                if _looks_like_quota_exhausted(exc):
+                systemic = _looks_like_persistent_error(exc) or completed == 0
+                if systemic:
                     remaining = total - completed - skipped
+                    reason = (
+                        "quota/model-availability/billing wording detected"
+                        if _looks_like_persistent_error(exc)
+                        else "the very first prompt failed after all retries - "
+                             "likely a systemic issue (model name, API key, or endpoint), "
+                             "not a per-prompt problem"
+                    )
                     logger.error(
-                        "Quota exhaustion detected on %s after exhausting all retries: %s",
-                        prompt_id, exc,
+                        "Persistent error detected on %s after exhausting all retries (%s): %s",
+                        prompt_id, reason, exc,
                     )
                     logger.error(
                         "STOPPING RUN EARLY. %d completed, %d remaining. "
-                        "This provider resets at %s. Re-run this script after that "
-                        "time - already-completed prompts are cached and will be "
-                        "skipped automatically, so it will continue from %s.",
+                        "If this is a quota issue, this provider resets at %s. "
+                        "If this is a model/config issue, check MODEL_NAME and your "
+                        "API key before re-running. Already-completed prompts are "
+                        "cached and will be skipped automatically, so re-running "
+                        "will continue from %s.",
                         completed, remaining, RESET_INFO, prompt_id,
                     )
                     stopped_early = True
                     break
-                logger.error("Giving up on %s (non-quota error): %s", prompt_id, exc)
+                logger.error("Giving up on %s (isolated error): %s", prompt_id, exc)
                 failed += 1
                 continue
 

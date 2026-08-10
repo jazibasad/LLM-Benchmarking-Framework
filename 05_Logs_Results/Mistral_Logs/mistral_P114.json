@@ -1,0 +1,14 @@
+{
+  "id": "P114",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Explain software container orchestration. NEGATIVE CONSTRAINT 1: Do not use any words longer than 6 characters. NEGATIVE CONSTRAINT 2: Format as bullet points.",
+  "evaluation_criteria": "Word Length Limit: 0-5 (Evaluates strict adherence to <= 6 char words)\nFormatting: 0-5 (Evaluates bullet points)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "- **What it is:**\n  - Auto way to run, scale, move apps in small boxes (containers).\n  - Like a boss for many containers—keeps them in check.\n\n- **Why use it?**\n  - Apps run same way, no matter where.\n  - Easy to add or cut apps fast.\n  - Saves space, uses resources smartly.\n\n- **Key parts:**\n  - **Orchestrator:** Boss tool (like Kubernetes, Docker Swarm).\n  - **Containers:** Small, light apps with all they need.\n  - **Cluster:** Group of computers working as one.\n\n- **What it does:**\n  - Starts, stops, moves apps when needed.\n  - Fixes if apps crash or get busy.\n  - Balances work across computers.\n\n- **Big names:**\n  - **Kubernetes:** Most used, complex but strong.\n  - **Docker Swarm:** Simpler, good for small jobs.\n  - **Nomad:** Light, easy to set up.\n\n- **Good for:**\n  - Big apps with many parts.\n  - Apps that need to grow or shrink fast.\n  - Teams that want apps to run smooth, no fuss.\n\n- **Bad for:**\n  - Tiny apps with no need for scaling.\n  - Teams who hate learning new tools.\n  - Simple setups where extra work isn’t worth it.",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "timestamp_utc": "2026-08-10T09:44:37.112080+00:00"
+}

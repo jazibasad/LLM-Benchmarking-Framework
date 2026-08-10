@@ -1,0 +1,14 @@
+{
+  "id": "P068",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "An enterprise cluster runs 3 tiers of virtual machines: Web tier (16 VMs at 2 vCPU each), App tier (32 VMs at 4 vCPU each), and DB tier (8 VMs at 16 vCPU each). If hypervisor overcommitment ratio is set to 2.5:1, calculate the physical host CPU core count required.",
+  "evaluation_criteria": "Virtual Cpu Sum: 0-5 (Evaluates total vCPU aggregation across tiers)\nOvercommitment Division: 0-5 (Evaluates physical core requirement calculation)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "To calculate the **physical host CPU core count** required for the enterprise cluster with the given virtual machines (VMs) and hypervisor overcommitment ratio, follow these steps:\n\n### **1. Calculate Total vCPU Requirements per Tier**\n\n- **Web Tier:**\n  - **Number of VMs:** 16\n  - **vCPU per VM:** 2\n  - **Total vCPU:** \\( 16 \\times 2 = 32 \\) vCPUs\n\n- **App Tier:**\n  - **Number of VMs:** 32\n  - **vCPU per VM:** 4\n  - **Total vCPU:** \\( 32 \\times 4 = 128 \\) vCPUs\n\n- **DB Tier:**\n  - **Number of VMs:** 8\n  - **vCPU per VM:** 16\n  - **Total vCPU:** \\( 8 \\times 16 = 128 \\) vCPUs\n\n### **2. Sum Total vCPU Across All Tiers**\n\n\\[\n32 \\ (\\text{Web}) + 128 \\ (\\text{App}) + 128 \\ (\\text{DB}) = 288 \\ \\text{vCPUs}\n\\]\n\n### **3. Apply Hypervisor Overcommitment Ratio**\n\nThe **overcommitment ratio** of **2.5:1** means the physical host must support **2.5 times** the total vCPU demand.\n\n\\[\n\\text{Physical CPU Required} = \\frac{\\text{Total vCPU}}{\\text{Overcommitment Ratio}} = \\frac{288}{2.5} = 115.2\n\\]\n\nSince we cannot have a fraction of a CPU core, we **round up** to the nearest whole number:\n\n\\[\n\\boxed{116 \\ \\text{CPU cores}}\n\\]\n\n### **Final Answer**\n\nThe enterprise cluster requires **116 physical CPU cores** to support the given VMs with a hypervisor overcommitment ratio of **2.5:1**.",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "timestamp_utc": "2026-08-10T09:39:09.032196+00:00"
+}

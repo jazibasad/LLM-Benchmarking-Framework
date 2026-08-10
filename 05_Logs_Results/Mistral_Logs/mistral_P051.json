@@ -1,0 +1,14 @@
+{
+  "id": "P051",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Easy",
+  "prompt": "A project budget allocates $40,000 for software licenses, $60,000 for hardware, and $50,000 for cloud hosting. If software costs increase by 10%, hardware decreases by 5%, and cloud hosting remains unchanged, calculate the net percentage change of the total budget.",
+  "evaluation_criteria": "Baseline Summation: 0-5 (Evaluates initial total cost computation)\nPercentage Net Change: 0-5 (Evaluates revised total and net percentage shift)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "To calculate the net percentage change in the total budget after the adjustments, follow these steps:\n\n### **1. Original Budget Allocations:**\n- **Software Licenses:** \\$40,000\n- **Hardware:** \\$60,000\n- **Cloud Hosting:** \\$50,000\n\n**Total Original Budget:**\n\\[\n40,000 + 60,000 + 50,000 = \\$150,000\n\\]\n\n### **2. Adjusted Budget Allocations:**\n- **Software Licenses (10% increase):**\n  \\[\n  40,000 \\times 1.10 = \\$44,000\n  \\]\n\n- **Hardware (5% decrease):**\n  \\[\n  60,000 \\times 0.95 = \\$57,000\n  \\]\n\n- **Cloud Hosting (unchanged):**\n  \\[\n  \\$50,000\n  \\]\n\n**Total Adjusted Budget:**\n\\[\n44,000 + 57,000 + 50,000 = \\$151,000\n\\]\n\n### **3. Calculate the Net Percentage Change:**\n\\[\n\\text{Net Change} = \\text{Adjusted Budget} - \\text{Original Budget} = 151,000 - 150,000 = \\$1,000\n\\]\n\n\\[\n\\text{Percentage Change} = \\left( \\frac{1,000}{150,000} \\right) \\times 100\\% \\approx 0.67\\%\n\\]\n\n### **Final Answer:**\n\\[\n\\boxed{0.67\\%}\n\\]",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "timestamp_utc": "2026-08-10T09:35:15.941480+00:00"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "P050",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Easy",
+  "prompt": "A battery backup unit provides 12 hours of power when drawing 50 watts. Calculate how many hours of backup it will provide if the load increases to 150 watts, assuming a non-linear Peukert efficiency exponent of 1.1.",
+  "evaluation_criteria": "Capacity Scaling: 0-5 (Evaluates power-time invariant calculation)\nExponent Application: 0-5 (Evaluates Peukert equation logic)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "To determine the backup hours when the load increases to **150 watts** with a **Peukert efficiency exponent of 1.1**, follow these steps:\n\n### **1. Understand the Given Information:**\n- **Initial Power (P₁):** 50 watts\n- **Initial Backup Time (t₁):** 12 hours\n- **New Power (P₂):** 150 watts\n- **Peukert Exponent (k):** 1.1\n\n### **2. Calculate the Total Energy Capacity (E) of the Battery:**\nThe Peukert equation relates the discharge time to the load current (or power) with a non-linear efficiency factor:\n\n\\[\nE = P_1 \\times t_1 \\times \\left(\\frac{P_1}{P_1}\\right)^{k-1}\n\\]\n\nHowever, a simpler approach is to recognize that the **energy capacity (E)** can be expressed in terms of the initial conditions:\n\n\\[\nE = P_1 \\times t_1 \\times \\left(\\frac{P_1}{P_{\\text{nominal}}}\\right)^{k-1}\n\\]\n\nBut since we don't have a nominal power, we can instead use the **Peukert's Law** to find the new backup time (\\( t_2 \\)) when the power changes:\n\n\\[\nt_2 = t_1 \\times \\left(\\frac{P_1}{P_2}\\right)^{k-1}\n\\]\n\n### **3. Plug in the Values:**\n\\[\nt_2 = 12 \\, \\text{hours} \\times \\left(\\frac{50 \\, \\text{W}}{150 \\, \\text{W}}\\right)^{1.1 - 1}\n\\]\n\\[\nt_2 = 12 \\times \\left(\\frac{1}{3}\\right)^{0.1}\n\\]\n\n### **4. Calculate \\( \\left(\\frac{1}{3}\\right)^{0.1} \\):**\nUsing logarithms or a calculator:\n\n\\[\n\\left(\\frac{1}{3}\\right)^{0.1} = e^{0.1 \\times \\ln\\left(\\frac{1}{3}\\right)} = e^{0.1 \\times (-1.0986)} \\approx e^{-0.10986} \\approx 0.896\n\\]\n\n### **5. Compute the Final Backup Time:**\n\\[\nt_2 = 12 \\times 0.896 \\approx 10.75 \\, \\text{hours}\n\\]\n\n### **Final Answer:**\n\\[\n\\boxed{10.75 \\text{ hours}}\n\\]\n\n**Thus, the battery backup unit will provide approximately 10.75 hours of power when the load increases to 150 watts with a Peukert exponent of 1.1.**",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "timestamp_utc": "2026-08-10T09:35:12.591026+00:00"
+}

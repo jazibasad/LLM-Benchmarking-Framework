@@ -1,0 +1,14 @@
+{
+  "id": "P044",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Easy",
+  "prompt": "A train travels 120 km at 60 km/h, then encounters track maintenance and travels the next 80 km at 40 km/h. Calculate the total travel time and overall average speed for the entire trip.",
+  "evaluation_criteria": "Time Calculation: 0-5 (Evaluates correct individual leg time computations)\nAverage Speed Formula: 0-5 (Evaluates correct total distance divided by total time)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "Let's break down the problem step by step to find the **total travel time** and the **overall average speed** for the entire trip.\n\n### **Given:**\n1. **First Segment:**\n   - Distance (\\(d_1\\)) = 120 km\n   - Speed (\\(v_1\\)) = 60 km/h\n\n2. **Second Segment:**\n   - Distance (\\(d_2\\)) = 80 km\n   - Speed (\\(v_2\\)) = 40 km/h\n\n---\n\n### **1. Calculate the Time for Each Segment**\n\n**Time (\\(t\\)) = Distance (\\(d\\)) / Speed (\\(v\\))**\n\n- **First Segment Time (\\(t_1\\)):**\n  \\[\n  t_1 = \\frac{d_1}{v_1} = \\frac{120 \\text{ km}}{60 \\text{ km/h}} = 2 \\text{ hours}\n  \\]\n\n- **Second Segment Time (\\(t_2\\)):**\n  \\[\n  t_2 = \\frac{d_2}{v_2} = \\frac{80 \\text{ km}}{40 \\text{ km/h}} = 2 \\text{ hours}\n  \\]\n\n---\n\n### **2. Calculate the Total Travel Time**\n\n\\[\n\\text{Total Time} = t_1 + t_2 = 2 \\text{ hours} + 2 \\text{ hours} = 4 \\text{ hours}\n\\]\n\n---\n\n### **3. Calculate the Overall Average Speed**\n\n**Average Speed (\\(v_{\\text{avg}}\\)) = Total Distance / Total Time**\n\n- **Total Distance (\\(D\\)):**\n  \\[\n  D = d_1 + d_2 = 120 \\text{ km} + 80 \\text{ km} = 200 \\text{ km}\n  \\]\n\n- **Average Speed:**\n  \\[\n  v_{\\text{avg}} = \\frac{D}{\\text{Total Time}} = \\frac{200 \\text{ km}}{4 \\text{ hours}} = 50 \\text{ km/h}\n  \\]\n\n---\n\n### **Final Answers:**\n\n- **Total Travel Time:** \\(\\boxed{4 \\text{ hours}}\\)\n- **Overall Average Speed:** \\(\\boxed{50 \\text{ km/h}}\\)",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "timestamp_utc": "2026-08-10T09:34:34.679050+00:00"
+}

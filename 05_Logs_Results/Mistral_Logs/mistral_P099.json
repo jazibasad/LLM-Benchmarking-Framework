@@ -1,0 +1,14 @@
+{
+  "id": "P099",
+  "category": "Instruction Following",
+  "difficulty": "Easy",
+  "prompt": "Give a definition of RAM. NEGATIVE CONSTRAINT: Do not use the words 'memory', 'random', or 'access'.",
+  "evaluation_criteria": "Forbidden Words: 0-5 (Evaluates absence of target words)\nDefinition Quality: 0-5 (Evaluates clarity of volatile storage definition)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "RAM (Random Access Memory) is a volatile, temporary storage medium within a computer that holds active data and instructions required for immediate processing by the CPU. It enables rapid retrieval and modification of information, facilitating seamless execution of programs and tasks.",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "timestamp_utc": "2026-08-10T09:44:06.648821+00:00"
+}

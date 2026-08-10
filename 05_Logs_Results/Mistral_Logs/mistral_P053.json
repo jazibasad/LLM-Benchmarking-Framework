@@ -1,0 +1,14 @@
+{
+  "id": "P053",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Easy",
+  "prompt": "A database query cache has a hit ratio of 85% and takes 2ms to return data on a hit. A cache miss queries the disk, taking 45ms. Calculate the average query response time across 1,000 requests.",
+  "evaluation_criteria": "Weighted Average Math: 0-5 (Evaluates hit vs miss latency weighting)\nArithmetic Accuracy: 0-5 (Evaluates correct final average time)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "To calculate the **average query response time** across 1,000 requests, we'll consider the **hit ratio** and the **response times** for both cache hits and misses.\n\n### Given:\n- **Hit ratio (H):** 85% → 0.85\n- **Miss ratio (M):** 15% → 0.15 (since \\(1 - 0.85 = 0.15\\))\n- **Time for a hit (T_hit):** 2 ms\n- **Time for a miss (T_miss):** 45 ms\n\n### Steps:\n1. **Calculate the total time for hits:**\n   \\[\n   \\text{Total hit time} = \\text{Number of hits} \\times T_{\\text{hit}} = 1000 \\times 0.85 \\times 2\\,\\text{ms} = 1700\\,\\text{ms}\n   \\]\n\n2. **Calculate the total time for misses:**\n   \\[\n   \\text{Total miss time} = \\text{Number of misses} \\times T_{\\text{miss}} = 1000 \\times 0.15 \\times 45\\,\\text{ms} = 6750\\,\\text{ms}\n   \\]\n\n3. **Sum the total response times:**\n   \\[\n   \\text{Total response time} = \\text{Total hit time} + \\text{Total miss time} = 1700\\,\\text{ms} + 6750\\,\\text{ms} = 8450\\,\\text{ms}\n   \\]\n\n4. **Calculate the average response time per request:**\n   \\[\n   \\text{Average response time} = \\frac{\\text{Total response time}}{\\text{Number of requests}} = \\frac{8450\\,\\text{ms}}{1000} = 8.45\\,\\text{ms}\n   \\]\n\n### Final Answer:\n\\[\n\\boxed{8.45\\,\\text{ms}}\n\\]",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "timestamp_utc": "2026-08-10T09:36:44.543376+00:00"
+}

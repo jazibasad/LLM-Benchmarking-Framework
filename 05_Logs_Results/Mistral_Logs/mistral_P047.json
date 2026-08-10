@@ -1,0 +1,14 @@
+{
+  "id": "P047",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Easy",
+  "prompt": "A company's server CPU usage starts at 35%. It increases by 15% during peak hours, drops by 25% when background jobs complete, and finally surges by 40% of that intermediate value during a batch sync. Calculate the final CPU usage percentage.",
+  "evaluation_criteria": "Sequential Math: 0-5 (Evaluates precise percentage application order)\nAccuracy: 0-5 (Evaluates correct arithmetic output)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "Let's calculate the final CPU usage step by step based on the given changes.\n\n1. **Initial CPU Usage:**\n   - **35%**\n\n2. **Increase by 15% during peak hours:**\n   - **Increase Amount:** \\( 35\\% \\times 15\\% = 35 \\times 0.15 = 5.25\\% \\)\n   - **New Usage:** \\( 35\\% + 5.25\\% = 40.25\\% \\)\n\n3. **Drop by 25% when background jobs complete:**\n   - **Drop Amount:** \\( 40.25\\% \\times 25\\% = 40.25 \\times 0.25 = 10.0625\\% \\)\n   - **New Usage:** \\( 40.25\\% - 10.0625\\% = 30.1875\\% \\)\n\n4. **Surge by 40% of the intermediate value during a batch sync:**\n   - **Surge Amount:** \\( 30.1875\\% \\times 40\\% = 30.1875 \\times 0.40 = 12.075\\% \\)\n   - **Final Usage:** \\( 30.1875\\% + 12.075\\% = 42.2625\\% \\)\n\n**Final CPU Usage:**\n\\[\n\\boxed{42.26\\%}\n\\]\n\n*Note: The final value is rounded to two decimal places for clarity.*",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "timestamp_utc": "2026-08-10T09:34:55.274576+00:00"
+}

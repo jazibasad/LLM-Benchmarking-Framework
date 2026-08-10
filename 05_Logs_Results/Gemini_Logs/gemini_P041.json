@@ -1,0 +1,14 @@
+{
+  "id": "P041",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Easy",
+  "prompt": "A logistics center schedules three trucks (A, B, C). Truck A departs every 4 hours, B every 6 hours, and C every 8 hours. If they all departed simultaneously at 00:00 on Monday, calculate the exact day and time of their next simultaneous departure, detailing each step of the least common multiple (LCM) calculation.",
+  "evaluation_criteria": "Mathematical Accuracy: 0-5 (Evaluates correct calculation of LCM)\nStep By Step Transparency: 0-5 (Evaluates clarity of logical breakdown)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "To find the exact day and time of the next simultaneous departure of Trucks A, B, and C, we need to find the **Least Common Multiple (LCM)** of their departure intervals: 4 hours, 6 hours, and 8 hours.\n\n---\n\n### Step 1: Detailed LCM Calculation\n\nWe will use the **Prime Factorization Method** to find the LCM of 4, 6, and 8.\n\n1. **Find the prime factorization of each number:**\n   * **4** can be written as: $2 \\times 2 = 2^2$\n   * **6** can be written as: $2 \\times 3 = 2^1 \\times 3^1$\n   * **8** can be written as: $2 \\times 2 \\times 2 = 2^3$\n\n2. **Identify all the unique prime factors present:**\n   The unique prime factors used across all three numbers are **2** and **3**.\n\n3. **Determine the highest power of each prime factor:**\n   * For the prime factor **2**: The powers are $2^2$ (from 4), $2^1$ (from 6), and $2^3$ (from 8). The highest power is **$2^3$**.\n   * For the prime factor **3**: The powers are $3^0$ (from 4 and 8) and $3^1$ (from 6). The highest power is **$3^1$**.\n\n4. **Multiply these highest powers together to find the LCM:**\n   $$\\text{LCM}(4, 6, 8) = 2^3 \\times 3^1$$\n   $$\\text{LCM}(4, 6, 8) = 8 \\times 3$$\n   $$\\text{LCM}(4, 6, 8) = 24$$\n\nThe three trucks will depart simultaneously again in **24 hours**.\n\n---\n\n### Step 2: Calculate the Exact Day and Time\n\n* **Initial simultaneous departure:** Monday at 00:00 (Midnight)\n* **Time elapsed until the next simultaneous departure:** 24 hours\n\nAdding 24 hours to Monday at 00:00:\n$$\\text{Monday 00:00} + 24 \\text{ hours} = \\text{Tuesday 00:00}$$\n\n### Conclusion\n\nThe next simultaneous departure of Trucks A, B, and C will occur on **Tuesday at 00:00 (Midnight)**.",
+  "raw": {
+    "model": "gemini-3.5-flash"
+  },
+  "timestamp_utc": "2026-08-10T09:20:08.776928+00:00"
+}

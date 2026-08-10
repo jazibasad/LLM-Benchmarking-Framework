@@ -1,0 +1,14 @@
+{
+  "id": "P006",
+  "category": "Knowledge Retrieval",
+  "difficulty": "Easy",
+  "prompt": "Define what an HTTP status code in the 5xx range signifies and give two common examples.",
+  "evaluation_criteria": "Factual Accuracy: 0-5 (Evaluates server error classification)\nExample Precision: 0-5 (Evaluates correctness of examples like 500 or 503)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "An **HTTP status code in the 5xx range** indicates that the **server encountered an error while fulfilling a valid request**. These errors are typically on the server's side, meaning the client's request was correct, but the server failed to process it properly.\n\n### **Two Common Examples of 5xx Status Codes:**\n1. **500 Internal Server Error**\n   - The server encountered an unexpected condition that prevented it from fulfilling the request.\n   - Example: A bug in server-side code causing a crash.\n\n2. **503 Service Unavailable**\n   - The server is temporarily unable to handle the request due to maintenance, overload, or downtime.\n   - Example: A website undergoing updates or experiencing high traffic.\n\nOther common 5xx codes include **502 Bad Gateway**, **504 Gateway Timeout**, and **501 Not Implemented**.",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "timestamp_utc": "2026-08-10T09:26:50.594715+00:00"
+}

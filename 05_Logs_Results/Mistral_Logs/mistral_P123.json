@@ -1,0 +1,14 @@
+{
+  "id": "P123",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Summarize continuous integration pipelines. NEGATIVE CONSTRAINT 1: Do not use any numbers or digits. NEGATIVE CONSTRAINT 2: Exactly 5 sentences. NEGATIVE CONSTRAINT 3: Every sentence must end with an exclamation mark (!).",
+  "evaluation_criteria": "Digit Exclusion: 0-5 (Evaluates zero numbers)\nSentence Count And Punctuation: 0-5 (Evaluates 5 sentences ending with !)",
+  "max_score": "15",
+  "model": "mistral",
+  "response_text": "Continuous integration pipelines automate the process of merging code changes to detect issues early and ensure smooth collaboration!\n\nThey integrate code updates frequently to catch errors before they escalate into larger problems!\n\nAutomated testing runs on every submission to validate functionality and maintain code quality!\n\nDevelopers receive immediate feedback, allowing them to fix mistakes right away without delays!\n\nThis streamlined workflow keeps projects stable and reduces the risk of costly errors later on!",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "timestamp_utc": "2026-08-10T09:44:57.545449+00:00"
+}

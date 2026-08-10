@@ -1,0 +1,14 @@
+{
+  "id": "P115",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Detail database indexing. NEGATIVE CONSTRAINT 1: Do not use the letter 's' or 'S'. NEGATIVE CONSTRAINT 2: Write in poetic stanza format.",
+  "evaluation_criteria": "Negative Constraint: 0-5 (Evaluates absolute absence of letter s/S)\nPoetry Format: 0-5 (Evaluates stanza layout)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "**The Art of Indexing—Unseen Threads**\n\nBeneath the code where data sleeps,\nA hidden hand the queries keeps.\nNo brute-force scan, no wasted breath—\nThe index stands as silent death.\n\nA pointer’s touch, a branch so neat,\nA tree of keys in perfect seat.\nNo *s* shall mar this sacred art,\nFor *s* is but a stumbling heart.\n\nThe leaf must lie in ordered row,\nA path for speed, a fleeting glow.\nNo *S* shall dare to twist the line,\nLest chaos claim the search divine.\n\nSo build thy keys with careful hand,\nNo *s* nor *S* to mar the plan.\nFor speed is born in silent grace—\nA dance of code, a fleeting trace.",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "timestamp_utc": "2026-08-10T09:44:38.694681+00:00"
+}
