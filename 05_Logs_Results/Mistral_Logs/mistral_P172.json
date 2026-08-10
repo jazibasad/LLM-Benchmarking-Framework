@@ -1,0 +1,14 @@
+{
+  "id": "P172",
+  "category": "Coding & System Architecture",
+  "difficulty": "Easy",
+  "prompt": "Write a C# method that takes a list of integers and returns the second highest number without using built-in sorting functions.",
+  "evaluation_criteria": "Algorithmic Correctness: 0-5 (Evaluates correct single-pass or tracked max logic)\nSyntax Cleanliness: 0-5 (Evaluates proper C# syntax)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "# C# Method to Find the Second Highest Number Without Sorting\n\nHere's a C# method that finds the second highest number in a list of integers without using built-in sorting functions:\n\n```csharp\npublic static int FindSecondHighest(List<int> numbers)\n{\n    if (numbers == null || numbers.Count < 2)\n    {\n        throw new ArgumentException(\"List must contain at least two numbers\");\n    }\n\n    int highest = int.MinValue;\n    int secondHighest = int.MinValue;\n\n    foreach (int num in numbers)\n    {\n        if (num > highest)\n        {\n            secondHighest = highest;\n            highest = num;\n        }\n        else if (num > secondHighest && num != highest)\n        {\n            secondHighest = num;\n        }\n    }\n\n    if (secondHighest == int.MinValue)\n    {\n        throw new ArgumentException(\"All numbers in the list are the same\");\n    }\n\n    return secondHighest;\n}\n```\n\n## How It Works:\n\n1. First, we handle edge cases where the list might be null or too small.\n2. We initialize two variables to track the highest and second highest numbers.\n3. As we iterate through the list:\n   - If we find a number greater than the current highest, we update both highest and second highest.\n   - If we find a number between the current highest and second highest, we update just the second highest.\n4. Finally, we check if we actually found a second highest number (in case all numbers were the same).\n5. We return the second highest number.\n\n## Example Usage:\n\n```csharp\nvar numbers = new List<int> { 5, 2, 8, 1, 9, 3, 7 };\nint secondHighest = FindSecondHighest(numbers);\nConsole.WriteLine(secondHighest); // Output: 8\n```\n\nThis solution has a time complexity of O(n) since it only requires a single pass through the list.",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "timestamp_utc": "2026-08-10T09:55:56.399193+00:00"
+}
