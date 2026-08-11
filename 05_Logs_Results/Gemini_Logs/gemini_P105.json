@@ -1,0 +1,14 @@
+{
+  "id": "P105",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Explain how a hash function works. NEGATIVE CONSTRAINT 1: Do not use the words 'hash', 'key', or 'map'. NEGATIVE CONSTRAINT 2: Format as an XML snippet with root tag <explanation>.",
+  "evaluation_criteria": "Forbidden Words: 0-5 (Evaluates absence of hash, key, map)\nXml Formatting: 0-5 (Evaluates valid XML tags)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "<explanation>\n  <summary>\n    A transformation algorithm takes an input of any size—whether it is a single letter, a password, or an entire digital book—and processes it to produce a unique, fixed-length sequence of characters. This output acts as a digital fingerprint for the original data.\n  </summary>\n  <how_it_works>\n    <step_1>\n      The algorithm receives the input data and breaks it down into binary format (ones and zeros).\n    </step_1>\n    <step_2>\n      It applies a series of complex mathematical and logical operations, such as bitwise shifting, mixing, and modular arithmetic, to scramble the data.\n    </step_2>\n    <step_3>\n      Regardless of the original size of the input, the algorithm compresses and formats the scrambled data into a standardized, pre-determined length (such as 256 bits) and presents it as the final output.\n    </step_3>\n  </how_it_works>\n  <core_properties>\n    <deterministic>\n      The same input will always yield the exact same output sequence. If you run the algorithm on the same file tomorrow, the resulting fingerprint will be identical.\n    </deterministic>\n    <one_way>\n      The process is designed to be irreversible. You can easily generate the output from the input, but it is mathematically impossible to reconstruct the original input using only the output code.\n    </one_way>\n    <avalanche_effect>\n      The slightest change to the input data, such as changing a single period to a comma, will cause a dramatic and unpredictable change in the resulting output.\n    </avalanche_effect>\n    <collision_resistant>\n      It is exceptionally rare for two different inputs to produce the exact same output. The system is designed to distribute outputs evenly across all possible combinations to prevent overlap.\n    </collision_resistant>\n  </core_properties>\n</explanation>",
+  "raw": {
+    "model": "gemini-3.5-flash"
+  },
+  "timestamp_utc": "2026-08-11T15:32:58.867364+00:00"
+}

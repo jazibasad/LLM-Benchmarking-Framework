@@ -1,0 +1,14 @@
+{
+  "id": "P096",
+  "category": "Instruction Following",
+  "difficulty": "Easy",
+  "prompt": "Write a short sentence about cybersecurity. NEGATIVE CONSTRAINT: Do not use any vowels (A, E, I, O, U, lowercase or uppercase).",
+  "evaluation_criteria": "Vowel Exclusion: 0-5 (Evaluates strict absence of vowels)\nReadability Or Intent: 0-5 (Evaluates attempt at conveying meaning)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "Spy syncs my VPN.",
+  "raw": {
+    "model": "gemini-3.5-flash"
+  },
+  "timestamp_utc": "2026-08-11T15:30:54.145013+00:00"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "P093",
+  "category": "Instruction Following",
+  "difficulty": "Easy",
+  "prompt": "Explain what an algorithm is in two sentences. NEGATIVE CONSTRAINT: The response must not contain any punctuation marks except periods at the ends of sentences.",
+  "evaluation_criteria": "Sentence Count: 0-5 (Evaluates exact two-sentence rule)\nPunctuation Constraint: 0-5 (Evaluates absence of commas, hyphens, or apostrophes)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "An algorithm is a sequence of precise instructions used to solve a specific problem or perform a task. Computers follow these rules step by step to complete actions and process information.",
+  "raw": {
+    "model": "gemini-3.5-flash"
+  },
+  "timestamp_utc": "2026-08-11T15:30:22.194487+00:00"
+}

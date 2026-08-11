@@ -1,0 +1,14 @@
+{
+  "id": "P099",
+  "category": "Instruction Following",
+  "difficulty": "Easy",
+  "prompt": "Give a definition of RAM. NEGATIVE CONSTRAINT: Do not use the words 'memory', 'random', or 'access'.",
+  "evaluation_criteria": "Forbidden Words: 0-5 (Evaluates absence of target words)\nDefinition Quality: 0-5 (Evaluates clarity of volatile storage definition)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "**RAM** is a computer's high-speed, temporary storage workspace. It holds the active data, running applications, and operating system instructions that the central processor is currently utilizing, allowing for near-instant retrieval and modification. Because this storage is volatile, all stored information is wiped clean when the device is powered off.",
+  "raw": {
+    "model": "gemini-3.5-flash"
+  },
+  "timestamp_utc": "2026-08-11T15:31:28.348177+00:00"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "P106",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Summarize the client-server architecture model. NEGATIVE CONSTRAINT 1: Do not use the letter 'a' or 'A'. NEGATIVE CONSTRAINT 2: Format as a bulleted list of three items.",
+  "evaluation_criteria": "Negative Constraint: 0-5 (Evaluates absolute absence of letter a/A)\nFormatting: 0-5 (Evaluates bullet list)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "* Clients send requests for resources to servers.\n* Servers process incoming queries, host resources, then send responses.\n* This model uses network links to connect multiple distinct users to host systems.",
+  "raw": {
+    "model": "gemini-3.5-flash"
+  },
+  "timestamp_utc": "2026-08-11T15:33:14.022103+00:00"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "P094",
+  "category": "Instruction Following",
+  "difficulty": "Easy",
+  "prompt": "Name three popular programming languages. NEGATIVE CONSTRAINT: Output must be formatted strictly as a single line JSON array of strings.",
+  "evaluation_criteria": "Json Validity: 0-5 (Evaluates parseable JSON format)\nSingle Line: 0-5 (Evaluates absence of line breaks)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "[\"Python\", \"JavaScript\", \"Java\"]",
+  "raw": {
+    "model": "gemini-3.5-flash"
+  },
+  "timestamp_utc": "2026-08-11T15:30:24.730572+00:00"
+}

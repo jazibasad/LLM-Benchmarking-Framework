@@ -1,0 +1,14 @@
+{
+  "id": "P091",
+  "category": "Instruction Following",
+  "difficulty": "Easy",
+  "prompt": "Provide a summary of the OSI model layers. NEGATIVE CONSTRAINT: Do NOT mention the physical layer or the application layer anywhere in your response. Format the output strictly as a numbered list.",
+  "evaluation_criteria": "Negative Constraint Adherence: 0-5 (Evaluates strict avoidance of forbidden layers)\nFormatting Adherence: 0-5 (Evaluates strict numbered list structure)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "1. **Data Link Layer (Layer 2):** This layer provides node-to-node data transfer, detects and corrects transmission errors, and manages medium access control using hardware (MAC) addresses.\n\n2. **Network Layer (Layer 3):** This layer handles the routing and forwarding of data packets across different networks using logical addressing, such as IP addresses.\n\n3. **Transport Layer (Layer 4):** This layer is responsible for end-to-end communication, flow control, segmentation, and error recovery, ensuring reliable data transfer between hosts.\n\n4. **Session Layer (Layer 5):** This layer establishes, coordinates, manages, and terminates communication sessions between local and remote systems.\n\n5. **Presentation Layer (Layer 6):** This layer translates, encrypts, and compresses data, ensuring that information is formatted and syntax-compatible for the receiving system's software programs.",
+  "raw": {
+    "model": "gemini-3.5-flash"
+  },
+  "timestamp_utc": "2026-08-11T15:30:06.529731+00:00"
+}

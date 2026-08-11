@@ -1,0 +1,14 @@
+{
+  "id": "P107",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Detail the purpose of software unit testing. NEGATIVE CONSTRAINT 1: Do not use the words 'code', 'test', or 'bug'. NEGATIVE CONSTRAINT 2: Exactly two paragraphs.",
+  "evaluation_criteria": "Forbidden Words: 0-5 (Evaluates avoidance of code, test, bug)\nParagraph Count: 0-5 (Evaluates exact two paragraphs)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "The primary objective of examining individual modules within an application is to verify that each isolated component performs its intended function correctly. By isolating the smallest pieces of a digital solution, creators can analyze their behavior under specific, controlled conditions. This process ensures that the underlying logic behaves predictably before these elements are integrated into the larger, more complex system. Ultimately, it establishes a strong foundation of quality, ensuring that the fundamental building blocks of the program are robust and reliable from the very beginning.\n\nAdditionally, this granular verification serves as a preventative shield, catching logic flaws and architectural mishaps early in the development cycle when they are easiest and cheapest to resolve. It also acts as a form of living documentation, demonstrating exactly how each segment is designed to operate under various scenarios. When updates or enhancements are introduced later, this automated validation process gives creators the confidence to modify the architecture without fear of silently breaking existing features, thereby streamlining maintenance and accelerating overall delivery.",
+  "raw": {
+    "model": "gemini-3.5-flash"
+  },
+  "timestamp_utc": "2026-08-11T15:33:38.599469+00:00"
+}

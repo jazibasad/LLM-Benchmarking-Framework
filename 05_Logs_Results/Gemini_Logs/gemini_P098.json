@@ -1,0 +1,14 @@
+{
+  "id": "P098",
+  "category": "Instruction Following",
+  "difficulty": "Easy",
+  "prompt": "State the boiling point of water. NEGATIVE CONSTRAINT: Your entire response must consist of exactly four words.",
+  "evaluation_criteria": "Word Count: 0-5 (Evaluates exact four-word length)\nFactual Accuracy: 0-5 (Evaluates correct temperature statement)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "One hundred degrees Celsius.",
+  "raw": {
+    "model": "gemini-3.5-flash"
+  },
+  "timestamp_utc": "2026-08-11T15:31:04.791219+00:00"
+}
