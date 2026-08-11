@@ -1,0 +1,14 @@
+{
+  "id": "P120",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Explain database ACID compliance. NEGATIVE CONSTRAINT 1: Each successive word must start with the next consecutive letter of the alphabet (A, B, C, D, E, F...). NEGATIVE CONSTRAINT 2: Minimum 15 words, maximum 25 words.",
+  "evaluation_criteria": "Alphabetical Word Sequence: 0-5 (Evaluates A-B-C-D initial letter progression)\nLength Bounds: 0-5 (Evaluates word count limits)",
+  "max_score": "15",
+  "model": "gemini",
+  "response_text": "Atomicity, besides consistency, delivers eternal, flawless governance, highly isolating jobs, keeping logical master node operations preserving query results safely.",
+  "raw": {
+    "model": "gemini-3.5-flash"
+  },
+  "timestamp_utc": "2026-08-11T15:38:49.591266+00:00"
+}

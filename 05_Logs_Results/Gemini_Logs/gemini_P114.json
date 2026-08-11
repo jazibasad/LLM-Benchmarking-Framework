@@ -1,0 +1,14 @@
+{
+  "id": "P114",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Explain software container orchestration. NEGATIVE CONSTRAINT 1: Do not use any words longer than 6 characters. NEGATIVE CONSTRAINT 2: Format as bullet points.",
+  "evaluation_criteria": "Word Length Limit: 0-5 (Evaluates strict adherence to <= 6 char words)\nFormatting: 0-5 (Evaluates bullet points)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "* Apps run in small boxes. We call them packs.\n* When you have many packs, you need a boss. This tool is that boss.\n* It can start or stop the packs.\n* It adds more packs if you get busy. It cuts packs if work is slow.\n* If a pack fails, it puts a new one up.\n* It shares the load among them.\n* It puts packs on many hosts. You do not have to pick which host.",
+  "raw": {
+    "model": "gemini-3.5-flash"
+  },
+  "timestamp_utc": "2026-08-11T15:36:46.094815+00:00"
+}

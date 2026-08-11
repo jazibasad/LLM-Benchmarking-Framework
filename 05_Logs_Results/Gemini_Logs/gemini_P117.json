@@ -1,0 +1,14 @@
+{
+  "id": "P117",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Explain asynchronous event loops in programming. NEGATIVE CONSTRAINT 1: Alternate sentence cases (Sentence 1 lowercase only, Sentence 2 UPPERCASE only, Sentence 3 lowercase only). NEGATIVE CONSTRAINT 2: Do not use the letter 'e'. NEGATIVE CONSTRAINT 3: Exactly four sentences.",
+  "evaluation_criteria": "Alternating Case: 0-5 (Evaluates strict lower/UPPER case alternation per sentence)\nForbidden Letter: 0-5 (Evaluates absence of letter e)\nSentence Count: 0-5 (Evaluates exact four sentences)",
+  "max_score": "15",
+  "model": "gemini",
+  "response_text": "an asynchronous loop runs tasks without stopping for slow input or output. IT LOOKS FOR WORK AND RUNS JOBS RAPIDLY. this stops blocking of our program. PROGRAMS GAIN HIGH UTILITY AND RUN FAST.",
+  "raw": {
+    "model": "gemini-3.5-flash"
+  },
+  "timestamp_utc": "2026-08-11T15:37:41.600781+00:00"
+}

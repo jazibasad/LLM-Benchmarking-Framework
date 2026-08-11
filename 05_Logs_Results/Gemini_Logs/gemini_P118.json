@@ -1,0 +1,14 @@
+{
+  "id": "P118",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Describe microservices architecture patterns. NEGATIVE CONSTRAINT 1: Every single word must contain an even number of letters. NEGATIVE CONSTRAINT 2: No punctuation except periods at sentence terminals. NEGATIVE CONSTRAINT 3: Exactly two sentences.",
+  "evaluation_criteria": "Even Letter Words: 0-5 (Evaluates word length parity check)\nPunctuation And Length: 0-5 (Evaluates sentence count and punctuation limits)",
+  "max_score": "15",
+  "model": "gemini",
+  "response_text": "Each microservice uses some separate database area to keep data isolated with gateways managing user flow. Some choreography or orchestrator mode will help manage workflow well.",
+  "raw": {
+    "model": "gemini-3.5-flash"
+  },
+  "timestamp_utc": "2026-08-11T15:38:14.610433+00:00"
+}

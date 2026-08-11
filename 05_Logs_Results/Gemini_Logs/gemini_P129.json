@@ -1,0 +1,14 @@
+{
+  "id": "P129",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Summarize database sharding strategies. NEGATIVE CONSTRAINT 1: Do not use any words with more than 4 letters. NEGATIVE CONSTRAINT 2: Format as an HTML unordered list (<ul><li>...</li></ul>).",
+  "evaluation_criteria": "Short Word Limit: 0-5 (Evaluates strict adherence to <= 4 letter words)\nHtml Formatting: 0-5 (Evaluates valid HTML tags)",
+  "max_score": "15",
+  "model": "gemini",
+  "response_text": "<ul>\n  <li>chop data by rows.</li>\n  <li>cut data by cols.</li>\n  <li>hash a key to find node.</li>\n  <li>sort data by size span.</li>\n  <li>find path in a map list.</li>\n</ul>",
+  "raw": {
+    "model": "gemini-3.5-flash"
+  },
+  "timestamp_utc": "2026-08-11T15:43:34.475915+00:00"
+}

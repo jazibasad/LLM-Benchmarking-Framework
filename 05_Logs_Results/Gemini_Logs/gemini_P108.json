@@ -1,0 +1,14 @@
+{
+  "id": "P108",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Explain multi-threading in software execution. NEGATIVE CONSTRAINT 1: Every word must be in alphabetical order within each sentence. NEGATIVE CONSTRAINT 2: Maximum two sentences.",
+  "evaluation_criteria": "Alphabetical Word Order: 0-5 (Evaluates intra-sentence alphabetical ordering)\nSentence Limit: 0-5 (Evaluates length constraint)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "Coordinated digital engines execute many split threads. Common memory permits quick shared task updates.",
+  "raw": {
+    "model": "gemini-3.5-flash"
+  },
+  "timestamp_utc": "2026-08-11T15:35:35.035761+00:00"
+}

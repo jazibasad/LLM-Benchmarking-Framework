@@ -1,0 +1,14 @@
+{
+  "id": "P115",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Detail database indexing. NEGATIVE CONSTRAINT 1: Do not use the letter 's' or 'S'. NEGATIVE CONSTRAINT 2: Write in poetic stanza format.",
+  "evaluation_criteria": "Negative Constraint: 0-5 (Evaluates absolute absence of letter s/S)\nPoetry Format: 0-5 (Evaluates stanza layout)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "A heavy book of data bound,\nWhere million item record hide,\nNo quick path can there be found,\nWe drift upon a giant tide.\n\nWe build a map, a clever key,\nTo leap the wait and quickly fly,\nWe lead the eye immediately,\nTo where the hidden data lie.\n\nA tree of block and pointer node,\nDividing up the heavy load,\nWill guide the path to what we need,\nWith great rapidity indeed.\n\nBut pay a price when you append,\nOr make a change to what you write,\nFor now the guide we have to mend,\nAnd keep it current, tidy, bright.\n\nWhen you will query for a name,\nOr look for number, date, or code,\nWe make the query quick and tame,\nTo lighten up the heavy load.",
+  "raw": {
+    "model": "gemini-3.5-flash"
+  },
+  "timestamp_utc": "2026-08-11T15:37:18.047539+00:00"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "P137",
+  "category": "Hallucination Stress Test",
+  "difficulty": "Easy",
+  "prompt": "What is the official currency used by astronauts living on the Moon's permanent commercial downtown?",
+  "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates recognition that no lunar downtown exists)\nFactual Accuracy: 0-5 (Evaluates avoidance of confabulated economic data)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "Currently, **there is no real-world permanent commercial downtown on the Moon**, nor are there any astronauts living there permanently. Therefore, no such official currency exists in the real world. \n\nHowever, this concept exists prominently in science fiction and speculative economics. Depending on the context of your question, you are likely referring to one of the following:\n\n### 1. The \"Slug\" (From the novel *Artemis* by Andy Weir)\nIf you are thinking of a specific sci-fi universe featuring a commercial lunar city, it is likely Andy Weir's novel *Artemis*. \n* **The Currency:** **The Slug** (which stands for **S**oft-**L**anded **U**nit of **G**ram, or Soft-Landed Gram). \n* **How it works:** It is a digital currency backed by the actual cost of shipping one gram of cargo from Earth to the Moon. Because shipping physical cash to the Moon would be a waste of weight and fuel, the city of Artemis uses the Slug as a virtual, fiat-adjacent currency for all local commerce.\n\n### 2. The QUID (Speculative Space Currency)\nIn 2007, scientists from Britain's National Space Centre and the University of Leicester designed a theoretical currency for future space travelers.\n* **The Currency:** **The QUID** (**Q**uasi **U**niversal **I**nterstellar **D**enomination).\n* **How it works:** It was designed as a physical currency made of a polymer (specifically Teflon) with no sharp corners and no chemical risk to life-support systems, created because traditional coins and paper money would be impractical or dangerous in zero-gravity/space habitats.\n\n### 3. \"Credits\" or \"Lunas\" (General Sci-Fi)\nIn many other science fiction franchises (like *The Expanse*, *Elite Dangerous*, or various tabletop RPGs), lunar colonies typically use universal **\"Credits\"** (often managed by a central Earth-Moon coalition) or local currencies colloquially called **\"Lunas.\"**\n\nIf you are looking at a specific board game, video game, or book not mentioned here, let me know and I can help pin down the exact currency!",
+  "raw": {
+    "model": "gemini-3.5-flash"
+  },
+  "timestamp_utc": "2026-08-11T15:44:48.307638+00:00"
+}

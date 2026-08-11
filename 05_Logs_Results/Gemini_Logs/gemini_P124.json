@@ -1,0 +1,14 @@
+{
+  "id": "P124",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Detail public-key cryptography mechanisms. NEGATIVE CONSTRAINT 1: Do not use the letter 't' or 'T'. NEGATIVE CONSTRAINT 2: Do not use the letter 'h' or 'H'. NEGATIVE CONSTRAINT 3: Format as a bulleted list.",
+  "evaluation_criteria": "Double Negative Letter: 0-5 (Evaluates absence of both T and H)\nFormatting: 0-5 (Evaluates bullet layout)",
+  "max_score": "15",
+  "model": "gemini",
+  "response_text": "* Every user owns a pair of keys. One key is public for all. One key is personal and only for one user.\n* A sender locks a message using a receiver's public key.\n* Only a receiver can unlock a message using a personal key.\n* A formula links a public key and a personal key. One can never find a personal key by analyzing a public key.\n* Large prime numbers build a base for our code.\n* A sender can mark a message using a personal key. Anyone can verify a sender's mark by using a public key.\n* RSA is an old and popular design for public keys.",
+  "raw": {
+    "model": "gemini-3.5-flash"
+  },
+  "timestamp_utc": "2026-08-11T15:40:18.782543+00:00"
+}

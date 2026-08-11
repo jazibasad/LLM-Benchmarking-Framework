@@ -1,0 +1,14 @@
+{
+  "id": "P127",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Explain thread synchronization mutexes. NEGATIVE CONSTRAINT 1: Do not use any consonants (only allow vowels A, E, I, O, U). NEGATIVE CONSTRAINT 2: Maximum 10 words.",
+  "evaluation_criteria": "Consonant Exclusion: 0-5 (Evaluates vowel-only vocabulary challenge)\nWord Limit: 0-5 (Evaluates length constraint)",
+  "max_score": "15",
+  "model": "gemini",
+  "response_text": "I. O.",
+  "raw": {
+    "model": "gemini-3.5-flash"
+  },
+  "timestamp_utc": "2026-08-11T15:41:17.355625+00:00"
+}

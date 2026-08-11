@@ -1,0 +1,14 @@
+{
+  "id": "P110",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Explain network packet routing. NEGATIVE CONSTRAINT 1: Do not use the letter 'e' or 'E'. NEGATIVE CONSTRAINT 2: Must contain a YAML code block.",
+  "evaluation_criteria": "Negative Constraint: 0-5 (Evaluates avoidance of letter e/E)\nYaml Block: 0-5 (Evaluates valid markdown YAML block inclusion)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "Pathfinding in data grids:\n\nData flows across a digital grid in small chunks. A chunk has a stamp showing its origin and its goal. This stamp holds an IP, a digital location.\n\nA dynamic unit forwards traffic. It looks at a local list of maps. This list has paths. It picks a fast path. It skips long loops. IP forwarding maps link points.\n\nLook at this map layout:\n\n```yaml\nrouting_map:\n  start: \"10.0.0.1\"\n  hop_1: \"10.0.0.254\"\n  hop_2: \"192.168.1.1\"\n  finish: \"192.168.1.50\"\n  protocol: \"IP\"\n```\n\nIndividual chunks jump from unit to unit. This is a hop. Finally, chunks land at a final physical location. A program constructs original info from chunks.",
+  "raw": {
+    "model": "gemini-3.5-flash"
+  },
+  "timestamp_utc": "2026-08-11T15:36:09.747687+00:00"
+}
