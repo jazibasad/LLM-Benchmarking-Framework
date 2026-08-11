@@ -1,0 +1,14 @@
+{
+  "id": "P068",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "An enterprise cluster runs 3 tiers of virtual machines: Web tier (16 VMs at 2 vCPU each), App tier (32 VMs at 4 vCPU each), and DB tier (8 VMs at 16 vCPU each). If hypervisor overcommitment ratio is set to 2.5:1, calculate the physical host CPU core count required.",
+  "evaluation_criteria": "Virtual Cpu Sum: 0-5 (Evaluates total vCPU aggregation across tiers)\nOvercommitment Division: 0-5 (Evaluates physical core requirement calculation)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "To calculate the required physical host CPU core count (pCores), we need to determine the total number of virtual CPUs (vCPUs) required by all virtual machines and then apply the overcommitment ratio.\n\n### Step 1: Calculate total vCPUs required per tier\n\n*   **Web Tier:**  \n    $$16 \\text{ VMs} \\times 2 \\text{ vCPUs} = 32 \\text{ vCPUs}$$\n\n*   **App Tier:**  \n    $$32 \\text{ VMs} \\times 4 \\text{ vCPUs} = 128 \\text{ vCPUs}$$\n\n*   **DB Tier:**  \n    $$8 \\text{ VMs} \\times 16 \\text{ vCPUs} = 128 \\text{ vCPUs}$$\n\n### Step 2: Calculate the total vCPUs for the cluster\n\n$$\\text{Total vCPUs} = 32 + 128 + 128 = 288 \\text{ vCPUs}$$\n\n### Step 3: Apply the hypervisor overcommitment ratio (2.5:1)\n\nThe overcommitment ratio means:\n$$\\text{Overcommitment Ratio} = \\frac{\\text{Total vCPUs}}{\\text{Physical Cores}}$$\n\nRearranging the formula to solve for physical cores:\n$$\\text{Physical Cores Required} = \\frac{\\text{Total vCPUs}}{2.5}$$\n\n$$\\text{Physical Cores Required} = \\frac{288}{2.5} = 115.2 \\text{ cores}$$\n\n### Step 4: Round up to the nearest whole core\nSince you cannot provision a fraction of a physical CPU core, we round up to the nearest whole number.\n\n$$\\text{Minimum Physical Cores} = 116$$\n\n### Conclusion\nThe cluster requires a minimum of **116 physical host CPU cores** to support the workload at a 2.5:1 overcommitment ratio. \n\n*(Note: In a real-world enterprise scenario, this would likely be distributed across multiple physical hosts, such as four hosts with 32 cores each, totaling 128 cores, to allow for N+1 redundancy).*",
+  "raw": {
+    "model": "gemini-3.5-flash"
+  },
+  "timestamp_utc": "2026-08-11T15:14:33.767510+00:00"
+}

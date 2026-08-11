@@ -1,0 +1,14 @@
+{
+  "id": "P067",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "A software release pipeline has a cumulative defect detection probability of 85% during automated unit testing, 70% during integration testing, and 90% during QA user acceptance testing. Calculate the overall end-to-end defect leakage probability if 40 total latent bugs exist.",
+  "evaluation_criteria": "Probability Chain: 0-5 (Evaluates multiplicative filtering stages)\nLatent Bug Computation: 0-5 (Evaluates expected remaining undetected bugs)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "To calculate the overall end-to-end defect leakage probability, we need to determine the probability of a bug surviving (escaping) all three sequential testing phases. \n\nAssuming the phases are sequential (Unit Testing $\\rightarrow$ Integration Testing $\\rightarrow$ QA UAT) and the detection probabilities are independent:\n\n### Step 1: Calculate the leakage (escape) probability for each phase\nThe leakage probability for any given phase is $1 - \\text{Detection Probability}$.\n\n1. **Automated Unit Testing Leakage ($L_1$):**\n   $$L_1 = 1 - 0.85 = 0.15 \\text{ (or 15%)}$$\n\n2. **Integration Testing Leakage ($L_2$):**\n   $$L_2 = 1 - 0.70 = 0.30 \\text{ (or 30%)}$$\n\n3. **QA User Acceptance Testing Leakage ($L_3$):**\n   $$L_3 = 1 - 0.90 = 0.10 \\text{ (or 10%)}$$\n\n---\n\n### Step 2: Calculate the overall end-to-end leakage probability ($P_{\\text{leak}}$)\nFor a defect to leak to production, it must escape all three phases. We multiply the leakage probabilities of each phase together:\n\n$$P_{\\text{leak}} = L_1 \\times L_2 \\times L_3$$\n$$P_{\\text{leak}} = 0.15 \\times 0.30 \\times 0.10$$\n$$P_{\\text{leak}} = 0.0045$$\n\nConverting this to a percentage:\n$$P_{\\text{leak}} = 0.45\\%$$\n\nThe overall end-to-end defect leakage probability is **0.45%** (or a **99.55%** overall defect detection efficiency).\n\n---\n\n### Step 3: Apply to the 40 total latent bugs\nTo find the expected number of bugs that will leak into production out of the 40 latent bugs:\n\n$$\\text{Expected Leaked Bugs} = \\text{Total Bugs} \\times P_{\\text{leak}}$$\n$$\\text{Expected Leaked Bugs} = 40 \\times 0.0045 = 0.18 \\text{ bugs}$$\n\n### Summary of Bug Flow:\n* **Initial bugs:** 40\n* **After Unit Testing:** 34 detected, **6 leak** to Integration\n* **After Integration Testing:** 4.2 detected, **1.8 leak** to QA UAT\n* **After QA UAT (Production):** 1.62 detected, **0.18 leak** to Production",
+  "raw": {
+    "model": "gemini-3.5-flash"
+  },
+  "timestamp_utc": "2026-08-11T15:14:18.709062+00:00"
+}
