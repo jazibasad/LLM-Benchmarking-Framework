@@ -1,0 +1,14 @@
+{
+  "id": "P043",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Easy",
+  "prompt": "If 5 workers can assemble 20 machines in 4 days, how many days will it take 8 workers to assemble 32 machines, assuming constant productivity per worker?",
+  "evaluation_criteria": "Proportional Reasoning: 0-5 (Evaluates correct rate calculation per worker-day)\nStep Logic: 0-5 (Evaluates clear multiplication/division steps)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "It will take **4 days** for 8 workers to assemble 32 machines. \n\nHere is the step-by-step breakdown of how to calculate this:\n\n**Step 1: Find the productivity rate of one worker per day.**\n* 5 workers can build 20 machines in 4 days.\n* This means 5 workers build $20 \\div 4 = 5$ machines per day.\n* Therefore, 1 worker builds $5 \\div 5 = 1$ machine per day.\n\n**Step 2: Apply this rate to the new group of workers.**\n* We now have 8 workers, each building 1 machine per day.\n* Together, the 8 workers can build 8 machines per day ($8 \\times 1 = 8$).\n\n**Step 3: Calculate the days needed for the new target.**\n* To build 32 machines at a rate of 8 machines per day: \n* $32 \\div 8 = 4$ days.",
+  "raw": {
+    "model": "gemini-3.5-flash"
+  },
+  "timestamp_utc": "2026-08-11T07:02:00.811016+00:00"
+}

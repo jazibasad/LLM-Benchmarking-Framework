@@ -1,0 +1,14 @@
+{
+  "id": "P053",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Easy",
+  "prompt": "A database query cache has a hit ratio of 85% and takes 2ms to return data on a hit. A cache miss queries the disk, taking 45ms. Calculate the average query response time across 1,000 requests.",
+  "evaluation_criteria": "Weighted Average Math: 0-5 (Evaluates hit vs miss latency weighting)\nArithmetic Accuracy: 0-5 (Evaluates correct final average time)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "To calculate the average query response time across 1,000 requests, we can break down the requests into cache hits and cache misses based on the 85% hit ratio.\n\n### 1. Identify the Variables\n*   **Total Requests:** 1,000\n*   **Hit Ratio:** 85% (0.85)\n*   **Miss Ratio:** 15% (0.15)\n*   **Cache Hit Time ($T_{hit}$):** 2 ms\n*   **Cache Miss Time ($T_{miss}$):** 45 ms\n\n---\n\n### 2. Calculate the Number of Hits and Misses\n*   **Number of Cache Hits:**  \n    $$1,000 \\times 0.85 = 850 \\text{ requests}$$\n    \n*   **Number of Cache Misses:**  \n    $$1,000 \\times 0.15 = 150 \\text{ requests}$$\n\n---\n\n### 3. Calculate Total Time for All Requests\n*   **Total Time for Hits:**  \n    $$850 \\text{ requests} \\times 2 \\text{ ms} = 1,700 \\text{ ms}$$\n    \n*   **Total Time for Misses:**  \n    $$150 \\text{ requests} \\times 45 \\text{ ms} = 6,750 \\text{ ms}$$\n    \n*   **Total Combined Time:**  \n    $$1,700 \\text{ ms} + 6,750 \\text{ ms} = 8,450 \\text{ ms}$$ (or 8.45 seconds)\n\n---\n\n### 4. Calculate the Average Response Time\nTo find the average response time per query, divide the total time by the total number of requests:\n\n$$\\text{Average Response Time} = \\frac{8,450 \\text{ ms}}{1,000 \\text{ requests}} = 8.45 \\text{ ms}$$\n\n### Alternative Formula (Direct Expected Value):\n$$\\text{Average Time} = (\\text{Hit Ratio} \\times T_{hit}) + (\\text{Miss Ratio} \\times T_{miss})$$\n$$\\text{Average Time} = (0.85 \\times 2\\text{ ms}) + (0.15 \\times 45\\text{ ms})$$\n$$\\text{Average Time} = 1.7\\text{ ms} + 6.75\\text{ ms} = 8.45\\text{ ms}$$\n\n### Conclusion\nThe average query response time across the 1,000 requests is **8.45 ms**.",
+  "raw": {
+    "model": "gemini-3.5-flash"
+  },
+  "timestamp_utc": "2026-08-11T07:03:24.414540+00:00"
+}

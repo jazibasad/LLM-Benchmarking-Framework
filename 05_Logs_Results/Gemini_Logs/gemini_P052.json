@@ -1,0 +1,14 @@
+{
+  "id": "P052",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Easy",
+  "prompt": "Three microservices report error rates: Service X fails 2% of 5,000 requests; Service Y fails 1.5% of 8,000 requests; Service Z fails 3% of 2,000 requests. Calculate the overall system error rate across all combined requests.",
+  "evaluation_criteria": "Failed Request Sum: 0-5 (Evaluates correct failure counts per service)\nOverall Percentage: 0-5 (Evaluates total failures divided by total requests)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "To find the overall system error rate, we need to calculate the total number of failed requests across all services and divide it by the total number of requests.\n\n### Step 1: Calculate the number of failed requests for each service\n\n*   **Service X:** \n    $$\\text{Failures} = 5,000 \\text{ requests} \\times 2\\% = 5,000 \\times 0.02 = 100 \\text{ failures}$$\n\n*   **Service Y:** \n    $$\\text{Failures} = 8,000 \\text{ requests} \\times 1.5\\% = 8,000 \\times 0.015 = 120 \\text{ failures}$$\n\n*   **Service Z:** \n    $$\\text{Failures} = 2,000 \\text{ requests} \\times 3\\% = 2,000 \\times 0.03 = 60 \\text{ failures}$$\n\n---\n\n### Step 2: Calculate the total requests and total failures\n\n*   **Total Requests:** \n    $$5,000 + 8,000 + 2,000 = 15,000 \\text{ requests}$$\n\n*   **Total Failures:** \n    $$100 + 120 + 60 = 280 \\text{ failures}$$\n\n---\n\n### Step 3: Calculate the overall error rate\n\n$$\\text{Overall Error Rate} = \\frac{\\text{Total Failures}}{\\text{Total Requests}} = \\frac{280}{15,000}$$\n\n$$\\text{Overall Error Rate} \\approx 0.01867 \\text{ (or } 1.87\\% \\text{)}$$\n\nThe overall system error rate across all combined requests is approximately **1.87%** (or exactly $\\frac{28}{15} \\approx 1.8\\overline{6}\\%$).",
+  "raw": {
+    "model": "gemini-3.5-flash"
+  },
+  "timestamp_utc": "2026-08-11T07:03:18.037404+00:00"
+}

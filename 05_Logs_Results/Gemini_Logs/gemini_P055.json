@@ -1,0 +1,14 @@
+{
+  "id": "P055",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "A data streaming pipeline ingests records across four partitions. Partition 1 receives 450 records/sec with 99% validity; Partition 2 receives 600 records/sec with 95% validity; Partition 3 receives 300 records/sec with 98% validity; Partition 4 receives 750 records/sec with 90% validity. Calculate the weighted average validity percentage across all ingested streams.",
+  "evaluation_criteria": "Valid Record Sum: 0-5 (Evaluates accurate valid record multiplication per partition)\nWeighted Average: 0-5 (Evaluates total valid records divided by total ingestion rate)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "To find the weighted average validity percentage across all four partitions, we use the formula for a weighted average:\n\n$$\\text{Weighted Average Validity} = \\frac{\\sum (\\text{Throughput}_i \\times \\text{Validity}_i)}{\\sum \\text{Throughput}_i}$$\n\n### Step 1: Identify the values for each partition\n*   **Partition 1 ($P_1$):** Throughput = $450\\text{ recs/sec}$, Validity = $99\\% \\ (0.99)$\n*   **Partition 2 ($P_2$):** Throughput = $600\\text{ recs/sec}$, Validity = $95\\% \\ (0.95)$\n*   **Partition 3 ($P_3$):** Throughput = $300\\text{ recs/sec}$, Validity = $98\\% \\ (0.98)$\n*   **Partition 4 ($P_4$):** Throughput = $750\\text{ recs/sec}$, Validity = $90\\% \\ (0.90)$\n\n---\n\n### Step 2: Calculate the total throughput (total weights)\n$$\\text{Total Throughput} = 450 + 600 + 300 + 750 = 2,100\\text{ records/sec}$$\n\n---\n\n### Step 3: Calculate the total valid records per second\nMultiply the throughput of each partition by its validity percentage:\n*   **$P_1$:** $450 \\times 0.99 = 445.5\\text{ valid records/sec}$\n*   **$P_2$:** $600 \\times 0.95 = 570.0\\text{ valid records/sec}$\n*   **$P_3$:** $300 \\times 0.98 = 294.0\\text{ valid records/sec}$\n*   **$P_4$:** $750 \\times 0.90 = 675.0\\text{ valid records/sec}$\n\n$$\\text{Total Valid Throughput} = 445.5 + 570.0 + 294.0 + 675.0 = 1,984.5\\text{ valid records/sec}$$\n\n---\n\n### Step 4: Calculate the weighted average validity\nDivide the total valid throughput by the total throughput:\n\n$$\\text{Weighted Average Validity} = \\frac{1,984.5}{2,100} = 0.945$$\n\nConvert this decimal back into a percentage:\n$$0.945 \\times 100 = 94.5\\%$$\n\n### Conclusion\nThe weighted average validity percentage across all ingested streams is **94.5%**.",
+  "raw": {
+    "model": "gemini-3.5-flash"
+  },
+  "timestamp_utc": "2026-08-11T07:04:39.804928+00:00"
+}

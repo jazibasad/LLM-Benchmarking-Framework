@@ -1,0 +1,14 @@
+{
+  "id": "P050",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Easy",
+  "prompt": "A battery backup unit provides 12 hours of power when drawing 50 watts. Calculate how many hours of backup it will provide if the load increases to 150 watts, assuming a non-linear Peukert efficiency exponent of 1.1.",
+  "evaluation_criteria": "Capacity Scaling: 0-5 (Evaluates power-time invariant calculation)\nExponent Application: 0-5 (Evaluates Peukert equation logic)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "To find the backup time when the load increases, we can use **Peukert's Law**. \n\nWhile Peukert's Law is traditionally expressed in terms of current ($I$), because voltage ($V$) is assumed to be constant in a standard battery system, we can express the relationship directly in terms of Power ($P$), since $P = I \\times V$.\n\nThe relationship is formulated as:\n$$P_1^k \\cdot T_1 = P_2^k \\cdot T_2$$\n\nWhere:\n* $P_1 = 50 \\text{ W}$ (initial power)\n* $T_1 = 12 \\text{ hours}$ (initial backup time)\n* $P_2 = 150 \\text{ W}$ (new power)\n* $T_2 = \\text{new backup time}$\n* $k = 1.1$ (Peukert efficiency exponent)\n\n---\n\n### Step-by-Step Calculation:\n\n1. **Rearrange the formula to solve for $T_2$:**\n   $$T_2 = T_1 \\cdot \\left(\\frac{P_1}{P_2}\\right)^k$$\n\n2. **Substitute the given values into the equation:**\n   $$T_2 = 12 \\cdot \\left(\\frac{50}{150}\\right)^{1.1}$$\n\n3. **Simplify the fraction:**\n   $$\\frac{50}{150} = \\frac{1}{3} \\approx 0.3333$$\n\n4. **Calculate the exponent:**\n   $$\\left(\\frac{1}{3}\\right)^{1.1} \\approx 0.29865$$\n\n5. **Calculate the final backup time ($T_2$):**\n   $$T_2 = 12 \\cdot 0.29865 \\approx 3.584 \\text{ hours}$$\n\n---\n\n### Convert Decimal Hours to Minutes:\n* $3 \\text{ hours}$\n* $0.584 \\text{ hours} \\times 60 \\text{ minutes} \\approx 35 \\text{ minutes}$\n\n### Conclusion:\nIf the load increases to 150 watts, the battery backup unit will provide approximately **3.58 hours** (or **3 hours and 35 minutes**) of power. \n\n*(Note: In a perfectly linear system with $k = 1.0$, the backup would be exactly 4 hours. Because of the non-linear Peukert efficiency of $k = 1.1$, the battery drains faster at higher loads, reducing the backup time to 3.58 hours).*",
+  "raw": {
+    "model": "gemini-3.5-flash"
+  },
+  "timestamp_utc": "2026-08-11T07:03:07.942128+00:00"
+}

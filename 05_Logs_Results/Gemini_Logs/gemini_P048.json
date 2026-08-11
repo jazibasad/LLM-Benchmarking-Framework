@@ -1,0 +1,14 @@
+{
+  "id": "P048",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Easy",
+  "prompt": "A rectangular data center room measures 12 meters by 8 meters. Server racks take up 40% of the floor space. If each server rack requires a minimum clearance zone equal to 25% of its own footprint, calculate the remaining usable floor space in square meters.",
+  "evaluation_criteria": "Area Calculation: 0-5 (Evaluates total area and rack space computation)\nClearance Logic: 0-5 (Evaluates correct application of clearance factor)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "To find the remaining usable floor space, we can break the calculation down into steps:\n\n**Step 1: Calculate the total floor area of the room**\n$$\\text{Total Area} = \\text{Length} \\times \\text{Width}$$\n$$\\text{Total Area} = 12\\text{ m} \\times 8\\text{ m} = 96\\text{ m}^2$$\n\n**Step 2: Calculate the area occupied by the server racks**\nThe racks occupy 40% of the total floor space.\n$$\\text{Rack Area} = 96\\text{ m}^2 \\times 0.40 = 38.4\\text{ m}^2$$\n\n**Step 3: Calculate the area required for the clearance zones**\nEach rack requires a clearance zone equal to 25% of its own footprint.\n$$\\text{Clearance Area} = 38.4\\text{ m}^2 \\times 0.25 = 9.6\\text{ m}^2$$\n\n**Step 4: Calculate the total unavailable space (Racks + Clearance)**\n$$\\text{Total Unavailable Space} = 38.4\\text{ m}^2 + 9.6\\text{ m}^2 = 48\\text{ m}^2$$\n*(Note: This represents exactly 50% of the total room area)*\n\n**Step 5: Calculate the remaining usable floor space**\n$$\\text{Remaining Space} = \\text{Total Area} - \\text{Total Unavailable Space}$$\n$$\\text{Remaining Space} = 96\\text{ m}^2 - 48\\text{ m}^2 = 48\\text{ m}^2$$\n\nThe remaining usable floor space is **48 square meters**.",
+  "raw": {
+    "model": "gemini-3.5-flash"
+  },
+  "timestamp_utc": "2026-08-11T07:02:31.795067+00:00"
+}

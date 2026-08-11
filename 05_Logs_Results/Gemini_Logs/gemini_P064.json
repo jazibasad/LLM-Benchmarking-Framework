@@ -1,0 +1,14 @@
+{
+  "id": "P064",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "An asynchronous message queue processes jobs across 8 worker threads. Job sizes are: 4 jobs taking 10s each, 6 jobs taking 5s each, and 2 jobs taking 25s each. Assuming optimal thread allocation, calculate the total makespan (total completion time) for the batch.",
+  "evaluation_criteria": "Workload Distribution: 0-5 (Evaluates optimal assignment across 8 threads)\nMakespan Calculation: 0-5 (Evaluates correct maximum thread completion time)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "To find the optimal makespan (the minimum total time required to complete all jobs), we must allocate the jobs to the 8 worker threads such that the maximum load on any single thread is minimized.\n\n### 1. Analyze the Jobs\nWe have a total of 12 atomic jobs:\n*   **2 jobs** of **25 seconds**\n*   **4 jobs** of **10 seconds**\n*   **6 jobs** of **5 seconds**\n\n### 2. Determine the Lower Bound\n*   **Total Workload:** $(2 \\times 25) + (4 \\times 10) + (6 \\times 5) = 50 + 40 + 30 = 120\\text{ seconds}$.\n*   **Average Workload per Thread:** If the work could be perfectly distributed among the 8 threads, the time would be:\n    $$\\frac{120\\text{ seconds}}{8\\text{ threads}} = 15\\text{ seconds}$$\n*   **Longest Job Constraint:** Because jobs in a message queue are atomic (they cannot be split across multiple threads), a single thread must process each 25-second job from start to finish. Therefore, the makespan **cannot be less than 25 seconds** (the duration of the longest job).\n\n### 3. Create an Optimal Schedule\nTo achieve the optimal makespan of **25 seconds**, we can allocate the jobs to the 8 threads as follows:\n\n*   **Thread 1:** One 25s job = **25 seconds**\n*   **Thread 2:** One 25s job = **25 seconds**\n*   **Thread 3:** One 10s job + One 5s job = **15 seconds**\n*   **Thread 4:** One 10s job + One 5s job = **15 seconds**\n*   **Thread 5:** One 10s job + One 5s job = **15 seconds**\n*   **Thread 6:** One 10s job + One 5s job = **15 seconds**\n*   **Thread 7:** Two 5s jobs = **10 seconds**\n*   **Thread 8:** Idle = **0 seconds**\n\n### Conclusion\nUnder this optimal allocation, the maximum time any thread spends working is **25 seconds** (Threads 1 and 2). \n\nThe total makespan for the batch is **25 seconds**.",
+  "raw": {
+    "model": "gemini-3.5-flash"
+  },
+  "timestamp_utc": "2026-08-11T07:06:15.137152+00:00"
+}
