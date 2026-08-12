@@ -1,0 +1,14 @@
+{
+  "id": "P171",
+  "category": "Coding & System Architecture",
+  "difficulty": "Easy",
+  "prompt": "Write a Python function to check if a given string is a palindrome, ignoring spaces and case sensitivity.",
+  "evaluation_criteria": "Syntax Correctness: 0-5 (Evaluates clean syntax and execution)\nEdge Case Handling: 0-5 (Evaluates handling of spaces, punctuation, and casing)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "Here is the Python function to check if a string is a palindrome, ignoring spaces and case sensitivity:\n\n```python\ndef is_palindrome(s: str) -> bool:\n    # Remove spaces and convert the string to lowercase\n    cleaned_str = s.replace(\" \", \"\").lower()\n\n    # Check if the cleaned string is equal to its reverse\n    return cleaned_str == cleaned_str[::-1]\n\n\n# --- Test Cases ---\n# 1. Standard palindrome with mixed case and spaces\nprint(is_palindrome(\"Race Car\"))  # Expected: True\n\n# 2. Palindrome sentence\nprint(is_palindrome(\"Was it a car or a cat I saw\"))  # Expected: True\n\n# 3. Non-palindrome\nprint(is_palindrome(\"Hello World\"))  # Expected: False\n\n# 4. Single character (always a palindrome)\nprint(is_palindrome(\"a\"))  # Expected: True\n\n# 5. Empty string\nprint(is_palindrome(\"\"))  # Expected: True\n```\n\n### How it works:\n1. **`s.replace(\" \", \"\")`**: This removes all space characters from the string.\n2. **`.lower()`**: This converts all characters to lowercase to ensure the check is case-insensitive (e.g., 'R' and 'r' are treated as the same).\n3. **`cleaned_str[::-1]`**: This uses Python's slice step of `-1` to easily reverse the string.\n4. **`==`**: Finally, it compares the cleaned string with its reversed version and returns `True` if they are identical, and `False` otherwise.",
+  "raw": {
+    "model": "gemini-3.5-flash"
+  },
+  "timestamp_utc": "2026-08-12T09:44:51.221585+00:00"
+}
