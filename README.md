@@ -20,7 +20,7 @@ LLM-Benchmarking-Framework/
 ├── 03_Code/             # All automation scripts, validation scripts, and unit tests
 ├── 04_Datasets/         # Curated prompt set (P001–P220) and rubric definition
 ├── 05_Logs_Results/     # Per-model JSON response logs + consolidated outputs
-│   ├── Gemini_Logs/           # Raw per-prompt logs
+│   ├── Gemini_Logs/           # Raw per-prompt logs - 220/220 complete
 │   ├── Mistral_Logs/          # Raw per-prompt logs - 220/220 complete
 │   ├── Groq_Logs/              # Raw per-prompt logs - 220/220 complete
 │   ├── OpenRouter_Logs/
@@ -57,7 +57,7 @@ and `max_score`. Run `python 03_Code/validate_prompts.py` to verify integrity.
 Real benchmarking data collected across three providers, each with its own
 decoupled runner script and partitioned log folder:
 
-- **Gemini** (`run_gemini_benchmark.py` → `Gemini_Logs/`) — `gemini-3.5-flash`
+- **Gemini** (`run_gemini_benchmark.py` → `Gemini_Logs/`) — `gemini-3.5-flash` — 220/220 ✅
   — limited to 20 requests/day on the free tier; collection proceeds
   incrementally across multiple days using the resume mechanism
 - **Mistral** (`run_mistral_benchmark.py` → `Mistral_Logs/`) — `open-mistral-nemo` — 220/220 ✅
