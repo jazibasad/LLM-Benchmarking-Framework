@@ -19,11 +19,13 @@ LLM-Benchmarking-Framework/
 ├── 02_Reports/          # Weekly progress reports (Week 1–8)
 ├── 03_Code/             # All automation scripts, validation scripts, and unit tests
 ├── 04_Datasets/         # Curated prompt set (P001–P220) and rubric definition
-├── 05_Logs_Results/     # Per-model JSON response logs + weekly test result logs
-│   ├── Gemini_Logs/     # 220/220 complete
-│   ├── Mistral_Logs/    # 220/220 complete
-│   ├── Groq_Logs/       # 220/220 complete
+├── 05_Logs_Results/     # Per-model JSON response logs + consolidated outputs
+│   ├── Gemini_Logs/           # Raw per-prompt logs
+│   ├── Mistral_Logs/          # Raw per-prompt logs - 220/220 complete
+│   ├── Groq_Logs/              # Raw per-prompt logs - 220/220 complete
 │   ├── OpenRouter_Logs/
+│   ├── Combined_Results/       # Structured JSON tables, one per provider
+│   ├── Readable_Results/       # Human-readable Word tables, one per provider
 │   └── tests_logs/
 │       └── Week_2/
 └── 06_Final_Report/     # Consolidated final research document
@@ -50,13 +52,14 @@ Following, Hallucination Stress Test, and Coding Tasks.
 `id`, `category`, `difficulty` (Easy/Medium/Hard), `prompt`, `evaluation_criteria`,
 and `max_score`. Run `python 03_Code/validate_prompts.py` to verify integrity.
 
-## Data Collection Providers (Week 4) — Complete
+## Data Collection Providers (Week 4)
 
 Real benchmarking data collected across three providers, each with its own
-decoupled runner script and partitioned log folder. All 660 responses
-(220 prompts × 3 providers) successfully collected:
+decoupled runner script and partitioned log folder:
 
-- **Gemini** (`run_gemini_benchmark.py` → `Gemini_Logs/`) — `gemini-3.5-flash` — 220/220 ✅
+- **Gemini** (`run_gemini_benchmark.py` → `Gemini_Logs/`) — `gemini-3.5-flash`
+  — limited to 20 requests/day on the free tier; collection proceeds
+  incrementally across multiple days using the resume mechanism
 - **Mistral** (`run_mistral_benchmark.py` → `Mistral_Logs/`) — `open-mistral-nemo` — 220/220 ✅
 - **Groq** (`run_groq_benchmark.py` → `Groq_Logs/`) — `llama-3.3-70b-versatile` — 220/220 ✅
 
@@ -81,12 +84,27 @@ Verified for real: Groq's run was interrupted at 189/220 and, on re-running the
 unmodified script, correctly resumed and completed the remaining 31 without
 repeating or losing data.
 
+## Results Consolidation (Week 4)
+
+Two scripts consolidate the raw per-prompt logs into submission-ready structured
+formats, satisfying the requirement that prompts and their corresponding results
+be submitted as separate files, with all raw data in structured form:
+
+- **`build_results_tables.py`** — consolidates each provider's logs into one
+  structured JSON array (`Combined_Results/`), validated for completeness
+  against the full 220-prompt dataset
+- **`build_results_docx.py`** — produces one human-readable Word table per
+  provider (`Readable_Results/`), with prompt, response, evaluation criteria,
+  and score together in one row, and proper line breaks for multi-line content
+  (code responses, multi-part criteria)
+
 ## Testing
 
 Weeks 2-3 verified pipeline logic using injected fake clients (zero real API
 calls). Week 4 verification is through real execution against live provider
-APIs, since the objective was genuine data collection — all three runners
-produced complete, real response sets across the full 220-prompt dataset.
+APIs, since the objective was genuine data collection. The two consolidation
+scripts were verified with synthetic test data before running against real
+collected data.
 
 ## Environment Setup
 
@@ -110,7 +128,7 @@ GROQ_API_KEY=your_real_key_here
 | 1 | Framework Initialization & Rubric Design | ✅ Complete |
 | 2 | Automation Pipeline, Live OpenRouter Verification & Reproducible Environment | ✅ Complete |
 | 3 | Dataset Curation & Repository Restructuring | ✅ Complete |
-| 4 | Multi-Provider Decoupling & Real Data Collection (Gemini, Mistral, Groq) | ✅ Complete |
+| 4 | Multi-Provider Decoupling, Real Data Collection & Results Consolidation | ✅ Complete | 
 | 5 | Statistical Aggregation & Comparative Scoring | ⏳ Not started |
 | 6 | Error Analysis & Failure Mode Taxonomy | ⏳ Not started |
 | 7 | Discussion, Hypothesis Testing & Synthesis | ⏳ Not started |
