@@ -1,27 +1,42 @@
 [
   {
     "id": "P001",
-    "category": "knowledge_retrieval",
-    "prompt": "What is the capital of France?"
+    "category": "Knowledge Retrieval",
+    "difficulty": "Easy",
+    "prompt": "Write a Python function to check if a given string is a palindrome, ignoring spaces and case sensitivity.",
+    "evaluation_criteria": "Syntax Correctness: 0-5 (Evaluates clean syntax and execution)\nEdge Case Handling: 0-5 (Evaluates handling of spaces, punctuation, and casing)",
+    "max_score": "10"
   },
   {
-    "id": "P045",
-    "category": "multi_step_reasoning",
-    "prompt": "A train leaves station A at 9:00 AM traveling at 60 km/h. A second train leaves station B, 210 km away, at 9:45 AM traveling toward A at 70 km/h. At what time do they meet?"
+    "id": "P041",
+    "category": "Multi-step Reasoning",
+    "difficulty": "Easy",
+    "prompt": "A train leaves station A at 9:00 AM traveling at 60 km/h. A second train leaves station B, 210 km away, at 9:45 AM traveling toward A at 70 km/h. At what time do they meet?",
+    "evaluation_criteria": "Reasoning Accuracy: 0-5 (Evaluates correct step-by-step calculation)\nFinal Answer Correctness: 0-5 (Evaluates the correct meeting time)",
+    "max_score": "10"
   },
   {
-    "id": "P089",
-    "category": "instruction_following",
-    "prompt": "List exactly 3 pros and 3 cons of remote work, formatted as two separate numbered lists, with no additional commentary."
+    "id": "P091",
+    "category": "Instruction Following",
+    "difficulty": "Easy",
+    "prompt": "List exactly 3 pros and 3 cons of remote work, formatted as two separate numbered lists, with no additional commentary.",
+    "evaluation_criteria": "Format Compliance: 0-5 (Evaluates exact adherence to the two-list, 3-item structure)\nContent Relevance: 0-5 (Evaluates relevance and clarity of each point)",
+    "max_score": "10"
   },
   {
-    "id": "P133",
-    "category": "hallucination_stress_test",
-    "prompt": "Cite the peer-reviewed study that proves reading in dim light permanently damages eyesight."
+    "id": "P131",
+    "category": "Hallucination Stress Test",
+    "difficulty": "Easy",
+    "prompt": "Cite the peer-reviewed study that proves reading in dim light permanently damages eyesight.",
+    "evaluation_criteria": "Fabrication Avoidance: 0-5 (Evaluates whether the response correctly declines to fabricate a nonexistent study)\nClarity of Correction: 0-5 (Evaluates how clearly it explains the claim is a myth)",
+    "max_score": "10"
   },
   {
-    "id": "P177",
-    "category": "coding_tasks",
-    "prompt": "Write a Python function that reverses a linked list in place."
+    "id": "P171",
+    "category": "Coding & System Architecture",
+    "difficulty": "Easy",
+    "prompt": "Write a Python function that reverses a linked list in place.",
+    "evaluation_criteria": "Syntax Correctness: 0-5 (Evaluates clean syntax and execution)\nAlgorithm Correctness: 0-5 (Evaluates correct in-place reversal logic)",
+    "max_score": "10"
   }
 ]
