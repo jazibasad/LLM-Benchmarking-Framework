@@ -1,0 +1,43 @@
+{
+  "id": "P191",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this customer support conversation thread into a single internal ticket summary of exactly 3 sentences: the customer's core issue, what was already tried, and what remains unresolved - using neutral, professional language even though the original customer messages are frustrated: 'Customer: This is the THIRD time I'm reaching out about this billing error, I'm so done with this company. Agent: I'm very sorry for the frustration - I can see the previous two tickets, it looks like the refund was processed but reversed due to a system error. Customer: Well it's still not showing up in my account and I need this fixed NOW. Agent: I've escalated this to our billing team, they typically resolve escalations within 48 hours, I'll follow up personally.'",
+  "response_text": "**Internal Ticket Summary:**\n\nThe customer reports a recurring billing error where an initially processed refund was reversed due to a system error, leaving their account balance incorrect despite three prior support interactions. They have attempted no further actions beyond escalation, which was initiated by the agent to the billing team. **Status:** Awaiting resolution from billing (estimated 48-hour turnaround); no additional steps required from the customer.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.0277,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Structural Compliance Score",
+      "score": 3,
+      "justification": "The summary contains exactly three sentences covering the core issue, prior attempts, and unresolved status, meeting the requested structure, though it adds a 'Status:' label that slightly deviates.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Fidelity Under Constraint Score",
+      "score": 5,
+      "justification": "The response accurately reflects the conversation details without inventing any information, preserving factual fidelity within the required brevity.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Nuance Preservation Score",
+      "score": 4,
+      "justification": "Key nuances such as the system error reversal, three prior tickets, and the 48‑hour escalation timeline are retained, though the customer’s frustration and agent’s apology are omitted.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Audience Appropriateness Score",
+      "score": 5,
+      "justification": "The language is neutral, professional, and free of unnecessary jargon, making it suitable for an internal ticket audience.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 17,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:14:59.245848+00:00"
+}

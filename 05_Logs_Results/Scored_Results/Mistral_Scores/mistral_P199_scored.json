@@ -1,0 +1,31 @@
+{
+  "id": "P199",
+  "category": "Multilingual Tasks",
+  "difficulty": "Easy",
+  "prompt": "Translate 'Good morning, how are you?' into French.",
+  "response_text": "The translation of **\"Good morning, how are you?\"** into French is:\n\n**\"Bonjour, comment ça va ?\"** (informal)\nor\n**\"Bonjour, comment allez-vous ?\"** (formal/polite)\n\n- **\"Bonjour\"** = Good morning / Hello\n- **\"Comment ça va ?\"** = How are you? (informal)\n- **\"Comment allez-vous ?\"** = How are you? (formal)\n\nWould you like it in a specific context (e.g., business, casual)? 😊",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.4827,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Translation Accuracy",
+      "score": 5,
+      "justification": "The response provides correct French equivalents for both informal and formal versions of the phrase, accurately conveying the original meaning.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Natural Phrasing",
+      "score": 5,
+      "justification": "Both translations sound natural to native speakers, using appropriate informal and polite forms without awkwardness.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:19:23.029698+00:00"
+}

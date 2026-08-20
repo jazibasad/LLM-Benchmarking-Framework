@@ -1,0 +1,43 @@
+{
+  "id": "P207",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this legal disclaimer into Spanish with the precision required for a legal document (no paraphrasing, no simplification), then flag any term where a direct legal equivalent may not exist in Spanish-speaking jurisdictions: 'This agreement shall be governed by and construed in accordance with the laws of the State of Delaware, without regard to its conflict of law principles.'",
+  "response_text": "Here is the precise translation of the legal disclaimer into Spanish, maintaining the exact legal meaning and technical phrasing:\n\n---\n**\"Este acuerdo estará regido y se interpretará de conformidad con las leyes del Estado de Delaware, sin tener en cuenta sus principios de derecho internacional privado.\"**\n\n---\n\n### **Terms Requiring Jurisdictional Clarification (Potential Lack of Direct Equivalent or Nuance):**\n1. **\"Gobernado\"** (from *\"governed by\"*)\n   - While *\"regido\"* is the closest legal equivalent, some jurisdictions (e.g., civil law systems) may prefer **\"sujeto\"** or **\"regulado\"** in certain contexts to emphasize legal subordination. However, *\"regido\"* is widely accepted in commercial agreements, especially in hybrid jurisdictions (e.g., Latin America with business law influences).\n\n2. **\"Principios de derecho internacional privado\"** (from *\"conflict of law principles\"*)\n   - The term **\"derecho internacional privado\"** (private international law) is accurate, but the Spanish-speaking world may use alternative phrasing depending on the country:\n     - **Argentina/Chile/Uruguay**: *\"Derecho internacional privado\"* (standard).\n     - **Spain**: *\"Derecho internacional privado\"* or *\"Derecho conflictivo\"* (less common but recognized).\n     - **Mexico**: *\"Derecho internacional privado\"* or *\"Derecho de conflictos\"* (in some legal texts).\n   - The phrase **\"principios de conflicto\"** (conflict principles) could also be used, but it may lack the technical precision of *\"principios de derecho internacional privado\"* in a legal context.\n\n3. **\"Sin tener en cuenta\"** (from *\"without regard to\"*)\n   - This is idiomatic and functionally equivalent, but in formal Spanish legal drafting, some might prefer:\n     - **\"sin perjuicio de\"** (though this implies exception rather than exclusion).\n     - **\"ignorando\"** (less common in formal contexts).\n   - The current phrasing is precise and widely acceptable, but the alternative **\"sin considerar\"** could also work.\n\n---\n### **Recommendations for Jurisdictional Adaptation:**\n- If the agreement is for **Latin American markets**, consider adding a parenthetical clarification for local legal teams:\n  > *\"Este acuerdo se rige por las leyes del Estado de Delaware, **sin aplicar sus normas de conflicto de leyes** (derecho internacional privado).\"*\n  (This explicitly addresses the concern without altering the original intent.)\n\n- For **Spain**, the term **\"derecho internacional privado\"** is unambiguous, but some courts may prefer **\"normas de conflicto\"** in certain contexts.\n\n- For **Mexico**, *\"principios de conflicto\"* or *\"normas de derecho internacional privado\"* could be used interchangeably with the original translation.\n\nWould you like adjustments for a specific jurisdiction?",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 4.998,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Translation Precision Score",
+      "score": 5,
+      "justification": "The translation reproduces the original legal phrasing exactly, preserving all key terms and syntactic structure without paraphrasing or simplification.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Cultural/Linguistic Adaptation Score",
+      "score": 5,
+      "justification": "The response flags potential equivalents and offers jurisdiction‑specific guidance, demonstrating thoughtful cultural and linguistic adaptation of legal terminology.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Meta-Explanation Quality Score",
+      "score": 4,
+      "justification": "The explanation of term variations and jurisdictional alternatives is accurate and insightful, though it includes some speculative alternatives rather than definitive translations.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Round-Trip/Consistency Score",
+      "score": 0,
+      "justification": "No back‑translation or consistency check is performed, leaving any potential meaning loss unverified.",
+      "outcome": "Failure"
+    }
+  ],
+  "total_score": 14,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:21:42.708996+00:00"
+}

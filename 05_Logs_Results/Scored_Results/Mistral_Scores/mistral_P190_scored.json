@@ -1,0 +1,43 @@
+{
+  "id": "P190",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this quarterly business review into an executive summary with EXACTLY three labeled sections (Wins, Challenges, Next Steps), each limited to 2 sentences, using only information explicitly stated in the source (do not infer anything not directly stated): 'Q3 revenue grew 8% quarter-over-quarter, beating our internal forecast of 5%. Customer churn ticked up slightly to 4.2% from 3.8% last quarter, primarily in the SMB segment. The engineering team shipped the long-delayed API v2 release, though it came in three weeks later than originally planned. Leadership has approved additional headcount for customer success in Q4 to address the churn trend.'",
+  "response_text": "**Executive Summary**\n\n**Wins**\nQ3 revenue grew **8% quarter-over-quarter**, surpassing the internal forecast of **5%**. The engineering team successfully delivered the **long-delayed API v2 release**, despite the three-week delay.\n\n**Challenges**\nCustomer churn rose to **4.2%** from **3.8%**, with the increase concentrated in the **SMB segment**. Leadership acknowledged the trend but has not yet addressed its root causes beyond planned actions.\n\n**Next Steps**\nLeadership approved **additional headcount for customer success in Q4** to mitigate churn. No further strategic adjustments or timelines were explicitly outlined in the review.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.4587,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Structural Compliance Score",
+      "score": 5,
+      "justification": "The response includes exactly three labeled sections (Wins, Challenges, Next Steps) each containing exactly two sentences, fulfilling the structural requirements precisely.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Fidelity Under Constraint Score",
+      "score": 2,
+      "justification": "While four sentences accurately reflect the source, two sentences introduce inferences not present in the source (leadership's acknowledgment and lack of root‑cause action, and the claim that no further strategic adjustments were outlined).",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Nuance Preservation Score",
+      "score": 2,
+      "justification": "The response preserves the nuance of the API delay but omits qualifiers like \"slightly\" and \"last quarter\" for churn and adds unsupported interpretations, resulting in only partial nuance retention.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Audience Appropriateness Score",
+      "score": 5,
+      "justification": "The terminology used (e.g., Q4, SMB segment, API v2) is appropriate for an executive audience and matches the source's jargon without over‑simplification or unnecessary technicality.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 14,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:13:04.474171+00:00"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "P209",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this technical error message into French, preserving enough precision that a developer could still debug the issue from the translated text alone: 'NullPointerException: Cannot invoke method on null object reference at line 245 in UserAuthHandler.java'",
+  "response_text": "Voici la traduction technique précise en français, conservant suffisamment de détails pour un débogage efficace :\n\n**\"NullPointerException : Impossible d'invoquer une méthode sur une référence d'objet nulle à la ligne 245 dans le fichier *UserAuthHandler.java*.\"**\n\n### Explications des choix :\n1. **\"NullPointerException\"** → Conservé en anglais (terme standard en programmation Java), mais si le contexte est strictement francophone, on pourrait écrire *\"Exception NullPointer\"* (moins courant mais compréhensible).\n2. **\"Cannot invoke method\"** → Traduction littérale de *\"impossible d'invoquer une méthode\"*, car c’est le cœur du problème (appel sur un objet nul).\n3. **\"at line 245\"** → *\"à la ligne 245\"* (précision essentielle pour localiser le bug).\n4. **\"Null object reference\"** → *\"référence d'objet nulle\"* (terme technique français équivalent, bien que *\"null\"* reste parfois utilisé dans les logs techniques).\n\n---\n### Variante alternative (plus naturelle en français technique) :\n*\"Exception NullPointer : Tentative d'appel de méthode sur un objet non initialisé (null) à la ligne 245 du fichier *UserAuthHandler.java*.\"*\n\n---\n### Conseils pour le débogage :\n- Vérifier que l’objet référencé à la ligne 245 est bien initialisé (ex: `if (objet != null)` avant l’appel).\n- Analyser le code autour de cette ligne pour identifier :\n  - Une variable non assignée avant utilisation.\n  - Un retour de méthode ou une dépendance externe qui retourne `null` (ex: appel à une API, récupération de données).\n  - Un constructeur ou un setter non exécuté (ex: objet créé mais non configuré).\n\nSi vous partagez un extrait du code autour de la ligne 245, je peux affiner les pistes !",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 4.1174,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Translation Precision Score",
+      "score": 5,
+      "justification": "The translation accurately preserves technical terms (e.g., 'NullPointerException'), line number, and file name, ensuring a developer could debug the issue without ambiguity.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Cultural/Linguistic Adaptation Score",
+      "score": 5,
+      "justification": "The French phrasing ('référence d'objet nulle') is idiomatic and appropriate for technical contexts, avoiding overly literal or culturally mismatched terms.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Meta-Explanation Quality Score",
+      "score": 5,
+      "justification": "The explanations clearly justify each translation choice (e.g., retaining 'NullPointerException') and link decisions to debugging needs, providing actionable insights.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Round-Trip/Consistency Score",
+      "score": 0,
+      "justification": "The response does not include any back-translation analysis or self-comparison, failing to address this criterion entirely.",
+      "outcome": "Failure"
+    }
+  ],
+  "total_score": 15,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:22:14.745252+00:00"
+}

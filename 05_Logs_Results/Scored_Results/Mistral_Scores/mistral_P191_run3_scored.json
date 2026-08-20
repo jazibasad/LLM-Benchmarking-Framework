@@ -1,0 +1,43 @@
+{
+  "id": "P191",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this customer support conversation thread into a single internal ticket summary of exactly 3 sentences: the customer's core issue, what was already tried, and what remains unresolved - using neutral, professional language even though the original customer messages are frustrated: 'Customer: This is the THIRD time I'm reaching out about this billing error, I'm so done with this company. Agent: I'm very sorry for the frustration - I can see the previous two tickets, it looks like the refund was processed but reversed due to a system error. Customer: Well it's still not showing up in my account and I need this fixed NOW. Agent: I've escalated this to our billing team, they typically resolve escalations within 48 hours, I'll follow up personally.'",
+  "response_text": "**Internal Ticket Summary:**\nThe customer reports a recurring billing error—specifically, a previously processed refund that was reversed due to a system error and remains uncredited in their account. They have confirmed prior attempts (two prior tickets) and escalated the issue, but no resolution has been confirmed or reflected in their account. The case is escalated to the billing team with a 48-hour SLA, pending follow-up from the assigned agent.",
+  "run_number": 3,
+  "temperature": 0.7,
+  "latency_seconds": 1.2543,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Structural Compliance Score",
+      "score": 5,
+      "justification": "The response consists of exactly three sentences as required, with a clear label and neutral, professional language throughout.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Fidelity Under Constraint Score",
+      "score": 5,
+      "justification": "The summary accurately captures the core issue, prior attempts, and unresolved status without adding or omitting key details from the source conversation.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Nuance Preservation Score",
+      "score": 5,
+      "justification": "Important nuances such as the system error cause for the reversal and the specific escalation with SLA are retained, while appropriately translating frustration into neutral language.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Audience Appropriateness Score",
+      "score": 5,
+      "justification": "The language is consistently professional and suitable for an internal ticket summary, with no inappropriate jargon or informal phrasing.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:15:34.802419+00:00"
+}

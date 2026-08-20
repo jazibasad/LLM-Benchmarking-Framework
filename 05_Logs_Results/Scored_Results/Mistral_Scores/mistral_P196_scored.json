@@ -1,0 +1,31 @@
+{
+  "id": "P196",
+  "category": "Summarization",
+  "difficulty": "Medium",
+  "prompt": "Summarize this meeting transcript excerpt into 3 clear action items: 'So I think we all agree the current onboarding flow is too long. Sarah mentioned she'll look into cutting the form fields down. Mike said he can have the new tutorial video ready by next Friday. We also need someone to update the help docs to match - I can take that if no one else wants it.'",
+  "response_text": "Here are **3 clear action items** from the meeting excerpt:\n\n1. **Reduce onboarding form fields** – *Sarah* will investigate and propose cuts to the current form fields.\n2. **Create/update tutorial video** – *Mike* will finalize and share the new tutorial video by **next Friday**.\n3. **Update help documentation** – *Alex (or another volunteer)* will ensure the help docs align with the new flow (assigned if no one else steps up).",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.1599,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Format Compliance",
+      "score": 5,
+      "justification": "The response uses a clear numbered list of three action items, each with a concise description and assignee, fully adhering to the requested structure.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Balanced Coverage",
+      "score": 4,
+      "justification": "All three key action items from the transcript are captured accurately, though the third item assigns the task to 'Alex' when the speaker is unnamed, a trivial gap.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 9,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:19:01.116105+00:00"
+}

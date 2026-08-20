@@ -1,0 +1,43 @@
+{
+  "id": "P188",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this software architecture design doc into a summary for a NON-technical stakeholder audience, explicitly translating each technical term into its business impact (e.g., not just 'reduces latency' but what that means for the user), in exactly 4 sentences: 'The proposed architecture introduces a read-replica database layer to offload query traffic from the primary write instance, reducing p99 latency from 800ms to 150ms. A CDN edge caching layer will be added for static assets, cutting bandwidth costs by an estimated 30%. The migration requires a two-week phased rollout to avoid downtime, using a blue-green deployment strategy.'",
+  "response_text": "Here’s a clear, non-technical summary with business impacts:\n\nThis upgrade will make our system **respond faster**—cutting delays for users from nearly a second to just a fraction of a second, so they experience smoother interactions when loading key features. We’ll also **cut costs and improve performance** by automatically serving commonly used content (like images or videos) from faster, local servers worldwide, reducing slow load times and saving money on data transfers. To ensure no disruptions, we’ll roll this out in stages over two weeks, testing each change thoroughly before fully switching to the new setup. This approach guarantees our service stays available and reliable for customers while delivering these improvements.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.6983,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Structural Compliance Score",
+      "score": 4,
+      "justification": "The response adds a preamble sentence, resulting in 5 total sentences rather than the required exactly 4, though the summary content itself adheres to the audience and translation requirements.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Fidelity Under Constraint Score",
+      "score": 5,
+      "justification": "The four-sentence summary preserves all core business impacts from the source—latency reduction, cost savings, and phased rollout—without fabricating information, successfully condensing the constraints.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Nuance Preservation Score",
+      "score": 5,
+      "justification": "The summary retains the essential caveats of avoiding downtime through staged rollout and translating technical impacts into user benefits, without flattening the source's key points.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Audience Appropriateness Score",
+      "score": 5,
+      "justification": "All technical terms are translated into plain, non-technical language focused on user experience and cost, with no jargon remaining.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 19,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:11:18.989157+00:00"
+}

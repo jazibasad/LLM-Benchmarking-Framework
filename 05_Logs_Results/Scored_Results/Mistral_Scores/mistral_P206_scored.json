@@ -1,0 +1,43 @@
+{
+  "id": "P206",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this sentence containing a culturally-specific idiom into Japanese, choosing between a literal translation and a culturally-equivalent Japanese idiom, and justify your choice: 'He really let the cat out of the bag at the meeting.'",
+  "response_text": "The English idiom **\"He really let the cat out of the bag at the meeting.\"** means that someone accidentally revealed a secret or private information.\n\n### **Translation Options:**\n1. **Literal Translation:**\n   「彼は会議で猫を袋から出してしまった。」\n   (*Kare wa kaigi de neko o fukuro kara dasu shite shimatta.*)\n\n2. **Culturally-Equivalent Japanese Idiom:**\n   「彼は会議で秘密を漏らしてしまった。」\n   (*Kare wa kaigi de himitsu o morasete shimatta.*) – \"He accidentally revealed the secret.\"\n   **OR**\n   「彼は会議で内緒を洩らしてしまった。」\n   (*Kare wa kaigi de naisho o morasete shimatta.*) – \"He let the cat out of the bag.\"\n\n### **Justification for Choice:**\nI recommend **using the culturally-equivalent idiom** (「内緒を洩らす」) because:\n- While the literal translation (*猫を袋から出す*) is understandable, it is not a widely recognized idiom in Japanese. Many Japanese speakers might not immediately grasp the meaning without explanation.\n- The idiom **«内緒を洩らす」** (or sometimes **«秘密を漏らす」**) is a natural and commonly used expression in Japanese for \"to reveal a secret,\" making it the most effective choice for fluency and cultural appropriateness.\n- The original English idiom is based on a folk tale (the \"cat in the bag\" deception), but in Japanese, the equivalent meaning is conveyed through more direct phrasing rather than an animal-related metaphor.\n\nThus, the best translation would be:\n**「彼は会議で内緒を洩らしてしまった。」**\n(*Kare wa kaigi de naisho o morasete shimatta.*)",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 4.0113,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Translation Precision Score",
+      "score": 4,
+      "justification": "The selected translation '彼は会議で内緒を洩らしてしまった。' accurately conveys the meaning of 'let the cat out of the bags' with correct grammar and natural Japanese phrasing, missing only a minor nuance of emphasis ('really').",
+      "outcome": "Success"
+    },
+    {
+      "name": "Cultural/Linguistic Adaptation Score",
+      "score": 5,
+      "justification": "The response appropriately chooses a culturally-equivalent Japanese idiom over a literal translation, recognizing that the English animal metaphor doesn't translate directly and providing a natural, fluent Japanese expression instead.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Meta-Explanation Quality Score",
+      "score": 4,
+      "justification": "The justification clearly explains why the idiomatic translation is preferred, citing recognizability and fluency, though it could be slightly more detailed in comparing the semantic nuances between options.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Round-Trip/Consistency Score",
+      "score": 4,
+      "justification": "The response maintains consistency between the English meaning and Japanese idiom throughout, though it doesn't perform an explicit back-translation to verify alignment, which would strengthen the analysis.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 17,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:21:10.266198+00:00"
+}

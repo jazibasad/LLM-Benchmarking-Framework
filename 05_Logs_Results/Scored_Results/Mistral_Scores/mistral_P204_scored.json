@@ -1,0 +1,31 @@
+{
+  "id": "P204",
+  "category": "Multilingual Tasks",
+  "difficulty": "Easy",
+  "prompt": "Translate 'See you tomorrow' into Mandarin Chinese.",
+  "response_text": "The translation of **\"See you tomorrow\"** into Mandarin Chinese is:\n\n**\"明天见\" (Míngtiān jiàn)**\n\nAlternatively, you could also say:\n- **\"明天再见\" (Míngtiān zàijiàn)** – More formal or polite.\n- **\"明天见\" (Míngtiān jiàn)** is the most common and natural choice.\n\nWould you like any variations based on context? 😊",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.1657,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Translation Accuracy",
+      "score": 5,
+      "justification": "The response provides the correct translation '明天见' and an alternative '明天再见', both accurately conveying the meaning of 'See you tomorrow' with appropriate nuance.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Natural Phrasing",
+      "score": 5,
+      "justification": "The response identifies '明天见' as the most common and natural choice, and the alternative is also a natural, though more formal, phrasing used by native speakers.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:20:57.341757+00:00"
+}

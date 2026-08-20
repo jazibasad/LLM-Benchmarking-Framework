@@ -1,0 +1,31 @@
+{
+  "id": "P200",
+  "category": "Multilingual Tasks",
+  "difficulty": "Easy",
+  "prompt": "Translate 'Thank you very much' into Japanese.",
+  "response_text": "The translation of **\"Thank you very much\"** into Japanese is:\n\n**「ありがとうございます」 (Arigatou gozaimasu)**\n\n### Additional options (depending on context):\n- **Casual (friendly):** 「ありがとう (Arigatou)」\n- **Very formal (polite):** 「感謝いたします (Kansha itashimasu)」\n- **Extremely polite/softened:** 「ありがとうございます (Arigatou gozaimasu) + slight bow**\n\nWould you like help with pronunciation or usage in a specific situation? 😊",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.2325,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Translation Accuracy",
+      "score": 5,
+      "justification": "The response provides the exact standard translation 'ありがとうございます' which accurately conveys 'Thank you very much' in Japanese.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Natural Phrasing",
+      "score": 5,
+      "justification": "The phrase 'ありがとうございます' is the natural, polite expression a native speaker would use in most contexts.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:19:44.291895+00:00"
+}

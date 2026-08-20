@@ -1,0 +1,43 @@
+{
+  "id": "P208",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this marketing slogan into German AND into Mandarin Chinese, explaining for EACH language one adaptation you made for cultural resonance rather than literal accuracy: 'Just do it - unleash your inner champion.'",
+  "response_text": "Here are your translations with cultural adaptations explained for each language:\n\n---\n\n### **German:**\n**\"Mach es einfach – werde, wer du sein kannst.\"**\n*(Literal: \"Just do it – become who you can be.\")*\n\n**Adaptation for cultural resonance:**\n- The original slogan’s **\"unleash your inner champion\"** is replaced with **\"wer du sein kannst\"** (\"who you can be\") because German culture emphasizes **self-actualization and personal growth** rather than overtly competitive or athletic language. Germans tend to value **potential and inner strength** (e.g., *\"Du bist mehr, als du denkst\"* – \"You are more than you think\") over direct athletic or \"champion\" imagery, which might feel too sports-centric or aggressive. The phrase also aligns with German marketing’s preference for **subtle empowerment** over bold, motivational slogans.\n\n---\n\n### **Mandarin Chinese:**\n**\"行动起来，释放你的极限潜能。\"**\n*(Pinyin: \"Xíngdòng qǐlái, shīfàng nǐ de jíxiàn zēnlì.\")*\n*(Literal: \"Take action, release your limitless potential.\")*\n\n**Adaptation for cultural resonance:**\n1. **\"Unleash your inner champion\"** was omitted because **Chinese marketing often avoids direct, individualistic language** (e.g., \"champion\" can sound arrogant or overly Western). Instead, the phrase **\"极限潜能\" (jíxiàn zēnlì – \"limitless potential\")** is used to emphasize **collective effort and self-improvement**—a more culturally aligned concept in China.\n2. The call to **\"行动起来\" (xíngdòng qǐlái – \"take action\")** is softer than \"Just do it\" because Chinese consumers may respond better to **encouragement framed as a journey** rather than a direct command. The slogan also avoids the aggressive tone of the original, which could be perceived as too confrontational in Chinese advertising (where harmony and gradual progress are often prioritized).\n\n---\n**Bonus Note:**\n- In **China**, the slogan might also be paired with **visuals of teamwork or cultural symbols** (e.g., a runner in traditional Chinese attire) to reinforce communal values.\n- In **Germany**, the translation avoids overly emotional language, as Germans tend to prefer **rational and pragmatic messaging** (e.g., *\"Erfolg beginnt mit dem ersten Schritt\"* – \"Success starts with the first step\").\n\nWould you like any refinements based on a specific industry (e.g., sports, business, fitness)?",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 5.4827,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Translation Precision Score",
+      "score": 3,
+      "justification": "The German translation ('Mach es einfach – werde, wer du sein kannst.') and Mandarin translations ('行动起来，释放你的极限潜能。') are reasonably accurate but lose the precise competitive tone of 'unleash your inner champion,' prioritizing cultural nuance over literal fidelity.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Cultural/Linguistic Adaptation Score",
+      "score": 5,
+      "justification": "The German translation emphasizes self-actualization ('wer du sein kannst') and the Mandarin translation replaces competitive imagery ('champion') with collective concepts ('极限潜能'), demonstrating thoughtful cultural resonance aligned with German and Chinese values.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Meta-Explanation Quality Score",
+      "score": 5,
+      "justification": "The explanations for each language’s adaptations are accurate, specific, and provide insightful reasoning (e.g., German preference for subtlety, Chinese aversion to individualism), including linguistic and sociocultural references.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Round-Trip/Consistency Score",
+      "score": 3,
+      "justification": "The response mentions back-translations in the brief literal glosses but could expand on inconsistencies between the original slogan’s energetic tone and the translated cultural phrases’ more subdued or collective framing.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 16,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:21:51.307492+00:00"
+}
