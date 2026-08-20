@@ -1,0 +1,31 @@
+{
+  "id": "P037",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Hard",
+  "prompt": "Solve a multi-server load balancing optimization problem: 3 servers have capacities of 100, 250, and 500 req/sec and current CPU loads of 40%, 60%, and 80%. Incoming traffic is 400 req/sec. Calculate the optimal traffic distribution using a weighted least-connections algorithm combined with predictive CPU headroom weighting.",
+  "response_text": "To solve this multi-server load balancing optimization problem, we need to combine two metrics for each server: **Capacity** and **Predictive CPU Headroom**. \n\n### Step 1: Define the Server Parameters\n\nLet the three servers be $S_1$, $S_2$, and $S_3$.\n\n1. **Capacities ($C$):**\n   * $C_1 = 100$ req/sec\n   * $C_2 = 250$ req/sec\n   * $C_3 = 500$ req/sec\n   * **Total Capacity** = $100 + 250 + 500 = 850$ req/sec\n\n2. **Current CPU Loads ($L$):**\n   * $L_1 = 40\\%$\n   * $L_2 = 60\\%$\n   * $L_3 = 80\\%$\n\n---\n\n### Step 2: Calculate Predictive CPU Headroom Weights\n\nCPU headroom represents the remaining capacity a server has before reaching 100% utilization. \n* **Headroom ($H$)** = $100\\% - \\text{Current Load}$\n  * $H_1 = 100 - 40 = 60\\%$ (or $0.60$)\n  * $H_2 = 100 - 60 = 40\\%$ (or $0.40$)\n  * $H_3 = 100 - 80 = 20\\%$ (or $0.20$)\n\nTo combine **Capacity** and **Headroom** into a single composite weight ($W$) for each server, we multiply the maximum capacity by the available headroom percentage. This ensures servers that can handle more traffic *and* have more breathing room get proportionally more load.\n\n* $W_1 = C_1 \\times H_1 = 100 \\times 0.60 = 60$\n* $W_2 = C_2 \\times H_2 = 250 \\times 0.40 = 100$\n* $W_3 = C_3 \\times H_3 = 500 \\times 0.20 = 100$\n\n**Total Combined Weight ($\\sum W$):**\n$$\\sum W = 60 + 100 + 100 = 260$$\n\n---\n\n### Step 3: Calculate Optimal Traffic Distribution\n\nThe incoming traffic is **$T = 400$ req/sec**. \n\nWe distribute the traffic proportionally based on each server's combined weight relative to the total weight:\n$$\\text{Traffic}_i = T \\times \\left( \\frac{W_i}{\\sum W} \\right)$$\n\n* **Server 1:**\n  $$\\text{Traffic}_1 = 400 \\times \\left( \\frac{60}{260} \\right) \\approx 400 \\times 0.2308 = \\mathbf{92.31\\text{ req/sec}}$$\n\n* **Server 2:**\n  $$\\text{Traffic}_2 = 400 \\times \\left( \\frac{100}{260} \\right) \\approx 400 \\times 0.3846 = \\mathbf{153.85\\text{ req/sec}}$$\n\n* **Server 3:**\n  $$\\text{Traffic}_3 = 400 \\times \\left( \\frac{100}{260} \\right) \\approx 400 \\times 0.3846 = \\mathbf{153.85\\text{ req/sec}}$$\n\n*(Check: $92.31 + 153.85 + 153.85 = 400\\text{ req/sec}$)*\n\n---\n\n### Summary of Results\n\nDespite Server 3 having the highest raw capacity (500 req/sec), its high current CPU load (80%, leaving only 20% headroom) heavily penalizes its weight. Consequently, Server 3 receives the exact same amount of traffic as Server 2, while Server 1 (despite having the lowest capacity) captures a surprisingly high share due to its abundant CPU headroom (60%).\n\n* **Server 1 (Capacity: 100, Load: 40%):** Receives **92.31 req/sec** (~23.1% of traffic)\n* **Server 2 (Capacity: 250, Load: 60%):** Receives **153.85 req/sec** (~38.5% of traffic)\n* **Server 3 (Capacity: 500, Load: 80%):** Receives **153.85 req/sec** (~38.5% of traffic)",
+  "run_number": 5,
+  "temperature": 0.7,
+  "latency_seconds": 3.629,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Algorithm Execution",
+      "score": 5,
+      "justification": "The response correctly calculates weighted distribution by combining capacity and headroom, performs accurate proportional weighting, and validates sum of traffic equals 400 req/sec with no mathematical errors.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Headroom Adjustment",
+      "score": 5,
+      "justification": "The response properly incorporates predictive CPU headroom into server weights by multiplying capacity with remaining headroom percentage and explains how high load on Server 3 reduces its effective weight despite high capacity.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T12:52:13.253354+00:00"
+}

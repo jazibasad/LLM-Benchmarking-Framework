@@ -1,0 +1,31 @@
+{
+  "id": "P041",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "A neural network layer has 512 input features and 128 output neurons with bias terms enabled. Calculate the exact total number of trainable model parameters (weights and biases) in this layer.",
+  "response_text": "To calculate the total number of trainable parameters in a standard neural network (Dense/Fully Connected) layer, we use the following formula:\n\n$$\\text{Total Parameters} = (\\text{Input Features} \\times \\text{Output Neurons}) + \\text{Output Neurons}$$\n\nWhere:\n* $(\\text{Input Features} \\times \\text{Output Neurons})$ represents the **weights**.\n* $\\text{Output Neurons}$ represents the **bias terms** (one bias per output neuron).\n\nGiven the values:\n* Input features = $512$\n* Output neurons = $128$\n\nCalculation:\n1. **Weights:** $512 \\times 128 = 65,536$\n2. **Biases:** $128$\n3. **Total Parameters:** $65,536 + 128 = 65,664$\n\nThe exact total number of trainable model parameters in this layer is **65,664**.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 14.7757,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Weight Calculation (0-5)",
+      "score": 5,
+      "justification": "The response correctly identifies and computes the weight count as input features (512) multiplied by output neurons (128), yielding 65,536.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Bias Addition (0-5)",
+      "score": 5,
+      "justification": "The response correctly calculates one bias term per output neuron (128), adds it to the total parameters, and arrives at the exact total of 65,664.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T12:56:25.587726+00:00"
+}

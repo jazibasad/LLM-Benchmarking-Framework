@@ -1,0 +1,31 @@
+{
+  "id": "P033",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Hard",
+  "prompt": "Analyze a complex network subnetting puzzle: An enterprise is allocated IP block 192.168.10.0/24. They require 4 subnets with host capacities of 60, 25, 12, and 4 hosts respectively. Calculate the exact CIDR notation, network address, broadcast address, and usable host IP range for each of the 4 subnets without overlapping.",
+  "response_text": "To solve this subnetting puzzle efficiently without wasting IP addresses, we use **Variable Length Subnet Masking (VLSM)**. The golden rule of VLSM is to **always allocate subnets from the largest required host capacity to the smallest**. \n\nWe are starting with the base network block: **192.168.10.0/24** (Total IPs: 256, Usable IPs: 254).\n\n---\n\n### Step 1: Calculate Subnets by Size (Largest to Smallest)\n\nTo find the correct subnet mask, we determine the number of host bits ($h$) needed using the formula $2^h - 2 \\ge \\text{required hosts}$ (accounting for the Network ID and Broadcast address).\n\n#### 1. Subnet A: 60 usable hosts required\n* $2^h - 2 \\ge 60 \\rightarrow 2^6 - 2 = 62$ (6 bits for hosts)\n* **CIDR Notation:** $/32 - 6 = \\mathbf{/26}$\n* **Subnet Mask:** `255.255.255.192`\n* **Total Block Size:** 64 IPs\n\n#### 2. Subnet B: 25 usable hosts required\n* $2^h - 2 \\ge 25 \\rightarrow 2^5 - 2 = 30$ (5 bits for hosts)\n* **CIDR Notation:** $/32 - 5 = \\mathbf{/27}$\n* **Subnet Mask:** `255.255.255.224`\n* **Total Block Size:** 32 IPs\n\n#### 3. Subnet C: 12 usable hosts required\n* $2^h - 2 \\ge 12 \\rightarrow 2^4 - 2 = 14$ (4 bits for hosts)\n* **CIDR Notation:** $/32 - 4 = \\mathbf{/28}$\n* **Subnet Mask:** `255.255.255.240`\n* **Total Block Size:** 16 IPs\n\n#### 4. Subnet D: 4 usable hosts required\n* $2^h - 2 \\ge 4 \\rightarrow 2^3 - 2 = 6$ (3 bits for hosts)\n* **CIDR Notation:** $/32 - 3 = \\mathbf{/29}$\n* **Subnet Mask:** `255.255.255.248`\n* **Total Block Size:** 8 IPs\n\n---\n\n### Step 2: Assign IP Ranges Sequentially (No Overlaps)\n\n#### **Subnet 1 (60 Hosts)**\n* **CIDR:** `192.168.10.0/26`\n* **Network Address:** `192.168.10.0`\n* **Usable Host IP Range:** `192.168.10.1` – `192.168.10.62`\n* **Broadcast Address:** `192.168.10.63`\n\n#### **Subnet 2 (25 Hosts)**\n*(Starts immediately after Subnet 1's broadcast)*\n* **CIDR:** `192.168.10.64/27`\n* **Network Address:** `192.168.10.64`\n* **Usable Host IP Range:** `192.168.10.65` – `192.168.10.94`\n* **Broadcast Address:** `192.168.10.95`\n\n#### **Subnet 3 (12 Hosts)**\n*(Starts immediately after Subnet 2's broadcast)*\n* **CIDR:** `192.168.10.96/28`\n* **Network Address:** `192.168.10.96`\n* **Usable Host IP Range:** `192.168.10.97` – `192.168.10.110`\n* **Broadcast Address:** `192.168.10.111`\n\n#### **Subnet 4 (4 Hosts)**\n*(Starts immediately after Subnet 3's broadcast)*\n* **CIDR:** `192.168.10.112/29`\n* **Network Address:** `192.168.10.112`\n* **Usable Host IP Range:** `192.168.10.113` – `192.168.10.118`\n* **Broadcast Address:** `192.168.10.119`\n\n---\n\n### Summary Table\n\n| Subnet | Required Hosts | CIDR Notation | Network Address | Usable Host IP Range | Broadcast Address |\n| :--- | :--- | :--- | :--- | :--- | :--- |\n| **1** | 60 | `/26` | `192.168.10.0` | `192.168.10.1` - `192.168.10.62` | `192.168.10.63` |\n| **2** | 25 | `/27` | `192.168.10.64` | `192.168.10.65` - `192.168.10.94` | `192.168.10.95` |\n| **3** | 12 | `/28` | `192.168.10.96` | `192.168.10.97` - `192.168.10.110` | `192.168.10.111` |\n| **4** | 4 | `/29` | `192.168.10.112` | `192.168.10.113` - `192.168.10.118` | `192.168.10.119` |\n\n*(Note: IPs from `192.168.10.120` to `192.168.10.255` remain unassigned and available for future network expansion).*",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 4.1898,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Variable Length Subnetting (0-5)",
+      "score": 5,
+      "justification": "The model correctly identifies the required host bits and corresponding CIDR notations for each subnet using the VLSM approach.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Ip Range Accuracy (0-5)",
+      "score": 5,
+      "justification": "All network addresses, broadcast addresses, and usable host ranges are calculated accurately without any overlaps.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T12:50:11.395844+00:00"
+}

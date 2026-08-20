@@ -1,0 +1,31 @@
+{
+  "id": "P039",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "In a RAID 5 disk array comprising four 2TB drives, calculate the total usable storage capacity and determine how many individual drives can fail simultaneously without data loss. Explain the parity calculation logic.",
+  "response_text": "Here is the breakdown of the storage capacity, fault tolerance, and parity logic for a RAID 5 array comprising four 2TB drives.\n\n---\n\n### 1. Total Usable Storage Capacity\n\n*   **Formula for RAID 5 Capacity:** $(N - 1) \\times S$ \n    *(Where $N$ is the total number of drives, and $S$ is the size of the smallest drive).*\n*   **Calculation:** $(4 - 1) \\times 2\\text{TB} = 3 \\times 2\\text{TB} = \\mathbf{6\\text{TB}}$\n\n**Total Usable Storage Capacity:** **6 TB** (with 2 TB effectively used for distributed parity).\n\n---\n\n### 2. Maximum Simultaneous Drive Failures\n\n*   **Fault Tolerance:** **1 drive**\n*   **Explanation:** RAID 5 uses single-parity distributed across all drives. If any *single* drive fails, the missing data can be dynamically recalculated using the data and parity remaining on the other three drives. However, if a *second* drive fails before the first is replaced and rebuilt, the array suffers catastrophic data loss.\n\n---\n\n### 3. Parity Calculation Logic\n\nRAID 5 does not dedicate a single drive to parity (unlike RAID 4). Instead, data blocks and parity blocks are striped across all drives in the array. \n\nThe fundamental mathematical operation behind RAID parity is the **Exclusive OR (XOR)** logic gate. The XOR operation has a unique property: if you know the result and all inputs except one, you can easily calculate the missing input.\n\n#### How it works:\n1.  **Block Division:** Data written to the array is broken down into blocks (e.g., Block A, Block B, Block C).\n2.  **XOR Operation:** The RAID controller applies the XOR function across corresponding bits of the data blocks to generate a parity block (denoted as $P$). \n    *   Formula: $Data_1 \\oplus Data_2 \\oplus Data_3 = Parity$\n3.  **Rotation:** To prevent a single drive from becoming a write bottleneck (the \"parity write bottleneck\" seen in RAID 4), the parity blocks are rotated across different drives for each stripe.\n\n#### Example of Reconstruction (Recovery from Failure):\nImagine a stripe has three data blocks ($D_1$, $D_2$, $D_3$) and one parity block ($P$). \n*   $D_1 \\oplus D_2 \\oplus D_3 = P$\n\nIf **$D_2$** is on a drive that fails, the system doesn't need to panic. Because XOR is reversible, the controller can recalculate the missing $D_2$ on-the-fly using the surviving data and the parity block:\n*   $D_1 \\oplus D_3 \\oplus P = D_2$\n\nThis same logic applies whether the failure is a data block or the parity block itself; if the parity block fails, the array simply operates without parity until the drive is replaced, with no loss of user data.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 3.1238,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Capacity Calculation",
+      "score": 5,
+      "justification": "The response correctly applies the (N‑1) × S formula, computes 6 TB, and clearly identifies the usable capacity, meeting the core requirement.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Fault Tolerance Logic",
+      "score": 5,
+      "justification": "The response accurately states that only one drive can fail simultaneously, explains the XOR‑based parity reconstruction, and thus satisfies the single‑drive fault tolerance and parity explanation requirement.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T12:52:31.070345+00:00"
+}

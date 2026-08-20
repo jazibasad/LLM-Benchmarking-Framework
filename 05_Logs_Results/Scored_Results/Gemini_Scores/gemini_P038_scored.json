@@ -1,0 +1,31 @@
+{
+  "id": "P038",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "A data streaming pipeline ingests records across four partitions. Partition 1 receives 450 records/sec with 99% validity; Partition 2 receives 600 records/sec with 95% validity; Partition 3 receives 300 records/sec with 98% validity; Partition 4 receives 750 records/sec with 90% validity. Calculate the weighted average validity percentage across all ingested streams.",
+  "response_text": "To calculate the weighted average validity percentage across all ingested streams, we need to find the total number of valid records ingested per second and divide it by the total number of records ingested per second across all partitions.\n\n### Step 1: Calculate the incoming records and valid records for each partition\n\n* **Partition 1:**\n  * Inflow = 450 records/sec\n  * Validity = 99% (0.99)\n  * Valid records = $450 \\times 0.99 = 445.5$ records/sec\n\n* **Partition 2:**\n  * Inflow = 600 records/sec\n  * Validity = 95% (0.95)\n  * Valid records = $600 \\times 0.95 = 570.0$ records/sec\n\n* **Partition 3:**\n  * Inflow = 300 records/sec\n  * Validity = 98% (0.98)\n  * Valid records = $300 \\times 0.98 = 294.0$ records/sec\n\n* **Partition 4:**\n  * Inflow = 750 records/sec\n  * Validity = 90% (0.90)\n  * Valid records = $750 \\times 0.90 = 675.0$ records/sec\n\n---\n\n### Step 2: Calculate totals\n\n* **Total records ingested per second:**\n  $$\\text{Total Inflow} = 450 + 600 + 300 + 750 = 2,100 \\text{ records/sec}$$\n\n* **Total valid records per second:**\n  $$\\text{Total Valid} = 445.5 + 570.0 + 294.0 + 675.0 = 1,984.5 \\text{ records/sec}$$\n\n---\n\n### Step 3: Calculate the weighted average validity\n\n$$\\text{Weighted Average Validity} = \\left( \\frac{\\text{Total Valid Records}}{\\text{Total Ingested Records}} \\right) \\times 100$$\n\n$$\\text{Weighted Average Validity} = \\left( \\frac{1984.5}{2100} \\right) \\times 100 \\approx 94.5\\%$$\n\n### Answer:\nThe weighted average validity percentage across all ingested streams is **94.5%**.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.9607,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Valid Record Sum",
+      "score": 5,
+      "justification": "The response correctly calculated valid records per partition (445.5, 570.0, 294.0, 675.0) and summed them to 1,984.5, demonstrating full accuracy.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Weighted Average",
+      "score": 5,
+      "justification": "It correctly divided total valid records (1,984.5) by total ingestion (2,100) and multiplied by 100 to obtain 94.5%, meeting the requirement exactly.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T12:52:23.111759+00:00"
+}

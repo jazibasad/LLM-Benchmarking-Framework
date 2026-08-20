@@ -1,0 +1,31 @@
+{
+  "id": "P042",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "An asynchronous message queue processes jobs across 8 worker threads. Job sizes are: 4 jobs taking 10s each, 6 jobs taking 5s each, and 2 jobs taking 25s each. Assuming optimal thread allocation, calculate the total makespan (total completion time) for the batch.",
+  "response_text": "To find the total makespan (total completion time) for the batch with 8 worker threads, let's first list out all the jobs and their durations:\n\n* **Job Group A:** 4 jobs $\\times$ 10 seconds = 40 seconds total work\n* **Job Group B:** 6 jobs $\\times$ 5 seconds = 30 seconds total work\n* **Job Group C:** 2 jobs $\\times$ 25 seconds = 50 seconds total work\n\n**Total Work** = $40 + 30 + 50 = 120$ seconds of processing time across 8 threads.\n\n### Step 1: Check theoretical minimums (Lower Bounds)\n1. **Average workload per thread:** $\\frac{120 \\text{ seconds}}{8 \\text{ threads}} = 15$ seconds.\n2. **The longest single job:** 25 seconds. \n\nSince no thread can finish faster than its assigned jobs, and there are jobs that take 25 seconds, the absolute minimum possible makespan is **25 seconds**.\n\n### Step 2: Simulate Optimal Thread Allocation (Bin Packing)\nWe have 8 threads available ($T_1$ through $T_8$). To achieve the optimal makespan, we want to distribute the longest jobs first and balance the load as evenly as possible.\n\nLet's list the 12 individual job durations in descending order: \n**25, 25, 10, 10, 10, 10, 5, 5, 5, 5, 5, 5**\n\nLet's assign them to the 8 threads:\n* **Thread 1:** 25s (Total: 25s)\n* **Thread 2:** 25s (Total: 25s)\n* **Thread 3:** 10s + 5s + 5s = 20s (Total: 20s)\n* **Thread 4:** 10s + 5s + 5s = 20s (Total: 20s)\n* **Thread 5:** 10s + 5s = 15s (Total: 15s)\n* **Thread 6:** 10s + 5s = 15s (Total: 15s)\n* **Thread 7:** (Idle / 0s)\n* **Thread 8:** (Idle / 0s)\n\n*(Note: Threads 7 and 8 are not needed because the workload fits perfectly and balanced across 6 active threads without exceeding the 25-second limit set by the longest jobs).*\n\n### Conclusion\nLooking at the thread totals (25s, 25s, 20s, 20s, 15s, 15s, 0s, 0s), the maximum time any single thread takes to finish its queue is **25 seconds**.\n\nThe total makespan for the batch is **25 seconds**.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 2.8978,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Workload Distribution (0-5)",
+      "score": 3,
+      "justification": "The response provides a distribution but only uses 6 of the 8 threads and does not fully demonstrate optimal allocation across all threads, only a near‑optimal arrangement.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Makespan Calculation (0-5)",
+      "score": 5,
+      "justification": "Correctly identifies the optimal makespan of 25 seconds and justifies it with proper lower‑bound reasoning and scheduling.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 8,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T12:56:40.421038+00:00"
+}

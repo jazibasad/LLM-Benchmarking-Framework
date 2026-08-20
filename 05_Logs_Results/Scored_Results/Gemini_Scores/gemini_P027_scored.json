@@ -1,0 +1,31 @@
+{
+  "id": "P027",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Easy",
+  "prompt": "A battery backup unit provides 12 hours of power when drawing 50 watts. Calculate how many hours of backup it will provide if the load increases to 150 watts, assuming a non-linear Peukert efficiency exponent of 1.1.",
+  "response_text": "To calculate the new backup time under a heavier load using Peukert's Law, we use the following formula:\n\n$$t_2 = t_1 \\times \\left( \\frac{I_1}{I_2} \\right)^k$$\n\nWhere:\n* $t_1$ = Initial time (12 hours)\n* $I_1$ = Initial current/load (50 watts)\n* $I_2$ = New current/load (150 watts)\n* $k$ = Peukert exponent (1.1)\n\n*(Note: Since power ($P$) is proportional to current ($I$ at a constant voltage), we can substitute power for current in this ratio).*\n\n### Step-by-Step Calculation:\n\n1. **Find the ratio of the loads:**\n   $$\\frac{I_1}{I_2} = \\frac{50}{150} = \\frac{1}{3} \\approx 0.3333$$\n\n2. **Apply the Peukert exponent ($k = 1.1$):**\n   $$\\left( \\frac{1}{3} \\right)^{1.1} \\approx 0.3018$$\n\n3. **Calculate the new time ($t_2$):**\n   $$t_2 = 12 \\text{ hours} \\times 0.3018 \\approx 3.62 \\text{ hours}$$\n\n### Answer:\nIf the load increases to 150 watts, the battery backup unit will provide approximately **3.62 hours** (or about **3 hours and 37 minutes**) of power.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.7757,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Capacity Scaling (0-5): Evaluates power-time invariant calculation",
+      "score": 5,
+      "justification": "The response fully and correctly applies the power‑time invariant scaling, uses the appropriate ratio and exponent, and arrives at an accurate result, meeting all aspects of the requirement.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Exponent Application (0-5): Evaluates Peukert equation logic",
+      "score": 5,
+      "justification": "The response correctly embeds the Peukert exponent into the time‑scaling formula and uses it appropriately, demonstrating complete and excellent adherence to the required logic.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T12:45:06.651168+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "P037",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Hard",
+  "prompt": "Solve a multi-server load balancing optimization problem: 3 servers have capacities of 100, 250, and 500 req/sec and current CPU loads of 40%, 60%, and 80%. Incoming traffic is 400 req/sec. Calculate the optimal traffic distribution using a weighted least-connections algorithm combined with predictive CPU headroom weighting.",
+  "response_text": "To solve this multi-server load balancing optimization problem, we will combine **Weighted Least-Connections (WLC)** principles with **Predictive CPU Headroom Weighting** to distribute the incoming 400 req/sec across the three servers.\n\n---\n\n### Step 1: Analyze the Current State\n\nLet's define our variables for each server $i$ (where $i \\in \\{1, 2, 3\\}$):\n*   **Capacity ($C_i$):** Maximum requests per second.\n    *   $C_1 = 100$, $C_2 = 250$, $C_3 = 500$\n*   **Current CPU Load ($L_i$):** Percentage of CPU currently utilized.\n    *   $L_1 = 40\\%$, $L_2 = 60\\%$, $L_3 = 80\\%$\n*   **Total Capacity:** $C_{\\text{total}} = 100 + 250 + 500 = 850 \\text{ req/sec}$\n*   **Incoming Traffic:** $T = 400 \\text{ req/sec}$\n\n---\n\n### Step 2: Calculate Predictive CPU Headroom Weights\n\n**CPU Headroom ($H_i$)** is the remaining capacity based on current CPU utilization:\n$$H_i = 100\\% - L_i$$\n*   $H_1 = 100\\% - 40\\% = 60\\% \\text{ (0.60)}$\n*   $H_2 = 100\\% - 60\\% = 40\\% \\text{ (0.40)}$\n*   $H_3 = 100\\% - 80\\% = 20\\% \\text{ (0.20)}$\n\nTo combine **Hardware Capacity ($C_i$)** with **Predictive CPU Headroom ($H_i$)**, we calculate an effective composite weight ($W_i$) for each server. A server with high capacity but low headroom should not be overwhelmed. \n\nWe define the composite weight as the absolute available processing headroom in terms of requests per second:\n$$W_i = C_i \\times H_i$$\n\n*   **Server 1:** $W_1 = 100 \\times 0.60 = 60$\n*   **Server 2:** $W_2 = 250 \\times 0.40 = 100$\n*   **Server 3:** $W_3 = 500 \\times 0.20 = 100$\n\n**Total Composite Weight ($W_{\\text{total}}$):**\n$$W_{\\text{total}} = 60 + 100 + 100 = 260$$\n\n---\n\n### Step 3: Calculate Optimal Traffic Distribution\n\nThe fraction of traffic ($\\text{Traffic}_i$) allocated to each server is proportional to its composite weight relative to the total composite weight:\n$$\\text{Traffic}_i = T \\times \\left( \\frac{W_i}{W_{\\text{total}}} \\right)$$\n\nGiven Total Traffic $T = 400 \\text{ req/sec}$:\n\n*   **Server 1:**\n    $$\\text{Traffic}_1 = 400 \\times \\left( \\frac{60}{260} \\right) = 400 \\times 0.2308 \\approx \\mathbf{92.31 \\text{ req/sec}}$$\n\n*   **Server 2:**\n    $$\\text{Traffic}_2 = 400 \\times \\left( \\frac{100}{260} \\right) = 400 \\times 0.3846 \\approx \\mathbf{153.85 \\text{ req/sec}}$$\n\n*   **Server 3:**\n    $$\\text{Traffic}_3 = 400 \\times \\left( \\frac{100}{260} \\right) = 400 \\times 0.3846 \\approx \\mathbf{153.85 \\text{ req/sec}}$$\n\n*(Check sum: $92.31 + 153.85 + 153.85 = 400 \\text{ req/sec}$)*\n\n---\n\n### Step 4: Post-Allocation Validation (Predictive Load Check)\n\nTo ensure this distribution is safe and doesn't push any server past its limits, we estimate the resulting load on each server. Assuming a linear relationship between request volume and CPU load:\n\n*   **Server 1:**\n    *   Current load: 40% (at 0 req/sec baseline, or we can look at utilization relative to max capacity)\n    *   Added load ratio: $\\frac{92.31}{100} = 92.31\\%$ of its remaining headroom utilized.\n*   **Server 2:**\n    *   Added load ratio: $\\frac{153.85}{250} = 61.54\\%$ of its remaining headroom utilized.\n*   **Server 3:**\n    *   Added load ratio: $\\frac{153.85}{500} = 30.77\\%$ of its remaining headroom utilized.\n\n### Final Answer:\nThe optimal traffic distribution to balance the load while respecting current CPU headroom is:\n*   **Server 1 (Capacity 100, 40% CPU):** **92.31 req/sec**\n*   **Server 2 (Capacity 250, 60% CPU):** **153.85 req/sec**\n*   **Server 3 (Capacity 500, 80% CPU):** **153.85 req/sec**",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 4.0814,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Algorithm Execution",
+      "score": 4,
+      "justification": "The response correctly calculates weighted traffic distribution using composite weights, but does not explicitly incorporate least‑connections logic as requested.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Headroom Adjustment",
+      "score": 5,
+      "justification": "It accurately computes CPU headroom and uses it to adjust server weights, fully meeting the dynamic capacity recalculation requirement.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 9,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T12:51:35.569777+00:00"
+}

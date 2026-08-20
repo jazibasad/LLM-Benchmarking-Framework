@@ -1,0 +1,31 @@
+{
+  "id": "P037",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Hard",
+  "prompt": "Solve a multi-server load balancing optimization problem: 3 servers have capacities of 100, 250, and 500 req/sec and current CPU loads of 40%, 60%, and 80%. Incoming traffic is 400 req/sec. Calculate the optimal traffic distribution using a weighted least-connections algorithm combined with predictive CPU headroom weighting.",
+  "response_text": "To solve this multi-server load balancing optimization problem, we need to combine two metrics into a unified weighting system:\n1. **Weighted Least-Connections (Capacity-based):** Distributing traffic proportional to server capacities.\n2. **Predictive CPU Headroom:** Adjusting the distribution based on available CPU capacity (100% - Current Load).\n\n---\n\n### Step 1: Define the Server Parameters\n\nLet the three servers be $S_1, S_2,$ and $S_3$.\n\n*   **Capacities ($C$):** $C_1 = 100$, $C_2 = 250$, $C_3 = 500$ req/sec\n    *   Total Capacity = $100 + 250 + 500 = 850$ req/sec\n*   **Current CPU Loads ($L$):** $L_1 = 40\\%$, $L_2 = 60\\%$, $L_3 = 80\\%$\n*   **CPU Headroom ($H = 100\\% - L$):** \n    *   $H_1 = 100 - 40 = 60\\%$ (or $0.60$)\n    *   $H_2 = 100 - 60 = 40\\%$ (or $0.40$)\n    *   $H_3 = 100 - 80 = 20\\%$ (or $0.20$)\n*   **Total Incoming Traffic ($T$):** $400$ req/sec\n\n---\n\n### Step 2: Calculate Combined Weights\n\nTo create a balanced algorithm that respects both hardware capacity and current operational stress (CPU headroom), we calculate a **Combined Score ($W_i$)** for each server. \n\nA standard approach for predictive CPU headroom weighting is to multiply the static capacity by the dynamic CPU headroom percentage:\n\n$$\\text{Raw Weight}_i = \\text{Capacity}_i \\times \\text{CPU Headroom}_i$$\n\n*   **Server 1:** $W_1 = 100 \\times 0.60 = 60.0$\n*   **Server 2:** $W_2 = 250 \\times 0.40 = 100.0$\n*   **Server 3:** $W_3 = 500 \\times 0.20 = 100.0$\n\n---\n\n### Step 3: Normalize the Weights\n\nTo find the percentage of traffic each server should receive, we divide each server's raw weight by the sum of all raw weights.\n\n*   **Total Weight ($W_{\\text{total}}$):** $60.0 + 100.0 + 100.0 = 260.0$\n\n*   **Proportions ($P_i$):**\n    *   $P_1 = \\frac{60.0}{260.0} \\approx 0.2308$  (23.08%)\n    *   $P_2 = \\frac{100.0}{260.0} \\approx 0.3846$ (38.46%)\n    *   $P_3 = \\frac{100.0}{260.0} \\approx 0.3846$ (38.46%)\n\n*(Check: $0.2308 + 0.3846 + 0.3846 = 1.00$)*\n\n---\n\n### Step 4: Calculate Optimal Traffic Distribution\n\nNow, multiply the proportions by the total incoming traffic ($T = 400$ req/sec):\n\n*   **Server 1:** $400 \\times 0.2308 = \\mathbf{92.32\\text{ req/sec}}$\n*   **Server 2:** $400 \\times 0.3846 = \\mathbf{153.84\\text{ req/sec}}$\n*   **Server 3:** $400 \\times 0.3846 = \\mathbf{153.84\\text{ req/sec}}$\n\n---\n\n### Sanity Check & Analysis\n\n1.  **Total Traffic Check:** $92.32 + 153.84 + 153.84 = 400\\text{ req/sec}$. (Matches incoming traffic).\n2.  **Capacity Check:** \n    *   Server 1 is allocated $92.32$ out of its $100$ capacity (~92% utilization of max capacity).\n    *   Server 2 is allocated $153.84$ out of $250$ (~61.5%).\n    *   Server 3 is allocated $153.84$ out of $500$ (~30.7%).\n3.  **Headroom Reasoning:** Even though Server 3 has the highest capacity (500 req/sec), its CPU is already running hot at 80% (only 20% headroom). Therefore, the algorithm intelligently restricts Server 3 to take the same amount of traffic as Server 2 (which has lower capacity, but also lower CPU usage), preventing Server 3 from tipping into CPU exhaustion.",
+  "run_number": 2,
+  "temperature": 0.7,
+  "latency_seconds": 3.7859,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Algorithm Execution",
+      "score": 5,
+      "justification": "The mathematical execution of the weighted distribution is flawless, with correct weight calculations, proportions, and traffic distribution that sums exactly to the 400 req/sec total.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Headroom Adjustment",
+      "score": 5,
+      "justification": "The response dynamically recalculates server capacity weights based on current CPU headroom, correctly reducing the traffic share for the highly loaded server despite its high raw capacity.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T12:51:51.749933+00:00"
+}
