@@ -1,0 +1,43 @@
+{
+  "id": "P164",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this Markdown table with merged-looking header groups into a properly normalized JSON array, correctly attributing each sub-column to its parent header:\n| Name | Q1 | | Q2 | |\n|------|-----|-----|-----|-----|\n| | Sales | Cost | Sales | Cost |\n| Alice | 100 | 40 | 120 | 45 |",
+  "response_text": "**Normalized JSON**\n\n```json\n[\n  {\n    \"Name\": \"Alice\",\n    \"Q1\": {\n      \"Sales\": 100,\n      \"Cost\": 40\n    },\n    \"Q2\": {\n      \"Sales\": 120,\n      \"Cost\": 45\n    }\n  }\n]\n```\n\n**Explanation**\n\n- The first header row defines the *parent* columns: **Name**, **Q1**, and **Q2**.  \n- The second header row supplies the *sub‑columns* for each parent (except **Name**, which has no sub‑columns): **Sales** and **Cost** under both **Q1** and **Q2**.  \n- Each data row is therefore represented as an object where:\n  * `Name` is a simple scalar value.\n  * `Q1` and `Q2` are nested objects containing the corresponding `Sales` and `Cost` values.  \n\nThis structure keeps the relationship between sub‑columns and their parent headers explicit and is fully JSON‑compatible.",
+  "run_number": 5,
+  "temperature": 0.7,
+  "latency_seconds": 5.9744,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Relational Integrity Score",
+      "score": 5,
+      "justification": "The JSON correctly nests Sales and Cost under Q1 and Q2, preserving the parent‑child relationships from the table.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Edge Case Handling Score",
+      "score": 5,
+      "justification": "Since the source table contains no irregular or missing data, the model processes it without error or loss, satisfying edge‑case handling.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Output Validity Score",
+      "score": 5,
+      "justification": "The produced JSON is syntactically valid and parsable.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 5,
+      "justification": "All values from the table (Name, Q1 Sales/Cost, Q2 Sales/Cost) are present in the output with nothing omitted.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T19:02:01.730220+00:00"
+}

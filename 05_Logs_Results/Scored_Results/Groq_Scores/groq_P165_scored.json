@@ -1,0 +1,43 @@
+{
+  "id": "P165",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this JSON with inconsistent date formats across records (some MM/DD/YYYY, some YYYY-MM-DD, some as Unix timestamps) into a uniform ISO 8601 format, correctly detecting each record's original format:\n[{\"date\": \"03/15/2026\"}, {\"date\": \"2026-04-01\"}, {\"date\": 1735689600}]",
+  "response_text": "Below is a **self‑contained Python 3** example that:\n\n1. Detects the original format of each `date` value (MM/DD/YYYY, ISO‑8601, or Unix timestamp).  \n2. Normalises every entry to an **ISO 8601** string with UTC time (`YYYY‑MM‑DDTHH:MM:SSZ`).  \n3. Prints the transformed JSON.\n\n```python\nimport json\nimport datetime\nimport re\nfrom typing import Any, List, Dict\n\n# ---- Input ---------------------------------------------------------\nraw_json = '''\n[\n    {\"date\": \"03/15/2026\"},\n    {\"date\": \"2026-04-01\"},\n    {\"date\": 1735689600}\n]\n'''\nrecords: List[Dict[str, Any]] = json.loads(raw_json)\n\n\n# ---- Helpers --------------------------------------------------------\ndef is_unix_timestamp(val: Any) -> bool:\n    \"\"\"Unix timestamps are integers (or numeric strings) that are > 10⁹.\"\"\"\n    try:\n        # Accept both int and numeric string\n        ts = int(val)\n        return ts > 1_000_000_000  # roughly after 2001‑09‑09\n    except (ValueError, TypeError):\n        return False\n\n\ndef parse_date(value: Any) -> str:\n    \"\"\"\n    Convert *value* to an ISO‑8601 UTC string (YYYY‑MM‑DDTHH:MM:SSZ).\n\n    Supported source formats:\n        • MM/DD/YYYY  (e.g. \"03/15/2026\")\n        • YYYY‑MM‑DD  (e.g. \"2026-04-01\")\n        • Unix timestamp (seconds since epoch, int or numeric string)\n    \"\"\"\n    # 1️⃣ Unix timestamp\n    if is_unix_timestamp(value):\n        dt = datetime.datetime.utcfromtimestamp(int(value))\n        return dt.strftime(\"%Y-%m-%dT%H:%M:%SZ\")\n\n    # 2️⃣ Already ISO‑like (YYYY‑MM‑DD) – treat as date‑only\n    if isinstance(value, str) and re.fullmatch(r\"\\d{4}-\\d{2}-\\d{2}\", value):\n        dt = datetime.datetime.strptime(value, \"%Y-%m-%d\")\n        return dt.strftime(\"%Y-%m-%dT%H:%M:%SZ\")\n\n    # 3️⃣ US style MM/DD/YYYY\n    if isinstance(value, str) and re.fullmatch(r\"\\d{2}/\\d{2}/\\d{4}\", value):\n        dt = datetime.datetime.strptime(value, \"%m/%d/%Y\")\n        return dt.strftime(\"%Y-%m-%dT%H:%M:%SZ\")\n\n    # 4️⃣ Fallback – raise a clear error\n    raise ValueError(f\"Unsupported date format: {value!r}\")\n\n\n# ---- Normalisation --------------------------------------------------\nfor rec in records:\n    rec[\"date\"] = parse_date(rec[\"date\"])\n\n# ---- Output ---------------------------------------------------------\nprint(json.dumps(records, indent=2))\n```\n\n### What the script does\n\n| Original value | Detected format | Normalised ISO‑8601 output |\n|----------------|----------------|----------------------------|\n| `\"03/15/2026\"` | MM/DD/YYYY     | `\"2026-03-15T00:00:00Z\"`   |\n| `\"2026-04-01\"` | ISO‑date (YYYY‑MM‑DD) | `\"2026-04-01T00:00:00Z\"` |\n| `1735689600`   | Unix timestamp | `\"2025-01-01T00:00:00Z\"`   |\n\n### Resulting JSON\n\n```json\n[\n  {\n    \"date\": \"2026-03-15T00:00:00Z\"\n  },\n  {\n    \"date\": \"2026-04-01T00:00:00Z\"\n  },\n  {\n    \"date\": \"2025-01-01T00:00:00Z\"\n  }\n]\n```\n\nYou can drop the script into any Python environment (≥ 3.7) and run it against your own data. Adjust the `parse_date` function if you need to support additional date patterns (e.g., timestamps in milliseconds, time‑zone offsets, etc.).",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 5.9975,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Relational Integrity Score",
+      "score": 5,
+      "justification": "The transformation preserves the array structure and key-value relationships of each object, maintaining the original JSON hierarchy without loss or alteration of structural references.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Edge Case Handling Score",
+      "score": 5,
+      "justification": "The script robustly detects and handles all three specified formats (MM/DD/YYYY, YYYY-MM-DD, Unix timestamp) with regex validation, type checking, and explicit error raising for unsupported formats, avoiding silent data loss.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Output Validity Score",
+      "score": 5,
+      "justification": "The output is syntactically valid JSON produced by json.dumps, with all dates correctly formatted as ISO 8601 UTC strings (YYYY-MM-DDTHH:MM:SSZ).",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 5,
+      "justification": "All three input records are present in the output with transformed dates, and no data is silently dropped or omitted during processing.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T19:02:45.967321+00:00"
+}
