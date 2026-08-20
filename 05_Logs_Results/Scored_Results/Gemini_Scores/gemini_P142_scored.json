@@ -1,0 +1,43 @@
+{
+  "id": "P142",
+  "category": "Long-context Retention",
+  "difficulty": "Hard",
+  "prompt": "Note 1: Feature flag 'dark_mode' was enabled for 10% of users in an initial rollout. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: After positive feedback, it was expanded to 50% of users. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: A bug was discovered affecting mobile users specifically, so mobile rollout was rolled back to 0%. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 4: Desktop rollout remained at 50% throughout the mobile issue. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 5: After the mobile bug was fixed, mobile rollout resumed at 25%, separate from desktop's 50%. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: What is the CURRENT rollout percentage for mobile users versus desktop users, and reconstruct the full sequence of changes that led to this split state?",
+  "response_text": "Based on the provided notes, here is the current rollout percentage and the chronological sequence of changes that led to this split state:\n\n### Current Rollout Percentage\n* **Mobile Users:** 25%\n* **Desktop Users:** 50%\n\n---\n\n### Sequence of Changes\n\n1. **Initial Rollout (Note 1):** \n   * The 'dark_mode' feature flag was enabled for **10% of users** generally.\n\n2. **Expansion (Note 2):** \n   * Following positive feedback, the rollout was expanded to **50% of users**.\n\n3. **Mobile Rollback (Note 3):** \n   * A bug was discovered specifically affecting mobile users, prompting a rollback of the **mobile rollout to 0%**. *(Desktop remained at its previous level, implied by Note 4).*\n\n4. **Desktop Maintenance (Note 4):** \n   * While the mobile issue was being addressed, the **desktop rollout remained steady at 50%**.\n\n5. **Mobile Resumption (Note 5):** \n   * Once the mobile bug was fixed, the **mobile rollout resumed at 25%**, operating independently from the desktop rollout.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.6125,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Sequential Accuracy Score",
+      "score": 5,
+      "justification": "The response correctly orders the events (initial 10% → expansion to 50% → mobile rollback to 0% → desktop steady → mobile resumed at 25%) matching the chronological flow in the notes.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Current-State Accuracy Score",
+      "score": 5,
+      "justification": "The final percentages (mobile 25%, desktop 50%) are exactly as stated in Note 5 and Note 4, so the current state is accurately reported.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 5,
+      "justification": "All relevant facts from the five notes—initial rollout size, expansion, mobile bug and rollback, desktop steadiness, and post‑fix mobile resumption—are included, so nothing is omitted.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Coherence Score",
+      "score": 5,
+      "justification": "The answer is well‑structured with clear headings and a numbered list, making the sequence easy to follow despite its complexity.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:19:09.660866+00:00"
+}

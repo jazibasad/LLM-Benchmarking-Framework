@@ -1,0 +1,43 @@
+{
+  "id": "P139",
+  "category": "Long-context Retention",
+  "difficulty": "Hard",
+  "prompt": "Note 1: Module A was originally designed to handle authentication only. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: In a later revision, Module A was extended to also handle session management. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: A subsequent security audit required Module A to be split, moving session management into a new Module D. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 4: Module A currently handles only authentication again, matching its original scope. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 5: Module B has always handled authorization and was never modified. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Trace the full history of Module A's responsibilities from start to the current state, and explain why it ended up back where it started.",
+  "response_text": "Based on the provided notes, here is the full history of Module A's responsibilities and the explanation for how it returned to its original scope:\n\n### History of Module A's Responsibilities\n\n1. **Original State (Note 1):** \n   * Module A was originally designed and operated to handle **authentication only**.\n\n2. **First Revision (Note 2):** \n   * Module A was extended to handle an additional responsibility, taking on **session management** alongside authentication.\n\n3. **Second Revision / Security Audit (Note 3):** \n   * Following a subsequent security audit, Module A's responsibilities were split. **Session management was moved out** of Module A and into a newly created Module D.\n\n4. **Current State (Note 4):** \n   * Module A currently handles **authentication only again**, matching its original scope. \n\n---\n\n### Why It Ended Up Back Where It Started\n\nModule A ended up back where it started due to a **security audit** (Note 3). While an intervening revision temporarily expanded Module A's scope to include session management (Note 2), the security audit mandated a separation of concerns, requiring session management to be extracted into a dedicated module (Module D). This architectural correction stripped away the added responsibility and restored Module A strictly to its original authentication-only function.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.7725,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Sequential Accuracy Score",
+      "score": 5,
+      "justification": "The response accurately lists the chronological changes from Note 1 through Note 4, matching the sequence in the prompt.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Current-State Accuracy Score",
+      "score": 5,
+      "justification": "It correctly states that Module A currently handles authentication only, which is the final state described in Note 4.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 5,
+      "justification": "All relevant facts about Module A’s responsibilities across the notes are included, with no omitted details.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Coherence Score",
+      "score": 5,
+      "justification": "The explanation is well organized, with clear headings and concise sentences that make the progression easy to follow.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:18:32.357570+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "P173",
+  "category": "Data Transformation",
+  "difficulty": "Medium",
+  "prompt": "Convert this list of key-value pairs into a properly formatted Python dictionary literal: name=Eve, role=admin, active=true",
+  "response_text": "Here is the properly formatted Python dictionary literal:\n\n```python\n{\n    \"name\": \"Eve\",\n    \"role\": \"admin\",\n    \"active\": True,\n}\n```\n\n*Note: In Python, `true` is capitalized as `True`, and string values need to be enclosed in quotation marks.*",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.901,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Structural Correctness",
+      "score": 5,
+      "justification": "The response provides a valid Python dictionary literal with correct key‑value pairing, proper braces, colons, and commas, accurately reflecting the source structure.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Data Fidelity",
+      "score": 5,
+      "justification": "All original values are preserved exactly (strings quoted, boolean capitalized to True) with no omissions or alterations.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:37:18.482556+00:00"
+}

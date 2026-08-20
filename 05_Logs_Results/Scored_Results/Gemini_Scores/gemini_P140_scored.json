@@ -1,0 +1,43 @@
+{
+  "id": "P140",
+  "category": "Long-context Retention",
+  "difficulty": "Hard",
+  "prompt": "Note 1: The database originally used MySQL for all storage needs. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: A migration project moved analytics workloads to PostgreSQL due to better JSON support. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Later, a further migration moved time-series data from PostgreSQL to a dedicated TimescaleDB instance. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 4: Transactional data remains on the original MySQL instance throughout all of this. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 5: A final review confirmed no data type currently uses more than one database system simultaneously. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Describe exactly which database system is used for each data type today, and reconstruct the sequence of migrations that led to this state.",
+  "response_text": "Based on the provided notes, here is the current state of the database systems used for each data type and the sequence of migrations that led to it:\n\n### Current Database Systems by Data Type (Today)\n*   **Transactional data:** MySQL (stored here from the beginning and remained throughout).\n*   **Analytics workloads:** PostgreSQL (migrated here from MySQL due to better JSON support).\n*   **Time-series data:** TimescaleDB (migrated here from PostgreSQL).\n\n### Sequence of Migrations\n1.  **Initial State:** All data types (Transactional, Analytics, and Time-series) were originally stored on **MySQL**.\n2.  **First Migration:** Analytics workloads were migrated from MySQL to **PostgreSQL**.\n3.  **Second Migration:** Time-series data was migrated from PostgreSQL to a dedicated **TimescaleDB** instance. \n4.  **Final State:** Transactional data remained on **MySQL**, analytics remained on **PostgreSQL**, and time-series data resided on **TimescaleDB**, with no data types currently split across multiple database systems.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.2972,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Sequential Accuracy Score (0-5)",
+      "score": 5,
+      "justification": "The response accurately enumerates the initial state and both migration steps in correct chronological order, fully reconstructing the sequence.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Current-State Accuracy Score (0-5)",
+      "score": 5,
+      "justification": "The final state described matches the described current configuration of MySQL for transactional, PostgreSQL for analytics, and TimescaleDB for time-series data.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score (0-5)",
+      "score": 5,
+      "justification": "All key facts about the migrations and the final configuration are included without omission of relevant details.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Coherence Score (0-5)",
+      "score": 5,
+      "justification": "The explanation is neatly structured with headings and bullet points, making it easy to follow despite the multi-step migration context.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:18:43.552470+00:00"
+}

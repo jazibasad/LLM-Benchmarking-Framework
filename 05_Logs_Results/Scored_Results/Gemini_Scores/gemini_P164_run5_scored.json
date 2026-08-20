@@ -1,0 +1,43 @@
+{
+  "id": "P164",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this Markdown table with merged-looking header groups into a properly normalized JSON array, correctly attributing each sub-column to its parent header:\n| Name | Q1 | | Q2 | |\n|------|-----|-----|-----|-----|\n| | Sales | Cost | Sales | Cost |\n| Alice | 100 | 40 | 120 | 45 |",
+  "response_text": "```json\n[\n  {\n    \"Name\": \"Alice\",\n    \"Q1_Sales\": \"100\",\n    \"Q1_Cost\": \"40\",\n    \"Q2_Sales\": \"120\",\n    \"Q2_Cost\": \"45\"\n  }\n]\n```",
+  "run_number": 5,
+  "temperature": 0.7,
+  "latency_seconds": 0.8484,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Relational Integrity Score (0-5)",
+      "score": 5,
+      "justification": "The response correctly attributes each sub-column (Sales, Cost) to its parent header (Q1, Q2) by constructing composite keys like Q1_Sales and Q1_Cost, preserving the hierarchical relationship from the original markdown table.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Edge Case Handling Score (0-5)",
+      "score": 3,
+      "justification": "While the response handles the given input correctly, it does not demonstrate handling of potential edge cases such as additional quarters, missing data rows, or inconsistent column counts, meeting only the core requirement minimally.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Output Validity Score (0-5)",
+      "score": 5,
+      "justification": "The output is syntactically valid JSON in a proper array format with correctly formatted objects, keys, and string values enclosed in quotes.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score (0-5)",
+      "score": 5,
+      "justification": "All source data from the markdown table is represented in the output, including the Name field and all four metric values for Q1 and Q2 sales and costs, with nothing silently dropped.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 18,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:34:28.703572+00:00"
+}

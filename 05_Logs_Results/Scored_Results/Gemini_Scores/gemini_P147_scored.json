@@ -1,0 +1,43 @@
+{
+  "id": "P147",
+  "category": "Long-context Retention",
+  "difficulty": "Hard",
+  "prompt": "Note 1: The company originally operated in a single region (US-East). The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Expansion added a second region (EU-West) to serve European customers with lower latency. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: A third region (AP-Southeast) was added later for Asian customers. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 4: Due to low usage, AP-Southeast was later decommissioned, with those customers routed back to EU-West. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 5: US-East and EU-West remain the only two active regions today. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Which regions are currently active, which was removed, and reconstruct the full timeline of regional expansion and contraction described.",
+  "response_text": "Based on the provided notes, here are the answers to your questions:\n\n### 1. Currently Active Regions\n* **US-East** (Note 5)\n* **EU-West** (Note 5)\n\n### 2. Removed Region\n* **AP-Southeast** (Note 4)\n\n---\n\n### 3. Full Timeline of Regional Expansion and Contraction\n\n* **Phase 1 (Origin):** The company originally operated in a single region: **US-East**. *(Note 1)*\n* **Phase 2 (First Expansion):** A second region, **EU-West**, was added to serve European customers with lower latency. *(Note 2)*\n* **Phase 3 (Second Expansion):** A third region, **AP-Southeast**, was added later to serve Asian customers. *(Note 3)*\n* **Phase 4 (Contraction):** Due to low usage, **AP-Southeast** was decommissioned, and its customers were routed back to **EU-West**. *(Note 4)*\n* **Phase 5 (Present Day):** **US-East** and **EU-West** remain the only two active regions. *(Note 5)*",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.2069,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Sequential Accuracy Score (0-5)",
+      "score": 5,
+      "justification": "The model correctly reconstructs the full chronological sequence starting with US-East as origin, followed by the additions of EU-West and AP-Southeast, then the decommissioning of AP-Southeast, ending with the current state.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Current-State Accuracy Score (0-5)",
+      "score": 5,
+      "justification": "The model accurately identifies US-East and EU-West as the only active regions, matching Note 5's description of the final state.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score (0-5)",
+      "score": 5,
+      "justification": "The model references all five notes, correctly identifies all three regions, and includes all relevant facts about expansion and contraction without omitting any key details.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Coherence Score (0-5)",
+      "score": 5,
+      "justification": "The explanation is clearly organized with distinct sections for current state, removed region, and the full timeline, presented in a logical and easy-to-follow structure.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:24:41.792423+00:00"
+}

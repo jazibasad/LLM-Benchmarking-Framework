@@ -1,0 +1,43 @@
+{
+  "id": "P143",
+  "category": "Long-context Retention",
+  "difficulty": "Hard",
+  "prompt": "Note 1: Team structure originally had one team covering both frontend and backend. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: As the company grew, the team split into a dedicated Frontend team and Backend team. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: A Platform team was later carved out of Backend to handle infrastructure specifically. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 4: Backend team currently focuses only on business logic and APIs, not infrastructure. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 5: Frontend team has remained unchanged in scope since the initial split. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Describe the current responsibilities of all three teams, and explain the org changes that produced this structure, step by step.",
+  "response_text": "Based on the provided notes, here is the step-by-step evolution of the organization structure and the current responsibilities of the three teams:\n\n### Step-by-Step Organizational Changes\n\n1. **Initial State (Note 1):** The organization started with a single, unified team responsible for covering both frontend and backend development.\n2. **First Split (Note 2):** As the company grew, this single team split into two separate, dedicated teams: a **Frontend team** and a **Backend team**.\n3. **Second Split (Note 3):** As the organization continued to evolve, a specialized **Platform team** was carved directly out of the Backend team to take over infrastructure responsibilities.\n4. **Current State (Notes 4 & 5):** The Frontend team's scope has remained unchanged since the initial split, while the Backend and Platform teams now operate with distinct, narrower focuses.\n\n---\n\n### Current Responsibilities of the Three Teams\n\n* **Frontend Team:** Responsible for user-facing interface development. Their scope and focus have remained unchanged since they were first split from the original unified team.\n* **Backend Team:** Currently focuses exclusively on **business logic and APIs**, having handed off infrastructure duties to the Platform team. \n* **Platform Team:** Responsible specifically for **infrastructure**, having been carved out of the Backend team to handle these technical operations.",
+  "run_number": 3,
+  "temperature": 0.7,
+  "latency_seconds": 2.2663,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Sequential Accuracy Score",
+      "score": 5,
+      "justification": "The response correctly identifies the progression from one team to two, and then the carving out of the third team.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Current-State Accuracy Score",
+      "score": 5,
+      "justification": "The response accurately identifies that the Frontend scope is unchanged, the Backend focuses on logic/APIs, and the Platform team handles infrastructure.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 5,
+      "justification": "The response captures all organizational transitions and specific focus areas mentioned in all five notes.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Coherence Score",
+      "score": 5,
+      "justification": "The response is logically organized into a chronological history followed by a clear summary of current roles.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:19:56.473420+00:00"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "P161",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this deeply nested JSON representing an e-commerce order into a set of THREE normalized CSV tables (orders, order_items, customers) with proper foreign key columns linking them:\n{\"order_id\": \"O1001\", \"customer\": {\"id\": \"C55\", \"name\": \"Ivan\"}, \"items\": [{\"sku\": \"A1\", \"qty\": 2, \"price\": 15.0}, {\"sku\": \"B2\", \"qty\": 1, \"price\": 40.0}]}",
+  "response_text": "Here are the three normalized CSV tables representing the e-commerce order, with proper foreign key relationships:\n\n### 1. `customers.csv`\nContains unique customer information.\n\n```csv\ncustomer_id,name\nC55,Ivan\n```\n\n### 2. `orders.csv`\nContains order-level details and links back to the customer via `customer_id` (Foreign Key).\n\n```csv\norder_id,customer_id\nO1001,C55\n```\n\n### 3. `order_items.csv`\nContains the line items for each order and links back to the order via `order_id` (Foreign Key).\n\n```csv\norder_id,sku,qty,price\nO1001,A1,2,15.0\nO1001,B2,1,40.0\n```",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.5865,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Relational Integrity Score",
+      "score": 5,
+      "justification": "The response correctly establishes foreign key relationships with customer_id in orders and order_id in order_items, preserving the original links.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Edge Case Handling Score",
+      "score": 5,
+      "justification": "The source data contained no irregularities, and the transformation was performed without errors or data loss.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Output Validity Score",
+      "score": 5,
+      "justification": "The CSV tables are syntactically valid with proper headers and rows, matching the required format.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 5,
+      "justification": "All fields from the source JSON, including customer details, order reference, and item line items, are fully represented in the output.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:32:46.697234+00:00"
+}

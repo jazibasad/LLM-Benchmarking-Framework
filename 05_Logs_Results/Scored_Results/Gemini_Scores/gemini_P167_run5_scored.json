@@ -1,0 +1,43 @@
+{
+  "id": "P167",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this CSV with a single column containing pipe-delimited multi-values (e.g. 'tags' column: 'red|blue|green') into a normalized JSON structure where each tag becomes a separate array element.",
+  "response_text": "It looks like you forgot to include the CSV data! \n\nPlease paste your CSV data (or a representative sample) in your reply, and I will convert it into the normalized JSON structure for you. \n\n---\n\n### Example of how I will process it:\n\n**Input CSV:**\n```csv\nid,name,tags\n1,Item A,red|blue|green\n2,Item B,yellow|blue\n3,Item C,red\n```\n\n**Output JSON:**\n```json\n[\n  {\n    \"id\": \"1\",\n    \"name\": \"Item A\",\n    \"tags\": [\"red\", \"blue\", \"green\"]\n  },\n  {\n    \"id\": \"2\",\n    \"name\": \"Item B\",\n    \"tags\": [\"yellow\", \"blue\"]\n  },\n  {\n    \"id\": \"3\",\n    \"name\": \"Item C\",\n    \"tags\": [\"red\"]\n  }\n]\n```\n\n*(Note: If you need it normalized even further—such as into a relational structure with a separate table for tags—let me know!)*",
+  "run_number": 5,
+  "temperature": 0.7,
+  "latency_seconds": 1.3383,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Relational Integrity Score",
+      "score": 0,
+      "justification": "The model provided no transformation, failing to preserve relationships between the original CSV rows and the resulting JSON structure.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Edge Case Handling Score",
+      "score": 0,
+      "justification": "Because the model did not process the data at all, it offered no handling of irregular or inconsistent source values.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Output Validity Score",
+      "score": 0,
+      "justification": "The response is plain text requesting CSV input, not a syntactically valid JSON output.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 0,
+      "justification": "No source data was represented in the output, indicating complete omission of the required conversion.",
+      "outcome": "Failure"
+    }
+  ],
+  "total_score": 0,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:36:07.912299+00:00"
+}

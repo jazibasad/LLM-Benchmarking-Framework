@@ -1,0 +1,31 @@
+{
+  "id": "P148",
+  "category": "Long-context Retention",
+  "difficulty": "Medium",
+  "prompt": "Note 1: Project Alpha's deadline was moved from May 1 to May 15 due to resourcing. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Project Beta's deadline remains June 1 as originally planned. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Project Gamma's deadline was moved up from July 1 to June 20 due to client request. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: List each project and its FINAL deadline, noting which ones changed from their original date.",
+  "response_text": "Based on the provided notes, here is the list of each project, its final deadline, and whether the date changed:\n\n1. **Project Alpha**\n   * **Final Deadline:** May 15\n   * **Status:** Changed (moved from May 1 due to resourcing)\n\n2. **Project Beta**\n   * **Final Deadline:** June 1\n   * **Status:** Did not change (remains as originally planned)\n\n3. **Project Gamma**\n   * **Final Deadline:** June 20\n   * **Status:** Changed (moved up from July 1 due to client request)",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.9457,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Multi-Fact Synthesis",
+      "score": 5,
+      "justification": "The response correctly combines information from all three project notes, accurately listing each project's final deadline and identifying which deadlines changed from their original dates.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Numerical Accuracy",
+      "score": 5,
+      "justification": "All deadline dates and comparisons are numerically correct with no calculation or comparison errors across the facts.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:24:47.634725+00:00"
+}

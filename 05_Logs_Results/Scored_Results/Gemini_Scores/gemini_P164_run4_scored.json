@@ -1,0 +1,43 @@
+{
+  "id": "P164",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this Markdown table with merged-looking header groups into a properly normalized JSON array, correctly attributing each sub-column to its parent header:\n| Name | Q1 | | Q2 | |\n|------|-----|-----|-----|-----|\n| | Sales | Cost | Sales | Cost |\n| Alice | 100 | 40 | 120 | 45 |",
+  "response_text": "```json\n[\n  {\n    \"Name\": \"Alice\",\n    \"Q1_Sales\": 100,\n    \"Q1_Cost\": 40,\n    \"Q2_Sales\": 120,\n    \"Q2_Cost\": 45\n  }\n]\n```",
+  "run_number": 4,
+  "temperature": 0.7,
+  "latency_seconds": 1.1543,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Relational Integrity Score",
+      "score": 5,
+      "justification": "The response correctly maps each sub-column (Sales/Cost) to its parent header (Q1/Q2) and preserves the original hierarchical relationships.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Edge Case Handling Score",
+      "score": 5,
+      "justification": "The input data contains no irregularities, and the response handles the regular structure without errors or data loss.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Output Validity Score",
+      "score": 5,
+      "justification": "The JSON syntax is valid, with properly structured keys and values in the target format.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 5,
+      "justification": "All source data (Name, Q1 Sales/Cost, Q2 Sales/Cost) is accurately represented in the output.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:34:20.647490+00:00"
+}

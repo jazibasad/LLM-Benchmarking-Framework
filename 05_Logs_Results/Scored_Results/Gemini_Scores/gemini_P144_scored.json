@@ -1,0 +1,43 @@
+{
+  "id": "P144",
+  "category": "Long-context Retention",
+  "difficulty": "Hard",
+  "prompt": "Note 1: The original API returned dates in US format (MM/DD/YYYY). The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: An internationalization update changed the default to ISO format (YYYY-MM-DD). The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: A backward-compatibility flag was added allowing clients to request the old US format explicitly. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 4: Six months later, the backward-compatibility flag was deprecated and scheduled for removal. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 5: As of the most recent release, the flag has been fully removed and ISO format is now the only option. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: What date format does the API return today, and can old clients still request the US format? Trace the full history that led to the current behavior.",
+  "response_text": "Based on the provided notes, here are the answers to your questions and the full chronological trace of the API's date format history:\n\n### Current Status\n* **Date format returned today:** ISO format (`YYYY-MM-DD`).\n* **Can old clients still request the US format?** No. The backward-compatibility flag has been fully removed, making ISO format the only available option.\n\n---\n\n### Full History Trace\n\n1. **Initial State (Note 1):** \n   The API originally returned dates exclusively in the US format (`MM/DD/YYYY`). \n\n2. **Internationalization Update (Note 2):** \n   An update changed the system default for date returns to the international standard ISO format (`YYYY-MM-DD`).\n\n3. **Adding Compatibility (Note 3):** \n   To prevent breaking existing integrations, a backward-compatibility flag was introduced, allowing legacy clients to explicitly request the old US format (`MM/DD/YYYY`).\n\n4. **Deprecation (Note 4):** \n   Six months after the compatibility flag was introduced, it was officially deprecated and scheduled for future removal, signaling to developers that they needed to update their systems.\n\n5. **Final Removal (Note 5):** \n   As of the most recent release, the compatibility flag was completely removed from the system. Consequently, the API exclusively returns ISO format with no option to revert to US format. \n\n*(Note: Throughout this entire lifecycle, the system operated under standard conditions with no unusual events, scheduled routine maintenance, and all other parameters remaining within expected ranges.)*",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.7207,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Sequential Accuracy Score",
+      "score": 5,
+      "justification": "The response accurately lists all five chronological changes in correct order.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Current-State Accuracy Score",
+      "score": 5,
+      "justification": "The response correctly states that ISO format is now the only option and the flag is removed.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 5,
+      "justification": "All facts from the notes, including operational status and maintenance, are included.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Coherence Score",
+      "score": 5,
+      "justification": "The response is well-structured with clear headings and bullet points, making it easy to follow.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:21:26.184049+00:00"
+}

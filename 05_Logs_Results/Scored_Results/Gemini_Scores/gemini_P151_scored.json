@@ -1,0 +1,31 @@
+{
+  "id": "P151",
+  "category": "Long-context Retention",
+  "difficulty": "Medium",
+  "prompt": "Note 1: Policy revision 1 required manager approval for expenses over $500. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Policy revision 2 lowered that threshold to $300. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Policy revision 3 raised it back up to $400. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: What is the CURRENT approval threshold, and how did it change over the three revisions?",
+  "response_text": "Based on the provided notes:\n\n* **Current Approval Threshold:** **$400** (established in Policy revision 3).\n* **How it changed over the three revisions:**\n  1. **Revision 1:** Set the threshold to **$500**.\n  2. **Revision 2:** Lowered the threshold to **$300**.\n  3. **Revision 3:** Raised the threshold back up to **$400**.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.8956,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Multi-Fact Synthesis (0-5)",
+      "score": 5,
+      "justification": "The response correctly synthesizes information from all three notes, establishing the current $400 threshold and accurately tracing the sequential changes across revisions 1, 2, and 3.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Numerical Accuracy (0-5)",
+      "score": 5,
+      "justification": "All numerical values ($500, $300, $400) are reported exactly as specified in the original prompt with no computational or factual errors.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:25:22.209260+00:00"
+}

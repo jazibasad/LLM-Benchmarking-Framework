@@ -1,0 +1,43 @@
+{
+  "id": "P163",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this JSON representing a company org chart (with a 'reports' array of nested employee objects at arbitrary depth) into a flat CSV with columns: employee_name, manager_name, depth_level.",
+  "response_text": "To convert a nested JSON organizational chart into a flat CSV, we need to recursively traverse the JSON tree, keeping track of the current employee's name, their manager's name, and the depth level.\n\nBelow is a complete solution using **Python**. It uses the built-in `json` and `csv` modules, making it fast and easy to run without needing external libraries.\n\n### Python Script\n\n```python\nimport csv\nimport json\n\n# Example JSON Org Chart\norg_chart_json = \"\"\"\n{\n    \"employee_name\": \"Alice Smith\",\n    \"reports\": [\n        {\n            \"employee_name\": \"Bob Jones\",\n            \"reports\": [\n                {\n                    \"employee_name\": \"Charlie Brown\",\n                    \"reports\": []\n                },\n                {\n                    \"employee_name\": \"Diana Prince\",\n                    \"reports\": []\n                }\n            ]\n        },\n        {\n            \"employee_name\": \"Evan Wright\",\n            \"reports\": []\n        }\n    ]\n}\n\"\"\"\n\n\ndef flatten_org_chart(node, manager_name=\"None\", depth_level=0):\n    \"\"\"Recursively traverse the org chart and yield flat employee records.\"\"\"\n    current_employee = node.get(\"employee_name\")\n\n    # Yield the current employee's record\n    yield {\n        \"employee_name\": current_employee,\n        \"manager_name\": manager_name,\n        \"depth_level\": depth_level,\n    }\n\n    # Recursively process all direct reports\n    for report in node.get(\"reports\", []):\n        yield from flatten_org_chart(\n            report, manager_name=current_employee, depth_level=depth_level + 1\n        )\n\n\ndef convert_json_to_csv(json_str, output_csv_path):\n    data = json.loads(json_str)\n\n    # The top-level CEO/Manager has no manager (set to 'N/A' or 'None')\n    flat_data = list(flatten_org_chart(data, manager_name=\"N/A\", depth_level=0))\n\n    # Write to CSV\n    fieldnames = [\"employee_name\", \"manager_name\", \"depth_level\"]\n    with open(output_csv_path, mode=\"w\", newline=\"\", encoding=\"utf-8\") as f:\n        writer = csv.DictWriter(f, fieldnames=fieldnames)\n        writer.writeheader()\n        writer.writerows(flat_data)\n\n    print(f\"Successfully converted org chart to {output_csv_path}\")\n\n\n# Run the conversion\nconvert_json_to_csv(org_chart_json, \"org_chart.csv\")\n```\n\n### Output CSV (`org_chart.csv`)\n\nBased on the example JSON above, the resulting CSV file will look like this:\n\n```csv\nemployee_name,manager_name,depth_level\nAlice Smith,N/A,0\nBob Jones,Alice Smith,1\nCharlie Brown,Bob Jones,2\nDiana Prince,Bob Jones,2\nEvan Wright,Alice Smith,1\n```\n\n### How it works:\n1. **Recursion:** The `flatten_org_chart` generator function reads the current node, yields the data, and then loops through the `reports` array to call itself for every subordinate (incrementing the `depth_level` by `1` and passing the current employee's name as the `manager_name`).\n2. **Top-Level Handling:** The root employee (CEO/President) has no manager, so it defaults to `\"N/A\"` at `depth_level` `0`.\n3. **CSV Generation:** `csv.DictWriter` takes the yielded dictionary objects and writes them out cleanly with the requested column headers.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 3.0036,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Relational Integrity Score",
+      "score": 5,
+      "justification": "The recursive traversal correctly passes each employee's name as the manager to its reports, preserving the hierarchical relationships throughout the chart.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Edge Case Handling Score",
+      "score": 3,
+      "justification": "The script handles missing 'reports' arrays and missing manager fields, but it does not detect cycles or multiple top‑level entries, leaving some irregular data unhandled.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Output Validity Score",
+      "score": 5,
+      "justification": "The CSV is written with the exact requested headers and each record is formatted as a proper, syntactically valid row.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 5,
+      "justification": "All employees from the example JSON are emitted with correct manager and depth values, and no records are silently omitted.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 18,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:33:02.110204+00:00"
+}

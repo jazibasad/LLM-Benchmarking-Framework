@@ -1,0 +1,43 @@
+{
+  "id": "P168",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this JSON representing a recursive category tree (categories containing subcategories containing subcategories) into a flat list with a 'path' field showing the full breadcrumb (e.g. 'Electronics > Computers > Laptops').",
+  "response_text": "It looks like you forgot to include the JSON! \n\nPlease paste your JSON data in a reply, and let me know:\n1. What the name of the category name field is (e.g., `name`, `title`).\n2. What the name of the subcategory array field is (e.g., `subcategories`, `children`, `items`).\n3. Your preferred programming language for the solution (e.g., JavaScript/TypeScript, Python, PHP), or if you just want the converted JSON output directly. \n\nOnce you provide the JSON, I'll convert it for you right away!",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.1661,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Relational Integrity Score",
+      "score": 0,
+      "justification": "The model could not evaluate relational integrity because no input data was provided to process.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Edge Case Handling Score",
+      "score": 0,
+      "justification": "The model did not attempt to handle any edge cases as it was unable to receive source data.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Output Validity Score",
+      "score": 0,
+      "justification": "The model did not produce the requested transformed output, making validity impossible to assess.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 0,
+      "justification": "The model failed to complete the task because the prompt lacked the necessary input data.",
+      "outcome": "Failure"
+    }
+  ],
+  "total_score": 0,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:36:25.216426+00:00"
+}

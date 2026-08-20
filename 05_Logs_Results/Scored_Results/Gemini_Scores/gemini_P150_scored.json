@@ -1,0 +1,31 @@
+{
+  "id": "P150",
+  "category": "Long-context Retention",
+  "difficulty": "Medium",
+  "prompt": "Note 1: Server cluster A has 8 nodes, each with 16GB RAM. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Server cluster B has 12 nodes, each with 8GB RAM. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Server cluster C has 4 nodes, each with 32GB RAM. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Which cluster has the most total RAM, and what is the exact total for each cluster?",
+  "response_text": "To find the cluster with the most total RAM, we calculate the total RAM for each cluster by multiplying the number of nodes by the RAM per node:\n\n* **Server cluster A:** 8 nodes × 16GB RAM = **128 GB**\n* **Server cluster B:** 12 nodes × 8GB RAM = **96 GB**\n* **Server cluster C:** 4 nodes × 32GB RAM = **128 GB**\n\n**Answer:**\n* **Server cluster A** and **Server cluster C** tie for having the most total RAM (both have 128 GB).\n* **Exact totals:**\n  * Cluster A: 128 GB\n  * Cluster B: 96 GB\n  * Cluster C: 128 GB",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.3071,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Multi-Fact Synthesis",
+      "score": 5,
+      "justification": "The model correctly synthesized the number of nodes and RAM per node from three separate notes to perform the required comparison.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Numerical Accuracy",
+      "score": 5,
+      "justification": "All calculations (128, 96, 128) and the identification of the tie are mathematically correct.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:25:00.334819+00:00"
+}

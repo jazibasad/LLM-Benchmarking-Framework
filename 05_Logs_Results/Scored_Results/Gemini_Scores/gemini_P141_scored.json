@@ -1,0 +1,43 @@
+{
+  "id": "P141",
+  "category": "Long-context Retention",
+  "difficulty": "Hard",
+  "prompt": "Note 1: The pricing model started as a flat $10/month subscription. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: After 6 months, a tiered model was introduced: Basic $10, Pro $25, Enterprise $100. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: The Basic tier was later discontinued, with existing Basic users grandfathered at their original $10 price. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 4: New customers can now only choose between Pro and Enterprise. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 5: Enterprise pricing was recently adjusted to $120 for new sign-ups only, existing Enterprise customers keep $100. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Explain the current pricing landscape for: (a) a brand new customer, (b) an existing grandfathered Basic user, and (c) an existing Enterprise customer, tracing how each got to their current price.",
+  "response_text": "Based on the provided notes, here is the explanation of the current pricing landscape and how each customer type arrived at their current price:\n\n### (a) A Brand New Customer\n*   **Current Price:** They can only choose between the **Pro tier at $25/month** or the **Enterprise tier at $120/month**. \n*   **Trace:** \n    1. The system originally launched as a flat $10/month subscription (Note 1).\n    2. A tiered model was later introduced (Basic $10, Pro $25, Enterprise $100) (Note 2).\n    3. The Basic tier was subsequently discontinued for new sign-ups, leaving only Pro and Enterprise (Notes 3 & 4).\n    4. Enterprise pricing was recently increased to $120 specifically for *new* sign-ups, while the Pro tier remained at its established $25 price point (Note 5).\n\n### (b) An Existing Grandfathered Basic User\n*   **Current Price:** **$10/month**.\n*   **Trace:** \n    1. This user originally signed up under the initial flat $10/month subscription model (Note 1) or during the period when the tiered model included the $10 Basic tier (Note 2).\n    2. When the Basic tier was officially discontinued, existing Basic users were \"grandfathered in,\" allowing them to keep their original pricing rather than being forced to upgrade (Note 3). \n\n### (c) An Existing Enterprise Customer\n*   **Current Price:** **$100/month**.\n*   **Trace:** \n    1. This customer joined after the introduction of the tiered model, specifically selecting the Enterprise tier at its original price of $100/month (Note 2).\n    2. When Enterprise pricing was recently adjusted to $120, the price hike was explicitly restricted to *new* sign-ups, allowing existing Enterprise customers to keep their original $100 rate (Note 5).",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.9586,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Sequential Accuracy Score",
+      "score": 5,
+      "justification": "The response accurately reconstructs the chronological sequence of pricing changes from the initial flat fee through the tiered model, Basic tier discontinuation, and recent Enterprise adjustment.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Current-State Accuracy Score",
+      "score": 5,
+      "justification": "The model correctly identifies the present-day prices for all three customer types—$25/$120 for new customers, $10 for grandfathered Basic users, and $100 for existing Enterprise customers—as specified in the notes.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 5,
+      "justification": "All relevant information from Notes 1-5 is incorporated into the explanations, covering the initial launch, tier introduction, Basic tier discontinuation, and Enterprise price change without omission.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Coherence Score",
+      "score": 5,
+      "justification": "The response is well-organized with clear headings and subsections for each customer group, making the reasoning straightforward and easy to follow.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:19:01.032184+00:00"
+}

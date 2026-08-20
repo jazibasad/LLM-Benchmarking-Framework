@@ -1,0 +1,43 @@
+{
+  "id": "P167",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this CSV with a single column containing pipe-delimited multi-values (e.g. 'tags' column: 'red|blue|green') into a normalized JSON structure where each tag becomes a separate array element.",
+  "response_text": "It looks like you forgot to include the CSV data! \n\nPlease paste your CSV data (or a small sample of it), and I will gladly convert it into the normalized JSON structure for you. \n\n*(If you just want to know how it's done programmatically, let me know whether you prefer Python, JavaScript, or just want the final JSON output based on an example!)*",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.8777,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Relational Integrity Score (0-5)",
+      "score": 0,
+      "justification": "The response did not perform any conversion, so no relational integrity is preserved.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Edge Case Handling Score (0-5)",
+      "score": 0,
+      "justification": "The response did not attempt to handle any irregular data, resulting in a complete failure.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Output Validity Score (0-5)",
+      "score": 0,
+      "justification": "No JSON output was produced, so the output is syntactically invalid.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Completeness Score (0-5)",
+      "score": 0,
+      "justification": "All source data was omitted because the model requested more input instead of processing the data.",
+      "outcome": "Failure"
+    }
+  ],
+  "total_score": 0,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:35:24.513748+00:00"
+}

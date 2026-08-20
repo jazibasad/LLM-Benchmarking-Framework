@@ -1,0 +1,43 @@
+{
+  "id": "P167",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this CSV with a single column containing pipe-delimited multi-values (e.g. 'tags' column: 'red|blue|green') into a normalized JSON structure where each tag becomes a separate array element.",
+  "response_text": "It looks like you forgot to include the CSV data! \n\nPlease paste your CSV data (or a small sample of it) into your next reply. \n\nOnce you provide it, I will convert it into a normalized JSON structure where the pipe-delimited values are split into proper JSON arrays. Let me know if you also have a specific JSON structure in mind (e.g., just an array of objects, or something nested).",
+  "run_number": 2,
+  "temperature": 0.7,
+  "latency_seconds": 1.2787,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Relational Integrity Score",
+      "score": 1,
+      "justification": "The response attempts to engage but does not address preserving relationships between transformed structures.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Edge Case Handling Score",
+      "score": 0,
+      "justification": "It never attempts to handle irregular or inconsistent source data, resulting in complete absence of edge‑case handling.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Output Validity Score",
+      "score": 0,
+      "justification": "The reply does not produce output in the required JSON format, so it is syntactically invalid for the target structure.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 0,
+      "justification": "No transformation or data representation is provided, leaving the output completely incomplete.",
+      "outcome": "Failure"
+    }
+  ],
+  "total_score": 1,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:35:30.264043+00:00"
+}

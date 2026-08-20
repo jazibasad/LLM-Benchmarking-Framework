@@ -1,0 +1,31 @@
+{
+  "id": "P174",
+  "category": "Data Transformation",
+  "difficulty": "Medium",
+  "prompt": "Convert this SQL table schema into an equivalent JSON Schema definition: CREATE TABLE users (id INT PRIMARY KEY, name VARCHAR(100), age INT)",
+  "response_text": "Here is the equivalent JSON Schema definition for the provided SQL table schema:\n\n```json\n{\n  \"$schema\": \"https://json-schema.org/draft/2020-12/schema\",\n  \"title\": \"User\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"id\": {\n      \"type\": \"integer\",\n      \"description\": \"PRIMARY KEY\"\n    },\n    \"name\": {\n      \"type\": \"string\",\n      \"maxLength\": 100\n    },\n    \"age\": {\n      \"type\": \"integer\"\n    }\n  },\n  \"required\": [\n    \"id\"\n  ]\n}\n```\n\n### Explanation of Mappings:\n* **`CREATE TABLE users`**: Mapped to a JSON Schema of `type: \"object\"` representing a single user record.\n* **`id INT PRIMARY KEY`**: Mapped to an `integer`. Since it is a Primary Key (which implies it cannot be null and must be unique), it is included in the `\"required\"` array.\n* **`name VARCHAR(100)`**: Mapped to a `string` with a `maxLength` constraint of 100 characters to match `VARCHAR(100)`.\n* **`age INT`**: Mapped to an `integer`. (Left out of the `\"required\"` array assuming it can be NULL in the SQL table).",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.644,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Structural Correctness",
+      "score": 5,
+      "justification": "The JSON Schema correctly models the SQL table as an object with properties and required id, capturing the primary key and column relationships.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Data Fidelity",
+      "score": 5,
+      "justification": "All original column types (INT, VARCHAR(100)) and constraints are preserved, including maxLength and the required primary key.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:37:40.949114+00:00"
+}

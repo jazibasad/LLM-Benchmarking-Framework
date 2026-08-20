@@ -1,0 +1,31 @@
+{
+  "id": "P179",
+  "category": "Summarization",
+  "difficulty": "Easy",
+  "prompt": "Summarize this product description in one short sentence: 'This ergonomic office chair features adjustable lumbar support, breathable mesh fabric, and a reclining mechanism, designed for all-day comfort during long work sessions.'",
+  "response_text": "This ergonomic office chair provides all-day comfort with adjustable lumbar support, breathable mesh, and a reclining mechanism.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.7648,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Conciseness Compliance",
+      "score": 5,
+      "justification": "The response is a single short sentence that efficiently condenses the original product description while maintaining all key features.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Core Meaning Preservation",
+      "score": 5,
+      "justification": "The summary accurately captures all essential elements from the original text including ergonomic design, adjustable lumbar support, breathable mesh fabric, reclining mechanism, and all-day comfort purpose.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:40:20.368642+00:00"
+}

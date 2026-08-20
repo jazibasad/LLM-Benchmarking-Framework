@@ -1,0 +1,43 @@
+{
+  "id": "P164",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this Markdown table with merged-looking header groups into a properly normalized JSON array, correctly attributing each sub-column to its parent header:\n| Name | Q1 | | Q2 | |\n|------|-----|-----|-----|-----|\n| | Sales | Cost | Sales | Cost |\n| Alice | 100 | 40 | 120 | 45 |",
+  "response_text": "Here is the properly normalized JSON array representing the table, with each sub-column correctly attributed to its parent quarter (`Q1` or `Q2`):\n\n```json\n[\n  {\n    \"Name\": \"Alice\",\n    \"Q1\": {\n      \"Sales\": 100,\n      \"Cost\": 40\n    },\n    \"Q2\": {\n      \"Sales\": 120,\n      \"Cost\": 45\n    }\n  }\n]\n```",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.8693,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Relational Integrity Score (0-5)",
+      "score": 5,
+      "justification": "The model correctly nests Sales and Cost under their respective Q1 and Q2 parent headers, preserving the hierarchical relationships as required.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Edge Case Handling Score (0-5)",
+      "score": 5,
+      "justification": "The model accurately interprets the merged-looking header structure and produces a normalized output without errors or data loss.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Output Validity Score (0-5)",
+      "score": 5,
+      "justification": "The response is syntactically valid JSON with proper brackets, commas, quotes, and formatting.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score (0-5)",
+      "score": 5,
+      "justification": "All source data—Name, Q1 Sales, Q1 Cost, Q2 Sales, and Q2 Cost—are fully represented in the JSON with nothing silently dropped.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:33:18.716768+00:00"
+}

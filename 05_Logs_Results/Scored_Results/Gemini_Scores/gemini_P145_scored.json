@@ -1,0 +1,43 @@
+{
+  "id": "P145",
+  "category": "Long-context Retention",
+  "difficulty": "Hard",
+  "prompt": "Note 1: Initially, all customer support was handled by a single shared inbox. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: As volume grew, tickets were split into Tier 1 (general) and Tier 2 (technical) queues. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: A further split created a dedicated Billing queue, pulled out of Tier 1. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 4: Recently, Tier 2 was merged back into a single 'Technical & Billing' queue alongside Billing. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 5: Tier 1 (general) remains a separate, standalone queue to this day. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: How many support queues currently exist, what does each handle, and reconstruct the sequence of splits and merges that produced this structure.",
+  "response_text": "Based on the provided notes, here are the answers to your questions:\n\n### 1. How many support queues currently exist and what does each handle?\nThere are currently **2** support queues:\n*   **Tier 1 Queue:** Handles general customer support inquiries.\n*   **'Technical & Billing' Queue:** Handles both technical issues and billing inquiries (formed by merging Tier 2 and the dedicated Billing queue).\n\n---\n\n### 2. Sequence of Splits and Merges\n*   **Initial State (Note 1):** Started as a **single shared inbox** handling all customer support.\n*   **First Split (Note 2):** Volume growth caused the single inbox to split into **Tier 1 (general)** and **Tier 2 (technical)** queues.\n*   **Second Split (Note 3):** A dedicated **Billing** queue was created by being pulled out of the Tier 1 queue, resulting in three queues: Tier 1 (general), Tier 2 (technical), and Billing.\n*   **Merge (Note 4):** Tier 2 (technical) was merged with the Billing queue to form a single **'Technical & Billing'** queue. \n*   **Current State (Note 5):** Tier 1 (general) remains a separate, standalone queue alongside the newly formed Technical & Billing queue.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.7928,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Sequential Accuracy Score",
+      "score": 5,
+      "justification": "The response accurately outlines each step—from the initial single inbox, through the first split into Tier 1 and Tier 2, the creation of a Billing queue from Tier 1, the merge of Tier 2 with Billing, and the final current configuration.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Current-State Accuracy Score",
+      "score": 5,
+      "justification": "It correctly identifies the two existing queues—General Tier 1 and the merged Technical & Billing queue—and their respective scopes.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 5,
+      "justification": "All key facts about the sequence of splits and merges and the final queue structure are included without omission of relevant details.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Coherence Score",
+      "score": 5,
+      "justification": "The answer is well‑organized with clear headings and bullet points that make the chronological narrative easy to follow.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:23:57.443879+00:00"
+}
