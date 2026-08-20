@@ -1,0 +1,18 @@
+{
+  "id": "P168",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this JSON representing a recursive category tree (categories containing subcategories containing subcategories) into a flat list with a 'path' field showing the full breadcrumb (e.g. 'Electronics > Computers > Laptops').",
+  "evaluation_criteria": "Relational Integrity Score: 0-5 (Evaluates whether relationships/references between the transformed structures are correctly preserved)\nEdge Case Handling Score: 0-5 (Evaluates whether irregular or inconsistent source data is handled correctly rather than causing errors or silent data loss)\nOutput Validity Score: 0-5 (Evaluates whether the output is syntactically valid in its target format)\nCompleteness Score: 0-5 (Evaluates whether all source data is represented in the output with nothing silently dropped)",
+  "max_score": "20",
+  "model": "mistral",
+  "response_text": "Here's a JavaScript function that converts a recursive JSON category tree into a flat list with a `path` field showing the full breadcrumb:\n\n```javascript\nfunction flattenCategoryTree(tree, parentPath = '') {\n  const result = [];\n\n  if (!Array.isArray(tree)) {\n    // Handle case where root is a single object (not an array)\n    tree = [tree];\n  }\n\n  for (const category of tree) {\n    const currentPath = parentPath\n      ? `${parentPath} > ${category.name}`\n      : category.name;\n\n    const flatItem = {\n      id: category.id,\n      name: category.name,\n      path: currentPath,\n      parentId: category.parentId || null\n    };\n\n    result.push(flatItem);\n\n    // Recursively process subcategories\n    if (category.subcategories && category.subcategories.length > 0) {\n      result.push(...flattenCategoryTree(category.subcategories, currentPath));\n    }\n  }\n\n  return result;\n}\n\n// Example usage:\nconst categoryTree = {\n  id: 1,\n  name: \"Electronics\",\n  subcategories: [\n    {\n      id: 2,\n      name: \"Computers\",\n      subcategories: [\n        {\n          id: 3,\n          name: \"Laptops\",\n          subcategories: []\n        },\n        {\n          id: 4,\n          name: \"Desktops\",\n          subcategories: []\n        }\n      ]\n    },\n    {\n      id: 5,\n      name: \"Phones\",\n      subcategories: []\n    }\n  ]\n};\n\nconst flatList = flattenCategoryTree([categoryTree]);\nconsole.log(flatList);\n```\n\nThis will output:\n```json\n[\n  {\n    \"id\": 1,\n    \"name\": \"Electronics\",\n    \"path\": \"Electronics\",\n    \"parentId\": null\n  },\n  {\n    \"id\": 2,\n    \"name\": \"Computers\",\n    \"path\": \"Electronics > Computers\",\n    \"parentId\": 1\n  },\n  {\n    \"id\": 3,\n    \"name\": \"Laptops\",\n    \"path\": \"Electronics > Computers > Laptops\",\n    \"parentId\": 2\n  },\n  {\n    \"id\": 4,\n    \"name\": \"Desktops\",\n    \"path\": \"Electronics > Computers > Desktops\",\n    \"parentId\": 2\n  },\n  {\n    \"id\": 5,\n    \"name\": \"Phones\",\n    \"path\": \"Electronics > Phones\",\n    \"parentId\": 1\n  }\n]\n```\n\nKey features:\n1. Handles both single-object and array-based category trees\n2. Builds the path incrementally with each level of recursion\n3. Preserves the original category structure while adding the path field\n4. Includes parentId for reference if needed\n5. Maintains all original category properties while adding the path\n\nIf your JSON structure is different (for example, if subcategories are in a different property name), you can adjust the function accordingly.",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 6.6381,
+  "timestamp_utc": "2026-08-20T09:52:58.487272+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

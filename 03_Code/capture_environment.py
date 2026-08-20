@@ -29,12 +29,23 @@ from datetime import datetime, timezone
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "..", "05_Logs_Results", "environment_specs")
 
 
-def _get_package_version(package_name):
+def _get_package_version(pypi_package_name):
+    """
+    Looks up an installed package's version by its PyPI distribution name
+    (e.g. "google-genai", "python-dotenv") using importlib.metadata, which
+    reads the package's installed metadata directly - this is more reliable
+    than trying to import the module and read a __version__ attribute,
+    since many packages either don't expose one, or (for dotted-name
+    packages like "google.genai") a plain __import__() call returns the
+    wrong object entirely and can never find it.
+    """
     try:
-        module = __import__(package_name)
-        return getattr(module, "__version__", "unknown")
-    except ImportError:
+        import importlib.metadata
+        return importlib.metadata.version(pypi_package_name)
+    except importlib.metadata.PackageNotFoundError:
         return "not installed"
+    except Exception:  # noqa: BLE001
+        return "unknown"
 
 
 def _get_cpu_info():
@@ -79,11 +90,11 @@ def capture():
             "executable": sys.executable,
         },
         "sdk_versions": {
-            "google-genai": _get_package_version("google.genai"),
+            "google-genai": _get_package_version("google-genai"),
             "mistralai": _get_package_version("mistralai"),
             "groq": _get_package_version("groq"),
             "openai": _get_package_version("openai"),
-            "python-dotenv": _get_package_version("dotenv"),
+            "python-dotenv": _get_package_version("python-dotenv"),
         },
         "network": {
             "internet_status": _get_internet_check(),
@@ -92,7 +103,7 @@ def capture():
         "model_endpoints": {
             "gemini": {"model": "gemini-3.5-flash-lite", "temperature": 0.7},
             "mistral": {"model": "open-mistral-nemo", "temperature": 0.7},
-            "groq": {"model": "llama-3.3-70b-versatile", "temperature": 0.7},
+            "groq": {"model": "openai/gpt-oss-120b", "temperature": 0.7},
         },
     }
     return spec
@@ -102,7 +113,11 @@ def main():
     spec = capture()
 
     os.makedirs(OUTPUT_DIR, exist_ok=True)
-    filename = f"env_spec_{spec['timestamp_utc'].replace(':', '-')}.json"
+    # Use a clean, readable filename format instead of the raw ISO timestamp
+    # (which produces messy strings like "...T09-58-00.986853+00-00.json")
+    from datetime import datetime as _dt
+    now = _dt.now(timezone.utc)
+    filename = f"env_spec_{now.strftime('%Y%m%d_%H%M%S')}.json"
     output_path = os.path.join(OUTPUT_DIR, filename)
 
     with open(output_path, "w", encoding="utf-8") as f:

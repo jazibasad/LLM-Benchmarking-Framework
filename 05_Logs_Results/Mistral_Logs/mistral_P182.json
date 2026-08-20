@@ -1,0 +1,18 @@
+{
+  "id": "P182",
+  "category": "Summarization",
+  "difficulty": "Easy",
+  "prompt": "Summarize this movie plot in two sentences: 'A young inventor discovers a hidden workshop left by her grandfather, filled with unfinished mechanical creations. As she repairs them one by one, she uncovers a family secret that changes how she sees her own future.'",
+  "evaluation_criteria": "Conciseness Compliance: 0-5 (Evaluates whether the length constraint, if specified, is followed exactly)\nCore Meaning Preservation: 0-5 (Evaluates whether the summary captures the main point of the source text)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "In *The Secret of the Workshop* (or similar), a curious inventor stumbles upon her late grandfather’s hidden workshop, filled with mysterious, half-finished mechanical inventions, sparking her determination to revive them. As she restores each creation, she uncovers a long-buried family truth—one that forces her to question her own destiny and the legacy she’s meant to fulfill.",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.2284,
+  "timestamp_utc": "2026-08-20T09:53:27.580000+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

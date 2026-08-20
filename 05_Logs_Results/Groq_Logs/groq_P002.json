@@ -1,0 +1,18 @@
+{
+  "id": "P002",
+  "category": "Knowledge Retrieval",
+  "difficulty": "Easy",
+  "prompt": "List the four core principles of Object-Oriented Programming and provide a one-sentence definition for each.",
+  "evaluation_criteria": "Definition Accuracy: 0-5 (Evaluates correctness of OOP principles)\nConciseness: 0-5 (Evaluates adherence to concise definitions)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "**1. Encapsulation** – Bundling data (attributes) and the methods that operate on that data within a single class, while restricting direct access to the internals from outside code.  \n\n**2. Abstraction** – Presenting only the essential features and behaviors of an object to the user, while hiding the underlying implementation details.  \n\n**3. Inheritance** – Creating new classes (subclasses) that derive properties and behaviors from existing classes (superclasses), enabling reuse and hierarchical organization.  \n\n**4. Polymorphism** – Allowing objects of different classes to be treated through a common interface, so the same operation can behave differently depending on the actual object’s type.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.7698,
+  "timestamp_utc": "2026-08-20T10:06:01.914231+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

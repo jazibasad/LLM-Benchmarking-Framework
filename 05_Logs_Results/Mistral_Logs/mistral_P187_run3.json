@@ -1,0 +1,18 @@
+{
+  "id": "P187",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this scientific methods section into a single paragraph a journalist could use, explicitly flagging any part of the methodology that limits how strongly the results can be generalized: 'Participants (n=45, convenience sample from a single university) completed a 6-week intervention involving daily 10-minute mindfulness sessions via a mobile app. Self-reported stress levels were measured using the PSS-10 scale at baseline and post-intervention. No control group was used due to resource constraints; instead, a within-subjects pre-post design was employed.'",
+  "evaluation_criteria": "Structural Compliance Score: 0-5 (Evaluates whether the exact requested structure - sentence count, labeled sections, audience level - is followed precisely)\nFidelity Under Constraint Score: 0-5 (Evaluates whether meaning is preserved despite the tight length/format constraints, without fabricating information not in the source)\nNuance Preservation Score: 0-5 (Evaluates whether important caveats, limitations, or competing viewpoints from the source are retained, not flattened away)\nAudience Appropriateness Score: 0-5 (Evaluates whether jargon is correctly translated for the specified target audience)",
+  "max_score": "20",
+  "model": "mistral",
+  "response_text": "In a six-week study testing the effects of mindfulness, researchers recruited 45 participants—all students from a single university—who completed daily 10-minute mindfulness sessions via a mobile app. Stress levels were assessed using the standard **Perceived Stress Scale (PSS-10)** before and after the intervention, but **without a control group** due to budget limitations. While the **within-subjects (pre-post) design** allowed participants to serve as their own controls—helping isolate the intervention’s effect—the small, **convenience sample from one university** and lack of randomization or external comparison group **limit how broadly these findings can be generalized** to broader populations or other mindfulness approaches.",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.5651,
+  "timestamp_utc": "2026-08-20T09:53:39.174538+00:00",
+  "run_number": 3,
+  "repeat_count": 5
+}

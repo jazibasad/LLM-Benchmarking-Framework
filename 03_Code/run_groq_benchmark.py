@@ -40,7 +40,15 @@ logging.basicConfig(
 )
 logger = logging.getLogger("groq_runner")
 
-MODEL_NAME = "llama-3.3-70b-versatile"
+MODEL_NAME = "openai/gpt-oss-120b"
+# NOTE: llama-3.3-70b-versatile (the original model here) was officially
+# deprecated by Groq on June 17, 2026, and now returns a 404 model_not_found
+# error. Confirmed via Groq's own deprecation page, which recommends
+# migrating to openai/gpt-oss-120b or qwen/qwen3.6-27b. This is the same
+# failure pattern already hit twice before in this project (OpenRouter in
+# Week 2, Gemini in Week 4) - free-tier model catalogs churn regularly. If
+# this model also 404s in the future, check console.groq.com/docs/models
+# or console.groq.com/docs/deprecations for the current recommended model.
 TEMPERATURE = 0.7  # controlled independent variable (proposal Section 2) - fixed
                     # across all three providers for fair comparison
 RESET_INFO = "midnight UTC (Groq's daily quota reset)"

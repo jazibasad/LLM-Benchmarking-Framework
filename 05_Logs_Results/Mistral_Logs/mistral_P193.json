@@ -1,0 +1,18 @@
+{
+  "id": "P193",
+  "category": "Summarization",
+  "difficulty": "Medium",
+  "prompt": "Summarize this technical changelog for a non-technical audience in 2-3 sentences: 'v2.3.0 introduces lazy-loading for the dashboard module, reducing initial page load time by 40%. Fixed a race condition in the websocket reconnection logic that caused duplicate notifications under high latency. Deprecated the legacy /v1/users endpoint in favor of /v2/users, which now supports pagination and field filtering.'",
+  "evaluation_criteria": "Format Compliance: 0-5 (Evaluates whether the specified structure - bullet points, sentence count, audience level - is followed)\nBalanced Coverage: 0-5 (Evaluates whether all key points from the source, including any competing or nuanced ones, are represented)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "Here’s a simple summary:\n\nThis update makes the dashboard load faster by loading its content only when needed (reducing startup time by 40%), fixes a glitch that caused duplicate alerts during slow connections, and replaces an older user-data endpoint with a new, more efficient one that lets you sort and filter results.\n\n*(In plain terms: Faster loading, fewer notification errors, and a smarter way to fetch user data.)*",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.077,
+  "timestamp_utc": "2026-08-20T09:53:55.742949+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

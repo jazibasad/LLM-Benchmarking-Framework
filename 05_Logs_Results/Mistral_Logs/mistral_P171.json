@@ -1,0 +1,18 @@
+{
+  "id": "P171",
+  "category": "Data Transformation",
+  "difficulty": "Medium",
+  "prompt": "Convert this nested JSON into a flat CSV with dot-notation column names:\n{\"user\": {\"name\": \"Dana\", \"address\": {\"city\": \"Austin\", \"zip\": \"73301\"}}}",
+  "evaluation_criteria": "Structural Correctness: 0-5 (Evaluates whether the output structure correctly represents the source data's relationships)\nData Fidelity: 0-5 (Evaluates whether every value from the source is preserved accurately, with none dropped or altered)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "Here's the nested JSON converted into a flat CSV with dot-notation column names:\n\n```\nuser.name,user.address.city,user.address.zip\nDana,Austin,73301\n```\n\nThe CSV format follows these rules:\n1. Each nested path is joined with dots (.)\n2. The first row contains the dot-notation column headers\n3. The second row contains the corresponding values\n\nIf you want to include empty values for missing nested paths (though not needed in this simple case), the structure would remain the same since all paths exist in the original JSON.",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.1427,
+  "timestamp_utc": "2026-08-20T09:53:11.794517+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

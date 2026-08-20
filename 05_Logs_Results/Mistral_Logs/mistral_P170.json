@@ -1,0 +1,18 @@
+{
+  "id": "P170",
+  "category": "Data Transformation",
+  "difficulty": "Medium",
+  "prompt": "Convert this JSON array of objects into a Markdown table:\n[{\"name\": \"Alice\", \"score\": 92}, {\"name\": \"Bob\", \"score\": 85}, {\"name\": \"Carol\", \"score\": 78}]",
+  "evaluation_criteria": "Structural Correctness: 0-5 (Evaluates whether the output structure correctly represents the source data's relationships)\nData Fidelity: 0-5 (Evaluates whether every value from the source is preserved accurately, with none dropped or altered)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "Here's the JSON array converted into a Markdown table:\n\n```markdown\n| Name   | Score |\n|--------|-------|\n| Alice  | 92    |\n| Bob    | 85    |\n| Carol  | 78    |\n```\n\nThe table is formatted with proper Markdown syntax for alignment and readability.",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.9542,
+  "timestamp_utc": "2026-08-20T09:53:10.405406+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

@@ -1,0 +1,18 @@
+{
+  "id": "P187",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this scientific methods section into a single paragraph a journalist could use, explicitly flagging any part of the methodology that limits how strongly the results can be generalized: 'Participants (n=45, convenience sample from a single university) completed a 6-week intervention involving daily 10-minute mindfulness sessions via a mobile app. Self-reported stress levels were measured using the PSS-10 scale at baseline and post-intervention. No control group was used due to resource constraints; instead, a within-subjects pre-post design was employed.'",
+  "evaluation_criteria": "Structural Compliance Score: 0-5 (Evaluates whether the exact requested structure - sentence count, labeled sections, audience level - is followed precisely)\nFidelity Under Constraint Score: 0-5 (Evaluates whether meaning is preserved despite the tight length/format constraints, without fabricating information not in the source)\nNuance Preservation Score: 0-5 (Evaluates whether important caveats, limitations, or competing viewpoints from the source are retained, not flattened away)\nAudience Appropriateness Score: 0-5 (Evaluates whether jargon is correctly translated for the specified target audience)",
+  "max_score": "20",
+  "model": "mistral",
+  "response_text": "In a new study exploring the effects of mindfulness on stress, researchers recruited 45 participants—all students from a single university—who took part in a six-week intervention involving daily 10-minute mindfulness sessions delivered via a mobile app. Stress levels were tracked using the widely used **Perceived Stress Scale (PSS-10)** before and after the program. While the findings suggest potential benefits, the study’s **lack of a control group** and reliance on a **small, convenience sample from just one university**—rather than a diverse, randomly selected group—**limits how broadly the results can be applied**. The within-subjects design (measuring the same participants before and after) helps control for individual differences but doesn’t account for external factors that could influence stress levels.",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.7157,
+  "timestamp_utc": "2026-08-20T09:53:40.908240+00:00",
+  "run_number": 4,
+  "repeat_count": 5
+}

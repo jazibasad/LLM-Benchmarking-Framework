@@ -1,0 +1,18 @@
+{
+  "id": "P212",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this sentence into Korean using appropriately formal honorifics for addressing a senior business executive, and explain what would change in your translation if the audience were a close friend instead: 'We would be honored if you could join us for the opening ceremony next month.'",
+  "evaluation_criteria": "Translation Precision Score: 0-5 (Evaluates whether the translation is accurate at the level of precision the task requires - legal, technical, or poetic as specified)\nCultural/Linguistic Adaptation Score: 0-5 (Evaluates whether cultural or structural adaptations, where appropriate, are handled thoughtfully rather than overly literal)\nMeta-Explanation Quality Score: 0-5 (Evaluates whether any requested explanation of translation choices, ambiguity resolution, or back-translation comparison is accurate and insightful)\nRound-Trip/Consistency Score: 0-5 (Evaluates whether any self-comparison, such as back-translation analysis, is performed correctly and honestly, e.g. genuinely identifying meaning loss where it exists)",
+  "max_score": "20",
+  "model": "mistral",
+  "response_text": "### **Formal Translation (for a senior business executive):**\n**\"다음 달의 개막식에 참석해 주시면 저희는 매우 영광으로 생각하겠습니다.\"**\n*(Daeum dal-ui gaebak-sik-e jecheokhae ju-si-myeon je-ho-neun meo-eul yeong-gwa-ro saeng-gakha-gesseub-nida.)*\n\n**Alternative (slightly softer but still formal):**\n**\"다음 달 개막식에 참석해 주시면 저희가 큰 영광으로 여길 것입니다.\"**\n*(Daeum dal gaebak-sik-e jecheokhae ju-si-myeon je-ho-ga keun yeong-gwa-ro yeo-gil geos-seub-nida.)*\n\n---\n### **Key Honorific Elements:**\n1. **~해 주시면 (hae ju-si-myeon)** – Polite request form (instead of casual \"해 주면\").\n2. **저희 (je-ho-neun)** – Humble self-reference (\"we\" in a respectful way).\n3. **영광 (yeong-gwa)** – \"Honor\" or \"privilege,\" a formal term for gratitude.\n4. **~겠습니다 (gesseub-nida)** – Future/promise marker (softens the statement into a polite promise rather than a demand).\n\n---\n### **Translation for a Close Friend (Casual/Informal):**\n**\"다음 달 개막식에 오시면 저희가 정말 기뻐할 거예요.\"**\n*(Daeum dal gaebak-sik-e o-si-myeon je-ho-ga jeong-mal pp-eo-hael geoy-yeo.)*\n\n**Key Changes:**\n1. **오시면 (o-si-myeon)** → **오면 (o-myeon)** – Drops honorific (\"오시-\" → \"오-\").\n2. **영광 (yeong-gwa)** → **기뻐할 거예요 (pp-eo-hael geoy-yeo)** – Replaces formal \"honor\" with casual \"I’d be happy.\"\n3. **~겠습니다 (gesseub-nida)** → **~예요 (geoy-yeo)** – Future tense becomes simpler.\n4. **저희 (je-ho-neun)** → **우리 (uri)** – \"We\" becomes more intimate.\n\n---\n### **Why the Shift Matters:**\n- **Formal version** emphasizes respect, humility, and professionalism (suitable for a superior or first-time contact).\n- **Casual version** feels warm, personal, and conversational (appropriate for peers, subordinates, or long-standing relationships).\n- The tone shifts from **\"We would be honored\"** (formal gratitude) to **\"I’d be so happy\"** (friendly enthusiasm).\n\nWould you like adjustments for a specific context (e.g., email vs. in-person)?",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 4.6111,
+  "timestamp_utc": "2026-08-20T09:55:00.821478+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

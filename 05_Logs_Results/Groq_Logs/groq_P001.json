@@ -1,0 +1,18 @@
+{
+  "id": "P001",
+  "category": "Knowledge Retrieval",
+  "difficulty": "Easy",
+  "prompt": "Write a Python function to check if a given string is a palindrome, ignoring spaces and case sensitivity.",
+  "evaluation_criteria": "Syntax Correctness: 0-5 (Evaluates clean syntax and execution)\nEdge Case Handling: 0-5 (Evaluates handling of spaces, punctuation, and casing)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "Here’s a compact, easy‑to‑read implementation that fulfills the requirements:\n\n```python\ndef is_palindrome(s: str) -> bool:\n    \"\"\"\n    Return True if *s* is a palindrome when you ignore\n    whitespace and case differences, otherwise False.\n\n    Examples\n    --------\n    >>> is_palindrome(\"A man a plan a canal Panama\")\n    True\n    >>> is_palindrome(\"Hello World\")\n    False\n    \"\"\"\n    # 1️⃣ Remove spaces (you can also strip other whitespace with .isspace())\n    # 2️⃣ Convert everything to the same case (lowercase is common)\n    cleaned = ''.join(ch.lower() for ch in s if not ch.isspace())\n\n    # 3️⃣ Compare the cleaned string with its reverse\n    return cleaned == cleaned[::-1]\n```\n\n### How it works\n1. **Cleaning the input**  \n   ```python\n   cleaned = ''.join(ch.lower() for ch in s if not ch.isspace())\n   ```\n   * `ch.lower()` makes the comparison case‑insensitive.  \n   * `if not ch.isspace()` drops *all* whitespace characters (spaces, tabs, newlines, etc.).  \n   * The list comprehension builds a new string that contains only the characters we care about.\n\n2. **Palindrome test**  \n   ```python\n   cleaned == cleaned[::-1]\n   ```\n   Python’s slice notation `[::-1]` returns the reversed string. If the cleaned string reads the same forward and backward, the function returns `True`.\n\n### Variations & Extensions\n- **Ignore punctuation as well**  \n  If you also want to skip punctuation (`.,!?` etc.), replace the comprehension with:\n\n  ```python\n  import string\n  allowed = set(string.ascii_letters + string.digits)   # keep letters & digits only\n  cleaned = ''.join(ch.lower() for ch in s if ch in allowed)\n  ```\n\n- **Unicode normalization**  \n  For strings that may contain accented characters (e.g., “é”), you can normalize them first:\n\n  ```python\n  import unicodedata\n  normalized = unicodedata.normalize('NFKD', s)\n  cleaned = ''.join(ch.lower() for ch in normalized if ch.isalnum())\n  ```\n\n- **One‑liner version**  \n  If you prefer a single expression:\n\n  ```python\n  is_palindrome = lambda s: (c := ''.join(ch.lower() for ch in s if not ch.isspace())) == c[::-1]\n  ```\n\nFeel free to pick the version that best fits your project’s needs!",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 2.0415,
+  "timestamp_utc": "2026-08-20T10:06:01.142448+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

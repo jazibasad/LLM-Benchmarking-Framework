@@ -1,0 +1,18 @@
+{
+  "id": "P173",
+  "category": "Data Transformation",
+  "difficulty": "Medium",
+  "prompt": "Convert this list of key-value pairs into a properly formatted Python dictionary literal: name=Eve, role=admin, active=true",
+  "evaluation_criteria": "Structural Correctness: 0-5 (Evaluates whether the output structure correctly represents the source data's relationships)\nData Fidelity: 0-5 (Evaluates whether every value from the source is preserved accurately, with none dropped or altered)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "Here's the properly formatted Python dictionary literal for your key-value pairs:\n\n```python\n{\n    \"name\": \"Eve\",\n    \"role\": \"admin\",\n    \"active\": True\n}\n```\n\nNotes:\n1. I've used double quotes for both keys and string values (Python allows either single or double quotes)\n2. The boolean value `true` was converted to Python's `True` (note the capital T)\n3. The dictionary is properly formatted with each key-value pair on its own line for readability\n4. Python dictionary literals use colons (`:`) between keys and values, and commas (`,`) to separate items",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.4622,
+  "timestamp_utc": "2026-08-20T09:53:14.681367+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

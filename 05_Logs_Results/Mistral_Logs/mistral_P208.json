@@ -1,0 +1,18 @@
+{
+  "id": "P208",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this marketing slogan into German AND into Mandarin Chinese, explaining for EACH language one adaptation you made for cultural resonance rather than literal accuracy: 'Just do it - unleash your inner champion.'",
+  "evaluation_criteria": "Translation Precision Score: 0-5 (Evaluates whether the translation is accurate at the level of precision the task requires - legal, technical, or poetic as specified)\nCultural/Linguistic Adaptation Score: 0-5 (Evaluates whether cultural or structural adaptations, where appropriate, are handled thoughtfully rather than overly literal)\nMeta-Explanation Quality Score: 0-5 (Evaluates whether any requested explanation of translation choices, ambiguity resolution, or back-translation comparison is accurate and insightful)\nRound-Trip/Consistency Score: 0-5 (Evaluates whether any self-comparison, such as back-translation analysis, is performed correctly and honestly, e.g. genuinely identifying meaning loss where it exists)",
+  "max_score": "20",
+  "model": "mistral",
+  "response_text": "Here are your translations with cultural adaptations explained for each language:\n\n---\n\n### **German:**\n**\"Mach es einfach – werde, wer du sein kannst.\"**\n*(Literal: \"Just do it – become who you can be.\")*\n\n**Adaptation for cultural resonance:**\n- The original slogan’s **\"unleash your inner champion\"** is replaced with **\"wer du sein kannst\"** (\"who you can be\") because German culture emphasizes **self-actualization and personal growth** rather than overtly competitive or athletic language. Germans tend to value **potential and inner strength** (e.g., *\"Du bist mehr, als du denkst\"* – \"You are more than you think\") over direct athletic or \"champion\" imagery, which might feel too sports-centric or aggressive. The phrase also aligns with German marketing’s preference for **subtle empowerment** over bold, motivational slogans.\n\n---\n\n### **Mandarin Chinese:**\n**\"行动起来，释放你的极限潜能。\"**\n*(Pinyin: \"Xíngdòng qǐlái, shīfàng nǐ de jíxiàn zēnlì.\")*\n*(Literal: \"Take action, release your limitless potential.\")*\n\n**Adaptation for cultural resonance:**\n1. **\"Unleash your inner champion\"** was omitted because **Chinese marketing often avoids direct, individualistic language** (e.g., \"champion\" can sound arrogant or overly Western). Instead, the phrase **\"极限潜能\" (jíxiàn zēnlì – \"limitless potential\")** is used to emphasize **collective effort and self-improvement**—a more culturally aligned concept in China.\n2. The call to **\"行动起来\" (xíngdòng qǐlái – \"take action\")** is softer than \"Just do it\" because Chinese consumers may respond better to **encouragement framed as a journey** rather than a direct command. The slogan also avoids the aggressive tone of the original, which could be perceived as too confrontational in Chinese advertising (where harmony and gradual progress are often prioritized).\n\n---\n**Bonus Note:**\n- In **China**, the slogan might also be paired with **visuals of teamwork or cultural symbols** (e.g., a runner in traditional Chinese attire) to reinforce communal values.\n- In **Germany**, the translation avoids overly emotional language, as Germans tend to prefer **rational and pragmatic messaging** (e.g., *\"Erfolg beginnt mit dem ersten Schritt\"* – \"Success starts with the first step\").\n\nWould you like any refinements based on a specific industry (e.g., sports, business, fitness)?",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 5.4827,
+  "timestamp_utc": "2026-08-20T09:54:29.963090+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

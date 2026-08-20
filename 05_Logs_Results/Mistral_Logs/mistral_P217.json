@@ -1,0 +1,18 @@
+{
+  "id": "P217",
+  "category": "Multilingual Tasks",
+  "difficulty": "Medium",
+  "prompt": "Translate this sentence into Japanese, and note any difference in politeness level you had to choose between: 'Could you please send me the report by Friday?'",
+  "evaluation_criteria": "Tone/Register Accuracy: 0-5 (Evaluates whether formality level, politeness, or professional register is correctly preserved)\nLinguistic Explanation Quality: 0-5 (Evaluates whether any requested explanation of translation choices is accurate and clear)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "Here’s the translation of your sentence into Japanese, along with notes on politeness levels:\n\n---\n**Standard polite (keigo):**\n「金曜までにレポートを送っていただけませんか。」\n*(Kinyō made ni repōto o okutte itadakemasen ka.)*\n\n**Casual (non-keigo):**\n「金曜までにレポート送ってくれない？」\n*(Kinyō made ni repōto okutte kurenai?)*\n*(or slightly softer: 「金曜までにレポート送ってもらえない？」)*\n\n---\n\n### **Politeness Level Notes:**\n1. **Formal/Keigo (first example)**\n   - Uses **「いただく」 (itadaku)** (to receive, humbly) and **「～ていただく」 (te itadaku)** (to request politely).\n   - This is the safest choice for professional or formal contexts (e.g., emails to superiors, clients, or strangers).\n   - The **「ませんか」 (masen ka)** ending is polite but slightly softer than **「ください」 (kudasai)** (which would be even more direct).\n\n2. **Neutral/Casual (second example)**\n   - The first version (**「くれない？」**) is very informal and could sound demanding or rude in professional settings (used among friends or close colleagues).\n   - The second version (**「もらえない？」**) is slightly softer but still casual. It implies **\"Can you give me?\"** (from the speaker’s perspective).\n   - Avoid this with strangers, bosses, or formal situations.\n\n3. **Alternative Polite Options:**\n   - **More direct polite:**\n     「金曜までにレポートを送っていただけますか。」\n     *(Kinyō made ni repōto o okutte itadakemasu ka.)*\n     (Adds **「ます」 (masu)** for a softer tone than **「ませんか」**.)\n   - **Very polite (for superiors/clients):**\n     「金曜までにレポートをお送りいただけますと幸いです。」\n     *(Kinyō made ni repōto o osendiri itadakemasu to sawai desu.)*\n     (Uses **「お～いただく」 (o-itadaku)** and **「幸いです」 (sawai desu)**, which is overly polite but appropriate for high-level requests.)\n\n---\n### **Key Differences:**\n- **Politeness hierarchy:**\n  **Keigo (itadaku) > Masu-form (masu ka) > Casual (kurenai/moraenai)**\n- **Tone:**\n  The keigo version sounds deferential and professional, while the casual version is friendly but risky in formal contexts.\n- **Assumptions:**\n  The keigo version assumes the listener is willing to comply (softens the request). The casual version might imply urgency or expectation.\n\nWould you like adjustments based on a specific context (e.g., email to a boss vs. coworker)?",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 5.5067,
+  "timestamp_utc": "2026-08-20T09:55:21.868108+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

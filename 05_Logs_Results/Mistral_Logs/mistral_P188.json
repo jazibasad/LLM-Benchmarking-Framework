@@ -1,0 +1,18 @@
+{
+  "id": "P188",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this software architecture design doc into a summary for a NON-technical stakeholder audience, explicitly translating each technical term into its business impact (e.g., not just 'reduces latency' but what that means for the user), in exactly 4 sentences: 'The proposed architecture introduces a read-replica database layer to offload query traffic from the primary write instance, reducing p99 latency from 800ms to 150ms. A CDN edge caching layer will be added for static assets, cutting bandwidth costs by an estimated 30%. The migration requires a two-week phased rollout to avoid downtime, using a blue-green deployment strategy.'",
+  "evaluation_criteria": "Structural Compliance Score: 0-5 (Evaluates whether the exact requested structure - sentence count, labeled sections, audience level - is followed precisely)\nFidelity Under Constraint Score: 0-5 (Evaluates whether meaning is preserved despite the tight length/format constraints, without fabricating information not in the source)\nNuance Preservation Score: 0-5 (Evaluates whether important caveats, limitations, or competing viewpoints from the source are retained, not flattened away)\nAudience Appropriateness Score: 0-5 (Evaluates whether jargon is correctly translated for the specified target audience)",
+  "max_score": "20",
+  "model": "mistral",
+  "response_text": "Here’s a clear, non-technical summary with business impacts:\n\nThis upgrade will make our system **respond faster**—cutting delays for users from nearly a second to just a fraction of a second, so they experience smoother interactions when loading key features. We’ll also **cut costs and improve performance** by automatically serving commonly used content (like images or videos) from faster, local servers worldwide, reducing slow load times and saving money on data transfers. To ensure no disruptions, we’ll roll this out in stages over two weeks, testing each change thoroughly before fully switching to the new setup. This approach guarantees our service stays available and reliable for customers while delivering these improvements.",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.6983,
+  "timestamp_utc": "2026-08-20T09:53:44.570829+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

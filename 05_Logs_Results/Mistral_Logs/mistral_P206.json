@@ -1,0 +1,18 @@
+{
+  "id": "P206",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this sentence containing a culturally-specific idiom into Japanese, choosing between a literal translation and a culturally-equivalent Japanese idiom, and justify your choice: 'He really let the cat out of the bag at the meeting.'",
+  "evaluation_criteria": "Translation Precision Score: 0-5 (Evaluates whether the translation is accurate at the level of precision the task requires - legal, technical, or poetic as specified)\nCultural/Linguistic Adaptation Score: 0-5 (Evaluates whether cultural or structural adaptations, where appropriate, are handled thoughtfully rather than overly literal)\nMeta-Explanation Quality Score: 0-5 (Evaluates whether any requested explanation of translation choices, ambiguity resolution, or back-translation comparison is accurate and insightful)\nRound-Trip/Consistency Score: 0-5 (Evaluates whether any self-comparison, such as back-translation analysis, is performed correctly and honestly, e.g. genuinely identifying meaning loss where it exists)",
+  "max_score": "20",
+  "model": "mistral",
+  "response_text": "The English idiom **\"He really let the cat out of the bag at the meeting.\"** means that someone accidentally revealed a secret or private information.\n\n### **Translation Options:**\n1. **Literal Translation:**\n   「彼は会議で猫を袋から出してしまった。」\n   (*Kare wa kaigi de neko o fukuro kara dasu shite shimatta.*)\n\n2. **Culturally-Equivalent Japanese Idiom:**\n   「彼は会議で秘密を漏らしてしまった。」\n   (*Kare wa kaigi de himitsu o morasete shimatta.*) – \"He accidentally revealed the secret.\"\n   **OR**\n   「彼は会議で内緒を洩らしてしまった。」\n   (*Kare wa kaigi de naisho o morasete shimatta.*) – \"He let the cat out of the bag.\"\n\n### **Justification for Choice:**\nI recommend **using the culturally-equivalent idiom** (「内緒を洩らす」) because:\n- While the literal translation (*猫を袋から出す*) is understandable, it is not a widely recognized idiom in Japanese. Many Japanese speakers might not immediately grasp the meaning without explanation.\n- The idiom **«内緒を洩らす」** (or sometimes **«秘密を漏らす」**) is a natural and commonly used expression in Japanese for \"to reveal a secret,\" making it the most effective choice for fluency and cultural appropriateness.\n- The original English idiom is based on a folk tale (the \"cat in the bag\" deception), but in Japanese, the equivalent meaning is conveyed through more direct phrasing rather than an animal-related metaphor.\n\nThus, the best translation would be:\n**「彼は会議で内緒を洩らしてしまった。」**\n(*Kare wa kaigi de naisho o morasete shimatta.*)",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 4.0113,
+  "timestamp_utc": "2026-08-20T09:54:19.474342+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

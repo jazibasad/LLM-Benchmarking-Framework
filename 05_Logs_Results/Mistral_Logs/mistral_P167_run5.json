@@ -1,0 +1,18 @@
+{
+  "id": "P167",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this CSV with a single column containing pipe-delimited multi-values (e.g. 'tags' column: 'red|blue|green') into a normalized JSON structure where each tag becomes a separate array element.",
+  "evaluation_criteria": "Relational Integrity Score: 0-5 (Evaluates whether relationships/references between the transformed structures are correctly preserved)\nEdge Case Handling Score: 0-5 (Evaluates whether irregular or inconsistent source data is handled correctly rather than causing errors or silent data loss)\nOutput Validity Score: 0-5 (Evaluates whether the output is syntactically valid in its target format)\nCompleteness Score: 0-5 (Evaluates whether all source data is represented in the output with nothing silently dropped)",
+  "max_score": "20",
+  "model": "mistral",
+  "response_text": "Here's how you can convert your CSV with pipe-delimited values in a single column into a normalized JSON structure where each tag becomes a separate array element:\n\n### Input CSV Example:\n```\nid,tags\n1,red|blue|green\n2,apple|banana\n3,cat|dog\n```\n\n### Output JSON Structure:\n```json\n[\n  {\n    \"id\": 1,\n    \"tags\": [\"red\", \"blue\", \"green\"]\n  },\n  {\n    \"id\": 2,\n    \"tags\": [\"apple\", \"banana\"]\n  },\n  {\n    \"id\": 3,\n    \"tags\": [\"cat\", \"dog\"]\n  }\n]\n```\n\n---\n\n### How to Convert (Python Example):\nIf you're using Python with the `csv` and `json` modules:\n\n```python\nimport csv\nimport json\n\ndef csv_to_normalized_json(csv_file_path, output_json_path):\n    data = []\n\n    with open(csv_file_path, mode='r', encoding='utf-8') as csv_file:\n        csv_reader = csv.DictReader(csv_file)\n\n        for row in csv_reader:\n            # Split the pipe-delimited string into a list\n            tags = row['tags'].split('|') if 'tags' in row else []\n\n            # Create a new entry with the normalized tags\n            normalized_row = {\n                'id': row['id'],\n                'tags': tags\n            }\n            data.append(normalized_row)\n\n    # Write to JSON file\n    with open(output_json_path, 'w', encoding='utf-8') as json_file:\n        json.dump(data, json_file, indent=2, ensure_ascii=False)\n\n# Example usage\ncsv_to_normalized_json('input.csv', 'output.json')\n```\n\n---\n\n### Alternative (Pandas in Python):\nIf you're using Pandas:\n```python\nimport pandas as pd\n\n# Read CSV\ndf = pd.read_csv('input.csv')\n\n# Split the 'tags' column into a list\ndf['tags'] = df['tags'].str.split('|')\n\n# Convert to JSON\njson_data = df.to_json(orient='records', indent=2)\nprint(json_data)\n```\n\n---\n\n### Manual Conversion Steps (Non-Programmatic):\n1. Open your CSV file.\n2. For each row:\n   - Split the pipe-delimited string into individual tags (e.g., `'red|blue|green'` → `[\"red\", \"blue\", \"green\"]`).\n   - Create a new JSON object with the original fields (e.g., `id`) and the split tags as an array.\n3. Combine all rows into an array of these objects.\n\n---\n\n### Key Notes:\n- Empty or missing tags (e.g., `''` or `null`) will result in an empty array (`[]`).\n- If your CSV has headers, ensure the column name (e.g., `tags`) matches the key in the output JSON.",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 4.5005,
+  "timestamp_utc": "2026-08-20T09:52:51.846159+00:00",
+  "run_number": 5,
+  "repeat_count": 5
+}

@@ -1,0 +1,18 @@
+{
+  "id": "P203",
+  "category": "Multilingual Tasks",
+  "difficulty": "Easy",
+  "prompt": "Translate 'Happy birthday!' into Italian.",
+  "evaluation_criteria": "Translation Accuracy: 0-5 (Evaluates whether the translation correctly conveys the original meaning)\nNatural Phrasing: 0-5 (Evaluates whether the translation sounds natural to a native speaker rather than overly literal)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "The Italian translation of **\"Happy birthday!\"** is:\n\n**\"Buon compleanno!\"** (pronounced *bwohn kom-PLAY-noh*)\n\nIf you want to be even more formal or polite, you could say:\n**\"Auguri di buon compleanno!\"** (*aw-GOO-ree dee bwohn kom-PLAY-noh*)\n\nFor a group, you can add **\"a tutti\"** (*ah TOO-ee*) at the end:\n**\"Buon compleanno a tutti!\"** (*bwohn kom-PLAY-noh ah TOO-ee!*)\n\nHappy birthday! 🎉🎂",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.5984,
+  "timestamp_utc": "2026-08-20T09:54:09.001390+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

@@ -1,0 +1,18 @@
+{
+  "id": "P005",
+  "category": "Knowledge Retrieval",
+  "difficulty": "Easy",
+  "prompt": "Define symmetric and asymmetric encryption and name one standard algorithm for each.",
+  "evaluation_criteria": "Algorithm Precision: 0-5 (Evaluates AES/RSA correct assignment)\nKey Management Clarity: 0-5 (Evaluates single vs public/private key handling)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "**Symmetric encryption**  \n- *Definition*: A cryptographic method in which the same secret key is used for both encrypting and decrypting the data. Because both parties must share this key in advance and keep it confidential, key distribution and management are critical concerns.  \n- *Typical use‑cases*: Bulk data encryption (e.g., disk encryption, VPN tunnels, file transfer), where performance is important.  \n- *Standard algorithm example*: **AES (Advanced Encryption Standard)** – the most widely adopted block cipher (128‑bit block size, key sizes of 128, 192, or 256 bits).\n\n---\n\n**Asymmetric encryption**  \n- *Definition*: A cryptographic method that uses a pair of mathematically linked keys: a public key (which can be freely distributed) and a private key (kept secret). Data encrypted with one key can only be decrypted with the other key, enabling secure key exchange, digital signatures, and authentication without prior shared secrets.  \n- *Typical use‑cases*: Secure key exchange (e.g., TLS handshakes), digital signatures, email encryption, authentication tokens.  \n- *Standard algorithm example*: **RSA (Rivest‑Shamir‑Adleman)** – a widely used public‑key algorithm based on the difficulty of factoring large integers (commonly with key sizes of 2048 bits or more).",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.973,
+  "timestamp_utc": "2026-08-20T10:06:08.909243+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

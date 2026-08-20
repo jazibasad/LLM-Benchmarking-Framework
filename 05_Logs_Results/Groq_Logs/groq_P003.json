@@ -1,0 +1,18 @@
+{
+  "id": "P003",
+  "category": "Knowledge Retrieval",
+  "difficulty": "Easy",
+  "prompt": "Define what an HTTP status code in the 5xx range signifies and give two common examples.",
+  "evaluation_criteria": "Factual Accuracy: 0-5 (Evaluates server error classification)\nExample Precision: 0-5 (Evaluates correctness of examples like 500 or 503)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "**What the 5xx class means**\n\nHTTP status codes in the **5xx range** indicate **server‑side errors**.  \nIn other words, the client’s request was syntactically valid, but the server was unable to fulfill it because something went wrong on the server itself (hardware, software, configuration, overload, etc.). The problem is not the client’s fault; it’s a failure of the origin server (or a gateway/proxy acting on its behalf).\n\n**Two common 5xx examples**\n\n| Code | Reason Phrase | Typical Situation |\n|------|----------------|-------------------|\n| **500** | *Internal Server Error* | The server encountered an unexpected condition (e.g., an uncaught exception, mis‑configured script) and cannot provide a more specific error message. |\n| **503** | *Service Unavailable* | The server is temporarily unable to handle the request, often due to overload or scheduled maintenance. A `Retry-After` header may be included to tell the client when to try again. |\n\n*(Other frequently seen 5xx codes include 502 Bad Gateway, 504 Gateway Timeout, and 511 Network Authentication Required.)*",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.9813,
+  "timestamp_utc": "2026-08-20T10:06:04.126779+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

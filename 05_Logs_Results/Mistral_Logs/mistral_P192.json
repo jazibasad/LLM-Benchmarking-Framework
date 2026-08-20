@@ -1,0 +1,18 @@
+{
+  "id": "P192",
+  "category": "Summarization",
+  "difficulty": "Medium",
+  "prompt": "Summarize the following article into exactly 3 bullet points, each under 15 words: 'Remote work has fundamentally changed how companies approach office space. Many organizations have downsized their physical footprint, opting for flexible co-working arrangements instead of long-term leases. Employees report higher satisfaction with flexible schedules, though some managers express concern about team cohesion and spontaneous collaboration. Companies are now experimenting with hybrid models, requiring in-office presence two to three days per week to balance these competing priorities.'",
+  "evaluation_criteria": "Format Compliance: 0-5 (Evaluates whether the specified structure - bullet points, sentence count, audience level - is followed)\nBalanced Coverage: 0-5 (Evaluates whether all key points from the source, including any competing or nuanced ones, are represented)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "- **Companies downsized offices**, favoring flexible co-working spaces over long-term leases due to remote work trends.\n\n- **Employees enjoy flexible schedules**, but managers worry about team unity and unplanned collaboration opportunities.\n\n- **Hybrid models (2-3 in-office days)** emerged to balance flexibility with in-person collaboration needs.",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.9298,
+  "timestamp_utc": "2026-08-20T09:53:54.394483+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

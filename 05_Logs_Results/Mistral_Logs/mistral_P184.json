@@ -1,0 +1,18 @@
+{
+  "id": "P184",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this contract clause into plain English in exactly 2 sentences, preserving the exact conditions under which the clause applies (do not generalize or omit any trigger condition): 'In the event that the Licensee breaches any material term of this Agreement and fails to cure such breach within fifteen (15) business days following written notice thereof, and provided that such breach is not the result of a Force Majeure Event as defined in Section 9, the Licensor shall have the right, but not the obligation, to terminate this Agreement immediately upon written notice, without prejudice to any other remedies available at law or in equity.'",
+  "evaluation_criteria": "Structural Compliance Score: 0-5 (Evaluates whether the exact requested structure - sentence count, labeled sections, audience level - is followed precisely)\nFidelity Under Constraint Score: 0-5 (Evaluates whether meaning is preserved despite the tight length/format constraints, without fabricating information not in the source)\nNuance Preservation Score: 0-5 (Evaluates whether important caveats, limitations, or competing viewpoints from the source are retained, not flattened away)\nAudience Appropriateness Score: 0-5 (Evaluates whether jargon is correctly translated for the specified target audience)",
+  "max_score": "20",
+  "model": "mistral",
+  "response_text": "If the Licensee violates any **material term** of this Agreement and doesn’t fix it within **15 business days** after receiving written notice—**unless** the breach was caused by a **Force Majeure Event** (as defined in Section 9)—then the Licensor can **immediately terminate the Agreement** with written notice, while still keeping all other legal or equitable remedies available.\n\nThe Licensor **doesn’t have to** terminate but **can** if the above conditions are met.",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.122,
+  "timestamp_utc": "2026-08-20T09:53:29.908087+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}
