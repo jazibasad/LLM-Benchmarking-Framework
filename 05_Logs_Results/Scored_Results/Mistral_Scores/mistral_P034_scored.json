@@ -1,0 +1,31 @@
+{
+  "id": "P034",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Hard",
+  "prompt": "Analyze a garbage collection tuning problem in a high-throughput Java application generating 2GB of short-lived objects per minute. The young generation Eden space is set to 4GB. Calculate the minor GC frequency, estimate promotion rates to old generation given a 15% survival rate, and compute JVM pause time implications.",
+  "response_text": "Let's break down the garbage collection (GC) tuning problem step by step for your high-throughput Java application generating **2GB of short-lived objects per minute** with a **4GB Eden space**.\n\n---\n\n### **1. Minor GC Frequency Calculation**\n- **Eden Space**: 4GB\n- **Object Generation Rate**: 2GB/minute\n- **Minor GC Frequency** = Eden Space / Object Generation Rate\n  = 4GB / 2GB per minute\n  = **2 minutes per minor GC**\n\nThis means the JVM will trigger a minor GC roughly every **2 minutes** (assuming no other factors interfere).\n\n---\n\n### **2. Promotion Rate Estimation**\n- **Survival Rate (S0/S1)**: 15% (objects survive to old generation)\n- **Promotion Rate** = (1 - Survival Rate) × Eden Objects\n  = (1 - 0.15) × 2GB/minute\n  = **0.85 × 2GB = 1.7GB/minute**\n\nThis means **1.7GB of objects are promoted to the old generation per minute**.\n\n---\n\n### **3. Old Generation (Tenured) Impact**\nAssuming a **default old generation size** (e.g., 6GB for a 10GB heap), the promotion rate of **1.7GB/minute** will fill the old generation quickly.\n\n- **Time to Fill Old Gen**:\n  = Old Gen Size / Promotion Rate\n  = 6GB / 1.7GB per minute\n  ≈ **3.5 minutes**\n\nIf the old generation fills up too quickly, **major GC (Full GC) pauses** will become frequent, leading to high latency.\n\n---\n\n### **4. JVM Pause Time Implications**\n#### **Minor GC (Young GC) Pause Time**\n- **Eden + Survivor Spaces**: 4GB (Eden) + 2 × Survivor Spaces (typically 10% of Eden each)\n  = 4GB + 0.4GB + 0.4GB = **4.8GB total young gen**\n- **Object Generation Rate**: 2GB/minute\n- **Minor GC Frequency**: Every 2 minutes\n- **Pause Time** depends on:\n  - **Heap Size**: Larger heaps → longer pauses.\n  - **GC Algorithm**: G1GC, ZGC, or Shenandoah can reduce pause times compared to Parallel GC.\n  - **Concurrent Marking**: If using G1GC, some pauses may be concurrent.\n\n**Estimated Minor GC Pause (Parallel GC):**\n- **~100-500ms** (varies based on JVM implementation and hardware).\n\n#### **Major GC (Full GC) Pause Time**\n- If the old generation fills up, a **Full GC** will be triggered.\n- **Pause Time**: Much longer than minor GC (often **seconds**).\n- **Impact**: High latency spikes, which is unacceptable for high-throughput systems.\n\n---\n\n### **5. Recommended Tuning Adjustments**\nTo mitigate these issues, consider:\n\n#### **Option 1: Increase Young Generation Size**\n- **Problem**: Current Eden (4GB) fills in 2 minutes, leading to high promotion rates.\n- **Solution**: Increase Eden to **reduce minor GC frequency** and **promotion pressure**.\n  - Example: Set `-Xmn=8G` (Eden + Survivors = 8GB).\n  - **New Minor GC Frequency**:\n    = 8GB / 2GB per minute = **4 minutes per minor GC** (better).\n  - **New Promotion Rate**:\n    = 0.85 × 2GB = **1.7GB/minute** (same, but now spread over a larger old gen).\n\n#### **Option 2: Use G1GC or ZGC**\n- **G1GC** is better for large heaps and can control pause times.\n  - Example: `-XX:+UseG1GC -XX:MaxGCPauseMillis=200`\n  - **Benefits**:\n    - Predictable pause times (~200ms).\n    - Better handling of large heaps.\n- **ZGC** (Ultra-low latency):\n  - Can keep pauses under **10ms** even for multi-GB heaps.\n\n#### **Option 3: Reduce Object Allocation**\n- **Optimize memory usage** (e.g., object pooling, reuse buffers).\n- **Avoid premature object creation** (e.g., use primitives instead of `Integer` where possible).\n\n#### **Option 4: Adjust Old Generation Size**\n- **Increase old gen** to handle promotion better.\n  - Example: `-XX:NewRatio=2` (Old Gen = 2 × Young Gen).\n  - If Young Gen = 8GB, Old Gen = **16GB** (total heap = 24GB).\n\n#### **Option 5: Monitor & Tune with GC Logs**\n- Use `-Xlog:gc*` to analyze GC behavior.\n- Look for:\n  - **Promotion rates** (too high → Full GC risk).\n  - **Pause times** (spikes indicate tuning issues).\n\n---\n\n### **6. Summary of Key Metrics**\n| Metric | Current Setting | Impact |\n|--------|----------------|--------|\n| **Minor GC Frequency** | Every 2 min | High promotion pressure |\n| **Promotion Rate** | 1.7GB/min | Fills old gen in ~3.5 min |\n| **Minor GC Pause** | ~100-500ms | Acceptable (but could be better) |\n| **Major GC Risk** | High (Full GC likely) | High latency spikes |\n\n---\n\n### **7. Final Recommendations**\n1. **Increase Young Gen** (e.g., `-Xmn=8G`) to reduce minor GC frequency.\n2. **Switch to G1GC/ZGC** for better pause control.\n3. **Monitor GC logs** to adjust `-XX:MaxGCPauseMillis` if needed.\n4. **Optimize object allocation** to reduce promotion pressure.\n5. **Consider a larger heap** (e.g., 24GB+) if needed.\n\nWould you like a deeper dive into any specific aspect (e.g., G1GC tuning, ZGC setup)?",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 9.9584,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Allocation Rate Math",
+      "score": 5,
+      "justification": "Correctly calculates minor GC frequency as 4GB/2GB/min = 2 minutes per GC, showing proper understanding of Eden space saturation timing.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Promotion Computation",
+      "score": 5,
+      "justification": "Accurately computes promotion rate as 15% survival rate leading to 1.7GB/min promotion to old generation, properly modeling object accumulation.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T15:28:31.271362+00:00"
+}

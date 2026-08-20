@@ -1,0 +1,31 @@
+{
+  "id": "P032",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Hard",
+  "prompt": "Design a capacity-planning calculation for a microservices architecture handling 50,000 peak requests per second. Each request triggers 4 downstream RPC calls with an average payload of 25 KB. Calculate total network bandwidth throughput in Gbps, required CPU cores assuming 1 core handles 2,500 RPCs/sec, and memory footprint assuming 4MB per active connection.",
+  "response_text": "To design a capacity-planning calculation for a **microservices architecture** handling **50,000 peak requests per second**, we'll break down the requirements into **network bandwidth**, **CPU cores**, and **memory footprint**.\n\n---\n\n### **1. Network Bandwidth Throughput (Gbps)**\nEach request triggers **4 downstream RPC calls**, each with a **25 KB payload**.\n\n#### **Assumptions:**\n- **Request size (per RPC call):**\n  - Payload: 25 KB (25,000 bytes)\n  - Overhead (e.g., HTTP headers, serialization): ~10% → **2.5 KB**\n  - **Total per RPC call:** 27.5 KB (27,500 bytes)\n- **Round-trip time (RTT) impact:** We assume **one-way transfer** (no RTT penalty in bandwidth calculation).\n- **Total RPC calls per second:** 50,000 requests × 4 RPCs = **200,000 RPCs/sec**\n\n#### **Calculation:**\n\\[\n\\text{Total Bandwidth} = \\frac{\\text{Total RPCs/sec} \\times \\text{Size per RPC}}{\\text{Time (seconds)}}\n\\]\n\\[\n= \\frac{200,000 \\times 27,500 \\text{ bytes}}{1 \\text{ sec}} = 5.5 \\text{ GB/sec}\n\\]\n\\[\n= 5.5 \\times 8 \\text{ Gbps} = **44 Gbps**\n\\]\n\n**Note:**\n- If **bidirectional communication** (request + response) is considered, bandwidth doubles to **~88 Gbps**.\n- If **compression** (e.g., gRPC compression) is applied, bandwidth reduces (e.g., 50% → **~22 Gbps**).\n\n---\n\n### **2. Required CPU Cores**\nEach core handles **2,500 RPCs/sec**.\n\n#### **Calculation:**\n\\[\n\\text{Total RPCs/sec} = 200,000\n\\]\n\\[\n\\text{Required Cores} = \\frac{200,000 \\text{ RPCs/sec}}{2,500 \\text{ RPCs/core/sec}} = **80 cores**\n\\]\n\n**Assumptions:**\n- **CPU overhead:** If each RPC involves **CPU-bound processing** (e.g., parsing, business logic), this is a **lower bound**.\n- **Concurrency:** If using **asynchronous I/O**, fewer cores may suffice (e.g., 1 core handles **10,000+ RPCs/sec** in some cases).\n- **Multi-threading:** If using **multi-core threads**, the actual number may vary.\n\n---\n\n### **3. Memory Footprint (Per Active Connection)**\nEach active connection consumes **4 MB**.\n\n#### **Assumptions:**\n- **Active connections:** If requests are **short-lived**, memory usage may not spike.\n- **Long-lived connections (e.g., WebSockets, gRPC streaming):**\n  - If **50,000 concurrent connections**, total memory = **200 GB**.\n  - If **short-lived (e.g., HTTP/1.1 with keep-alive)**, memory usage drops significantly.\n\n#### **Calculation (Worst Case - Long-lived Connections):**\n\\[\n\\text{Total Memory} = 50,000 \\text{ connections} \\times 4 \\text{ MB} = **200 GB**\n\\]\n\n**Mitigations:**\n- **Connection pooling** (reduce per-connection memory).\n- **Stateless design** (avoid storing per-request data in memory).\n- **Off-heap storage** (e.g., Netty’s off-heap buffers).\n\n---\n\n### **Summary of Requirements**\n| **Resource**       | **Requirement**                          | **Notes**                                  |\n|--------------------|------------------------------------------|--------------------------------------------|\n| **Network Bandwidth** | **44–88 Gbps** (or less with compression) | Depends on RPC overhead & compression.    |\n| **CPU Cores**      | **80 cores** (or fewer with async I/O)   | Assumes 2.5K RPCs/core/sec.                |\n| **Memory**         | **200 GB** (if long-lived connections)   | Reduce with stateless design.               |\n\n---\n\n### **Optimization Recommendations**\n1. **Network:**\n   - Use **gRPC with compression** (reduces bandwidth by ~50%).\n   - **Load balancing** (distribute traffic across multiple instances).\n   - **Edge caching** (reduce downstream RPCs).\n\n2. **CPU:**\n   - **Horizontal scaling** (add more instances instead of cores).\n   - **Async I/O** (reduce core requirements).\n\n3. **Memory:**\n   - **Stateless services** (avoid per-request memory).\n   - **Connection reuse** (reduce active connections).\n\nWould you like a refined calculation for a specific microservice architecture (e.g., Kubernetes, serverless)?",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 8.3284,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Bandwidth Math (0-5)",
+      "score": 5,
+      "justification": "The model correctly calculated the total RPCs per second and accurately converted the byte-based throughput into Gbps, while wisely noting the distinction between one-way and bidirectional traffic.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Resource Sizing (0-5)",
+      "score": 5,
+      "justification": "The model correctly applied the provided metrics to calculate 80 cores for CPU and 200 GB for memory, while providing necessary architectural context regarding connection types.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T15:28:07.139750+00:00"
+}

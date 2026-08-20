@@ -1,0 +1,31 @@
+{
+  "id": "P026",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Easy",
+  "prompt": "A rectangular data center room measures 12 meters by 8 meters. Server racks take up 40% of the floor space. If each server rack requires a minimum clearance zone equal to 25% of its own footprint, calculate the remaining usable floor space in square meters.",
+  "response_text": "Let's break down the problem step by step to find the remaining usable floor space in the data center room.\n\n### **1. Calculate the Total Floor Area**\nThe room is rectangular with dimensions **12 meters by 8 meters**.\n\n\\[\n\\text{Total Area} = 12 \\, \\text{m} \\times 8 \\, \\text{m} = 96 \\, \\text{m}^2\n\\]\n\n### **2. Determine the Area Occupied by Server Racks**\nServer racks take up **40%** of the floor space.\n\n\\[\n\\text{Rack Area} = 40\\% \\times 96 \\, \\text{m}^2 = 0.40 \\times 96 = 38.4 \\, \\text{m}^2\n\\]\n\n### **3. Calculate the Clearance Zone for Server Racks**\nEach server rack requires a **minimum clearance zone** equal to **25%** of its own footprint.\n\n\\[\n\\text{Clearance Area per Rack} = 25\\% \\times 38.4 \\, \\text{m}^2 = 0.25 \\times 38.4 = 9.6 \\, \\text{m}^2\n\\]\n\n### **4. Compute the Total Area Occupied by Racks and Clearance**\n\\[\n\\text{Total Occupied Area} = \\text{Rack Area} + \\text{Clearance Area} = 38.4 \\, \\text{m}^2 + 9.6 \\, \\text{m}^2 = 48 \\, \\text{m}^2\n\\]\n\n### **5. Find the Remaining Usable Floor Space**\n\\[\n\\text{Usable Area} = \\text{Total Area} - \\text{Total Occupied Area} = 96 \\, \\text{m}^2 - 48 \\, \\text{m}^2 = 48 \\, \\text{m}^2\n\\]\n\n### **Final Answer**\n\\[\n\\boxed{48}\n\\]",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 3.3233,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Area Calculation",
+      "score": 5,
+      "justification": "The response correctly calculated the total floor area (96 m²) and the rack area (40% of total = 38.4 m²) with no errors.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Clearance Logic",
+      "score": 5,
+      "justification": "The clearance zone was correctly computed as 25% of the rack area (9.6 m²) and added to the rack area to find total occupied space.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T15:25:38.137971+00:00"
+}

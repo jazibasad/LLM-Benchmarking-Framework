@@ -1,0 +1,31 @@
+{
+  "id": "P037",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Hard",
+  "prompt": "Solve a multi-server load balancing optimization problem: 3 servers have capacities of 100, 250, and 500 req/sec and current CPU loads of 40%, 60%, and 80%. Incoming traffic is 400 req/sec. Calculate the optimal traffic distribution using a weighted least-connections algorithm combined with predictive CPU headroom weighting.",
+  "response_text": "To solve this multi-server load balancing optimization problem using a **weighted least-connections algorithm combined with predictive CPU headroom weighting**, we'll follow these steps:\n\n### **1. Define the Problem**\n- **Servers**:\n  - Server A: Capacity = 100 req/sec, Current CPU = 40% → **Headroom = 60%**\n  - Server B: Capacity = 250 req/sec, Current CPU = 60% → **Headroom = 40%**\n  - Server C: Capacity = 500 req/sec, Current CPU = 80% → **Headroom = 20%**\n- **Total Incoming Traffic**: 400 req/sec\n\n### **2. Weighted Least-Connections (WLC) with Predictive Headroom**\nThe goal is to distribute traffic proportionally to the **remaining capacity** (headroom) of each server while accounting for their baseline load.\n\n#### **Step 2.1: Calculate Predictive Weights**\nThe weight for each server is proportional to its **remaining capacity** (headroom) and its **baseline capacity**.\n\n- **Server A Weight**:\n  \\[\n  W_A = \\frac{\\text{Headroom}_A}{\\text{Total Headroom}} \\times \\frac{\\text{Capacity}_A}{\\text{Total Capacity}}\n  \\]\n  \\[\n  \\text{Total Headroom} = 60\\% + 40\\% + 20\\% = 120\\%\n  \\]\n  \\[\n  \\text{Total Capacity} = 100 + 250 + 500 = 850 \\text{ req/sec}\n  \\]\n  \\[\n  W_A = \\frac{60}{120} \\times \\frac{100}{850} = 0.5 \\times 0.1176 \\approx 0.0588\n  \\]\n\n- **Server B Weight**:\n  \\[\n  W_B = \\frac{40}{120} \\times \\frac{250}{850} = 0.3333 \\times 0.2941 \\approx 0.0981\n  \\]\n\n- **Server C Weight**:\n  \\[\n  W_C = \\frac{20}{120} \\times \\frac{500}{850} = 0.1667 \\times 0.5882 \\approx 0.0981\n  \\]\n\n#### **Step 2.2: Distribute Traffic Based on Weights**\nThe total weight sum:\n\\[\nW_{total} = 0.0588 + 0.0981 + 0.0981 = 0.255\n\\]\n\nNow, distribute **400 req/sec** proportionally:\n- **Server A Traffic**:\n  \\[\n  T_A = \\frac{W_A}{W_{total}} \\times 400 = \\frac{0.0588}{0.255} \\times 400 \\approx 93.33 \\text{ req/sec}\n  \\]\n\n- **Server B Traffic**:\n  \\[\n  T_B = \\frac{W_B}{W_{total}} \\times 400 = \\frac{0.0981}{0.255} \\times 400 \\approx 155.56 \\text{ req/sec}\n  \\]\n\n- **Server C Traffic**:\n  \\[\n  T_C = \\frac{W_C}{W_{total}} \\times 400 = \\frac{0.0981}{0.255} \\times 400 \\approx 155.56 \\text{ req/sec}\n  \\]\n\n### **3. Verify Constraints**\n- **Server A**:\n  - Current load = 40% → **40 req/sec** (assuming 100% CPU = 100 req/sec)\n  - New load = 93.33 req/sec → **CPU Usage = (93.33 / 100) × 100% = 93.33%**\n  - **Exceeds capacity (100 req/sec) and headroom (60%)!** → **Adjustment needed.**\n\nSince **Server A cannot handle 93.33 req/sec**, we must **cap it at 100 req/sec** and redistribute the remaining load.\n\n#### **Step 3.1: Redistribute Remaining Load (400 - 100 = 300 req/sec)**\nNow, distribute **300 req/sec** between **Server B** and **Server C** using the same weights.\n\n- **Server B New Weight**:\n  \\[\n  W'_B = \\frac{W_B}{W_B + W_C} = \\frac{0.0981}{0.0981 + 0.0981} = 0.5\n  \\]\n\n- **Server C New Weight**:\n  \\[\n  W'_C = 0.5\n  \\]\n\n- **Server B Traffic**:\n  \\[\n  T'_B = 0.5 \\times 300 = 150 \\text{ req/sec}\n  \\]\n\n- **Server C Traffic**:\n  \\[\n  T'_C = 0.5 \\times 300 = 150 \\text{ req/sec}\n  \\]\n\n### **4. Final Optimal Distribution**\n| Server | Capacity (req/sec) | Current Load (req/sec) | New Load (req/sec) | CPU Usage (%) |\n|--------|--------------------|------------------------|--------------------|---------------|\n| A      | 100                | 40                     | 100                | 100%          |\n| B      | 250                | 150 (60%)              | 150                | 60%           |\n| C      | 500                | 300 (60%)              | 150                | 30%           |\n\n### **5. Conclusion**\nThe **optimal distribution** that respects server capacities is:\n- **Server A**: 100 req/sec (max capacity)\n- **Server B**: 150 req/sec\n- **Server C**: 150 req/sec\n\nThis ensures:\n- No server exceeds its capacity.\n- Load is balanced according to **remaining headroom** and **baseline capacity**.\n- **Server C** is underutilized (30% CPU), while **Server A** is fully utilized. If **Server A** were overloaded, we could further adjust by reducing its share (e.g., via dynamic thresholding).",
+  "run_number": 4,
+  "temperature": 0.7,
+  "latency_seconds": 11.6802,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Algorithm Execution",
+      "score": 3,
+      "justification": "The response correctly computed weights and distributed traffic per the described formula, then applied a capacity cap and redistribution, showing proper mathematical execution despite minor interpretive slips.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Headroom Adjustment",
+      "score": 1,
+      "justification": "While it attempted to adjust for Server A's overload, it failed to recalculate headroom for B and C after redistribution, leading to overcapacity and incorrect current load values.",
+      "outcome": "Failure"
+    }
+  ],
+  "total_score": 4,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T15:31:48.015704+00:00"
+}
