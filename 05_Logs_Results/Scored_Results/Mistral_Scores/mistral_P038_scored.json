@@ -1,0 +1,31 @@
+{
+  "id": "P038",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "A data streaming pipeline ingests records across four partitions. Partition 1 receives 450 records/sec with 99% validity; Partition 2 receives 600 records/sec with 95% validity; Partition 3 receives 300 records/sec with 98% validity; Partition 4 receives 750 records/sec with 90% validity. Calculate the weighted average validity percentage across all ingested streams.",
+  "response_text": "To calculate the **weighted average validity percentage** across all four partitions, follow these steps:\n\n### **1. Calculate the Valid Records per Partition**\nMultiply the records per second by the validity percentage for each partition.\n\n- **Partition 1:**\n  \\( 450 \\, \\text{records/sec} \\times 0.99 = 445.5 \\, \\text{valid records/sec} \\)\n\n- **Partition 2:**\n  \\( 600 \\, \\text{records/sec} \\times 0.95 = 570 \\, \\text{valid records/sec} \\)\n\n- **Partition 3:**\n  \\( 300 \\, \\text{records/sec} \\times 0.98 = 294 \\, \\text{valid records/sec} \\)\n\n- **Partition 4:**\n  \\( 750 \\, \\text{records/sec} \\times 0.90 = 675 \\, \\text{valid records/sec} \\)\n\n### **2. Calculate the Total Valid and Total Ingested Records**\nSum the valid records and the total records across all partitions.\n\n- **Total Valid Records:**\n  \\( 445.5 + 570 + 294 + 675 = 1984.5 \\, \\text{valid records/sec} \\)\n\n- **Total Ingested Records:**\n  \\( 450 + 600 + 300 + 750 = 2100 \\, \\text{records/sec} \\)\n\n### **3. Compute the Weighted Average Validity**\nDivide the total valid records by the total ingested records and multiply by 100 to get the percentage.\n\n\\[\n\\text{Weighted Average Validity} = \\left( \\frac{1984.5}{2100} \\right) \\times 100 \\approx 94.5\\%\n\\]\n\n### **Final Answer**\n\\[\n\\boxed{94.5\\%}\n\\]",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 3.5565,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Valid Record Sum",
+      "score": 5,
+      "justification": "The model correctly calculated each partition’s valid records per second by multiplying its ingestion rate by its validity percentage, yielding accurate totals of 445.5, 570, 294, and 675.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Weighted Average",
+      "score": 5,
+      "justification": "The model then divided the total valid records (1984.5) by the total ingested records (2100) and expressed the result as a percentage, arriving at the correct weighted average of 94.5%.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T15:35:36.024842+00:00"
+}

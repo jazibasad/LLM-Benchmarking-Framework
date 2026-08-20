@@ -1,0 +1,31 @@
+{
+  "id": "P048",
+  "category": "Instruction Following",
+  "difficulty": "Easy",
+  "prompt": "Write a short sentence about cybersecurity. NEGATIVE CONSTRAINT: Do not use any vowels (A, E, I, O, U, lowercase or uppercase).",
+  "response_text": "\"Hckrs thrtn dts wthout strong pswrds n nds.\"",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.5414,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Vowel Exclusion (0-5)",
+      "score": 1,
+      "justification": "The response contains vowels in 'wthout' and 'strong', violating the strict vowel‑free requirement.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Readability Or Intent (0-5)",
+      "score": 3,
+      "justification": "Despite missing vowels, the sentence is largely intelligible and conveys the intended cybersecurity message.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 4,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T15:40:19.271303+00:00"
+}

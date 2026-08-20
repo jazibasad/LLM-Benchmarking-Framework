@@ -1,0 +1,31 @@
+{
+  "id": "P037",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Hard",
+  "prompt": "Solve a multi-server load balancing optimization problem: 3 servers have capacities of 100, 250, and 500 req/sec and current CPU loads of 40%, 60%, and 80%. Incoming traffic is 400 req/sec. Calculate the optimal traffic distribution using a weighted least-connections algorithm combined with predictive CPU headroom weighting.",
+  "response_text": "To solve this multi-server load balancing optimization problem using a **weighted least-connections algorithm combined with predictive CPU headroom weighting**, we'll follow these steps:\n\n### **1. Given Data:**\n- **Servers:**\n  - Server A: Capacity = 100 req/sec, Current CPU Load = 40%\n  - Server B: Capacity = 250 req/sec, Current CPU Load = 60%\n  - Server C: Capacity = 500 req/sec, Current CPU Load = 80%\n- **Incoming Traffic:** 400 req/sec\n\n### **2. Key Concepts:**\n- **Least Connections:** Distribute traffic to the server with the fewest current active requests (or lowest CPU usage).\n- **Predictive CPU Headroom Weighting:** Adjust weights based on remaining CPU capacity (headroom) to prevent overloading servers.\n\n### **3. Calculate Remaining CPU Headroom:**\nThe remaining CPU capacity (headroom) for each server is:\n\\[\n\\text{Headroom} = (1 - \\text{Current CPU Load}) \\times \\text{Capacity}\n\\]\n- **Server A:** \\( (1 - 0.4) \\times 100 = 60 \\) req/sec\n- **Server B:** \\( (1 - 0.6) \\times 250 = 100 \\) req/sec\n- **Server C:** \\( (1 - 0.8) \\times 500 = 100 \\) req/sec\n\n### **4. Weighted Least-Connections with Headroom:**\nWe assign weights based on:\n\\[\n\\text{Weight} = \\frac{\\text{Remaining Headroom}}{\\text{Total Headroom}}\n\\]\n- **Total Headroom:** \\( 60 + 100 + 100 = 260 \\) req/sec\n- **Weights:**\n  - Server A: \\( \\frac{60}{260} \\approx 0.2308 \\)\n  - Server B: \\( \\frac{100}{260} \\approx 0.3846 \\)\n  - Server C: \\( \\frac{100}{260} \\approx 0.3846 \\)\n\n### **5. Distribute Traffic Proportionally:**\nMultiply incoming traffic (400 req/sec) by each weight:\n- **Server A:** \\( 400 \\times 0.2308 \\approx 92.32 \\) req/sec\n- **Server B:** \\( 400 \\times 0.3846 \\approx 153.84 \\) req/sec\n- **Server C:** \\( 400 \\times 0.3846 \\approx 153.84 \\) req/sec\n\n### **6. Rounded Distribution (for practicality):**\n- **Server A:** 92 req/sec\n- **Server B:** 154 req/sec\n- **Server C:** 154 req/sec\n\n### **7. Verify Headroom Usage:**\n- **Server A:** \\( 92/100 = 92\\% \\) (within capacity)\n- **Server B:** \\( 154/250 = 61.6\\% \\) (within capacity)\n- **Server C:** \\( 154/500 = 30.8\\% \\) (well within capacity)\n\n### **8. Final Answer:**\nThe **optimal distribution** of 400 req/sec is:\n- **Server A (Capacity 100):** **92 req/sec** (23.0%)\n- **Server B (Capacity 250):** **154 req/sec** (38.5%)\n- **Server C (Capacity 500):** **154 req/sec** (38.5%)\n\nThis ensures **fair load distribution** while respecting **CPU headroom** and **capacity constraints**.",
+  "run_number": 5,
+  "temperature": 0.7,
+  "latency_seconds": 7.1774,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Algorithm Execution (0-5)",
+      "score": 5,
+      "justification": "The response correctly applies the weighted least-connections algorithm by calculating headroom-based weights, distributing the 400 req/sec traffic proportionally across all three servers, and verifying the results against each server's capacity.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Headroom Adjustment (0-5)",
+      "score": 5,
+      "justification": "The response accurately calculates remaining CPU headroom as (1 - current CPU load) × capacity for each server, uses the total headroom to derive proportional weights, and ensures the distributed load respects both capacity and headroom constraints.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T15:35:21.345003+00:00"
+}

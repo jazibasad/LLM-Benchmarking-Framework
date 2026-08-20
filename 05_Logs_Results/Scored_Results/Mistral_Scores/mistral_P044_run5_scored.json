@@ -1,0 +1,31 @@
+{
+  "id": "P044",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "An enterprise cluster runs 3 tiers of virtual machines: Web tier (16 VMs at 2 vCPU each), App tier (32 VMs at 4 vCPU each), and DB tier (8 VMs at 16 vCPU each). If hypervisor overcommitment ratio is set to 2.5:1, calculate the physical host CPU core count required.",
+  "response_text": "To calculate the **required physical host CPU core count** for the enterprise cluster with hypervisor overcommitment, follow these steps:\n\n### **1. Calculate Total vCPU Requirements per Tier**\n- **Web Tier:**\n  \\( 16 \\text{ VMs} \\times 2 \\text{ vCPU/VM} = 32 \\text{ vCPUs} \\)\n\n- **App Tier:**\n  \\( 32 \\text{ VMs} \\times 4 \\text{ vCPU/VM} = 128 \\text{ vCPUs} \\)\n\n- **DB Tier:**\n  \\( 8 \\text{ VMs} \\times 16 \\text{ vCPU/VM} = 128 \\text{ vCPUs} \\)\n\n### **2. Sum Total vCPU Requirements**\n\\[\n32 \\text{ (Web)} + 128 \\text{ (App)} + 128 \\text{ (DB)} = 288 \\text{ vCPUs}\n\\]\n\n### **3. Apply Overcommitment Ratio**\nThe hypervisor allows **2.5:1 overcommitment**, meaning the physical cores must support **2.5 times** the total vCPU demand.\n\n\\[\n\\text{Required Physical Cores} = \\frac{288 \\text{ vCPUs}}{2.5} = 115.2 \\text{ cores}\n\\]\n\nSince we cannot have a fraction of a core, we **round up** to the nearest whole number:\n\n\\[\n\\boxed{116 \\text{ CPU cores}}\n\\]\n\n### **Final Answer:**\n**116 physical CPU cores** are required to support the given virtual machine workload with a **2.5:1 overcommitment ratio**.",
+  "run_number": 5,
+  "temperature": 0.7,
+  "latency_seconds": 3.3035,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Virtual Cpu Sum (0-5)",
+      "score": 5,
+      "justification": "The response correctly calculates the total vCPU requirements for each tier (Web: 32, App: 128, DB: 128) and sums them accurately to 288 vCPUs, with clear arithmetic and formatting.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Overcommitment Division (0-5)",
+      "score": 4,
+      "justification": "The response correctly applies the 2.5:1 overcommitment ratio by dividing total vCPUs (288) by 2.5 to get 115.2 and rounds up to 116 cores, but could more explicitly explain the logic behind rounding up as standard practice for quotas.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 9,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T15:39:19.570957+00:00"
+}

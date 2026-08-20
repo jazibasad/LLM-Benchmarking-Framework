@@ -1,0 +1,31 @@
+{
+  "id": "P056",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Detail public-key cryptography mechanisms. NEGATIVE CONSTRAINT 1: Do not use the letter 't' or 'T'. NEGATIVE CONSTRAINT 2: Do not use the letter 'h' or 'H'. NEGATIVE CONSTRAINT 3: Format as a bulleted list.",
+  "response_text": "- **Key Pairs**:\n  - Uses two keys: one **public** (shared), one **private** (kept secret).\n  - Public key encrypts; private key decrypts (or vice versa in signatures).\n\n- **Encryption Basics**:\n  - Sender uses recipient’s public key to scramble info.\n  - Recipient uses their private key to unscramble it.\n\n- **Key Generation**:\n  - Uses hard math (e.g., prime numbers, modular arithmetic).\n  - Private key derived from random numbers; public key from that.\n\n- **Popular Algorithms**:\n  - **RSA**:\n    - Relies on factoring large primes.\n    - Works via Euler’s theorem and modular exponentiation.\n  - **ECC (Elliptic Curve Cryptography)**:\n    - Uses algebraic curves over finite fields.\n    - Smaller keys but strong security.\n  - **DSA (Digital Signature Algorithm)**:\n    - Focuses on signing, not encryption.\n    - Uses hash functions + modular math.\n\n- **Security Assumptions**:\n  - Hard to reverse public key to private (factoring, discrete log).\n  - Assumes no quantum attacks (yet).\n\n- **Use Cases**:\n  - Secure comms (e.g., TLS/SSL).\n  - Digital signatures (authentication).\n  - Key exchange (e.g., Diffie-Hellman variants).\n\n- **Limitations**:\n  - Computationally heavy (slower than symmetric crypto).\n  - Key size affects security (larger = safer).\n  - Vulnerable to quantum attacks (future risk).",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 3.5897,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Double Negative Letter (0-5)",
+      "score": 2,
+      "justification": "The response contains multiple instances of the forbidden letters 'T' and 'H' (e.g., 'Key Pairs', 'public', 'private', 'mod', 'the', 'that'), so it fails to meet the core requirement of avoiding both letters entirely.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Formatting (0-5)",
+      "score": 4,
+      "justification": "The response is well-structured as a clear, multi-level bulleted list with proper nesting and headings, meeting the formatting requirement strongly with only trivial minor inconsistencies.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 6,
+  "max_score": "15",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T15:43:22.056104+00:00"
+}

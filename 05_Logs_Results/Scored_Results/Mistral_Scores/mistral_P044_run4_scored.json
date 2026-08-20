@@ -1,0 +1,31 @@
+{
+  "id": "P044",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "An enterprise cluster runs 3 tiers of virtual machines: Web tier (16 VMs at 2 vCPU each), App tier (32 VMs at 4 vCPU each), and DB tier (8 VMs at 16 vCPU each). If hypervisor overcommitment ratio is set to 2.5:1, calculate the physical host CPU core count required.",
+  "response_text": "To calculate the **physical host CPU core count** required for the enterprise cluster with hypervisor overcommitment, follow these steps:\n\n### **1. Calculate Total vCPU Requirements per Tier**\n- **Web Tier:**\n  \\( 16 \\text{ VMs} \\times 2 \\text{ vCPU/VM} = 32 \\text{ vCPUs} \\)\n\n- **App Tier:**\n  \\( 32 \\text{ VMs} \\times 4 \\text{ vCPU/VM} = 128 \\text{ vCPUs} \\)\n\n- **DB Tier:**\n  \\( 8 \\text{ VMs} \\times 16 \\text{ vCPU/VM} = 128 \\text{ vCPUs} \\)\n\n### **2. Sum All vCPU Requirements**\n\\( 32 + 128 + 128 = 288 \\text{ vCPUs} \\)\n\n### **3. Apply Overcommitment Ratio**\nThe hypervisor overcommitment ratio is **2.5:1**, meaning the physical CPU must support **2.5 times** the total vCPU demand.\n\n\\[\n\\text{Required Physical vCPUs} = \\frac{288 \\text{ vCPUs}}{2.5} = 115.2 \\text{ vCPUs}\n\\]\n\nSince CPU cores must be whole numbers, we round up to **116 vCPUs**.\n\n### **4. Final Answer**\nThe physical host requires at least **116 CPU cores** to support the given virtual machine configuration with a **2.5:1 overcommitment ratio**.\n\n\\[\n\\boxed{116}\n\\]",
+  "run_number": 4,
+  "temperature": 0.7,
+  "latency_seconds": 3.0363,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Virtual Cpu Sum",
+      "score": 5,
+      "justification": "The response correctly calculates vCPUs for each tier (32, 128, 128) and sums them to 288 with no errors.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Overcommitment Division",
+      "score": 4,
+      "justification": "The response correctly computes 288 / 2.5 = 115.2 and rounds up to 116, but the explanation misstates the ratio direction by saying the physical CPU must support 2.5 times the vCPU demand.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 9,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T15:39:12.403986+00:00"
+}

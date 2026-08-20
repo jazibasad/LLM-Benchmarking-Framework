@@ -1,0 +1,31 @@
+{
+  "id": "P043",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "A network switch port handles packets with an MTU of 1500 bytes. If a data stream of 45,000 payload bytes is transmitted over IPv4 (requiring 20 bytes header) and TCP (requiring 20 bytes header), calculate the exact number of fragmented packets generated and total wire overhead.",
+  "response_text": "To determine the number of fragmented packets and the total wire overhead for transmitting a 45,000-byte payload over IPv4 and TCP with an MTU of 1500 bytes, follow these steps:\n\n### **1. Calculate the Maximum Payload per Packet (L3 Payload)**\nEach packet has:\n- **IPv4 Header:** 20 bytes\n- **TCP Header:** 20 bytes\n- **Total Overhead per Packet:** 40 bytes\n\nThus, the **maximum payload per packet (L3 payload)** is:\n\\[\n\\text{MTU} - \\text{IPv4 Header} - \\text{TCP Header} = 1500 - 40 = 1460 \\text{ bytes}\n\\]\n\n### **2. Determine the Number of Packets**\nThe total payload is **45,000 bytes**, and each packet carries **1460 bytes** of payload.\n\n\\[\n\\text{Number of Packets} = \\left\\lceil \\frac{45,000}{1460} \\right\\rceil\n\\]\n\n\\[\n\\frac{45,000}{1460} \\approx 30.8219 \\quad \\Rightarrow \\quad \\text{Round up to } 31 \\text{ packets}\n\\]\n\n**Verification:**\n- **30 packets:** \\(30 \\times 1460 = 43,800\\) bytes (remaining: 1,200 bytes)\n- **31st packet:** 1,200 bytes (since 1,200 ≤ 1,460)\n\nThus, **31 packets** are required.\n\n### **3. Calculate Total Wire Overhead**\nEach packet has **40 bytes** of overhead (IPv4 + TCP), and there are **31 packets**:\n\n\\[\n\\text{Total Overhead} = 31 \\times 40 = 1,240 \\text{ bytes}\n\\]\n\n### **Final Answer:**\n- **Number of Fragmented Packets:** **31**\n- **Total Wire Overhead:** **1,240 bytes**",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 3.2936,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Mtu Fragmentation Math",
+      "score": 5,
+      "justification": "The response correctly calculates the payload per packet (1460 bytes) and the exact number of fragments (31) using the MTU and header sizes.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Overhead Computation",
+      "score": 5,
+      "justification": "The response accurately sums the IPv4 and TCP headers (40 bytes) and multiplies by the number of packets to give the correct total overhead (1240 bytes).",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T15:38:10.243536+00:00"
+}

@@ -1,0 +1,37 @@
+{
+  "id": "P052",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Explain asynchronous event loops in programming. NEGATIVE CONSTRAINT 1: Alternate sentence cases (Sentence 1 lowercase only, Sentence 2 UPPERCASE only, Sentence 3 lowercase only). NEGATIVE CONSTRAINT 2: Do not use the letter 'e'. NEGATIVE CONSTRAINT 3: Exactly four sentences.",
+  "response_text": "asynchronous event loops let programs handle tasks without blocking. they run code in a non-stopping, order-changing way. tasks wait in queues till their turn arrives. this keeps apps swift and responsive.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.7087,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Alternating Case (0-5)",
+      "score": 1,
+      "justification": "The response attempts the alternation but sentence 2 is not uppercase and sentence 4 lacks a defined case, failing most of the requirement, which is a Major Failure (score 1).",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Forbidden Letter (0-5)",
+      "score": 0,
+      "justification": "The response contains many 'e's, completely violating the no‑'e' rule, a Complete Failure (score 0).",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Sentence Count (0-5)",
+      "score": 5,
+      "justification": "The response consists of exactly four sentences, fully satisfying the requirement, which is a Complete Success (score 5).",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 6,
+  "max_score": "15",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T15:42:00.957752+00:00"
+}

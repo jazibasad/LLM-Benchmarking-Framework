@@ -1,0 +1,37 @@
+{
+  "id": "P051",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Write a technical overview of cloud computing security models. NEGATIVE CONSTRAINT 1: Do not use the word 'security' or its plural form. NEGATIVE CONSTRAINT 2: Every sentence must start with a vowel letter (A, E, I, O, U). Format the output as exactly three paragraphs.",
+  "response_text": "**Abstract principles underpinning cloud environments often revolve around access governance and isolation mechanisms.** Every interaction with shared infrastructure demands explicit validation to prevent unauthorized exposure. Authentication frameworks ensure only verified entities gain operational privileges within distributed systems. Encryption protocols, both at rest and in transit, form a critical barrier against data interception. Audit trails provide immutable records of user actions, enabling retrospective analysis of potential breaches.\n\n**Efficiency in cloud deployments relies on compartmentalized architectures that segment resources logically.** Each service tier operates within defined boundaries, reducing the blast radius of any compromise. Identity management systems enforce least-privilege principles to minimize lateral movement risks. Regular vulnerability assessments identify weaknesses before malicious exploitation occurs. Multi-factor verification adds layers of resistance against credential theft.\n\n**Understanding the risks requires continuous adaptation to evolving attack vectors.** Automated threat detection systems flag anomalies in real time, prompting immediate containment actions. Compliance frameworks enforce standardized safeguards across diverse environments. User education remains essential, as human error frequently becomes the weakest link. Collaboration between providers and consumers ensures shared responsibility in maintaining operational integrity.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 2.1893,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Negative Constraint 1",
+      "score": 5,
+      "justification": "The response contains no instances of the forbidden word 'security' or its plural form.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Negative Constraint 2",
+      "score": 1,
+      "justification": "Several sentences begin with consonants (e.g., 'Regular...', 'Multi-factor...', 'Compliance...', 'Collaboration...'), violating the requirement that every sentence start with a vowel.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Structural Formatting",
+      "score": 5,
+      "justification": "The output is formatted as exactly three distinct paragraphs.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 11,
+  "max_score": "15",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T15:41:51.842450+00:00"
+}
