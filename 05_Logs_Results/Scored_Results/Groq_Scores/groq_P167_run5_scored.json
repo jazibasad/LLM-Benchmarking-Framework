@@ -1,0 +1,43 @@
+{
+  "id": "P167",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this CSV with a single column containing pipe-delimited multi-values (e.g. 'tags' column: 'red|blue|green') into a normalized JSON structure where each tag becomes a separate array element.",
+  "response_text": "Below is a **complete, ready‑to‑run Python script** that:\n\n1. **Reads** a CSV file that has a single column (e.g. `tags`) where each cell contains one or more values separated by a pipe (`|`).\n2. **Splits** the pipe‑delimited string into separate items.\n3. **Normalises** the data into a JSON structure where every tag is its own element in an array.\n4. **Writes** the resulting JSON to a file (or prints it to the console).\n\n---\n\n## 1️⃣  Sample Input & Desired Output  \n\n| CSV (`tags.csv`) |\n|------------------|\n| `red|blue|green` |\n| `yellow|purple` |\n| `orange` |\n| *(empty line)* |\n\n**Resulting JSON (`tags.json`)**\n\n```json\n[\n  {\n    \"original\": \"red|blue|green\",\n    \"tags\": [\"red\", \"blue\", \"green\"]\n  },\n  {\n    \"original\": \"yellow|purple\",\n    \"tags\": [\"yellow\", \"purple\"]\n  },\n  {\n    \"original\": \"orange\",\n    \"tags\": [\"orange\"]\n  },\n  {\n    \"original\": \"\",\n    \"tags\": []\n  }\n]\n```\n\n*Feel free to adapt the field names (`original`, `tags`) to whatever fits your data model.*\n\n---\n\n## 2️⃣  Full Python Script  \n\n```python\n#!/usr/bin/env python3\n\"\"\"\nCSV → Normalised JSON converter\n\nAssumptions\n-----------\n* The CSV has **one column** (any header name is fine) that contains pipe‑delimited values.\n* Empty cells are allowed and become an empty list in the JSON.\n* Output JSON is an array of objects, each object keeps the original string\n  (for traceability) and a `tags` array with the split values.\n\nUsage\n-----\n    python csv_to_json.py tags.csv tags.json   # input CSV, output JSON\n\"\"\"\n\nimport csv\nimport json\nimport sys\nfrom pathlib import Path\nfrom typing import List, Dict\n\n\ndef read_csv(file_path: Path) -> List[str]:\n    \"\"\"Read the single‑column CSV and return a list of raw cell strings.\"\"\"\n    with file_path.open(newline=\"\", encoding=\"utf-8\") as f:\n        reader = csv.reader(f)\n        # Grab the first (and only) column from each row\n        rows = [row[0] if row else \"\" for row in reader]\n    return rows\n\n\ndef normalise_rows(rows: List[str]) -> List[Dict[str, object]]:\n    \"\"\"\n    Convert each raw pipe‑delimited string into a dict:\n        {\n            \"original\": \"<raw string>\",\n            \"tags\": [list, of, split, values]\n        }\n    \"\"\"\n    normalised = []\n    for raw in rows:\n        # Strip whitespace, keep empty string as‑is\n        raw_clean = raw.strip()\n        # Split on pipe, ignore empty fragments after stripping whitespace\n        tags = [part.strip() for part in raw_clean.split(\"|\") if part.strip()]\n        normalised.append({\"original\": raw_clean, \"tags\": tags})\n    return normalised\n\n\ndef write_json(data: List[Dict[str, object]], out_path: Path, *, indent: int = 2):\n    \"\"\"Write the list of dicts to a JSON file.\"\"\"\n    with out_path.open(\"w\", encoding=\"utf-8\") as f:\n        json.dump(data, f, ensure_ascii=False, indent=indent)\n    print(f\"✅ JSON written to {out_path}\")\n\n\ndef main(argv: List[str] | None = None):\n    argv = argv or sys.argv[1:]\n\n    if len(argv) != 2:\n        print(\"Usage: python csv_to_json.py <input.csv> <output.json>\")\n        sys.exit(1)\n\n    csv_path = Path(argv[0])\n    json_path = Path(argv[1])\n\n    if not csv_path.is_file():\n        print(f\"❌ Input file not found: {csv_path}\")\n        sys.exit(1)\n\n    rows = read_csv(csv_path)\n    normalised = normalise_rows(rows)\n    write_json(normalised, json_path)\n\n\nif __name__ == \"__main__\":\n    main()\n```\n\n### How It Works\n\n| Step | What the code does | Why it matters |\n|------|--------------------|----------------|\n| **Read CSV** (`read_csv`) | Uses Python’s built‑in `csv` module (handles quoted fields, different line endings, etc.). | Guarantees correct parsing even if a tag itself contains commas. |\n| **Normalise** (`normalise_rows`) | - `strip()` removes surrounding whitespace.<br>- `split(\"|\")` breaks the string into pieces.<br>- A list‑comprehension discards empty fragments (e.g. `\"red||blue\"` → `[\"red\", \"blue\"]`). | Produces a clean array of tags for each row. |\n| **Write JSON** (`write_json`) | `json.dump(..., ensure_ascii=False, indent=2)` writes pretty‑printed Unicode‑safe JSON. | The output is human‑readable and ready for downstream APIs. |\n\n---\n\n## 3️⃣  Quick “One‑liner” Alternative (pandas)\n\nIf you already have **pandas** in your environment and prefer a more compact solution:\n\n```python\nimport pandas as pd\nimport json\n\ndf = pd.read_csv(\"tags.csv\", header=None, names=[\"raw\"])\ndf[\"tags\"] = df[\"raw\"].fillna(\"\").apply(lambda x: [t.strip() for t in x.split(\"|\") if t.strip()])\n\n# Optional: keep the original string for traceability\nresult = df.to_dict(orient=\"records\")\n\nwith open(\"tags.json\", \"w\", encoding=\"utf-8\") as f:\n    json.dump(result, f, ensure_ascii=False, indent=2)\n\nprint(\"✅ Done\")\n```\n\n*Both approaches give you the same JSON shape; pick whichever feels more natural in your workflow.*\n\n---\n\n## 4️⃣  Running the Script  \n\n```bash\n# 1️⃣ Save the script (e.g. as csv_to_json.py)\nchmod +x csv_to_json.py          # make it executable (optional)\n# 2️⃣ Execute\n./csv_to_json.py tags.csv tags.json\n```\n\nYou should now see `tags.json` in the same directory, containing the normalised structure shown above.\n\n---\n\n## 5️⃣  Customising the Output  \n\n| Desired change | Where to edit |\n|----------------|---------------|\n| **Rename the output fields** (`original` → `source`, `tags` → `values`) | Edit the dict created in `normalise_rows`. |\n| **Add an auto‑generated ID** | Add `{\"id\": idx, **row_dict}` inside the loop (`enumerate(rows)`). |\n| **Change the delimiter** (e.g. commas) | Replace `split(\"|\")` with `split(\",\")`. |\n| **Wrap the whole thing in an object** (`{ \"data\": [...] }`) | Change `write_json` to `json.dump({\"data\": data}, ...)`. |\n\n---\n\n### TL;DR\n\n*Read the CSV → split each cell on `|` → build a list of dicts → dump as JSON.*  \nThe script above does exactly that, handling empty cells, whitespace, and proper quoting out‑of‑the‑box. Happy data‑wrangling!",
+  "run_number": 5,
+  "temperature": 0.7,
+  "latency_seconds": 14.0205,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Relational Integrity Score",
+      "score": 5,
+      "justification": "The script preserves each row's original pipe‑delimited string and correctly maps it to a tags array, maintaining the one‑to‑row relationship without loss.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Edge Case Handling Score",
+      "score": 5,
+      "justification": "Empty cells, surrounding whitespace, consecutive delimiters, and quoted fields are all handled gracefully, producing appropriate empty lists or cleaned tags.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Output Validity Score",
+      "score": 5,
+      "justification": "The output is generated with Python's json.dump, guaranteeing syntactically valid JSON with proper encoding and formatting.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 5,
+      "justification": "Every input cell is represented in the output—either as its original string (stripped of insignificant whitespace) and as an array of all non‑empty tag values, with no data silently dropped.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T19:05:11.140825+00:00"
+}

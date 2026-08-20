@@ -1,0 +1,43 @@
+{
+  "id": "P167",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this CSV with a single column containing pipe-delimited multi-values (e.g. 'tags' column: 'red|blue|green') into a normalized JSON structure where each tag becomes a separate array element.",
+  "response_text": "Below is a **self‑contained Python script** that\n\n1. reads a CSV file that has a single column (named `tags`) whose cells contain one or more values separated by a pipe (`|`);\n2. splits each cell into its individual values;\n3. builds a *normalized* JSON structure where every tag appears as a separate element in an array; and\n4. writes the resulting JSON to a file (or prints it to `stdout`).\n\nYou can run the script with any recent version of Python 3 (3.8+ is enough).\n\n---\n\n## 1️⃣  Sample input / expected output\n\n### CSV (`input.csv`)\n\n```csv\ntags\nred|blue|green\nyellow\norange|purple\n```\n\n### Desired JSON (`output.json`)\n\n```json\n[\n  {\n    \"tags\": [\n      \"red\",\n      \"blue\",\n      \"green\"\n    ]\n  },\n  {\n    \"tags\": [\n      \"yellow\"\n    ]\n  },\n  {\n    \"tags\": [\n      \"orange\",\n      \"purple\"\n    ]\n  }\n]\n```\n\n*Each row of the CSV becomes one object in the JSON array, and the pipe‑delimited string is turned into an actual JSON array.*\n\n---\n\n## 2️⃣  The script\n\n```python\n#!/usr/bin/env python3\n\"\"\"\ncsv_to_normalized_json.py\n\nConvert a CSV that contains a single pipe‑delimited column (e.g. \"tags\")\ninto a normalized JSON structure where each pipe‑separated value becomes\nan element of a JSON array.\n\nUsage:\n    python csv_to_normalized_json.py input.csv output.json\n    # or, to just print the JSON:\n    python csv_to_normalized_json.py input.csv\n\"\"\"\n\nimport csv\nimport json\nimport sys\nfrom pathlib import Path\nfrom typing import List, Dict, Any\n\n\ndef read_csv(csv_path: Path, column_name: str = \"tags\", delimiter: str = \",\") -> List[Dict[str, Any]]:\n    \"\"\"\n    Read the CSV file and return a list of dictionaries, one per row.\n    The value of `column_name` is split on the pipe character (|) and stripped.\n    Empty strings are ignored.\n    \"\"\"\n    records: List[Dict[str, Any]] = []\n\n    with csv_path.open(newline=\"\", encoding=\"utf-8\") as f:\n        reader = csv.DictReader(f, delimiter=delimiter)\n        if column_name not in reader.fieldnames:\n            raise ValueError(f\"Column '{column_name}' not found in CSV header: {reader.fieldnames}\")\n\n        for row_num, raw_row in enumerate(reader, start=2):  # start=2 because header is line 1\n            raw_value = raw_row.get(column_name, \"\")\n            # Split on '|', strip whitespace, drop empty parts\n            tags = [part.strip() for part in raw_value.split(\"|\") if part.strip()]\n            records.append({\"tags\": tags})\n\n    return records\n\n\ndef write_json(data: List[Dict[str, Any]], json_path: Path = None, indent: int = 2) -> None:\n    \"\"\"\n    Serialize `data` as pretty‑printed JSON.\n    If `json_path` is None, write to stdout; otherwise write to the given file.\n    \"\"\"\n    json_text = json.dumps(data, indent=indent, ensure_ascii=False)\n\n    if json_path is None:\n        print(json_text)\n    else:\n        json_path.write_text(json_text, encoding=\"utf-8\")\n        print(f\"✅ JSON written to {json_path}\")\n\n\ndef main(argv: List[str] = None) -> None:\n    argv = argv or sys.argv[1:]\n\n    if not (1 <= len(argv) <= 2):\n        print(__doc__)\n        sys.exit(1)\n\n    csv_file = Path(argv[0])\n    json_file = Path(argv[1]) if len(argv) == 2 else None\n\n    if not csv_file.is_file():\n        sys.exit(f\"❌  CSV file not found: {csv_file}\")\n\n    try:\n        records = read_csv(csv_file, column_name=\"tags\")\n        write_json(records, json_file)\n    except Exception as exc:\n        sys.exit(f\"❌  Failed: {exc}\")\n\n\nif __name__ == \"__main__\":\n    main()\n```\n\n### How the script works\n\n| Step | What happens |\n|------|--------------|\n| **`read_csv`** | Uses `csv.DictReader` to iterate over rows. For each row it fetches the value in the `tags` column, splits it on `|`, strips surrounding whitespace, discards empty strings, and stores the resulting list under the key `\"tags\"`. |\n| **`write_json`** | Calls `json.dumps` with `indent=2` for readability (`ensure_ascii=False` keeps non‑ASCII characters intact). If a destination path is supplied it writes the file; otherwise it prints to the console. |\n| **CLI** | `python csv_to_normalized_json.py input.csv output.json` → creates `output.json`. <br> `python csv_to_normalized_json.py input.csv` → prints JSON to the terminal. |\n\n---\n\n## 3️⃣  Running the script\n\n```bash\n# 1. Save the script (e.g. as csv_to_normalized_json.py)\n# 2. Make it executable (optional)\nchmod +x csv_to_normalized_json.py\n\n# 3. Convert a file\n./csv_to_normalized_json.py input.csv output.json\n\n# 4. Or just view the JSON on the screen\n./csv_to_normalized_json.py input.csv\n```\n\nIf you prefer a **one‑liner** without a separate script, the same logic can be expressed in a few lines of Python REPL code:\n\n```python\nimport csv, json, sys\nwith open('input.csv', newline='') as f:\n    rows = [{'tags': [t.strip() for t in r['tags'].split('|') if t.strip()]}\n            for r in csv.DictReader(f)]\nprint(json.dumps(rows, indent=2, ensure_ascii=False))\n```\n\n---\n\n## 4️⃣  Variations & Extensions\n\n| Need | Quick tweak |\n|------|--------------|\n| **Different column name** | Change the `column_name` argument in `read_csv` (e.g. `read_csv(csv_path, column_name=\"categories\")`). |\n| **Multiple columns to normalize** | Extend `read_csv` to accept a list of column names and split each one similarly, building a dict with several array fields. |\n| **Different delimiter** (e.g., semicolon) | Pass `delimiter=';'` to `csv.DictReader` or modify the `read_csv` signature accordingly. |\n| **Large files** (streaming) | Replace the list accumulation with a generator that writes each JSON object to the file as it is processed, avoiding loading the whole CSV into memory. |\n| **Pandas‑only solution** | If you already work with pandas, you can achieve the same result in a single line: <br>`df['tags'] = df['tags'].str.split('|'); df.to_json('out.json', orient='records', lines=False, indent=2)` |\n\n---\n\n## 5️⃣  TL;DR (one‑paragraph summary)\n\n```python\nimport csv, json, sys\nwith open('input.csv', newline='') as f:\n    data = [{'tags': [t.strip() for t in r['tags'].split('|') if t.strip()]}\n            for r in csv.DictReader(f)]\njson.dump(data, sys.stdout, indent=2, ensure_ascii=False)\n```\n\nThat snippet reads a CSV whose only column (`tags`) holds pipe‑delimited strings, splits each string into a list, and prints a nicely formatted JSON array where each tag is a separate element. 🎉",
+  "run_number": 4,
+  "temperature": 0.7,
+  "latency_seconds": 19.2415,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Relational Integrity Score",
+      "score": 5,
+      "justification": "The script correctly preserves row‑to‑tag relationships by placing each split tag in its own object's \"tags\" array, maintaining original row order.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Edge Case Handling Score",
+      "score": 4,
+      "justification": "It handles whitespace, empty tags, and missing columns gracefully, though it raises an error rather than silently skipping problematic rows.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Output Validity Score",
+      "score": 5,
+      "justification": "The produced JSON is syntactically valid, using json.dumps with proper indentation and Unicode handling.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 5,
+      "justification": "All CSV rows are processed and all non‑empty pipe‑delimited values are included in the output without silent omission.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 19,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T19:04:55.810937+00:00"
+}
