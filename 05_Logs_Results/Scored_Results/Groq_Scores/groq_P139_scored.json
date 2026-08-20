@@ -1,0 +1,43 @@
+{
+  "id": "P139",
+  "category": "Long-context Retention",
+  "difficulty": "Hard",
+  "prompt": "Note 1: Module A was originally designed to handle authentication only. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: In a later revision, Module A was extended to also handle session management. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: A subsequent security audit required Module A to be split, moving session management into a new Module D. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 4: Module A currently handles only authentication again, matching its original scope. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 5: Module B has always handled authorization and was never modified. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Trace the full history of Module A's responsibilities from start to the current state, and explain why it ended up back where it started.",
+  "response_text": "**Module A – Responsibility Timeline**\n\n| Phase | What Module A did | Why the change happened | Resulting state of Module A |\n|------|-------------------|------------------------|----------------------------|\n| **1. Original design** (Note 1) | **Authentication only** – verified user credentials and produced an authentication token. | This was the intended, scoped responsibility when the system was first built. | *Authentication* (no other duties). |\n| **2. First extension** (Note 2) | **Authentication + Session Management** – after a product‑feature request, Module A was also made responsible for creating, tracking, and terminating user sessions (e.g., session‑ID issuance, timeout handling). | The development team wanted to keep related “login‑time” logic together, reducing the number of moving parts and simplifying the code‑base for the short‑term. | *Authentication + Session Management*. |\n| **3. Security‑audit driven split** (Note 3) | **Authentication** (session duties removed) – a formal security audit identified that mixing authentication (identity proof) with session management (state handling) created a single point of failure and violated the principle of separation of concerns. | To mitigate risk, improve auditability, and make it easier to apply independent hardening controls, the audit recommended extracting the session‑management logic into its own component. A new **Module D** was created for that purpose. | *Authentication only* (session logic now lives in Module D). |\n| **4. Current state** (Note 4) | **Authentication only** – exactly as in the original design. | No further changes have been made after the audit‑driven refactor; the system has been running under normal conditions, with routine maintenance keeping everything stable. | *Authentication only* (the same responsibility set as at launch). |\n\n---\n\n### Why Module A “ended up back where it started”\n\n1. **Initial Scope Clarity**  \n   - The system was architected with a clear boundary: *authentication* (who you are) vs. *authorization* (what you can do) vs. *session management* (how long you stay logged in). Module A was deliberately limited to the first piece.\n\n2. **Temporary Functional Consolidation**  \n   - Business pressure to ship a feature quickly led developers to piggy‑back session‑management code onto Module A. This is a common short‑term optimisation: keep “login‑related” code together to reduce perceived duplication.\n\n3. **Security‑Audit Findings**  \n   - A later, more rigorous audit highlighted several problems with that consolidation:  \n     - **Increased attack surface** – a vulnerability in session handling could compromise authentication.  \n     - **Harder compliance testing** – auditors must trace responsibilities; mixing them blurs the audit trail.  \n     - **Violation of the *Single‑Responsibility Principle*** – making the module harder to understand, test, and maintain.  \n   - The recommended remediation was to **extract** the session‑management responsibilities into a dedicated component (Module D).\n\n4. **Refactoring to a Cleaner Architecture**  \n   - The team implemented the audit recommendation, moving all session‑related code, data structures, and configuration to Module D.  \n   - After the split, Module A’s codebase was **pruned** back to the original authentication logic, removing any leftover session‑related artifacts.\n\n5. **Stability & Maintenance Confirmation**  \n   - Since the refactor, the system has operated under “standard conditions” with no unusual events, and routine maintenance has kept everything within expected parameters. This reinforces that the **original, narrower responsibility set** is both sufficient and preferable for Module A.\n\n6. **Resulting “Full Circle”**  \n   - Because the only permanent change was the creation of a **new, separate module** (D) to own the session‑management duties, Module A’s functional scope **naturally reverted** to its original, intended purpose. The system now respects clean boundaries:\n\n   ```\n   Module A → Authentication\n   Module B → Authorization (unchanged)\n   Module D → Session Management\n   ```\n\n   Hence, after a brief period of expanded duties, Module A ended up exactly where it began: a dedicated authentication component.\n\n---\n\n### Take‑away Lessons\n\n- **Separate concerns early** – even if it feels like extra work, it prevents later costly refactors.\n- **Audit‑driven design** – security audits can surface architectural weaknesses that are not obvious during rapid development.\n- **Modular growth** – adding a new module (D) is often a better long‑term solution than overloading an existing one.\n- **Stability after refactor** – the post‑audit period demonstrates that returning to the original, well‑defined responsibilities can improve reliability and maintainability without sacrificing functionality.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 4.9548,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Sequential Accuracy Score (0-5)",
+      "score": 5,
+      "justification": "The response correctly lists all four chronological phases exactly matching Notes 1‑4 and maps them to the appropriate responsibilities and changes.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Current-State Accuracy Score (0-5)",
+      "score": 5,
+      "justification": "It accurately identifies the current state of Module A as handling only authentication, which aligns with Note 4.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score (0-5)",
+      "score": 5,
+      "justification": "All relevant facts from the notes—including the original scope, the temporary expansion, the security‑audit split, the creation of Module D, and the stability confirmation—are fully covered.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Coherence Score (0-5)",
+      "score": 5,
+      "justification": "The answer is clearly organized with a concise timeline table and a logical, easy‑to‑follow explanation of why Module A returned to its original responsibilities.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T18:47:54.090053+00:00"
+}

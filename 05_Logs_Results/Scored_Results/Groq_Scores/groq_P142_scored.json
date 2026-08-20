@@ -1,0 +1,43 @@
+{
+  "id": "P142",
+  "category": "Long-context Retention",
+  "difficulty": "Hard",
+  "prompt": "Note 1: Feature flag 'dark_mode' was enabled for 10% of users in an initial rollout. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: After positive feedback, it was expanded to 50% of users. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: A bug was discovered affecting mobile users specifically, so mobile rollout was rolled back to 0%. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 4: Desktop rollout remained at 50% throughout the mobile issue. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 5: After the mobile bug was fixed, mobile rollout resumed at 25%, separate from desktop's 50%. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: What is the CURRENT rollout percentage for mobile users versus desktop users, and reconstruct the full sequence of changes that led to this split state?",
+  "response_text": "**Current rollout percentages (as of the latest note)**  \n\n| Platform | Rollout percentage |\n|----------|--------------------|\n| **Mobile** | **25 %** |\n| **Desktop** | **50 %** |\n\n---\n\n## Full chronological sequence of changes\n\n| Step | Action taken | Affected platform(s) | Resulting rollout |\n|------|--------------|----------------------|-------------------|\n| **1** – Initial rollout | Feature flag **`dark_mode`** turned on for **10 %** of users (both mobile + desktop, since no platform split was specified). | Mobile & Desktop | 10 % (both) |\n| **2** – Expansion | After positive feedback, rollout was increased to **50 %** of users (again, no platform distinction). | Mobile & Desktop | 50 % (both) |\n| **3** – Mobile‑specific bug discovered | The bug affected only mobile clients, so the mobile portion of the rollout was **rolled back to 0 %**. Desktop rollout was left unchanged. | Mobile only | Mobile = 0 % ; Desktop = 50 % |\n| **4** – Desktop remains unchanged | No further changes to desktop; it stays at **50 %** while mobile stays at **0 %**. | Desktop only | Mobile = 0 % ; Desktop = 50 % |\n| **5** – Bug fix & partial mobile restart | After fixing the mobile bug, the mobile rollout was **re‑enabled at 25 %** (a more cautious, lower percentage than desktop). Desktop continues at its previous **50 %** level. | Mobile (new) & Desktop (unchanged) | Mobile = 25 % ; Desktop = 50 % |\n\n### How we arrive at the current split\n\n1. **Start:** 10 % → 50 % (both platforms)  \n2. **Bug:** Mobile → 0 % (desktop stays at 50 %)  \n3. **Fix:** Mobile → 25 % (desktop unchanged at 50 %)  \n\nThus the system now runs **dark_mode** for **25 % of mobile users** and **50 % of desktop users**.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 7.6744,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Sequential Accuracy Score (0-5)",
+      "score": 5,
+      "justification": "The response perfectly reconstructs each step from the initial 10% rollout through the expansion to 50%, the mobile rollback to 0%, desktop staying at 50%, and the final mobile restart at 25%, matching the chronological order and all details from the notes.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Current-State Accuracy Score (0-5)",
+      "score": 5,
+      "justification": "The response correctly identifies the final current state as mobile 25% and desktop 50%, reflecting the result of all changes rather than an intermediate state.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score (0-5)",
+      "score": 5,
+      "justification": "The response uses all five notes, includes both the current state table and full sequence, mentions platform-specific details (mobile-only bug, desktop unchanged), and does not omit any relevant facts.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Coherence Score (0-5)",
+      "score": 5,
+      "justification": "The response is exceptionally well-organized with clear tables for current state and chronological steps, and the narrative explanation is easy to follow despite the layered complexity.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T18:49:46.595549+00:00"
+}
