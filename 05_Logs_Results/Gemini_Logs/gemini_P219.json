@@ -1,0 +1,18 @@
+{
+  "id": "P219",
+  "category": "Multilingual Tasks",
+  "difficulty": "Medium",
+  "prompt": "Translate this sentence into Korean, and explain why you chose formal or informal speech level: 'Hey, are you free this weekend?'",
+  "evaluation_criteria": "Tone/Register Accuracy: 0-5 (Evaluates whether formality level, politeness, or professional register is correctly preserved)\nLinguistic Explanation Quality: 0-5 (Evaluates whether any requested explanation of translation choices is accurate and clear)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "Here is the translation in Korean, along with an explanation of the speech level chosen:\n\n### Translation\n\n**\"저기, 이번 주말에 시간 있으세요?\"** \n*(Jeogi, ibon jumare sigan is-seoyo?)*\n\n### Speech Level and Explanation\n\n**Speech Level Chosen:** **Polite/Formal (존댓말 - Jondaetmal)**, specifically the **Haeyoche (해요체)** style. \n\n**Why I chose this level:**\n\n1. **Safety and Context in Translation:** When translating a general sentence like \"Hey, are you free this weekend?\" out of context, the polite form (`-세요`) is the safest and most standard choice. It shows proper etiquette for people you might not know well, coworkers, acquaintances, or people older than you. \n2. **\"Hey\" (저기):** The word *Jeogi* (저기) is a polite way to get someone's attention (similar to \"Excuse me\" or \"Say, ...\"). \n3. **Alternative (Informal):** If you are talking to a close friend, someone younger than you, or a romantic partner, you would use the informal level (**Banmal - 반말**): \n   * *\"야, 너 이번 주말에 시간 있어?\" (Ya, neo ibon jumare sigan isseo?)*\n\nBecause the prompt does not specify the relationship between the speakers, the polite form is the most appropriate default for general, everyday interaction in Korean society.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.9269,
+  "timestamp_utc": "2026-08-20T08:51:32.297286+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

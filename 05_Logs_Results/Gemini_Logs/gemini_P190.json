@@ -1,0 +1,18 @@
+{
+  "id": "P190",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this quarterly business review into an executive summary with EXACTLY three labeled sections (Wins, Challenges, Next Steps), each limited to 2 sentences, using only information explicitly stated in the source (do not infer anything not directly stated): 'Q3 revenue grew 8% quarter-over-quarter, beating our internal forecast of 5%. Customer churn ticked up slightly to 4.2% from 3.8% last quarter, primarily in the SMB segment. The engineering team shipped the long-delayed API v2 release, though it came in three weeks later than originally planned. Leadership has approved additional headcount for customer success in Q4 to address the churn trend.'",
+  "evaluation_criteria": "Structural Compliance Score: 0-5 (Evaluates whether the exact requested structure - sentence count, labeled sections, audience level - is followed precisely)\nFidelity Under Constraint Score: 0-5 (Evaluates whether meaning is preserved despite the tight length/format constraints, without fabricating information not in the source)\nNuance Preservation Score: 0-5 (Evaluates whether important caveats, limitations, or competing viewpoints from the source are retained, not flattened away)\nAudience Appropriateness Score: 0-5 (Evaluates whether jargon is correctly translated for the specified target audience)",
+  "max_score": "20",
+  "model": "gemini",
+  "response_text": "Wins: Q3 revenue grew 8% quarter-over-quarter, beating our internal forecast of 5%. The engineering team shipped the long-delayed API v2 release.\n\nChallenges: Customer churn ticked up slightly to 4.2% from 3.8% last quarter, primarily in the SMB segment. The API v2 release came in three weeks later than originally planned.\n\nNext Steps: Leadership has approved additional headcount for customer success in Q4 to address the churn trend. No additional actions were stated for Q4.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.0585,
+  "timestamp_utc": "2026-08-20T08:48:26.892850+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

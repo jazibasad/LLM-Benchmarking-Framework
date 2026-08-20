@@ -1,0 +1,18 @@
+{
+  "id": "P216",
+  "category": "Multilingual Tasks",
+  "difficulty": "Medium",
+  "prompt": "Translate this business email into German, maintaining professional register throughout: 'Following our call yesterday, I wanted to confirm the revised delivery timeline and outline the next steps for both teams.'",
+  "evaluation_criteria": "Tone/Register Accuracy: 0-5 (Evaluates whether formality level, politeness, or professional register is correctly preserved)\nLinguistic Explanation Quality: 0-5 (Evaluates whether any requested explanation of translation choices is accurate and clear)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "Here is the professional German translation of the email:\n\n**\"Bezugnehmend auf unser gestriges Gespräch möchte ich den überarbeiteten Lieferzeitplan bestätigen und die nächsten Schritte für unsere beiden Teams skizzieren.\"**\n\n*(Note: If you are addressing a formal \"Sie\" group, this translation is completely professional and standard for business correspondence.)*",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.0563,
+  "timestamp_utc": "2026-08-20T08:51:17.924635+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

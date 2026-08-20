@@ -1,0 +1,18 @@
+{
+  "id": "P196",
+  "category": "Summarization",
+  "difficulty": "Medium",
+  "prompt": "Summarize this meeting transcript excerpt into 3 clear action items: 'So I think we all agree the current onboarding flow is too long. Sarah mentioned she'll look into cutting the form fields down. Mike said he can have the new tutorial video ready by next Friday. We also need someone to update the help docs to match - I can take that if no one else wants it.'",
+  "evaluation_criteria": "Format Compliance: 0-5 (Evaluates whether the specified structure - bullet points, sentence count, audience level - is followed)\nBalanced Coverage: 0-5 (Evaluates whether all key points from the source, including any competing or nuanced ones, are represented)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "Here are the 3 action items from the meeting excerpt:\n\n1. **Sarah:** Reduce the number of form fields in the onboarding flow.\n2. **Mike:** Complete the new onboarding tutorial video by next Friday.\n3. **Speaker:** Update the help documentation to match the new onboarding flow.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.8479,
+  "timestamp_utc": "2026-08-20T08:49:11.693838+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

@@ -1,0 +1,18 @@
+{
+  "id": "P193",
+  "category": "Summarization",
+  "difficulty": "Medium",
+  "prompt": "Summarize this technical changelog for a non-technical audience in 2-3 sentences: 'v2.3.0 introduces lazy-loading for the dashboard module, reducing initial page load time by 40%. Fixed a race condition in the websocket reconnection logic that caused duplicate notifications under high latency. Deprecated the legacy /v1/users endpoint in favor of /v2/users, which now supports pagination and field filtering.'",
+  "evaluation_criteria": "Format Compliance: 0-5 (Evaluates whether the specified structure - bullet points, sentence count, audience level - is followed)\nBalanced Coverage: 0-5 (Evaluates whether all key points from the source, including any competing or nuanced ones, are represented)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "The latest update makes your dashboard load 40% faster and fixes an issue that caused duplicate notifications when internet connections were slow. It also improves user data management by introducing a faster, more flexible system while phasing out the older version.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.8155,
+  "timestamp_utc": "2026-08-20T08:48:58.157130+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

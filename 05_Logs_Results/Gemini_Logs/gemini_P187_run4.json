@@ -1,0 +1,18 @@
+{
+  "id": "P187",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this scientific methods section into a single paragraph a journalist could use, explicitly flagging any part of the methodology that limits how strongly the results can be generalized: 'Participants (n=45, convenience sample from a single university) completed a 6-week intervention involving daily 10-minute mindfulness sessions via a mobile app. Self-reported stress levels were measured using the PSS-10 scale at baseline and post-intervention. No control group was used due to resource constraints; instead, a within-subjects pre-post design was employed.'",
+  "evaluation_criteria": "Structural Compliance Score: 0-5 (Evaluates whether the exact requested structure - sentence count, labeled sections, audience level - is followed precisely)\nFidelity Under Constraint Score: 0-5 (Evaluates whether meaning is preserved despite the tight length/format constraints, without fabricating information not in the source)\nNuance Preservation Score: 0-5 (Evaluates whether important caveats, limitations, or competing viewpoints from the source are retained, not flattened away)\nAudience Appropriateness Score: 0-5 (Evaluates whether jargon is correctly translated for the specified target audience)",
+  "max_score": "20",
+  "model": "gemini",
+  "response_text": "In a preliminary 6-week trial, 45 university students used a mobile app for daily 10-minute mindfulness sessions, with researchers tracking changes in self-reported stress using the PSS-10 scale. However, readers should exercise caution when interpreting these findings due to significant methodological limitations: the study relied on a small convenience sample from a single university and lacked a control group, meaning the results cannot be reliably generalized to broader populations or definitively proven to be caused by the app alone rather than outside factors.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.1927,
+  "timestamp_utc": "2026-08-20T08:48:09.023744+00:00",
+  "run_number": 4,
+  "repeat_count": 5
+}

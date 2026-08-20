@@ -1,0 +1,18 @@
+{
+  "id": "P197",
+  "category": "Summarization",
+  "difficulty": "Medium",
+  "prompt": "Summarize this legal notice into plain language a non-lawyer would understand, in 2 sentences: 'Pursuant to Section 4.2 of the User Agreement, any modifications to the Service that materially diminish core functionality shall entitle the User to terminate this Agreement without penalty, provided written notice is given within thirty (30) days of such modification.'",
+  "evaluation_criteria": "Format Compliance: 0-5 (Evaluates whether the specified structure - bullet points, sentence count, audience level - is followed)\nBalanced Coverage: 0-5 (Evaluates whether all key points from the source, including any competing or nuanced ones, are represented)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "If an update significantly reduces the main features of the service, you have the right to cancel your account without any penalty. To do this, you must send a written notice within 30 days of the change.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.0281,
+  "timestamp_utc": "2026-08-20T08:49:16.373780+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

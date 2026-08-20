@@ -1,0 +1,18 @@
+{
+  "id": "P213",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this ambiguous English sentence into French in a way that resolves the ambiguity, and explicitly state which interpretation you chose and why: 'I saw the man with the telescope.'",
+  "evaluation_criteria": "Translation Precision Score: 0-5 (Evaluates whether the translation is accurate at the level of precision the task requires - legal, technical, or poetic as specified)\nCultural/Linguistic Adaptation Score: 0-5 (Evaluates whether cultural or structural adaptations, where appropriate, are handled thoughtfully rather than overly literal)\nMeta-Explanation Quality Score: 0-5 (Evaluates whether any requested explanation of translation choices, ambiguity resolution, or back-translation comparison is accurate and insightful)\nRound-Trip/Consistency Score: 0-5 (Evaluates whether any self-comparison, such as back-translation analysis, is performed correctly and honestly, e.g. genuinely identifying meaning loss where it exists)",
+  "max_score": "20",
+  "model": "gemini",
+  "response_text": "**Translation:** \n*“J'ai vu l'homme qui avait la longue-vue.”*\n\n### Interpretation Chosen:\nI chose the interpretation where **the man possesses the telescope** (i.e., \"I saw the man who had the telescope\"), rather than the interpretation where I used the telescope to see him.\n\n### Why:\n1. **Grammatical Clarity:** In French, the ambiguous English prepositional phrase \"with the telescope\" is difficult to translate directly as an adjunct without creating the exact same ambiguity (`J'ai vu l'homme avec la longue-vue` can still mean either you used it or he had it). \n2. **Resolution:** By reframing the phrase into a relative clause (`qui avait la longue-vue` - \"who had the telescope\"), the French sentence structurally attaches the instrument exclusively to the man. \n3. **Vocabulary Choice:** I used *la longue-vue* (telescope/spyglass) rather than *le télescope* (which usually refers to a large astronomical instrument), as it is much more plausible for a man to be carrying a *longue-vue* around.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.6354,
+  "timestamp_utc": "2026-08-20T08:50:46.996270+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

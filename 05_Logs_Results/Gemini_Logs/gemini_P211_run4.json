@@ -1,0 +1,18 @@
+{
+  "id": "P211",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this poem excerpt into Spanish, prioritizing preserving the rhythm and emotional tone over literal word-for-word accuracy, and briefly explain one place where you deviated from literal translation to preserve the poetic effect: 'The quiet hum of evening falls, soft shadows stretch along the walls.'",
+  "evaluation_criteria": "Translation Precision Score: 0-5 (Evaluates whether the translation is accurate at the level of precision the task requires - legal, technical, or poetic as specified)\nCultural/Linguistic Adaptation Score: 0-5 (Evaluates whether cultural or structural adaptations, where appropriate, are handled thoughtfully rather than overly literal)\nMeta-Explanation Quality Score: 0-5 (Evaluates whether any requested explanation of translation choices, ambiguity resolution, or back-translation comparison is accurate and insightful)\nRound-Trip/Consistency Score: 0-5 (Evaluates whether any self-comparison, such as back-translation analysis, is performed correctly and honestly, e.g. genuinely identifying meaning loss where it exists)",
+  "max_score": "20",
+  "model": "gemini",
+  "response_text": "Here is the Spanish translation, crafted to maintain the AABB rhyme scheme (implied by the couplet), the smooth iambic flow, and the serene, melancholic mood:\n\n*El dulce anochecer ya cae,*\n*y la sombra en el muro se alarga y se expande.* \n*(Alternative for better rhythm: \"El dulce anochecer ya cae, / y sombras blandas van al muro y se expanden.\")*\n\nLet's use a tighter, more traditional 8-syllable (octosílabo) poetic meter for a better musical flow:\n\n> *La tarde cae en suave calma,*\n> *la sombra trepa por los muros.*\n\n**Brief explanation of deviation:**\nTo preserve the poetic effect, I deviated from a literal translation in the second half (*\"soft shadows stretch along the walls\"*). Literally, this would be *\"suaves sombras se extienden a lo largo de las paredes.\"* However, \"paredes\" feels too domestic and clinical, and the literal translation disrupts the poetic cadence and imagery. \n\nInstead, using **\"muros\"** (walls/ramparts) adds a touch of timelessness and architectural resonance. Furthermore, restructuring the action to **\"la sombra trepa por los muros\"** (the shadow climbs the walls) captures the visual stretching of the shadows as the sun sets, while maintaining a smooth, evocative rhythm that matches the English original's emotional tone of quiet twilight.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 2.3715,
+  "timestamp_utc": "2026-08-20T08:50:34.230349+00:00",
+  "run_number": 4,
+  "repeat_count": 5
+}

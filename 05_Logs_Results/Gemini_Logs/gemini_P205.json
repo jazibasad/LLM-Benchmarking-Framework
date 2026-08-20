@@ -1,0 +1,18 @@
+{
+  "id": "P205",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this paragraph into French, THEN translate your French translation back into English, and compare the back-translation to the original, explicitly noting any meaning that was lost or shifted: 'The committee's decision, while controversial, ultimately reflected a pragmatic compromise between competing stakeholder interests.'",
+  "evaluation_criteria": "Translation Precision Score: 0-5 (Evaluates whether the translation is accurate at the level of precision the task requires - legal, technical, or poetic as specified)\nCultural/Linguistic Adaptation Score: 0-5 (Evaluates whether cultural or structural adaptations, where appropriate, are handled thoughtfully rather than overly literal)\nMeta-Explanation Quality Score: 0-5 (Evaluates whether any requested explanation of translation choices, ambiguity resolution, or back-translation comparison is accurate and insightful)\nRound-Trip/Consistency Score: 0-5 (Evaluates whether any self-comparison, such as back-translation analysis, is performed correctly and honestly, e.g. genuinely identifying meaning loss where it exists)",
+  "max_score": "20",
+  "model": "gemini",
+  "response_text": "Here is the step-by-step translation process:\n\n### 1. French Translation\n> \"La décision du comité, bien que controversée, a finalement reflété un compromis pragmatique entre les intérêts concurrents des parties prenantes.\"\n\n### 2. Back-Translation (from French to English)\n> \"The committee's decision, although controversial, ultimately reflected a pragmatic compromise between the competing interests of the stakeholders.\"\n\n---\n\n### 3. Comparison and Analysis\n\nComparing the original text to the back-translation:\n\n* **Original:** *\"The committee's decision, while controversial, ultimately reflected a pragmatic compromise between competing stakeholder interests.\"*\n* **Back-Translation:** *\"The committee's decision, although controversial, ultimately reflected a pragmatic compromise between the competing interests of the stakeholders.\"*\n\n#### **Meaning Lost or Shifted:**\nOverall, the core meaning, tone, and nuance are **extremely well-preserved**. There are no major losses of information, but there is a slight structural shift:\n\n1. **\"Competing stakeholder interests\" vs. \"Competing interests of the stakeholders\":**\n   * *Original:* Uses the noun adjunct \"stakeholder interests,\" which is very concise and standard in English business/political terminology.\n   * *Back-Translation:* Translates to \"interests of the stakeholders\" (*intérêts des parties prenantes*). \n   * *Shift:* While the meaning is identical, the grammatical structure in French requires expanding the phrase slightly by adding \"the\" and \"of,\" making the back-translation sound marginally more formal or elongated than the punchy original English phrasing, though no actual semantic meaning was lost.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 2.1018,
+  "timestamp_utc": "2026-08-20T08:49:53.454794+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

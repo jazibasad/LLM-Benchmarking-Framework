@@ -1,0 +1,18 @@
+{
+  "id": "P186",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this multi-stakeholder meeting transcript into a decision log with exactly one entry per DISTINCT decision made (not per speaker turn), noting who owns follow-up for each: 'Alright, let's talk about the vendor contract. I think we should go with Vendor A given the pricing. Sarah: I agree, but we need legal to review the SLA terms first - I'll send that over today. Also, on the office move, we've decided to push it to Q3. Mike will coordinate with facilities. One more thing - we're NOT moving forward with the rebrand this year, budget's too tight. That's final for now.'",
+  "evaluation_criteria": "Structural Compliance Score: 0-5 (Evaluates whether the exact requested structure - sentence count, labeled sections, audience level - is followed precisely)\nFidelity Under Constraint Score: 0-5 (Evaluates whether meaning is preserved despite the tight length/format constraints, without fabricating information not in the source)\nNuance Preservation Score: 0-5 (Evaluates whether important caveats, limitations, or competing viewpoints from the source are retained, not flattened away)\nAudience Appropriateness Score: 0-5 (Evaluates whether jargon is correctly translated for the specified target audience)",
+  "max_score": "20",
+  "model": "gemini",
+  "response_text": "**Decision Log**\n\n1. **Vendor Selection:** Proceed with Vendor A based on pricing, pending a legal review of the SLA terms.\n   * **Follow-up Owner:** Sarah\n\n2. **Office Move Schedule:** Postpone the office move to Q3 and coordinate the logistics.\n   * **Follow-up Owner:** Mike\n\n3. **Rebrand Project:** Cancel/halt the rebrand for the current year due to budget constraints.\n   * **Follow-up Owner:** None specified",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.1304,
+  "timestamp_utc": "2026-08-20T08:47:50.958775+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

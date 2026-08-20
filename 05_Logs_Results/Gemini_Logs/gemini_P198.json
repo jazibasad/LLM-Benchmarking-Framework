@@ -1,0 +1,18 @@
+{
+  "id": "P198",
+  "category": "Summarization",
+  "difficulty": "Medium",
+  "prompt": "Summarize this multi-paragraph product review into a single balanced sentence capturing BOTH the positive and negative points: 'The camera quality on this phone is genuinely impressive, especially in low light. However, the battery life leaves a lot to be desired - I'm barely making it through a full day with moderate use. The design feels premium, though the price is definitely on the higher end.'",
+  "evaluation_criteria": "Format Compliance: 0-5 (Evaluates whether the specified structure - bullet points, sentence count, audience level - is followed)\nBalanced Coverage: 0-5 (Evaluates whether all key points from the source, including any competing or nuanced ones, are represented)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "While this smartphone boasts genuinely impressive low-light camera quality and a premium design, its high price and disappointing battery life that struggles to last a full day leave room for improvement.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.7851,
+  "timestamp_utc": "2026-08-20T08:49:20.632897+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

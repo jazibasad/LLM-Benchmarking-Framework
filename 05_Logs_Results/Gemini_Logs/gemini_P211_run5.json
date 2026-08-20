@@ -1,0 +1,18 @@
+{
+  "id": "P211",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this poem excerpt into Spanish, prioritizing preserving the rhythm and emotional tone over literal word-for-word accuracy, and briefly explain one place where you deviated from literal translation to preserve the poetic effect: 'The quiet hum of evening falls, soft shadows stretch along the walls.'",
+  "evaluation_criteria": "Translation Precision Score: 0-5 (Evaluates whether the translation is accurate at the level of precision the task requires - legal, technical, or poetic as specified)\nCultural/Linguistic Adaptation Score: 0-5 (Evaluates whether cultural or structural adaptations, where appropriate, are handled thoughtfully rather than overly literal)\nMeta-Explanation Quality Score: 0-5 (Evaluates whether any requested explanation of translation choices, ambiguity resolution, or back-translation comparison is accurate and insightful)\nRound-Trip/Consistency Score: 0-5 (Evaluates whether any self-comparison, such as back-translation analysis, is performed correctly and honestly, e.g. genuinely identifying meaning loss where it exists)",
+  "max_score": "20",
+  "model": "gemini",
+  "response_text": "Here is a translation that captures the gentle, melancholic rhythm and rhyme of the original:\n\n*El dulce rumor de la tarde se va,*\n*y blandas sombras la casa vestirán.*\n*(Alternative rhyming option)*:\n*La tarde cae en silencioso son,*\n*y alargan sombras su fiel mansión.*\n\n**Preferred Translation (focusing on flow and imagery):**\n> *La tarde cae con blando son,*\n> *y sombras largas cubren el rincón.*\n\n*(Meter/Rhythm approximation: 8-syllable lines / octosílabos, which is the traditional Spanish ballad meter, mimicking the English iambic tetrameter).*\n\n**Explanation of Deviation:**\nIn the literal translation, \"soft shadows stretch along the walls\" would be *\"suaves sombras se estiran a lo largo de las paredes.\"* However, keeping this literal phrasing ruins the poetic rhythm and forces clumsy, overly long words (\"paredes\") into the line. \n\nTo preserve the **poetic effect, rhythm, and gentle emotional tone**, I deviated in two ways:\n1. I changed \"stretch along the walls\" to **\"cubren el rincón\"** (cover the corner) or adapted the rhyme scheme to fit an *octosílabo* (eight-syllable line). \n2. I used **\"blando son\"** (soft sound/hum) combined with the falling evening to maintain a musical, lyrical cadence that mimics the soothing *hum* of the original English line, rather than translating \"hum\" literally as *zumbido* (which in Spanish sounds more like a bee or a machine, ruining the peaceful emotional tone).",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 2.2713,
+  "timestamp_utc": "2026-08-20T08:50:38.630906+00:00",
+  "run_number": 5,
+  "repeat_count": 5
+}

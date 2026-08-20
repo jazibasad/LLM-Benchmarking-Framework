@@ -1,0 +1,18 @@
+{
+  "id": "P185",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this incident report into an executive summary of exactly 4 sentences: what happened, root cause, impact, and resolution status - each covered in exactly one sentence and clearly labeled: 'At 14:32 UTC, the payment processing service began returning 503 errors for approximately 12% of requests. Investigation revealed that a recent database migration had introduced a missing index on the transactions table, causing query timeouts under peak load. Approximately 340 customer transactions failed during the 22-minute incident window, with an estimated $18,000 in delayed revenue. The missing index has been added, and monitoring has been enhanced to detect similar query performance regressions before they reach production.'",
+  "evaluation_criteria": "Structural Compliance Score: 0-5 (Evaluates whether the exact requested structure - sentence count, labeled sections, audience level - is followed precisely)\nFidelity Under Constraint Score: 0-5 (Evaluates whether meaning is preserved despite the tight length/format constraints, without fabricating information not in the source)\nNuance Preservation Score: 0-5 (Evaluates whether important caveats, limitations, or competing viewpoints from the source are retained, not flattened away)\nAudience Appropriateness Score: 0-5 (Evaluates whether jargon is correctly translated for the specified target audience)",
+  "max_score": "20",
+  "model": "gemini",
+  "response_text": "What happened: At 14:32 UTC, the payment processing service began returning 503 errors for approximately 12% of requests. \nRoot cause: Investigation revealed that a recent database migration had introduced a missing index on the transactions table, causing query timeouts under peak load. \nImpact: Approximately 340 customer transactions failed during the 22-minute incident window, with an estimated $18,000 in delayed revenue. \nResolution status: The missing index has been added, and monitoring has been enhanced to detect similar query performance regressions before they reach production.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.8616,
+  "timestamp_utc": "2026-08-20T08:47:46.188366+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

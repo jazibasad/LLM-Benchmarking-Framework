@@ -1,0 +1,18 @@
+{
+  "id": "P188",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this software architecture design doc into a summary for a NON-technical stakeholder audience, explicitly translating each technical term into its business impact (e.g., not just 'reduces latency' but what that means for the user), in exactly 4 sentences: 'The proposed architecture introduces a read-replica database layer to offload query traffic from the primary write instance, reducing p99 latency from 800ms to 150ms. A CDN edge caching layer will be added for static assets, cutting bandwidth costs by an estimated 30%. The migration requires a two-week phased rollout to avoid downtime, using a blue-green deployment strategy.'",
+  "evaluation_criteria": "Structural Compliance Score: 0-5 (Evaluates whether the exact requested structure - sentence count, labeled sections, audience level - is followed precisely)\nFidelity Under Constraint Score: 0-5 (Evaluates whether meaning is preserved despite the tight length/format constraints, without fabricating information not in the source)\nNuance Preservation Score: 0-5 (Evaluates whether important caveats, limitations, or competing viewpoints from the source are retained, not flattened away)\nAudience Appropriateness Score: 0-5 (Evaluates whether jargon is correctly translated for the specified target audience)",
+  "max_score": "20",
+  "model": "gemini",
+  "response_text": "We are upgrading our system to handle user requests significantly faster, which means customers will experience near-instant page loads and higher satisfaction during peak shopping hours. We are also implementing global content caching to reduce our monthly cloud hosting expenses by an estimated 30%, directly improving our operating margins. To ensure your business operations and customer transactions are never disrupted, we will migrate to this new setup gradually over a secure two-week period. Finally, this careful rollout strategy allows us to deploy the updates completely behind the scenes without any planned service downtime or lost revenue.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.0728,
+  "timestamp_utc": "2026-08-20T08:48:17.906694+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

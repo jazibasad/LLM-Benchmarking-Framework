@@ -1,0 +1,18 @@
+{
+  "id": "P206",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this sentence containing a culturally-specific idiom into Japanese, choosing between a literal translation and a culturally-equivalent Japanese idiom, and justify your choice: 'He really let the cat out of the bag at the meeting.'",
+  "evaluation_criteria": "Translation Precision Score: 0-5 (Evaluates whether the translation is accurate at the level of precision the task requires - legal, technical, or poetic as specified)\nCultural/Linguistic Adaptation Score: 0-5 (Evaluates whether cultural or structural adaptations, where appropriate, are handled thoughtfully rather than overly literal)\nMeta-Explanation Quality Score: 0-5 (Evaluates whether any requested explanation of translation choices, ambiguity resolution, or back-translation comparison is accurate and insightful)\nRound-Trip/Consistency Score: 0-5 (Evaluates whether any self-comparison, such as back-translation analysis, is performed correctly and honestly, e.g. genuinely identifying meaning loss where it exists)",
+  "max_score": "20",
+  "model": "gemini",
+  "response_text": "Here is the translation and justification:\n\n**Japanese Translation:**\n**彼は会議でうっかり秘密を漏らしてしまった。**  \n*(Kare wa kaigi de ukkari himitsu o morashite shimatta.)*  \n**Literal meaning:** \"He carelessly leaked the secret at the meeting.\"\n\n---\n\n### Justification of Choice\n\nFor this sentence, I chose to use a **literal/direct translation of the *meaning* (avoiding an idiom altogether)** rather than trying to find a culturally-equivalent Japanese idiom. \n\nHere is why:\n\n1. **Absence of a Direct Animal Equivalent:** \n   The English idiom \"let the cat out of the bag\" refers to accidentally revealing a secret. Japanese does have animal-related idioms—such as *neko o kaburu* (to wear a cat = to play the innocent/hypocrite)—but none of them relate to revealing secrets. \n\n2. **Closest Japanese Idioms Don't Fit the Tone:** \n   The closest Japanese idiomatic equivalents for revealing a secret involve bodily actions or physical objects, such as:\n   * *Ashi o dasu* (to put a foot out = to reveal one's hand/intentions, though this is closer to \"tipping one's hand\").\n   * *Boro ga deru* (rags come out = one's flaws or lies are exposed).\n   \n   However, none of these capture the specific nuance of \"letting a secret slip out unintentionally\" as naturally as a straightforward descriptive translation.\n\n3. **Naturalness and Clarity in Modern Japanese:**\n   In contemporary Japanese, idiomatic expressions about secrets are often dropped in favor of clear, natural verbs. The combination of **秘密を漏らす** (*himitsu o morasu* — to leak/reveal a secret) combined with **うっかり** (*ukkari* — accidentally/carelessly) is the most natural and universally understood way to translate the exact meaning and tone of \"letting the cat out of the bag\" without sounding archaic or confusing.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 2.2042,
+  "timestamp_utc": "2026-08-20T08:49:58.058372+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

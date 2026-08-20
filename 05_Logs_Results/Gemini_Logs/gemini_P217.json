@@ -1,0 +1,18 @@
+{
+  "id": "P217",
+  "category": "Multilingual Tasks",
+  "difficulty": "Medium",
+  "prompt": "Translate this sentence into Japanese, and note any difference in politeness level you had to choose between: 'Could you please send me the report by Friday?'",
+  "evaluation_criteria": "Tone/Register Accuracy: 0-5 (Evaluates whether formality level, politeness, or professional register is correctly preserved)\nLinguistic Explanation Quality: 0-5 (Evaluates whether any requested explanation of translation choices is accurate and clear)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "Here is the translation of the sentence into Japanese, followed by an explanation of the politeness levels.\n\n**Translation (Polite/Standard Business Level):**\n> 金曜日までにレポートを送っていただけますか？\n> *(Kin'yōbi made ni repōto o okutte itadakemasu ka?)*\n\n---\n\n### Politeness Level Analysis\n\nIn Japanese, requests can be expressed at various levels of politeness depending on your relationship with the listener. For this specific sentence (\"Could you please send me...\"), I chose the standard business/polite level, but there are three main tiers you can choose from:\n\n#### 1. Casual / Informal (Plain Form)\n*   **Sentence:** 金曜日までにレポートを送ってくれる？ *(Kin'yōbi made ni repōto o okutte kureru?)*\n*   **Usage:** Used only with close friends, younger family members, or peers of equal/lower status. \n*   **Difference:** This drops all honorifics. Using this in a workplace setting would be considered extremely rude.\n\n#### 2. Standard Polite / Business (Desu/Masu Form) — *Chosen Translation*\n*   **Sentence:** 金曜日までにレポートを送っていただけますか？ *(Kin'yōbi made ni repōto o okutte itadakemasu ka?)*\n*   **Usage:** Used for everyday business interactions, with coworkers, clients you are familiar with, or acquaintances.\n*   **Difference:** It uses **〜ていただけますか (te itadakemasu ka)**, which literally translates to \"Could I have you do...?\" This is a polite, standard way to make a request without sounding overly stiff. \n    *   *(Note: You could also use **〜てくださいませんか (te kudasaimasen ka)**, which is very similar).*\n\n#### 3. Highly Polite / Humble (Keigo / Business Honorifics)\n*   **Sentence:** 金曜日までにレポートをお送りいただけますでしょうか？ *(Kin'yōbi made ni repōto o ōkuri itadakemasu deshō ka?)*\n*   **Usage:** Used when speaking to superiors, important clients, or in formal written emails where you want to show the utmost respect.\n*   **Difference:** This upgrades the verb \"to send\" from the standard *okuru* to the humble honorific **o-okuri suru**, and ends with **〜ていただけますでしょうか (te itadakemasu deshō ka)**, which softens the request even further (\"Would it be possible for you to...\"). \n\n### Summary\nTo translate \"Could you please send me the report by Friday?\", the **Standard Polite (Level 2)** version is the safest and most common choice for general workplace communication. If you are emailing a client or boss, **Level 3** is recommended.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 2.9137,
+  "timestamp_utc": "2026-08-20T08:51:24.282323+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}
