@@ -1,0 +1,43 @@
+{
+  "id": "P206",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this sentence containing a culturally-specific idiom into Japanese, choosing between a literal translation and a culturally-equivalent Japanese idiom, and justify your choice: 'He really let the cat out of the bag at the meeting.'",
+  "response_text": "Here is the translation and justification:\n\n**Japanese Translation:**\n**彼は会議でうっかり秘密を漏らしてしまった。**  \n*(Kare wa kaigi de ukkari himitsu o morashite shimatta.)*  \n**Literal meaning:** \"He carelessly leaked the secret at the meeting.\"\n\n---\n\n### Justification of Choice\n\nFor this sentence, I chose to use a **literal/direct translation of the *meaning* (avoiding an idiom altogether)** rather than trying to find a culturally-equivalent Japanese idiom. \n\nHere is why:\n\n1. **Absence of a Direct Animal Equivalent:** \n   The English idiom \"let the cat out of the bag\" refers to accidentally revealing a secret. Japanese does have animal-related idioms—such as *neko o kaburu* (to wear a cat = to play the innocent/hypocrite)—but none of them relate to revealing secrets. \n\n2. **Closest Japanese Idioms Don't Fit the Tone:** \n   The closest Japanese idiomatic equivalents for revealing a secret involve bodily actions or physical objects, such as:\n   * *Ashi o dasu* (to put a foot out = to reveal one's hand/intentions, though this is closer to \"tipping one's hand\").\n   * *Boro ga deru* (rags come out = one's flaws or lies are exposed).\n   \n   However, none of these capture the specific nuance of \"letting a secret slip out unintentionally\" as naturally as a straightforward descriptive translation.\n\n3. **Naturalness and Clarity in Modern Japanese:**\n   In contemporary Japanese, idiomatic expressions about secrets are often dropped in favor of clear, natural verbs. The combination of **秘密を漏らす** (*himitsu o morasu* — to leak/reveal a secret) combined with **うっかり** (*ukkari* — accidentally/carelessly) is the most natural and universally understood way to translate the exact meaning and tone of \"letting the cat out of the bag\" without sounding archaic or confusing.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 2.2042,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Translation Precision Score",
+      "score": 5,
+      "justification": "The translation accurately conveys the core meaning of the idiom (accidentally revealing a secret) with appropriate natural phrasing in Japanese.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Cultural/Linguistic Adaptation Score",
+      "score": 5,
+      "justification": "The response thoughtfully avoids imposing an irrelevant idiom, instead opting for a clear, natural Japanese expression that preserves meaning without culturally inappropriate adaptation.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Meta-Explanation Quality Score",
+      "score": 5,
+      "justification": "The justification provides a thorough, accurate analysis of why a literal approach was chosen, addressing key linguistic and cultural considerations effectively.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Round-Trip/Consistency Score",
+      "score": 3,
+      "justification": "While the response compares alternative idioms and their inappropriateness, it does not perform an explicit back-translation analysis to validate consistency with the original meaning.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 18,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:54:22.480446+00:00"
+}

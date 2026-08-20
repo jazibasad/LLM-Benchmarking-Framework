@@ -1,0 +1,31 @@
+{
+  "id": "P197",
+  "category": "Summarization",
+  "difficulty": "Medium",
+  "prompt": "Summarize this legal notice into plain language a non-lawyer would understand, in 2 sentences: 'Pursuant to Section 4.2 of the User Agreement, any modifications to the Service that materially diminish core functionality shall entitle the User to terminate this Agreement without penalty, provided written notice is given within thirty (30) days of such modification.'",
+  "response_text": "If an update significantly reduces the main features of the service, you have the right to cancel your account without any penalty. To do this, you must send a written notice within 30 days of the change.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.0281,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Format Compliance",
+      "score": 5,
+      "justification": "The model followed all constraints, including the two-sentence limit and the use of plain language for a non-lawyer.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Balanced Coverage",
+      "score": 5,
+      "justification": "The response accurately captures all three essential elements: the condition (reduction in features), the remedy (cancellation without penalty), and the requirement (30-day written notice).",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:52:00.083388+00:00"
+}

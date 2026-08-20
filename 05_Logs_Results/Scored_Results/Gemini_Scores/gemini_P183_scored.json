@@ -1,0 +1,43 @@
+{
+  "id": "P183",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this dense academic passage into exactly 3 sentences suitable for a high school student, WITHOUT losing the core causal claim, WITHOUT using any of the technical jargon from the original, and ending with a one-clause caveat about the study's limitations: 'The longitudinal cohort study utilized a difference-in-differences methodology to isolate the causal effect of the minimum wage increase on youth employment, controlling for regional economic heterogeneity via fixed effects. Results indicated a statistically significant but economically modest disemployment effect (-2.3%, 95% CI: -4.1% to -0.5%), concentrated primarily among workers under 20 in the retail sector. However, the study's reliance on state-level administrative data limits its ability to detect firm-level heterogeneity in response strategies.'",
+  "response_text": "Researchers tracked young workers over time to figure out if raising the minimum wage causes job losses. They discovered that higher wages lead to a slight decrease in employment, mainly affecting teenagers working in stores. However, this research is limited because it only looks at state-level data rather than examining individual businesses.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.9953,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Structural Compliance Score",
+      "score": 5,
+      "justification": "The response exactly meets the required three-sentence structure, high-school tone, avoidance of jargon, and ends with a single-clause limitation.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Fidelity Under Constraint Score",
+      "score": 5,
+      "justification": "It preserves the core causal claim and limitation without adding or distorting information from the source.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Nuance Preservation Score",
+      "score": 5,
+      "justification": "The single-clause caveat about state-level data is retained, fulfilling the required limitation.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Audience Appropriateness Score",
+      "score": 5,
+      "justification": "Technical terms are replaced with plain language suitable for a high school audience.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:41:26.752492+00:00"
+}

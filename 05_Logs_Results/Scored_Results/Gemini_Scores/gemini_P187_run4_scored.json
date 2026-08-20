@@ -1,0 +1,43 @@
+{
+  "id": "P187",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this scientific methods section into a single paragraph a journalist could use, explicitly flagging any part of the methodology that limits how strongly the results can be generalized: 'Participants (n=45, convenience sample from a single university) completed a 6-week intervention involving daily 10-minute mindfulness sessions via a mobile app. Self-reported stress levels were measured using the PSS-10 scale at baseline and post-intervention. No control group was used due to resource constraints; instead, a within-subjects pre-post design was employed.'",
+  "response_text": "In a preliminary 6-week trial, 45 university students used a mobile app for daily 10-minute mindfulness sessions, with researchers tracking changes in self-reported stress using the PSS-10 scale. However, readers should exercise caution when interpreting these findings due to significant methodological limitations: the study relied on a small convenience sample from a single university and lacked a control group, meaning the results cannot be reliably generalized to broader populations or definitively proven to be caused by the app alone rather than outside factors.",
+  "run_number": 4,
+  "temperature": 0.7,
+  "latency_seconds": 1.1927,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Structural Compliance Score",
+      "score": 5,
+      "justification": "The response delivers a single, journalist‑style paragraph that follows the requested structure without unnecessary sections.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Fidelity Under Constraint Score",
+      "score": 5,
+      "justification": "It preserves all key factual elements and the limitation flag while staying within the tight paragraph format.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Nuance Preservation Score",
+      "score": 5,
+      "justification": "Important methodological caveats such as the convenience sample, lack of a control group, and inability to infer causality are explicitly retained.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Audience Appropriateness Score",
+      "score": 5,
+      "justification": "Technical terms are replaced with plain language suitable for a general journalist audience.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:45:20.265198+00:00"
+}

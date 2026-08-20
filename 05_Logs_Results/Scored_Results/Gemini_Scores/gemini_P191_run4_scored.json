@@ -1,0 +1,43 @@
+{
+  "id": "P191",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this customer support conversation thread into a single internal ticket summary of exactly 3 sentences: the customer's core issue, what was already tried, and what remains unresolved - using neutral, professional language even though the original customer messages are frustrated: 'Customer: This is the THIRD time I'm reaching out about this billing error, I'm so done with this company. Agent: I'm very sorry for the frustration - I can see the previous two tickets, it looks like the refund was processed but reversed due to a system error. Customer: Well it's still not showing up in my account and I need this fixed NOW. Agent: I've escalated this to our billing team, they typically resolve escalations within 48 hours, I'll follow up personally.'",
+  "response_text": "The customer is experiencing ongoing frustration regarding an unresolved billing error involving a reversed refund. Previous attempts to address the issue revealed that the refund was inadvertently reversed due to a system error. The matter has been escalated to the billing team for resolution within 48 hours, with a personal follow-up pending.",
+  "run_number": 4,
+  "temperature": 0.7,
+  "latency_seconds": 1.0856,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Structural Compliance Score",
+      "score": 0,
+      "justification": "The response is a single sentence, failing to meet the exact requirement of three sentences with labeled sections.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Fidelity Under Constraint Score",
+      "score": 4,
+      "justification": "The response accurately condenses all key elements (core issue, actions taken, unresolved status) without adding fabrications, despite the structural deviation.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Nuance Preservation Score",
+      "score": 2,
+      "justification": "The response omits the customer's explicit frustration (e.g., 'I'm so done') and focuses solely on factual resolution steps, flattening emotional context.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Audience Appropriateness Score",
+      "score": 5,
+      "justification": "The language is consistently neutral and professional, suitable for an internal ticket without jargon or colloquial terms.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 11,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:50:25.611364+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "P195",
+  "category": "Summarization",
+  "difficulty": "Medium",
+  "prompt": "Summarize this research abstract into a single sentence suitable for a general audience: 'This study examined the effects of intermittent fasting on metabolic markers in 200 participants over 12 weeks. Results showed a statistically significant reduction in fasting insulin levels (p<0.01) among the intervention group compared to controls, though no significant difference was observed in body weight.'",
+  "response_text": "A 12-week study of 200 participants found that intermittent fasting significantly lowered insulin levels without causing notable weight loss.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.7981,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Format Compliance",
+      "score": 5,
+      "justification": "The response is a single concise sentence as required, appropriately structured for a general audience without unnecessary technical jargon.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Balanced Coverage",
+      "score": 5,
+      "justification": "All key findings are represented: the study's duration and participant count, the significant insulin reduction, and the lack of weight loss impact, without misleading omissions.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:51:27.763561+00:00"
+}

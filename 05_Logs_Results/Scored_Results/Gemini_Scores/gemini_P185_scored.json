@@ -1,0 +1,43 @@
+{
+  "id": "P185",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this incident report into an executive summary of exactly 4 sentences: what happened, root cause, impact, and resolution status - each covered in exactly one sentence and clearly labeled: 'At 14:32 UTC, the payment processing service began returning 503 errors for approximately 12% of requests. Investigation revealed that a recent database migration had introduced a missing index on the transactions table, causing query timeouts under peak load. Approximately 340 customer transactions failed during the 22-minute incident window, with an estimated $18,000 in delayed revenue. The missing index has been added, and monitoring has been enhanced to detect similar query performance regressions before they reach production.'",
+  "response_text": "What happened: At 14:32 UTC, the payment processing service began returning 503 errors for approximately 12% of requests. \nRoot cause: Investigation revealed that a recent database migration had introduced a missing index on the transactions table, causing query timeouts under peak load. \nImpact: Approximately 340 customer transactions failed during the 22-minute incident window, with an estimated $18,000 in delayed revenue. \nResolution status: The missing index has been added, and monitoring has been enhanced to detect similar query performance regressions before they reach production.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.8616,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Structural Compliance Score",
+      "score": 5,
+      "justification": "The response exactly meets the structural requirement with four clearly labeled sentences covering what happened, root cause, impact, and resolution status, leaving no gaps or deviations, which constitutes complete success per the 5-point scale.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Fidelity Under Constraint Score",
+      "score": 5,
+      "justification": "All meaning from the source incident report is fully preserved without fabrication, and the four-sentence format is strictly adhered to, achieving the highest score for maintaining integrity under format constraints.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Nuance Preservation Score",
+      "score": 5,
+      "justification": "The source contains no competing viewpoints or limiting caveats, and the response retains all factual details without flattening, fully satisfying the nuance preservation criterion at the highest level.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Audience Appropriateness Score",
+      "score": 5,
+      "justification": "Technical terms are appropriately translated for an executive audience, conveying the incident's cause and impact in accessible yet precise language, which meets the requirement for complete success.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:44:06.290199+00:00"
+}

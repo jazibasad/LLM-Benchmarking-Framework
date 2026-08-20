@@ -1,0 +1,43 @@
+{
+  "id": "P189",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this two-sided debate transcript into a balanced summary of exactly 3 sentences: one stating side A's strongest argument, one stating side B's strongest argument, and one stating the actual point of disagreement between them (not just restating both sides): 'Person A: We should definitely adopt the new framework, it's faster and has better community support. Person B: I hear you, but our team has zero experience with it, and the migration cost alone could set us back a full quarter. Person A: Sure, but staying on the old framework means accumulating more technical debt every month we wait. Person B: That's fair, but I'd rather pay down debt gradually than risk a rushed migration breaking production.'",
+  "response_text": "Person A argues that adopting the new framework is necessary to eliminate ongoing technical debt and benefit from superior speed and community support. Person B counters that the team's lack of experience and the high cost of migration risk breaking production if rushed. Ultimately, the debate hinges on whether it is wiser to absorb the immediate disruption of a fast migration to avoid technical debt or to prioritize operational stability by migrating gradually.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.9961,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Structural Compliance Score",
+      "score": 5,
+      "justification": "The response contains exactly three sentences, each fulfilling the requested content (side A's argument, side B's argument, point of disagreement) with no extra or missing sentences.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Fidelity Under Constraint Score",
+      "score": 5,
+      "justification": "The response accurately reflects the speakers' points without adding or omitting key details, staying true to the source.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Nuance Preservation Score",
+      "score": 5,
+      "justification": "The response keeps key nuances such as the team's inexperience, migration cost, risk of production breakage, and the trade‑off between speed/debt reduction and stability.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Audience Appropriateness Score",
+      "score": 5,
+      "justification": "The response uses terminology consistent with the source and assumes a technical audience, preserving jargon without unnecessary simplification or omission.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:47:24.586093+00:00"
+}

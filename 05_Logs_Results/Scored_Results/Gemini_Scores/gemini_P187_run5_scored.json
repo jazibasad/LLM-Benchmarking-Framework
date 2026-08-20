@@ -1,0 +1,43 @@
+{
+  "id": "P187",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this scientific methods section into a single paragraph a journalist could use, explicitly flagging any part of the methodology that limits how strongly the results can be generalized: 'Participants (n=45, convenience sample from a single university) completed a 6-week intervention involving daily 10-minute mindfulness sessions via a mobile app. Self-reported stress levels were measured using the PSS-10 scale at baseline and post-intervention. No control group was used due to resource constraints; instead, a within-subjects pre-post design was employed.'",
+  "response_text": "In a preliminary study of 45 university students, researchers evaluated the effects of a six-week mobile app mindfulness intervention by measuring self-reported stress before and after the program. However, because the study relied on a **convenience sample of students from a single university** and **lacked a control group due to resource constraints**, the results cannot be definitively generalized to the broader population, nor can the researchers definitively prove that the app—rather than outside factors or the mere passage of time—caused the reduction in stress.",
+  "run_number": 5,
+  "temperature": 0.7,
+  "latency_seconds": 1.3614,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Structural Compliance Score",
+      "score": 5,
+      "justification": "The response is a single paragraph aimed at a journalist audience with no extra sections, matching the requested structure precisely.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Fidelity Under Constraint Score",
+      "score": 5,
+      "justification": "It accurately reflects the source information without adding fabricated details, preserving meaning despite brevity.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Nuance Preservation Score",
+      "score": 5,
+      "justification": "Key limitations—convenience sample, single university, no control group—are explicitly noted, retaining important caveats.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Audience Appropriateness Score",
+      "score": 5,
+      "justification": "Technical terms are translated into plain language suitable for a general news audience.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:45:28.053304+00:00"
+}

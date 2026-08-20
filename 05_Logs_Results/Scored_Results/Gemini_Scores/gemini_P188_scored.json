@@ -1,0 +1,43 @@
+{
+  "id": "P188",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this software architecture design doc into a summary for a NON-technical stakeholder audience, explicitly translating each technical term into its business impact (e.g., not just 'reduces latency' but what that means for the user), in exactly 4 sentences: 'The proposed architecture introduces a read-replica database layer to offload query traffic from the primary write instance, reducing p99 latency from 800ms to 150ms. A CDN edge caching layer will be added for static assets, cutting bandwidth costs by an estimated 30%. The migration requires a two-week phased rollout to avoid downtime, using a blue-green deployment strategy.'",
+  "response_text": "We are upgrading our system to handle user requests significantly faster, which means customers will experience near-instant page loads and higher satisfaction during peak shopping hours. We are also implementing global content caching to reduce our monthly cloud hosting expenses by an estimated 30%, directly improving our operating margins. To ensure your business operations and customer transactions are never disrupted, we will migrate to this new setup gradually over a secure two-week period. Finally, this careful rollout strategy allows us to deploy the updates completely behind the scenes without any planned service downtime or lost revenue.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.0728,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Structural Compliance Score",
+      "score": 3,
+      "justification": "The response uses four sentences and is audience-focused, but lacks explicit labeling of sections as required.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Fidelity Under Constraint Score",
+      "score": 5,
+      "justification": "All key technical points from the source are accurately paraphrased without adding or omitting critical details.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Nuance Preservation Score",
+      "score": 5,
+      "justification": "Retains the phased rollout timeline and deployment strategy requirements, maintaining all source constraints.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Audience Appropriateness Score",
+      "score": 4,
+      "justification": "Effectively avoids technical jargon with business metaphors (e.g., 'operating margins'), though could further localize 'edge caching' for broader comprehension.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 17,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:47:01.778174+00:00"
+}

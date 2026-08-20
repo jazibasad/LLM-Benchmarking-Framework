@@ -1,0 +1,43 @@
+{
+  "id": "P208",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this marketing slogan into German AND into Mandarin Chinese, explaining for EACH language one adaptation you made for cultural resonance rather than literal accuracy: 'Just do it - unleash your inner champion.'",
+  "response_text": "Here are the translations of the marketing slogan **\"Just do it - unleash your inner champion\"** into German and Mandarin Chinese, along with an explanation of a key cultural adaptation made for each.\n\n---\n\n### 1. German Translation\n\n**German:** *Einfach machen – Entfessle deinen inneren Champion.*\n\n* **Literal translation comparison:** *Just do it* translates well to *Einfach machen* (literally: \"Simply do [it]\"). *Unleash your inner champion* translates to *Entfessle deinen inneren Champion*.\n* **Adaptation for Cultural Resonance:** Using the **informal \"Du\" (deinen)** instead of the formal \"Sie\" (ihren). \n* **Why it works:** German corporate culture historically leans formal, but modern lifestyle and athletic marketing thrive on immediacy, peer-to-peer connection, and egalitarian motivation. Using the imperative with *deinen* (\"your\" informal) breaks down barriers, making the brand sound like a personal trainer, peer, or coach rather than a distant corporation. Additionally, dropping the object (\"it\" / *es*) in *Einfach machen* creates a punchy, colloquial, action-oriented ethos that resonates strongly with contemporary German speakers who value efficiency and directness.\n\n---\n\n### 2. Mandarin Chinese Translation\n\n**Mandarin Chinese:** 只管去做 —— 唤醒你心中的王者 (Zhǐ guǎn qù zuò —— Huàn xǐng nǐ xīn zhōng de wáng zhě)\n\n* **Literal translation comparison:** *Just do it* is standardly translated as *只管去做* (\"Just go ahead and do it\"). *Unleash your inner champion* could be literally translated as *释放你内心的冠军* (Shì fàng nǐ nèi xīn de guàn jūn). \n* **Adaptation for Cultural Resonance:** Replacing the literal translation of \"champion\" (*guàn jūn* — strictly meaning someone who wins a tournament or contest) with **王zhě (*wáng zhě* — \"king/ruler/supreme conqueror\").**\n* **Why it works:** In Western contexts, \"champion\" carries a positive, democratic connotation of personal achievement and self-betterment. However, in traditional and modern East Asian cultural contexts influenced by Confucianism and collective ambition, competitive sports and personal striving are often viewed through the lens of mastery, overcoming adversity, and rising above the crowd. Using *王者* (Wángzhě — often used in gaming and pop culture to mean \"supreme ruler\" or \"MVP\") elevates the motivation from merely winning a medal to claiming personal sovereignty and greatness. It sounds far more epic, emotional, and inspiring to a Chinese consumer than the literal, sports-centric word for \"champion.\"",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 3.6822,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Translation Precision Score",
+      "score": 4,
+      "justification": "The German translation uses a slightly less literal structure ('Einfach machen' instead of a full phrase for 'Just do it'), which slightly reduces precision, but remains idiomatic and effective. The Mandarin translation uses a standard but non-literal phrasing ('只管去做') for 'Just do it,' sacrificing literal accuracy for idiom.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Cultural/Linguistic Adaptation Score",
+      "score": 5,
+      "justification": "Both languages feature well-reasoned, culturally informed adaptations: German uses 'Deinen' for informal peer relevance and Mandarin replaces '冠军' with '王者' to elevate the concept of greatness, aligning with cultural values. Each choice clearly enhances resonance without losing core intent.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Meta-Explanation Quality Score",
+      "score": 5,
+      "justification": "The explanations thoroughly connect linguistic choices to cultural context in both languages, with insightful reasoning about historical norms, demographic targeting, and marketing tone—demonstrating deep understanding and clarity.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Round-Trip/Consistency Score",
+      "score": 5,
+      "justification": "The response explicitly compares literal vs. adapted translations in both languages, honestly identifying intentional trade-offs (e.g., informal phrasing over formality, conceptual elevation vs. strict synonym use).",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 19,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:54:46.837704+00:00"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "P191",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this customer support conversation thread into a single internal ticket summary of exactly 3 sentences: the customer's core issue, what was already tried, and what remains unresolved - using neutral, professional language even though the original customer messages are frustrated: 'Customer: This is the THIRD time I'm reaching out about this billing error, I'm so done with this company. Agent: I'm very sorry for the frustration - I can see the previous two tickets, it looks like the refund was processed but reversed due to a system error. Customer: Well it's still not showing up in my account and I need this fixed NOW. Agent: I've escalated this to our billing team, they typically resolve escalations within 48 hours, I'll follow up personally.'",
+  "response_text": "The customer is experiencing a persistent billing error regarding an uncredited refund despite two prior contacts. The agent identified that a previous refund attempt was reversed due to a system error and subsequently escalated the issue to the billing team. The transaction has not yet appeared in the customer's account, and the agent has promised a personal follow-up within 48 hours.",
+  "run_number": 2,
+  "temperature": 0.7,
+  "latency_seconds": 0.8379,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Structural Compliance Score",
+      "score": 5,
+      "justification": "The response follows the exact requested structure with three sentences clearly addressing the customer's core issue, actions taken, and unresolved elements.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Fidelity Under Constraint Score",
+      "score": 5,
+      "justification": "The response accurately preserves all key details from the source without adding or omitting critical information.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Nuance Preservation Score",
+      "score": 5,
+      "justification": "The response retains essential elements like the system error and escalation process without flattening the customer's urgency or frustration, as neutral language was required.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Audience Appropriateness Score",
+      "score": 5,
+      "justification": "The response uses consistently professional and neutral language suitable for an internal audience.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:49:46.495084+00:00"
+}

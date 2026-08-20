@@ -1,0 +1,43 @@
+{
+  "id": "P209",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this technical error message into French, preserving enough precision that a developer could still debug the issue from the translated text alone: 'NullPointerException: Cannot invoke method on null object reference at line 245 in UserAuthHandler.java'",
+  "response_text": "Here is the translation, optimized for a developer to debug immediately:\n\n**\"NullPointerException : Impossible d'invoquer la méthode sur une référence d'objet nulle à la ligne 245 dans UserAuthHandler.java\"**",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.9447,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Translation Precision Score",
+      "score": 5,
+      "justification": "The response accurately preserves technical terms and specifics (e.g., exception name, line number) required for debugging.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Cultural/Linguistic Adaptation Score",
+      "score": 5,
+      "justification": "The translation maintains technical accuracy without unnecessary cultural or structural adaptations, which is appropriate for a developer-focused context.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Meta-Explanation Quality Score",
+      "score": 5,
+      "justification": "No explanation was requested in the prompt, so there is no failure in omitting it.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Round-Trip/Consistency Score",
+      "score": 0,
+      "justification": "The response did not attempt any self-comparison or back-translation analysis, despite it being part of the evaluation criteria.",
+      "outcome": "Failure"
+    }
+  ],
+  "total_score": 15,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:55:17.609200+00:00"
+}

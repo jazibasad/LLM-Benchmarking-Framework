@@ -1,0 +1,43 @@
+{
+  "id": "P210",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this sentence from English into Arabic, and explain how you handled the change in sentence structure given Arabic's different word order conventions: 'The report that was submitted yesterday by the finance team contains several errors that need to be corrected before the board meeting.'",
+  "response_text": "Here is the translation of the sentence into Arabic, followed by an explanation of how the sentence structure was adapted to fit Arabic grammar rules.\n\n### **Translation**\n**يحتوي التقرير الذي قدمه فريق المالية أمس على عدة أخطاء يجب تصحيحها قبل اجتماع مجلس الإدارة.**\n\n*Transliteration:* Yahtawi al-taqreer alladhi qaddamahu fareeq al-maliyya ams 'ala 'iddat akhta' yajib tasheeuha qabla ijtima' majlis al-idara.\n\n---\n\n### **Structural Changes and Explanation**\n\nArabic and English have fundamentally different word order conventions. English typically follows a **Subject-Verb-Object (SVO)** structure and relies heavily on post-modifying clauses (placing descriptive details *after* the noun). Arabic, on the other hand, frequently uses a **Verb-Subject-Object (VSO)** structure (though SVO is also common) and handles modification differently, often placing adjectives *after* nouns, but structuring clauses with greater fluidity.\n\nHere is how specific parts of the sentence were handled:\n\n#### 1. The Main Verb and Subject (Inversion)\n*   **English:** *\"The report [...] contains several errors...\"* (Subject + Verb + Object)\n*   **Arabic:** *\"[It] contains the report... on several errors\"* (**Verb + Subject + Object** — *Yahtawi al-taqreer... 'ala...*)\n*   **Explanation:** Arabic formal writing often favors starting a sentence with the verb (*يحتوي* - contains) rather than the noun (*التقرير* - the report). Therefore, the verb was moved to the very beginning of the Arabic sentence, followed by the subject (the report), making it a standard verbal sentence in Arabic.\n\n#### 2. The Passive Relative Clause\n*   **English:** *\"...that was submitted yesterday by the finance team...\"*\n*   **Arabic:** *\"...الذي قدمه فريق المالية أمس...\"* (Literally: \"...that submitted it the team of finance yesterday...\")\n*   **Explanation:** \n    *   **Voice Change:** English uses the passive voice (*\"was submitted\"*). Arabic strongly prefers the active voice. To translate this naturally, the passive construction was flipped into an active one by making \"the finance team\" the doer of the action: *قدمه فريق المالية* (\"submitted it the finance team\").\n    *   **Pronoun Attachment:** Because the relative pronoun *الذي* (\"that/which\") refers to the report, Arabic grammar requires a \"resumptive pronoun\" attached to the verb to link them back together. Hence, the pronoun suffix *-hu* (-ه = \"it\") is attached to the end of the verb \"submitted\" (*قَدَّمَهُ*).\n\n#### 3. Prepositional Phrases and Modifiers\n*   **English:** *\"...several errors that need to be corrected before the board meeting.\"*\n*   **Arabic:** *\"...عدة أخطاء يجب تصحيحها قبل اجتماع مجلس الإدارة.\"*\n*   **Explanation:** \n    *   The English phrase *\"contains several errors\"* becomes *\"contains **on** several errors\"* in Arabic (*يحتوي على عدة أخطاء*) because the Arabic verb *ihtawa* (يحتوي) strictly requires the preposition *ala* (على - on).\n    *   The passive phrase *\"that need to be corrected\"* was simplified in Arabic to an active adjectival obligation: *يجب تصحيحها* (literally: \"must-be correcting-them\"), which is much more concise and idiomatic in Arabic than attempting a literal translation of the English passive infinitive.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 3.5464,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Translation Precision Score",
+      "score": 5,
+      "justification": "The translation accurately conveys all meaning with correct grammar, prepositions, pronouns, and idiomatic Arabic.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Cultural/Linguistic Adaptation Score",
+      "score": 5,
+      "justification": "The explanation thoughtfully details key adaptations like VSO order, active voice preference, resumptive pronoun, and required preposition, showing sensitivity to Arabic conventions.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Meta-Explanation Quality Score",
+      "score": 5,
+      "justification": "The explanation accurately and insightfully describes each structural translation choice, demonstrating clear understanding of Arabic grammar.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Round-Trip/Consistency Score",
+      "score": 0,
+      "justification": "The response does not attempt any back-translation or self-consistency analysis, failing to address this criterion.",
+      "outcome": "Failure"
+    }
+  ],
+  "total_score": 15,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:55:28.100798+00:00"
+}

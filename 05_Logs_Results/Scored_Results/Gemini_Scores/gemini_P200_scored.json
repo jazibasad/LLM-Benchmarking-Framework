@@ -1,0 +1,31 @@
+{
+  "id": "P200",
+  "category": "Multilingual Tasks",
+  "difficulty": "Easy",
+  "prompt": "Translate 'Thank you very much' into Japanese.",
+  "response_text": "The translation for \"Thank you very much\" in Japanese depends on the level of politeness needed:\n\n1. **Doumo arigatou gozaimasu** (どうもありがとうございます) - Standard, polite, and most common. Use this with colleagues, acquaintances, or in everyday polite situations.\n2. **Arigatou gozaimasu** (ありがとうございます) - Slightly simpler, also very polite.\n3. **Doumo** (どうも) - Casual. Use this only with close friends.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.3216,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Translation Accuracy",
+      "score": 5,
+      "justification": "The response provides the correct polite translation \"Arigatou gozaimasu\", which accurately conveys the meaning of \"Thank you very much\" in Japanese.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Natural Phrasing",
+      "score": 5,
+      "justification": "The selected translation \"Arigatou gozaimasu\" is idiomatic and sounds natural to native speakers, fulfilling the natural phrasing criterion.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:52:54.008796+00:00"
+}

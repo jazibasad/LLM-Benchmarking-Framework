@@ -1,0 +1,43 @@
+{
+  "id": "P190",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this quarterly business review into an executive summary with EXACTLY three labeled sections (Wins, Challenges, Next Steps), each limited to 2 sentences, using only information explicitly stated in the source (do not infer anything not directly stated): 'Q3 revenue grew 8% quarter-over-quarter, beating our internal forecast of 5%. Customer churn ticked up slightly to 4.2% from 3.8% last quarter, primarily in the SMB segment. The engineering team shipped the long-delayed API v2 release, though it came in three weeks later than originally planned. Leadership has approved additional headcount for customer success in Q4 to address the churn trend.'",
+  "response_text": "Wins: Q3 revenue grew 8% quarter-over-quarter, beating our internal forecast of 5%. The engineering team shipped the long-delayed API v2 release.\n\nChallenges: Customer churn ticked up slightly to 4.2% from 3.8% last quarter, primarily in the SMB segment. The API v2 release came in three weeks later than originally planned.\n\nNext Steps: Leadership has approved additional headcount for customer success in Q4 to address the churn trend. No additional actions were stated for Q4.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.0585,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Structural Compliance Score",
+      "score": 5,
+      "justification": "The response perfectly follows the requested format with exactly three labeled sections, each strictly limited to two sentences, suitable for an executive summary.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Fidelity Under Constraint Score",
+      "score": 4,
+      "justification": "The response preserves all key facts from the source but introduces a minor meta-statement about unstated actions, which is a slight inference not directly in the source.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Nuance Preservation Score",
+      "score": 5,
+      "justification": "The response effectively preserves nuances by splitting the API v2 release into both a win and a challenge due to its delay, and retains specific details like the SMB segment and churn percentages.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Audience Appropriateness Score",
+      "score": 5,
+      "justification": "The tone and terminology are highly appropriate for an executive audience, translating business metrics clearly without overly technical jargon or unprofessional language.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 19,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:47:44.504539+00:00"
+}

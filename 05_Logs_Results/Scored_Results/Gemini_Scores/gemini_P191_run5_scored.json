@@ -1,0 +1,43 @@
+{
+  "id": "P191",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this customer support conversation thread into a single internal ticket summary of exactly 3 sentences: the customer's core issue, what was already tried, and what remains unresolved - using neutral, professional language even though the original customer messages are frustrated: 'Customer: This is the THIRD time I'm reaching out about this billing error, I'm so done with this company. Agent: I'm very sorry for the frustration - I can see the previous two tickets, it looks like the refund was processed but reversed due to a system error. Customer: Well it's still not showing up in my account and I need this fixed NOW. Agent: I've escalated this to our billing team, they typically resolve escalations within 48 hours, I'll follow up personally.'",
+  "response_text": "The customer contacted support for the third time regarding an unresolved billing error involving a reversed refund. Previous troubleshooting identified that a system error caused the processed refund to be reversed. The issue remains unresolved while awaiting final processing from the escalated billing team.",
+  "run_number": 5,
+  "temperature": 0.7,
+  "latency_seconds": 0.9158,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Structural Compliance Score",
+      "score": 5,
+      "justification": "The response contains exactly three sentences, each covering the core issue, prior troubleshooting, and remaining unresolved status, thereby fulfilling the structural requirement completely.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Fidelity Under Constraint Score",
+      "score": 5,
+      "justification": "Every critical element from the source—such as the third contact, the reversed refund due to a system error, and the pending escalation—is accurately represented without fabrication.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Nuance Preservation Score",
+      "score": 5,
+      "justification": "Key nuances like the persistent nature of the problem and the lack of resolution despite escalation are retained, preserving the full context.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Audience Appropriateness Score",
+      "score": 5,
+      "justification": "The wording is neutral, professional, and free of unnecessary jargon, making it appropriate for an internal ticket summary.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:50:35.188590+00:00"
+}

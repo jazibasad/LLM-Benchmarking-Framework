@@ -1,0 +1,31 @@
+{
+  "id": "P181",
+  "category": "Summarization",
+  "difficulty": "Easy",
+  "prompt": "Summarize this weather report in one sentence: 'Expect partly cloudy skies today with a high of 75 degrees. Winds will be light from the northwest. There is a slight chance of scattered showers in the evening.'",
+  "response_text": "Today will be partly cloudy and mild with a high of 75 degrees, light northwest winds, and a slight chance of evening showers.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.7484,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Conciseness Compliance",
+      "score": 5,
+      "justification": "The response effectively condenses the weather report into a single sentence without unnecessary elaboration, meeting the length constraint precisely.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Core Meaning Preservation",
+      "score": 5,
+      "justification": "The summary captures all essential elements of the original report—partly cloudy skies, 75-degree high, light northwest winds, and evening showers chance—without omitting critical details.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:41:04.035281+00:00"
+}

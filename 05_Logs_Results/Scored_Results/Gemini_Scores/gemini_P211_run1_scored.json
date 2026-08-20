@@ -1,0 +1,43 @@
+{
+  "id": "P211",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this poem excerpt into Spanish, prioritizing preserving the rhythm and emotional tone over literal word-for-word accuracy, and briefly explain one place where you deviated from literal translation to preserve the poetic effect: 'The quiet hum of evening falls, soft shadows stretch along the walls.'",
+  "response_text": "**Translation:**\n\n*El dulce ruego de la tarde va, y una sombra en la pared se alargará.*  \n*(Alternative, closer to the original meter: La tarde cae en mudo son, y sombras crecen en rincón.)*\n\nLet's use a smoother, rhythmically balanced poetic version:\n\n> **\"La tarde cae en mudo son,**\n> **y la sombra se alarga en el rincón.\"**\n\n*(Literal back-translation: \"The afternoon falls in mute sound, / and the shadow lengthens in the corner.\")*\n\n---\n\n**Explanation of Deviation:**\n\nIn the original English text, the phrase is: *\"soft shadows stretch along the walls.\"* \n\nA literal translation would be: *\"las sombras suaves se extienden a lo largo de las paredes.\"* However, translating this literally destroys the poem's iambic rhythm, makes the line overly wordy, and uses the clunky adverbial phrase *\"a lo largo de\"*, which breaks the musical flow. \n\nTo preserve the **poetic effect, rhythm, and melancholic emotional tone**, I deviated by:\n1. Singularizing *shadows* into a collective singular (*la sombra*), which is common in Spanish poetry to evoke a generalized atmosphere.\n2. Shifting *walls* to *rincón* (corner) to create a neat rhyme with *son* (sound/hum), maintaining the lyrical cadence and the feeling of a closing, intimate space that the original English achieves through its soft \"s\" sounds and gentle meter.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 2.4702,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Translation Precision Score",
+      "score": 5,
+      "justification": "The translation successfully captures the rhythm, mood, and core imagery of the original poem, fulfilling the requirement to prioritize poetic effect over literal word-for-word accuracy.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Cultural/Linguistic Adaptation Score",
+      "score": 5,
+      "justification": "The adaptation thoughtfully uses Spanish poetic conventions like singularization and end-rhyme (son/rincón) to maintain lyrical flow instead of relying on clunky literal translation.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Meta-Explanation Quality Score",
+      "score": 5,
+      "justification": "The explanation clearly identifies the specific line of deviation, explains why a literal translation would fail, and provides an insightful artistic rationale for the chosen words.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Round-Trip/Consistency Score",
+      "score": 5,
+      "justification": "The back-translation is accurately performed and honestly highlights the semantic shifts (e.g., walls to corner) while acknowledging the necessary trade-offs for poetic form.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:55:46.709232+00:00"
+}

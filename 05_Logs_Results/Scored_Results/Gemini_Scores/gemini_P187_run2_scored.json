@@ -1,0 +1,43 @@
+{
+  "id": "P187",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this scientific methods section into a single paragraph a journalist could use, explicitly flagging any part of the methodology that limits how strongly the results can be generalized: 'Participants (n=45, convenience sample from a single university) completed a 6-week intervention involving daily 10-minute mindfulness sessions via a mobile app. Self-reported stress levels were measured using the PSS-10 scale at baseline and post-intervention. No control group was used due to resource constraints; instead, a within-subjects pre-post design was employed.'",
+  "response_text": "In a recent study tracking 45 university students who used a daily 10-minute mindfulness mobile app for six weeks, participants reported a decrease in stress based on the PSS-10 scale from the beginning to the end of the intervention. However, the strength and real-world applicability of these findings are severely limited: because the study relied on a small, non-random convenience sample from a single university and lacked a control group—utilizing only a pre-post design due to resource constraints—it is impossible to rule out outside factors or a placebo effect as the actual drivers of the stress reduction.",
+  "run_number": 2,
+  "temperature": 0.7,
+  "latency_seconds": 1.7583,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Structural Compliance Score",
+      "score": 5,
+      "justification": "The response is formatted as a single paragraph suitable for a journalist, directly addressing the prompt's structural requirements while explicitly highlighting the methodological limitations.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Fidelity Under Constraint Score",
+      "score": 5,
+      "justification": "The summary accurately reflects all key methodological details from the source text, including sample size, intervention, measurement, and design constraints, without fabricating or distorting information.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Nuance Preservation Score",
+      "score": 5,
+      "justification": "The response retains and clearly explains the significance of all major limitations, such as the lack of a control group and convenience sampling, detailing how they restrict the strength of the conclusions.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Audience Appropriateness Score",
+      "score": 5,
+      "justification": "The language is clear and accessible to a journalist, translating complex methodological concepts like pre-post designs and placebo effects into plain, understandable English.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:44:51.734040+00:00"
+}

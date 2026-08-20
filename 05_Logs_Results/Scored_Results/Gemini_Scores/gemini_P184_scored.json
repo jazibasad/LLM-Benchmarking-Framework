@@ -1,0 +1,43 @@
+{
+  "id": "P184",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this contract clause into plain English in exactly 2 sentences, preserving the exact conditions under which the clause applies (do not generalize or omit any trigger condition): 'In the event that the Licensee breaches any material term of this Agreement and fails to cure such breach within fifteen (15) business days following written notice thereof, and provided that such breach is not the result of a Force Majeure Event as defined in Section 9, the Licensor shall have the right, but not the obligation, to terminate this Agreement immediately upon written notice, without prejudice to any other remedies available at law or in equity.'",
+  "response_text": "If the Licensee breaches a material term, fails to cure it within 15 business days of receiving written notice, and the breach is not caused by a Force Majeure Event, the Licensor has the right to immediately terminate the agreement in writing. This termination does not affect any other legal or equitable remedies available to the Licensor.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.8583,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Structural Compliance Score",
+      "score": 5,
+      "justification": "The response adheres precisely to the structural requirements by delivering exactly two sentences in plain English while preserving all trigger conditions from the original clause.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Fidelity Under Constraint Score",
+      "score": 4,
+      "justification": "The response accurately captures the core meaning under the two-sentence constraint without fabricating information, though it slightly condenses the optional nature of the termination right.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Nuance Preservation Score",
+      "score": 3,
+      "justification": "The response retains most caveats like the Force Majeure exception and preservation of remedies, but it omits the explicit nuance that the termination is optional ('but not the obligation'), which is a minor gap.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Audience Appropriateness Score",
+      "score": 4,
+      "justification": "The language is appropriately plain for a general audience, though the term 'Force Majeure' is used without translation, which may slightly hinder full understanding for non-legal readers.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 16,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:42:11.003935+00:00"
+}

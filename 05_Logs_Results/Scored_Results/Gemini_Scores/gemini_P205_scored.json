@@ -1,0 +1,43 @@
+{
+  "id": "P205",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this paragraph into French, THEN translate your French translation back into English, and compare the back-translation to the original, explicitly noting any meaning that was lost or shifted: 'The committee's decision, while controversial, ultimately reflected a pragmatic compromise between competing stakeholder interests.'",
+  "response_text": "Here is the step-by-step translation process:\n\n### 1. French Translation\n> \"La décision du comité, bien que controversée, a finalement reflété un compromis pragmatique entre les intérêts concurrents des parties prenantes.\"\n\n### 2. Back-Translation (from French to English)\n> \"The committee's decision, although controversial, ultimately reflected a pragmatic compromise between the competing interests of the stakeholders.\"\n\n---\n\n### 3. Comparison and Analysis\n\nComparing the original text to the back-translation:\n\n* **Original:** *\"The committee's decision, while controversial, ultimately reflected a pragmatic compromise between competing stakeholder interests.\"*\n* **Back-Translation:** *\"The committee's decision, although controversial, ultimately reflected a pragmatic compromise between the competing interests of the stakeholders.\"*\n\n#### **Meaning Lost or Shifted:**\nOverall, the core meaning, tone, and nuance are **extremely well-preserved**. There are no major losses of information, but there is a slight structural shift:\n\n1. **\"Competing stakeholder interests\" vs. \"Competing interests of the stakeholders\":**\n   * *Original:* Uses the noun adjunct \"stakeholder interests,\" which is very concise and standard in English business/political terminology.\n   * *Back-Translation:* Translates to \"interests of the stakeholders\" (*intérêts des parties prenantes*). \n   * *Shift:* While the meaning is identical, the grammatical structure in French requires expanding the phrase slightly by adding \"the\" and \"of,\" making the back-translation sound marginally more formal or elongated than the punchy original English phrasing, though no actual semantic meaning was lost.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 2.1018,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Translation Precision Score",
+      "score": 5,
+      "justification": "The French translation accurately conveys the original meaning and nuance, and the back‑translation matches the source sentence closely, meeting the precision required for the task.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Cultural/Linguistic Adaptation Score",
+      "score": 4,
+      "justification": "The translation handles necessary linguistic adjustments (e.g., adding ‘the’ and ‘of’ in the back‑translation) appropriately without over‑literalizing, showing thoughtful adaptation while preserving natural flow.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Meta-Explanation Quality Score",
+      "score": 4,
+      "justification": "The response provides a clear comparison and identifies the minor structural shift, offering an accurate assessment of meaning preservation and loss.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Round-Trip/Consistency Score",
+      "score": 5,
+      "justification": "The back‑translation is performed correctly, and the self‑comparison honestly notes any differences, demonstrating full consistency with the original text.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 18,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:53:51.285970+00:00"
+}

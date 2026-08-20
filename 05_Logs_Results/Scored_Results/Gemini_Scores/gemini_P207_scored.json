@@ -1,0 +1,43 @@
+{
+  "id": "P207",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this legal disclaimer into Spanish with the precision required for a legal document (no paraphrasing, no simplification), then flag any term where a direct legal equivalent may not exist in Spanish-speaking jurisdictions: 'This agreement shall be governed by and construed in accordance with the laws of the State of Delaware, without regard to its conflict of law principles.'",
+  "response_text": "Here is the precise legal translation in Spanish, adhering to formal legal drafting standards (using standard Latin American/international legal Spanish, which is universally applicable in cross-border agreements):\n\n**Traducción legal:**\n> «El presente acuerdo se regirá e interpretará de conformidad con las leyes del Estado de Delaware, sin tener en cuenta sus principios sobre conflictos de leyes».\n\n***\n\n### Banderas rojas (Términos sin un equivalente legal exacto o directo):\n\nEn la traducción jurídica, ciertos conceptos del derecho estadounidense (especialmente del derecho anglosajón o *common law*) no tienen un calco exacto en los ordenamientos jurídicos hispanohablantes (de tradición romanista o *civil law*). Los términos que requieren atención especial son:\n\n1. **\"Governed by and construed in accordance with\"**\n   * *Problema:* En inglés contractual, es común usar fórmulas redundantes pero precisas. *Governed by* se traduce perfectamente como «se regirá por». Sin embargo, *construed* (interpretado en el sentido de determinar el significado legal de un texto) a menudo se agrupa con *interpreted*. En español legal, **«interpretado»** abarca ambos conceptos, pero técnicamente el *common law* distingue entre *interpretation* (descubrir el significado de las palabras) y *construction* (determinar la aplicación legal de esas palabras a un caso). No obstante, la fórmula estándar en contratos internacionales en español es «se regirá e interpretará».\n\n2. **\"Without regard to its conflict of law principles\"**\n   * *Problema:* El concepto de *conflict of laws* (derecho internacional privado o normas de colisión) se traduce comúnmente en español como **«conflictos de leyes»** o **«normas de conflicto»**. Sin embargo, en las jurisdicciones de *civil law*, la rama del derecho que resuelve qué ley nacional se aplica se denomina formalmente **«Derecho Internacional Privado»** o **«Derecho Intertemporal/Interespacial»**, dependiendo de si se trata de soberanías extranjeras o estados federados. \n   * *Nota adicional sobre \"Principles\":* En el derecho estadounidense, esto se refiere tanto a la jurisprudencia como a la normativa escrita sobre la materia. En los países hispanohablantes, las normas de conflicto suelen estar codificadas (por ejemplo, en el Código Civil), por lo que el término «principios» puede resultar impreciso para un jurista de derecho continental, aunque es el término aceptado en la práctica contractual internacional (*principles* vs. *rules*).",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 2.981,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Translation Precision Score",
+      "score": 4,
+      "justification": "The translation is literal and accurate, with only minor colloquial phrasing ('sin tener en cuenta') that does not affect legal precision.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Cultural/Linguistic Adaptation Score",
+      "score": 4,
+      "justification": "The response thoughtfully identifies and explains terms lacking direct equivalents, showing appropriate cultural/linguistic awareness.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Meta-Explanation Quality Score",
+      "score": 5,
+      "justification": "The explanation of translation choices is accurate, insightful, and addresses nuances effectively.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Round-Trip/Consistency Score",
+      "score": 0,
+      "justification": "No back-translation or self‑comparison was performed, so the criterion was not attempted.",
+      "outcome": "Failure"
+    }
+  ],
+  "total_score": 13,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:54:39.002396+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "P193",
+  "category": "Summarization",
+  "difficulty": "Medium",
+  "prompt": "Summarize this technical changelog for a non-technical audience in 2-3 sentences: 'v2.3.0 introduces lazy-loading for the dashboard module, reducing initial page load time by 40%. Fixed a race condition in the websocket reconnection logic that caused duplicate notifications under high latency. Deprecated the legacy /v1/users endpoint in favor of /v2/users, which now supports pagination and field filtering.'",
+  "response_text": "The latest update makes your dashboard load 40% faster and fixes an issue that caused duplicate notifications when internet connections were slow. It also improves user data management by introducing a faster, more flexible system while phasing out the older version.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.8155,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Format Compliance",
+      "score": 4,
+      "justification": "The response provides a non-technical summary that is exactly two sentences long, meeting the core structure requirement, though it does not use bullet points which were suggested but not strictly required.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Balanced Coverage",
+      "score": 4,
+      "justification": "All major points from the changelog—performance improvement, notification fix, and deprecation—are covered, but nuances like pagination and field filtering are omitted, resulting in a strong but not perfect representation.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 8,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:50:53.715604+00:00"
+}

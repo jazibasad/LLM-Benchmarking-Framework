@@ -1,0 +1,43 @@
+{
+  "id": "P211",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this poem excerpt into Spanish, prioritizing preserving the rhythm and emotional tone over literal word-for-word accuracy, and briefly explain one place where you deviated from literal translation to preserve the poetic effect: 'The quiet hum of evening falls, soft shadows stretch along the walls.'",
+  "response_text": "Here is a Spanish translation that matches the original AABB rhyme scheme (using *cae/pared* as a slant rhyme, or *cae/hallan*), maintaining the meter, gentle iambic cadence, and peaceful, fading emotional tone of the original:\n\n> *\"El dulce zumbido de la tarde cae,*\n> *la suave sombra se alarga sin que se halle...\"*\n\nAlternatively, using a more natural Spanish rhyming structure while keeping the exact rhythm:\n\n> *\"El dulce susurro de la tarde cae,*\n> *la suave sombra por el muro se alarga.\"*\n\n### Explanation of Deviation\n\nTo preserve the poetic effect, I deviated from a literal translation in the second half of the line: **\"soft shadows stretch along the walls.\"** \n\n*   **Literal translation:** *\"Las sombras suaves se estiran a lo largo de las paredes.\"*\n*   **Poetic adaptation:** *\"la suave sombra por el muro se alarga\"* (or similar phrasing).\n\n**Why:** The literal translation is clunky, overly literal (\"se estiran\"), and ruins the hypnotic, gentle rhythm of the original. By making \"shadows\" singular (*la suave sombra*—a common poetic device in Spanish) and using *se alarga* (lengthens/stretches) instead of *se estiran*, the line flows with a soft, visual grace that mimics the slow movement of dusk in the English original, while maintaining the musical cadence.",
+  "run_number": 2,
+  "temperature": 0.7,
+  "latency_seconds": 1.7555,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Translation Precision Score",
+      "score": 5,
+      "justification": "The translation prioritizes rhythm and emotion over literal accuracy, effectively capturing the original's poetic tone and structure through tasteful adaptations like 'zumbido' for 'hum' and 'se alarga' for 'stretch'.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Cultural/Linguistic Adaptation Score",
+      "score": 5,
+      "justification": "The response thoughtfully adapts the source text into natural Spanish, using poetic devices like slant rhymes and singularization ('sombra' instead of 'sombras') to enhance fluidity while respecting cultural linguistic norms.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Meta-Explanation Quality Score",
+      "score": 5,
+      "justification": "The explanation is precise, insightful, and directly addresses why deviations were made (e.g., avoiding 'se estiran' for better rhythm), clearly linking choices to poetic intent.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Round-Trip/Consistency Score",
+      "score": 0,
+      "justification": "The response does not perform or reference a back-translation analysis to evaluate consistency or meaning loss, as required by the criterion.",
+      "outcome": "Failure"
+    }
+  ],
+  "total_score": 15,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:56:07.738847+00:00"
+}
