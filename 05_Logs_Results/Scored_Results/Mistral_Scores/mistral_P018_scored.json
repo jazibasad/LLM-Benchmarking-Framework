@@ -1,0 +1,31 @@
+{
+  "id": "P018",
+  "category": "Knowledge Retrieval",
+  "difficulty": "Medium",
+  "prompt": "Describe the mechanics of deadlock in operating systems and list the four necessary and sufficient Coffman conditions.",
+  "response_text": "### **Deadlock in Operating Systems**\nA **deadlock** occurs when two or more processes are blocked forever, each waiting for a resource held by another, creating a circular dependency. No process can proceed, leading to a system stall.\n\n#### **Mechanics of Deadlock**\nDeadlock arises when the following conditions coexist:\n1. **Mutual Exclusion** – At least one resource is held in a non-sharable mode (only one process can use it at a time).\n2. **Hold and Wait** – A process holds at least one resource while waiting for additional resources.\n3. **No Preemption** – Resources cannot be forcibly taken from a process; they must be released voluntarily.\n4. **Circular Wait** – A circular chain of processes exists where each process waits for a resource held by the next.\n\nIf all four conditions hold, a deadlock is possible.\n\n---\n\n### **Coffman Conditions (Necessary & Sufficient for Deadlock)**\nThe **four necessary and sufficient conditions** for deadlock, as defined by **E. G. Coffman**, are:\n\n1. **Mutual Exclusion**\n   - At least one resource must be non-sharable (only one process can use it at a time).\n   - Example: A printer can only be used by one process at a time.\n\n2. **Hold and Wait**\n   - A process holds at least one resource while waiting for additional resources.\n   - Example: Process A holds Resource 1 and requests Resource 2 held by Process B.\n\n3. **No Preemption**\n   - Resources cannot be forcibly taken from a process; they must be released by the process itself.\n   - Example: A file lock cannot be broken by the OS; the process must release it.\n\n4. **Circular Wait**\n   - A circular chain of processes exists where each process waits for a resource held by the next.\n   - Example:\n     - P1 holds R1 and waits for R2.\n     - P2 holds R2 and waits for R3.\n     - P3 holds R3 and waits for R1.\n     → Deadlock occurs.\n\n#### **Key Points:**\n- **All four conditions must hold** for a deadlock to occur.\n- **Breaking any one condition prevents deadlock.**\n- **Detection & Recovery:** OS may detect deadlocks using **wait-for graphs** and then apply recovery strategies (e.g., process termination, resource preemption).\n\nWould you like examples of deadlock prevention or detection algorithms?",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 4.9065,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Deadlock Definition (0-5): Evaluates circular wait and resource starvation",
+      "score": 1,
+      "justification": "The response mentions circular dependency but omits any discussion of resource starvation, failing to address both required aspects.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Coffman Conditions (0-5): Evaluates mutual exclusion, hold-and-wait, no preemption, circular wait",
+      "score": 5,
+      "justification": "All four Coffman conditions are clearly listed and explained with relevant examples, fully satisfying the criterion.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 6,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T15:21:36.217187+00:00"
+}

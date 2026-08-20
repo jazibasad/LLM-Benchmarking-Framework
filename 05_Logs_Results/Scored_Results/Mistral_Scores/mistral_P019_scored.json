@@ -1,0 +1,31 @@
+{
+  "id": "P019",
+  "category": "Knowledge Retrieval",
+  "difficulty": "Medium",
+  "prompt": "What is database normalization? Explain 1NF, 2NF, and 3NF with a brief anomaly prevention rationale.",
+  "response_text": "### **Database Normalization**\nDatabase normalization is the process of organizing data in a database to minimize redundancy and dependency, while ensuring data integrity. It involves structuring tables to eliminate anomalies (errors) that can occur during data insertion, update, or deletion.\n\nNormalization is typically applied in **First Normal Form (1NF)**, **Second Normal Form (2NF)**, and **Third Normal Form (3NF)**, with higher forms (BCNF, 4NF, 5NF) for more complex cases.\n\n---\n\n## **1NF (First Normal Form)**\n### **Definition:**\nA table is in **1NF** if:\n1. Each column contains **atomic (indivisible) values** (no repeating groups).\n2. Each record is **unique** (has a primary key).\n3. There are **no duplicate rows** (each row is distinct).\n\n### **Example (Before 1NF):**\n| StudentID | Name          | Courses Enrolled |\n|-----------|---------------|------------------|\n| 1         | Alice         | Math, Physics    |\n| 2         | Bob           | Chemistry        |\n\n**Problem:** The `Courses Enrolled` column contains multiple values (non-atomic).\n\n### **After 1NF:**\nSplit into two tables:\n- **Students (StudentID, Name)**\n- **Enrollments (StudentID, Course)**\n\n**Anomaly Prevention:**\n- **Insertion Anomaly:** Could not add a student without enrolling them in a course.\n- **Update Anomaly:** Updating a course for a student would require multiple changes.\n- **Deletion Anomaly:** Deleting a student would remove their enrollment records.\n\n**Rationale:** Ensures data integrity by breaking down repeating groups into separate tables.\n\n---\n\n## **2NF (Second Normal Form)**\n### **Definition:**\nA table is in **2NF** if:\n1. It is already in **1NF**.\n2. **All non-key attributes are fully functionally dependent** on the **primary key** (no partial dependencies).\n\n   - **Partial Dependency:** A non-key attribute depends on only **part** of a composite primary key.\n\n### **Example (Before 2NF):**\n| OrderID | ProductID | ProductName | Quantity | CustomerID |\n|---------|-----------|-------------|----------|------------|\n| 101     | P001      | Laptop      | 2        | C001       |\n| 102     | P002      | Mouse       | 1        | C002       |\n\n**Problem:** `ProductName` depends only on `ProductID` (part of the composite key `OrderID + ProductID`), not the full key.\n\n### **After 2NF:**\nSplit into:\n- **Orders (OrderID, CustomerID)**\n- **OrderDetails (OrderID, ProductID, Quantity)**\n- **Products (ProductID, ProductName)**\n\n**Anomaly Prevention:**\n- **Update Anomaly:** Changing a product name would require updating multiple rows.\n- **Deletion Anomaly:** Deleting an order would remove all its details.\n\n**Rationale:** Eliminates partial dependencies by separating tables based on the full primary key.\n\n---\n\n## **3NF (Third Normal Form)**\n### **Definition:**\nA table is in **3NF** if:\n1. It is already in **2NF**.\n2. **No transitive dependencies** exist (non-key attributes should not depend on other non-key attributes).\n\n   - **Transitive Dependency:** A non-key attribute depends on another non-key attribute (e.g., `CustomerID → CustomerName → Address`).\n\n### **Example (Before 3NF):**\n| OrderID | CustomerID | CustomerName | Address      |\n|---------|------------|--------------|--------------|\n| 101     | C001       | Alice        | 123 Main St  |\n| 102     | C002       | Bob          | 456 Oak Ave  |\n\n**Problem:** `Address` depends on `CustomerName`, which depends on `CustomerID` (transitive dependency).\n\n### **After 3NF:**\nSplit into:\n- **Orders (OrderID, CustomerID)**\n- **Customers (CustomerID, CustomerName, Address)**\n\n**Anomaly Prevention:**\n- **Update Anomaly:** Changing an address would require updating multiple rows if not normalized.\n- **Redundancy:** Customer details are stored only once.\n\n**Rationale:** Ensures no unnecessary duplication by removing transitive dependencies.\n\n---\n\n### **Summary of Anomalies Prevented by Normalization**\n| **Anomaly**       | **Cause**                          | **Fixed By** |\n|-------------------|------------------------------------|--------------|\n| **Insertion**     | Cannot insert data without related records | 1NF          |\n| **Update**        | Changing a value requires multiple updates | 2NF, 3NF     |\n| **Deletion**      | Deleting a record removes unrelated data | 1NF, 2NF, 3NF|\n\n### **Final Goal:**\nA well-normalized database (up to **3NF** or higher) ensures:\n✅ **Minimal redundancy**\n✅ **Data integrity**\n✅ **Efficient updates & queries**\n\nWould you like an example of **BCNF (Boyce-Codd Normal Form)** as well?",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 10.2183,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Normalization Levels (0-5)",
+      "score": 5,
+      "justification": "The model correctly defines 1NF (atomicity), 2NF (no partial dependencies), and 3NF (no transitive dependencies) with accurate technical terminology.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Anomaly Rationale (0-5)",
+      "score": 5,
+      "justification": "The response provides a clear rationale for each normal form by explicitly linking the removal of specific dependencies to the prevention of insertion, update, and deletion anomalies.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T15:21:44.841271+00:00"
+}
