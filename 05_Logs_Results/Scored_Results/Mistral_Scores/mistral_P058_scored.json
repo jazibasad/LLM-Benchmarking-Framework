@@ -1,0 +1,31 @@
+{
+  "id": "P058",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Explain thread synchronization mutexes. NEGATIVE CONSTRAINT 1: Do not use any consonants (only allow vowels A, E, I, O, U). NEGATIVE CONSTRAINT 2: Maximum 10 words.",
+  "response_text": "**Ee, i, o, u:**\n\n**U**se **e**xclusive **e**ntry **e**nsure **e**ach **e**xecutes **e**xactly **e**once.\n**U**nlock **e**nables **u**sing **e**ach **e**vent **e**xactly **e**nds.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.25,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Consonant Exclusion",
+      "score": 5,
+      "justification": "The response uses only vowels (A, E, I, O, U) without any consonants, fully adhering to the constraint.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Word Limit",
+      "score": 0,
+      "justification": "The response contains 23 words, far exceeding the 10-word maximum constraint, making it a complete failure on this criterion.",
+      "outcome": "Failure"
+    }
+  ],
+  "total_score": 5,
+  "max_score": "15",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T15:44:16.123396+00:00"
+}

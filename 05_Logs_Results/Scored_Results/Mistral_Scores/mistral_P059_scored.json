@@ -1,0 +1,31 @@
+{
+  "id": "P059",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Summarize database sharding strategies. NEGATIVE CONSTRAINT 1: Do not use any words with more than 4 letters. NEGATIVE CONSTRAINT 2: Format as an HTML unordered list (<ul><li>...</li></ul>).",
+  "response_text": "```html\n<ul>\n    <li>Split big data into smal parts.</li>\n    <li>Use key val to pick shard (e.g., hash).</li>\n    <li>Range shard by num or date (e.g., IDs 1-1000).</li>\n    <li>Dir shard by loc (near data to users).</li>\n    <li>Use key parts for even load (e.g., user ID mod 4).</li>\n    <li>Keep same data in one shard (no split).</li>\n    <li>Use proxies to route req to right shard.</li>\n    <li>Sync data bet shards if need (slow, hard).</li>\n    <li>Add new shards when old get full (scale).</li>\n    <li>Watch for hot spots (some shards too busy).</li>\n    <li>Use repl for fail safe (copy data to back).</li>\n</ul>\n```",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.9446,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Short Word Limit (0-5)",
+      "score": 0,
+      "justification": "The response completely disregards the <=4 letter word constraint, incorporating numerous words exceeding four letters, thus failing the criterion entirely.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Html Formatting (0-5)",
+      "score": 5,
+      "justification": "The response correctly structures the output as a valid HTML unordered list with proper <ul> and <li> tags, meeting the formatting requirement fully.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 5,
+  "max_score": "15",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T15:46:23.155215+00:00"
+}
