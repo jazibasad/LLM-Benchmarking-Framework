@@ -1,0 +1,31 @@
+{
+  "id": "P130",
+  "category": "Ambiguity Handling",
+  "difficulty": "Medium",
+  "prompt": "Write a follow-up email to the client.",
+  "response_text": "**Subject:** Follow‑up on [Project/Proposal/Meeting] – Next Steps  \n\nHi **[Client’s First Name]**,\n\nI hope you’re doing well. I’m writing to follow up on our recent conversation on **[date of last meeting/call]** regarding **[brief description of the project, proposal, or topic discussed]**.\n\n**Key points from our last discussion**\n\n- **[Point 1]** – e.g., the scope of work we outlined for the new website redesign.  \n- **[Point 2]** – e.g., the timeline you’re targeting for a May 15 launch.  \n- **[Point 3]** – e.g., the budget range of $15‑$20 k you mentioned.\n\n**Next steps**\n\n1. **[Your Action]** – I’ve attached the revised proposal/quote for your review.  \n2. **[Client Action]** – Please let me know if you have any questions or need any adjustments; a quick reply by **[specific date, e.g., Friday, August 30]** would help us stay on schedule.  \n3. **[Future Meeting]** – If it works for you, I’m available for a brief call on **[two suggested dates/times]** to walk through any details.\n\nPlease feel free to reach out if anything is unclear or if there’s additional information you need. I’m excited about the opportunity to work together and am ready to move forward as soon as you’re comfortable.\n\nThank you for your time, and I look forward to hearing from you soon.\n\nBest regards,\n\n**[Your Full Name]**  \n[Your Title] | [Your Company]  \nPhone: **[Your Phone]** | Email: **[Your Email]**  \n[Company Website] | [LinkedIn / Other Professional Link]  ",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.5518,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Missing Context Identification (0-5)",
+      "score": 0,
+      "justification": "The response does not attempt to identify which specific project, proposal, or meeting context is missing, instead using generic placeholders.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Constructive Response (0-5)",
+      "score": 3,
+      "justification": "While not tailored to missing specifics, the email template still offers a well-structured, practical framework for following up with a client.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 3,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T18:44:16.453566+00:00"
+}

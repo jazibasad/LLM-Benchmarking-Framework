@@ -1,0 +1,31 @@
+{
+  "id": "P136",
+  "category": "Long-context Retention",
+  "difficulty": "Easy",
+  "prompt": "Note 1: The meeting on Monday covered budget planning. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: The meeting on Wednesday covered hiring decisions. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: The meeting on Friday covered product roadmap. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: What was discussed in the Wednesday meeting?",
+  "response_text": "The Wednesday meeting covered **hiring decisions**.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.7284,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Fact Recall Accuracy",
+      "score": 5,
+      "justification": "The response correctly identifies the Wednesday meeting topic as 'hiring decisions' directly from Note 2 without any factual errors.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Distraction Resistance",
+      "score": 5,
+      "justification": "The response ignores the unrelated details in Notes 1 and 3 and correctly isolates the Wednesday meeting content despite surrounding filler text.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T18:45:17.235753+00:00"
+}

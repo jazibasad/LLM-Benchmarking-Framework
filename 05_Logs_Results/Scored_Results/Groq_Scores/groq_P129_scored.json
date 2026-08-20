@@ -1,0 +1,31 @@
+{
+  "id": "P129",
+  "category": "Ambiguity Handling",
+  "difficulty": "Medium",
+  "prompt": "Optimize this function.",
+  "response_text": "Sure! I’d be happy to help you optimize the function. Could you please paste the code you’d like to improve (or describe what it does, its inputs/outputs, and any performance concerns you’ve noticed)? That way I can give you concrete, targeted suggestions.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.6902,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Missing Context Identification",
+      "score": 5,
+      "justification": "The response clearly identifies that the required code or description is missing and requests it, fulfilling the criterion perfectly.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Constructive Response",
+      "score": 4,
+      "justification": "Although no specific optimization is provided, the reply offers useful general guidance by asking for details, meeting the core requirement with only minor gaps.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 9,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T18:44:09.220396+00:00"
+}

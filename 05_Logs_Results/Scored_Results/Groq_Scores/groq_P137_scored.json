@@ -1,0 +1,31 @@
+{
+  "id": "P137",
+  "category": "Long-context Retention",
+  "difficulty": "Easy",
+  "prompt": "Note 1: Branch A reported 120 sales in Q1. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Branch B reported 95 sales in Q1. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Branch C reported 140 sales in Q1. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Which branch had the highest Q1 sales?",
+  "response_text": "Branch C had the highest Q1 sales, reporting 140 sales.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 2.6954,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Fact Recall Accuracy",
+      "score": 5,
+      "justification": "The response correctly identifies Branch C as having the highest Q1 sales with the exact figure of 140, fully and accurately recalling the requested fact without error or omission.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Distraction Resistance",
+      "score": 5,
+      "justification": "The response correctly identifies the highest-selling branch despite the surrounding filler text about standard conditions and maintenance, demonstrating complete resistance to distraction.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T18:47:02.751537+00:00"
+}
