@@ -1,0 +1,31 @@
+{
+  "id": "P091",
+  "category": "Coding & System Architecture",
+  "difficulty": "Easy",
+  "prompt": "Write a Python script to parse a JSON configuration file, handle missing file exceptions gracefully, and print a specific key value.",
+  "response_text": "# Python Script to Parse JSON Configuration File\n\nHere's a Python script that:\n1. Attempts to parse a JSON configuration file\n2. Handles missing file exceptions gracefully\n3. Prints a specific key's value if found\n\n```python\nimport json\nimport sys\n\ndef get_config_value(config_file_path, key_to_find):\n    \"\"\"\n    Parse a JSON configuration file and return the value of a specific key.\n\n    Args:\n        config_file_path (str): Path to the JSON configuration file\n        key_to_find (str): The key whose value we want to retrieve\n\n    Returns:\n        The value associated with the key, or None if not found\n    \"\"\"\n    try:\n        # Try to open and read the JSON file\n        with open(config_file_path, 'r') as config_file:\n            try:\n                # Parse the JSON content\n                config_data = json.load(config_file)\n\n                # Check if the key exists in the top level\n                if key_to_find in config_data:\n                    return config_data[key_to_find]\n\n                # If not found at top level, check nested structures\n                # (This is a simple recursive search - you might want to adjust based on your needs)\n                def find_key(obj, target_key):\n                    if isinstance(obj, dict):\n                        for k, v in obj.items():\n                            if k == target_key:\n                                return v\n                            if isinstance(v, (dict, list)):\n                                result = find_key(v, target_key)\n                                if result is not None:\n                                    return result\n                    elif isinstance(obj, list):\n                        for item in obj:\n                            result = find_key(item, target_key)\n                            if result is not None:\n                                return result\n                    return None\n\n                return find_key(config_data, key_to_find)\n\n            except json.JSONDecodeError as e:\n                print(f\"Error decoding JSON in file {config_file_path}: {e}\", file=sys.stderr)\n                return None\n\n    except FileNotFoundError:\n        print(f\"Error: Configuration file not found at {config_file_path}\", file=sys.stderr)\n        return None\n    except Exception as e:\n        print(f\"Unexpected error reading configuration file: {e}\", file=sys.stderr)\n        return None\n\nif __name__ == \"__main__\":\n    # Example usage\n    config_file = \"config.json\"  # Change this to your file path\n    key_to_print = \"timeout\"     # Change this to the key you want to find\n\n    value = get_config_value(config_file, key_to_print)\n\n    if value is not None:\n        print(f\"The value for '{key_to_print}' is: {value}\")\n    else:\n        print(f\"Key '{key_to_print}' not found in configuration file.\")\n```\n\n## How to Use This Script:\n\n1. Save this script to a file (e.g., `config_parser.py`)\n2. Create a JSON configuration file (e.g., `config.json`) in the same directory\n3. Modify the `config_file` and `key_to_print` variables in the `__main__` section to match your needs\n\n## Example JSON Configuration File:\n\n```json\n{\n    \"database\": {\n        \"host\": \"localhost\",\n        \"port\": 5432,\n        \"timeout\": 30\n    },\n    \"logging\": {\n        \"level\": \"INFO\",\n        \"file\": \"/var/log/app.log\"\n    },\n    \"timeout\": 10\n}\n```\n\n## Features:\n\n1. **Graceful Error Handling**:\n   - Handles missing files with `FileNotFoundError`\n   - Handles JSON decode errors with `JSONDecodeError`\n   - Catches other unexpected errors\n\n2. **Key Search**:\n   - Checks for the key at the top level\n   - Can search through nested dictionaries and lists (recursively)\n\n3. **Flexible**:\n   - You can easily change the configuration file path and key to search for\n\n4. **Clear Output**:\n   - Provides informative messages about what went wrong if errors occur",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 8.7377,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Exception Handling",
+      "score": 5,
+      "justification": "The script uses multiple try-except blocks to catch FileNotFoundError, JSONDecodeError, and generic exceptions, handling them gracefully and returning None.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Json Parsing",
+      "score": 5,
+      "justification": "It correctly imports json and uses json.load within a try block to parse the file, handling JSONDecodeError appropriately.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:07:02.131993+00:00"
+}

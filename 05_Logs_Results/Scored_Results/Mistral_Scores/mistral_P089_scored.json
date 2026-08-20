@@ -1,0 +1,31 @@
+{
+  "id": "P089",
+  "category": "Coding & System Architecture",
+  "difficulty": "Easy",
+  "prompt": "Write a Python function to check if a given string is a palindrome, ignoring spaces and case sensitivity.",
+  "response_text": "Here's a Python function that checks if a given string is a palindrome, ignoring spaces and case sensitivity:\n\n```python\ndef is_palindrome(s):\n    # Remove all spaces and convert to lowercase\n    cleaned = s.replace(\" \", \"\").lower()\n    # Compare the cleaned string with its reverse\n    return cleaned == cleaned[::-1]\n\n# Example usage:\nprint(is_palindrome(\"A man a plan a canal Panama\"))  # Output: True\nprint(is_palindrome(\"race a car\"))                   # Output: False\n```\n\n### Explanation:\n1. **Cleaning the String**:\n   - `s.replace(\" \", \"\")` removes all spaces from the string.\n   - `.lower()` converts the string to lowercase to make the check case-insensitive.\n\n2. **Checking for Palindrome**:\n   - `cleaned[::-1]` reverses the cleaned string.\n   - The function returns `True` if the cleaned string is the same as its reverse, otherwise `False`.\n\nThis function efficiently checks if the input string is a palindrome while ignoring spaces and case differences.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 3.6731,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Syntax Correctness (0-5)",
+      "score": 5,
+      "justification": "The Python function is syntactically correct, uses proper indentation, valid method calls, and runs without errors, fully meeting the core requirement.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Edge Case Handling (0-5)",
+      "score": 2,
+      "justification": "While the function handles spaces and casing correctly, it does not ignore punctuation (e.g., commas, periods), so inputs like 'A man, a plan!' would be incorrectly marked non-palindromic.",
+      "outcome": "Failure"
+    }
+  ],
+  "total_score": 7,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:06:04.107566+00:00"
+}

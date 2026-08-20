@@ -1,0 +1,31 @@
+{
+  "id": "P093",
+  "category": "Coding & System Architecture",
+  "difficulty": "Easy",
+  "prompt": "Write a C# console application snippet that reads a text file line by line and counts the total number of words.",
+  "response_text": "Here's a C# console application snippet that reads a text file line by line and counts the total number of words:\n\n```csharp\nusing System;\nusing System.IO;\n\nclass WordCounter\n{\n    static void Main(string[] args)\n    {\n        Console.WriteLine(\"Enter the path to the text file:\");\n        string filePath = Console.ReadLine();\n\n        if (!File.Exists(filePath))\n        {\n            Console.WriteLine(\"File not found.\");\n            return;\n        }\n\n        int wordCount = 0;\n\n        try\n        {\n            using (StreamReader reader = new StreamReader(filePath))\n            {\n                string line;\n                while ((line = reader.ReadLine()) != null)\n                {\n                    // Split the line into words and add to the count\n                    string[] words = line.Split(new[] {' ', '\\t', '\\n', '\\r', ',', ';', '.'}, StringSplitOptions.RemoveEmptyEntries);\n                    wordCount += words.Length;\n                }\n            }\n\n            Console.WriteLine($\"Total number of words in the file: {wordCount}\");\n        }\n        catch (Exception ex)\n        {\n            Console.WriteLine($\"An error occurred: {ex.Message}\");\n        }\n    }\n}\n```\n\n### Explanation:\n1. The program prompts the user to enter the path to a text file.\n2. It checks if the file exists.\n3. It uses `StreamReader` to read the file line by line.\n4. For each line, it splits the text into words using common delimiters (spaces, tabs, punctuation, etc.).\n5. The `StringSplitOptions.RemoveEmptyEntries` option ensures empty strings (from multiple delimiters) are ignored.\n6. The total word count is accumulated and displayed at the end.\n7. Error handling is included for file operations.\n\n### Alternative (Simpler) Version:\nIf you want a simpler version that only splits on whitespace (spaces and tabs):\n\n```csharp\nusing System;\nusing System.IO;\n\nclass WordCounter\n{\n    static void Main(string[] args)\n    {\n        Console.WriteLine(\"Enter the path to the text file:\");\n        string filePath = Console.ReadLine();\n\n        if (!File.Exists(filePath))\n        {\n            Console.WriteLine(\"File not found.\");\n            return;\n        }\n\n        int wordCount = 0;\n\n        try\n        {\n            using (StreamReader reader = new StreamReader(filePath))\n            {\n                string line;\n                while ((line = reader.ReadLine()) != null)\n                {\n                    wordCount += line.Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries).Length;\n                }\n            }\n\n            Console.WriteLine($\"Total number of words in the file: {wordCount}\");\n        }\n        catch (Exception ex)\n        {\n            Console.WriteLine($\"An error occurred: {ex.Message}\");\n        }\n    }\n}\n```",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 7.2011,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "File Io",
+      "score": 5,
+      "justification": "The code correctly uses StreamReader to read the file line by line, checks for file existence, and handles exceptions, fulfilling the file I/O requirement completely.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Word Counting",
+      "score": 5,
+      "justification": "It splits each line on multiple delimiters, removes empty entries, and sums the token counts, accurately calculating the total number of words in the file.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:14:24.664673+00:00"
+}

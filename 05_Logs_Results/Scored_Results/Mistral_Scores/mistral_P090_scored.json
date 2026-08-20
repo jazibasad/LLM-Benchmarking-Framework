@@ -1,0 +1,31 @@
+{
+  "id": "P090",
+  "category": "Coding & System Architecture",
+  "difficulty": "Easy",
+  "prompt": "Write a C# method that takes a list of integers and returns the second highest number without using built-in sorting functions.",
+  "response_text": "# C# Method to Find the Second Highest Number Without Sorting\n\nHere's a C# method that finds the second highest number in a list of integers without using built-in sorting functions:\n\n```csharp\npublic static int FindSecondHighest(int[] numbers)\n{\n    if (numbers == null || numbers.Length < 2)\n    {\n        throw new ArgumentException(\"The array must contain at least two numbers.\");\n    }\n\n    int highest = int.MinValue;\n    int secondHighest = int.MinValue;\n\n    foreach (int num in numbers)\n    {\n        if (num > highest)\n        {\n            secondHighest = highest;\n            highest = num;\n        }\n        else if (num > secondHighest && num != highest)\n        {\n            secondHighest = num;\n        }\n    }\n\n    if (secondHighest == int.MinValue)\n    {\n        throw new ArgumentException(\"All numbers in the array are the same.\");\n    }\n\n    return secondHighest;\n}\n```\n\n## How It Works:\n\n1. First, we handle edge cases where the array is null or has fewer than 2 elements.\n2. We initialize two variables to track the highest and second highest values.\n3. We iterate through each number in the array:\n   - If we find a number greater than the current highest, we update both highest and second highest.\n   - If we find a number that's between the current highest and second highest, we update just the second highest.\n4. After the loop, we check if we actually found a second highest value (in case all numbers were the same).\n5. Finally, we return the second highest value.\n\n## Example Usage:\n\n```csharp\nint[] numbers = { 5, 2, 8, 1, 9, 3, 7 };\nint secondHighest = FindSecondHighest(numbers);\nConsole.WriteLine(secondHighest); // Output: 8\n```\n\nThis solution has a time complexity of O(n) since it only requires a single pass through the array.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 5.0545,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Algorithmic Correctness",
+      "score": 5,
+      "justification": "The method implements a single-pass algorithm correctly, handling edge cases and duplicate highest values without using built‑in sorting.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Syntax Cleanliness",
+      "score": 5,
+      "justification": "The C# code follows proper syntax, indentation, naming conventions, and uses correct exception handling.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:06:46.116144+00:00"
+}

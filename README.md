@@ -25,10 +25,17 @@ LLM-Benchmarking-Framework/
 │   ├── Groq_Logs/
 │   ├── OpenRouter_Logs/
 │   ├── environment_specs/      # Timestamped environment snapshots
-│   ├── Combined_Results/       # Machine-readable consolidated JSON (per provider)
-│   ├── Readable_Results/       # Human-readable Word tables (per provider)
+│   ├── Combined_Results/       # Machine-readable consolidated raw JSON (per provider)
+│   ├── Readable_Results/       # Human-readable raw response Word tables (per provider)
+│   ├── Scored_Results/
+│   │   ├── Gemini_Scores/      # Per-run scored JSON files
+│   │   ├── Mistral_Scores/
+│   │   ├── Groq_Scores/
+│   │   ├── Combined_Scores/    # Machine-readable consolidated scores (per provider)
+│   │   └── Readable_Scores/    # Human-readable scored Word tables (per provider)
 │   └── tests_logs/
-│       └── Week_2/
+│       ├── Week_2/
+│       └── Week_5/
 └── 06_Final_Report/     # Consolidated final research document
 ```
 
@@ -43,86 +50,108 @@ LLM-Benchmarking-Framework/
 
 ## Evaluation Rubric
 
-See [`04_Datasets/rubric.docx`](04_Datasets/rubric.docx) for the master weighted
-scoring criteria. Each prompt also carries its own specific `evaluation_criteria`,
-scored individually rather than against a single generic rubric.
+`04_Datasets/rubric.docx` documents the full scoring methodology: the
+standardized 0-5 score anchors (0 = Complete Failure through 5 = Complete
+Success, 3 = Minimum Success Threshold), the Success/Failure determination
+logic, all 10 benchmark categories, multi-module scoring for Hard-tier
+prompts, and the stochastic reliability sample. Each of the 220 prompts also
+carries its own specific `evaluation_criteria` in `prompts.json`, applied
+using this common scale.
 
-## Prompt Dataset (Week 3 — Revised)
+## Prompt Dataset (Week 3)
 
-`04_Datasets/prompts.json` contains **220 curated evaluation prompts across all
-10 categories specified in the project proposal (Section 3)**, 22 prompts per category:
+`04_Datasets/prompts.json` — 220 prompts across all 10 proposal categories
+(22 each): Knowledge Retrieval, Multi-step Reasoning, Instruction Following,
+Hallucination Stress Test, Coding & System Architecture, Ambiguity Handling,
+Long-context Retention, Data Transformation, Summarization, Multilingual Tasks.
 
-Knowledge Retrieval · Multi-step Reasoning · Instruction Following ·
-Hallucination Stress Test · Coding & System Architecture · Ambiguity Handling ·
-Long-context Retention · Data Transformation · Summarization · Multilingual Tasks
+20 prompts (2 per category) are marked `stochastic_sample: true`,
+`repeat_count: 5` for the proposal's Reliability requirement.
 
-Each entry has: `id`, `category`, `difficulty` (Easy/Medium/Hard), `prompt`,
-`evaluation_criteria`, `max_score`, `stochastic_sample`, `repeat_count`.
-
-**Stochastic reliability sample:** 20 prompts (2 per category) are marked
-`stochastic_sample: true`, `repeat_count: 5` — run 5x each to compute mean,
-median, standard deviation, and coefficient of variation on model
-consistency, per the proposal's Reliability requirement. The remaining 200
-run once. A full collection run makes **300 API calls per provider**, not 220.
-
-Run `python 03_Code/validate_prompts.py` to verify dataset integrity.
+Run `python 03_Code/validate_prompts.py` to verify integrity.
 
 ## Controlled Environment Specification
 
-`03_Code/capture_environment.py` records a timestamped snapshot of the OS,
-CPU, RAM, Python version, installed SDK versions, network status, and fixed
-model/temperature configuration — satisfying the proposal's Controlled
-Environment requirement (Section 2). Run once per collection session, saved
-to `05_Logs_Results/environment_specs/`.
+`python 03_Code/capture_environment.py` — records OS, CPU, RAM, Python
+version, real SDK versions (via `importlib.metadata`, not a fragile
+`__version__` attribute lookup), network status, and model configuration.
+Run once per collection session.
 
-## Data Collection Providers (Week 4)
+## Data Collection (Week 4)
 
-Three decoupled provider runners, each writing to its own partitioned log
-folder:
+Three decoupled provider runners, each recording `temperature` (fixed 0.7)
+and measured `latency_seconds` per call, with full repeat-count support for
+the stochastic sample:
 
-- **Gemini** (`run_gemini_benchmark.py` → `Gemini_Logs/`) — `gemini-3.5-flash-lite`
-- **Mistral** (`run_mistral_benchmark.py` → `Mistral_Logs/`) — `open-mistral-nemo`
-- **Groq** (`run_groq_benchmark.py` → `Groq_Logs/`) — `openai/gpt-oss-120b`
+- **Gemini** — `gemini-3.5-flash-lite` → `Gemini_Logs/`
+- **Mistral** — `open-mistral-nemo` → `Mistral_Logs/`
+- **Groq** — `openai/gpt-oss-120b` → `Groq_Logs/`
 
-Every call records `temperature` (fixed at 0.7, a controlled variable across
-all three providers) and `latency_seconds` (measured per call), per the
-proposal's Variables requirement (Section 2).
+`build_results_tables.py` / `build_results_docx.py` consolidate raw
+responses into machine-readable JSON and human-readable Word tables
+(dedicated Temperature and Latency columns), correctly grouping all 5 runs
+of each stochastic-sample prompt.
 
-**Provider history:** OpenAI → Cerebras (original Week 3) → Mistral (Week 4),
-after Cerebras introduced a mandatory payment-method requirement that could
-not be authorized. Gemini's model went `gemini-2.5-flash` (retired) →
-`gemini-3.5-flash` (20/day cap discovered) → `gemini-3.5-flash-lite` (current).
+### Real incidents encountered and fixed during Week 4
 
-## Automation Pipeline
+This project has repeatedly hit free-tier model catalog volatility - a
+genuine, recurring finding, not just inconvenience:
 
-Every runner shares the same safety mechanisms:
-- **Proactive throttling** — provider-specific delay before every API call
-- **Reactive backoff + jitter** — growing randomized delay after a transient failure
-- **Persistent-error detection** — stops the run early on systemic failures
-- **Atomic cache writes** — no corrupted files from a hard interrupt
-- **Resume-by-cache-file** — operates per individual run, so an interrupted
-  5x-repeat set resumes only the missing runs, not the whole prompt
+- **OpenRouter** (Week 2): a named free model was silently retired mid-project.
+- **Gemini**: `gemini-2.5-flash` retired → replaced with `gemini-3.5-flash`
+  → found to enforce a strict 20 requests/day cap → replaced again with
+  `gemini-3.5-flash-lite`.
+- **Cerebras**: introduced a mandatory payment-method requirement mid-project;
+  replaced entirely with Mistral (permanent free tier, no card).
+- **Groq**: `llama-3.3-70b-versatile` officially deprecated June 17, 2026
+  (confirmed via Groq's own deprecation page) → replaced with
+  `openai/gpt-oss-120b`, Groq's own recommended migration target.
 
-## Scoring Methodology (Week 5)
+Each incident was caught by the persistent-error detection mechanism,
+which stops a run cleanly rather than wasting time retrying every
+remaining prompt against a dead model or expired key.
 
-`llm_judge_scorer.py` scores each response using an LLM judge against the
-SPECIFIC evaluation criteria for that exact prompt. Every criterion is
-scored 0-5 against explicit, standardized anchors (0 = Complete Failure,
-3 = Minimum Success Threshold, 5 = Complete Success), and a Success/Failure
-outcome is computed **in code** using this documented threshold — never
-trusted from the judge's own labeling. A prompt's overall outcome is
-"Success" only if every one of its criteria individually succeeded.
+## Automated Scoring (Week 5)
 
-## Results Consolidation
+`llm_judge_scorer.py` scores **every individual response run** (not just
+one per prompt) using a free LLM judge via OpenRouter, against the specific
+evaluation criteria for that exact prompt.
 
-- **`build_results_tables.py`** — machine-readable, one structured JSON per
-  provider, correctly grouping all 5 runs of each stochastic-sample prompt
-  together (with their individual temperature and latency values), and
-  flagging any prompt with an incomplete run count.
-- **`build_results_docx.py`** — human-readable Word tables per provider,
-  with dedicated **Temperature** and **Latency (s)** columns aligned
-  per-run, plus all response text, satisfying the requirement for separate,
-  structured, human-readable prompt+answer files.
+**Explicit success/failure anchors** (per supervisor requirement, Aug 18):
+every criterion is scored 0-5 against a standardized, documented scale
+(full detail in `rubric.docx`). The Success/Failure outcome per criterion,
+and the overall outcome per prompt run, are **computed in code** from this
+documented threshold (score ≥ 3 = Success) — never trusted from the judge's
+own labeling. A prompt run's overall outcome is Success only if every one
+of its criteria individually succeeded.
+
+`build_scored_tables.py` / `build_scored_docx.py` consolidate scored runs
+into machine-readable JSON (with aggregate success/failure counts) and
+human-readable Word tables (color-coded Success/Failure, failed rows and
+stochastic-sample prompts visually highlighted).
+
+### Real incident encountered and fixed during Week 5
+
+Mid-scoring-run, OpenRouter returned a `401 Unauthorized: User not found`
+error - an authentication failure, not a rate limit. This exposed a real
+bug in the persistent-error detection: the keyword match for `"not_found"`
+(underscore) didn't match the actual error text `"User not found"` (space),
+so the script would have kept retrying every remaining prompt against the
+broken key instead of stopping cleanly. Fixed by broadening the keyword
+list to include `401`, `unauthorized`, `user not found`, and other common
+auth-failure phrasings. Verified against the exact real error message
+before being reused.
+
+## Automation Pipeline (All Weeks)
+
+Every script shares the same safety mechanisms:
+- **Proactive throttling**, **reactive backoff + jitter**
+- **Persistent-error detection** — stops early on systemic failures (quota,
+  retired models, auth failures, billing issues)
+- **Atomic cache writes** — no corruption from a hard interrupt
+- **Resume-by-cache-file** — operates per individual run, so any
+  interruption (including the auth failure above) never loses or repeats
+  already-completed work
 
 ## Environment Setup
 
@@ -139,7 +168,7 @@ MISTRAL_API_KEY=your_real_key_here
 GROQ_API_KEY=your_real_key_here
 ```
 
-## Full Week 4 Run Order
+## Full Run Order (Weeks 4–5) — Completed
 
 ```
 1. python 03_Code/capture_environment.py
@@ -148,7 +177,16 @@ GROQ_API_KEY=your_real_key_here
 4. python 03_Code/run_groq_benchmark.py
 5. python 03_Code/build_results_tables.py
 6. python 03_Code/build_results_docx.py
+7. python 03_Code/tests/test_llm_judge_scorer.py   (10 passed)
+8. python 03_Code/llm_judge_scorer.py
+9. python 03_Code/build_scored_tables.py
+10. python 03_Code/build_scored_docx.py
 ```
+
+All 10 steps above have been executed for real — raw responses, temperature/latency,
+environment specification, and automated scores for all 220 prompts (660 raw
+responses, 300 calls per provider including the stochastic sample) are complete
+across all three providers.
 
 ## Status
 
@@ -156,11 +194,11 @@ GROQ_API_KEY=your_real_key_here
 |------|-------|--------|
 | 1 | Framework Initialization & Rubric Design | ✅ Complete |
 | 2 | Automation Pipeline, Live OpenRouter Verification & Reproducible Environment | ✅ Complete |
-| 3 | Dataset Curation (Revised — all 10 proposal categories) | ✅ Complete |
-| 4 | Multi-Provider Collection, Temperature/Latency, Environment Spec, Repeat Logic | ✅ Code complete, real execution pending |
-| 5 | Automated Scoring with Success/Failure Anchors | ✅ Code complete, awaiting Week 4 data |
+| 3 | Dataset Curation (all 10 proposal categories) | ✅ Complete |
+| 4 | Multi-Provider Collection, Temperature/Latency, Environment Spec, Repeat Logic | ✅ Complete |
+| 5 | Automated Scoring with Explicit Success/Failure Anchors | ✅ Complete |
 | 6 | Human Evaluation & Score Validation | ⏳ Not started |
-| 7 | Statistical Analysis | ⏳ Not started |
+| 7 | Statistical Analysis (mean, median, std dev, hypothesis testing) | ⏳ Not started |
 | 8 | Final Report Compilation | ⏳ Not started |
 
 **Open item:** "surveys" (mentioned by supervisor, Aug 12) — meaning unclear,
