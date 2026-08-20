@@ -1,0 +1,43 @@
+{
+  "id": "P142",
+  "category": "Long-context Retention",
+  "difficulty": "Hard",
+  "prompt": "Note 1: Feature flag 'dark_mode' was enabled for 10% of users in an initial rollout. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: After positive feedback, it was expanded to 50% of users. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: A bug was discovered affecting mobile users specifically, so mobile rollout was rolled back to 0%. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 4: Desktop rollout remained at 50% throughout the mobile issue. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 5: After the mobile bug was fixed, mobile rollout resumed at 25%, separate from desktop's 50%. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: What is the CURRENT rollout percentage for mobile users versus desktop users, and reconstruct the full sequence of changes that led to this split state?",
+  "response_text": "Here’s the **current rollout state** and the **full sequence of changes** that led to the split rollout:\n\n### **Current Rollout Percentages:**\n- **Mobile users:** **25%**\n- **Desktop users:** **50%**\n\n---\n\n### **Sequence of Changes:**\n1. **Initial Rollout (All Devices):**\n   - **Feature flag 'dark_mode' enabled for 10% of users** (mobile + desktop).\n   - *No issues reported.*\n\n2. **Expansion to 50% (All Devices):**\n   - Rollout increased to **50% for all users** (mobile + desktop).\n   - *No issues reported.*\n\n3. **Bug Discovery (Mobile-Specific):**\n   - A bug affecting **mobile users** was found.\n   - **Mobile rollout rolled back to 0%** (desktop remained at 50%).\n   - *No issues reported during this period.*\n\n4. **Desktop Rollout Stays Unchanged:**\n   - **Desktop remained at 50%** while mobile was at 0%.\n   - *No issues reported.*\n\n5. **Mobile Rollout Resumes (Separate from Desktop):**\n   - After fixing the mobile bug, **mobile rollout resumed at 25%** (independent of desktop).\n   - **Desktop remained at 50%**.\n   - *No issues reported.*\n\n---\n### **Key Observations:**\n- The **split state** (mobile at 25%, desktop at 50%) was achieved by:\n  1. First isolating mobile to 0% due to the bug.\n  2. Then reintroducing mobile at a lower percentage (25%) while keeping desktop at its previous level (50%).\n- This approach allowed for **gradual testing** of the fixed mobile version without affecting desktop users.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 3.3878,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Sequential Accuracy Score",
+      "score": 5,
+      "justification": "The response accurately reconstructs the chronological sequence of all five rollout phases in correct order, matching the details provided in the original notes.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Current-State Accuracy Score",
+      "score": 5,
+      "justification": "The response correctly identifies the final state as mobile at 25% and desktop at 50%, which aligns with Note 5's description of the post-fix rollout.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 5,
+      "justification": "The response incorporates all five notes fully and uses every relevant fact from the context without omitting any key details.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Coherence Score",
+      "score": 5,
+      "justification": "The explanation is clearly organized with distinct numbered steps, logical flow, and a summary section that enhances readability despite the multi-phase scenario.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:43:09.778914+00:00"
+}

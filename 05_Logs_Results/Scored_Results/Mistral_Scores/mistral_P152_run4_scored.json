@@ -1,0 +1,31 @@
+{
+  "id": "P152",
+  "category": "Long-context Retention",
+  "difficulty": "Medium",
+  "prompt": "Note 1: Team Alpha's velocity was 30 story points in Sprint 1. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Team Alpha's velocity dropped to 22 points in Sprint 2 due to illness. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Team Alpha's velocity recovered to 35 points in Sprint 3. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Describe the trend in Team Alpha's velocity across all three sprints with specific numbers.",
+  "response_text": "Team Alpha's velocity across the three sprints shows the following trend with specific numbers:\n\n- **Sprint 1:** **30 story points** (baseline performance under standard conditions, no unusual events).\n- **Sprint 2:** **22 story points** (a **drop of 8 points**, or **26.7% decrease**, likely due to illness affecting team productivity).\n- **Sprint 3:** **35 story points** (a **recovery and increase of 13 points**, or **59.1% rise**, returning to above the initial baseline).\n\n### Summary of Trend:\nThe team experienced a **significant decline in velocity** in Sprint 2 (from 30 to 22) due to illness, followed by a **strong recovery** in Sprint 3 (rising to 35, surpassing the original baseline). The data suggests resilience and adaptability after the disruption.",
+  "run_number": 4,
+  "temperature": 0.7,
+  "latency_seconds": 1.9053,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Multi-Fact Synthesis",
+      "score": 5,
+      "justification": "The response correctly combines information from all three sprint notes, describing each velocity, the changes, and the overall trend.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Numerical Accuracy",
+      "score": 5,
+      "justification": "All calculations—drop of 8 points (26.7% decrease) and rise of 13 points (59.1% increase)—are computed correctly.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:49:45.760736+00:00"
+}

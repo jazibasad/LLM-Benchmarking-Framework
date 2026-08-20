@@ -1,0 +1,31 @@
+{
+  "id": "P150",
+  "category": "Long-context Retention",
+  "difficulty": "Medium",
+  "prompt": "Note 1: Server cluster A has 8 nodes, each with 16GB RAM. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Server cluster B has 12 nodes, each with 8GB RAM. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Server cluster C has 4 nodes, each with 32GB RAM. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Which cluster has the most total RAM, and what is the exact total for each cluster?",
+  "response_text": "Let's calculate the total RAM for each cluster:\n\n1. **Cluster A**:\n   - Number of nodes: 8\n   - RAM per node: 16GB\n   - Total RAM = 8 × 16GB = **128GB**\n\n2. **Cluster B**:\n   - Number of nodes: 12\n   - RAM per node: 8GB\n   - Total RAM = 12 × 8GB = **96GB**\n\n3. **Cluster C**:\n   - Number of nodes: 4\n   - RAM per node: 32GB\n   - Total RAM = 4 × 32GB = **128GB**\n\n### Answer:\n- **Most total RAM**: Clusters **A and C** (both have **128GB**).\n- Exact totals:\n  - Cluster A: **128GB**\n  - Cluster B: **96GB**\n  - Cluster C: **128GB**",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 2.0157,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Multi-Fact Synthesis",
+      "score": 5,
+      "justification": "The response successfully combined the node counts and RAM sizes from all three notes to calculate the totals and correctly identified the clusters with the highest total RAM.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Numerical Accuracy",
+      "score": 5,
+      "justification": "All calculations (8x16=128, 12x8=96, 4x32=128) and the subsequent comparison of totals are completely correct.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:48:08.370614+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "P175",
+  "category": "Data Transformation",
+  "difficulty": "Medium",
+  "prompt": "Convert this XML snippet into equivalent JSON:\n<person><name>Frank</name><age>40</age></person>",
+  "response_text": "Here's the equivalent JSON for the given XML snippet:\n\n```json\n{\n  \"person\": {\n    \"name\": \"Frank\",\n    \"age\": 40\n  }\n}\n```",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.9788,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Structural Correctness",
+      "score": 5,
+      "justification": "The JSON object correctly mirrors the XML hierarchy, with 'person' as the root enclosing 'name' and 'age', accurately representing the source data's relationships.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Data Fidelity",
+      "score": 5,
+      "justification": "All values from the XML ('Frank' and 40) are preserved exactly in the JSON output without dropping or altering any data.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:03:16.161224+00:00"
+}

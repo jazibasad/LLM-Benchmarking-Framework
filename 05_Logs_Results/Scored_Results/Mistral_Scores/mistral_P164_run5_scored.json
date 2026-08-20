@@ -1,0 +1,43 @@
+{
+  "id": "P164",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this Markdown table with merged-looking header groups into a properly normalized JSON array, correctly attributing each sub-column to its parent header:\n| Name | Q1 | | Q2 | |\n|------|-----|-----|-----|-----|\n| | Sales | Cost | Sales | Cost |\n| Alice | 100 | 40 | 120 | 45 |",
+  "response_text": "Here's the normalized JSON array that correctly attributes each sub-column to its parent header:\n\n```json\n[\n  {\n    \"name\": \"Alice\",\n    \"metrics\": {\n      \"quarter\": \"Q1\",\n      \"values\": {\n        \"sales\": 100,\n        \"cost\": 40\n      }\n    }\n  },\n  {\n    \"name\": \"Alice\",\n    \"metrics\": {\n      \"quarter\": \"Q2\",\n      \"values\": {\n        \"sales\": 120,\n        \"cost\": 45\n      }\n    }\n  }\n]\n```\n\nAlternatively, if you prefer a more flattened structure that maintains the original table's structure while being properly normalized:\n\n```json\n[\n  {\n    \"name\": \"Alice\",\n    \"Q1\": {\n      \"sales\": 100,\n      \"cost\": 40\n    },\n    \"Q2\": {\n      \"sales\": 120,\n      \"cost\": 45\n    }\n  }\n]\n```\n\nOr if you want to include the header structure explicitly:\n\n```json\n{\n  \"metadata\": {\n    \"headers\": {\n      \"Q1\": [\"Sales\", \"Cost\"],\n      \"Q2\": [\"Sales\", \"Cost\"]\n    }\n  },\n  \"data\": [\n    {\n      \"name\": \"Alice\",\n      \"values\": {\n        \"Q1\": {\n          \"Sales\": 100,\n          \"Cost\": 40\n        },\n        \"Q2\": {\n          \"Sales\": 120,\n          \"Cost\": 45\n        }\n      }\n    }\n  ]\n}\n```\n\nThe first option is generally the most normalized and flexible structure, as it:\n1. Preserves the relationship between quarters and their metrics\n2. Makes it easy to add more quarters or metrics\n3. Avoids duplicate data for the same person\n4. Maintains clear hierarchical structure",
+  "run_number": 5,
+  "temperature": 0.7,
+  "latency_seconds": 3.1261,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Relational Integrity Score",
+      "score": 5,
+      "justification": "The response correctly preserves the hierarchical relationship between parent headers (Q1, Q2) and their sub-columns (Sales, Cost) across all proposed JSON structures, ensuring data is accurately attributed.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Edge Case Handling Score",
+      "score": 5,
+      "justification": "The model successfully parsed the complex, merged header structure of the markdown table, correctly grouping sub-columns under their respective quarters without misalignment or data loss.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Output Validity Score",
+      "score": 5,
+      "justification": "All JSON blocks in the response are syntactically valid and would parse successfully in any standard JSON parser.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 5,
+      "justification": "Every data point from the source table, including the row identifier, all metrics, and the header hierarchy, is fully represented with no omissions.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:55:23.841289+00:00"
+}

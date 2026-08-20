@@ -1,0 +1,31 @@
+{
+  "id": "P173",
+  "category": "Data Transformation",
+  "difficulty": "Medium",
+  "prompt": "Convert this list of key-value pairs into a properly formatted Python dictionary literal: name=Eve, role=admin, active=true",
+  "response_text": "Here's the properly formatted Python dictionary literal for your key-value pairs:\n\n```python\n{\n    \"name\": \"Eve\",\n    \"role\": \"admin\",\n    \"active\": True\n}\n```\n\nNotes:\n1. I've used double quotes for both keys and string values (Python allows either single or double quotes)\n2. The boolean value `true` was converted to Python's `True` (note the capital T)\n3. The dictionary is properly formatted with each key-value pair on its own line for readability\n4. Python dictionary literals use colons (`:`) between keys and values, and commas (`,`) to separate items",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.4622,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Structural Correctness",
+      "score": 5,
+      "justification": "The response perfectly structures the dictionary with proper braces, colons, commas, and correct Python boolean casing. ",
+      "outcome": "Success"
+    },
+    {
+      "name": "Data Fidelity",
+      "score": 5,
+      "justification": "All key-value pairs from the source (name, role, active) are accurately preserved with their correct values converted to proper Python syntax. ",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:02:00.384895+00:00"
+}

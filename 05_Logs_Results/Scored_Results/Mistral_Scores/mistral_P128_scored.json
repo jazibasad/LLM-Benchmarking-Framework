@@ -1,0 +1,31 @@
+{
+  "id": "P128",
+  "category": "Ambiguity Handling",
+  "difficulty": "Medium",
+  "prompt": "Translate this document for me.",
+  "response_text": "Of course! Please provide the document you'd like me to translate, and let me know:\n\n1. **The original language** (e.g., English, Spanish, French, etc.)\n2. **The target language** (e.g., Spanish, German, Chinese, etc.)\n3. **Any specific style or tone** you prefer (e.g., formal, casual, technical, simplified)\n4. **Whether you need formatting adjustments** (e.g., headings, bullet points, etc.)\n\nYou can paste the text directly, or share a link to a document if it’s lengthy. I’ll ensure an accurate and natural translation!\n\n---\n**Example:** If you sent:\n*\"Hello! How are you? This is a test.\"*\nAnd asked for **Spanish**, I’d reply:\n*\"¡Hola! ¿Cómo estás? Esto es una prueba.\"*",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.4752,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Missing Context Identification",
+      "score": 5,
+      "justification": "The response correctly identifies that the document, original language, and target language are missing, and proactively asks for style and formatting preferences.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Constructive Response",
+      "score": 5,
+      "justification": "It provides a highly helpful and structured request for information, including clear examples of what to provide and how the final translation might look.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:36:17.918679+00:00"
+}

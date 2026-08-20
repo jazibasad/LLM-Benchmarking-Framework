@@ -1,0 +1,31 @@
+{
+  "id": "P110",
+  "category": "Coding & System Architecture",
+  "difficulty": "Medium",
+  "prompt": "Implement a Publisher-Subscriber (Pub-Sub) event broker class in Python supporting topic subscription, unsubscribe, and asynchronous event broadcasting.",
+  "response_text": "# Publisher-Subscriber (Pub-Sub) Event Broker in Python\n\nHere's a complete implementation of a Pub-Sub event broker in Python using asyncio for asynchronous event broadcasting:\n\n```python\nimport asyncio\nfrom typing import Dict, Set, Callable, Any, Optional\n\nclass PubSubBroker:\n    def __init__(self):\n        self._subscriptions: Dict[str, Set[Callable[[Any], None]]] = {}\n        self._lock = asyncio.Lock()\n\n    async def subscribe(self, topic: str, callback: Callable[[Any], None]) -> None:\n        \"\"\"Subscribe to a topic with a callback function.\n\n        Args:\n            topic: The topic to subscribe to\n            callback: The function to call when an event is published to this topic\n        \"\"\"\n        async with self._lock:\n            if topic not in self._subscriptions:\n                self._subscriptions[topic] = set()\n            self._subscriptions[topic].add(callback)\n\n    async def unsubscribe(self, topic: str, callback: Callable[[Any], None]) -> None:\n        \"\"\"Unsubscribe from a topic.\n\n        Args:\n            topic: The topic to unsubscribe from\n            callback: The function to remove from subscriptions\n        \"\"\"\n        async with self._lock:\n            if topic in self._subscriptions and callback in self._subscriptions[topic]:\n                self._subscriptions[topic].remove(callback)\n                if not self._subscriptions[topic]:\n                    del self._subscriptions[topic]\n\n    async def publish(self, topic: str, event: Any) -> None:\n        \"\"\"Publish an event to a topic.\n\n        Args:\n            topic: The topic to publish to\n            event: The event data to broadcast\n        \"\"\"\n        async with self._lock:\n            if topic in self._subscriptions:\n                # Create a copy of the callbacks to avoid issues if callbacks are modified during iteration\n                callbacks = list(self._subscriptions[topic])\n\n                # Process callbacks asynchronously to avoid blocking\n                await asyncio.gather(\n                    *[self._process_callback(callback, event) for callback in callbacks]\n                )\n\n    async def _process_callback(self, callback: Callable[[Any], None], event: Any) -> None:\n        \"\"\"Process a single callback with error handling.\"\"\"\n        try:\n            await callback(event)\n        except Exception as e:\n            print(f\"Error processing callback for event {event}: {str(e)}\")\n\n    async def close(self) -> None:\n        \"\"\"Clean up the broker.\"\"\"\n        self._subscriptions.clear()\n```\n\n## Usage Example\n\nHere's how you can use this Pub-Sub broker:\n\n```python\nasync def main():\n    broker = PubSubBroker()\n\n    # Define some callback functions\n    async def callback1(event):\n        print(f\"Callback 1 received: {event}\")\n\n    async def callback2(event):\n        print(f\"Callback 2 received: {event}\")\n\n    # Subscribe to topics\n    await broker.subscribe(\"news\", callback1)\n    await broker.subscribe(\"news\", callback2)\n    await broker.subscribe(\"weather\", callback1)\n\n    # Publish some events\n    await broker.publish(\"news\", {\"title\": \"Breaking news\", \"content\": \"Something important happened\"})\n    await broker.publish(\"weather\", {\"temperature\": 25, \"conditions\": \"sunny\"})\n\n    # Unsubscribe from a topic\n    await broker.unsubscribe(\"weather\", callback1)\n\n    # Publish another event\n    await broker.publish(\"news\", {\"title\": \"Update\", \"content\": \"Another update\"})\n\n    # Clean up\n    await broker.close()\n\n# Run the example\nasyncio.run(main())\n```\n\n## Key Features\n\n1. **Thread-safe operations**: Uses asyncio.Lock to ensure thread safety\n2. **Asynchronous processing**: Callbacks are processed asynchronously\n3. **Error handling**: Errors in callbacks are caught and logged\n4. **Clean subscription management**: Automatic cleanup of empty topics\n5. **Type hints**: Full type annotations for better code clarity\n\n## Advanced Usage\n\nFor a more production-ready implementation, you might want to add:\n\n1. **Message serialization**: Support for different data formats\n2. **QoS levels**: Different quality of service guarantees\n3. **Message persistence**: Store messages for late subscribers\n4. **Message filtering**: More sophisticated filtering capabilities\n5. **Connection management**: For distributed Pub-Sub systems\n\nWould you like me to extend any of these features or explain any part of the implementation in more detail?",
+  "run_number": 5,
+  "temperature": 0.7,
+  "latency_seconds": 7.6269,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Event Dispatch",
+      "score": 5,
+      "justification": "The implementation correctly maintains a dictionary mapping topics to sets of callbacks and asynchronously invokes them upon event publication.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Clean Api",
+      "score": 5,
+      "justification": "The class provides clearly named methods with precise type hints that accurately define their parameters and return types.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:25:52.250993+00:00"
+}

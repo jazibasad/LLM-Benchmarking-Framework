@@ -1,0 +1,31 @@
+{
+  "id": "P130",
+  "category": "Ambiguity Handling",
+  "difficulty": "Medium",
+  "prompt": "Write a follow-up email to the client.",
+  "response_text": "Here’s a professional and polished follow-up email template you can customize based on your specific situation. Adjust the tone (friendly, formal, or concise) and details to match your relationship with the client and the context of your previous communication.\n\n---\n**Subject:** Following Up on [Previous Topic/Request]\n\n**Dear [Client's Name],**\n\nI hope this email finds you well! I wanted to circle back regarding [briefly reference the original topic—e.g., *\"your inquiry about [X] from [date]\"* or *\"our discussion on [Y] during our call on [date]\"*]. I’ve [mention any progress, updates, or next steps you’ve taken—e.g., *\"reviewed the latest data,\" \"prepared a draft proposal,\" or \"checked availability for a meeting\"*].\n\n[Add a specific value or reason for reaching out, e.g.]:\n- *\"I wanted to share [brief update/insight/option] that might help you move forward.\"*\n- *\"I’ve attached [document/visual aid] for your reference—let me know if you’d like to discuss further.\"*\n- *\"I’m happy to schedule a quick call or meeting to align on [specific goal] at your convenience.\"*\n\nPlease let me know if there’s anything else you’d like me to address or if you’d prefer to explore [alternative approach]. I’m here to support you and ensure we’re on the same page.\n\nLooking forward to your thoughts!\n\n**Best regards,**\n[Your Full Name]\n[Your Job Title]\n[Your Company Name]\n[Your Contact Information]\n[Optional: Calendly link or preferred meeting times]\n\n---\n\n### **Customization Tips:**\n1. **For a proposal/quote:**\n   *\"As discussed, I’ve finalized the proposal for [project] and attached it below. I’d love your feedback by [date] to proceed with next steps.\"*\n\n2. **For a delayed response:**\n   *\"I wanted to check in—did you have a chance to review [document/email]? I’m happy to clarify anything or adjust based on your needs.\"*\n\n3. **For a meeting follow-up:**\n   *\"Thank you for the insightful discussion yesterday! Below are the key takeaways we agreed on: [bullet points]. Let me know if you’d like to prioritize any of these.\"*\n\n4. **For a friendly tone (e.g., long-term client):**\n   *\"Hi [First Name], hope you’re doing great! Just circling back on that [topic]—I’ve got a few ideas to share if you’re up for a quick chat.\"*\n\n5. **For urgency:**\n   *\"Hi [Name], I wanted to follow up on [urgent matter]—could you confirm if [specific action] is still on track for [deadline]? I’m happy to assist with anything holding it up.\"*\n\n---\n**Key Elements to Include:**\n- **Specificity:** Reference details from your last interaction to show you’re engaged.\n- **Value:** Highlight what you’re offering (updates, solutions, flexibility).\n- **Call to Action:** Make it easy for them to respond (e.g., \"Let me know by Friday\" or \"Reply with your availability\").\n- **Tone:** Match their communication style (e.g., concise for busy clients, warm for personal relationships).",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 4.9276,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Missing Context Identification",
+      "score": 0,
+      "justification": "The response does not identify any missing context, as the prompt was generic and the model provided a generic template without addressing specific missing details.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Constructive Response",
+      "score": 3,
+      "justification": "The template offers useful general guidance for writing a follow‑up email, meeting the core requirement despite lacking specific content.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 3,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:36:40.141490+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "P159",
+  "category": "Data Transformation",
+  "difficulty": "Easy",
+  "prompt": "Convert this list of items into a comma-separated string: [\"apple\", \"banana\", \"cherry\"]",
+  "response_text": "Here is the comma-separated string:\n\n```plaintext\napple,banana,cherry\n```",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.4847,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Conversion Accuracy",
+      "score": 5,
+      "justification": "The output correctly lists all items from the input without additions or omissions.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Format Compliance",
+      "score": 5,
+      "justification": "The response exactly matches the comma-separated plaintext format as requested.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:52:49.977569+00:00"
+}

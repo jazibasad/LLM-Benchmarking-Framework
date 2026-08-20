@@ -1,0 +1,31 @@
+{
+  "id": "P155",
+  "category": "Data Transformation",
+  "difficulty": "Easy",
+  "prompt": "Convert this CSV row to JSON: name,age,city\\nAlice,30,Boston",
+  "response_text": "Here's the CSV row converted to JSON:\n\n```json\n[\n    {\n        \"name\": \"Alice\",\n        \"age\": 30,\n        \"city\": \"Boston\"\n    }\n]\n```\n\nOr if you prefer a simpler array format without the outer array:\n\n```json\n{\n    \"name\": \"Alice\",\n    \"age\": 30,\n    \"city\": \"Boston\"\n}\n```\n\nThe first version is more appropriate if you're converting multiple rows from a CSV file, while the second version is better for a single row.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.0497,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Conversion Accuracy",
+      "score": 5,
+      "justification": "The JSON output correctly represents the CSV data with accurate field names and values, including the proper numeric type for age and string types for name and city.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Format Compliance",
+      "score": 4,
+      "justification": "The response provides multiple valid JSON formats for the conversion, which exceeds the basic requirement, though the optional alternative formats introduce minor unnecessary complexity.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 9,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:51:10.649977+00:00"
+}

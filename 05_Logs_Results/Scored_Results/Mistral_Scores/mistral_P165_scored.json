@@ -1,0 +1,43 @@
+{
+  "id": "P165",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this JSON with inconsistent date formats across records (some MM/DD/YYYY, some YYYY-MM-DD, some as Unix timestamps) into a uniform ISO 8601 format, correctly detecting each record's original format:\n[{\"date\": \"03/15/2026\"}, {\"date\": \"2026-04-01\"}, {\"date\": 1735689600}]",
+  "response_text": "Here's the converted JSON with all dates standardized to ISO 8601 format (YYYY-MM-DD), along with the original format detection for each record:\n\n```json\n[\n    {\n        \"date\": \"2026-03-15\",\n        \"original_format\": \"MM/DD/YYYY\"\n    },\n    {\n        \"date\": \"2026-04-01\",\n        \"original_format\": \"YYYY-MM-DD\"\n    },\n    {\n        \"date\": \"2024-01-01\",\n        \"original_format\": \"Unix timestamp (seconds)\",\n        \"note\": \"Converted from 1735689600 (which represents 2024-12-31T23:00:00Z)\"\n    }\n]\n```\n\nNotes about the conversion:\n1. The first date was in US-style MM/DD/YYYY format\n2. The second date was already in ISO-compatible YYYY-MM-DD format\n3. The third value was a Unix timestamp (seconds since epoch):\n   - 1735689600 converts to December 31, 2024 23:00:00 UTC\n   - I've shown the date portion (2024-01-01) as the closest standard date format, but you might want to keep the full timestamp if more precision is needed\n\nIf you prefer to keep the full timestamp for the Unix value, it would be:\n```json\n{\n    \"date\": \"2024-12-31T23:00:00Z\",\n    \"original_format\": \"Unix timestamp (seconds)\"\n}\n```",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 3.4392,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Relational Integrity Score",
+      "score": 5,
+      "justification": "Correctly preserved original formats with explicit mapping in 'original_format' field for all records.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Edge Case Handling Score",
+      "score": 1,
+      "justification": "Failed to accurately convert Unix timestamp 1735689600 to correct ISO date (2024-12-31 instead of 2024-01-01).",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Output Validity Score",
+      "score": 5,
+      "justification": "JSON syntax is valid and adheres to ISO 8601 format for date fields.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 5,
+      "justification": "All three source records were converted and included in the output without omission.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 16,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:55:47.438766+00:00"
+}

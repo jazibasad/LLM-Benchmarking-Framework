@@ -1,0 +1,43 @@
+{
+  "id": "P145",
+  "category": "Long-context Retention",
+  "difficulty": "Hard",
+  "prompt": "Note 1: Initially, all customer support was handled by a single shared inbox. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: As volume grew, tickets were split into Tier 1 (general) and Tier 2 (technical) queues. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: A further split created a dedicated Billing queue, pulled out of Tier 1. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 4: Recently, Tier 2 was merged back into a single 'Technical & Billing' queue alongside Billing. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 5: Tier 1 (general) remains a separate, standalone queue to this day. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: How many support queues currently exist, what does each handle, and reconstruct the sequence of splits and merges that produced this structure.",
+  "response_text": "### **Current Support Queue Structure**\nAs of **Note 5**, there are **three active support queues**:\n\n1. **Tier 1 (General)** – Handles general customer support inquiries (non-technical, non-billing).\n2. **Technical & Billing** – A merged queue that handles:\n   - **Technical** (previously Tier 2) – Complex or specialized support issues.\n   - **Billing** – Customer billing inquiries (split from Tier 1 in Note 3).\n\n---\n\n### **Sequence of Splits and Merges**\n\n1. **Initial State (Unspecified, before Note 1)**\n   - **Single shared inbox** – All support tickets routed to one general queue.\n\n2. **Note 1: First Split (General vs. Technical)**\n   - **Action:** Split into **Tier 1 (General)** and **Tier 2 (Technical)**.\n   - **Result:**\n     - Tier 1: General customer support.\n     - Tier 2: Technical support.\n   - **Structure:**\n     - Tier 1\n     - Tier 2\n\n3. **Note 2: No Changes (Maintenance Only)**\n   - **Status quo:** Tier 1 and Tier 2 remain separate.\n   - **Structure remains:**\n     - Tier 1\n     - Tier 2\n\n4. **Note 3: Billing Split (From Tier 1)**\n   - **Action:** **Billing** is pulled out of Tier 1 and becomes a **dedicated queue**.\n   - **Result:**\n     - Tier 1: General (excluding billing).\n     - Tier 2: Technical.\n     - Billing: Standalone.\n   - **Structure:**\n     - Tier 1 (General)\n     - Tier 2 (Technical)\n     - Billing\n\n5. **Note 4: Merge of Tier 2 + Billing**\n   - **Action:** **Tier 2 (Technical)** is merged with **Billing** into a single **\"Technical & Billing\"** queue.\n   - **Result:**\n     - Tier 1 (General) remains standalone.\n     - Technical & Billing (merged from Tier 2 + Billing).\n   - **Structure:**\n     - Tier 1 (General)\n     - Technical & Billing\n\n6. **Note 5: No Further Changes**\n   - **Final Structure:**\n     - **Tier 1 (General)** – Standalone.\n     - **Technical & Billing** – Merged queue (Technical + Billing).\n\n---\n\n### **Visual Timeline of Queue Changes**\n```\nInitial: [All Tickets]\nAfter Note 1: [Tier 1] → [Tier 2]\nAfter Note 3: [Tier 1] → [Billing] → [Tier 2]\nAfter Note 4: [Tier 1] → [Technical & Billing] (Tier 2 + Billing merged)\nFinal (Note 5): [Tier 1] → [Technical & Billing]\n```\n\n### **Summary**\n- **Current Queues:**\n  1. **Tier 1 (General)** – Non-technical, non-billing support.\n  2. **Technical & Billing** – Combined technical and billing support.\n- **Key Changes:**\n  - Split from single inbox → Tier 1 + Tier 2.\n  - Billing separated from Tier 1.\n  - Tier 2 + Billing merged into one queue.\n  - Tier 1 remained independent.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 5.7949,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Sequential Accuracy Score",
+      "score": 1,
+      "justification": "The response incorrectly places the initial split in Note 1 and treats Note 2 as no change, reversing the first two key steps of the sequence.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Current-State Accuracy Score",
+      "score": 1,
+      "justification": "It erroneously claims there are three queues when the correct final state has two queues, misrepresenting a core fact about the current structure.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 2,
+      "justification": "It omits the correct final count of queues (two) while otherwise covering the split and merge events, leaving out a key factual detail.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Coherence Score",
+      "score": 4,
+      "justification": "The explanation is well‑structured with clear headings, bullet points, and a timeline, making it easy to follow despite the minor factual slips.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 8,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:46:14.522875+00:00"
+}

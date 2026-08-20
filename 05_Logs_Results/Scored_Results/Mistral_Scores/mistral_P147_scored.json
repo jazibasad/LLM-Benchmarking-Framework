@@ -1,0 +1,43 @@
+{
+  "id": "P147",
+  "category": "Long-context Retention",
+  "difficulty": "Hard",
+  "prompt": "Note 1: The company originally operated in a single region (US-East). The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Expansion added a second region (EU-West) to serve European customers with lower latency. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: A third region (AP-Southeast) was added later for Asian customers. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 4: Due to low usage, AP-Southeast was later decommissioned, with those customers routed back to EU-West. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 5: US-East and EU-West remain the only two active regions today. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Which regions are currently active, which was removed, and reconstruct the full timeline of regional expansion and contraction described.",
+  "response_text": "Here’s the breakdown of the **current status**, **removed region**, and the **full timeline** of regional expansion/contraction based on the notes:\n\n---\n\n### **Current Active Regions**\n- **US-East**\n- **EU-West**\n\n### **Removed Region**\n- **AP-Southeast** (decommissioned in Note 4)\n\n---\n\n### **Full Timeline of Regional Changes**\n1. **Initial State (Pre-Note 1)**\n   - Only **US-East** is active.\n\n2. **Note 1: US-East Only**\n   - System operates normally in **US-East**.\n   - No changes to regions.\n\n3. **Note 2: EU-West Added**\n   - **EU-West** is added to serve European customers.\n   - Active regions: **US-East + EU-West**.\n\n4. **Note 3: AP-Southeast Added**\n   - **AP-Southeast** is added for Asian customers.\n   - Active regions: **US-East + EU-West + AP-Southeast**.\n\n5. **Note 4: AP-Southeast Decommissioned**\n   - **AP-Southeast** is removed due to low usage.\n   - Customers are rerouted to **EU-West**.\n   - Active regions: **US-East + EU-West** (AP-Southeast gone).\n\n6. **Note 5: Final State (Today)**\n   - Only **US-East** and **EU-West** remain active.\n   - No further changes.\n\n---\n### **Summary of Changes**\n- **Added Regions**:\n  - EU-West (Note 2)\n  - AP-Southeast (Note 3)\n- **Removed Region**:\n  - AP-Southeast (Note 4)\n- **Current Active Regions**:\n  - US-East, EU-West",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 3.1057,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Sequential Accuracy Score (0-5)",
+      "score": 5,
+      "justification": "The response accurately reconstructs the chronological sequence of region additions and decommissions from the notes.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Current-State Accuracy Score (0-5)",
+      "score": 5,
+      "justification": "The model correctly identifies the final active regions as US‑East and EU‑West, matching Note 5.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score (0-5)",
+      "score": 5,
+      "justification": "All region‑related facts needed to answer the question are included, with no omissions.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Coherence Score (0-5)",
+      "score": 5,
+      "justification": "The response is well‑structured with clear headings and a logical flow that makes the timeline easy to follow.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:47:48.589377+00:00"
+}

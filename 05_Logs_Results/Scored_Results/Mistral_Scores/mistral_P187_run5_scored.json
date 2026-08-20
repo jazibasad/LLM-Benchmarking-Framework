@@ -1,0 +1,43 @@
+{
+  "id": "P187",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this scientific methods section into a single paragraph a journalist could use, explicitly flagging any part of the methodology that limits how strongly the results can be generalized: 'Participants (n=45, convenience sample from a single university) completed a 6-week intervention involving daily 10-minute mindfulness sessions via a mobile app. Self-reported stress levels were measured using the PSS-10 scale at baseline and post-intervention. No control group was used due to resource constraints; instead, a within-subjects pre-post design was employed.'",
+  "response_text": "In this study, researchers recruited 45 volunteers—convenience-sampled from just one university—to test whether a six-week, daily 10-minute mindfulness app intervention could reduce stress. Participants completed the widely used **Perceived Stress Scale (PSS-10)** before and after the program, allowing researchers to compare their own stress levels over time. However, the study’s **lack of a control group** and reliance on a **small, non-randomized sample** (all from the same institution) weaken its ability to prove causation or generalize results beyond this specific group—particularly students, who may respond differently than other populations. The **within-subjects design** helps isolate individual changes, but without a comparison group, it’s unclear whether the observed stress reductions stem from the mindfulness intervention or simply the passage of time or other factors.",
+  "run_number": 5,
+  "temperature": 0.7,
+  "latency_seconds": 1.9457,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Structural Compliance Score",
+      "score": 5,
+      "justification": "The response is a single paragraph presented in journalist-appropriate language, matching the requested structure.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Fidelity Under Constraint Score",
+      "score": 5,
+      "justification": "All key methodological details and limitations are accurately conveyed without adding unsupported information.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Nuance Preservation Score",
+      "score": 5,
+      "justification": "Important caveats such as the lack of a control group and sample limitations are explicitly retained.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Audience Appropriateness Score",
+      "score": 5,
+      "justification": "Technical terms are translated and the tone is suitable for a general journalistic audience.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:08:08.104707+00:00"
+}

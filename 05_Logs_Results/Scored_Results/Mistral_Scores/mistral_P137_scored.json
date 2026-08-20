@@ -1,0 +1,31 @@
+{
+  "id": "P137",
+  "category": "Long-context Retention",
+  "difficulty": "Easy",
+  "prompt": "Note 1: Branch A reported 120 sales in Q1. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Branch B reported 95 sales in Q1. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Branch C reported 140 sales in Q1. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Which branch had the highest Q1 sales?",
+  "response_text": "Based on the notes provided:\n\n- **Branch A** reported **120 sales** in Q1.\n- **Branch B** reported **95 sales** in Q1.\n- **Branch C** reported **140 sales** in Q1.\n\n**Branch C** had the highest Q1 sales with **140 sales**.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.8461,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Fact Recall Accuracy",
+      "score": 5,
+      "justification": "The response correctly identifies Branch C as having the highest Q1 sales and states the exact figure of 140, fully meeting the fact recall requirement.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Distraction Resistance",
+      "score": 5,
+      "justification": "The answer extracts the relevant sales numbers and ignores the surrounding filler text, demonstrating strong resistance to distraction.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:40:38.451508+00:00"
+}

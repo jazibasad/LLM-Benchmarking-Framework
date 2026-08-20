@@ -1,0 +1,31 @@
+{
+  "id": "P138",
+  "category": "Long-context Retention",
+  "difficulty": "Easy",
+  "prompt": "Note 1: Version 1.0 was released in June. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Version 1.1 was released in August. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Version 2.0 was released in December. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: When was version 1.1 released?",
+  "response_text": "Version 1.1 was released in **August**.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.4554,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Fact Recall Accuracy",
+      "score": 5,
+      "justification": "The model correctly identified the release date of Version 1.1 as August, which is explicitly stated in Note 2 without any errors.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Distraction Resistance",
+      "score": 5,
+      "justification": "The model provided a concise, accurate answer without being influenced by the additional information about other versions or maintenance details in the surrounding text.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:41:14.095098+00:00"
+}

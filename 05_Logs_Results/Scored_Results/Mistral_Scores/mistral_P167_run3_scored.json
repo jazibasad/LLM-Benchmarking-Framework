@@ -1,0 +1,43 @@
+{
+  "id": "P167",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this CSV with a single column containing pipe-delimited multi-values (e.g. 'tags' column: 'red|blue|green') into a normalized JSON structure where each tag becomes a separate array element.",
+  "response_text": "Here's how you can convert a CSV with a pipe-delimited column into a normalized JSON structure where each tag becomes a separate array element:\n\n### Input CSV Example:\n```\nid,tags\n1,red|blue|green\n2,apple|banana\n3,cat|dog\n```\n\n### Normalized JSON Output:\n```json\n[\n  {\n    \"id\": 1,\n    \"tags\": [\"red\", \"blue\", \"green\"]\n  },\n  {\n    \"id\": 2,\n    \"tags\": [\"apple\", \"banana\"]\n  },\n  {\n    \"id\": 3,\n    \"tags\": [\"cat\", \"dog\"]\n  }\n]\n```\n\n---\n\n### How to Convert (Python Example):\nIf you're working with Python, you can use the `csv` and `json` modules:\n\n```python\nimport csv\nimport json\n\ndef csv_to_normalized_json(csv_file_path, output_json_path):\n    data = []\n\n    with open(csv_file_path, mode='r', encoding='utf-8') as csv_file:\n        reader = csv.DictReader(csv_file)\n\n        for row in reader:\n            # Split pipe-delimited tags into a list\n            row['tags'] = row['tags'].split('|') if 'tags' in row else []\n\n            # Remove empty strings (if any)\n            row['tags'] = [tag.strip() for tag in row['tags'] if tag.strip()]\n\n            data.append(row)\n\n    with open(output_json_path, 'w', encoding='utf-8') as json_file:\n        json.dump(data, json_file, indent=2, ensure_ascii=False)\n\n# Example usage:\ncsv_to_normalized_json('input.csv', 'output.json')\n```\n\n---\n\n### Key Steps:\n1. **Read the CSV** using `csv.DictReader` (to handle headers).\n2. **Split the `tags` column** by `|` to create a list.\n3. **Clean up empty strings** (e.g., `\"|\"` becomes `[\"\"]`, so we filter those out).\n4. **Write to JSON** with proper formatting.\n\n---\n\n### Alternative (Pandas):\nIf you're using Pandas:\n```python\nimport pandas as pd\n\ndf = pd.read_csv('input.csv')\ndf['tags'] = df['tags'].str.split('|')  # Split pipe-delimited values\ndf.to_json('output.json', orient='records', indent=2)\n```\n\nThis will produce the same normalized JSON structure.",
+  "run_number": 3,
+  "temperature": 0.7,
+  "latency_seconds": 4.394,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Relational Integrity Score",
+      "score": 5,
+      "justification": "The transformation correctly preserves the relationship between each row's identifier and its associated tags by maintaining the id field and converting the pipe-delimited string into an array of individual tag elements.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Edge Case Handling Score",
+      "score": 5,
+      "justification": "The provided code explicitly handles edge cases such as empty strings resulting from consecutive delimiters and missing tags columns by filtering out empty values and providing a default empty list.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Output Validity Score",
+      "score": 5,
+      "justification": "The output JSON is syntactically valid as demonstrated by the example and ensured by the use of json.dump and pandas to_json methods, which produce properly formatted JSON.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 5,
+      "justification": "The response fully addresses the conversion by providing a clear example, robust Python code with explanations, key steps, and an alternative Pandas solution, ensuring all source data is represented.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:58:12.347807+00:00"
+}

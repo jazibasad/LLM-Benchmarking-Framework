@@ -1,0 +1,43 @@
+{
+  "id": "P163",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this JSON representing a company org chart (with a 'reports' array of nested employee objects at arbitrary depth) into a flat CSV with columns: employee_name, manager_name, depth_level.",
+  "response_text": "# Converting Org Chart JSON to Flat CSV\n\nHere's a solution to convert your nested org chart JSON into a flat CSV with the requested columns (employee_name, manager_name, depth_level):\n\n## Solution Code\n\n```python\nimport json\nimport csv\nfrom collections import deque\n\ndef flatten_org_chart(json_data, depth=0):\n    result = []\n\n    # Use a queue for BFS traversal\n    queue = deque()\n    queue.append((json_data, None, depth))\n\n    while queue:\n        current, manager, level = queue.popleft()\n\n        # Add current employee to results\n        result.append({\n            'employee_name': current['name'],\n            'manager_name': manager,\n            'depth_level': level\n        })\n\n        # Add all reports to queue\n        if 'reports' in current:\n            for report in current['reports']:\n                queue.append((report, current['name'], level + 1))\n\n    return result\n\n# Example usage:\n# Assuming your JSON is loaded into `org_json`\n# csv_data = flatten_org_chart(org_json)\n# Write to CSV\n# with open('org_chart.csv', 'w', newline='') as csvfile:\n#     fieldnames = ['employee_name', 'manager_name', 'depth_level']\n#     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)\n#     writer.writeheader()\n#     writer.writerows(csv_data)\n```\n\n## How It Works\n\n1. **Breadth-First Search (BFS)**: The algorithm processes each employee level by level, starting from the top (depth 0).\n\n2. **Queue Processing**: Each employee is processed by:\n   - Adding their name to the results\n   - Adding their reports to the queue with:\n     - Their own name as manager\n     - Incremented depth level\n\n3. **Output Structure**: For each employee, we get:\n   - Their name (employee_name)\n   - Their direct manager's name (manager_name)\n   - Their depth in the hierarchy (depth_level)\n\n## Example Input/Output\n\n**Input JSON (example):**\n```json\n{\n  \"name\": \"CEO\",\n  \"reports\": [\n    {\n      \"name\": \"CTO\",\n      \"reports\": [\n        {\n          \"name\": \"Engineering Manager\",\n          \"reports\": [\n            {\"name\": \"Developer 1\"},\n            {\"name\": \"Developer 2\"}\n          ]\n        }\n      ]\n    },\n    {\n      \"name\": \"CFO\",\n      \"reports\": [\n        {\"name\": \"Accountant\"}\n      ]\n    }\n  ]\n}\n```\n\n**Output CSV:**\n```\nemployee_name,manager_name,depth_level\nCEO,,0\nCTO,CEO,1\nEngineering Manager,CTO,2\nDeveloper 1,Engineering Manager,3\nDeveloper 2,Engineering Manager,3\nCFO,CEO,1\nAccountant,CFO,2\n```\n\n## Implementation Notes\n\n1. The solution handles arbitrary depth in the hierarchy.\n2. The root employee (CEO) will have an empty manager_name field.\n3. You can implement this in Python or use similar logic in other languages.\n4. For very large org charts, consider optimizing memory usage with generators.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 5.9291,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Relational Integrity Score",
+      "score": 5,
+      "justification": "The code correctly assigns each employee's manager and depth, preserving hierarchical relationships.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Edge Case Handling Score",
+      "score": 1,
+      "justification": "The code fails if an employee lacks a 'name' field, and does not handle non-list 'reports', leading to potential errors.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Output Validity Score",
+      "score": 5,
+      "justification": "The CSV is written with proper headers and rows using csv.DictWriter, ensuring syntactic correctness.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 5,
+      "justification": "All employees in the JSON are processed and included in the output, with no silent omissions.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 16,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:54:13.230370+00:00"
+}

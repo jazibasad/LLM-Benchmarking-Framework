@@ -1,0 +1,31 @@
+{
+  "id": "P177",
+  "category": "Summarization",
+  "difficulty": "Easy",
+  "prompt": "Summarize this paragraph in one sentence: 'The company reported strong quarterly earnings, driven by increased demand for its cloud services division. Revenue grew 15% year-over-year, while operating costs remained flat, leading to improved profit margins.'",
+  "response_text": "The company saw a **15% year-over-year revenue increase** from higher cloud service demand while keeping operating costs steady, resulting in **stronger profit margins**.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.9141,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Conciseness Compliance",
+      "score": 3,
+      "justification": "The response is one sentence long, which meets the core requirement of summarizing in one sentence, but it is more complex and detailed than the concise style suggested by the original prompt's example.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Core Meaning Preservation",
+      "score": 5,
+      "justification": "The response accurately captures all key points from the original paragraph, including the 15% revenue growth, increased cloud service demand, steady operating costs, and improved profit margins.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 8,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:03:35.513792+00:00"
+}

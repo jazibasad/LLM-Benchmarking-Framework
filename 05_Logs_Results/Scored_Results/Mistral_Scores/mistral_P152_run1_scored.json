@@ -1,0 +1,31 @@
+{
+  "id": "P152",
+  "category": "Long-context Retention",
+  "difficulty": "Medium",
+  "prompt": "Note 1: Team Alpha's velocity was 30 story points in Sprint 1. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Team Alpha's velocity dropped to 22 points in Sprint 2 due to illness. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Team Alpha's velocity recovered to 35 points in Sprint 3. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Describe the trend in Team Alpha's velocity across all three sprints with specific numbers.",
+  "response_text": "Team Alpha's velocity across the three sprints shows the following trend with specific numbers:\n\n1. **Sprint 1:** Velocity was **30 story points**.\n2. **Sprint 2:** Velocity **dropped significantly** to **22 story points**, likely due to the impact of illness (as noted in Note 2).\n3. **Sprint 3:** Velocity **recovered strongly**, increasing to **35 story points**, surpassing the initial Sprint 1 velocity.\n\n### Summary of Trend:\n- **Initial Stability:** Sprint 1 set a baseline of **30 points**.\n- **Decline:** Sprint 2 saw a **26.7% decrease** (from 30 to 22 points).\n- **Recovery:** Sprint 3 rebounded with a **16.7% increase** (from 22 to 35 points), exceeding the original velocity.\n\nThis indicates a **V-shaped recovery** after the disruption in Sprint 2.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.8377,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Multi-Fact Synthesis",
+      "score": 5,
+      "justification": "The response accurately synthesizes all three sequential facts (Sprint 1 velocity 30, Sprint 2 drop to 22 due to illness, Sprint 3 recovery to 35) into a coherent trend description with no omission of the sequential updates, fully meeting the criterion.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Numerical Accuracy",
+      "score": 2,
+      "justification": "The response includes a percentage calculation stating a 16.7% increase (from 22 to 35 points) that is mathematically incorrect—16.7% actually corresponds to the increase from 30 to 35—introducing a factual error that falls below the acceptable standard for numerical accuracy.",
+      "outcome": "Failure"
+    }
+  ],
+  "total_score": 7,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:49:11.459172+00:00"
+}

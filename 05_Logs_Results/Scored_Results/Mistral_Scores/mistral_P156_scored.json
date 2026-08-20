@@ -1,0 +1,31 @@
+{
+  "id": "P156",
+  "category": "Data Transformation",
+  "difficulty": "Easy",
+  "prompt": "Convert this JSON to a CSV row: {\"name\": \"Bob\", \"age\": 25, \"city\": \"Denver\"}",
+  "response_text": "Here's the JSON object converted to a CSV row:\n\n```\nname,Bob,age,25,city,Denver\n```\n\nOr in a more standard CSV format with headers (if you want a full table):\n\n```\nname,age,city\nBob,25,Denver\n```\n\nThe first format is a single row with alternating field names and values, while the second is the more conventional CSV format with a header row followed by data.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.9407,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Conversion Accuracy",
+      "score": 5,
+      "justification": "The response correctly converts the JSON to a CSV row, preserving all key‑value pairs in the appropriate order.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Format Compliance",
+      "score": 5,
+      "justification": "The output follows the standard CSV format with a header row and a single data row, fulfilling the conversion request.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:51:23.554668+00:00"
+}

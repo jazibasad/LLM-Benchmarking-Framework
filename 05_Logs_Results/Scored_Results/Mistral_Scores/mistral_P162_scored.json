@@ -1,0 +1,43 @@
+{
+  "id": "P162",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this log file format (space-separated with variable fields) into structured JSON, correctly handling the fact that the message field itself may contain spaces:\n2026-01-01 10:00:00 ERROR Connection timeout after 30s\n2026-01-01 10:01:15 INFO Server started successfully",
+  "response_text": "Here's how you can convert the space-separated log file format into structured JSON while properly handling the message field that may contain spaces:\n\n```json\n[\n    {\n        \"timestamp\": \"2026-01-01 10:00:00\",\n        \"level\": \"ERROR\",\n        \"message\": \"Connection timeout after 30s\"\n    },\n    {\n        \"timestamp\": \"2026-01-01 10:01:15\",\n        \"level\": \"INFO\",\n        \"message\": \"Server started successfully\"\n    }\n]\n```\n\nOr if you prefer a more detailed timestamp structure (ISO 8601 format):\n\n```json\n[\n    {\n        \"timestamp\": {\n            \"date\": \"2026-01-01\",\n            \"time\": \"10:00:00\",\n            \"iso\": \"2026-01-01T10:00:00+00:00\"\n        },\n        \"level\": \"ERROR\",\n        \"message\": \"Connection timeout after 30s\"\n    },\n    {\n        \"timestamp\": {\n            \"date\": \"2026-01-01\",\n            \"time\": \"10:01:15\",\n            \"iso\": \"2026-01-01T10:01:15+00:00\"\n        },\n        \"level\": \"INFO\",\n        \"message\": \"Server started successfully\"\n    }\n]\n```\n\nA Python script that could perform this conversion would look like this:\n\n```python\nimport json\nimport re\n\ndef parse_log_line(line):\n    # Split on first 3 fields (timestamp, level, then the rest is message)\n    parts = re.split(r' (\\S+) (\\S+)', line.strip(), maxsplit=2)\n    if len(parts) != 3:\n        return None\n\n    timestamp, level, message = parts\n    return {\n        \"timestamp\": timestamp,\n        \"level\": level,\n        \"message\": message\n    }\n\n# Example usage:\nlog_lines = [\n    \"2026-01-01 10:00:00 ERROR Connection timeout after 30s\",\n    \"2026-01-01 10:01:15 INFO Server started successfully\"\n]\n\nstructured_logs = [parse_log_line(line) for line in log_lines if parse_log_line(line)]\nprint(json.dumps(structured_logs, indent=2))\n```\n\nThis approach:\n1. Uses regex to split on the first two space-separated words (timestamp and level)\n2. Treats everything after those two words as the message field\n3. Preserves all spaces within the message field\n4. Returns a clean JSON structure with properly formatted fields",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 4.516,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Relational Integrity Score",
+      "score": 5,
+      "justification": "The response correctly maps all required fields (timestamp, level, message) without losing or altering their relationships in the source log format.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Edge Case Handling Score",
+      "score": 3,
+      "justification": "The regex-based approach handles spaces in messages but would fail or skip lines with unexpected structures (e.g., missing fields), limiting robustness for highly irregular inputs.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Output Validity Score",
+      "score": 5,
+      "justification": "The generated JSON is syntactically correct and adheres to the expected structure for both simplified and detailed timestamp formats.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 5,
+      "justification": "All source data fields and values from the provided log lines are accurately preserved in the output, with no silent data loss.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 18,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:53:49.167439+00:00"
+}

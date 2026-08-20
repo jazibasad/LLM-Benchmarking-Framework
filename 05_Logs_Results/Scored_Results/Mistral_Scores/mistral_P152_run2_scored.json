@@ -1,0 +1,31 @@
+{
+  "id": "P152",
+  "category": "Long-context Retention",
+  "difficulty": "Medium",
+  "prompt": "Note 1: Team Alpha's velocity was 30 story points in Sprint 1. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Team Alpha's velocity dropped to 22 points in Sprint 2 due to illness. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Team Alpha's velocity recovered to 35 points in Sprint 3. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Describe the trend in Team Alpha's velocity across all three sprints with specific numbers.",
+  "response_text": "Here’s the trend in **Team Alpha’s velocity** across the three sprints, with specific numbers:\n\n1. **Sprint 1**: **30 story points** – The team delivered a consistent baseline of work under standard conditions.\n2. **Sprint 2**: **22 story points** – A **significant drop of 8 points (26.7% decrease)** from Sprint 1, attributed to illness (a known external disruptor).\n3. **Sprint 3**: **35 story points** – A **recovery and improvement of 13 points (59% increase from Sprint 2)**, surpassing the original Sprint 1 velocity by **5 points (16.7% increase)**.\n\n### **Trend Summary**:\n- **Initial Stability**: Sprint 1 established a steady velocity of 30 points.\n- **Disruption**: Sprint 2 saw a decline to 22 points due to illness.\n- **Recovery & Growth**: Sprint 3 rebounded strongly to 35 points, exceeding the baseline.\n\nThis pattern suggests resilience and adaptability, with the team compensating for the disruption in Sprint 2 by optimizing workflows or reducing technical debt in Sprint 3.",
+  "run_number": 2,
+  "temperature": 0.7,
+  "latency_seconds": 2.0501,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Multi-Fact Synthesis (0-5)",
+      "score": 5,
+      "justification": "The response correctly synthesizes velocity data from all three sprint notes, accurately identifying the disruption in Sprint 2 and subsequent recovery in Sprint 3, while maintaining the context that standard conditions were present throughout.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Numerical Accuracy (0-5)",
+      "score": 5,
+      "justification": "All calculations including the 8-point drop (26.7%), 13-point increase (59%), and 5-point surplus over Sprint 1 (16.7%) are mathematically correct based on the given numerical values.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:49:19.031127+00:00"
+}

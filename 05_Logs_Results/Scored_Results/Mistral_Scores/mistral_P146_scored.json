@@ -1,0 +1,43 @@
+{
+  "id": "P146",
+  "category": "Long-context Retention",
+  "difficulty": "Hard",
+  "prompt": "Note 1: Server logs are currently retained for 30 days by default. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: For a period during a security investigation, retention was temporarily extended to 180 days. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: After the investigation concluded, retention was set back to the default of 30 days. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 4: A new compliance requirement recently mandated permanent retention for a specific subset of logs (authentication events only). The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 5: Non-authentication logs continue to follow the standard 30-day retention policy. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: What is the current retention policy for authentication logs versus all other logs, and explain how the policy evolved to reach this state?",
+  "response_text": "### **Current Retention Policy:**\n- **Authentication logs:** **Permanent retention** (no automatic deletion).\n- **All other logs (non-authentication):** **30-day retention** (default policy).\n\n---\n\n### **Evolution of the Policy:**\nThe retention policy evolved through the following stages:\n\n1. **Initial State (Default Policy):**\n   - **Authentication logs:** 30-day retention (same as all other logs).\n   - **All other logs:** 30-day retention.\n   - *Reason:* Standard default configuration with no special requirements.\n\n2. **Temporary Extension for Security Investigation:**\n   - **Authentication logs:** Extended to **180-day retention** (likely to preserve logs for forensic analysis during an incident).\n   - **All other logs:** Still followed the 30-day policy.\n   - *Reason:* Compliance with security investigation needs (e.g., potential breach analysis).\n\n3. **Reversion to Default After Investigation:**\n   - **Authentication logs:** Returned to **30-day retention** (since the investigation concluded).\n   - **All other logs:** Continued at 30-day retention.\n   - *Reason:* No ongoing compliance requirement justified permanent retention.\n\n4. **Mandated Permanent Retention for Authentication Logs:**\n   - **Authentication logs:** Changed to **permanent retention** (due to a new compliance requirement).\n   - **All other logs:** Remained at **30-day retention**.\n   - *Reason:* A regulatory or organizational policy (e.g., audit trails, fraud prevention, or legal compliance) now requires indefinite storage of authentication events.\n\n5. **Final State (Current Policy):**\n   - **Authentication logs:** Permanent retention (no expiration).\n   - **All other logs:** 30-day retention (unchanged).\n\n---\n\n### **Key Observations:**\n- The policy started as uniform (30 days for all logs).\n- A **temporary extension** (180 days) was applied only to authentication logs during an investigation.\n- After the investigation, retention reverted to 30 days—until a **permanent compliance mandate** was introduced, making authentication logs exempt from deletion.\n- Non-authentication logs remain unaffected by the new requirement.\n\nThis evolution reflects a shift from **standard operational practices** to **compliance-driven retention**, where authentication logs now hold special significance due to regulatory or security needs.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 3.6218,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Sequential Accuracy Score",
+      "score": 5,
+      "justification": "The response accurately reconstructs the chronological evolution across all five stages as described in the prompt.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Current-State Accuracy Score",
+      "score": 5,
+      "justification": "The final state correctly reflects permanent authentication retention and 30-day policy for other logs per the prompt's Note 4 and 5.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 5,
+      "justification": "All relevant facts from each note in the prompt were explicitly addressed without omissions.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Coherence Score",
+      "score": 5,
+      "justification": "The explanation is clearly structured with logical progression and distinct sections for each policy stage.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:46:39.556576+00:00"
+}

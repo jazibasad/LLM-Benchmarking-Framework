@@ -1,0 +1,31 @@
+{
+  "id": "P172",
+  "category": "Data Transformation",
+  "difficulty": "Medium",
+  "prompt": "Convert this YAML configuration into equivalent JSON:\nserver:\n  port: 8080\n  host: localhost\ndebug: true",
+  "response_text": "Here's the equivalent JSON representation of your YAML configuration:\n\n```json\n{\n  \"server\": {\n    \"port\": 8080,\n    \"host\": \"localhost\"\n  },\n  \"debug\": true\n}\n```\n\nKey conversion notes:\n1. YAML's `:` becomes `:` in JSON (key-value pairs)\n2. YAML's indentation becomes JSON's nested object structure\n3. YAML's `true` becomes JSON's `true` (no quotes needed for boolean values)\n4. YAML's string values (like \"localhost\") become JSON string values (with quotes)\n5. YAML's scalar values (like 8080) become JSON numbers (without quotes)",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.3648,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Structural Correctness",
+      "score": 5,
+      "justification": "The JSON correctly mirrors the YAML hierarchy with proper nesting and types, preserving all keys and values.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Data Fidelity",
+      "score": 5,
+      "justification": "Every value from the original YAML—including port number, host string, and boolean flag—is accurately represented without loss or modification.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:01:56.806085+00:00"
+}

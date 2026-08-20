@@ -1,0 +1,43 @@
+{
+  "id": "P164",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this Markdown table with merged-looking header groups into a properly normalized JSON array, correctly attributing each sub-column to its parent header:\n| Name | Q1 | | Q2 | |\n|------|-----|-----|-----|-----|\n| | Sales | Cost | Sales | Cost |\n| Alice | 100 | 40 | 120 | 45 |",
+  "response_text": "Here's the normalized JSON array representation of your table, with proper parent-child relationships for the header groups:\n\n```json\n[\n  {\n    \"parent_header\": \"Q1\",\n    \"children\": [\n      {\n        \"header\": \"Sales\",\n        \"data\": {\n          \"Alice\": 100\n        }\n      },\n      {\n        \"header\": \"Cost\",\n        \"data\": {\n          \"Alice\": 40\n        }\n      }\n    ]\n  },\n  {\n    \"parent_header\": \"Q2\",\n    \"children\": [\n      {\n        \"header\": \"Sales\",\n        \"data\": {\n          \"Alice\": 120\n        }\n      },\n      {\n        \"header\": \"Cost\",\n        \"data\": {\n          \"Alice\": 45\n        }\n      }\n    ]\n  }\n]\n```\n\nAlternatively, if you prefer a flatter structure that still maintains the hierarchy:\n\n```json\n[\n  {\n    \"name\": \"Alice\",\n    \"data\": {\n      \"Q1\": {\n        \"Sales\": 100,\n        \"Cost\": 40\n      },\n      \"Q2\": {\n        \"Sales\": 120,\n        \"Cost\": 45\n      }\n    }\n  }\n]\n```\n\nOr if you want to keep the original structure but with proper JSON formatting:\n\n```json\n[\n  {\n    \"headers\": {\n      \"Q1\": {\n        \"Sales\": null,\n        \"Cost\": null\n      },\n      \"Q2\": {\n        \"Sales\": null,\n        \"Cost\": null\n      }\n    },\n    \"data\": [\n      {\n        \"name\": \"Alice\",\n        \"values\": {\n          \"Q1_Sales\": 100,\n          \"Q1_Cost\": 40,\n          \"Q2_Sales\": 120,\n          \"Q2_Cost\": 45\n        }\n      }\n    ]\n  }\n]\n```\n\nThe first option is likely the most semantically correct representation of your table structure, showing the clear parent-child relationship between the quarter headers and their sub-headers.",
+  "run_number": 3,
+  "temperature": 0.7,
+  "latency_seconds": 3.3724,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Relational Integrity Score",
+      "score": 5,
+      "justification": "All provided options correctly map sub‑columns to their parent headers, preserving the Q1/Q2 → Sales/Cost relationships.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Edge Case Handling Score",
+      "score": 0,
+      "justification": "The response does not attempt to address irregular or inconsistent source data (e.g., missing values, uneven merges) and therefore shows no edge‑case handling.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Output Validity Score",
+      "score": 5,
+      "justification": "Each JSON alternative is syntactically valid and parsable as JSON.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 5,
+      "justification": "All source data (Alice’s Q1 Sales, Q1 Cost, Q2 Sales, Q2 Cost) appears in the output with no values omitted.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 15,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:54:44.769581+00:00"
+}

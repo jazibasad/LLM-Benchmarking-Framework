@@ -1,0 +1,31 @@
+{
+  "id": "P157",
+  "category": "Data Transformation",
+  "difficulty": "Easy",
+  "prompt": "Convert 72 degrees Fahrenheit to Celsius.",
+  "response_text": "To convert **72°F (Fahrenheit)** to **Celsius (°C)**, you can use the following formula:\n\n\\[\n°C = \\frac{5}{9} \\times (°F - 32)\n\\]\n\n**Step-by-Step Solution:**\n\n1. **Subtract 32 from the Fahrenheit temperature:**\n   \\[\n   72 - 32 = 40\n   \\]\n\n2. **Multiply the result by \\( \\frac{5}{9} \\):**\n   \\[\n   \\frac{5}{9} \\times 40 \\approx 22.222\\ldots\n   \\]\n\n3. **Round to a reasonable number of decimal places (if needed):**\n   \\[\n   22.22°C\n   \\]\n\n**Final Answer:**\n\\[\n\\boxed{22.22°C}\n\\]",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.5794,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Conversion Accuracy",
+      "score": 5,
+      "justification": "The model correctly calculates (72-32)*5/9 ≈ 22.22°C, matching the mathematically accurate conversion.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Format Compliance",
+      "score": 5,
+      "justification": "The response presents the conversion clearly, includes the final answer in the expected unit, and follows a logical, readable format.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:51:51.510586+00:00"
+}

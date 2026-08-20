@@ -1,0 +1,43 @@
+{
+  "id": "P167",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this CSV with a single column containing pipe-delimited multi-values (e.g. 'tags' column: 'red|blue|green') into a normalized JSON structure where each tag becomes a separate array element.",
+  "response_text": "Here's how you can convert your CSV with pipe-delimited values in a single column into a normalized JSON structure where each tag becomes a separate array element:\n\n### Input CSV Example:\n```\nid,tags\n1,red|blue|green\n2,apple|banana\n3,cat|dog\n```\n\n### Output JSON Structure:\n```json\n[\n  {\n    \"id\": 1,\n    \"tags\": [\"red\", \"blue\", \"green\"]\n  },\n  {\n    \"id\": 2,\n    \"tags\": [\"apple\", \"banana\"]\n  },\n  {\n    \"id\": 3,\n    \"tags\": [\"cat\", \"dog\"]\n  }\n]\n```\n\n---\n\n### How to Convert (Python Example):\nIf you're using Python with the `csv` and `json` modules:\n\n```python\nimport csv\nimport json\n\ndef csv_to_normalized_json(csv_file_path, output_json_path):\n    data = []\n\n    with open(csv_file_path, mode='r', encoding='utf-8') as csv_file:\n        csv_reader = csv.DictReader(csv_file)\n\n        for row in csv_reader:\n            # Split the pipe-delimited string into a list\n            tags = row['tags'].split('|') if 'tags' in row else []\n\n            # Create a new entry with the normalized tags\n            normalized_row = {\n                'id': row['id'],\n                'tags': tags\n            }\n            data.append(normalized_row)\n\n    # Write to JSON file\n    with open(output_json_path, 'w', encoding='utf-8') as json_file:\n        json.dump(data, json_file, indent=2, ensure_ascii=False)\n\n# Example usage\ncsv_to_normalized_json('input.csv', 'output.json')\n```\n\n---\n\n### Alternative (Pandas in Python):\nIf you're using Pandas:\n```python\nimport pandas as pd\n\n# Read CSV\ndf = pd.read_csv('input.csv')\n\n# Split the 'tags' column into a list\ndf['tags'] = df['tags'].str.split('|')\n\n# Convert to JSON\njson_data = df.to_json(orient='records', indent=2)\nprint(json_data)\n```\n\n---\n\n### Manual Conversion Steps (Non-Programmatic):\n1. Open your CSV file.\n2. For each row:\n   - Split the pipe-delimited string into individual tags (e.g., `'red|blue|green'` → `[\"red\", \"blue\", \"green\"]`).\n   - Create a new JSON object with the original fields (e.g., `id`) and the split tags as an array.\n3. Combine all rows into an array of these objects.\n\n---\n\n### Key Notes:\n- Empty or missing tags (e.g., `''` or `null`) will result in an empty array (`[]`).\n- If your CSV has headers, ensure the column name (e.g., `tags`) matches the key in the output JSON.",
+  "run_number": 5,
+  "temperature": 0.7,
+  "latency_seconds": 4.5005,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Relational Integrity Score",
+      "score": 5,
+      "justification": "The output correctly preserves the original id-to-tags relationship by mapping each id to its corresponding array of tags without breaking referential integrity.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Edge Case Handling Score",
+      "score": 3,
+      "justification": "The response notes that empty or missing tags will result in empty arrays but does not handle other potential edge cases like null values or malformed data, meeting the core requirement with minor gaps.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Output Validity Score",
+      "score": 5,
+      "justification": "The JSON output is syntactically valid, properly formatted with correct array syntax and object structure as shown in the examples.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 5,
+      "justification": "The response includes comprehensive conversion methods (Python csv/json, Pandas, and manual steps) and covers all source data transformation requirements without any data loss.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 18,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:59:03.945597+00:00"
+}

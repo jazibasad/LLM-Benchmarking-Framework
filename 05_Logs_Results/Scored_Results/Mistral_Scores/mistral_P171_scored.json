@@ -1,0 +1,31 @@
+{
+  "id": "P171",
+  "category": "Data Transformation",
+  "difficulty": "Medium",
+  "prompt": "Convert this nested JSON into a flat CSV with dot-notation column names:\n{\"user\": {\"name\": \"Dana\", \"address\": {\"city\": \"Austin\", \"zip\": \"73301\"}}}",
+  "response_text": "Here's the nested JSON converted into a flat CSV with dot-notation column names:\n\n```\nuser.name,user.address.city,user.address.zip\nDana,Austin,73301\n```\n\nThe CSV format follows these rules:\n1. Each nested path is joined with dots (.)\n2. The first row contains the dot-notation column headers\n3. The second row contains the corresponding values\n\nIf you want to include empty values for missing nested paths (though not needed in this simple case), the structure would remain the same since all paths exist in the original JSON.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.1427,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Structural Correctness",
+      "score": 5,
+      "justification": "The response correctly flattens all nested paths using dot-notation and maintains the hierarchical relationships in a clear, accurate format.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Data Fidelity",
+      "score": 5,
+      "justification": "All values from the source JSON are preserved exactly without any omissions, alterations, or extra data introduced.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:01:52.589557+00:00"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "P183",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this dense academic passage into exactly 3 sentences suitable for a high school student, WITHOUT losing the core causal claim, WITHOUT using any of the technical jargon from the original, and ending with a one-clause caveat about the study's limitations: 'The longitudinal cohort study utilized a difference-in-differences methodology to isolate the causal effect of the minimum wage increase on youth employment, controlling for regional economic heterogeneity via fixed effects. Results indicated a statistically significant but economically modest disemployment effect (-2.3%, 95% CI: -4.1% to -0.5%), concentrated primarily among workers under 20 in the retail sector. However, the study's reliance on state-level administrative data limits its ability to detect firm-level heterogeneity in response strategies.'",
+  "response_text": "Higher minimum wage laws slightly reduce job opportunities—especially for young workers under 20 in retail—but the impact isn’t very large. While the change does cause some jobs to disappear, the effect varies depending on the business and region. **However, the study’s focus on broad state data may miss how individual companies actually adjust to the wage increase.**",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.1273,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Structural Compliance Score",
+      "score": 5,
+      "justification": "The response follows the exact requested structure of three sentences, maintains a high school–appropriate tone, preserves the core causal claim without technical jargon, and concludes with a single-clause caveat about the study’s limitations.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Fidelity Under Constraint Score",
+      "score": 5,
+      "justification": "The response preserves the essential meaning—the minimum wage increase’s modest disemployment effect on young retail workers and the data’s limitation regarding firm‑level heterogeneity—without adding or fabricating information outside the source, all within the three‑sentence constraint.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Nuance Preservation Score",
+      "score": 5,
+      "justification": "The key limitation about state‑level data failing to capture firm‑level adjustment strategies is retained in the closing clause, and the economically modest impact is conveyed without flattening the source’s nuanced findings.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Audience Appropriateness Score",
+      "score": 5,
+      "justification": "All technical jargon from the original is accurately translated into plain, accessible language suitable for a high school student, with no residual technical terms that would hinder comprehension.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:06:33.695658+00:00"
+}

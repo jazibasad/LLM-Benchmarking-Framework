@@ -1,0 +1,43 @@
+{
+  "id": "P166",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this GraphQL query response (with nested pagination edges/nodes structure) into a flat, simplified JSON array containing only the actual data fields, discarding the pagination wrapper.",
+  "response_text": "To convert a GraphQL response with nested pagination edges/nodes structure into a flat JSON array containing only the actual data fields, you'll need to:\n\n1. Extract the `edges` array from the pagination wrapper\n2. Map each `edge` to its `node` (the actual data)\n3. Flatten the result into a simple array\n\nHere's how you would do it for a typical GraphQL pagination response:\n\n### Example Input (GraphQL Response):\n```json\n{\n  \"data\": {\n    \"query\": {\n      \"pageInfo\": {\n        \"hasNextPage\": true,\n        \"endCursor\": \"Y3Vyc29yOnYyOpYTk4NjU3MzA0MjUzNzUzNjQzNzU3Nzc3Nzc3Nzc3Nzc=\"\n      },\n      \"edges\": [\n        {\n          \"cursor\": \"Y3Vyc29yOnYyOpYTk4NjU3MzA0MjUzNzUzNjQzNzU3Nzc3Nzc3Nzc3Nzc=\",\n          \"node\": {\n            \"id\": \"1\",\n            \"name\": \"Item 1\",\n            \"description\": \"First item\",\n            \"metadata\": {\n              \"createdAt\": \"2023-01-01\",\n              \"updatedAt\": \"2023-01-02\"\n            }\n          }\n        },\n        {\n          \"cursor\": \"Y3Vyc29yOnYyOpYTk4NjU3MzA0MjUzNzUzNjQzNzU3Nzc3Nzc3Nzc3Nzc=\",\n          \"node\": {\n            \"id\": \"2\",\n            \"name\": \"Item 2\",\n            \"description\": \"Second item\",\n            \"metadata\": {\n              \"createdAt\": \"2023-01-02\",\n              \"updatedAt\": \"2023-01-03\"\n            }\n          }\n        }\n      ]\n    }\n  }\n}\n```\n\n### JavaScript Conversion Code:\n```javascript\nconst flatData = response.data.query.edges.map(edge => edge.node);\n```\n\n### Resulting Flat JSON Array:\n```json\n[\n  {\n    \"id\": \"1\",\n    \"name\": \"Item 1\",\n    \"description\": \"First item\",\n    \"metadata\": {\n      \"createdAt\": \"2023-01-01\",\n      \"updatedAt\": \"2023-01-02\"\n    }\n  },\n  {\n    \"id\": \"2\",\n    \"name\": \"Item 2\",\n    \"description\": \"Second item\",\n    \"metadata\": {\n      \"createdAt\": \"2023-01-02\",\n      \"updatedAt\": \"2023-01-03\"\n    }\n  }\n]\n```\n\n### If You Need to Handle Multiple Levels of Pagination:\nFor cases where you might have multiple pagination layers (e.g., nested connections), you would need to recursively process them:\n\n```javascript\nfunction flattenConnection(connection) {\n  if (!connection) return [];\n\n  const edges = connection.edges || [];\n  return edges.map(edge => edge.node);\n}\n\n// Example with nested connections\nconst flatData = flattenConnection(response.data.query.connection);\n```\n\n### General Solution (Handles Any Depth):\n```javascript\nfunction flattenGraphQLResponse(response) {\n  return Object.values(response)\n    .flatMap(item => {\n      if (Array.isArray(item)) {\n        return item.flatMap(flattenGraphQLResponse);\n      } else if (item && typeof item === 'object') {\n        if (item.edges) {\n          return item.edges.map(edge => edge.node);\n        }\n        return Object.values(item).flatMap(flattenGraphQLResponse);\n      }\n      return item;\n    })\n    .filter(Boolean); // Remove any falsy values\n}\n```\n\nThis will handle cases where your GraphQL response has:\n- Multiple levels of pagination\n- Nested connections\n- Arrays of objects\n- Simple scalar values",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 16.2119,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Relational Integrity Score",
+      "score": 3,
+      "justification": "The response correctly maps edges to nodes and preserves nested data like metadata, but the general solution does not consistently maintain relationships across deeply nested structures and provides no example output for the recursive case.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Edge Case Handling Score",
+      "score": 2,
+      "justification": "While the response guards against missing connections and null values to some degree, it does not robustly handle malformed edges, nodes with different shapes, or arrays without pagination wrappers that might be expected in a real-world GraphQL response.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Output Validity Score",
+      "score": 4,
+      "justification": "All provided output examples are syntactically valid JSON arrays containing only the node data, but the general recursive solution may produce non-intuitive output for scalar or mixed-type inputs without clear structure guarantees.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 4,
+      "justification": "The response includes all actual data fields from the example nodes into the output, but the general solution risks dropping top-level scalars or non-edge-node structures without explanation of their expected handling.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 13,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:55:56.961743+00:00"
+}

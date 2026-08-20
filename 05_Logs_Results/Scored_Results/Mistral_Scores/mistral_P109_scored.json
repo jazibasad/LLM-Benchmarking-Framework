@@ -1,0 +1,31 @@
+{
+  "id": "P109",
+  "category": "Coding & System Architecture",
+  "difficulty": "Medium",
+  "prompt": "Design a custom generic Stack data structure in C# backed by a dynamic array that automatically resizes when capacity is exceeded.",
+  "response_text": "# Custom Generic Stack in C# with Dynamic Resizing\n\nHere's a complete implementation of a generic Stack data structure in C# that uses a dynamic array (array list) with automatic resizing when capacity is exceeded:\n\n```csharp\nusing System;\n\npublic class DynamicStack<T>\n{\n    private T[] _items;\n    private int _count;\n    private int _capacity;\n\n    // Default initial capacity\n    private const int DefaultCapacity = 4;\n\n    public DynamicStack()\n    {\n        _items = new T[DefaultCapacity];\n        _count = 0;\n        _capacity = DefaultCapacity;\n    }\n\n    public DynamicStack(int initialCapacity)\n    {\n        if (initialCapacity <= 0)\n        {\n            throw new ArgumentOutOfRangeException(nameof(initialCapacity), \"Initial capacity must be positive\");\n        }\n\n        _items = new T[initialCapacity];\n        _count = 0;\n        _capacity = initialCapacity;\n    }\n\n    public int Count => _count;\n    public bool IsEmpty => _count == 0;\n    public int Capacity => _capacity;\n\n    public void Push(T item)\n    {\n        if (item == null)\n        {\n            throw new ArgumentNullException(nameof(item), \"Item cannot be null\");\n        }\n\n        // Check if we need to resize\n        if (_count == _capacity)\n        {\n            Resize();\n        }\n\n        _items[_count++] = item;\n    }\n\n    public T Pop()\n    {\n        if (IsEmpty)\n        {\n            throw new InvalidOperationException(\"Stack is empty\");\n        }\n\n        T item = _items[--_count];\n        _items[_count] = default; // Help garbage collection\n\n        // Check if we can shrink the array\n        if (_count > 0 && _count == _capacity / 4)\n        {\n            Shrink();\n        }\n\n        return item;\n    }\n\n    public T Peek()\n    {\n        if (IsEmpty)\n        {\n            throw new InvalidOperationException(\"Stack is empty\");\n        }\n\n        return _items[_count - 1];\n    }\n\n    public void Clear()\n    {\n        for (int i = 0; i < _count; i++)\n        {\n            _items[i] = default;\n        }\n\n        _count = 0;\n    }\n\n    private void Resize()\n    {\n        // Double the capacity when resizing up\n        int newCapacity = _capacity * 2;\n        Array.Resize(ref _items, newCapacity);\n        _capacity = newCapacity;\n    }\n\n    private void Shrink()\n    {\n        // Halve the capacity when resizing down (but not below initial capacity)\n        int newCapacity = Math.Max(_capacity / 2, DefaultCapacity);\n        Array.Resize(ref _items, newCapacity);\n        _capacity = newCapacity;\n    }\n\n    public override string ToString()\n    {\n        if (_count == 0)\n        {\n            return \"Empty Stack\";\n        }\n\n        var result = new System.Text.StringBuilder();\n        result.Append(\"Stack (top to bottom): [\");\n\n        for (int i = _count - 1; i >= 0; i--)\n        {\n            result.Append(_items[i]);\n            if (i > 0)\n            {\n                result.Append(\", \");\n            }\n        }\n\n        result.Append(\"]\");\n        return result.ToString();\n    }\n}\n```\n\n## Features of this implementation:\n\n1. **Generic Type Support**: Works with any data type (value types or reference types)\n2. **Dynamic Resizing**:\n   - Automatically doubles capacity when full (amortized O(1) push operations)\n   - Shrinks capacity when usage drops below 25% (but never below initial capacity)\n3. **Standard Stack Operations**:\n   - `Push(T item)` - Adds an item to the top\n   - `Pop()` - Removes and returns the top item\n   - `Peek()` - Returns the top item without removing it\n   - `Clear()` - Empties the stack\n4. **Properties**:\n   - `Count` - Number of items in the stack\n   - `IsEmpty` - Boolean indicating if stack is empty\n   - `Capacity` - Current array capacity\n5. **Error Handling**: Proper exceptions for invalid operations\n\n## Example Usage:\n\n```csharp\nclass Program\n{\n    static void Main()\n    {\n        // Test with integers\n        var intStack = new DynamicStack<int>();\n        intStack.Push(10);\n        intStack.Push(20);\n        intStack.Push(30);\n\n        Console.WriteLine(intStack.Peek()); // 30\n        Console.WriteLine(intStack.Pop());  // 30\n        Console.WriteLine(intStack.Count); // 2\n\n        // Test with strings\n        var stringStack = new DynamicStack<string>();\n        stringStack.Push(\"Hello\");\n        stringStack.Push(\"World\");\n\n        Console.WriteLine(stringStack.ToString()); // Stack (top to bottom): [World, Hello]\n\n        // Test resizing\n        for (int i = 0; i < 100; i++)\n        {\n            stringStack.Push($\"Item {i}\");\n        }\n\n        Console.WriteLine($\"Capacity after 100 pushes: {stringStack.Capacity}\");\n    }\n}\n```\n\nThis implementation provides efficient stack operations with automatic memory management similar to .NET's built-in `Stack<T>` but with more control over the resizing behavior.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 9.9921,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Generics Usage (0-5)",
+      "score": 5,
+      "justification": "The response defines a generic class DynamicStack<T> with proper <T> usage throughout.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Array Resizing (0-5)",
+      "score": 5,
+      "justification": "It implements doubling capacity on push and shrinking when below 25% usage with proper Array.Resize calls.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:24:20.292902+00:00"
+}

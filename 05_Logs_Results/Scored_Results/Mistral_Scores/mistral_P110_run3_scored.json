@@ -1,0 +1,31 @@
+{
+  "id": "P110",
+  "category": "Coding & System Architecture",
+  "difficulty": "Medium",
+  "prompt": "Implement a Publisher-Subscriber (Pub-Sub) event broker class in Python supporting topic subscription, unsubscribe, and asynchronous event broadcasting.",
+  "response_text": "# Pub-Sub Event Broker in Python\n\nHere's a complete implementation of a Publisher-Subscriber (Pub-Sub) event broker in Python that supports topic subscription, unsubscription, and asynchronous event broadcasting:\n\n```python\nimport asyncio\nfrom typing import Dict, List, Callable, Any, Set\nfrom collections import defaultdict\n\nclass EventBroker:\n    def __init__(self):\n        self._subscriptions: Dict[str, Set[Callable]] = defaultdict(set)\n        self._loop = asyncio.get_event_loop()\n\n    def subscribe(self, topic: str, callback: Callable) -> None:\n        \"\"\"Subscribe a callback function to a specific topic.\n\n        Args:\n            topic: The topic to subscribe to\n            callback: The function to call when an event is published to this topic\n        \"\"\"\n        self._subscriptions[topic].add(callback)\n\n    def unsubscribe(self, topic: str, callback: Callable) -> None:\n        \"\"\"Unsubscribe a callback function from a specific topic.\n\n        Args:\n            topic: The topic to unsubscribe from\n            callback: The function to stop calling when events are published\n        \"\"\"\n        if topic in self._subscriptions:\n            self._subscriptions[topic].discard(callback)\n\n    def publish(self, topic: str, event: Any, *args, **kwargs) -> None:\n        \"\"\"Publish an event to a specific topic.\n\n        Args:\n            topic: The topic to publish to\n            event: The event data to send\n            *args: Additional positional arguments to pass to callbacks\n            **kwargs: Additional keyword arguments to pass to callbacks\n        \"\"\"\n        # Create a task to run the callbacks asynchronously\n        asyncio.create_task(self._publish_async(topic, event, *args, **kwargs))\n\n    async def _publish_async(self, topic: str, event: Any, *args, **kwargs) -> None:\n        \"\"\"Internal method to handle asynchronous publishing of events.\"\"\"\n        callbacks = self._subscriptions.get(topic, set())\n\n        # Create tasks for all callbacks to avoid blocking\n        tasks = []\n        for callback in callbacks:\n            task = asyncio.create_task(callback(event, *args, **kwargs))\n            tasks.append(task)\n\n        # Wait for all tasks to complete (optional - could also run them concurrently)\n        await asyncio.gather(*tasks, return_exceptions=True)\n\n    def close(self) -> None:\n        \"\"\"Clean up the event broker.\"\"\"\n        self._subscriptions.clear()\n\n    def __del__(self):\n        \"\"\"Destructor to ensure cleanup.\"\"\"\n        self.close()\n```\n\n## Usage Example\n\nHere's how you can use this EventBroker:\n\n```python\nasync def main():\n    # Create the event broker\n    broker = EventBroker()\n\n    # Define some callback functions\n    async def callback1(event):\n        print(f\"Callback 1 received: {event}\")\n\n    async def callback2(event):\n        print(f\"Callback 2 received: {event}\")\n\n    async def callback3(event):\n        print(f\"Callback 3 received: {event} with extra arg: {event.get('extra', 'none')}\")\n\n    # Subscribe to topics\n    broker.subscribe(\"topic1\", callback1)\n    broker.subscribe(\"topic2\", callback2)\n    broker.subscribe(\"topic1\", callback3)\n\n    # Publish some events\n    await broker.publish(\"topic1\", {\"message\": \"Hello from topic1\"})\n    await broker.publish(\"topic2\", {\"message\": \"Hello from topic2\"})\n\n    # Unsubscribe one callback\n    broker.unsubscribe(\"topic1\", callback1)\n\n    # Publish again - callback1 won't receive this\n    await broker.publish(\"topic1\", {\"message\": \"Hello again\", \"extra\": \"value\"})\n\n    # Close the broker\n    broker.close()\n\n# Run the example\nasyncio.run(main())\n```\n\n## Key Features\n\n1. **Asynchronous Operation**: Events are published asynchronously to avoid blocking the main thread.\n2. **Topic-Based**: Supports multiple topics with separate subscription lists.\n3. **Multiple Callbacks**: Can have multiple callbacks subscribed to the same topic.\n4. **Clean Unsubscription**: Easy to unsubscribe specific callbacks.\n5. **Error Handling**: Uses `gather` with `return_exceptions=True` to handle callback errors gracefully.\n\n## Advanced Version with Priority and Error Handling\n\nFor a more robust version, you could add:\n\n1. Priority levels for callbacks\n2. Better error handling and logging\n3. Support for one-time subscriptions\n4. Thread safety for multi-process scenarios\n\nWould you like me to elaborate on any of these aspects or show a different implementation approach?",
+  "run_number": 3,
+  "temperature": 0.7,
+  "latency_seconds": 8.1027,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Event Dispatch",
+      "score": 5,
+      "justification": "The implementation correctly uses a dictionary mapping topics to sets of callbacks, with proper subscription, unsubscription, and iteration during publishing.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Clean Api",
+      "score": 5,
+      "justification": "The subscribe, unsubscribe, and publish methods have clear, type-annotated signatures that are simple and follow conventional patterns.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:25:10.476788+00:00"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "P164",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this Markdown table with merged-looking header groups into a properly normalized JSON array, correctly attributing each sub-column to its parent header:\n| Name | Q1 | | Q2 | |\n|------|-----|-----|-----|-----|\n| | Sales | Cost | Sales | Cost |\n| Alice | 100 | 40 | 120 | 45 |",
+  "response_text": "Here's the normalized JSON array that correctly attributes each sub-column to its parent header:\n\n```json\n[\n  {\n    \"name\": \"Alice\",\n    \"quarters\": [\n      {\n        \"quarter\": \"Q1\",\n        \"metrics\": {\n          \"Sales\": 100,\n          \"Cost\": 40\n        }\n      },\n      {\n        \"quarter\": \"Q2\",\n        \"metrics\": {\n          \"Sales\": 120,\n          \"Cost\": 45\n        }\n      }\n    ]\n  }\n]\n```\n\nThis structure:\n1. Keeps the person's name as the main identifier\n2. Groups all quarter data under a \"quarters\" array\n3. For each quarter, stores the metrics in a nested object\n4. Maintains the clear relationship between quarters and their respective metrics\n\nIf you need to include the header information in the output (for documentation purposes), you could also structure it like this:\n\n```json\n{\n  \"headers\": {\n    \"Name\": \"Name\",\n    \"Q1\": {\n      \"Sales\": \"Sales (Q1)\",\n      \"Cost\": \"Cost (Q1)\"\n    },\n    \"Q2\": {\n      \"Sales\": \"Sales (Q2)\",\n      \"Cost\": \"Cost (Q2)\"\n    }\n  },\n  \"data\": [\n    {\n      \"name\": \"Alice\",\n      \"Q1\": {\n        \"Sales\": 100,\n        \"Cost\": 40\n      },\n      \"Q2\": {\n        \"Sales\": 120,\n        \"Cost\": 45\n      }\n    }\n  ]\n}\n```",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 3.5499,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Relational Integrity Score",
+      "score": 5,
+      "justification": "The response correctly nests each quarter's metrics under a quarter object, preserving the parent‑child relationship between headers and sub‑columns.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Edge Case Handling Score",
+      "score": 5,
+      "justification": "Although the source data contains no irregularities, the response handles it without errors or silent loss, demonstrating proper handling of potential edge cases.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Output Validity Score",
+      "score": 5,
+      "justification": "Both JSON examples are syntactically valid, conforming to JSON specification.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 5,
+      "justification": "All fields from the table (Name, Q1 Sales, Q1 Cost, Q2 Sales, Q2 Cost) are present in the output with no data omitted.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:54:18.862216+00:00"
+}

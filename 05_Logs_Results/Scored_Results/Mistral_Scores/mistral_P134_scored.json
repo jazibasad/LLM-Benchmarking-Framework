@@ -1,0 +1,31 @@
+{
+  "id": "P134",
+  "category": "Long-context Retention",
+  "difficulty": "Easy",
+  "prompt": "Note 1: Employee A was hired in March 2021. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Employee B was hired in July 2022. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Employee C was hired in January 2020. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Who was hired first?",
+  "response_text": "Based on the notes provided:\n\n- Employee C was hired in **January 2020**.\n- Employee A was hired in **March 2021**.\n- Employee B was hired in **July 2022**.\n\n**Employee C was hired first.**",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.7402,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Fact Recall Accuracy",
+      "score": 5,
+      "justification": "The response correctly identifies Employee C as hired in January 2020, the earliest date among the three, and accurately answers the question.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Distraction Resistance",
+      "score": 5,
+      "justification": "The response correctly extracts the hire dates while ignoring the repetitive standard-condition filler text surrounding each employee note.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:40:09.756025+00:00"
+}

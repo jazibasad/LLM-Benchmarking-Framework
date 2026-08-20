@@ -1,0 +1,31 @@
+{
+  "id": "P131",
+  "category": "Ambiguity Handling",
+  "difficulty": "Medium",
+  "prompt": "Summarize the attached file.",
+  "response_text": "Since I cannot access or view attached files directly, I’ll outline how you can summarize an attached file effectively on your own:\n\n### **Steps to Summarize an Attached File:**\n1. **Read the File Thoroughly**\n   - Scan the entire document to understand its structure (e.g., sections, headings, key points).\n   - Identify the main topic, purpose, and audience.\n\n2. **Extract Key Information**\n   - Highlight or note down:\n     - **Main ideas** (thesis, arguments, or findings).\n     - **Supporting details** (data, examples, evidence).\n     - **Key terms** (definitions, jargon, or technical terms).\n     - **Author’s conclusions or recommendations**.\n\n3. **Organize the Summary**\n   - **Brief Overview**: 1–2 sentences summarizing the document’s purpose.\n   - **Main Points**: Bullet points or short paragraphs covering:\n     - Introduction/background.\n     - Key sections (e.g., methods, results, discussion).\n     - Conclusions or actionable insights.\n   - **Optional**: Add context (e.g., \"This report analyzes X to address Y\").\n\n4. **Write Concise & Neutral Language**\n   - Avoid paraphrasing too closely; use your own words.\n   - Focus on **what matters**, not every detail.\n   - Example:\n     > *\"The attached memo outlines [purpose], highlighting [key findings] and recommends [actions]. The data shows [summary of results], suggesting [implications].\"*\n\n5. **Check for Clarity**\n   - Ensure the summary is understandable to someone unfamiliar with the original.\n   - Remove redundant or tangential information.\n\n---\n### **Example Summary Template**\n*(Customize based on the file type—e.g., research paper, report, email, etc.)*\n\n**Title/Subject**: [Brief description]\n**Author/Source**: [Name/organization]\n**Purpose**: [Why was this written?]\n**Key Points**:\n- [Point 1: Main argument/data]\n- [Point 2: Supporting evidence]\n- [Point 3: Conclusions/recommendations]\n**Implications**: [How does this affect the reader?]\n\n---\n### **If You Share the File Content Here:**\nIf you paste the **text or key sections** of the attached file, I can help you draft a precise summary! For example:\n- Copy-paste excerpts (e.g., abstract, introduction, or bullet points).\n- Specify the file type (e.g., PDF, Word, email) and length (e.g., 5 pages, 10 slides).",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 4.3591,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Missing Context Identification",
+      "score": 5,
+      "justification": "The response explicitly states that it cannot access attached files and identifies the missing information as the file's content, offering to assist if the text is provided.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Constructive Response",
+      "score": 5,
+      "justification": "The response provides a detailed, step-by-step guide and template on how to summarize a file, offering highly useful general guidance despite the inability to access the attachment.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:36:53.964182+00:00"
+}

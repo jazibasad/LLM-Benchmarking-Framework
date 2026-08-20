@@ -1,0 +1,31 @@
+{
+  "id": "P151",
+  "category": "Long-context Retention",
+  "difficulty": "Medium",
+  "prompt": "Note 1: Policy revision 1 required manager approval for expenses over $500. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Policy revision 2 lowered that threshold to $300. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Policy revision 3 raised it back up to $400. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: What is the CURRENT approval threshold, and how did it change over the three revisions?",
+  "response_text": "Here’s the breakdown of the **current approval threshold** and the **changes over the three policy revisions**:\n\n1. **Policy Revision 1**:\n   - **Threshold**: $500 (manager approval required for expenses over this amount).\n   - **Status**: Initial policy.\n\n2. **Policy Revision 2**:\n   - **Change**: Lowered the threshold from **$500 → $300**.\n   - **Reason**: Made approvals required for smaller expenses (more frequent oversight).\n\n3. **Policy Revision 3**:\n   - **Change**: Raised the threshold from **$300 → $400**.\n   - **Reason**: Relaxed oversight slightly, requiring approval only for mid-sized expenses.\n\n### **Current Approval Threshold**:\n**$400** (manager approval required for expenses **over $400**).\n\n### **Summary of Changes**:\n- **Revision 1**: $500 (baseline)\n- **Revision 2**: **Decrease** to $300 (tighter control)\n- **Revision 3**: **Increase** to $400 (moderate adjustment) → **Current policy**.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.9415,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Multi-Fact Synthesis (0-5): Evaluates whether the response correctly combines information from multiple, sequentially updated facts",
+      "score": 5,
+      "justification": "The response accurately extracts and sequences the three policy thresholds, correctly stating the $500 baseline, $300 reduction, and $400 increase, and identifies the current $400 threshold.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Numerical Accuracy (0-5): Evaluates whether any calculations or comparisons across the facts are computed correctly",
+      "score": 5,
+      "justification": "All numeric comparisons are correct, with accurate identification of the $500→$300 decrease and $300→$400 increase, and no arithmetic errors.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:48:23.740099+00:00"
+}

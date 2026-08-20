@@ -1,0 +1,43 @@
+{
+  "id": "P144",
+  "category": "Long-context Retention",
+  "difficulty": "Hard",
+  "prompt": "Note 1: The original API returned dates in US format (MM/DD/YYYY). The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: An internationalization update changed the default to ISO format (YYYY-MM-DD). The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: A backward-compatibility flag was added allowing clients to request the old US format explicitly. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 4: Six months later, the backward-compatibility flag was deprecated and scheduled for removal. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 5: As of the most recent release, the flag has been fully removed and ISO format is now the only option. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: What date format does the API return today, and can old clients still request the US format? Trace the full history that led to the current behavior.",
+  "response_text": "Here’s the full historical trace of the API’s date format behavior, leading to the current state:\n\n---\n\n### **History of Date Format Changes**\n1. **Initial State (Original API)**\n   - **Format**: US format (`MM/DD/YYYY`).\n   - **Behavior**: All dates returned in this format by default.\n   - **No backward compatibility**: Clients expecting US format would work as-is.\n\n2. **Internationalization Update (Note 2)**\n   - **Change**: The default date format was updated to **ISO format (`YYYY-MM-DD`)** for consistency with international standards.\n   - **Impact**:\n     - Existing clients relying on US format would now receive ISO dates by default.\n     - No flag or option was added to retain the old format (yet).\n   - **Result**: A breaking change for clients not updated to handle ISO dates.\n\n3. **Backward Compatibility Flag Added (Note 3)**\n   - **Change**: A **backward-compatibility flag** was introduced (e.g., `?format=us` or similar) to allow clients to explicitly request the old US format.\n   - **Behavior**:\n     - Default: ISO format (`YYYY-MM-DD`).\n     - With flag: US format (`MM/DD/YYYY`) for clients that needed it.\n   - **Impact**: Mitigated disruption for legacy clients while transitioning to ISO.\n\n4. **Deprecation of Backward-Compatibility Flag (Note 4)**\n   - **Change**: The flag was **deprecated** (marked as obsolete) and scheduled for removal in a future release.\n   - **Behavior**:\n     - Flag still worked (for backward compatibility during transition).\n     - Documentation warned clients to stop relying on it.\n   - **Goal**: Force adoption of ISO format as the sole standard.\n\n5. **Final Removal of Flag (Note 5)**\n   - **Change**: The backward-compatibility flag was **fully removed**.\n   - **Current Behavior**:\n     - **Default format**: **ISO (`YYYY-MM-DD`)** (only option).\n     - No way to request US format (`MM/DD/YYYY`).\n\n---\n\n### **Answer to Your Questions**\n1. **What date format does the API return today?**\n   - **ISO format (`YYYY-MM-DD`)** is the **only** supported format.\n\n2. **Can old clients still request the US format?**\n   - **No**. The backward-compatibility flag was removed, and there is no documented or functional way to request the US format.\n\n---\n\n### **Key Takeaways**\n- The API underwent a **controlled migration** from US to ISO format over ~6–7 months (Notes 2–5).\n- The transition was **gradual**:\n  1. Default changed to ISO (breaking change).\n  2. Added a flag to support legacy clients (temporary fix).\n  3. Deprecated the flag (warning to migrate).\n  4. Removed the flag entirely (final enforcement of ISO).\n- Today, **ISO is mandatory**; US format is no longer available, even implicitly.\n\nIf legacy clients still need US format, they would need to:\n- Update their code to handle ISO dates, or\n- Use a local proxy/server to reformat responses (if they cannot modify their code).",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 4.8308,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Sequential Accuracy Score",
+      "score": 5,
+      "justification": "The response correctly enumerates each chronological change from the original US format through the deprecation and removal of the flag, preserving the exact order of events.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Current-State Accuracy Score",
+      "score": 5,
+      "justification": "It accurately describes the current state that ISO format is the only supported output and that US format can no longer be requested.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 5,
+      "justification": "All key facts from the notes are incorporated into the historical trace and the answer to the question, without omitting any relevant detail.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Coherence Score",
+      "score": 5,
+      "justification": "The explanation is well‑structured with clear headings and a logical flow, making a complex sequence easy to follow.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:45:57.200628+00:00"
+}

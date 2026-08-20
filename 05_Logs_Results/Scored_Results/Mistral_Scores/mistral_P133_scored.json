@@ -1,0 +1,31 @@
+{
+  "id": "P133",
+  "category": "Long-context Retention",
+  "difficulty": "Easy",
+  "prompt": "Note 1: The server room temperature was recorded at 22 degrees Celsius on Monday. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: On Tuesday, the recorded temperature was 24 degrees Celsius. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: On Wednesday, the recorded temperature was 21 degrees Celsius. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: What was the temperature recorded on Tuesday?",
+  "response_text": "From **Note 2**, the temperature recorded on Tuesday was:\n\n**24 degrees Celsius.**",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.5116,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Fact Recall Accuracy",
+      "score": 5,
+      "justification": "The model correctly identified the temperature on Tuesday as 24 degrees Celsius from Note 2, matching the original prompt exactly.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Distraction Resistance",
+      "score": 5,
+      "justification": "The model accurately isolated the relevant information (temperature in Note 2) without being confused by the surrounding filler text about maintenance, standard conditions, and other parameters.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:39:50.770834+00:00"
+}

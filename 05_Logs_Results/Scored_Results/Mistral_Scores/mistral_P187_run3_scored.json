@@ -1,0 +1,43 @@
+{
+  "id": "P187",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this scientific methods section into a single paragraph a journalist could use, explicitly flagging any part of the methodology that limits how strongly the results can be generalized: 'Participants (n=45, convenience sample from a single university) completed a 6-week intervention involving daily 10-minute mindfulness sessions via a mobile app. Self-reported stress levels were measured using the PSS-10 scale at baseline and post-intervention. No control group was used due to resource constraints; instead, a within-subjects pre-post design was employed.'",
+  "response_text": "In a six-week study testing the effects of mindfulness, researchers recruited 45 participants—all students from a single university—who completed daily 10-minute mindfulness sessions via a mobile app. Stress levels were assessed using the standard **Perceived Stress Scale (PSS-10)** before and after the intervention, but **without a control group** due to budget limitations. While the **within-subjects (pre-post) design** allowed participants to serve as their own controls—helping isolate the intervention’s effect—the small, **convenience sample from one university** and lack of randomization or external comparison group **limit how broadly these findings can be generalized** to broader populations or other mindfulness approaches.",
+  "run_number": 3,
+  "temperature": 0.7,
+  "latency_seconds": 1.5651,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Structural Compliance Score",
+      "score": 4,
+      "justification": "The response is a single paragraph as requested, though it omits explicit labeling of sections, slightly reducing structural precision.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Fidelity Under Constraint Score",
+      "score": 5,
+      "justification": "All key methodological details (sample size, app-based sessions, pre-post timing, budget constraints) are accurately paraphrased without fabrication.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Nuance Preservation Score",
+      "score": 5,
+      "justification": "Proper emphasis is maintained on critical limitations of the study design, including the convenience sample, single-site recruitment, absence of a control group, and lack of randomization.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Audience Appropriateness Score",
+      "score": 4,
+      "justification": "Technical terms like PSS-10 are spelled out in context and jargon is minimized, though 'within-subjects' and 'convenience sample' could be further simplified for journalistic readers.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 18,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:07:46.294229+00:00"
+}

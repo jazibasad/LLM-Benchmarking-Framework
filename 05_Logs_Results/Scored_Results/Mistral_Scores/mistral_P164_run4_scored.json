@@ -1,0 +1,43 @@
+{
+  "id": "P164",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this Markdown table with merged-looking header groups into a properly normalized JSON array, correctly attributing each sub-column to its parent header:\n| Name | Q1 | | Q2 | |\n|------|-----|-----|-----|-----|\n| | Sales | Cost | Sales | Cost |\n| Alice | 100 | 40 | 120 | 45 |",
+  "response_text": "Here's the normalized JSON array where each sub-column is properly attributed to its parent header:\n\n```json\n[\n  {\n    \"Name\": \"Alice\",\n    \"Metrics\": {\n      \"Q1\": {\n        \"Sales\": 100,\n        \"Cost\": 40\n      },\n      \"Q2\": {\n        \"Sales\": 120,\n        \"Cost\": 45\n      }\n    }\n  }\n]\n```\n\nThis structure:\n1. Keeps the person's name as a top-level property\n2. Groups all metrics under a \"Metrics\" object\n3. Organizes each quarter's data under its own key (Q1, Q2)\n4. Nests the specific metrics (Sales/Cost) under each quarter\n\nIf you need to include the empty header row in the output (to show the structure), you could alternatively represent it like this:\n\n```json\n{\n  \"structure\": {\n    \"Name\": \"Name\",\n    \"Metrics\": {\n      \"Q1\": {\n        \"Sales\": \"Sales\",\n        \"Cost\": \"Cost\"\n      },\n      \"Q2\": {\n        \"Sales\": \"Sales\",\n        \"Cost\": \"Cost\"\n      }\n    }\n  },\n  \"data\": [\n    {\n      \"Name\": \"Alice\",\n      \"Metrics\": {\n        \"Q1\": {\n          \"Sales\": 100,\n          \"Cost\": 40\n        },\n        \"Q2\": {\n          \"Sales\": 120,\n          \"Cost\": 45\n        }\n      }\n    }\n  ]\n}\n```",
+  "run_number": 4,
+  "temperature": 0.7,
+  "latency_seconds": 4.0119,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Relational Integrity Score",
+      "score": 5,
+      "justification": "The response preserved all parent‑child relationships correctly, fully reflecting the hierarchical structure of the source table.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Edge Case Handling Score",
+      "score": 5,
+      "justification": "Empty header columns were handled without error, maintaining data integrity throughout the transformation.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Output Validity Score",
+      "score": 5,
+      "justification": "The JSON output is syntactically valid and conforms to the required format.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 5,
+      "justification": "All source data including name, quarters, and metric values are completely represented with no omissions.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:55:05.966776+00:00"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "P187",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this scientific methods section into a single paragraph a journalist could use, explicitly flagging any part of the methodology that limits how strongly the results can be generalized: 'Participants (n=45, convenience sample from a single university) completed a 6-week intervention involving daily 10-minute mindfulness sessions via a mobile app. Self-reported stress levels were measured using the PSS-10 scale at baseline and post-intervention. No control group was used due to resource constraints; instead, a within-subjects pre-post design was employed.'",
+  "response_text": "In this study, researchers tested whether a six-week, daily 10-minute mindfulness app intervention could reduce stress among 45 participants—all drawn from a single university through a convenience sample, which *limits how broadly the findings can be applied* to other populations. Stress levels were tracked using the standard **Perceived Stress Scale (PSS-10)** before and after the intervention, but since there was no control group (due to resource constraints) and the design relied solely on within-subject comparisons, the results may reflect natural variation or placebo effects rather than the intervention’s *direct* impact. The small, homogeneous sample—restricted to one university—further weakens the ability to generalize these findings to diverse groups.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.5654,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Structural Compliance Score",
+      "score": 5,
+      "justification": "The response is a single paragraph for a journalist, explicitly flagging methodology limitations as required.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Fidelity Under Constraint Score",
+      "score": 5,
+      "justification": "The response accurately preserves all factual details from the source without adding or omitting key information.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Nuance Preservation Score",
+      "score": 5,
+      "justification": "The response retains critical limitations (convenience sample, no control group, within-subjects design) that affect generalizability.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Audience Appropriateness Score",
+      "score": 5,
+      "justification": "The response uses accessible language for a journalist, with clear explanations of technical terms like 'PSS-10'.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:07:28.987617+00:00"
+}

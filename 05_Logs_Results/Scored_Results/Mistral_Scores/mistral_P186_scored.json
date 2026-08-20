@@ -1,0 +1,43 @@
+{
+  "id": "P186",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this multi-stakeholder meeting transcript into a decision log with exactly one entry per DISTINCT decision made (not per speaker turn), noting who owns follow-up for each: 'Alright, let's talk about the vendor contract. I think we should go with Vendor A given the pricing. Sarah: I agree, but we need legal to review the SLA terms first - I'll send that over today. Also, on the office move, we've decided to push it to Q3. Mike will coordinate with facilities. One more thing - we're NOT moving forward with the rebrand this year, budget's too tight. That's final for now.'",
+  "response_text": "Here’s the decision log based on the transcript, with **one entry per distinct decision** and clear follow-up ownership:\n\n1. **Vendor Selection**\n   - **Decision**: Proceed with **Vendor A** for the contract, pending legal review of SLA terms.\n   - **Follow-up Owner**: *Sarah* (to send SLA terms to legal) + *Legal team* (to review and approve).\n\n2. **Office Move Timeline**\n   - **Decision**: Delay the office move to **Q3**.\n   - **Follow-up Owner**: *Mike* (to coordinate with facilities).\n\n3. **Rebrand Initiative**\n   - **Decision**: **Cancel the rebrand project** for this year due to budget constraints.\n   - **Follow-up Owner**: *Project lead/Finance* (to document cancellation and reallocate funds, if applicable).",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 2.6177,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Structural Compliance Score (0-5)",
+      "score": 5,
+      "justification": "The response provides exactly one numbered entry per distinct decision (Vendor Selection, Office Move Timeline, Rebrand Initiative), each with a labeled Decision and Follow-up Owner section, matching the required decision log structure.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Fidelity Under Constraint Score (0-5)",
+      "score": 5,
+      "justification": "All decisions and their details are accurately extracted from the transcript without adding unsupported information or omitting key elements such as Q3 timeline and budget constraints.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Nuance Preservation Score (0-5)",
+      "score": 5,
+      "justification": "Important caveats are preserved, including the pending legal SLA review, the explicit 'NOT moving forward' language for the rebrand, and the conditional phrasing around vendor selection.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Audience Appropriateness Score (0-5)",
+      "score": 4,
+      "justification": "The language is clear and professional without unnecessary jargon, though the suggested 'Finance' ownership for the rebrand cancellation introduces mild ambiguity since no specific person was named in the transcript.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 19,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:07:08.713323+00:00"
+}

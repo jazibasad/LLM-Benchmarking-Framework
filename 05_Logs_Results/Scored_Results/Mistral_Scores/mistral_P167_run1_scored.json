@@ -1,0 +1,43 @@
+{
+  "id": "P167",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this CSV with a single column containing pipe-delimited multi-values (e.g. 'tags' column: 'red|blue|green') into a normalized JSON structure where each tag becomes a separate array element.",
+  "response_text": "To convert a CSV with a pipe-delimited column (e.g., `tags`) into a normalized JSON structure where each tag becomes a separate array element, you can follow these steps:\n\n### **Input CSV Example:**\nAssume the CSV has the following structure (with a `tags` column containing pipe-delimited values):\n\n| id | name | tags                     |\n|----|------|--------------------------|\n| 1  | Item | red|blue|green             |\n| 2  | Item | apple|banana|orange         |\n| 3  | Item | cat|dog|bird|fish           |\n\n### **Desired JSON Output:**\nEach tag should be a separate array element under a normalized structure:\n\n```json\n[\n  {\n    \"id\": 1,\n    \"name\": \"Item\",\n    \"tags\": [\"red\", \"blue\", \"green\"]\n  },\n  {\n    \"id\": 2,\n    \"name\": \"Item\",\n    \"tags\": [\"apple\", \"banana\", \"orange\"]\n  },\n  {\n    \"id\": 3,\n    \"name\": \"Item\",\n    \"tags\": [\"cat\", \"dog\", \"bird\", \"fish\"]\n  }\n]\n```\n\n---\n\n### **Solution (Python Example)**\nHere’s how you can achieve this in Python using `pandas` and `json`:\n\n```python\nimport pandas as pd\nimport json\n\n# Sample CSV data (replace with your actual CSV)\ndata = {\n    \"id\": [1, 2, 3],\n    \"name\": [\"Item\", \"Item\", \"Item\"],\n    \"tags\": [\"red|blue|green\", \"apple|banana|orange\", \"cat|dog|bird|fish\"]\n}\n\n# Create DataFrame\ndf = pd.DataFrame(data)\n\n# Split pipe-delimited tags into lists\ndf[\"tags\"] = df[\"tags\"].str.split(\"|\")\n\n# Convert to JSON\njson_output = df.to_json(orient=\"records\", indent=2)\n\nprint(json_output)\n```\n\n### **Output:**\n```json\n[\n  {\n    \"id\": 1,\n    \"name\": \"Item\",\n    \"tags\": [\n      \"red\",\n      \"blue\",\n      \"green\"\n    ]\n  },\n  {\n    \"id\": 2,\n    \"name\": \"Item\",\n    \"tags\": [\n      \"apple\",\n      \"banana\",\n      \"orange\"\n    ]\n  },\n  {\n    \"id\": 3,\n    \"name\": \"Item\",\n    \"tags\": [\n      \"cat\",\n      \"dog\",\n      \"bird\",\n      \"fish\"\n    ]\n  }\n]\n```\n\n---\n\n### **Alternative (Pure Python without Pandas)**\nIf you prefer a non-Pandas approach:\n\n```python\nimport csv\nimport json\n\n# Sample CSV data (replace with your actual CSV file)\ncsv_data = [\n    {\"id\": 1, \"name\": \"Item\", \"tags\": \"red|blue|green\"},\n    {\"id\": 2, \"name\": \"Item\", \"tags\": \"apple|banana|orange\"},\n    {\"id\": 3, \"name\": \"Item\", \"tags\": \"cat|dog|bird|fish\"}\n]\n\n# Process each row\nnormalized_data = []\nfor row in csv_data:\n    tags = row[\"tags\"].split(\"|\")\n    normalized_data.append({\n        \"id\": row[\"id\"],\n        \"name\": row[\"name\"],\n        \"tags\": tags\n    })\n\n# Convert to JSON\njson_output = json.dumps(normalized_data, indent=2)\nprint(json_output)\n```\n\n### **Key Steps:**\n1. **Split the pipe-delimited string** (`row[\"tags\"].split(\"|\")`) into a list.\n2. **Replace the original string** with the list in the JSON structure.\n3. **Export as JSON** using `json.dumps()`.\n\nThis ensures each tag is a separate array element in the normalized output.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 7.675,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Relational Integrity Score",
+      "score": 5,
+      "justification": "The response preserves the mapping between rows and their tag lists, correctly maintaining relational integrity throughout the transformation.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Edge Case Handling Score",
+      "score": 1,
+      "justification": "The response provides only basic pipe splitting without addressing irregular data such as missing tags, extra whitespace, or malformed entries, leading to potential errors or data loss.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Output Validity Score",
+      "score": 5,
+      "justification": "The response demonstrates generation of syntactically valid JSON output using both pandas and pure Python examples.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 5,
+      "justification": "All source rows and tag values are represented in the JSON output, with no data silently dropped.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 16,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:56:56.766672+00:00"
+}

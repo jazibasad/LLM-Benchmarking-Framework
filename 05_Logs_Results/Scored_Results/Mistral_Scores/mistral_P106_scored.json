@@ -1,0 +1,31 @@
+{
+  "id": "P106",
+  "category": "Coding & System Architecture",
+  "difficulty": "Medium",
+  "prompt": "Design a thread-safe Singleton pattern implementation in C# utilizing double-check locking and lazy initialization.",
+  "response_text": "# Thread-Safe Singleton with Double-Check Locking in C#\n\nHere's a complete implementation of a thread-safe Singleton pattern in C# using double-check locking and lazy initialization:\n\n```csharp\nusing System;\n\npublic sealed class Singleton\n{\n    // Private static readonly field to hold the singleton instance\n    private static readonly Singleton _instance;\n\n    // Private constructor to prevent instantiation\n    private Singleton()\n    {\n        // Initialization code if needed\n        Console.WriteLine(\"Singleton instance created\");\n    }\n\n    // Public static property to access the singleton instance\n    public static Singleton Instance\n    {\n        get\n        {\n            // First check (no locking)\n            if (_instance == null)\n            {\n                lock (typeof(Singleton))\n                {\n                    // Second check (with locking)\n                    if (_instance == null)\n                    {\n                        _instance = new Singleton();\n                    }\n                }\n            }\n            return _instance;\n        }\n    }\n\n    // Example method to demonstrate functionality\n    public void DoSomething()\n    {\n        Console.WriteLine(\"Doing something in the singleton\");\n    }\n}\n```\n\n## Key Features:\n\n1. **Lazy Initialization**: The instance is created only when first requested\n2. **Thread Safety**: Uses double-check locking to ensure thread safety\n3. **Sealed Class**: Prevents inheritance which could break the singleton pattern\n4. **Private Constructor**: Ensures no external instantiation\n\n## Alternative Implementation (C# 6+ with Expression-Bodied Members):\n\n```csharp\npublic sealed class Singleton\n{\n    private static readonly object _lock = new object();\n    private static volatile Singleton _instance;\n\n    private Singleton() { }\n\n    public static Singleton Instance =>\n        _instance ?? (_instance = new Singleton());\n}\n```\n\n## Important Notes:\n\n1. The first implementation is more efficient for high-concurrency scenarios as it only locks during the first initialization.\n2. The `volatile` keyword in the second implementation ensures proper visibility of the instance across threads.\n3. For most scenarios in modern .NET, the simpler lazy initialization with `Lazy<T>` is recommended:\n\n```csharp\npublic sealed class Singleton\n{\n    private static readonly Lazy<Singleton> _lazy =\n        new Lazy<Singleton>(() => new Singleton());\n\n    public static Singleton Instance => _lazy.Value;\n\n    private Singleton() { }\n}\n```\n\nThe `Lazy<T>` approach is generally preferred as it handles all the thread-safety and lazy initialization concerns for you.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 4.5722,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Thread Safety",
+      "score": 1,
+      "justification": "The implementation attempts double-check locking but incorrectly declares the instance as readonly and omits volatile, causing compile errors and thread safety issues.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Lazy Initialization",
+      "score": 1,
+      "justification": "The code tries to lazily create the instance but the readonly declaration and missing volatile lead to compile errors, so lazy initialization is not correctly achieved.",
+      "outcome": "Failure"
+    }
+  ],
+  "total_score": 2,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:23:39.742118+00:00"
+}

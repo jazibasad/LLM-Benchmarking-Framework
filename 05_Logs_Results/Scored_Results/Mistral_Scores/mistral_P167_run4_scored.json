@@ -1,0 +1,43 @@
+{
+  "id": "P167",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this CSV with a single column containing pipe-delimited multi-values (e.g. 'tags' column: 'red|blue|green') into a normalized JSON structure where each tag becomes a separate array element.",
+  "response_text": "Here's how you can convert a CSV with a pipe-delimited column into a normalized JSON structure where each tag becomes a separate array element:\n\n### Input CSV Example:\n```\nid,tags\n1,red|blue|green\n2,apple|banana\n3,cat|dog|bird|fish\n```\n\n### Output JSON Structure:\n```json\n[\n  {\n    \"id\": 1,\n    \"tags\": [\"red\", \"blue\", \"green\"]\n  },\n  {\n    \"id\": 2,\n    \"tags\": [\"apple\", \"banana\"]\n  },\n  {\n    \"id\": 3,\n    \"tags\": [\"cat\", \"dog\", \"bird\", \"fish\"]\n  }\n]\n```\n\n### How to Convert (Python Example):\n```python\nimport csv\nimport json\n\n# Input CSV data (replace with your actual CSV reading)\ncsv_data = \"\"\"\nid,tags\n1,red|blue|green\n2,apple|banana\n3,cat|dog|bird|fish\n\"\"\"\n\n# Parse CSV\nrows = []\nreader = csv.DictReader(csv_data.splitlines())\nfor row in reader:\n    # Split pipe-delimited tags into array\n    row['tags'] = row['tags'].split('|') if row['tags'] else []\n    rows.append(row)\n\n# Convert to JSON\njson_data = json.dumps(rows, indent=2)\nprint(json_data)\n```\n\n### Key Steps:\n1. Read the CSV file (or string) into a dictionary-like structure\n2. For each row, split the pipe-delimited string into an array\n3. Convert the processed data to JSON format\n\n### Alternative (Using pandas):\n```python\nimport pandas as pd\nimport json\n\n# Read CSV\ndf = pd.read_csv('input.csv')\n\n# Split tags column\ndf['tags'] = df['tags'].str.split('|')\n\n# Convert to list of dicts\njson_data = df.to_dict(orient='records')\nprint(json.dumps(json_data, indent=2))\n```\n\nThis will give you the normalized JSON structure where each tag is a separate element in the \"tags\" array for each record.",
+  "run_number": 4,
+  "temperature": 0.7,
+  "latency_seconds": 3.7111,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Relational Integrity Score",
+      "score": 5,
+      "justification": "The response correctly preserves the relationship between each id and its corresponding tags array.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Edge Case Handling Score",
+      "score": 2,
+      "justification": "It handles empty tag strings but does not address whitespace, missing ids, or duplicate tags, so it only partially meets edge‑case requirements.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Output Validity Score",
+      "score": 5,
+      "justification": "The provided JSON output is syntactically correct and the code prints valid JSON.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 5,
+      "justification": "All rows from the source CSV are included in the output with no silent data loss.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 17,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:58:50.636632+00:00"
+}

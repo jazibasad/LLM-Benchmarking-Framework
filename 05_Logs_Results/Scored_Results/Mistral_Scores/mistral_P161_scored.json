@@ -1,0 +1,43 @@
+{
+  "id": "P161",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this deeply nested JSON representing an e-commerce order into a set of THREE normalized CSV tables (orders, order_items, customers) with proper foreign key columns linking them:\n{\"order_id\": \"O1001\", \"customer\": {\"id\": \"C55\", \"name\": \"Ivan\"}, \"items\": [{\"sku\": \"A1\", \"qty\": 2, \"price\": 15.0}, {\"sku\": \"B2\", \"qty\": 1, \"price\": 40.0}]}",
+  "response_text": "Here are three normalized CSV tables representing the e-commerce order data with proper foreign key relationships:\n\n### 1. `customers.csv`\n```csv\ncustomer_id,name\nC55,Ivan\n```\n\n### 2. `orders.csv`\n```csv\norder_id,customer_id,order_date\nO1001,C55,2023-11-15  # (assuming today's date - replace with actual date)\n```\n\n### 3. `order_items.csv`\n```csv\norder_id,sku,qty,price\nO1001,A1,2,15.0\nO1001,B2,1,40.0\n```\n\n### Key Relationships:\n- `orders.customer_id` → `customers.customer_id` (1:N relationship)\n- `order_items.order_id` → `orders.order_id` (1:N relationship)\n\n### Notes:\n1. Added `order_date` to `orders` (you should populate this with the actual order date)\n2. The `sku` column in `order_items` could be replaced with a product ID if you had a separate products table, but since this is just the three requested tables, I kept it as is\n3. All foreign keys are properly referenced in their respective tables\n4. The data maintains all original information while eliminating duplication\n\nWould you like me to add any additional fields or make any adjustments to this structure?",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 2.9814,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Relational Integrity Score",
+      "score": 5,
+      "justification": "The model correctly links orders to customers via customer_id and order_items to orders via order_id, preserving the original relationships.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Edge Case Handling Score",
+      "score": 5,
+      "justification": "The source data is consistent and the model retains all fields, adding a note for the missing order_date, which shows awareness of potential data gaps.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Output Validity Score",
+      "score": 5,
+      "justification": "The CSV tables are syntactically valid with proper headers and rows, and the included comment does not break the CSV format.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 5,
+      "justification": "All original data elements—order_id, customer id and name, and each item's sku, qty, and price—are represented in the output without any loss.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:53:19.060319+00:00"
+}

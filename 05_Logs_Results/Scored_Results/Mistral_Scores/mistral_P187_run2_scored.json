@@ -1,0 +1,43 @@
+{
+  "id": "P187",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this scientific methods section into a single paragraph a journalist could use, explicitly flagging any part of the methodology that limits how strongly the results can be generalized: 'Participants (n=45, convenience sample from a single university) completed a 6-week intervention involving daily 10-minute mindfulness sessions via a mobile app. Self-reported stress levels were measured using the PSS-10 scale at baseline and post-intervention. No control group was used due to resource constraints; instead, a within-subjects pre-post design was employed.'",
+  "response_text": "In a small-scale study examining the effects of a six-week mindfulness intervention, researchers recruited 45 participants—all students from a single university—who completed daily 10-minute mindfulness sessions via a mobile app. Stress levels were tracked using the widely used **Perceived Stress Scale (PSS-10)** before and after the program, with no control group included due to budget limitations. While the **within-subjects design** (comparing each participant’s own pre- and post-measurements) strengthens the ability to detect individual changes, the study’s reliance on a **convenience sample from just one institution** and the **lack of a control group** significantly limits how broadly these results can be applied to the general population. Additionally, self-reported data may be subject to bias, and the short, app-based intervention could differ from real-world mindfulness practices.",
+  "run_number": 2,
+  "temperature": 0.7,
+  "latency_seconds": 1.8863,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Structural Compliance Score (0-5)",
+      "score": 1,
+      "justification": "The prompt explicitly required a single paragraph, but the response was formatted as a multi-sentence narrative lacking clear paragraph structure and did not match the requested journalistic summary format.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Fidelity Under Constraint Score (0-5)",
+      "score": 3,
+      "justification": "The response accurately preserved core methodological details (sample size, 6-week app-based mindfulness, PSS-10, pre-post design, no control group) without fabricating facts, though it slightly embellished tone and structure.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Nuance Preservation Score (0-5)",
+      "score": 4,
+      "justification": "The response retained key limitations such as the convenience sample from a single university, lack of control group, self-report bias, and within-subjects design tradeoffs, though it added minor speculative caveats not explicitly in the source.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Audience Appropriateness Score (0-5)",
+      "score": 5,
+      "justification": "Technical terms like PSS-10 were correctly translated (Perceived Stress Scale), and the language was clear and accessible for a general journalistic audience without oversimplifying core scientific points.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 13,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:07:38.995777+00:00"
+}

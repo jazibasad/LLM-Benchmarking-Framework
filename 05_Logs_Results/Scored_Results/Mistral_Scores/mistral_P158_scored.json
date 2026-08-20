@@ -1,0 +1,31 @@
+{
+  "id": "P158",
+  "category": "Data Transformation",
+  "difficulty": "Easy",
+  "prompt": "Convert the date '03/15/2026' from MM/DD/YYYY format to YYYY-MM-DD format.",
+  "response_text": "The date **03/15/2026** (MM/DD/YYYY) converted to **YYYY-MM-DD** format is:\n\n**2026-03-15**",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.6316,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Conversion Accuracy",
+      "score": 5,
+      "justification": "The date is correctly converted from MM/DD/YYYY to YYYY-MM-DD.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Format Compliance",
+      "score": 3,
+      "justification": "The response includes the date in the correct format but also contains additional explanatory text, which is a minor deviation from the requested format.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 8,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:52:42.096674+00:00"
+}

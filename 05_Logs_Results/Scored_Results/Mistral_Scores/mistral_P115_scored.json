@@ -1,0 +1,31 @@
+{
+  "id": "P115",
+  "category": "Ambiguity Handling",
+  "difficulty": "Easy",
+  "prompt": "Should I use a semicolon here?",
+  "response_text": "Whether you should use a semicolon depends on the context of your sentence. Here are some common rules and situations where a semicolon is appropriate:\n\n### **1. Joining Two Independent Clauses Without a Conjunction**\nUse a semicolon to connect two closely related independent clauses (complete sentences) when no conjunction (e.g., *and, but, so*) is used.\n\n✅ **Correct:**\n*\"I love coffee; however, I don’t drink it in the morning.\"*\n*\"She finished her project; she celebrated with her team.\"*\n\n❌ **Incorrect:**\n*\"I love coffee; I don’t drink it in the morning.\"* (Better: *\"I love coffee, but I don’t drink it in the morning.\"*)\n\n---\n\n### **2. Separating Items in a Complex List**\nUse semicolons when items in a list already contain commas.\n\n✅ **Correct:**\n*\"My favorite cities are New York, USA; Paris, France; and Tokyo, Japan.\"*\n*\"The meeting included: John, CEO; Sarah, marketing lead; and Mike, IT.\"*\n\n---\n\n### **3. Before Transitional Phrases or Conjunctive Adverbs**\nUse a semicolon before words like *however, therefore, moreover, consequently, nevertheless*, etc., when they connect two independent clauses.\n\n✅ **Correct:**\n*\"She studied hard; therefore, she passed the exam.\"*\n*\"The weather was bad; nonetheless, we went hiking.\"*\n\n---\n\n### **When NOT to Use a Semicolon:**\n- **If you can use a period or a comma + conjunction** (e.g., *\"I went to the store; I bought milk\"* → *\"I went to the store, and I bought milk\"*).\n- **In informal or short sentences** (e.g., *\"I’m tired; I’m going to bed\"* is fine, but *\"I’m tired. I’m going to bed\"* is also correct).\n- **Before a list that doesn’t need semicolons** (e.g., *\"I like apples, bananas, and oranges\"*—no semicolon needed).\n\n---\n### **Your Specific Case:**\nIf you share the exact sentence, I can give a more tailored answer! But generally:\n- **Use a semicolon** if you’re joining two closely related ideas without a conjunction.\n- **Skip it** if a comma + conjunction (*and, but, so*) or a period works better.\n\nWould you like me to check a specific sentence?",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 3.6706,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Clarification Recognition",
+      "score": 5,
+      "justification": "The response explicitly acknowledges the lack of context and invites the user to provide the exact sentence.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Helpful Framing",
+      "score": 5,
+      "justification": "It offers a general explanation as a default while also asking for clarification, avoiding confident guessing.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T16:28:11.758294+00:00"
+}
