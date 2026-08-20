@@ -1,0 +1,31 @@
+{
+  "id": "P219",
+  "category": "Multilingual Tasks",
+  "difficulty": "Medium",
+  "prompt": "Translate this sentence into Korean, and explain why you chose formal or informal speech level: 'Hey, are you free this weekend?'",
+  "response_text": "Here’s the translation of your sentence into Korean, along with an explanation of the speech level:\n\n---\n**Formal (Polite):**\n*\"이번 주말에 시간 있으신가요?\"*\n*(I-beon ju-mal-e si-gan eu-chi-sni-ga-yo?)*\n**Literal meaning:** *\"Are you (honorable) free this weekend?\"*\n\n**Informal (Casual):**\n*\"이번 주말에 시간 있어?\"*\n*(I-beon ju-mal-e si-gan i-sseo?)*\n**Literal meaning:** *\"Are you free this weekend?\"*\n\n---\n\n### **Why the Choice?**\n1. **Formal (Polite) Version (으시-):**\n   - Uses the honorific suffix **-(으)신가요** (instead of just **가요**), which is appropriate for:\n     - Strangers, elders, or people in authority (e.g., bosses, professors).\n     - Professional or respectful contexts (e.g., asking a coworker or client).\n   - The **-(으)시-** ending is a formal marker of respect, similar to \"do\" in \"Do you have time?\" → \"Do you *have* time?\" (polite) vs. \"Got time?\" (casual).\n\n2. **Informal (Casual) Version (아/어):**\n   - Uses the plain **-(으)아/어** ending (e.g., **있어**), which is natural for:\n     - Friends, peers, or people in a relaxed setting.\n     - Texting or speaking to someone you’re close with.\n   - The **아/어** ending is the standard informal present tense, equivalent to \"are you [verb-ing]?\" in English.\n\n---\n### **Additional Notes:**\n- **\"Hey\"** is omitted in Korean because it’s not a direct translation. The tone (formal/informal) already conveys politeness or casualness.\n- If you want to sound slightly more natural in informal speech, you could add:\n  - *\"주말에 뭐 할 거니?\"* (Casual, slightly more conversational: *\"What’re you doing this weekend?\"*)\n  - *\"주말에 시간 나?\"* (More natural than the direct translation above, using **\"나\"** instead of **\"있어\"** for \"available\").\n- For very close friends, you might even say:\n  - *\"주말에 빈 시간 있어?\"* (*\"Do you have any free time this weekend?\"*).\n\nWould you like adjustments for a specific context (e.g., work, dating, family)?",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 3.9974,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Tone/Register Accuracy",
+      "score": 5,
+      "justification": "The response provides both formal and informal translations with accurate Korean grammar, correctly using honorifics (으시-) for formal contexts and plain endings (-아/어) for casual ones while properly omitting 'Hey' as Korean does not use equivalent greetings.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Linguistic Explanation Quality",
+      "score": 5,
+      "justification": "The explanation is thorough and accurate, detailing specific linguistic markers (honorific suffixes, verb endings), contextual appropriateness for social dynamics, and includes supplementary natural phrasing examples while maintaining clarity.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:31:34.476533+00:00"
+}

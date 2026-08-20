@@ -1,0 +1,31 @@
+{
+  "id": "P215",
+  "category": "Multilingual Tasks",
+  "difficulty": "Medium",
+  "prompt": "Translate this sentence into Spanish AND explain one idiom or phrase in your translation that doesn't translate literally: 'It's raining cats and dogs outside, so let's stay in tonight.'",
+  "response_text": "Here’s your translation into Spanish:\n\n**\"Está cayendo a cántaros afuera, así que mejor nos quedamos en casa hoy.\"**\n\n---\n### Explanation of the idiom:\nThe phrase **\"está cayendo a cántaros\"** (lit. *\"it’s falling like jugs\"* or *\"like pitchers\"*) is the Spanish equivalent of the English **\"raining cats and dogs.\"**\n\n- **Origin:** The idiom likely comes from the idea that heavy rain would make jugs (or pitchers) fall over and break if the wind was strong enough. The phrase is playful and exaggerated, just like the English version.\n- **Usage:** It’s used to describe **very heavy rain**, often when the weather is so bad that you’d rather stay indoors. The literal translation doesn’t make sense (jugs don’t actually fall from the sky!), but the metaphor conveys the intensity of the rain perfectly.\n\nOther variations in Spanish include:\n- **\"Llueve a mares\"** (lit. *\"it rains like seas\"*)\n- **\"Está lloviendo a chorros\"** (lit. *\"it’s raining like streams\"*)\n- **\"Viene el diluvio universal\"** (lit. *\"the universal flood is coming\"* – a humorous reference to the biblical flood).\n\nWould you like any additional cultural context on how this idiom is used in different Spanish-speaking countries?",
+  "run_number": 2,
+  "temperature": 0.7,
+  "latency_seconds": 2.3505,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Tone/Register Accuracy",
+      "score": 5,
+      "justification": "The response uses friendly, neutral informality with accurate Spanish phrasing (e.g., 'mejor nos quedamos' and 'hoy'), preserving the conversational tone of the original prompt.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Linguistic Explanation Quality",
+      "score": 5,
+      "justification": "The explanation thoroughly details the idiom's meaning, origin, usage, and cultural variations, providing clear, accurate, and engaging linguistic analysis.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:28:10.701948+00:00"
+}

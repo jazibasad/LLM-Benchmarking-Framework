@@ -1,0 +1,43 @@
+{
+  "id": "P211",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this poem excerpt into Spanish, prioritizing preserving the rhythm and emotional tone over literal word-for-word accuracy, and briefly explain one place where you deviated from literal translation to preserve the poetic effect: 'The quiet hum of evening falls, soft shadows stretch along the walls.'",
+  "response_text": "**\"El susurro suave de la tarde cae,\nsombras lentas se estiran en las paredes.\"**\n\n---\n**Explicación de la desviación:**\nEn el original, *\"soft shadows stretch\"* se tradujo como *\"sombras lentas se estiran\"* en lugar de un literal *\"sombras suaves se estiran\"* para mantener el ritmo y la musicalidad. La palabra *\"lentas\"* (lentamente) evoca no solo la suavidad visual, sino también el tiempo que se detiene, reforzando la atmósfera melancólica y el flujo poético. Esto aproxima más la sensación de *\"quiet hum\"* (un murmullo pausado) que una traducción estricta de *\"soft\"* (suave) podría perder.",
+  "run_number": 2,
+  "temperature": 0.7,
+  "latency_seconds": 1.4368,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Translation Precision Score",
+      "score": 4,
+      "justification": "The translation preserves the poem's emotional tone and rhythm, with only minor lexical choices like 'susurro' for 'hum' that slightly alter nuance but remain within acceptable poetic license.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Cultural/Linguistic Adaptation Score",
+      "score": 5,
+      "justification": "The adaptation of 'soft shadows stretch' to 'sombras lentas se estiran' is a thoughtful, culturally aware choice that maintains the poetic flow and atmosphere.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Meta-Explanation Quality Score",
+      "score": 5,
+      "justification": "The explanation accurately identifies the deviation and insightfully describes how it preserves the rhythm and melancholic mood of the original.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Round-Trip/Consistency Score",
+      "score": 0,
+      "justification": "The response does not perform any back-translation or systematic self-comparison, leaving this criterion unaddressed.",
+      "outcome": "Failure"
+    }
+  ],
+  "total_score": 14,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:25:47.240398+00:00"
+}

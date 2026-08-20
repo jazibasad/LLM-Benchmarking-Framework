@@ -1,0 +1,43 @@
+{
+  "id": "P211",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this poem excerpt into Spanish, prioritizing preserving the rhythm and emotional tone over literal word-for-word accuracy, and briefly explain one place where you deviated from literal translation to preserve the poetic effect: 'The quiet hum of evening falls, soft shadows stretch along the walls.'",
+  "response_text": "**\"El susurro suave de la tarde cae,\nsombras lentas tiñen los muros.\"**\n\n---\n**Explicación de la desviación:**\nEn lugar de traducir *\"quiet hum\"* literalmente como *\"ronroneo silencioso\"* (que suena forzado), opté por *\"susurro suave\"* para mantener la musicalidad y la sensación de algo casi imperceptible pero cargado de calma. El *\"ronroneo\"* evoca más un sonido físico (como un gato), mientras que *\"susurro\"* conserva la idea de un sonido etéreo, cercano a lo poético, y armoniza mejor con *\"tiñen\"* (que sugiere un color que se extiende, no solo \"alcanza\").\n\nEl ritmo también se ajustó para que las sílabas tengan un flujo similar (8-8 en el original; aquí, 7-7, pero con pausas naturales que imitan el ritmo pausado del inglés).",
+  "run_number": 4,
+  "temperature": 0.7,
+  "latency_seconds": 2.2974,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Translation Precision Score",
+      "score": 3,
+      "justification": "The translation captures the poetic mood and rhythm but uses 'tarde' for 'evening' and 'tiñen' for 'stretch', showing minor inaccuracies despite strong overall alignment.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Cultural/Linguistic Adaptation Score",
+      "score": 4,
+      "justification": "The response thoughtfully adapts idiomatic expressions ('susurro suave' for 'quiet hum') and adjusts time terminology to fit poetic context, demonstrating effective cultural adaptation.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Meta-Explanation Quality Score",
+      "score": 5,
+      "justification": "The explanation clearly identifies the deliberate shift from 'ronroneo silencioso' to 'susurro suave' and links it to preserving musicality, providing insightful reasoning.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Round-Trip/Consistency Score",
+      "score": 0,
+      "justification": "No back‑translation or consistency check was included, so the criterion is absent and therefore scored as a complete failure.",
+      "outcome": "Failure"
+    }
+  ],
+  "total_score": 12,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:26:29.635636+00:00"
+}

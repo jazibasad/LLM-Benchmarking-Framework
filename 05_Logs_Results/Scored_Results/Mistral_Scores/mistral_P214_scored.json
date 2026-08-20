@@ -1,0 +1,31 @@
+{
+  "id": "P214",
+  "category": "Multilingual Tasks",
+  "difficulty": "Medium",
+  "prompt": "Translate this short paragraph into French, preserving the polite/formal tone: 'We are pleased to inform you that your application has been approved. Please contact our office at your earliest convenience to complete the remaining paperwork.'",
+  "response_text": "Voici la traduction dans un ton poli et formel :\n\n*« Nous avons le plaisir de vous informer que votre candidature a été approuvée. Nous vous serions reconnaissants de bien vouloir nous contacter dès que possible afin de finaliser les démarches administratives restantes. »*\n\nSi vous souhaitez une formulation encore plus courtoise ou adaptée à un contexte spécifique, n'hésitez pas à préciser !",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.8963,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Tone/Register Accuracy",
+      "score": 5,
+      "justification": "The response fully meets the requirement with perfect formality, achieving the complete success threshold because it maintains the polite and formal register throughout the translation.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Linguistic Explanation Quality",
+      "score": 0,
+      "justification": "The model omits any explanation of translation choices entirely, representing a complete failure to satisfy this criterion.",
+      "outcome": "Failure"
+    }
+  ],
+  "total_score": 5,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:27:14.101150+00:00"
+}

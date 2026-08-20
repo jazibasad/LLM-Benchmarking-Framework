@@ -1,0 +1,43 @@
+{
+  "id": "P211",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this poem excerpt into Spanish, prioritizing preserving the rhythm and emotional tone over literal word-for-word accuracy, and briefly explain one place where you deviated from literal translation to preserve the poetic effect: 'The quiet hum of evening falls, soft shadows stretch along the walls.'",
+  "response_text": "**\"El susurro suave de la tarde desciende,\nsombras tiernas se alargan en las paredes.\"**\n\n---\n**Explicación de la desviación:**\nEn el original, *\"soft shadows\"* se traduce como *\"sombras tiernas\"* en lugar de *\"suaves\"* para mantener la musicalidad y el tono poético. La palabra *\"tiernas\"* evoca no solo suavidad, sino también una delicadeza emocional que *\"soft\"* sugiere (como en *\"softly\"* o *\"gentle shadows\"*), reforzando la atmósfera melancólica del verso. Además, *\"desciende\"* (en lugar de *\"cae\"*) aporta un ritmo más fluido y elegante, acorde con el *\"hum\"* inicial.",
+  "run_number": 3,
+  "temperature": 0.7,
+  "latency_seconds": 1.45,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Translation Precision Score",
+      "score": 4,
+      "justification": "The translation preserves the poetic rhythm and emotional tone effectively, with minor deviation in 'soft shadows' ('sombras tiernas' vs. 'sombras suaves'), which is justified by the emphasis on lyrical quality over literal accuracy per task constraints.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Cultural/Linguistic Adaptation Score",
+      "score": 5,
+      "justification": "Deviations like 'sombras tiernas' and 'desciende' are skillful cultural-adaptive choices that prioritize poetic resonance over strict literalness while maintaining the original's essence.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Meta-Explanation Quality Score",
+      "score": 4,
+      "justification": "The rationale explains one key deviation well but omits analysis of additional choices (e.g., 'desciende' vs. 'cae'), limiting full depth of justification for adaptation decisions.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Round-Trip/Consistency Score",
+      "score": 4,
+      "justification": "The response doesn't include back-translation or self-comparison exercises to verify meaning consistency, leaving analysis incomplete despite correct handling of stated deviations.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 17,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:26:13.555415+00:00"
+}

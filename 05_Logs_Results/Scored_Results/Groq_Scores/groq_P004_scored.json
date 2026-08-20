@@ -1,0 +1,31 @@
+{
+  "id": "P004",
+  "category": "Knowledge Retrieval",
+  "difficulty": "Easy",
+  "prompt": "What is process synchronization in operating systems, and why is a mutex used?",
+  "response_text": "**Process synchronization** is a set of techniques that the operating system (or a concurrent program itself) uses to control the order in which multiple **processes** or **threads** access shared resources (memory, files, devices, etc.).  \n\nWhen several execution contexts run at the same time, they can interleave their operations arbitrarily. If two of them try to read‑modify‑write the same data without any coordination, the result can be **incorrect** (a *race condition*), *corrupt*, or *inconsistent*. Synchronization guarantees that such interleavings are either prevented or made predictable, so the program behaves as if the operations were performed in a well‑defined sequence.\n\nTypical goals of process synchronization are:\n\n| Goal | What it means |\n|------|----------------|\n| **Mutual exclusion** | Only one thread may be inside a *critical section* (the part of code that touches shared state) at a time. |\n| **Ordering** | Certain actions must happen before others (e.g., “produce” before “consume”). |\n| **Coordination** | Threads may need to wait for a condition to become true (e.g., a buffer not empty). |\n| **Deadlock avoidance** | Ensure that the set of waiting relationships never forms a cycle that halts progress. |\n\n---\n\n## Why a **mutex** (mutual‑exclusion lock) is used\n\nA **mutex** is the most common primitive that provides *mutual exclusion*. It is essentially a binary flag with two atomic operations:\n\n1. **`lock()` / `acquire()`** – attempts to take ownership.  \n   *If the mutex is free, the calling thread becomes the owner and proceeds.*  \n   *If it is already owned, the thread blocks (or spins) until the owner releases it.*\n\n2. **`unlock()` / `release()`** – relinquishes ownership, waking up one (or more) waiting threads.\n\n### What a mutex gives you\n\n| Property | Why it matters |\n|----------|----------------|\n| **Atomicity** | The check‑and‑set of the lock cannot be interrupted, so no two threads can succeed simultaneously. |\n| **Ownership** | Only the thread that locked the mutex may unlock it, preventing accidental releases by unrelated code. |\n| **Blocking semantics** | A thread that cannot acquire the lock sleeps, freeing the CPU for other work (more efficient than busy‑waiting). |\n| **Portability** | Almost every OS kernel (Linux, Windows, macOS, BSD, etc.) and language runtime supplies a well‑tested mutex implementation, sparing you from writing low‑level atomic instructions yourself. |\n| **Scoping helpers** | Languages often provide RAII‑style wrappers (`std::lock_guard`, `using` in C#, `synchronized` in Java) that automatically unlock when a scope ends, reducing bugs. |\n\n### Typical use‑case (C‑like pseudocode)\n\n```c\nint shared_counter = 0;\npthread_mutex_t m = PTHREAD_MUTEX_INITIALIZER;\n\nvoid *worker(void *arg) {\n    for (int i = 0; i < 1'000'000; ++i) {\n        pthread_mutex_lock(&m);      // ---- start of critical section\n        ++shared_counter;            // only one thread updates at a time\n        pthread_mutex_unlock(&m);    // ---- end of critical section\n    }\n    return NULL;\n}\n```\n\nWithout the mutex, two threads could read the same value of `shared_counter`, increment it, and write it back, resulting in *lost updates* and a final count smaller than the expected `2 000 000`.\n\n### When a mutex is *not* enough (or not appropriate)\n\n| Situation | Better alternative |\n|-----------|---------------------|\n| **High contention on a short critical section** | Use a *spinlock* (busy‑wait) if the wait time is expected to be very short, or redesign to reduce shared state. |\n| **Readers‑many, writers‑few** | Use a *read‑write lock* (shared/exclusive lock) so multiple readers can proceed concurrently. |\n| **Need to signal a condition** | Combine a mutex with a *condition variable* (e.g., `pthread_cond_wait`). |\n| **Lock‑free data structures** | Use atomic primitives (compare‑and‑swap, fetch‑add) for very fine‑grained concurrency. |\n| **Potential deadlock** | Consider *lock ordering*, *try‑lock* with back‑off, or higher‑level abstractions like *semaphores* or *message passing*. |\n\n---\n\n## TL;DR Summary\n\n* **Process synchronization** coordinates concurrent execution so that shared resources are accessed safely and in the right order.  \n* A **mutex** is a simple, OS‑provided lock that guarantees **mutual exclusion**: only one thread can be inside a critical section at a time. It does this with atomic lock/unlock operations, ownership enforcement, and blocking semantics, making it the go‑to tool for protecting shared data against race conditions.  \n\nUse a mutex whenever you have a piece of code that must not be executed simultaneously by more than one thread. If the pattern of access is more complex (many readers, condition waiting, extreme contention), augment or replace the mutex with a more suitable synchronization primitive.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 2.788,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Definition Precision",
+      "score": 5,
+      "justification": "The response accurately defines process synchronization as techniques controlling access to shared resources among processes or threads and explicitly describes race conditions and their impact.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Mutex Explanation",
+      "score": 5,
+      "justification": "The explanation details the atomic lock/unlock mechanism, ownership, blocking behavior, portability, and practical usage, fully covering why a mutex is employed for mutual exclusion.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:33:07.255658+00:00"
+}

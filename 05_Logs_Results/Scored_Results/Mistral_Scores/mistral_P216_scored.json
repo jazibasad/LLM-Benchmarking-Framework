@@ -1,0 +1,31 @@
+{
+  "id": "P216",
+  "category": "Multilingual Tasks",
+  "difficulty": "Medium",
+  "prompt": "Translate this business email into German, maintaining professional register throughout: 'Following our call yesterday, I wanted to confirm the revised delivery timeline and outline the next steps for both teams.'",
+  "response_text": "Hier ist die professionelle deutsche Übersetzung Ihres E-Mails:\n\n---\n**Betreff:** Bestätigung des angepassten Lieferplans und nächste Schritte\n\nSehr geehrte/r [Name des Adressaten],\n\nim Anschluss an unser gestriges Telefonat möchte ich den überarbeiteten Lieferzeitplan bestätigen und die nächsten Schritte für beide Teams skizzieren.\n\nMit freundlichen Grüßen,\n[Ihr Name]\n---\n\nFalls Sie spezifischere Details (z. B. Namen, konkrete Daten oder Abteilungen) ergänzen möchten, kann ich die Formulierung gerne anpassen. Alternativ könnte man auch schreiben:\n*\"Im Folgenden finden Sie die aktualisierten Liefertermine sowie die nächsten Schritte für beide Teams zur Umsetzung.\"*\n\nJe nach Kontext (z. B. formeller oder etwas lockerer) kann auch *\"im Anschluss an unser Gespräch\"* oder *\"nach unserem Telefonat\"* verwendet werden. Lassen Sie mich wissen, wenn Sie eine Nuance bevorzugen!",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.7594,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Tone/Register Accuracy",
+      "score": 5,
+      "justification": "The German translation accurately preserves the professional register, using 'Sehr geehrte/r' and 'im Anschluss an unser gestriges Telefonat' which correctly mirrors the formality and meaning of the original English business email.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Linguistic Explanation Quality",
+      "score": 5,
+      "justification": "The model's supplementary explanation of tone alternatives and contextual nuances is accurate, clear, and directly relevant to the registered translation task.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:29:02.212186+00:00"
+}

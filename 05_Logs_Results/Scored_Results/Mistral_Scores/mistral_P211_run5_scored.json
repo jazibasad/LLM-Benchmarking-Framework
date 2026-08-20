@@ -1,0 +1,43 @@
+{
+  "id": "P211",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this poem excerpt into Spanish, prioritizing preserving the rhythm and emotional tone over literal word-for-word accuracy, and briefly explain one place where you deviated from literal translation to preserve the poetic effect: 'The quiet hum of evening falls, soft shadows stretch along the walls.'",
+  "response_text": "**\"El susurro callado de la tarde se deshace,\nsombras suaves tiñen las paredes.\"**\n\n---\n**Explicación de la desviación:**\nEn el original, *\"soft shadows stretch\"* se traduce como *\"sombras suaves tiñen\"* en lugar de *\"extienden\"* o *\"se alargan\"* para mantener la musicalidad. La palabra *\"tiñen\"* (que evoca color y quietud) conserva el tono lírico y la imagen de un ocaso que pinta la escena, mientras que *\"stretch\"* (con su connotación de movimiento físico) habría roto el ritmo fluido del verso en español. La elección de *\"se deshace\"* para *\"falls\"* también refuerza la idea de desvanecimiento poético, no solo de caída literal.",
+  "run_number": 5,
+  "temperature": 0.7,
+  "latency_seconds": 1.9445,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Translation Precision Score (0-5)",
+      "score": 4,
+      "justification": "The translation captures the poem's rhythm and emotional tone with poetic word choices, meeting the core requirement while only minorly deviating from literal meaning.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Cultural/Linguistic Adaptation Score (0-5)",
+      "score": 5,
+      "justification": "The model thoughtfully adapts English phrasing into Spanish idioms that preserve musicality and imagery, demonstrating appropriate cultural and linguistic handling.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Meta-Explanation Quality Score (0-5)",
+      "score": 5,
+      "justification": "The explanation clearly and insightfully justifies the chosen deviations, accurately linking word choices to poetic effect.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Round-Trip/Consistency Score (0-5)",
+      "score": 0,
+      "justification": "The response provides no back-translation or self‑comparison analysis, failing to identify any meaning loss or consistency issues.",
+      "outcome": "Failure"
+    }
+  ],
+  "total_score": 14,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:26:38.234607+00:00"
+}

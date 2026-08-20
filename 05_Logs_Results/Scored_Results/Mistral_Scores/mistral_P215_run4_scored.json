@@ -1,0 +1,31 @@
+{
+  "id": "P215",
+  "category": "Multilingual Tasks",
+  "difficulty": "Medium",
+  "prompt": "Translate this sentence into Spanish AND explain one idiom or phrase in your translation that doesn't translate literally: 'It's raining cats and dogs outside, so let's stay in tonight.'",
+  "response_text": "Here’s your translation into Spanish:\n\n**\"Está lloviendo a cántaros afuera, así que mejor nos quedamos en casa hoy.\"**\n\n---\n### Explanation of the idiom:\nThe phrase **\"llover a cántaros\"** (literally *\"to rain by jugs\"*) is a **colorful Spanish idiom** that means **it’s raining very heavily**. The origin is unclear, but some theories suggest it comes from:\n- The idea of jugs (cántaros) being too small to hold all the rainwater (implying an overwhelming downpour).\n- A reference to jugs being used to measure rain in old times, emphasizing the intensity.\n\nUnlike the English *\"raining cats and dogs\"* (which is whimsical and nonsensical), *\"llover a cántaros\"* is a **direct, vivid way** to describe torrential rain without literal animals. It’s widely used in Spain and Latin America.\n\n---\n**Bonus note:** In some Latin American countries, you might also hear:\n- *\"Está cayendo el agua a mares\"* (lit. *\"water is falling by seas\"*) – another exaggerated way to say heavy rain.\n- *\"Está lloviendo a chorros\"* (lit. *\"raining by streams\"*) – similar meaning but slightly less intense.",
+  "run_number": 4,
+  "temperature": 0.7,
+  "latency_seconds": 2.6685,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Tone/Register Accuracy",
+      "score": 5,
+      "justification": "The response maintains a casual, friendly tone matching the original prompt's informal context and provides a natural Spanish explanation.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Linguistic Explanation Quality",
+      "score": 5,
+      "justification": "The response accurately and clearly explains the idiom's meaning, origin, and cultural usage with additional relevant examples.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:28:28.314727+00:00"
+}

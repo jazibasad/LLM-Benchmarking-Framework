@@ -1,0 +1,31 @@
+{
+  "id": "P003",
+  "category": "Knowledge Retrieval",
+  "difficulty": "Easy",
+  "prompt": "Define what an HTTP status code in the 5xx range signifies and give two common examples.",
+  "response_text": "**What the 5xx class means**\n\nHTTP status codes in the **5xx range** indicate **server‑side errors**.  \nIn other words, the client’s request was syntactically valid, but the server was unable to fulfill it because something went wrong on the server itself (hardware, software, configuration, overload, etc.). The problem is not the client’s fault; it’s a failure of the origin server (or a gateway/proxy acting on its behalf).\n\n**Two common 5xx examples**\n\n| Code | Reason Phrase | Typical Situation |\n|------|----------------|-------------------|\n| **500** | *Internal Server Error* | The server encountered an unexpected condition (e.g., an uncaught exception, mis‑configured script) and cannot provide a more specific error message. |\n| **503** | *Service Unavailable* | The server is temporarily unable to handle the request, often due to overload or scheduled maintenance. A `Retry-After` header may be included to tell the client when to try again. |\n\n*(Other frequently seen 5xx codes include 502 Bad Gateway, 504 Gateway Timeout, and 511 Network Authentication Required.)*",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.9813,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Factual Accuracy (0-5)",
+      "score": 5,
+      "justification": "The response accurately defines 5xx status codes as server-side errors caused by failures on the origin server or gateway, and correctly explains that the client's request was valid but the server could not fulfill it.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Example Precision (0-5)",
+      "score": 5,
+      "justification": "The response provides 500 Internal Server Error and 503 Service Unavailable as two common 5xx examples, both of which are accurate and accompanied by appropriate typical situations.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:33:03.926960+00:00"
+}

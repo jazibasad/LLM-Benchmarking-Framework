@@ -1,0 +1,43 @@
+{
+  "id": "P211",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this poem excerpt into Spanish, prioritizing preserving the rhythm and emotional tone over literal word-for-word accuracy, and briefly explain one place where you deviated from literal translation to preserve the poetic effect: 'The quiet hum of evening falls, soft shadows stretch along the walls.'",
+  "response_text": "**\"El susurro suave de la tarde desciende,\nsombras tiernas se alargan en las paredes.\"**\n\n---\n**Explicación de la desviación:**\nEn el original, *\"soft shadows stretch\"* se traduce como *\"sombras tiernas se alargan\"* en lugar de *\"suaves sombras se estiran\"* (la opción literal). La palabra *\"tiernas\"* (dulces, delicadas) refuerza la atmósfera poética y el contraste con la *\"tarde\"* (atardecer), que evoca una calma casi maternal. *\"Suaves\"* habría sido más literal, pero *\"tiernas\"* añade una capa emocional que el ritmo y el tono del poema ganan al sugerir una suavidad casi orgánica, como si las sombras nacieran de un abrazo.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.5453,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Translation Precision Score",
+      "score": 5,
+      "justification": "The translation excellently preserves the poetic rhythm and emotional tone, using 'susurro' for 'hum' and 'desciende' for 'falls' to create a lyrical Spanish cadence that matches the original's atmosphere.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Cultural/Linguistic Adaptation Score",
+      "score": 5,
+      "justification": "The adaptations are thoughtful and poetically effective, such as choosing 'tiernas' over literal 'suaves' and 'se alargan' for 'stretch' to enhance the organic, gentle imagery in Spanish.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Meta-Explanation Quality Score",
+      "score": 5,
+      "justification": "The explanation accurately identifies the deviation ('tiernas' vs. 'suaves') and insightfully articulates how the choice deepens the emotional resonance and maternal calm of the poem.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Round-Trip/Consistency Score",
+      "score": 0,
+      "justification": "The response does not attempt any back-translation analysis or self-comparison of the translated text back to English, which is required by this criterion.",
+      "outcome": "Failure"
+    }
+  ],
+  "total_score": 15,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:25:25.430309+00:00"
+}
