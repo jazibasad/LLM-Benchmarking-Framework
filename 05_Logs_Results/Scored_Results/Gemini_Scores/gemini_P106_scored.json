@@ -1,0 +1,31 @@
+{
+  "id": "P106",
+  "category": "Coding & System Architecture",
+  "difficulty": "Medium",
+  "prompt": "Design a thread-safe Singleton pattern implementation in C# utilizing double-check locking and lazy initialization.",
+  "response_text": "Here is a robust, thread-safe implementation of the Singleton pattern in C# using **double-check locking** and **lazy initialization**. \n\nThis approach ensures that thread synchronization overhead only happens during the first instantiation, and it is fully thread-safe without relying solely on the `Lazy<T>` class (to strictly demonstrate the double-check locking mechanism).\n\n### C# Implementation\n\n```csharp\nusing System;\n\npublic sealed class Singleton\n{\n    // Volatile ensures that assignment to the instance variable \n    // completes before the instance variable can be accessed.\n    // This prevents compiler/CPU instruction reordering.\n    private static volatile Singleton? _instance;\n\n    // A lock object for thread synchronization. \n    // Never lock on the 'typeof(Singleton)' type directly to avoid deadlocks.\n    private static readonly object _lock = new object();\n\n    // Counter to prove that only one instance is ever created\n    private static int _counter = 0;\n\n    // Private constructor prevents instantiation from outside the class.\n    private Singleton()\n    {\n        _counter++;\n        Console.WriteLine($\"Singleton instance created. Count: {_counter}\");\n    }\n\n    // Public property to get the instance\n    public static Singleton Instance\n    {\n        get\n        {\n            // First check (no lock) - improves performance by avoiding \n            // the lock once the instance is already initialized.\n            if (_instance == null)\n            {\n                // Acquire lock for thread safety\n                lock (_lock)\n                {\n                    // Second check (with lock) - ensures that if two threads \n                    // passed the first check simultaneously, only one creates the instance.\n                    if (_instance == null)\n                    {\n                        _instance = new Singleton();\n                    }\n                }\n            }\n\n            return _instance;\n        }\n    }\n\n    public void DoSomething()\n    {\n        Console.WriteLine(\"Singleton is doing something.\");\n    }\n}\n```\n\n### How to Test It\n\nYou can test the thread-safety of this implementation using `Parallel.Invoke`, which simulates multiple threads trying to access the Singleton simultaneously:\n\n```csharp\nclass Program\n{\n    static void Main(string[] args)\n    {\n        // Simulate 10 threads trying to access the Singleton at the exact same time\n        Parallel.For(0, 10, i =>\n        {\n            Singleton singleton = Singleton.Instance;\n            singleton.DoSomething();\n        });\n\n        Console.ReadKey();\n    }\n}\n```\n\n### Output:\n```text\nSingleton instance created. Count: 1\nSingleton is doing something.\nSingleton is doing something.\nSingleton is doing something.\n... (repeated 10 times, but the constructor only runs once)\n```\n\n### Key Design Details:\n1. **`sealed` Class**: Prevents other classes from inheriting from it. Inheritance can break the Singleton pattern by allowing subclasses to create instances.\n2. **Private Constructor**: Restricts instantiation to within the class itself.\n3. **`volatile` Keyword**: Essential in C# memory models. It ensures that the read and write operations to `_instance` directly access memory, preventing issues where a thread sees a half-constructed object due to CPU instruction reordering.\n4. **Double-Check (`if` statements)**: \n   * The **first check** avoids the expensive `lock` overhead every single time a caller requests the instance.\n   * The **second check** guarantees that inside the locked block, only one thread actually instantiates the object.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 4.4969,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Thread Safety (0-5)",
+      "score": 5,
+      "justification": "The response correctly uses a static object lock with double-check locking and volatile keyword, ensuring thread safety during initialization while avoiding deadlocks and instruction reordering issues.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Lazy Initialization (0-5)",
+      "score": 5,
+      "justification": "Lazy initialization is properly achieved through the two-stage null check mechanism in the Instance property, ensuring instance creation only occurs when first requested and avoiding synchronization overhead afterward.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T13:39:21.828186+00:00"
+}

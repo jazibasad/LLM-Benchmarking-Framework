@@ -1,0 +1,31 @@
+{
+  "id": "P135",
+  "category": "Long-context Retention",
+  "difficulty": "Easy",
+  "prompt": "Note 1: Product X costs $45. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Product Y costs $60. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Product Z costs $30. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Which product is the cheapest?",
+  "response_text": "Based on the provided notes:\n* Product X costs $45\n* Product Y costs $60\n* Product Z costs $30\n\n**Product Z** is the cheapest, costing $30.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.794,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Fact Recall Accuracy",
+      "score": 5,
+      "justification": "The response correctly states that Product Z costs $30 and is the cheapest among the three products, accurately reflecting the information in Note 3.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Distraction Resistance",
+      "score": 5,
+      "justification": "The response stays focused on identifying the cheapest product without being misled by the repeated details of Products X and Y, showing no distraction.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:01:32.254791+00:00"
+}

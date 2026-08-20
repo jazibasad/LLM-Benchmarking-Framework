@@ -1,0 +1,43 @@
+{
+  "id": "P122",
+  "category": "Ambiguity Handling",
+  "difficulty": "Hard",
+  "prompt": "Design a permission system for 'the platform' supporting 'different user roles' with 'fine-grained access control' and 'audit logging'.",
+  "response_text": "Designing a robust permission system for a modern platform requires balancing security, performance, flexibility, and compliance. \n\nHere is a comprehensive design for a Role-Based Access Control (RBAC) and Attribute-Based Access Control (ABAC) hybrid permission system with built-in audit logging.\n\n---\n\n### 1. Core Concepts & Terminology\n\n*   **User:** An identity in the system (human or service account).\n*   **Role:** A collection of permissions (e.g., `Admin`, `Editor`, `Viewer`). Users are assigned roles.\n*   **Permission:** The ability to perform an *Action* on a *Resource* (e.g., `document:read`, `user:delete`).\n*   **Resource:** The entity being accessed (e.g., a specific document, a billing dashboard, an API endpoint).\n*   **Context/Attribute:** Environmental data used for fine-grained control (e.g., time of day, IP address, ownership of the resource).\n\n---\n\n### 2. Architecture Overview\n\nThe system consists of five core components:\n1.  **Identity & Access Management (IAM):** Manages users, roles, and bindings.\n2.  **Policy Enforcement Point (PEP):** The interceptor (API Gateway/Middleware) that catches requests and asks if they are allowed.\n3.  **Policy Decision Point (PDP):** The core engine that evaluates permissions and attributes.\n4.  **Audit Logger:** An asynchronous, immutable recording service for compliance.\n5.  **Data Store:** Relational database for persistent storage of policies and audit logs, backed by a high-performance cache (Redis) for fast permission checks.\n\n---\n\n### 3. Data Model (Database Schema)\n\nWe use a relational database (like PostgreSQL) to model the relationships.\n\n#### Users & Roles\n*   `users` (id, email, status, created_at)\n*   `roles` (id, name, description, tenant_id)\n*   `user_roles` (user_id, role_id, scope_id) *(Links users to roles, optionally scoped to an organization/tenant)*\n\n#### Permissions (Fine-Grained)\n*   `permissions` (id, action, resource_type) \n    *   *Example:* action = `write`, resource_type = `financial_report`\n*   `role_permissions` (role_id, permission_id)\n\n#### Resource-Based Access Control (ACLs for fine-grained ownership)\n*   `resource_policies` (id, resource_id, resource_type, grantee_type [user/role], grantee_id, permission_id)\n\n---\n\n### 4. Fine-Grained Access Control (FGAC) Strategy\n\nTo support fine-grained access (e.g., \"Users can edit *only their own* drafts\"), we combine **RBAC** with **ABAC (Attribute-Based Access Control)** using a policy evaluation engine.\n\n#### Permission Evaluation Flow:\n1. **Coarse-Grained Check (RBAC):** Does the user have the *role/permission* to edit *any* document? (e.g., `document:edit`).\n2. **Fine-Grained Check (ABAC):** If yes, check contextual attributes:\n   * Is `document.owner_id == user.id`?\n   * Is the document in `status == 'draft'`?\n   * Is the user accessing from a corporate IP range?\n\n#### Example Policy Evaluation (JSON DSL):\n```json\n{\n  \"effect\": \"ALLOW\",\n  \"actions\": [\"document:edit\"],\n  \"resources\": [\"document:*\"],\n  \"conditions\": {\n    \"stringEquals\": { \"document.owner_id\": \"${user.id}\" },\n    \"stringNotEquals\": { \"document.status\": \"archived\" }\n  }\n}\n```\n\n---\n\n### 5. Audit Logging System\n\nEvery security-relevant action must be logged for compliance (SOC2, GDPR, HIPAA).\n\n#### Audit Log Schema (`audit_logs`):\n*   `id` (UUID, primary key)\n*   `timestamp` (UTC ISO-8601)\n*   `actor_id` (Who performed the action)\n*   `actor_ip` (Origin IP address)\n*   `action` (What was done, e.g., `user.delete`)\n*   `target_resource` (What was affected, e.g., `user:9876`)\n*   `decision` (ALLOW or DENY)\n*   `reason_code` (e.g., \"Insufficient permissions\", \"Successful check\")\n*   `context_snapshot` (JSON blob of environment details at the time of request)\n\n#### Design Requirements for Audit Logs:\n1.  **Asynchronous Writing:** To avoid slowing down API responses, PEP pushes audit events to a message broker (e.g., Kafka, AWS SQS), which a worker service flushes to the database/data lake.\n2.  **Immutability:** Audit tables must be append-only. Database users writing logs should not have `UPDATE` or `DELETE` privileges.\n3.  **Tamper Evidence:** Periodically hash blocks of audit logs (similar to a Merkle tree/blockchain lite) to ensure logs haven't been altered maliciously.\n\n---\n\n### 6. Request Lifecycle (Step-by-Step)\n\n1.  **Request:** User sends `PUT /api/documents/123` with a JWT bearer token to the API Gateway.\n2.  **Authentication (PEP):** Gateway validates the JWT, extracts `user_id` and assigned `roles`.\n3.  **Cache Check:** PEP checks Redis: `Does user:456 have permission for document:123?` (Cache hit returns instant ALLOW/DENY).\n4.  **Evaluation (PDP - on cache miss):**\n    *   Query DB for user's roles and permissions.\n    *   Fetch resource attributes (e.g., `document 123` belongs to `user:789`).\n    *   Evaluate ABAC rules (User 456 is an `Editor`, but not the owner. Deny unless an override policy exists).\n5.  **Enforcement:** Gateway blocks the request with `403 Forbidden` (or allows it to proceed to the microservice).\n6.  **Audit Logging:** An event `{ actor: 456, action: \"document:edit\", target: \"123\", decision: \"DENY\" }` is sent to the audit queue.\n\n---\n\n### 7. Performance & Scalability Considerations\n\n*   **Caching with Redis:** Evaluating RBAC/ABAC on every DB query is too slow. Cache the flattened permission set of a user for a short TTL (e.g., 5 minutes). Invalidate the cache immediately when a role changes.\n*   **Hierarchical Roles:** Support role inheritance (e.g., `Admin` inherits `Manager`, `Manager` inherits `Viewer`) to prevent redundant permission assignments.\n*   **Multi-Tenancy:** Ensure tenant IDs are baked into every permission check (e.g., checking if a user has access to a resource *within the current tenant*).",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 6.1426,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Ambiguity Surfacing Score",
+      "score": 2,
+      "justification": "The response acknowledges that the prompt lacks specific details by noting the need to 'balance security, performance, flexibility, and compliance,' but it does not explicitly enumerate or identify the multiple undefined terms or requirements in the prompt before proceeding with the design, falling short of clearly surfacing ambiguities.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Assumption Documentation Score",
+      "score": 4,
+      "justification": "The response makes several reasonable assumptions such as using a hybrid RBAC/ABAC system, employing Redis for caching, and choosing PostgreSQL as the data store, and while these are not always explicitly labeled as assumptions, they are presented as deliberate design choices with clear rationales.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Structural Soundness Score",
+      "score": 5,
+      "justification": "The proposed permission system design is technically coherent and well-structured, featuring clearly defined core concepts, a logical architecture with distinct components (IAM, PEP, PDP, Audit Logger, Data Store), a properly normalized database schema, and a detailed request lifecycle that aligns with standard security frameworks.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Practical Usefulness Score",
+      "score": 5,
+      "justification": "Despite the ambiguity in the prompt, the response provides a highly actionable and detailed design including concrete examples of database schemas, policy evaluation logic in JSON, audit log structures, and performance considerations, making it immediately useful for a real engineer to start implementing.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 16,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T13:58:18.182415+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "P126",
+  "category": "Ambiguity Handling",
+  "difficulty": "Medium",
+  "prompt": "Fix the bug in my code.",
+  "response_text": "I would love to help, but you haven't shared your code! \n\nPlease paste your code here, and let me know:\n1. **What is it supposed to do?**\n2. **What is it actually doing?** (Are you getting an error message, incorrect output, or does it freeze?)\n\nOnce you provide that, I'll find the bug and fix it for you.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.2473,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Missing Context Identification",
+      "score": 5,
+      "justification": "The response explicitly identifies that the user's code is missing and precisely requests the code along with expected versus actual behavior, fully addressing the missing context.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Constructive Response",
+      "score": 5,
+      "justification": "The response provides a clear, structured template for the user to supply the necessary details, offering helpful guidance despite the lack of code.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T13:59:10.221977+00:00"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "P121",
+  "category": "Ambiguity Handling",
+  "difficulty": "Hard",
+  "prompt": "Implement a caching layer for 'the API' that improves 'performance' without introducing 'stale data issues' or 'excessive memory use'.",
+  "response_text": "To implement a robust caching layer that balances high performance, memory constraints, and data freshness, the industry-standard approach is a **multi-tiered caching strategy (Local + Distributed)** utilizing **Cache-Aside (Lazy Loading)** with **Write-Invalidation**, coupled with **Stale-While-Revalidate (SWR)** for read-heavy endpoints.\n\nBelow is a production-grade Python implementation using **FastAPI**, **Redis** (distributed cache), and **in-memory (TTL + LRU)** for ultra-fast local retrieval.\n\n---\n\n### 1. Architecture Strategy for Your Requirements\n\n1. **No Stale Data Issues:** Instead of relying purely on time-to-live (TTL) expiration (which causes stale reads), we use **Write-Invalidation**. When data changes (POST/PUT/DELETE), the cache is explicitly deleted or updated. For high-throughput reads, we use a short TTL (e.g., 5-10 seconds) combined with background revalidation.\n2. **No Excessive Memory Use:** \n   * The local memory cache uses an **LRU (Least Recently Used) eviction policy** with a strict item/size limit.\n   * The distributed cache (Redis) relies on Redis's internal memory management (`maxmemory` and `volatile-lru` eviction policies).\n3. **Improved Performance:** Hot data lives in the local process memory (microseconds), warm data lives in Redis (milliseconds), bypassing the primary database entirely.\n\n---\n\n### 2. Python Implementation\n\n#### Dependencies\n```bash\npip install fastapi redis pydantic cachetools httpx\n```\n\n#### Code (`cache_layer.py`)\n\n```python\nimport time\nimport json\nimport redis\nfrom typing import Callable, Any, Optional\nfrom cachetools import TTLCache\nfrom fastapi import FastAPI, Request, Response\nfrom pydantic import BaseModel\n\n# --- 1. Infrastructure Setup ---\n\n# Local In-Memory L1 Cache: Max 1000 items, TTL of 5 seconds (prevents heavy RAM usage)\nlocal_cache = TTLCache(maxsize=1000, ttl=5)\n\n# Distributed L2 Cache (Redis)\nredis_client = redis.Redis(host='localhost', port=6379, db=0, decode_responses=True)\n\napp = FastAPI()\n\n# --- 2. Caching Decorator / Logic ---\n\ndef smart_cache(ttl_seconds: int = 60, key_prefix: str = \"api\"):\n    \"\"\"\n    Implements L1 (Local) + L2 (Redis) Cache-Aside pattern.\n    Guarantees performance via L1/L2 and prevents memory bloat via strict limits.\n    \"\"\"\n    def decorator(func: Callable):\n        async def wrapper(*args, **kwargs):\n            # Generate a deterministic cache key based on function arguments\n            cache_key = f\"{key_prefix}:{func.__name__}:{str(args)}:{str(kwargs)}\"\n\n            # --- Tier 1: Check Local Memory (L1) ---\n            if cache_key in local_cache:\n                return local_cache[cache_key]\n\n            # --- Tier 2: Check Distributed Cache (L2 - Redis) ---\n            cached_data = redis_client.get(cache_key)\n            if cached_data:\n                deserialized = json.loads(cached_data)\n                # Populate L1 for subsequent ultra-fast access\n                local_cache[cache_key] = deserialized\n                return deserialized\n\n            # --- Cache Miss: Fetch from Source (Database/API) ---\n            start_time = time.time()\n            result = await func(*args, **kwargs)\n            duration = time.time() - start_time\n            print(f\"Cache MISS for {cache_key}. Fetched in {duration:.4f}s\")\n\n            # --- Populate Caches ---\n            serialized = json.dumps(result)\n            local_cache[cache_key] = result\n            # Set with TTL to prevent indefinite memory growth in Redis\n            redis_client.setex(cache_key, ttl_seconds, serialized)\n\n            return result\n        return wrapper\n    return decorator\n\n\ndef invalidate_cache(key_prefix: str):\n    \"\"\"\n    Solves stale data issues by performing Write-Invalidation.\n    Call this whenever data is mutated (POST/PUT/DELETE).\n    \"\"\"\n    # Clear local cache matching prefix\n    keys_to_delete = [k for k in local_cache.keys() if k.startswith(key_prefix)]\n    for k in keys_to_delete:\n        del local_cache[k]\n\n    # Clear Redis cache matching pattern\n    cursor = 0\n    while True:\n        cursor, keys = redis_client.scan(cursor, match=f\"{key_prefix}*\", count=100)\n        if keys:\n            redis_client.delete(*keys)\n        if cursor == 0:\n            break\n    print(f\"Cache invalidated for prefix: {key_prefix}\")\n\n\n# --- 3. Example API Usage ---\n\nclass Item(BaseModel):\n    id: int\n    name: str\n    price: float\n\n# Simulated Database\nfake_db = {\n    1: {\"id\": 1, \"name\": \"Laptop\", \"price\": 1200.0},\n    2: {\"id\": 2, \"name\": \"Mouse\", \"price\": 25.0},\n}\n\n@app.get(\"/items/{item_id}\")\n@smart_cache(ttl_seconds=30, key_prefix=\"item\")\nasync def get_item(item_id: int):\n    # Simulate slow database query\n    time.sleep(0.5) \n    if item_id not in fake_db:\n        return {\"error\": \"Item not found\"}\n    return fake_db[item_id]\n\n\n@app.put(\"/items/{item_id}\")\nasync def update_item(item_id: int, item: Item):\n    # 1. Update Database\n    fake_db[item_id] = item.dict()\n    \n    # 2. Prevent Stale Data: Immediately invalidate cache for this domain\n    invalidate_cache(key_prefix=\"item\")\n    \n    return {\"message\": \"Item updated successfully\", \"item\": item}\n```\n\n---\n\n### 3. How this Design Meets Your Criteria\n\n* **Improves Performance:** \n  * Requests hit the **L1 Local Cache** first (Python dictionary lookup takes $< 0.001$ms).\n  * If missing, they hit **L2 Redis** ($\\approx 1-2$ms), avoiding the database entirely.\n* **No Stale Data Issues:**\n  * We avoid long TTLs for mutable data.\n  * We use **Write-Invalidation** in the `PUT/POST/DELETE` endpoints. The moment data changes, both L1 and L2 caches are instantly wiped for that resource type.\n* **No Excessive Memory Use:**\n  * **L1 Cache:** Uses `cachetools.TTLCache` which enforces a hard limit (`maxsize=1000`). When it fills up, it automatically drops the Least Recently Used items.\n  * **L2 Cache:** Relies on Redis. In your Redis configuration (`redis.conf`), you should set:\n    ```text\n    maxmemory 2gb\n    maxmemory-policy volatile-lru\n    ```\n    This ensures Redis automatically evicts the oldest cached keys when memory hits 2GB, preventing Out-Of-Memory (OOM) crashes.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 6.7496,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Ambiguity Surfacing Score",
+      "score": 0,
+      "justification": "The response does not mention or attempt to surface the undefined terms such as 'the API', performance metrics, stale data thresholds, or memory limits before proceeding.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Assumption Documentation Score",
+      "score": 2,
+      "justification": "The response lists some assumptions (e.g., using FastAPI, Redis, specific TTL values) with brief justification but fails to clearly document key assumptions like control over the API code or data mutation patterns.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Structural Soundness Score",
+      "score": 4,
+      "justification": "The proposed multi-tiered cache-aside design with write invalidation and LRU eviction is technically coherent and addresses the core goals, though minor implementation details (e.g., blocking sleep in async) could be improved.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Practical Usefulness Score",
+      "score": 4,
+      "justification": "The response provides a concrete, adaptable code example that an engineer could integrate into a real system with only minor adjustments to fit their specific API stack.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T13:58:03.243679+00:00"
+}

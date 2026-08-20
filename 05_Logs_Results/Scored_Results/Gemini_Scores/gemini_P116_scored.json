@@ -1,0 +1,31 @@
+{
+  "id": "P116",
+  "category": "Ambiguity Handling",
+  "difficulty": "Easy",
+  "prompt": "What time should I set my alarm for?",
+  "response_text": "To help you figure that out, I need a little more information! \n\n* **What time do you need to wake up, or what time do you need to be somewhere?**\n* **How much time do you need to get ready (shower, breakfast, commute)?**\n* **What time do you usually like to fall asleep?** \n\nLet me know your schedule, and we can calculate the best time for your alarm!",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.4392,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Clarification Recognition",
+      "score": 5,
+      "justification": "The response correctly identifies that the original question lacks necessary context and actively seeks clarifying details.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Helpful Framing",
+      "score": 5,
+      "justification": "The response asks specific, targeted clarifying questions instead of making assumptions, which effectively guides the user toward a solution.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T13:55:12.337098+00:00"
+}

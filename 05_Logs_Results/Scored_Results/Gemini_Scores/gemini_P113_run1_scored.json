@@ -1,0 +1,31 @@
+{
+  "id": "P113",
+  "category": "Ambiguity Handling",
+  "difficulty": "Easy",
+  "prompt": "Is it better to work remotely or in an office?",
+  "response_text": "The question of whether it is better to work remotely or in an office has no single, objective answer. It depends heavily on **your personality, your industry, your life stage, and the specific company culture**. \n\nBoth models have distinct advantages and drawbacks. Here is a breakdown of how they compare across key areas to help you decide which is better for you.\n\n---\n\n### 1. Productivity and Focus\n*   **Remote Work:** Generally better for \"deep work\" (writing, coding, design, data analysis) because you can control your environment and avoid the constant interruptions of an open-plan office.\n*   **Office Work:** Generally better for collaborative projects, rapid problem-solving, and brainstorming. It’s much easier to walk over to a colleague's desk than to schedule a Zoom call.\n\n### 2. Work-Life Balance and Flexibility\n*   **Remote Work:** Eliminates the commute, giving you back 1 to 2 hours a day. It allows for flexibility—like throwing in a load of laundry between meetings or taking a midday walk. However, the downside is that **\"work follows you home,\"** making it hard to \"switch off\" at the end of the day.\n*   **Office Work:** Offers a clear physical boundary between work and home. When you leave the office, your workday is done, making it easier to mentally disconnect.\n\n### 3. Career Growth and Networking\n*   **Office Work:** Offers more opportunities for \"organic networking\"—chatting by the coffee machine, running into executives in the hallway, and absorbing company politics and culture passively. Junior employees often learn faster by listening in on senior colleagues.\n*   **Remote Work:** Can lead to the **\"out of sight, out of mind\"** phenomenon. Remote workers have to be much more intentional about documenting their work, communicating their achievements, and building relationships so they aren't passed over for promotions.\n\n### 4. Social Interaction and Mental Health\n*   **Office Work:** Combats loneliness and provides built-in daily social interaction. For many people, office friendships are a major source of fulfillment.\n*   **Remote Work:** Reduces daily stress related to office politics, commutes, and office noise. However, it can lead to isolation and loneliness if you don't actively seek out social interaction outside of work.\n\n### 5. Financial Impact\n*   **Remote Work:** Saves money on commuting, professional work attire, buying lunch, and potentially dry cleaning. However, it may increase your home utility bills (electricity, internet, heating/cooling) and require you to invest in a good home office setup.\n*   **Office Work:** Costs more in transport, parking, food, and clothing.\n\n---\n\n### The Verdict: Which is better?\n\n*   **Remote work tends to be better for:** Experienced professionals who are self-starters, parents, people living in high-cost-of-living areas with long commutes, and those whose jobs require intense concentration.\n*   **Office work tends to be better for:** Junior employees who are early in their careers, people who learn best through mentorship, extroverts who thrive on social energy, and those struggling with self-discipline or home distractions.\n\n**The rising trend:** Many companies and workers have settled on a **hybrid model** (2–3 days in the office, 2–3 days at home), which attempts to capture the focus of remote work with the collaboration of the office.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 3.1833,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Clarification Recognition",
+      "score": 4,
+      "justification": "The response notes that the question has no single objective answer and depends on personal factors, demonstrating awareness of missing context.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Helpful Framing",
+      "score": 5,
+      "justification": "It offers a balanced, detailed comparison across key areas and ends with a practical hybrid recommendation, avoiding a definitive guess.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 9,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T13:50:31.082863+00:00"
+}

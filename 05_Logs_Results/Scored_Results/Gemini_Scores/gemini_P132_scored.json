@@ -1,0 +1,31 @@
+{
+  "id": "P132",
+  "category": "Ambiguity Handling",
+  "difficulty": "Medium",
+  "prompt": "Design a database for my app.",
+  "response_text": "I would love to help you design a database for your app! \n\nTo give you a proper design, I need to know a little bit about what your app does. Could you tell me:\n\n1. **What is the core purpose of your app?** (e.g., e-commerce, social media, project management, fitness tracking, etc.)\n2. **Who are the main users?** (e.g., customers, admins, vendors, regular users)\n3. **What are the key features?** (e.g., \"Users can post photos and like other photos,\" or \"Sellers can list products and buyers can add them to a cart.\")\n4. **Do you have a preferred database type?** (Relational like PostgreSQL/MySQL, or NoSQL like MongoDB?)\n\n---\n\n### *Example of what we will build:*\nOnce you give me the details, I will provide:\n* **Entities & Attributes:** A breakdown of your tables/collections and their data fields.\n* **Relationships:** How the data connects (e.g., One-to-Many, Many-to-Many).\n* **SQL/NoSQL Schema:** Ready-to-use code to create your database.\n\nTell me about your app, and let's get started!",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.5916,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Missing Context Identification",
+      "score": 4,
+      "justification": "The response clearly identifies the missing details (app purpose, users, features, DB type) and asks for them.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Constructive Response",
+      "score": 5,
+      "justification": "It provides concrete guidance and a structured approach despite the ambiguity, offering a full design framework.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 9,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:01:13.593991+00:00"
+}

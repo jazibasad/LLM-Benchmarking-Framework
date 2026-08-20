@@ -1,0 +1,43 @@
+{
+  "id": "P119",
+  "category": "Ambiguity Handling",
+  "difficulty": "Hard",
+  "prompt": "Refactor 'the legacy module' to be 'more maintainable' while preserving 'all existing functionality' and 'not breaking anything downstream'.",
+  "response_text": "It sounds like you are preparing a prompt for an AI coding assistant (like GitHub Copilot, ChatGPT, or Claude)! \n\nWhile your current prompt hits the right high-level goals (maintainability, preserving functionality, backward compatibility), AI models usually need a bit more **context and guardrails** to do this successfully without introducing subtle bugs. \n\nHere is an upgraded version of your prompt, along with a few variations depending on your specific needs.\n\n---\n\n### Option 1: The \"Production-Ready\" Prompt (Recommended)\n*Use this if you want the AI to act cautiously, write tests, and explain its changes.*\n\n> **Role:** You are an expert software engineer specializing in safe refactoring and legacy code migration.\n> \n> **Task:** Refactor the module located at `[path/to/legacy_module]` to improve its maintainability (readability, modularity, and adherence to modern best practices).\n> \n> **Constraints:**\n> 1. **Preserve 100% of existing functionality:** Do not add new features or alter existing business logic.\n> 2. **Ensure zero downstream breakage:** All public APIs, exported functions, class signatures, and return types must remain strictly backward-compatible.\n> 3. **Test Coverage:** If unit tests exist, ensure they all pass. If they don't exist, please write a baseline set of tests covering the current behavior *before* you refactor.\n> \n> **Output Requirements:**\n> - Explain the specific maintainability issues you found in the legacy code.\n> - Provide the refactored code.\n> - List any edge cases you considered to prevent regressions.\n\n---\n\n### Option 2: The \"Step-by-Step\" Prompt\n*Use this if the legacy module is large and you want to break the refactoring down to avoid overwhelming the AI.*\n\n> I need to refactor `[path/to/legacy_module]` to make it more maintainable without breaking downstream dependencies. Let's do this iteratively. \n> \n> **Step 1:** Analyze the module and output a brief summary of:\n> - What the module currently does.\n> - What its public API (methods/functions/exports) is, so we ensure nothing breaks downstream.\n> - The main technical debt or maintainability smells you see.\n> \n> *Wait for my approval before proceeding to the refactoring code.*\n\n---\n\n### Tips for Refactoring Legacy Code with AI:\n1. **Provide the Tests:** If you have existing unit tests for the module, paste them into the prompt (or reference them). This is the single best way to ensure the AI doesn't break functionality.\n2. **Define \"Maintainable\":** Be specific about what bothers you. Do you mean \"break this 1,000-line file into smaller files,\" \"use modern ES6+/Python 3 syntax,\" or \"remove tight coupling and add dependency injection\"? \n3. **Specify the Stack:** Always remind the AI of the language, framework, and relevant version (e.g., *TypeScript 5.0*, *Python 3.10*, *React 18*).",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 4.5049,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Ambiguity Surfacing Score",
+      "score": 5,
+      "justification": "The response explicitly identifies the undefined terms 'more maintainable', 'legacy module', and 'not breaking anything' and provides concrete ways to clarify them, achieving complete success.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Assumption Documentation Score",
+      "score": 5,
+      "justification": "The response clearly states its assumption that the user is preparing a prompt for an AI coding assistant and justifies the need for additional context and guardrails to avoid subtle bugs.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Structural Soundness Score",
+      "score": 4,
+      "justification": "The response proposes a well-structured prompt template with roles, constraints, and output requirements, which is technically coherent for guiding an AI refactoring, though it does not itself provide the technical design of the refactored module.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Practical Usefulness Score",
+      "score": 5,
+      "justification": "The response provides actionable, concrete options and tips that a real engineer can immediately use to improve their AI prompting strategy, making it highly practical.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 19,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T13:56:29.911953+00:00"
+}

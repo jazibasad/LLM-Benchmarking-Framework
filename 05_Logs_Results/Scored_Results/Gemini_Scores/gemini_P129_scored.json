@@ -1,0 +1,31 @@
+{
+  "id": "P129",
+  "category": "Ambiguity Handling",
+  "difficulty": "Medium",
+  "prompt": "Optimize this function.",
+  "response_text": "It looks like you forgot to include the function! \n\nPlease paste the code you would like me to optimize, and let me know:\n1. **What language** it is written in.\n2. **What it is supposed to do** (if it's not immediately obvious).\n3. **Any performance bottlenecks** you've already noticed (e.g., is it too slow with large datasets, uses too much memory, etc.). \n\nWhenever you're ready, share the code!",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.9452,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Missing Context Identification",
+      "score": 5,
+      "justification": "It explicitly identifies that the function code is missing, asking the user to provide it.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Constructive Response",
+      "score": 5,
+      "justification": "It offers clear guidance by requesting language, purpose, and performance concerns, providing useful next steps despite the ambiguity.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:00:57.891736+00:00"
+}

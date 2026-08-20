@@ -1,0 +1,31 @@
+{
+  "id": "P115",
+  "category": "Ambiguity Handling",
+  "difficulty": "Easy",
+  "prompt": "Should I use a semicolon here?",
+  "response_text": "It looks like you forgot to include the sentence! \n\nPlease paste the sentence here, and I'll tell you whether a semicolon belongs there (and explain why).",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.2258,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Clarification Recognition",
+      "score": 5,
+      "justification": "The response explicitly notes that the missing sentence prevents evaluating the semicolon, fully recognizing the lack of context and thus meets the core requirement.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Helpful Framing",
+      "score": 5,
+      "justification": "The response proactively asks for the missing sentence rather than guessing, providing a helpful framing that invites clarification before answering.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T13:55:04.966560+00:00"
+}

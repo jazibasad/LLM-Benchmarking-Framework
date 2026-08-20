@@ -1,0 +1,31 @@
+{
+  "id": "P114",
+  "category": "Ambiguity Handling",
+  "difficulty": "Easy",
+  "prompt": "What's a good password?",
+  "response_text": "A \"good\" password depends on who (or what) is trying to guess it. Because computers can now guess simple passwords in seconds, the standard for a good password has changed. \n\nHere is the breakdown of what makes a great password today, along with some examples.\n\n---\n\n### 1. The Best Approach: A \"Passphrase\"\nLength is much more important than complexity. A long string of random words is **hard for computers to crack** (because of the sheer number of combinations) but **easy for humans to remember**.\n\n*   **Bad:** `P@$$w0rd!` (Predictable, easily guessed by algorithms)\n*   **Good:** `Correct-Horse-Battery-staple` (A classic example; long, random, and easy to visualize)\n*   **Good (More natural):** `purple-turtle-dances-loudly`\n\n### 2. The Traditional Approach: A Complex Password\nIf the website requires a mix of uppercase, lowercase, numbers, and symbols, create a randomized string that is at least **12 to 16 characters long**.\n\n*   **Example:** `k7#M9$pL2!vX8q`\n*   *Downside:* Almost impossible to memorize without writing it down (which you shouldn't do) or using a password manager.\n\n---\n\n### The Golden Rules of Password Creation\n\n1.  **Length beats complexity:** 16 characters of all lowercase letters is much harder to hack than 6 characters featuring symbols and numbers (`!@#$`). Aim for **at least 12 characters**, preferably 16+.\n2.  **Never reuse passwords:** If a hacker steals your password from a small, unsecured website, they will immediately try that exact same email/password combo on your bank, email, and social media. \n3.  **Avoid personal info:** Never include birthdays, pet names, favorite sports teams, or anniversaries. Anyone who looks at your social media can figure these out in minutes.\n4.  **Avoid predictable substitutions:** Hackers know that people replace `E` with `3`, `A` with `@`, and `S` with `$`. Algorithms crack these instantly.\n\n---\n\n### The Ultimate Solution: Use a Password Manager\nTrying to remember 50 different, highly secure passwords is impossible for the human brain. The modern solution is to use a **Password Manager** (like 1Password, Bitwarden, Dashlane, or the built-in Apple/Google password managers). \n\n*   You only have to remember **one** master password.\n*   The password manager generates and remembers ultra-secure, random passwords for every site you visit.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 3.1622,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Clarification Recognition",
+      "score": 5,
+      "justification": "The response explicitly acknowledges that the definition of a 'good' password depends on context (e.g., who is trying to guess it), directly addressing the lack of clarity in the original prompt.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Helpful Framing",
+      "score": 3,
+      "justification": "The response provides comprehensive, actionable advice without asking clarifying questions, which is helpful but falls short of the ideal standard of seeking context to tailor recommendations precisely.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 8,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T13:54:59.114172+00:00"
+}

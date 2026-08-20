@@ -1,0 +1,31 @@
+{
+  "id": "P131",
+  "category": "Ambiguity Handling",
+  "difficulty": "Medium",
+  "prompt": "Summarize the attached file.",
+  "response_text": "It looks like you forgot to attach or paste the file! \n\nPlease upload the file or paste the text you would like me to summarize, and I'll be happy to help.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.8137,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Missing Context Identification",
+      "score": 3,
+      "justification": "The response correctly identifies that the file is missing but does not specify particular types of content such as code, documents, or apps that were absent, meeting the basic requirement of indicating missing context with only minor gaps.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Constructive Response",
+      "score": 3,
+      "justification": "The response provides useful general guidance by requesting the user to upload the file or paste the text, satisfying the core requirement of being constructive even though the primary task could not be completed due to the missing input.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 6,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:01:08.857654+00:00"
+}

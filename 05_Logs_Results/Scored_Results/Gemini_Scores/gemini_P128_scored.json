@@ -1,0 +1,31 @@
+{
+  "id": "P128",
+  "category": "Ambiguity Handling",
+  "difficulty": "Medium",
+  "prompt": "Translate this document for me.",
+  "response_text": "I would be happy to help you translate your document! \n\nPlease paste the text here, and let me know:\n1. **What language** it is currently in (if you aren't sure, that's okay, I can usually detect it).\n2. **What language** you would like it translated into.\n\n*(Note: If you have a file you'd like to upload, you can use the attachment feature if your interface supports it, or simply copy and paste the text directly into our chat.)*",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.3576,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Missing Context Identification",
+      "score": 2,
+      "justification": "The response only asks the user to paste text and specify languages but does not explicitly identify the missing document or code, only partially signaling what information is needed.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Constructive Response",
+      "score": 3,
+      "justification": "It gives clear guidance on what details to provide and how to share the text, fulfilling the core need for useful instructions despite the lack of specific context.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 5,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T14:00:31.852105+00:00"
+}
