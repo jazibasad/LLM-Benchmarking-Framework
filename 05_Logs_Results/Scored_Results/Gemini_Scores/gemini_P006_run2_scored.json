@@ -1,0 +1,31 @@
+{
+  "id": "P006",
+  "category": "Knowledge Retrieval",
+  "difficulty": "Easy",
+  "prompt": "Explain the Model-View-Controller (MVC) architectural pattern and the responsibility of each component.",
+  "response_text": "The **Model-View-Controller (MVC)** architectural pattern is a software design pattern used to develop user interfaces by dividing an application into three interconnected components. This separation of concerns allows for efficient code organization, easier maintenance, and scalability, as developers can work on the UI, business logic, and data handling independently.\n\nHere is a breakdown of the pattern and the specific responsibilities of each component.\n\n---\n\n### The Components\n\n#### 1. The Model\nThe **Model** represents the application's data, business logic, and rules. It is completely independent of the user interface (Views and Controllers). \n\n* **Responsibilities:**\n  * **Data Management:** Retrieves, saves, and updates data (often interacting with a database or external API).\n  * **Business Logic:** Implements the core functionality of the application, such as calculating totals, validating user input data, or applying discount rules.\n  * **State Management:** Maintains the current state of the application's data.\n  * **Notification:** Informs the View (directly or indirectly) when its data changes so the UI can update accordingly.\n\n#### 2. The View\nThe **View** is the user interface (UI) of the application. It is what the user actually sees and interacts with (e.g., buttons, forms, HTML pages, charts, images).\n\n* **Responsibilities:**\n  * **Display Data:** Renders the data provided by the Model into a human-readable format.\n  * **User Interaction:** Captures user actions (like clicking a button, typing into a text box, or submitting a form) and forwards them to the Controller.\n  * **Passivity:** Ideally, the View should be \"dumb\"—it contains no business logic. It simply displays what it is told to display and passes user inputs along.\n\n#### 3. The Controller\nThe **Controller** acts as an intermediary (or traffic cop) between the Model and the View. \n\n* **Responsibilities:**\n  * **Handling Input:** Receives user inputs and actions from the View (e.g., a \"Submit\" button click).\n  * **Processing:** Interprets the user's action and translates it into commands for the Model (e.g., \"save this new user to the database\").\n  * **Updating the View:** Takes the updated data from the Model and selects the appropriate View to display the result back to the user.\n\n---\n\n### How They Work Together (The Flow)\n\nTo understand MVC, it helps to trace the lifecycle of a user action:\n\n1. **User Action:** The user interacts with the **View** (e.g., they enter their username and password on a login page and click \"Login\").\n2. **Controller Notified:** The **View** captures this action and sends the input data to the **Controller**.\n3. **Model Updated:** The **Controller** receives the data and calls methods on the **Model** to process it (e.g., checking the database to see if the password is correct).\n4. **Model Responds:** The **Model** performs the logic, updates its state, and returns the result (e.g., \"Login Successful\" or \"Invalid Password\") to the **Controller**.\n5. **View Updated:** The **Controller** receives the result from the Model and chooses the appropriate **View** to display the outcome to the user (e.g., rendering the user's dashboard or showing an error message).\n\n---\n\n### Why Use MVC? (Benefits)\n\n* **Separation of Concerns:** Because the components are distinct, a developer can change how the UI looks (the View) without touching the database logic (the Model).\n* **Maintainability and Scalability:** Code is more organized, making it easier to debug, test, and scale over time.\n* **Parallel Development:** Different team members can work on different components simultaneously. For example, a frontend developer can build the View while a backend developer builds the Model and Controller.\n* **Reusability:** A single Model can be tied to multiple Views (e.g., providing data for a web browser view and a mobile app view simultaneously).",
+  "run_number": 2,
+  "temperature": 0.7,
+  "latency_seconds": 4.4166,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Separation Of Concerns",
+      "score": 5,
+      "justification": "The response clearly defines distinct responsibilities for Model (data/logic), View (UI), and Controller (input handling), demonstrating strong isolation of concerns.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Component Breakdown",
+      "score": 5,
+      "justification": "Accurately describes each component's role with precise responsibilities aligned with standard MVC definitions, covering all required aspects.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T12:33:35.549583+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "P025",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Easy",
+  "prompt": "A storage tank is being filled by a pipe at a rate of 15 liters per minute while a leak drains it at 4 liters per minute. If the tank currently holds 200 liters and its capacity is 500 liters, calculate how many minutes it will take to reach full capacity.",
+  "response_text": "To find out how many minutes it will take for the storage tank to reach full capacity, we can follow these steps:\n\n1. **Calculate the net fill rate:**\n   The pipe fills the tank at $15\\text{ liters/minute}$, but the leak drains it at $4\\text{ liters/minute}$. \n   $$\\text{Net Rate} = 15 - 4 = 11\\text{ liters per minute}$$\n\n2. **Determine the remaining capacity needed:**\n   The tank's total capacity is $500\\text{ liters}$, and it currently holds $200\\text{ liters}$.\n   $$\\text{Remaining Capacity} = 500 - 200 = 300\\text{ liters}$$\n\n3. **Calculate the time required to reach full capacity:**\n   Divide the remaining capacity by the net fill rate.\n   $$\\text{Time} = \\frac{300\\text{ liters}}{11\\text{ liters/minute}} \\approx 27.27\\text{ minutes}$$\n\nIt will take approximately **27.27 minutes** (or about 27 minutes and 16 seconds) for the tank to reach full capacity.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.396,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Net Rate Calculation",
+      "score": 5,
+      "justification": "The model correctly computes the net fill rate as 15 − 4 = 11 L/min, matching the required calculation.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Time To Capacity",
+      "score": 5,
+      "justification": "The model correctly divides the remaining 300 L by the net rate 11 L/min to obtain ≈27.27 minutes, accurately answering the prompt.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T12:43:56.608717+00:00"
+}

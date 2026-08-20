@@ -1,0 +1,31 @@
+{
+  "id": "P024",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Easy",
+  "prompt": "If 5 workers can assemble 20 machines in 4 days, how many days will it take 8 workers to assemble 32 machines, assuming constant productivity per worker?",
+  "response_text": "To find out how many days it will take 8 workers to assemble 32 machines, we can break the problem down into steps using the concept of \"worker-days.\"\n\n1. **Calculate the work rate of a single worker:**\n   * 5 workers take 4 days to assemble 20 machines.\n   * Total worker-days needed for 20 machines = $5 \\text{ workers} \\times 4 \\text{ days} = 20 \\text{ worker-days}$.\n   * Therefore, the time it takes to build 1 machine = $\\frac{20 \\text{ worker-days}}{20 \\text{ machines}} = 1 \\text{ worker-day per machine}$. \n   *(This means it takes 1 day of work for one person to build one machine).*\n\n2. **Calculate the worker-days needed for the new task:**\n   * We need to assemble 32 machines.\n   * At 1 worker-day per machine, the total work required = $32 \\text{ machines} \\times 1 \\text{ worker-day} = 32 \\text{ worker-days}$.\n\n3. **Calculate the time it takes for 8 workers:**\n   * We have 8 workers available.\n   * Number of days = $\\frac{\\text{Total worker-days}}{\\text{Number of workers}}$\n   * Number of days = $\\frac{32 \\text{ worker-days}}{8 \\text{ workers}} = 4 \\text{ days}$.\n\nIt will take **4 days** for 8 workers to assemble 32 machines.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 2.0405,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Proportional Reasoning (0-5): Evaluates correct rate calculation per worker-day",
+      "score": 5,
+      "justification": "The response correctly computes the worker-day rate as 1 per machine, showing proper proportional reasoning.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Step Logic (0-5): Evaluates clear multiplication/division steps",
+      "score": 5,
+      "justification": "The answer presents a clear, sequential breakdown of multiplication and division steps that lead to the correct 4‑day result.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T12:43:47.596861+00:00"
+}
