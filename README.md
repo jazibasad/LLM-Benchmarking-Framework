@@ -82,7 +82,7 @@ folder:
 
 - **Gemini** (`run_gemini_benchmark.py` → `Gemini_Logs/`) — `gemini-3.5-flash-lite`
 - **Mistral** (`run_mistral_benchmark.py` → `Mistral_Logs/`) — `open-mistral-nemo`
-- **Groq** (`run_groq_benchmark.py` → `Groq_Logs/`) — `llama-3.3-70b-versatile`
+- **Groq** (`run_groq_benchmark.py` → `Groq_Logs/`) — `openai/gpt-oss-120b`
 
 Every call records `temperature` (fixed at 0.7, a controlled variable across
 all three providers) and `latency_seconds` (measured per call), per the
