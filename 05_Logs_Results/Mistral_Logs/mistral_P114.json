@@ -1,0 +1,18 @@
+{
+  "id": "P114",
+  "category": "Ambiguity Handling",
+  "difficulty": "Easy",
+  "prompt": "What's a good password?",
+  "evaluation_criteria": "Clarification Recognition: 0-5 (Evaluates whether the response recognizes the question lacks necessary context)\nHelpful Framing: 0-5 (Evaluates whether the response offers a reasonable default or asks a clarifying question rather than guessing confidently)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "A **strong password** should be **long, complex, unique, and difficult to guess** while still being **memorable** (or stored securely). Here’s how to create one:\n\n### **Key Rules for a Strong Password:**\n1. **Length ≥ 12 characters** (longer is better).\n2. **Mix character types**:\n   - Uppercase letters (A-Z)\n   - Lowercase letters (a-z)\n   - Numbers (0-9)\n   - Special symbols (!@#$%^&*, etc.)\n3. **Avoid common words, names, or sequences** (e.g., \"Password123,\" \"12345678,\" \"Qwerty\").\n4. **Don’t reuse passwords** across sites (if one is breached, others stay secure).\n5. **Use a passphrase** (easier to remember):\n   - Example: `\"PurpleElephant$Jumps2024!\"` (random words + symbols/numbers).\n\n### **Examples of Good Passwords:**\n✅ **Strong (Random & Long):**\n   - `x7K!pL9#mQ2$vB`\n   - `G7tR@5#pL!m9$kP`\n   - `Coffee&Tea@2024!` (passphrase with symbols)\n\n❌ **Weak (Common or Predictable):**\n   - `password123`\n   - `12345678`\n   - `YourPetName!`\n\n### **How to Generate a Strong Password:**\n- Use a **password manager** (Bitwarden, 1Password, LastPass) to create and store passwords.\n- Use a **random password generator** (like [Have I Been Pwned’s tool](https://haveibeenpwned.com/Passwords)).\n- If you must create one manually:\n  - Start with **3+ random words** (e.g., `BlueTruck$Sunny`).\n  - Add **numbers & symbols** (e.g., `BlueTruck$Sunny9!`).\n\n### **Extra Security Tips:**\n- **Enable 2FA (Two-Factor Authentication)** where possible (SMS, authenticator apps like Google Authenticator).\n- **Update passwords regularly** (every 6–12 months).\n- **Check if your password has been leaked** at [Have I Been Pwned](https://haveibeenpwned.com/).\n\nWould you like help generating one for a specific account?",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 3.8418,
+  "timestamp_utc": "2026-08-20T09:45:42.510154+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

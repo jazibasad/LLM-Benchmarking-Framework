@@ -1,0 +1,18 @@
+{
+  "id": "P136",
+  "category": "Long-context Retention",
+  "difficulty": "Easy",
+  "prompt": "Note 1: The meeting on Monday covered budget planning. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: The meeting on Wednesday covered hiring decisions. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: The meeting on Friday covered product roadmap. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: What was discussed in the Wednesday meeting?",
+  "evaluation_criteria": "Fact Recall Accuracy: 0-5 (Evaluates whether the specific fact requested is retrieved correctly from the earlier context)\nDistraction Resistance: 0-5 (Evaluates whether the response is not confused by the surrounding filler text)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "The **Wednesday meeting** covered **hiring decisions**.",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.442,
+  "timestamp_utc": "2026-08-20T09:49:18.754816+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

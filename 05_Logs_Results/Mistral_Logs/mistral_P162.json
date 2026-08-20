@@ -1,0 +1,18 @@
+{
+  "id": "P162",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this log file format (space-separated with variable fields) into structured JSON, correctly handling the fact that the message field itself may contain spaces:\n2026-01-01 10:00:00 ERROR Connection timeout after 30s\n2026-01-01 10:01:15 INFO Server started successfully",
+  "evaluation_criteria": "Relational Integrity Score: 0-5 (Evaluates whether relationships/references between the transformed structures are correctly preserved)\nEdge Case Handling Score: 0-5 (Evaluates whether irregular or inconsistent source data is handled correctly rather than causing errors or silent data loss)\nOutput Validity Score: 0-5 (Evaluates whether the output is syntactically valid in its target format)\nCompleteness Score: 0-5 (Evaluates whether all source data is represented in the output with nothing silently dropped)",
+  "max_score": "20",
+  "model": "mistral",
+  "response_text": "Here's how you can convert the space-separated log file format into structured JSON while properly handling the message field that may contain spaces:\n\n```json\n[\n    {\n        \"timestamp\": \"2026-01-01 10:00:00\",\n        \"level\": \"ERROR\",\n        \"message\": \"Connection timeout after 30s\"\n    },\n    {\n        \"timestamp\": \"2026-01-01 10:01:15\",\n        \"level\": \"INFO\",\n        \"message\": \"Server started successfully\"\n    }\n]\n```\n\nOr if you prefer a more detailed timestamp structure (ISO 8601 format):\n\n```json\n[\n    {\n        \"timestamp\": {\n            \"date\": \"2026-01-01\",\n            \"time\": \"10:00:00\",\n            \"iso\": \"2026-01-01T10:00:00+00:00\"\n        },\n        \"level\": \"ERROR\",\n        \"message\": \"Connection timeout after 30s\"\n    },\n    {\n        \"timestamp\": {\n            \"date\": \"2026-01-01\",\n            \"time\": \"10:01:15\",\n            \"iso\": \"2026-01-01T10:01:15+00:00\"\n        },\n        \"level\": \"INFO\",\n        \"message\": \"Server started successfully\"\n    }\n]\n```\n\nA Python script that could perform this conversion would look like this:\n\n```python\nimport json\nimport re\n\ndef parse_log_line(line):\n    # Split on first 3 fields (timestamp, level, then the rest is message)\n    parts = re.split(r' (\\S+) (\\S+)', line.strip(), maxsplit=2)\n    if len(parts) != 3:\n        return None\n\n    timestamp, level, message = parts\n    return {\n        \"timestamp\": timestamp,\n        \"level\": level,\n        \"message\": message\n    }\n\n# Example usage:\nlog_lines = [\n    \"2026-01-01 10:00:00 ERROR Connection timeout after 30s\",\n    \"2026-01-01 10:01:15 INFO Server started successfully\"\n]\n\nstructured_logs = [parse_log_line(line) for line in log_lines if parse_log_line(line)]\nprint(json.dumps(structured_logs, indent=2))\n```\n\nThis approach:\n1. Uses regex to split on the first two space-separated words (timestamp and level)\n2. Treats everything after those two words as the message field\n3. Preserves all spaces within the message field\n4. Returns a clean JSON structure with properly formatted fields",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 4.516,
+  "timestamp_utc": "2026-08-20T09:51:37.266974+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

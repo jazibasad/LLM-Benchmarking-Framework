@@ -1,0 +1,18 @@
+{
+  "id": "P116",
+  "category": "Ambiguity Handling",
+  "difficulty": "Easy",
+  "prompt": "What time should I set my alarm for?",
+  "evaluation_criteria": "Clarification Recognition: 0-5 (Evaluates whether the response recognizes the question lacks necessary context)\nHelpful Framing: 0-5 (Evaluates whether the response offers a reasonable default or asks a clarifying question rather than guessing confidently)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "The best time to set your alarm depends on your **sleep schedule, work/school requirements, and overall health needs**. Here’s a general guide to help you determine the ideal wake-up time:\n\n### **1. Calculate Based on Your Bedtime & Sleep Needs**\n- **Adults (18–64):** Need **7–9 hours** of sleep per night.\n- **Teenagers (14–17):** Need **8–10 hours**.\n- **Children (6–13):** Need **9–12 hours**.\n- **Elderly (65+):** Often need **7–8 hours** (but may have shorter sleep cycles).\n\n**Example:**\n- If you need **8 hours** of sleep and want to wake up at **7:00 AM**, set your bedtime for **11:00 PM**.\n- If you need **9 hours** and wake at **6:00 AM**, aim for **bed by 9:00 PM**.\n\n### **2. Adjust for Your Chronotype (Morning vs. Night Person)**\n- **Larks (Early Birds):** Naturally wake up early (5–7 AM).\n- **Owls (Night People):** Struggle to wake before 9–10 AM.\n- **Hummingbirds (Flexible):** Can adapt to different schedules.\n\n**Tip:** If you’re a night owl, try **gradually shifting bedtime earlier** (by 15–30 min every few nights) to adjust.\n\n### **3. Consider Your Work/School Schedule**\n- If you have a **fixed shift (e.g., 9 AM–5 PM)**, wake up **1–2 hours before** to avoid rushing.\n- If you have **flexible hours**, wake up when you feel most alert (usually **1–2 hours after natural wake time**).\n\n### **4. Avoid Common Mistakes**\n❌ **Setting the alarm too late** → Leads to sleep deprivation.\n❌ **Hitting snooze** → Disrupts deep sleep, making you groggier.\n❌ **Ignoring natural light** → Sunlight helps regulate your circadian rhythm (try opening curtains after waking).\n\n### **5. Best Wake-Up Times for Different Goals**\n| **Goal** | **Recommended Wake-Up Time** |\n|----------|-----------------------------|\n| **Productive morning** | 6:00–7:30 AM (allows time for breakfast, exercise, planning) |\n| **Night owl adjustment** | 8:00–9:00 AM (if you naturally wake later) |\n| **Early riser (fitness/creativity)** | 5:00–6:00 AM (best for sunlight exposure) |\n| **Shift work (night shift)** | Adjust based on sleep needs (e.g., 12:00 PM if you slept 8 hrs) |\n\n### **6. How to Choose the Right Time for You**\n1. **Track your natural wake time** (without an alarm) for a few days.\n2. **Add/subtract** based on your sleep need (e.g., if you naturally wake at 9 AM but need 8 hours, set bedtime for 1 AM).\n3. **Test different times** and see how you feel (energy, mood, productivity).\n\n### **Final Recommendation:**\n- **If you’re healthy & need 8 hours:**\n  - **Wake at 6:30 AM** → Bed by **10:30 PM**\n  - **Wake at 7:30 AM** → Bed by **11:30 PM**\n- **If you’re a night owl:**\n  - Start with **8:00 AM**, then shift earlier by **15 min every 2 days** until you reach your goal.\n\nWould you like help adjusting based on your current schedule? Let me know your usual bedtime/wake time, and I can refine the suggestion!",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 6.068,
+  "timestamp_utc": "2026-08-20T09:45:52.255775+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

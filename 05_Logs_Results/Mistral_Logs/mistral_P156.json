@@ -1,0 +1,18 @@
+{
+  "id": "P156",
+  "category": "Data Transformation",
+  "difficulty": "Easy",
+  "prompt": "Convert this JSON to a CSV row: {\"name\": \"Bob\", \"age\": 25, \"city\": \"Denver\"}",
+  "evaluation_criteria": "Conversion Accuracy: 0-5 (Evaluates whether the output value is mathematically or structurally correct)\nFormat Compliance: 0-5 (Evaluates whether the output exactly matches the requested target format)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "Here's the JSON object converted to a CSV row:\n\n```\nname,Bob,age,25,city,Denver\n```\n\nOr in a more standard CSV format with headers (if you want a full table):\n\n```\nname,age,city\nBob,25,Denver\n```\n\nThe first format is a single row with alternating field names and values, while the second is the more conventional CSV format with a header row followed by data.",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.9407,
+  "timestamp_utc": "2026-08-20T09:51:23.139255+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

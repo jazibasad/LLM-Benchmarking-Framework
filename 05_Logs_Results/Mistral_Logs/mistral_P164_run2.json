@@ -1,0 +1,18 @@
+{
+  "id": "P164",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this Markdown table with merged-looking header groups into a properly normalized JSON array, correctly attributing each sub-column to its parent header:\n| Name | Q1 | | Q2 | |\n|------|-----|-----|-----|-----|\n| | Sales | Cost | Sales | Cost |\n| Alice | 100 | 40 | 120 | 45 |",
+  "evaluation_criteria": "Relational Integrity Score: 0-5 (Evaluates whether relationships/references between the transformed structures are correctly preserved)\nEdge Case Handling Score: 0-5 (Evaluates whether irregular or inconsistent source data is handled correctly rather than causing errors or silent data loss)\nOutput Validity Score: 0-5 (Evaluates whether the output is syntactically valid in its target format)\nCompleteness Score: 0-5 (Evaluates whether all source data is represented in the output with nothing silently dropped)",
+  "max_score": "20",
+  "model": "mistral",
+  "response_text": "Here's the normalized JSON array that properly attributes each sub-column to its parent header:\n\n```json\n[\n  {\n    \"name\": \"Alice\",\n    \"quarters\": [\n      {\n        \"quarter\": \"Q1\",\n        \"metrics\": [\n          {\n            \"type\": \"Sales\",\n            \"value\": 100\n          },\n          {\n            \"type\": \"Cost\",\n            \"value\": 40\n          }\n        ]\n      },\n      {\n        \"quarter\": \"Q2\",\n        \"metrics\": [\n          {\n            \"type\": \"Sales\",\n            \"value\": 120\n          },\n          {\n            \"type\": \"Cost\",\n            \"value\": 45\n          }\n        ]\n      }\n    ]\n  }\n]\n```\n\nAlternative version if you prefer a more flattened structure:\n\n```json\n[\n  {\n    \"name\": \"Alice\",\n    \"Q1\": {\n      \"Sales\": 100,\n      \"Cost\": 40\n    },\n    \"Q2\": {\n      \"Sales\": 120,\n      \"Cost\": 45\n    }\n  }\n]\n```\n\nBoth versions properly represent the hierarchical relationship between quarters and their metrics. The first version is more explicit about the structure, while the second is more compact. You can choose whichever better fits your needs.",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 9.5966,
+  "timestamp_utc": "2026-08-20T09:51:56.353550+00:00",
+  "run_number": 2,
+  "repeat_count": 5
+}

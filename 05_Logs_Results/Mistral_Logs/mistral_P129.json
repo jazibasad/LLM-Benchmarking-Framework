@@ -1,0 +1,18 @@
+{
+  "id": "P129",
+  "category": "Ambiguity Handling",
+  "difficulty": "Medium",
+  "prompt": "Optimize this function.",
+  "evaluation_criteria": "Missing Context Identification: 0-5 (Evaluates whether the response identifies exactly what information is missing, e.g. which code, which document, which app)\nConstructive Response: 0-5 (Evaluates whether the response still provides useful general guidance despite the ambiguity)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "Of course! To optimize a function, I need to see the original code you'd like me to improve. Could you share:\n\n1. **The function** you want to optimize (e.g., in Python, JavaScript, C++, etc.).\n2. **Specific goals** for optimization (e.g., speed, readability, memory usage, or reducing lines of code).\n3. **Constraints** (e.g., must use a certain language, library, or algorithm).\n\n### Example Optimization (Hypothetical Python Function):\nIf you provided something like this:\n```python\ndef sum_squares(n):\n    total = 0\n    for i in range(1, n + 1):\n        total += i * i\n    return total\n```\nHere’s how I’d optimize it:\n```python\ndef sum_squares(n):\n    return n * (n + 1) * (2 * n + 1) // 6  # Mathematical formula (O(1) time)\n```\n\n### Key Optimization Strategies:\n- **Replace loops** with mathematical formulas or built-in functions (e.g., `sum`, `map`).\n- **Use efficient data structures** (e.g., sets for lookups, generators for memory).\n- **Avoid redundant computations** (e.g., memoization, caching).\n- **Leverage parallelism** (e.g., `multiprocessing` in Python, `async/await` in JS).\n- **Minimize I/O operations** (e.g., batch requests, caching API responses).",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 2.5007,
+  "timestamp_utc": "2026-08-20T09:48:52.337816+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

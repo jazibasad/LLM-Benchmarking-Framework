@@ -1,0 +1,18 @@
+{
+  "id": "P153",
+  "category": "Long-context Retention",
+  "difficulty": "Medium",
+  "prompt": "Note 1: The original API rate limit was 100 requests per minute. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: It was temporarily raised to 200 during the promotional event. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: After the event ended, it was set permanently at 150. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: What is the current permanent rate limit, and what was it during the promotional event?",
+  "evaluation_criteria": "Multi-Fact Synthesis: 0-5 (Evaluates whether the response correctly combines information from multiple, sequentially updated facts)\nNumerical Accuracy: 0-5 (Evaluates whether any calculations or comparisons across the facts are computed correctly)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "Based on the provided notes:\n\n- **Current permanent rate limit:** **150 requests per minute** (set after the promotional event ended).\n- **Rate limit during the promotional event:** **200 requests per minute** (temporarily raised).",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.6601,
+  "timestamp_utc": "2026-08-20T09:51:18.999340+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

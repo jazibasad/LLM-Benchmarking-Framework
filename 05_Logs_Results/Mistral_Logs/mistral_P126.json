@@ -1,0 +1,18 @@
+{
+  "id": "P126",
+  "category": "Ambiguity Handling",
+  "difficulty": "Medium",
+  "prompt": "Fix the bug in my code.",
+  "evaluation_criteria": "Missing Context Identification: 0-5 (Evaluates whether the response identifies exactly what information is missing, e.g. which code, which document, which app)\nConstructive Response: 0-5 (Evaluates whether the response still provides useful general guidance despite the ambiguity)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "Of course! To help you fix the bug in your code, I'll need to see the code you're working with. Could you please share:\n\n1. The code snippet (or full code if it's short).\n2. The error message you're encountering (if any).\n3. The expected behavior vs. the actual behavior.\n\n### Example of how to provide the details:\n```python\n# Example buggy code (replace with your actual code)\ndef add_numbers(a, b):\n    return a + b\n\n# Example error (if any):\n# TypeError: unsupported operand type(s) for +: 'int' and 'str'\n\n# Expected behavior:\n# Should return the sum of two numbers (e.g., 2 + 3 = 5)\n\n# Actual behavior:\n# Returns something unexpected (e.g., concatenates strings like \"2\" + \"3\" = \"23\").\n```\n\n### Common fixes I can help with:\n- Syntax errors (missing colons, brackets, etc.).\n- Logical errors (incorrect conditions, loops, or calculations).\n- Type errors (mismatched data types).\n- Indentation issues (Python-specific).\n\n### If you can't share the code:\nDescribe the problem in detail (e.g., \"My function returns `None` instead of a value,\" or \"The loop doesn't stop when it should\"). I’ll do my best to guide you!",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 2.1765,
+  "timestamp_utc": "2026-08-20T09:48:11.589743+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}
