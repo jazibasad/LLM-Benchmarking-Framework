@@ -91,8 +91,9 @@ MIN_INTERVAL = 3.5  # seconds - respects OpenRouter's confirmed 20 requests/minu
 
 PERSISTENT_ERROR_KEYWORDS = [
     "quota", "resource_exhausted", "daily", "rate limit exceeded", "429", "exceeded",
-    "not_found", "no longer available", "model not found", "404",
+    "not_found", "not found", "no longer available", "model not found", "404",
     "payment", "402", "billing", "tokens per day",
+    "401", "unauthorized", "user not found", "invalid api key", "authentication",
 ]
 
 # Explicit, standardized score anchors - what each 0-5 value means, and the
