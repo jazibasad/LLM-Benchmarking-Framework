@@ -1,0 +1,31 @@
+{
+  "id": "P030",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Hard",
+  "prompt": "Perform multi-hop network routing calculation using Dijkstra's algorithm on a graph with 5 nodes (A, B, C, D, E). Edge weights: A-B(4), A-C(2), B-C(1), B-D(5), C-D(8), C-E(10), D-E(2). Find the shortest path and exact cumulative distance from Node A to Node E, showing state tables for each iteration.",
+  "response_text": "**Dijkstra’s algorithm – source = A, target = E**  \nThe graph is treated as undirected (each edge can be traversed both ways).\n\n| Edge | Weight |\n|------|--------|\n| A‑B | 4 |\n| A‑C | 2 |\n| B‑C | 1 |\n| B‑D | 5 |\n| C‑D | 8 |\n| C‑E | 10 |\n| D‑E | 2 |\n\n---\n\n## Iteration‑by‑iteration state tables  \n\nThe tables show, after each node is **permanently marked** (i.e., removed from the “unvisited” set):\n\n* **Dist** – current tentative shortest distance from A.  \n* **Prev** – the predecessor that gives that distance (‑ means “undefined”).  \n* **Visited** – nodes that have already been taken out of the unvisited set.\n\n### Initialisation (before any iteration)\n\n| Node | Dist | Prev | Visited |\n|------|------|------|---------|\n| A    | 0    | –    | No |\n| B    | ∞    | –    | No |\n| C    | ∞    | –    | No |\n| D    | ∞    | –    | No |\n| E    | ∞    | –    | No |\n\n---\n\n### Iteration 1 – pick **A** (smallest distance = 0)\n\nRelax edges A‑B (4) and A‑C (2).\n\n| Node | Dist | Prev | Visited |\n|------|------|------|---------|\n| **A**| **0**| –    | Yes |\n| B    | 4    | A    | No |\n| C    | 2    | A    | No |\n| D    | ∞    | –    | No |\n| E    | ∞    | –    | No |\n\n---\n\n### Iteration 2 – pick **C** (dist = 2)\n\nRelax edges C‑B (1), C‑D (8), C‑E (10).\n\n| Node | Dist | Prev | Visited |\n|------|------|------|---------|\n| A    | 0    | –    | Yes |\n| **C**| **2**| A    | Yes |\n| B    | 3    | C    | No |\n| D    | 10   | C    | No |\n| E    | 12   | C    | No |\n\n*(B improved from 4 → 3, D from ∞ → 10, E from ∞ → 12)*\n\n---\n\n### Iteration 3 – pick **B** (dist = 3)\n\nRelax edge B‑D (5).\n\n| Node | Dist | Prev | Visited |\n|------|------|------|---------|\n| A    | 0    | –    | Yes |\n| C    | 2    | A    | Yes |\n| **B**| **3**| C    | Yes |\n| D    | 8    | B    | No |\n| E    | 12   | C    | No |\n\n*(D improved from 10 → 8)*\n\n---\n\n### Iteration 4 – pick **D** (dist = 8)\n\nRelax edge D‑E (2).\n\n| Node | Dist | Prev | Visited |\n|------|------|------|---------|\n| A    | 0    | –    | Yes |\n| C    | 2    | A    | Yes |\n| B    | 3    | C    | Yes |\n| **D**| **8**| B    | Yes |\n| E    | 10   | D    | No |\n\n*(E improved from 12 → 10)*\n\n---\n\n### Iteration 5 – pick **E** (dist = 10)\n\nAll nodes are now visited; the algorithm stops.\n\n| Node | Dist | Prev | Visited |\n|------|------|------|---------|\n| A    | 0    | –    | Yes |\n| C    | 2    | A    | Yes |\n| B    | 3    | C    | Yes |\n| D    | 8    | B    | Yes |\n| **E**| **10**| D   | Yes |\n\n---\n\n## Result\n\n* **Shortest distance A → E** = **10**\n* **Shortest path** (tracing the `Prev` pointers backwards from E):\n\n```\nE ← D ← B ← C ← A\n```\n\nor, in forward order:\n\n**A → C → B → D → E**\n\n* **Cumulative edge weights**\n\n| Segment | Weight |\n|---------|--------|\n| A‑C | 2 |\n| C‑B | 1 |\n| B‑D | 5 |\n| D‑E | 2 |\n| **Total** | **10** |\n\nThus, the multi‑hop routing from node **A** to node **E** uses the path **A‑C‑B‑D‑E** with an exact cumulative distance of **10**.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 15.4018,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Algorithm Steps",
+      "score": 3,
+      "justification": "The state tables follow Dijkstra's steps with minor imperfections (e.g., 'D-E' edge label instead of 'E-D'), but correctly show tentatively updated distances and predecessor selections; missing explicit unvisited node tracking but adequately demonstrates algorithm progression.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Shortest Path Accuracy",
+      "score": 5,
+      "justification": "Correctly identifies E's distance as 10 via path A-C-B-D-E, validated by cumulative weights (2+1+5+2=10) and predecessor tracing in the response's 'Prev' table.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 8,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:46:42.730360+00:00"
+}

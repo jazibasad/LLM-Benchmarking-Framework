@@ -1,0 +1,31 @@
+{
+  "id": "P026",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Easy",
+  "prompt": "A rectangular data center room measures 12 meters by 8 meters. Server racks take up 40% of the floor space. If each server rack requires a minimum clearance zone equal to 25% of its own footprint, calculate the remaining usable floor space in square meters.",
+  "response_text": "**Step‑by‑step calculation**\n\n| Item | Calculation | Result |\n|------|-------------|--------|\n| Total floor area of the room | \\(12 \\text{ m} \\times 8 \\text{ m}\\) | \\(96 \\text{ m}^2\\) |\n| Area occupied by the server racks | \\(40\\% \\times 96 \\text{ m}^2\\) | \\(0.40 \\times 96 = 38.4 \\text{ m}^2\\) |\n| Clearance zone required (25 % of rack footprint) | \\(25\\% \\times 38.4 \\text{ m}^2\\) | \\(0.25 \\times 38.4 = 9.6 \\text{ m}^2\\) |\n| Total area taken up (racks + clearance) | \\(38.4 \\text{ m}^2 + 9.6 \\text{ m}^2\\) | \\(48.0 \\text{ m}^2\\) |\n| Remaining usable floor space | \\(96 \\text{ m}^2 - 48.0 \\text{ m}^2\\) | **48 m²** |\n\n**Answer:** The remaining usable floor space in the data‑center room is **48 square meters**.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 3.6026,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Area Calculation",
+      "score": 5,
+      "justification": "The response correctly computes the total floor area as 96 m² and the server‑rack area as 38.4 m², fully satisfying the requirement.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Clearance Logic",
+      "score": 5,
+      "justification": "The response correctly calculates the clearance zone as 25 % of the rack footprint (9.6 m²) and adds it to the rack area to determine total occupied space, exactly following the required logic.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:45:14.097019+00:00"
+}

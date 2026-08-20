@@ -1,0 +1,31 @@
+{
+  "id": "P024",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Easy",
+  "prompt": "If 5 workers can assemble 20 machines in 4 days, how many days will it take 8 workers to assemble 32 machines, assuming constant productivity per worker?",
+  "response_text": "First, find the productivity per worker.\n\n- 5 workers × 4 days = **20 worker‑days** produce 20 machines.  \n- So **1 worker‑day produces 1 machine** (20 machines ÷ 20 worker‑days).\n\nNow determine how many worker‑days are needed for 32 machines:\n\n- 32 machines × 1 worker‑day/machine = **32 worker‑days**.\n\nFinally, divide by the number of workers (8) to get the days:\n\n\\[\n\\text{Days} = \\frac{32\\text{ worker‑days}}{8\\text{ workers}} = 4\\text{ days}.\n\\]\n\n\\[\n\\boxed{4\\text{ days}}\n\\]",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 7.2637,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Proportional Reasoning (0-5)",
+      "score": 5,
+      "justification": "The response correctly calculates the rate as 1 machine per worker-day by dividing 20 machines by 20 worker-days, demonstrating accurate proportional reasoning.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Step Logic (0-5)",
+      "score": 5,
+      "justification": "The response clearly outlines logical multiplication and division steps: computing worker-days, determining required worker-days for 32 machines, and dividing by 8 workers to find 4 days.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:44:59.553408+00:00"
+}

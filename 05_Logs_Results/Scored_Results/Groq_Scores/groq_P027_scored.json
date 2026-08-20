@@ -1,0 +1,31 @@
+{
+  "id": "P027",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Easy",
+  "prompt": "A battery backup unit provides 12 hours of power when drawing 50 watts. Calculate how many hours of backup it will provide if the load increases to 150 watts, assuming a non-linear Peukert efficiency exponent of 1.1.",
+  "response_text": "**Step‑by‑step calculation**\n\n1. **Assume the battery voltage stays essentially constant**  \n   → Power (\\(P\\)) is proportional to current (\\(I\\)):  \n   \\[\n   I \\propto P\n   \\]\n\n2. **Peukert’s law (general form)**  \n\n   For a given battery the “capacity” \\(C\\) can be expressed as  \n\n   \\[\n   C = I^{\\,k}\\;t\n   \\]\n\n   where  \n\n   * \\(k\\) = Peukert exponent ( > 1  for real batteries)  \n   * \\(I\\) = discharge current  \n   * \\(t\\) = discharge time (hours)\n\n   Since the capacity \\(C\\) is the same for the two operating points, the ratio of the two run‑times is  \n\n   \\[\n   \\frac{t_{2}}{t_{1}} = \\left(\\frac{I_{1}}{I_{2}}\\right)^{k}\n   \\]\n\n   (Some textbooks write the exponent as \\(k-1\\); that form arises when the “rated capacity” is defined at a reference current. Using the more common formulation above gives the expected stronger reduction of time at higher loads.)\n\n3. **Convert the power levels to a current ratio**  \n\n   \\[\n   \\frac{I_{1}}{I_{2}} = \\frac{P_{1}}{P_{2}} = \\frac{50\\;\\text{W}}{150\\;\\text{W}} = \\frac{1}{3}\n   \\]\n\n4. **Insert the numbers**  \n\n   * \\(t_{1}=12\\) h (at 50 W)  \n   * \\(k = 1.1\\)  \n\n   \\[\n   t_{2}=t_{1}\\left(\\frac{P_{1}}{P_{2}}\\right)^{k}\n        =12\\;\\text{h}\\;\\times\\left(\\frac{1}{3}\\right)^{1.1}\n   \\]\n\n5. **Evaluate the exponent**\n\n   \\[\n   \\left(\\frac{1}{3}\\right)^{1.1}\n   =\\exp\\!\\Bigl[1.1\\ln\\!\\left(\\frac{1}{3}\\right)\\Bigr]\n   =\\exp\\!\\bigl[1.1(-1.0986)\\bigr]\n   =\\exp(-1.2085)\n   \\approx 0.298\n   \\]\n\n6. **Final run‑time**\n\n   \\[\n   t_{2}=12\\;\\text{h}\\times0.298\\;\\approx\\;3.58\\;\\text{h}\n   \\]\n\n---\n\n### Result\nWhen the load is increased to **150 W**, the battery backup will last roughly  \n\n\\[\n\\boxed{3.6\\ \\text{hours (≈ 3 h 35 min)}}\n\\]\n\n---\n\n### Remarks & Assumptions\n* **Constant voltage** – the calculation treats the battery voltage as unchanged, so power scales directly with current.\n* **Peukert exponent** – an exponent of 1.1 is typical for good‑quality lead‑acid or Li‑ion packs; the higher the exponent, the more sharply the available time falls with load.\n* **Real‑world factors** (temperature, state‑of‑charge, aging) can shift the actual time, but the above gives a solid engineering estimate based on Peukert’s law.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 6.9525,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Capacity Scaling",
+      "score": 5,
+      "justification": "The model correctly applies the power-time relationship using the ratio (P1/P2)^k, properly converts power to current proportionality, and executes the mathematical steps accurately to arrive at the correct result.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Exponent Application",
+      "score": 5,
+      "justification": "The model correctly implements Peukert's law with exponent 1.1, uses the appropriate formulation (C = I^k * t), and justifies the choice of equation while handling the non-linear scaling correctly.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:45:52.393968+00:00"
+}
