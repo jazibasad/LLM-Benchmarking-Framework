@@ -1,0 +1,43 @@
+{
+  "id": "P211",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this poem excerpt into Spanish, prioritizing preserving the rhythm and emotional tone over literal word-for-word accuracy, and briefly explain one place where you deviated from literal translation to preserve the poetic effect: 'The quiet hum of evening falls, soft shadows stretch along the walls.'",
+  "response_text": "Here is the Spanish translation, crafted to maintain the AABB rhyme scheme (implied by the couplet), the smooth iambic flow, and the serene, melancholic mood:\n\n*El dulce anochecer ya cae,*\n*y la sombra en el muro se alarga y se expande.* \n*(Alternative for better rhythm: \"El dulce anochecer ya cae, / y sombras blandas van al muro y se expanden.\")*\n\nLet's use a tighter, more traditional 8-syllable (octosílabo) poetic meter for a better musical flow:\n\n> *La tarde cae en suave calma,*\n> *la sombra trepa por los muros.*\n\n**Brief explanation of deviation:**\nTo preserve the poetic effect, I deviated from a literal translation in the second half (*\"soft shadows stretch along the walls\"*). Literally, this would be *\"suaves sombras se extienden a lo largo de las paredes.\"* However, \"paredes\" feels too domestic and clinical, and the literal translation disrupts the poetic cadence and imagery. \n\nInstead, using **\"muros\"** (walls/ramparts) adds a touch of timelessness and architectural resonance. Furthermore, restructuring the action to **\"la sombra trepa por los muros\"** (the shadow climbs the walls) captures the visual stretching of the shadows as the sun sets, while maintaining a smooth, evocative rhythm that matches the English original's emotional tone of quiet twilight.",
+  "run_number": 4,
+  "temperature": 0.7,
+  "latency_seconds": 2.3715,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Translation Precision Score (0-5)",
+      "score": 5,
+      "justification": "Provides a poetic translation that intentionally deviates to preserve rhythm and mood, fully meeting the requirement.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Cultural/Linguistic Adaptation Score (0-5)",
+      "score": 5,
+      "justification": "Makes thoughtful linguistic choices (e.g., 'muro', 'trepa') to adapt culture and structure while maintaining poetic flow.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Meta-Explanation Quality Score (0-5)",
+      "score": 5,
+      "justification": "Offers clear, insightful explanation of the translation choice and its purpose.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Round-Trip/Consistency Score (0-5)",
+      "score": 0,
+      "justification": "Fails to perform any back‑translation or self‑comparison analysis as requested.",
+      "outcome": "Failure"
+    }
+  ],
+  "total_score": 15,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T15:07:45.198547+00:00"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "P213",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this ambiguous English sentence into French in a way that resolves the ambiguity, and explicitly state which interpretation you chose and why: 'I saw the man with the telescope.'",
+  "response_text": "**Translation:** \n*“J'ai vu l'homme qui avait la longue-vue.”*\n\n### Interpretation Chosen:\nI chose the interpretation where **the man possesses the telescope** (i.e., \"I saw the man who had the telescope\"), rather than the interpretation where I used the telescope to see him.\n\n### Why:\n1. **Grammatical Clarity:** In French, the ambiguous English prepositional phrase \"with the telescope\" is difficult to translate directly as an adjunct without creating the exact same ambiguity (`J'ai vu l'homme avec la longue-vue` can still mean either you used it or he had it). \n2. **Resolution:** By reframing the phrase into a relative clause (`qui avait la longue-vue` - \"who had the telescope\"), the French sentence structurally attaches the instrument exclusively to the man. \n3. **Vocabulary Choice:** I used *la longue-vue* (telescope/spyglass) rather than *le télescope* (which usually refers to a large astronomical instrument), as it is much more plausible for a man to be carrying a *longue-vue* around.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.6354,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Translation Precision Score",
+      "score": 5,
+      "justification": "The translation accurately captures the intended meaning, using a relative clause to clearly indicate the man possessed the telescope, and the vocabulary choice is appropriate for the context.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Cultural/Linguistic Adaptation Score",
+      "score": 5,
+      "justification": "The response thoughtfully adapts the ambiguous English prepositional phrase into a French relative clause, resolving ambiguity while considering appropriate instrument terminology.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Meta-Explanation Quality Score",
+      "score": 5,
+      "justification": "The explanation clearly states the chosen interpretation, cites grammatical clarity and lexical considerations, and justifies why that reading was selected.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Round-Trip/Consistency Score",
+      "score": 0,
+      "justification": "The response provides no back‑translation or consistency check, completely omitting the requested round‑trip analysis.",
+      "outcome": "Failure"
+    }
+  ],
+  "total_score": 15,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T15:10:32.038615+00:00"
+}

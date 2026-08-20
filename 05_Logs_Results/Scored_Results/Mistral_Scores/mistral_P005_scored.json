@@ -1,0 +1,31 @@
+{
+  "id": "P005",
+  "category": "Knowledge Retrieval",
+  "difficulty": "Easy",
+  "prompt": "Define symmetric and asymmetric encryption and name one standard algorithm for each.",
+  "response_text": "### **Symmetric Encryption**\n**Definition:**\nSymmetric encryption uses the **same key** for both **encryption** and **decryption**. It is fast and efficient for bulk data but requires secure key distribution.\n\n**Standard Algorithm:**\n- **AES (Advanced Encryption Standard)** – A widely used symmetric cipher (e.g., AES-256).\n\n---\n\n### **Asymmetric Encryption**\n**Definition:**\nAsymmetric encryption uses **two different keys**:\n- **Public Key** (for encryption)\n- **Private Key** (for decryption)\n\nIt is slower than symmetric encryption but solves the key distribution problem securely.\n\n**Standard Algorithm:**\n- **RSA (Rivest-Shamir-Adleman)** – A popular asymmetric encryption algorithm.\n\n---\nBoth methods are often used together in **hybrid encryption** (e.g., RSA for key exchange + AES for bulk data).",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 2.2713,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Algorithm Precision",
+      "score": 5,
+      "justification": "The response correctly assigns AES to symmetric encryption and RSA to asymmetric encryption, fully meeting the requirement.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Key Management Clarity",
+      "score": 5,
+      "justification": "The response clearly distinguishes symmetric encryption's single key from asymmetric encryption's public/private key pair, fully satisfying the criterion.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T15:14:51.551766+00:00"
+}

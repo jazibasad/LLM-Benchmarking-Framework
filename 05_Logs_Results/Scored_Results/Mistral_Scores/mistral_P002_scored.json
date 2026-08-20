@@ -1,0 +1,31 @@
+{
+  "id": "P002",
+  "category": "Knowledge Retrieval",
+  "difficulty": "Easy",
+  "prompt": "List the four core principles of Object-Oriented Programming and provide a one-sentence definition for each.",
+  "response_text": "Here are the **four core principles of Object-Oriented Programming (OOP)** with concise definitions:\n\n1. **Encapsulation** – Bundling data (attributes) and methods (functions) that operate on the data into a single unit (a class) while restricting direct access to some components.\n2. **Inheritance** – A mechanism where a new class (child) inherits properties and behaviors from an existing class (parent), promoting code reusability.\n3. **Polymorphism** – The ability of objects to take on multiple forms, either through method overriding (runtime) or method overloading (compile-time).\n4. **Abstraction** – Hiding complex implementation details and exposing only essential features, simplifying interactions with objects.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.9308,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Definition Accuracy",
+      "score": 5,
+      "justification": "The response correctly defines all four OOP principles with accurate technical descriptions, meeting the requirement fully and excellently.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Conciseness",
+      "score": 5,
+      "justification": "Each principle is defined in a single, succinct sentence without unnecessary elaboration, fully meeting the conciseness requirement.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T15:14:25.396210+00:00"
+}

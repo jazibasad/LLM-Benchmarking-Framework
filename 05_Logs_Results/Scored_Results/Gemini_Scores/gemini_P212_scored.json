@@ -1,0 +1,43 @@
+{
+  "id": "P212",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this sentence into Korean using appropriately formal honorifics for addressing a senior business executive, and explain what would change in your translation if the audience were a close friend instead: 'We would be honored if you could join us for the opening ceremony next month.'",
+  "response_text": "Here is the translation suited for a senior business executive, followed by an explanation of how it would change for a close friend.\n\n### 1. Business Executive Translation (Formal & Honorific)\n\n> **\"다음 달 개소식에 참석해 주시면 큰 영광이겠습니다.\"**\n> *(Na-eum dal gae-so-sik-e cham-seok-hae ju-si-myeonkeun yeong-gwang-i-get-seum-ni-da.)*\n\n**Breakdown of formal elements:**\n*   **다음 달 (Na-eum dal):** Next month.\n*   **개소식 (Gae-so-sik):** Opening ceremony (specifically for an office, branch, or workspace. If it's a store or general business, **개업식 *gae-eop-sik*** or ** 오픈 행사 *o-peun haeng-sa*** can also be used). \n*   **참석해 주시면 (Cham-seok-hae ju-si-myeon):** \"If you would attend\" (using **-주시매서/-주시면**, the honorific form of \"to give/do for us\").\n*   **큰 영광이겠습니다 (Keun yeong-gwang-i-get-seum-ni-da):** \"It would be a great honor.\" The ending **-겠습니다** expresses polite supposition/intent, and **-습니다** is the highest level of formal speech (*Hapsoche</i>) used in business settings.\n\n---\n\n### 2. Translation for a Close Friend (Informal & Casual)\n\nIf the audience were a close friend, the entire sentence would drop all honorifics and polite endings, shifting to casual speech (*Haera-che* or *Hae-che*). \n\n> **\"다음 달에 있는 오픈 행사(또는 개업식)에 와주면 정말 영광이겠어.\"** (Still a bit stiff for friends)\n> *More naturally:*\n> **\"다음 달 우리 오픈하는데, 꼭 와주라. 정말 반가울 거야!\"**\n> *(Na-eum dal u-ri o-peun-ha-neun-de, kkok wa-ju-ra. Jeong-mal ban-ga-ul geo-ya!)*\n> **Literal meaning:** \"We're opening next month, so definitely come. I'll be really glad!\"\n\n**What changes and why:**\n1.  **Level of Politeness (Speech Level):** \n    *   *Business:* Uses formal honorific endings (**-습니다**).\n    *   *Friend:* Uses casual, equal-status endings (**-어**, **-라**, **-야**).\n2.  **Vocabulary:** \n    *   *Business:* Uses formal business terms like **개소식/개업식** (opening ceremony) and **참석하다** (to attend).\n    *   *Friend:* Uses relaxed, everyday language like **오픈하는데** (we are opening) and **와주라** / **와** (come).\n3.  **Tone of \"Honor\":** \n    *   *Business:* Expresses deep institutional/personal respect (\"We would be honored\").\n    *   *Friend:* Replaces the formal concept of \"honor\" with personal excitement and warmth (\"I'll be so happy/glad to see you there\").",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 3.4085,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Translation Precision Score",
+      "score": 5,
+      "justification": "The translation accurately employs formal honorifics and grammatical structures for the business executive register while faithfully preserving the core meaning, and the casual version correctly shifts register without distorting the intended message, constituting complete success.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Cultural/Linguistic Adaptation Score",
+      "score": 5,
+      "justification": "The response thoughtfully adapts vocabulary and structure (e.g., switching from formal 개소식/참석하다 to casual 오픈하는데/와주라) to match each register's cultural norms, avoiding literalism and demonstrating nuanced linguistic handling.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Meta-Explanation Quality Score",
+      "score": 5,
+      "justification": "The explanation accurately breaks down formal markers and insightfully contrasts the tone of 'honor' across registers, clearly resolving ambiguity and providing natural alternatives with only trivial gaps.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Round-Trip/Consistency Score",
+      "score": 5,
+      "justification": "The response honestly self-compares the two registers, correctly identifying meaning shifts (institutional respect to personal warmth) and maintaining consistent, accurate explanations throughout without fabricating loss.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T15:10:05.038453+00:00"
+}

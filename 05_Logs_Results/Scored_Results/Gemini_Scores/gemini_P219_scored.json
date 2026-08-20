@@ -1,0 +1,31 @@
+{
+  "id": "P219",
+  "category": "Multilingual Tasks",
+  "difficulty": "Medium",
+  "prompt": "Translate this sentence into Korean, and explain why you chose formal or informal speech level: 'Hey, are you free this weekend?'",
+  "response_text": "Here is the translation in Korean, along with an explanation of the speech level chosen:\n\n### Translation\n\n**\"저기, 이번 주말에 시간 있으세요?\"** \n*(Jeogi, ibon jumare sigan is-seoyo?)*\n\n### Speech Level and Explanation\n\n**Speech Level Chosen:** **Polite/Formal (존댓말 - Jondaetmal)**, specifically the **Haeyoche (해요체)** style. \n\n**Why I chose this level:**\n\n1. **Safety and Context in Translation:** When translating a general sentence like \"Hey, are you free this weekend?\" out of context, the polite form (`-세요`) is the safest and most standard choice. It shows proper etiquette for people you might not know well, coworkers, acquaintances, or people older than you. \n2. **\"Hey\" (저기):** The word *Jeogi* (저기) is a polite way to get someone's attention (similar to \"Excuse me\" or \"Say, ...\"). \n3. **Alternative (Informal):** If you are talking to a close friend, someone younger than you, or a romantic partner, you would use the informal level (**Banmal - 반말**): \n   * *\"야, 너 이번 주말에 시간 있어?\" (Ya, neo ibon jumare sigan isseo?)*\n\nBecause the prompt does not specify the relationship between the speakers, the polite form is the most appropriate default for general, everyday interaction in Korean society.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.9269,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Tone/Register Accuracy (0-5)",
+      "score": 5,
+      "justification": "The model correctly identified that a polite/formal register is the safest default and provided accurate translations for both polite and informal contexts.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Linguistic Explanation Quality (0-5)",
+      "score": 5,
+      "justification": "The explanation is thorough, accurately identifies the specific speech levels (Haeyoche and Banmal), and provides a sound linguistic rationale for the choice.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T15:13:28.780648+00:00"
+}

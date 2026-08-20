@@ -1,0 +1,31 @@
+{
+  "id": "P006",
+  "category": "Knowledge Retrieval",
+  "difficulty": "Easy",
+  "prompt": "Explain the Model-View-Controller (MVC) architectural pattern and the responsibility of each component.",
+  "response_text": "The **Model-View-Controller (MVC)** is a **software architectural pattern** that separates an application into three interconnected components to improve maintainability, scalability, and modularity. It is widely used in web development (e.g., Ruby on Rails, Django), mobile apps (e.g., iOS with UIKit), and desktop applications.\n\n---\n\n### **Components of MVC**\nEach component has a distinct role:\n\n1. **Model**\n   - **Responsibility**: Manages **data, business logic, and rules**.\n   - **Role**:\n     - Represents the **data structure** (e.g., database records, API responses).\n     - Handles **data validation, processing, and storage** (e.g., CRUD operations).\n     - Communicates with databases or external services.\n     - Notifies the **View** (via **Observers/Listeners**) when data changes.\n   - **Example**:\n     - A `User` model in a web app stores user details (name, email) and handles login validation.\n\n2. **View**\n   - **Responsibility**: Displays **data to the user** (UI/UX layer).\n   - **Role**:\n     - Renders the **user interface** (e.g., HTML, XML, or UI components like buttons, forms).\n     - **Does not contain business logic** (only presents data).\n     - Listens to user interactions (e.g., clicks) and delegates actions to the **Controller**.\n     - **Dependent on the Model** (receives data from it).\n   - **Example**:\n     - A login page with fields for username/password (displays data from the Model).\n\n3. **Controller**\n   - **Responsibility**: Acts as an **intermediary** between **Model** and **View**.\n   - **Role**:\n     - Receives **user input** (e.g., button clicks, form submissions).\n     - Updates the **Model** with new data (e.g., saves a user to the database).\n     - Requests data from the **Model** and sends it to the **View** for display.\n     - **Does not handle UI rendering** (only processes logic).\n   - **Example**:\n     - When a user submits a login form, the controller validates credentials (via the Model) and redirects to the dashboard (updates the View).\n\n---\n\n### **How MVC Works (Flow of Data)**\n1. **User Interaction** → **View** (e.g., clicks a button).\n2. **View** notifies the **Controller** (via events).\n3. **Controller** processes the request:\n   - Updates the **Model** (e.g., saves data to the database).\n   - Requests data from the **Model** (e.g., fetches user details).\n4. **Model** notifies the **View** of changes (or the Controller updates the View).\n5. **View** refreshes to display the latest data.\n\n---\n### **Key Benefits of MVC**\n- **Separation of Concerns**: Each component has a clear role, reducing complexity.\n- **Reusability**: Views/Models can be reused across different parts of an app.\n- **Maintainability**: Changes to one component (e.g., UI) don’t affect others.\n- **Testability**: Models can be tested independently of Views/Controllers.\n- **Parallel Development**: Teams can work on Model, View, and Controller simultaneously.\n\n---\n### **Example in a Web App (User Login Flow)**\n| Component  | Action                                                                 |\n|------------|-------------------------------------------------------------------------|\n| **View**   | Displays a login form (HTML).                                           |\n| **Controller** | Handles form submission (e.g., `LoginController.handleLogin()`).       |\n| **Model**  | Validates credentials against the database (`UserModel.authenticate()`). |\n| **View**   | Updates to show success/error messages or redirects to dashboard.       |\n\n---\n### **Variations of MVC**\n- **MVVM (Model-View-ViewModel)**: Used in mobile apps (e.g., Android, iOS with SwiftUI).\n- **MVP (Model-View-Presenter)**: Similar to MVC but separates presentation logic from the View.\n- **MVC vs. MVVM**:\n  - MVC: Controller manages data flow.\n  - MVVM: ViewModel binds data to the View (e.g., using data binding in Flutter/Kotlin).\n\n---\n### **When to Use MVC?**\n- **Best for**: Web apps, desktop apps, and systems with complex UI logic.\n- **Not ideal for**: Simple scripts or real-time systems (consider **Event-Driven** or **CQRS** patterns).\n\n---\n### **Common MVC Frameworks**\n- **Web**: Ruby on Rails, Django, Laravel.\n- **Mobile**: UIKit (iOS), Android’s Activity/Fragment architecture.\n- **Desktop**: Qt (C++), Electron (with React/Vue).\n\n---\n### **Summary Table**\n| Component | Role                          | Example Actions                          |\n|-----------|-------------------------------|------------------------------------------|\n| **Model** | Data & business logic         | Save user, fetch posts from DB.          |\n| **View**  | UI rendering                  | Display login form, show error messages. |\n| **Controller** | Mediates between Model & View | Process login, update View on success.  |\n\n---\n### **Visual Representation**\n```\nUser → [View] → [Controller] → [Model] ↔ [View]\n```\n*(The Model and View communicate indirectly via the Controller.)*\n\nWould you like a deeper dive into any specific aspect (e.g., MVC in a real-world project)?",
+  "run_number": 4,
+  "temperature": 0.7,
+  "latency_seconds": 9.1685,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Separation Of Concerns",
+      "score": 5,
+      "justification": "The response thoroughly describes how Model, View, and Controller isolate data, UI, and logic, explaining their distinct responsibilities and interactions.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Component Breakdown",
+      "score": 5,
+      "justification": "It provides accurate, detailed roles for each component, including examples and a summary table, fully meeting the requirement.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T15:15:39.985934+00:00"
+}

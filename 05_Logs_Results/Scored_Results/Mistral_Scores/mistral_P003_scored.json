@@ -1,0 +1,31 @@
+{
+  "id": "P003",
+  "category": "Knowledge Retrieval",
+  "difficulty": "Easy",
+  "prompt": "Define what an HTTP status code in the 5xx range signifies and give two common examples.",
+  "response_text": "An **HTTP status code in the 5xx range** (i.e., **500–599**) signifies that the server encountered an error while processing the client's request. These codes indicate that the issue lies on the **server-side**, not with the client or the request itself.\n\n### **Two Common Examples:**\n1. **500 Internal Server Error**\n   - The server encountered an unexpected condition that prevented it from fulfilling the request.\n   - Example: A bug in server-side code causing a crash.\n\n2. **503 Service Unavailable**\n   - The server is temporarily unable to handle the request due to maintenance, overload, or downtime.\n   - Example: A website undergoing updates or experiencing high traffic.\n\nOther common 5xx codes include **502 Bad Gateway** (proxy/server received an invalid response) and **504 Gateway Timeout** (server acting as a gateway didn’t receive a timely response).",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 2.3797,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Factual Accuracy",
+      "score": 5,
+      "justification": "The response correctly defines 5xx status codes as server-side errors, providing an accurate description that fully meets the criterion.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Example Precision",
+      "score": 5,
+      "justification": "It gives two correct examples, 500 Internal Server Error and 503 Service Unavailable, with precise descriptions, satisfying the requirement.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T15:14:33.535287+00:00"
+}

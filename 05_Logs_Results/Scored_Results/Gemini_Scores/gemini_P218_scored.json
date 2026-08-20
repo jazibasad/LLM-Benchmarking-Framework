@@ -1,0 +1,31 @@
+{
+  "id": "P218",
+  "category": "Multilingual Tasks",
+  "difficulty": "Medium",
+  "prompt": "Translate this product description into Portuguese, keeping any brand names untranslated: 'The UltraClean Pro vacuum features a HEPA filter and a 45-minute battery life.'",
+  "response_text": "Here is the translation into Portuguese:\n\n'O aspirador UltraClean Pro possui um filtro HEPA e uma autonomia de bateria de 45 minutos.'",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.902,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Tone/Register Accuracy",
+      "score": 5,
+      "justification": "The translation maintains a professional, natural product-description register in Portuguese, keeping brand names like 'UltraClean Pro' untranslated as requested.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Linguistic Explanation Quality",
+      "score": 5,
+      "justification": "No linguistic explanation was requested by the prompt, and the translation is clear and accurate, making any further explanation unnecessary.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T15:13:08.741188+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "P215",
+  "category": "Multilingual Tasks",
+  "difficulty": "Medium",
+  "prompt": "Translate this sentence into Spanish AND explain one idiom or phrase in your translation that doesn't translate literally: 'It's raining cats and dogs outside, so let's stay in tonight.'",
+  "response_text": "**Spanish Translation:**\n\"Está lloviendo a cántaros afuera, así que quedémonos en casa esta noche.\"\n\n***\n\n**Idiom/Phrase Explanation:**\nThe phrase **\"lloviendo a cántaros\"** is the Spanish equivalent of \"raining cats and dogs.\" \n\n*   **Literal translation:** It translates to \"raining by pitchers\" or \"raining by jugs.\"\n*   **Meaning:** In Spanish, instead of imagining animals falling from the sky, they use the imagery of water pouring down heavily from large pitchers or jugs, meaning it is raining extremely hard or pouring.",
+  "run_number": 5,
+  "temperature": 0.7,
+  "latency_seconds": 1.1049,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Tone/Register Accuracy",
+      "score": 5,
+      "justification": "The translation perfectly matches the casual, conversational tone of the original sentence with no formal or overly polished language.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Linguistic Explanation Quality",
+      "score": 5,
+      "justification": "The explanation accurately defines the idiom, provides its literal meaning, and clearly contrasts it with the original English expression while maintaining clarity.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T15:12:28.469289+00:00"
+}
