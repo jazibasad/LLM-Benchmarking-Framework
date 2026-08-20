@@ -1,0 +1,18 @@
+{
+  "id": "P039",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "In a RAID 5 disk array comprising four 2TB drives, calculate the total usable storage capacity and determine how many individual drives can fail simultaneously without data loss. Explain the parity calculation logic.",
+  "evaluation_criteria": "Capacity Calculation: 0-5 (Evaluates N-1 usable space formula)\nFault Tolerance Logic: 0-5 (Evaluates single-drive failure resilience and XOR parity explanation)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "### **RAID 5 Configuration Overview**\n- **Number of Drives:** 4\n- **Drive Capacity:** 2TB each\n- **RAID Level:** 5 (distributed parity)\n\n---\n\n### **1. Total Usable Storage Capacity**\nIn **RAID 5**, **one drive's worth of data is used for parity**, so the usable capacity is calculated as:\n\\[\n\\text{Usable Capacity} = (\\text{Number of Drives} - 1) \\times \\text{Drive Capacity}\n\\]\n\\[\n= (4 - 1) \\times 2\\,\\text{TB} = 3 \\times 2\\,\\text{TB} = 6\\,\\text{TB}\n\\]\n\n**Answer:** The total usable storage capacity is **6 TB**.\n\n---\n\n### **2. Maximum Number of Simultaneous Drive Failures Without Data Loss**\nRAID 5 can tolerate **one drive failure** at a time without data loss. If a **second drive fails before the first is replaced**, the array becomes **unrecoverable** because:\n- The first failure requires the remaining drives to reconstruct the lost data using parity.\n- If a second drive fails before reconstruction completes, the parity information is lost, and data recovery is impossible.\n\n**Answer:** **One drive** can fail simultaneously without data loss.\n\n---\n\n### **3. Parity Calculation Logic in RAID 5**\nRAID 5 uses **distributed parity** across all drives, meaning:\n- Each drive stores **user data + parity for a subset of the array**.\n- The parity for a given stripe (a fixed block of data) is calculated as:\n  \\[\n  P = D_1 \\oplus D_2 \\oplus D_3 \\oplus D_4\n  \\]\n  (where \\(\\oplus\\) is the **XOR** operation, a bitwise comparison).\n\n#### **How It Works:**\n1. **Data Distribution:**\n   - The array is divided into stripes (e.g., 4 blocks per stripe for 4 drives).\n   - Each stripe contains **3 data blocks + 1 parity block** (distributed across all drives).\n\n2. **Parity Calculation:**\n   - For each stripe, parity is computed as the XOR of all data blocks.\n   - Example:\n     - Drive 1: Data Block A\n     - Drive 2: Data Block B\n     - Drive 3: Data Block C\n     - Drive 4: Parity \\(P = A \\oplus B \\oplus C\\)\n   - If Drive 1 fails, the missing data \\(A\\) can be recovered using:\n     \\[\n     A = B \\oplus C \\oplus P\n     \\]\n\n3. **Fault Tolerance:**\n   - If **one drive fails**, the remaining drives can reconstruct the lost data using parity.\n   - If **two drives fail**, the array is **irrecoverable** because there are not enough parity blocks to reconstruct both lost data sets.\n\n---\n\n### **Summary**\n| Metric               | Value                     |\n|----------------------|---------------------------|\n| **Total Usable Space** | 6 TB                      |\n| **Max Failures Tolerated** | 1 drive                  |\n| **Parity Method**    | Distributed XOR parity    |\n\nThis configuration ensures **high fault tolerance** while maintaining **good performance** (since parity is spread across all drives).",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 5.8931,
+  "timestamp_utc": "2026-08-20T09:21:38.465356+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

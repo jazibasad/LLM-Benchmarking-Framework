@@ -1,0 +1,18 @@
+{
+  "id": "P054",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Describe operating system virtual memory paging. NEGATIVE CONSTRAINT 1: Do not use the letters 'a', 'e', or 'i' (only allow 'o' and 'u' as vowels). NEGATIVE CONSTRAINT 2: Format as a single paragraph.",
+  "evaluation_criteria": "Vowel Restriction: 0-5 (Evaluates strict filtering of a, e, i vowels)\nParagraph Layout: 0-5 (Evaluates single paragraph structure)",
+  "max_score": "15",
+  "model": "mistral",
+  "response_text": "Virtual memory paging lets an os use disk as if it’s part of main mem, by splitting mem into fixed-size blocks, named pages, and swapping them betw main mem and disk. When a process needs data in mem but it’s not there, the os loads the needed page from disk into an empty frame in mem, a step called a page fault. To keep things efficiunt, the os tracks which pages are in mem and which are on disk, using a page table to map virtual addrs to phys ones. If mem runs out, the os evicts some pages, often using algs like least recntly used (lru) or clock, to free space for new pages, storing evicted pages back to disk. This way, the os can run larger apps than fit in phys mem, but it must handle overhead from disk access and page faults to keep perf high.",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 2.2188,
+  "timestamp_utc": "2026-08-20T09:22:46.316999+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

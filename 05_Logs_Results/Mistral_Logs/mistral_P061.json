@@ -1,0 +1,18 @@
+{
+  "id": "P061",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Describe the function of an operating system kernel. NEGATIVE CONSTRAINT 1: Maximum length of exactly 25 words. NEGATIVE CONSTRAINT 2: Must contain at least one number digit.",
+  "evaluation_criteria": "Word Count Limit: 0-5 (Evaluates strict adherence to <= 25 words)\nDigit Inclusion: 0-5 (Evaluates presence of a number)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "The **kernel** manages hardware, allocates **1024** CPU cycles, controls memory, and enables processes to run securely while optimizing system performance.",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.5996,
+  "timestamp_utc": "2026-08-20T09:28:06.378022+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

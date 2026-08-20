@@ -1,0 +1,18 @@
+{
+  "id": "P027",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Easy",
+  "prompt": "A battery backup unit provides 12 hours of power when drawing 50 watts. Calculate how many hours of backup it will provide if the load increases to 150 watts, assuming a non-linear Peukert efficiency exponent of 1.1.",
+  "evaluation_criteria": "Capacity Scaling: 0-5 (Evaluates power-time invariant calculation)\nExponent Application: 0-5 (Evaluates Peukert equation logic)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "To determine the backup hours when the load increases to **150 watts** with a **Peukert efficiency exponent of 1.1**, follow these steps:\n\n### **Given:**\n- **Initial Power (P₁):** 50 watts\n- **Initial Backup Time (t₁):** 12 hours\n- **New Power (P₂):** 150 watts\n- **Peukert Exponent (k):** 1.1\n\n### **Peukert's Law:**\nThe capacity of a battery decreases non-linearly with increased discharge rate. The relationship is given by:\n\n\\[\nC = I^m \\cdot t\n\\]\n\nWhere:\n- \\( C \\) = Battery capacity (Ah)\n- \\( I \\) = Discharge current (A)\n- \\( m \\) = Peukert exponent (dimensionless)\n- \\( t \\) = Discharge time (hours)\n\nSince power \\( P = V \\times I \\), we can express the capacity in terms of power:\n\n\\[\nC = \\left( \\frac{P}{V} \\right)^m \\cdot t\n\\]\n\nAssuming the battery voltage \\( V \\) remains constant, the capacity ratio simplifies to:\n\n\\[\n\\frac{C_1}{C_2} = \\left( \\frac{P_2}{P_1} \\right)^m\n\\]\n\nSince the battery capacity \\( C \\) is proportional to the energy stored, and energy \\( E = P \\times t \\), we can relate the backup times as:\n\n\\[\n\\frac{t_1}{t_2} = \\left( \\frac{P_2}{P_1} \\right)^m\n\\]\n\n### **Solving for \\( t_2 \\):**\n\n\\[\nt_2 = t_1 \\times \\left( \\frac{P_1}{P_2} \\right)^m\n\\]\n\nSubstitute the given values:\n\n\\[\nt_2 = 12 \\times \\left( \\frac{50}{150} \\right)^{1.1}\n\\]\n\n\\[\nt_2 = 12 \\times \\left( \\frac{1}{3} \\right)^{1.1}\n\\]\n\nCalculate \\( \\left( \\frac{1}{3} \\right)^{1.1} \\):\n\n\\[\n\\left( \\frac{1}{3} \\right)^{1.1} \\approx 0.333^{1.1} \\approx 0.333 \\times 0.333^{0.1} \\approx 0.333 \\times 0.88 \\approx 0.294\n\\]\n\n\\[\nt_2 \\approx 12 \\times 0.294 \\approx 3.53 \\text{ hours}\n\\]\n\n### **Final Answer:**\n\\[\n\\boxed{3.53 \\text{ hours}}\n\\]\n\n**Thus, the battery will provide approximately 3.53 hours of backup at 150 watts with a Peukert exponent of 1.1.**",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 5.724,
+  "timestamp_utc": "2026-08-20T09:17:40.722896+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

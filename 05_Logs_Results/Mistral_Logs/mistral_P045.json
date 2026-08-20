@@ -1,0 +1,18 @@
+{
+  "id": "P045",
+  "category": "Instruction Following",
+  "difficulty": "Easy",
+  "prompt": "Provide a summary of the OSI model layers. NEGATIVE CONSTRAINT: Do NOT mention the physical layer or the application layer anywhere in your response. Format the output strictly as a numbered list.",
+  "evaluation_criteria": "Negative Constraint Adherence: 0-5 (Evaluates strict avoidance of forbidden layers)\nFormatting Adherence: 0-5 (Evaluates strict numbered list structure)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "1. **Presentation Layer (Layer 6)** – Handles data translation, encryption, compression, and formatting to ensure consistency between applications. It standardizes syntax (e.g., encryption algorithms, character sets) and manages data representation (e.g., ASCII, JPEG).\n\n2. **Session Layer (Layer 5)** – Manages and controls connections (sessions) between applications, including setup, maintenance, and termination. It handles synchronization, checkpointing, and recovery to ensure reliable communication.\n\n3. **Transport Layer (Layer 4)** – Provides end-to-end communication services, ensuring data integrity, flow control, and error recovery. It segments data into packets (e.g., TCP) or datagrams (e.g., UDP) and handles congestion control.\n\n4. **Network Layer (Layer 3)** – Routes data across networks using logical addressing (e.g., IP addresses) and determines the best path for packets. It handles fragmentation, routing protocols (e.g., OSPF, BGP), and logical network topology.\n\n5. **Data Link Layer (Layer 2)** – Divides data into frames and manages node-to-node communication over physical links. It includes MAC addressing, error detection (e.g., CRC), and access control (e.g., CSMA/CD, token passing).",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 5.4418,
+  "timestamp_utc": "2026-08-20T09:22:33.072968+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

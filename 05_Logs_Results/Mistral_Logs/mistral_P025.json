@@ -1,0 +1,18 @@
+{
+  "id": "P025",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Easy",
+  "prompt": "A storage tank is being filled by a pipe at a rate of 15 liters per minute while a leak drains it at 4 liters per minute. If the tank currently holds 200 liters and its capacity is 500 liters, calculate how many minutes it will take to reach full capacity.",
+  "evaluation_criteria": "Net Rate Calculation: 0-5 (Evaluates correct net fill rate computation)\nTime To Capacity: 0-5 (Evaluates correct division of remaining volume by net rate)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "To determine how long it will take to fill the storage tank to its full capacity, let's break down the problem step by step.\n\n### **Given:**\n- **Filling rate:** 15 liters per minute\n- **Leak rate:** 4 liters per minute\n- **Current volume in the tank:** 200 liters\n- **Tank capacity:** 500 liters\n\n### **Step 1: Calculate the Net Filling Rate**\nThe net rate at which the tank is being filled is the difference between the filling rate and the leak rate.\n\n\\[\n\\text{Net rate} = \\text{Filling rate} - \\text{Leak rate} = 15\\,\\text{L/min} - 4\\,\\text{L/min} = 11\\,\\text{L/min}\n\\]\n\n### **Step 2: Determine the Remaining Volume to be Filled**\nThe tank currently has 200 liters and needs to reach 500 liters.\n\n\\[\n\\text{Remaining volume} = \\text{Capacity} - \\text{Current volume} = 500\\,\\text{L} - 200\\,\\text{L} = 300\\,\\text{L}\n\\]\n\n### **Step 3: Calculate the Time Required to Fill the Remaining Volume**\nUsing the net filling rate, we can find the time required to fill the remaining 300 liters.\n\n\\[\n\\text{Time} = \\frac{\\text{Remaining volume}}{\\text{Net rate}} = \\frac{300\\,\\text{L}}{11\\,\\text{L/min}} \\approx 27.27\\,\\text{minutes}\n\\]\n\n### **Final Answer:**\nIt will take approximately \\(\\boxed{27.27}\\) minutes to fill the tank to its full capacity.",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 3.9314,
+  "timestamp_utc": "2026-08-20T09:17:31.659134+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

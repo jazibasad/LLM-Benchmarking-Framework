@@ -1,0 +1,18 @@
+{
+  "id": "P028",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Easy",
+  "prompt": "Three microservices report error rates: Service X fails 2% of 5,000 requests; Service Y fails 1.5% of 8,000 requests; Service Z fails 3% of 2,000 requests. Calculate the overall system error rate across all combined requests.",
+  "evaluation_criteria": "Failed Request Sum: 0-5 (Evaluates correct failure counts per service)\nOverall Percentage: 0-5 (Evaluates total failures divided by total requests)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "To calculate the overall system error rate across all combined requests from the three microservices, follow these steps:\n\n1. **Calculate the number of failed requests for each service:**\n\n   - **Service X:**\n     \\( 2\\% \\) of \\( 5,000 \\) requests\n     \\( 0.02 \\times 5,000 = 100 \\) failed requests\n\n   - **Service Y:**\n     \\( 1.5\\% \\) of \\( 8,000 \\) requests\n     \\( 0.015 \\times 8,000 = 120 \\) failed requests\n\n   - **Service Z:**\n     \\( 3\\% \\) of \\( 2,000 \\) requests\n     \\( 0.03 \\times 2,000 = 60 \\) failed requests\n\n2. **Calculate the total number of requests and total failed requests:**\n\n   - **Total Requests:**\n     \\( 5,000 + 8,000 + 2,000 = 15,000 \\) requests\n\n   - **Total Failed Requests:**\n     \\( 100 + 120 + 60 = 280 \\) failed requests\n\n3. **Calculate the overall system error rate:**\n\n   \\[\n   \\text{Overall Error Rate} = \\left( \\frac{\\text{Total Failed Requests}}{\\text{Total Requests}} \\right) \\times 100\n   \\]\n\n   \\[\n   \\text{Overall Error Rate} = \\left( \\frac{280}{15,000} \\right) \\times 100 \\approx 1.87\\%\n   \\]\n\n**Final Answer:**\n\n\\[\n\\boxed{1.87\\%}\n\\]",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 2.8798,
+  "timestamp_utc": "2026-08-20T09:17:43.611706+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

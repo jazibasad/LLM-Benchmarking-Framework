@@ -1,0 +1,18 @@
+{
+  "id": "P041",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "A neural network layer has 512 input features and 128 output neurons with bias terms enabled. Calculate the exact total number of trainable model parameters (weights and biases) in this layer.",
+  "evaluation_criteria": "Weight Calculation: 0-5 (Evaluates input times output multiplication)\nBias Addition: 0-5 (Evaluates correct addition of bias per neuron)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "To calculate the total number of trainable parameters (weights and biases) in the given neural network layer, we can break it down as follows:\n\n1. **Weights**: The number of weights in a layer is determined by the product of the number of input features and the number of output neurons. Here, there are 512 input features and 128 output neurons, so the number of weights is:\n   \\[\n   512 \\text{ (inputs)} \\times 128 \\text{ (outputs)} = 65,536 \\text{ weights}\n   \\]\n\n2. **Biases**: Each output neuron has one bias term. Since there are 128 output neurons, there are 128 bias terms.\n\n3. **Total Trainable Parameters**: The total number of trainable parameters is the sum of the weights and the biases:\n   \\[\n   65,536 \\text{ (weights)} + 128 \\text{ (biases)} = 65,664 \\text{ trainable parameters}\n   \\]\n\nThus, the exact total number of trainable parameters in this layer is **65,664**.",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 2.0883,
+  "timestamp_utc": "2026-08-20T09:21:46.415953+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

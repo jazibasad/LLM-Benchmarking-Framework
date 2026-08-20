@@ -1,0 +1,18 @@
+{
+  "id": "P065",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Provide a brief description of object-oriented polymorphism. NEGATIVE CONSTRAINT 1: Do not use verbs. NEGATIVE CONSTRAINT 2: Format as a semicolon-delimited single line.",
+  "evaluation_criteria": "No Verbs: 0-5 (Evaluates noun/adjective phrase structure)\nSemicolon Format: 0-5 (Evaluates single line semicolon layout)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "A mechanism allowing different classes to share a common interface while maintaining distinct internal implementations; enables unified treatment of varied data types through inheritance and method overriding; supports flexible, extensible code without altering existing structures; runtime binding determines actual behavior based on object type; promotes abstraction over concrete specifics.",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.748,
+  "timestamp_utc": "2026-08-20T09:28:19.642655+00:00",
+  "run_number": 5,
+  "repeat_count": 5
+}

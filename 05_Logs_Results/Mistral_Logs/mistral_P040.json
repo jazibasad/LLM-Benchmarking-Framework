@@ -1,0 +1,18 @@
+{
+  "id": "P040",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "A cloud provider charges $0.08 per GB-month for storage and $0.12 per GB for outbound data transfer. System A stores 500GB and transfers 2TB monthly. System B stores 2TB and transfers 300GB monthly. Calculate the exact annual cost for both systems and determine which is more cost-effective.",
+  "evaluation_criteria": "Unit Conversion: 0-5 (Evaluates correct conversion between GB and TB)\nCost Computation: 0-5 (Evaluates annual calculation accuracy and comparison)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "Let's break down the costs for both **System A** and **System B** over **12 months**, considering both **storage** and **outbound data transfer** charges.\n\n### **Cost Components:**\n1. **Storage Cost:**\n   - **$0.08 per GB-month**\n2. **Outbound Data Transfer Cost:**\n   - **$0.12 per GB**\n\n---\n\n### **System A:**\n- **Storage:**\n  - **500 GB/month** × **$0.08/GB-month** = **$40/month**\n  - **Annual Storage Cost:** $40 × 12 = **$480**\n\n- **Outbound Data Transfer:**\n  - **2 TB = 2000 GB/month** × **$0.12/GB** = **$240/month**\n  - **Annual Transfer Cost:** $240 × 12 = **$2,880**\n\n- **Total Annual Cost for System A:**\n  **$480 (Storage) + $2,880 (Transfer) = $3,360**\n\n---\n\n### **System B:**\n- **Storage:**\n  - **2 TB = 2000 GB/month** × **$0.08/GB-month** = **$160/month**\n  - **Annual Storage Cost:** $160 × 12 = **$1,920**\n\n- **Outbound Data Transfer:**\n  - **300 GB/month** × **$0.12/GB** = **$36/month**\n  - **Annual Transfer Cost:** $36 × 12 = **$432**\n\n- **Total Annual Cost for System B:**\n  **$1,920 (Storage) + $432 (Transfer) = $2,352**\n\n---\n\n### **Comparison:**\n| System | Annual Storage Cost | Annual Transfer Cost | **Total Annual Cost** |\n|--------|---------------------|----------------------|-----------------------|\n| **A**  | $480                | $2,880               | **$3,360**            |\n| **B**  | $1,920              | $432                 | **$2,352**            |\n\n### **Conclusion:**\n**System B** is **more cost-effective** with an annual cost of **$2,352**, compared to **$3,360** for System A.\n\n**Savings:** $3,360 - $2,352 = **$1,008 per year** in favor of System B.",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 5.8468,
+  "timestamp_utc": "2026-08-20T09:21:44.320686+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}
