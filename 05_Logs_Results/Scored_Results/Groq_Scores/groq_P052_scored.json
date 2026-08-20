@@ -1,0 +1,37 @@
+{
+  "id": "P052",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Explain asynchronous event loops in programming. NEGATIVE CONSTRAINT 1: Alternate sentence cases (Sentence 1 lowercase only, Sentence 2 UPPERCASE only, Sentence 3 lowercase only). NEGATIVE CONSTRAINT 2: Do not use the letter 'e'. NEGATIVE CONSTRAINT 3: Exactly four sentences.",
+  "response_text": "asynchrn loop runs in a program, handling callbacks without blocking.  \nCALLBACKS ACT DURING LOOP.  \non tick loop picks a task and runs it.  \nTHIS DESIGN SUPPORTS PROGRAMS QUICK.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 14.3299,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Alternating Case",
+      "score": 5,
+      "justification": "All four sentences strictly follow the alternating case pattern: sentence 1 all lowercase, sentence 2 all uppercase, sentence 3 all lowercase, sentence 4 all uppercase.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Forbidden Letter",
+      "score": 1,
+      "justification": "The response contains an uppercase 'E' in the word 'DESIGN' in the fourth sentence, violating the prohibition on the letter 'e'.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Sentence Count",
+      "score": 5,
+      "justification": "The response consists of exactly four sentences, meeting the required count.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 11,
+  "max_score": "15",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:56:50.013968+00:00"
+}

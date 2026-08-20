@@ -1,0 +1,31 @@
+{
+  "id": "P057",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Describe RESTful API design principles. NEGATIVE CONSTRAINT 1: The response must be written entirely in reverse word order (last word first, first word last). NEGATIVE CONSTRAINT 2: Exactly two sentences.",
+  "response_text": "DELETE, PUT, POST, GET like methods HTTP standard with manipulated are and verbs not nouns use URIs by identified are Resources. interactions client-server simplifies that interface uniform a and architecture system layered cacheability, statelessness include constraints Key.",
+  "run_number": 2,
+  "temperature": 0.7,
+  "latency_seconds": 9.8242,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Reverse Word Order (0-5): Evaluates backwards word sequence",
+      "score": 3,
+      "justification": "The response attempts reverse word order; reversing the words of each sentence yields coherent statements about REST principles, but minor imperfections like 'use nouns not verbs' and 'uniform a interface' prevent it from being fully successful.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Sentence Limit (0-5): Evaluates exact two sentences",
+      "score": 5,
+      "justification": "The response contains exactly two sentences, perfectly satisfying the constraint with no extra or missing sentences.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 8,
+  "max_score": "15",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:59:25.769874+00:00"
+}

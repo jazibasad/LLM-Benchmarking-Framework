@@ -1,0 +1,37 @@
+{
+  "id": "P051",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Write a technical overview of cloud computing security models. NEGATIVE CONSTRAINT 1: Do not use the word 'security' or its plural form. NEGATIVE CONSTRAINT 2: Every sentence must start with a vowel letter (A, E, I, O, U). Format the output as exactly three paragraphs.",
+  "response_text": "An essential foundation of cloud protection models is the shared responsibility framework that delineates duties between service providers and consumers. Each component of identity and access management (IAM) enforces authentication, authorization, and role‑based controls to limit privileged actions. In practice, network segmentation and virtual private clouds create isolated zones that restrict lateral movement of threats. On top of these mechanisms, audit logging captures detailed event records for forensic analysis and compliance reporting.  \n\nAn additional layer involves data encryption at rest and in transit, employing industry‑standard algorithms to render intercepted information unreadable. Each compliance framework—such as ISO 27001, PCI‑DSS, and HIPAA—maps specific controls to cloud configurations, guiding organizations toward regulatory alignment. In many deployments, continuous monitoring tools leverage anomaly detection and behavior analytics to flag suspicious activity in real time. Understanding the interplay between encryption key management and access policies is critical to prevent unauthorized decryption.  \n\nAn emerging trend is the adoption of zero‑trust architectures that assume no implicit trust for any component, regardless of its location. Each automated policy engine can dynamically adjust permissions based on contextual signals such as device posture, location, and risk score. In addition, container protection models extend safeguarding to micro‑services by isolating workloads and scanning images for vulnerabilities before deployment. Overall, continuous compliance checks combined with AI‑driven remediation enable organizations to maintain a resilient posture amid evolving threat landscapes.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 5.5254,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Negative Constraint 1",
+      "score": 5,
+      "justification": "The response contains no instances of the prohibited term or its plural, satisfying the absolute avoidance requirement.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Negative Constraint 2",
+      "score": 5,
+      "justification": "Every sentence begins with a vowel letter, meeting the strict syntactic rule throughout the entire text.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Structural Formatting",
+      "score": 5,
+      "justification": "The answer consists of precisely three paragraphs, fulfilling the required layout without deviation.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 15,
+  "max_score": "15",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:56:26.359151+00:00"
+}

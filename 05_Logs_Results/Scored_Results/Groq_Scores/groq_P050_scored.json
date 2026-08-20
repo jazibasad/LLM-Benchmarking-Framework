@@ -1,0 +1,31 @@
+{
+  "id": "P050",
+  "category": "Instruction Following",
+  "difficulty": "Easy",
+  "prompt": "Give a definition of RAM. NEGATIVE CONSTRAINT: Do not use the words 'memory', 'random', or 'access'.",
+  "response_text": "A type of computer storage that temporarily holds data and program instructions while the system is running, enabling the processor to read and write information rapidly. Its contents are lost when power is turned off.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 2.0319,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Forbidden Words",
+      "score": 5,
+      "justification": "The response fully and excellently meets the requirement by defining RAM without using any of the forbidden words 'memory', 'random', or 'access'.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Definition Quality",
+      "score": 5,
+      "justification": "The response provides a clear and accurate definition of RAM as volatile temporary storage, effectively capturing its core function and characteristics.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:56:19.690931+00:00"
+}

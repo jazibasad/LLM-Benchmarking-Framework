@@ -1,0 +1,37 @@
+{
+  "id": "P053",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Detail the operation of TCP three-way handshakes. NEGATIVE CONSTRAINT 1: Do not use any words containing vowels (A, E, I, O, U). NEGATIVE CONSTRAINT 2: Format as a valid JSON object with key 'handshake'. NEGATIVE CONSTRAINT 3: Maximum 15 words total.",
+  "response_text": "{\n  \"handshake\": \"clnt snd syn; svr rcv syn snd synrcv; clnt rcv synrcv snd\"\n}",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 18.8371,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Vowel Exclusion",
+      "score": 1,
+      "justification": "Score 1 – the response contains the vowel‑laden key \"handshake\", violating the consonant‑only rule and thus constitutes a major failure.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Json Structure",
+      "score": 5,
+      "justification": "Score 5 – the output is syntactically valid JSON with the exact required key, meeting the requirement fully.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Word Count",
+      "score": 5,
+      "justification": "Score 5 – the total word count stays well below the 15‑word limit, satisfying the length constraint completely.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 11,
+  "max_score": "15",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:57:10.838269+00:00"
+}
