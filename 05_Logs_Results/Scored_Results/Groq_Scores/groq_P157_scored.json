@@ -1,0 +1,31 @@
+{
+  "id": "P157",
+  "category": "Data Transformation",
+  "difficulty": "Easy",
+  "prompt": "Convert 72 degrees Fahrenheit to Celsius.",
+  "response_text": "To convert Fahrenheit to Celsius, use the formula  \n\n\\[\n°C = (°F - 32) \\times \\frac{5}{9}\n\\]\n\nFor 72 °F:\n\n\\[\n\\begin{aligned}\n°C &= (72 - 32) \\times \\frac{5}{9} \\\\\n   &= 40 \\times \\frac{5}{9} \\\\\n   &= \\frac{200}{9} \\\\\n   &\\approx 22.22^\\circ\\text{C}\n\\end{aligned}\n\\]\n\n**Result:** 72 °F is approximately **22.2 °C**.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.0601,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Conversion Accuracy",
+      "score": 5,
+      "justification": "The response correctly applies the conversion formula and provides the accurate Celsius value of approximately 22.2°C.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Format Compliance",
+      "score": 5,
+      "justification": "The response directly provides the converted temperature in Celsius, fully complying with the prompt's request.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T18:58:31.910324+00:00"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "P164",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this Markdown table with merged-looking header groups into a properly normalized JSON array, correctly attributing each sub-column to its parent header:\n| Name | Q1 | | Q2 | |\n|------|-----|-----|-----|-----|\n| | Sales | Cost | Sales | Cost |\n| Alice | 100 | 40 | 120 | 45 |",
+  "response_text": "**Resulting JSON (normalized with nested objects for each quarter)**\n\n```json\n[\n  {\n    \"Name\": \"Alice\",\n    \"Q1\": {\n      \"Sales\": 100,\n      \"Cost\": 40\n    },\n    \"Q2\": {\n      \"Sales\": 120,\n      \"Cost\": 45\n    }\n  }\n]\n```\n\n**How the conversion was done**\n\n| Markdown header row | Meaning |\n|---------------------|---------|\n| **Name**            | Top‑level field (kept as‑is) |\n| **Q1** → *Sales* / *Cost* | Sub‑fields grouped under the parent key **Q1** |\n| **Q2** → *Sales* / *Cost* | Sub‑fields grouped under the parent key **Q2** |\n\nThe second header row supplies the sub‑column names (“Sales”, “Cost”). By pairing each sub‑column with its parent (“Q1” or “Q2”), we can create a clean, hierarchical JSON structure where each quarter is an object containing its own “Sales” and “Cost” values. This representation is fully normalized and ready for programmatic consumption.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 12.5856,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Relational Integrity Score",
+      "score": 5,
+      "justification": "The JSON preserves all hierarchical relationships between Name, quarters, and sub-metrics, with values correctly attributed to their parent headers, meeting the criterion fully.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Edge Case Handling Score",
+      "score": 5,
+      "justification": "The response processes the table without errors or data loss, correctly handling the specified format and demonstrating robustness for the given input structure.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Output Validity Score",
+      "score": 5,
+      "justification": "The output is syntactically valid JSON with correct structure, fully conforming to the target format's requirements.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 5,
+      "justification": "All source data points (Name, Q1 Sales/Cost, Q2 Sales/Cost) are present in the output with no values silently omitted or dropped.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T18:59:52.118076+00:00"
+}

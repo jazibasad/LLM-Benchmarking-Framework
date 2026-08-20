@@ -1,0 +1,31 @@
+{
+  "id": "P149",
+  "category": "Long-context Retention",
+  "difficulty": "Medium",
+  "prompt": "Note 1: The initial budget for the marketing campaign was $50,000. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: After the Q2 review, the budget was increased by $15,000. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Following a cost-cutting measure in Q3, the budget was reduced by $10,000. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: What is the current budget after all adjustments, and can you show the calculation?",
+  "response_text": "**Current budget:** **$55,000**\n\n**Calculation**\n\n1. **Initial budget**: $50,000  \n2. **Q2 increase**: +$15,000 → $50,000 + $15,000 = **$65,000**  \n3. **Q3 reduction**: –$10,000 → $65,000 – $10,000 = **$55,000**\n\nSo after all the adjustments, the marketing campaign budget stands at **$55,000**.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 2.8622,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Multi-Fact Synthesis",
+      "score": 5,
+      "justification": "The response correctly synthesizes all three sequential budget updates (initial, Q2 increase, Q3 decrease) into a coherent calculation.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Numerical Accuracy",
+      "score": 5,
+      "justification": "The arithmetic is flawless: $50,000 + $15,000 = $65,000, then $65,000 - $10,000 = $55,000.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T18:54:12.426242+00:00"
+}

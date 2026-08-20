@@ -1,0 +1,31 @@
+{
+  "id": "P153",
+  "category": "Long-context Retention",
+  "difficulty": "Medium",
+  "prompt": "Note 1: The original API rate limit was 100 requests per minute. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: It was temporarily raised to 200 during the promotional event. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: After the event ended, it was set permanently at 150. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: What is the current permanent rate limit, and what was it during the promotional event?",
+  "response_text": "- **Current permanent rate limit:** 150 requests per minute  \n- **Rate limit during the promotional event:** 200 requests per minute",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 3.0674,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Multi-Fact Synthesis",
+      "score": 5,
+      "justification": "The response correctly synthesizes the sequential facts by identifying the current permanent rate limit from Note 3 and the promotional event rate limit from Note 2, fully meeting the requirement without gaps.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Numerical Accuracy",
+      "score": 5,
+      "justification": "The numerical values of 150 and 200 are accurately recalled from the notes, with no errors in direct factual reporting or comparisons.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T18:57:15.008762+00:00"
+}

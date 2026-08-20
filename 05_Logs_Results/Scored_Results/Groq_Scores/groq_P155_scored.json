@@ -1,0 +1,31 @@
+{
+  "id": "P155",
+  "category": "Data Transformation",
+  "difficulty": "Easy",
+  "prompt": "Convert this CSV row to JSON: name,age,city\\nAlice,30,Boston",
+  "response_text": "```json\n{\n  \"name\": \"Alice\",\n  \"age\": 30,\n  \"city\": \"Boston\"\n}\n```",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 2.0434,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Conversion Accuracy",
+      "score": 5,
+      "justification": "All values are correctly converted and structured (age as integer, strings for name and city).",
+      "outcome": "Success"
+    },
+    {
+      "name": "Format Compliance",
+      "score": 5,
+      "justification": "The output exactly matches the requested JSON format with proper syntax and structure.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T18:57:26.066985+00:00"
+}

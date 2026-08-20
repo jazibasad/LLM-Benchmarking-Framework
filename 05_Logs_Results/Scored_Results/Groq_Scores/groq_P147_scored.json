@@ -1,0 +1,43 @@
+{
+  "id": "P147",
+  "category": "Long-context Retention",
+  "difficulty": "Hard",
+  "prompt": "Note 1: The company originally operated in a single region (US-East). The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Expansion added a second region (EU-West) to serve European customers with lower latency. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: A third region (AP-Southeast) was added later for Asian customers. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 4: Due to low usage, AP-Southeast was later decommissioned, with those customers routed back to EU-West. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 5: US-East and EU-West remain the only two active regions today. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Which regions are currently active, which was removed, and reconstruct the full timeline of regional expansion and contraction described.",
+  "response_text": "**Current active regions**  \n- **US‑East** (the original region)  \n- **EU‑West** (added later and still in service)\n\n**Region that was removed**  \n- **AP‑Southeast** (the Asian region that was decommissioned)\n\n---\n\n## Full timeline of regional expansion and contraction\n\n| Phase | Timeframe (relative) | Action | Regions in service | Notes |\n|-------|----------------------|--------|--------------------|-------|\n| **1. Initial deployment** | Beginning | Launch of the system | **US‑East** only | System operated under standard conditions; routine maintenance performed; no anomalies. |\n| **2. First expansion** | After Phase 1 | Added **EU‑West** to serve European customers and lower latency | **US‑East**, **EU‑West** | Standard operation; routine maintenance; no unusual events. |\n| **3. Second expansion** | After Phase 2 | Added **AP‑Southeast** to serve Asian customers | **US‑East**, **EU‑West**, **AP‑Southeast** | System continued to run normally; routine maintenance; no anomalies. |\n| **4. Contraction** | After Phase 3 (due to low usage) | De‑commissioned **AP‑Southeast**; its traffic was rerouted to **EU‑West** | **US‑East**, **EU‑West** | Standard conditions maintained; routine maintenance; no unusual events. |\n| **5. Current state** | Present | No further changes | **US‑East**, **EU‑West** (the only active regions) | Ongoing standard operation; routine maintenance; all parameters within expected ranges. |\n\n**Summary:**  \n- The system started with **US‑East** only.  \n- **EU‑West** was added as the first expansion.  \n- **AP‑Southeast** was later added as a second expansion.  \n- Because AP‑Southeast saw low usage, it was subsequently removed, and its customers were redirected to EU‑West.  \n- Today, the active regions are **US‑East** and **EU‑West**, with **AP‑Southeast** being the region that was removed.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 6.7458,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Sequential Accuracy Score",
+      "score": 3,
+      "justification": "The response reconstructs the chronological phases correctly but omits some minor details, meeting the core requirement only partially, which aligns with a score of 3 (Minimum Success).",
+      "outcome": "Success"
+    },
+    {
+      "name": "Current-State Accuracy Score",
+      "score": 4,
+      "justification": "The final active regions are correctly identified with no inaccuracies, reflecting a strong success that fits a score of 4 (Strong Success).",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 4,
+      "justification": "All major expansion and contraction events are included, though the routine‑maintenance descriptions are omitted, resulting in a score of 4 (Strong Success).",
+      "outcome": "Success"
+    },
+    {
+      "name": "Coherence Score",
+      "score": 5,
+      "justification": "The explanation is well‑structured with a clear table and summary, fully satisfying the coherence requirement, meriting a score of 5 (Complete Success).",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 16,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T18:54:03.888944+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "P151",
+  "category": "Long-context Retention",
+  "difficulty": "Medium",
+  "prompt": "Note 1: Policy revision 1 required manager approval for expenses over $500. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Policy revision 2 lowered that threshold to $300. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Policy revision 3 raised it back up to $400. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: What is the CURRENT approval threshold, and how did it change over the three revisions?",
+  "response_text": "**Current approval threshold:** **$400** (manager approval is required for expenses over $400).\n\n**How the threshold changed over the three revisions**\n\n| Revision | Threshold (approval needed for expenses over…) | Direction of change |\n|----------|-----------------------------------------------|---------------------|\n| 1        | $500                                          | – (initial setting) |\n| 2        | $300                                          | Decreased (lowered) |\n| 3        | $400                                          | Increased (raised) relative to Revision 2, but still below the original $500 |\n\nSo the sequence was: **$500 → $300 → $400**, ending at the current $400 threshold.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 2.8625,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Multi-Fact Synthesis",
+      "score": 5,
+      "justification": "The response correctly combines all three sequential policy revisions into a coherent timeline, showing the initial threshold and each subsequent change with direction.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Numerical Accuracy",
+      "score": 5,
+      "justification": "All threshold values ($500, $300, $400) and comparative statements are numerically correct and precisely reflect the information in the notes.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T18:54:25.125015+00:00"
+}

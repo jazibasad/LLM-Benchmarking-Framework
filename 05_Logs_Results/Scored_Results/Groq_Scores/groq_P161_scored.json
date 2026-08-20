@@ -1,0 +1,43 @@
+{
+  "id": "P161",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this deeply nested JSON representing an e-commerce order into a set of THREE normalized CSV tables (orders, order_items, customers) with proper foreign key columns linking them:\n{\"order_id\": \"O1001\", \"customer\": {\"id\": \"C55\", \"name\": \"Ivan\"}, \"items\": [{\"sku\": \"A1\", \"qty\": 2, \"price\": 15.0}, {\"sku\": \"B2\", \"qty\": 1, \"price\": 40.0}]}",
+  "response_text": "Below are the three normalized CSV tables that capture the same information as the original JSON.  \nEach table includes a header row and uses foreign‑key columns to link the records together.\n\n---\n\n### **customers.csv**\n| customer_id | name |\n|-------------|------|\n| C55         | Ivan |\n\n```csv\ncustomer_id,name\nC55,Ivan\n```\n\n---\n\n### **orders.csv**\n| order_id | customer_id |\n|----------|-------------|\n| O1001    | C55         |\n\n```csv\norder_id,customer_id\nO1001,C55\n```\n\n---\n\n### **order_items.csv**\n| order_id | sku | qty | price |\n|----------|-----|-----|-------|\n| O1001    | A1  | 2   | 15.0 |\n| O1001    | B2  | 1   | 40.0 |\n\n```csv\norder_id,sku,qty,price\nO1001,A1,2,15.0\nO1001,B2,1,40.0\n```\n\nThese three CSV files are fully normalized:\n\n* **customers** holds one row per customer.  \n* **orders** references a customer via `customer_id`.  \n* **order_items** references its parent order via `order_id` and stores each line‑item’s SKU, quantity, and price.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.4534,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Relational Integrity Score",
+      "score": 5,
+      "justification": "All foreign key references correctly map customers to orders and orders to order_items, preserving the original data relationships.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Edge Case Handling Score",
+      "score": 5,
+      "justification": "The straightforward source data is handled without error, and no irregularities are present, so the response meets the handling requirement fully.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Output Validity Score",
+      "score": 5,
+      "justification": "The CSV output includes proper header rows and correctly formatted rows, satisfying syntactic validity.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 5,
+      "justification": "Every field from the original JSON—order_id, customer_id/name, and each item’s SKU, quantity, and price—is represented in the three tables without omission.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T18:59:15.430110+00:00"
+}

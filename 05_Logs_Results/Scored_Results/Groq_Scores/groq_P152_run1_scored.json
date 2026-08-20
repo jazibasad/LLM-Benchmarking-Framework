@@ -1,0 +1,31 @@
+{
+  "id": "P152",
+  "category": "Long-context Retention",
+  "difficulty": "Medium",
+  "prompt": "Note 1: Team Alpha's velocity was 30 story points in Sprint 1. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Team Alpha's velocity dropped to 22 points in Sprint 2 due to illness. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Team Alpha's velocity recovered to 35 points in Sprint 3. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Describe the trend in Team Alpha's velocity across all three sprints with specific numbers.",
+  "response_text": "**Trend Summary for Team Alpha’s Velocity**\n\n| Sprint | Reported Velocity (story points) |\n|--------|-----------------------------------|\n| Sprint 1 | **30** |\n| Sprint 2 | **22** |\n| Sprint 3 | **35** |\n\n**Overall trend**\n\n1. **Sprint 1 → Sprint 2:** Velocity **decreased** from 30 points to 22 points, a drop of **8 points** (‑26.7 %). The note attributes this decline to illness affecting the team.\n\n2. **Sprint 2 → Sprint 3:** Velocity **increased** sharply from 22 points to 35 points, an **increase of 13 points** (+59.1 %). This rebound not only recovers the loss from Sprint 2 but also exceeds the original Sprint 1 level.\n\n3. **Sprint 1 → Sprint 3 (overall):** Over the three‑sprint span, the team’s velocity **rose** from 30 points to 35 points, a net gain of **5 points** (+16.7 %).\n\n**Interpretation**\n\n- The team experienced a temporary dip in performance during Sprint 2, likely due to the reported illness.\n- By Sprint 3, the team not only recovered but improved beyond the initial baseline, suggesting effective mitigation of the earlier issue and possibly gains in productivity or capacity.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 4.2915,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Multi-Fact Synthesis",
+      "score": 5,
+      "justification": "The response correctly consolidates all three sprint velocity facts and their sequential changes into a coherent trend analysis, fully meeting the 'Complete Success' standard of the scale by addressing all key aspects without error.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Numerical Accuracy",
+      "score": 5,
+      "justification": "All computed point differences and percentage changes are mathematically accurate, and the response fully satisfies the 'Complete Success' requirement of the scale by presenting correct calculations across all comparisons.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T18:54:47.140858+00:00"
+}

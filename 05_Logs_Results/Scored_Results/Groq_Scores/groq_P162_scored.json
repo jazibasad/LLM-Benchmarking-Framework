@@ -1,0 +1,43 @@
+{
+  "id": "P162",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this log file format (space-separated with variable fields) into structured JSON, correctly handling the fact that the message field itself may contain spaces:\n2026-01-01 10:00:00 ERROR Connection timeout after 30s\n2026-01-01 10:01:15 INFO Server started successfully",
+  "response_text": "Below is a **self‑contained Python recipe** that\n\n1. **Splits each line only on the first three whitespace tokens** (date, time, level).  \n2. **Treats everything that follows as the free‑form message** – even if it contains spaces.  \n3. Returns a **list of dictionaries** that can be dumped directly to JSON.\n\n```python\n#!/usr/bin/env python3\n\"\"\"\nParse a space‑separated log where the message field may contain spaces\nand emit a nicely‑structured JSON array.\n\"\"\"\n\nimport json\nimport sys\nfrom pathlib import Path\nfrom typing import List, Dict\n\ndef parse_log_line(line: str) -> Dict[str, str]:\n    \"\"\"\n    Parse a single log line of the form:\n\n        <date> <time> <LEVEL> <message …>\n\n    The message may contain any number of spaces, so we split only the first\n    three whitespace‑separated tokens and keep the rest as‑is.\n    \"\"\"\n    # Strip trailing newline but keep leading/trailing spaces inside the message\n    line = line.rstrip(\"\\n\")\n\n    # Split into at most 4 parts: date, time, level, message\n    parts = line.split(maxsplit=3)\n\n    if len(parts) < 4:\n        # If a line is malformed we still return something useful\n        raise ValueError(f\"Unable to parse line (expected at least 4 tokens): {line!r}\")\n\n    date, time_, level, message = parts\n    # Combine date and time into an ISO‑8601 timestamp (optional)\n    timestamp = f\"{date}T{time_}\"\n\n    return {\n        \"timestamp\": timestamp,   # e.g. \"2026-01-01T10:00:00\"\n        \"date\": date,            # separate fields are kept for convenience\n        \"time\": time_,\n        \"level\": level,\n        \"message\": message\n    }\n\ndef parse_log_file(path: Path) -> List[Dict[str, str]]:\n    \"\"\"Read the whole file and return a list of parsed records.\"\"\"\n    records = []\n    with path.open(\"r\", encoding=\"utf-8\") as f:\n        for lineno, raw in enumerate(f, start=1):\n            # Skip blank lines\n            if not raw.strip():\n                continue\n            try:\n                records.append(parse_log_line(raw))\n            except ValueError as exc:\n                # You can decide to log, skip, or abort – here we abort with context\n                raise RuntimeError(f\"Error parsing {path} line {lineno}: {exc}\") from exc\n    return records\n\ndef main():\n    # --------------------------------------------------------------\n    # 1️⃣  INPUT – either a file name given on the command line\n    #     or STDIN when no argument is supplied.\n    # --------------------------------------------------------------\n    if len(sys.argv) > 1:\n        log_path = Path(sys.argv[1])\n        if not log_path.is_file():\n            sys.exit(f\"❌  File not found: {log_path}\")\n        records = parse_log_file(log_path)\n    else:\n        # Read from stdin\n        records = [parse_log_line(l) for l in sys.stdin if l.strip()]\n\n    # --------------------------------------------------------------\n    # 2️⃣  OUTPUT – pretty‑printed JSON to stdout\n    # --------------------------------------------------------------\n    json.dump(records, sys.stdout, indent=2, ensure_ascii=False)\n    sys.stdout.write(\"\\n\")\n\nif __name__ == \"__main__\":\n    main()\n```\n\n### How it works\n\n| Step | What the code does |\n|------|--------------------|\n| **Split with `maxsplit=3`** | Guarantees that only the first three whitespace tokens are used as separate fields (`date`, `time`, `level`). Everything after the third space stays untouched as the `message`. |\n| **Build ISO‑8601 timestamp** | Concatenates the date and time (`YYYY‑MM‑DDTHH:MM:SS`) – useful for downstream tools that expect a single timestamp field. |\n| **Error handling** | If a line has fewer than four tokens, the parser raises a clear `ValueError`. In the bulk loader (`parse_log_file`) we turn that into a `RuntimeError` that reports the file name and line number. |\n| **Result** | A list of dicts that can be directly serialized with `json.dump`. |\n\n---\n\n## Result for the sample you gave\n\nRunning the script on a file that contains:\n\n```\n2026-01-01 10:00:00 ERROR Connection timeout after 30s\n2026-01-01 10:01:15 INFO Server started successfully\n```\n\nproduces the following JSON:\n\n```json\n[\n  {\n    \"timestamp\": \"2026-01-01T10:00:00\",\n    \"date\": \"2026-01-01\",\n    \"time\": \"10:00:00\",\n    \"level\": \"ERROR\",\n    \"message\": \"Connection timeout after 30s\"\n  },\n  {\n    \"timestamp\": \"2026-01-01T10:01:15\",\n    \"date\": \"2026-01-01\",\n    \"time\": \"10:01:15\",\n    \"level\": \"INFO\",\n    \"message\": \"Server started successfully\"\n  }\n]\n```\n\n---\n\n### Quick‑start usage\n\n```bash\n# 1️⃣  Save the script as `log2json.py` and make it executable\nchmod +x log2json.py\n\n# 2️⃣  Parse a file\n./log2json.py mylog.txt > mylog.json\n\n# 3️⃣  Or pipe data directly\ncat mylog.txt | ./log2json.py > mylog.json\n```\n\nFeel free to adapt the fields (e.g., drop `date`/`time` if you only need `timestamp`) or extend the parser for extra columns (like a thread‑id or hostname) – just increase the `maxsplit` value accordingly.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 4.266,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Relational Integrity Score (0-5)",
+      "score": 5,
+      "justification": "All source fields (date, time, level, message) are correctly mapped into structured JSON keys and relationships are preserved without ambiguity.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Edge Case Handling Score (0-5)",
+      "score": 4,
+      "justification": "The parser handles messages containing spaces correctly using maxsplit=3 and raises informative errors for malformed lines, though it does not gracefully skip them.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Output Validity Score (0-5)",
+      "score": 5,
+      "justification": "The output is valid JSON produced via json.dump and conforms to standard JSON syntax.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score (0-5)",
+      "score": 5,
+      "justification": "Every component of each log line is captured in the output with no silent data loss.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 19,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T18:59:22.290677+00:00"
+}

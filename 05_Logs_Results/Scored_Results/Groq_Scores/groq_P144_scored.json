@@ -1,0 +1,43 @@
+{
+  "id": "P144",
+  "category": "Long-context Retention",
+  "difficulty": "Hard",
+  "prompt": "Note 1: The original API returned dates in US format (MM/DD/YYYY). The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: An internationalization update changed the default to ISO format (YYYY-MM-DD). The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: A backward-compatibility flag was added allowing clients to request the old US format explicitly. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 4: Six months later, the backward-compatibility flag was deprecated and scheduled for removal. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 5: As of the most recent release, the flag has been fully removed and ISO format is now the only option. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: What date format does the API return today, and can old clients still request the US format? Trace the full history that led to the current behavior.",
+  "response_text": "**Current behavior (today)**  \n- The API returns dates **only in ISO‑8601 format**: `YYYY‑MM‑DD`.  \n- The backward‑compatibility flag that once let callers ask for the old U.S. format has been **removed**, so legacy clients can no longer request `MM/DD/YYYY`.\n\n---\n\n### How we got here – step‑by‑step history\n\n| Phase | What changed | Reason / Context | Result for callers |\n|-------|--------------|------------------|--------------------|\n| **1. Original release** | Dates were emitted as **U.S. format** `MM/DD/YYYY`. | Default behavior when the service was first built. | All clients received the U.S. style dates. |\n| **2. Internationalization update** | Default date format switched to **ISO‑8601** `YYYY‑MM‑DD`. | To align with global standards and avoid locale‑specific ambiguity. | New clients automatically got ISO dates; existing clients would break if they expected the U.S. format. |\n| **3. Backward‑compatibility flag added** | Introduced a request flag (e.g., `?date_format=us`) that, when set, forced the API to return the legacy `MM/DD/YYYY` format. | Provided a safe migration path for existing integrations while the ecosystem moved to ISO. | Old clients could continue using the flag; new clients used the default ISO format. |\n| **4. Flag deprecated (six months later)** | Announcement that the flag would be **deprecated** and scheduled for removal. | Encouraged remaining legacy users to update their code; gave a clear timeline for the final cut‑off. | Flag still worked for a short grace period, but warnings were emitted. |\n| **5. Flag fully removed (most recent release)** | The compatibility flag was eliminated from the API surface. | Completion of the migration to a single, unambiguous date representation. | Only ISO `YYYY‑MM‑DD` is now supported; any request for the old format results in an error or is ignored. |\n\n---\n\n### Bottom line\n\n- **Today’s API output:** ISO‑8601 (`YYYY‑MM‑DD`).  \n- **Old U.S. format request:** No longer possible; the compatibility flag has been removed. Existing clients must update to handle ISO dates.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 6.957,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Sequential Accuracy Score",
+      "score": 5,
+      "justification": "The response accurately reconstructs all five chronological phases of changes described in the notes, preserving the correct order from the original US format to the final removal of the backward-compatibility flag.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Current-State Accuracy Score",
+      "score": 5,
+      "justification": "The model correctly states that today the API returns only ISO‑8601 dates and that the old US format cannot be requested because the backward-compatibility flag has been removed, matching note‑5 exactly.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Completeness Score",
+      "score": 5,
+      "justification": "All key facts from the notes—original US format, ISO switch, flag addition, deprecation, and final removal—are included, providing a full picture of the evolution and its impact on clients.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Coherence Score",
+      "score": 5,
+      "justification": "The explanation is clearly organized with a concise narrative and an easy‑to‑read table, making the chronological sequence and final behavior simple to follow.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T18:51:59.816731+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "P152",
+  "category": "Long-context Retention",
+  "difficulty": "Medium",
+  "prompt": "Note 1: Team Alpha's velocity was 30 story points in Sprint 1. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Team Alpha's velocity dropped to 22 points in Sprint 2 due to illness. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Team Alpha's velocity recovered to 35 points in Sprint 3. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Describe the trend in Team Alpha's velocity across all three sprints with specific numbers.",
+  "response_text": "Here’s the sprint‑by‑sprint breakdown and the overall trend for Team Alpha’s velocity:\n\n| Sprint | Velocity (story points) | Note |\n|--------|------------------------|------|\n| 1      | **30**                 | Normal operation, routine maintenance |\n| 2      | **22**                 | Drop due to illness on the team |\n| 3      | **35**                 | Recovery and improvement, back to normal conditions |\n\n**Trend analysis**\n\n1. **Initial baseline (Sprint 1):** The team started at 30 points, which we can treat as the baseline performance under standard conditions.  \n\n2. **Decline in Sprint 2:** Velocity fell to 22 points, an **8‑point decrease** (about a **27 % drop** from Sprint 1). The only reported cause was team illness, indicating a temporary capacity reduction.\n\n3. **Recovery and growth in Sprint 3:** Velocity rose to 35 points, which is **13 points higher** than Sprint 1 and **13 points above** the Sprint 2 low. This represents a **16.7 % increase** over the baseline and a **59 % increase** over the Sprint 2 dip.\n\n**Overall pattern:**  \n- **Down → Up**: The series shows a dip followed by a stronger rebound.  \n- The net change from Sprint 1 to Sprint 3 is **+5 points** (a **~16.7 % improvement** overall).  \n- The team not only recovered from the illness‑related slowdown but also exceeded its original capacity, suggesting that after the disruption they either improved their process, had better story estimation, or benefited from increased availability/efficiency.",
+  "run_number": 3,
+  "temperature": 0.7,
+  "latency_seconds": 3.3731,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Multi-Fact Synthesis",
+      "score": 4,
+      "justification": "The response successfully integrates all three sequentially updated facts into a coherent trend analysis, meeting the Strong Success criteria with only a minor numerical comparison gap.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Numerical Accuracy",
+      "score": 3,
+      "justification": "The response computes most calculations correctly but has a minor error stating 35 is 13 points higher than Sprint 1 instead of 5, aligning with the Minimum Success criteria as it adequately meets the core requirement with only a minor gap.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 7,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T18:56:46.029635+00:00"
+}

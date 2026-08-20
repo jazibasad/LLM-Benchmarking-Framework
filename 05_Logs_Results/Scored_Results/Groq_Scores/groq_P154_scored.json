@@ -1,0 +1,31 @@
+{
+  "id": "P154",
+  "category": "Long-context Retention",
+  "difficulty": "Medium",
+  "prompt": "Note 1: Warehouse 1 held 500 units of Product A at the start of the month. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: 200 units were shipped out from Warehouse 1 mid-month. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: 150 more units arrived at Warehouse 1 at the end of the month. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: What is the final unit count at Warehouse 1, and show the running calculation?",
+  "response_text": "**Running calculation**\n\n| Step | Description | Change in units | Running total |\n|------|-------------|----------------|---------------|\n| 1 | Starting inventory (beginning of month) | + 500 | **500** |\n| 2 | Units shipped out (mid‑month) | − 200 | **300** |\n| 3 | Units received (end of month) | + 150 | **450** |\n\n**Final unit count at Warehouse 1:** **450 units**.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 2.8616,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Multi-Fact Synthesis",
+      "score": 5,
+      "justification": "The response correctly integrates all three notes in sequence to track inventory changes over time.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Numerical Accuracy",
+      "score": 5,
+      "justification": "The arithmetic operations (+500, -200, +150) are performed correctly to arrive at the valid final count of 450 units.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T18:57:18.079096+00:00"
+}
