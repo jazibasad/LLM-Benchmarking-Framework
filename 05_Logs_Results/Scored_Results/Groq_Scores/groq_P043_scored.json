@@ -1,0 +1,31 @@
+{
+  "id": "P043",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "A network switch port handles packets with an MTU of 1500 bytes. If a data stream of 45,000 payload bytes is transmitted over IPv4 (requiring 20 bytes header) and TCP (requiring 20 bytes header), calculate the exact number of fragmented packets generated and total wire overhead.",
+  "response_text": "**Answer**\n\n| Item | Value |\n|------|-------|\n| **Number of IP fragments** | **31** |\n| **Total wire‑level overhead (headers only)** | **640 bytes** |\n| **Total bytes that actually travel on the link** | **45 640 bytes** |\n\n---\n\n### How the numbers are obtained  \n\n1. **Maximum transmission unit (MTU)** = 1500 bytes  \n   *The MTU is the largest *IP packet* (IP header + payload) that can be placed on the wire.*\n\n2. **Headers that must be carried**  \n\n   * IPv4 header = 20 bytes (present in **every** fragment)  \n   * TCP header = 20 bytes (present **only** in the first fragment, because it is part of the original TCP segment)\n\n3. **Payload that needs to be sent**  \n\n   * Application data = 45 000 bytes  \n\n   The original, un‑fragmented IP packet would have been  \n\n   \\[\n   \\text{IP hdr (20)} + \\text{TCP hdr (20)} + \\text{data (45 000)} = 45 040\\text{ bytes}\n   \\]\n\n4. **How much data each fragment can carry**\n\n   * Each fragment can hold at most `MTU – IP‑header = 1500 – 20 = 1480 bytes` of **IP payload**.\n   * The **first** fragment must also carry the 20‑byte TCP header, so its data‑portion for the application payload is  \n     \\[\n     1480\\;-\\;20 = 1460\\text{ bytes}\n     \\]\n   * All **subsequent** fragments can use the full 1480 bytes for the application payload.\n\n5. **Fragment count**\n\n   *First fragment* carries 1 460 bytes of data → remaining data  \n\n   \\[\n   45 000 - 1 460 = 43 540\\text{ bytes}\n   \\]\n\n   *Subsequent fragments* each carry 1 480 bytes, except possibly the last one.\n\n   \\[\n   \\frac{43 540}{1 480} = 29.43\\ldots\n   \\]\n\n   → 29 full‑size fragments (29 × 1 480 = 42 920 bytes)  \n   → 1 partial fragment for the leftover `43 540 – 42 920 = 620 bytes`.\n\n   **Total fragments** = 1 (first) + 29 (full) + 1 (partial) = **31**.\n\n6. **Wire‑level overhead**\n\n   * IP header in every fragment: `31 × 20 = 620 bytes`\n   * TCP header only once (in the first fragment): `20 bytes`\n\n   \\[\n   \\text{Overhead} = 620 + 20 = \\boxed{640\\text{ bytes}}\n   \\]\n\n7. **Total bytes on the wire**\n\n   \\[\n   \\text{Application data} + \\text{overhead}\n   = 45 000 + 640 = \\boxed{45 640\\text{ bytes}}\n   \\]\n\n   (Equivalently: 30 fragments of 1500 bytes each + the final 640‑byte fragment = 30 × 1500 + 640 = 45 640 bytes.)\n\n---\n\n### Quick sanity check  \n\n| Fragment | Size on wire | Payload data carried |\n|----------|--------------|----------------------|\n| 1 (first) | 20 (IP) + 20 (TCP) + 1 460 =data = **1500 bytes** | 1 460 |\n| 2‑30 (29 full) | 20 (IP) + 1 480 =data = **1500 bytes** each | 29 × 1 480 = 42 920 |\n| 31 (last) | 20 (IP) + 620 =data = **640 bytes** | 620 |\n| **Total** | **45 640 bytes** | **45 000 bytes** |\n\nEverything adds up, confirming the result.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 11.8679,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Mtu Fragmentation Math",
+      "score": 5,
+      "justification": "The response correctly determines 31 fragments by accounting for the 20‑byte IP header and 20‑byte TCP header, yielding the right number of fragments.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Overhead Computation",
+      "score": 5,
+      "justification": "It accurately sums the IP headers (31 × 20 = 620 bytes) and the single TCP header (20 bytes) to obtain 640 bytes of overhead.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:54:16.311019+00:00"
+}

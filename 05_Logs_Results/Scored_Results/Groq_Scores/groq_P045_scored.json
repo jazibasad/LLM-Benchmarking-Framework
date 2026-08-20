@@ -1,0 +1,31 @@
+{
+  "id": "P045",
+  "category": "Instruction Following",
+  "difficulty": "Easy",
+  "prompt": "Provide a summary of the OSI model layers. NEGATIVE CONSTRAINT: Do NOT mention the physical layer or the application layer anywhere in your response. Format the output strictly as a numbered list.",
+  "response_text": "1. **Data Link** – Manages node-to-node data transfer, framing packets, handling error detection and correction, and controlling access to the shared medium.  \n2. **Network** – Determines the best path for data across multiple networks, handling logical addressing and routing.  \n3. **Transport** – Provides reliable or best‑effort delivery of data segments, managing flow control, segmentation, and end‑to‑end error recovery.  \n4. **Session** – Establishes, maintains, and terminates communication sessions between applications, coordinating dialog control and synchronization.  \n5. **Presentation** – Translates data formats, encrypts/decrypts information, and handles data compression to ensure interoperability between heterogeneous systems.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 4.4062,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Negative Constraint Adherence",
+      "score": 5,
+      "justification": "The response avoids mentioning the physical layer and application layer entirely, satisfying the negative constraint.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Formatting Adherence",
+      "score": 5,
+      "justification": "The output is a strict numbered list with each entry prefixed by a number and period, meeting the formatting requirement.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:55:20.312866+00:00"
+}

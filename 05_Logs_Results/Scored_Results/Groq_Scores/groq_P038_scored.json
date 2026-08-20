@@ -1,0 +1,31 @@
+{
+  "id": "P038",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "A data streaming pipeline ingests records across four partitions. Partition 1 receives 450 records/sec with 99% validity; Partition 2 receives 600 records/sec with 95% validity; Partition 3 receives 300 records/sec with 98% validity; Partition 4 receives 750 records/sec with 90% validity. Calculate the weighted average validity percentage across all ingested streams.",
+  "response_text": "**Step‑by‑step calculation**\n\n| Partition | Records / sec | Validity % | Valid records / sec |\n|-----------|--------------|------------|---------------------|\n| 1 | 450 | 99 % | 450 × 0.99 = **445.5** |\n| 2 | 600 | 95 % | 600 × 0.95 = **570** |\n| 3 | 300 | 98 % | 300 × 0.98 = **294** |\n| 4 | 750 | 90 % | 750 × 0.90 = **675** |\n| **Total** | **2 100** | – | **1 984.5** |\n\n**Weighted average validity**\n\n\\[\n\\text{Weighted validity} = \n\\frac{\\text{Total valid records}}{\\text{Total records}}\n= \\frac{1 984.5}{2 100}\n\\approx 0.9450\n\\]\n\nConvert to a percentage:\n\n\\[\n0.9450 \\times 100 \\approx \\mathbf{94.5\\%}\n\\]\n\n---\n\n**Answer:** The weighted average validity across all four partitions is **≈ 94.5 %**.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 15.4503,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Valid Record Sum",
+      "score": 5,
+      "justification": "The response correctly multiplied each partition’s records per second by its validity percentage, yielding accurate valid record counts for all four partitions.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Weighted Average",
+      "score": 5,
+      "justification": "The response summed the valid records and total ingestion rate, then divided to produce the correct weighted average validity of about 94.5%.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:53:25.007025+00:00"
+}

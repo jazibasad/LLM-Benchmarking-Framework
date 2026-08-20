@@ -1,0 +1,31 @@
+{
+  "id": "P040",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "A cloud provider charges $0.08 per GB-month for storage and $0.12 per GB for outbound data transfer. System A stores 500GB and transfers 2TB monthly. System B stores 2TB and transfers 300GB monthly. Calculate the exact annual cost for both systems and determine which is more cost-effective.",
+  "response_text": "**Step‑by‑step calculation**\n\n|                         | Storage (GB) | Transfer (GB) | Storage cost / month | Transfer cost / month | Total / month | Total / year |\n|-------------------------|--------------|---------------|----------------------|-----------------------|---------------|--------------|\n| **System A**            | 500 GB       | 2 TB = 2 × 1024 GB = **2 048 GB** | 500 × $0.08 = **$40.00** | 2 048 × $0.12 = **$245.76** | $40.00 + $245.76 = **$285.76** | $285.76 × 12 = **$3 429.12** |\n| **System B**            | 2 TB = 2 × 1024 GB = **2 048 GB** | 300 GB | 2 048 × $0.08 = **$163.84** | 300 × $0.12 = **$36.00** | $163.84 + $36.00 = **$199.84** | $199.84 × 12 = **$2 398.08** |\n\n**Result (using the binary‑TB definition 1 TB = 1024 GB)**  \n\n* **System A annual cost:** **$3 429.12**  \n* **System B annual cost:** **$2 398.08**  \n\n**Which system is cheaper?**  \nSystem B costs **$1 031.04 less per year** than System A, so **System B is the more cost‑effective option**.\n\n---\n\n### What if the provider uses the decimal‑TB definition (1 TB = 1 000 GB)?\n\n|                         | Storage (GB) | Transfer (GB) | Storage cost / month | Transfer cost / month | Total / month | Total / year |\n|-------------------------|--------------|---------------|----------------------|-----------------------|---------------|--------------|\n| **System A**            | 500 GB       | 2 TB = **2 000 GB** | $40.00 | 2 000 × $0.12 = $240.00 | $280.00 | $3 360.00 |\n| **System B**            | 2 TB = **2 000 GB** | 300 GB | 2 000 × $0.08 = $160.00 | $36.00 | $196.00 | $2 352.00 |\n\n*Difference:* System B saves **$1 008.00 per year**.\n\n---\n\n### Bottom line\nRegardless of whether the provider counts a terabyte as 1 024 GB or 1 000 GB, **System B is the cheaper solution**, saving roughly **$1 000 – $1 030 per year** compared with System A.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 10.9446,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Unit Conversion",
+      "score": 5,
+      "justification": "The response correctly converts both 2 TB values to gigabytes using the binary (1024 GB/TB) and decimal (1000 GB/TB) definitions, ensuring accurate storage and transfer amounts before cost calculation.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Cost Computation",
+      "score": 5,
+      "justification": "The response accurately calculates monthly and yearly costs for both systems under each unit convention and correctly identifies System B as the lower‑cost option, meeting the core requirement.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:53:52.757699+00:00"
+}

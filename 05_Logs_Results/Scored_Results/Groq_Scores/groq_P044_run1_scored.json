@@ -1,0 +1,31 @@
+{
+  "id": "P044",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "An enterprise cluster runs 3 tiers of virtual machines: Web tier (16 VMs at 2 vCPU each), App tier (32 VMs at 4 vCPU each), and DB tier (8 VMs at 16 vCPU each). If hypervisor overcommitment ratio is set to 2.5:1, calculate the physical host CPU core count required.",
+  "response_text": "**Step 1 – Compute the total virtual‑CPU (vCPU) demand**\n\n| Tier | # VMs | vCPU per VM | Total vCPU |\n|------|------|--------------|------------|\n| Web  | 16   | 2            | 16 × 2 = 32 |\n| App  | 32   | 4            | 32 × 4 = 128 |\n| DB   | 8    | 16           | 8 × 16 = 128 |\n| **Total** | – | – | **32 + 128 + 128 = 288 vCPU** |\n\n**Step 2 – Apply the over‑commitment ratio**\n\nThe hypervisor is allowed to allocate **2.5 vCPU for every 1 physical core**.\n\n\\[\n\\text{Physical cores required} = \\frac{\\text{Total vCPU}}{\\text{Over‑commit ratio}} = \\frac{288}{2.5} = 115.2\n\\]\n\n**Step 3 – Round up to a whole core**\n\nYou can’t have a fraction of a physical core, so you round up:\n\n\\[\n\\boxed{\\text{At least 116 physical CPU cores}}\n\\]\n\n(If the hosts use hyper‑threading, the 116 cores could be provided as, for example, 58 dual‑threaded sockets, but the raw core count needed is 116.)",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 12.8365,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Virtual Cpu Sum",
+      "score": 5,
+      "justification": "The response correctly calculates the total vCPU demand as 288 vCPU by summing 32 + 128 + 128 vCPUs across all tiers with accurate multiplication and addition.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Overcommitment Division",
+      "score": 5,
+      "justification": "The response correctly applies the 2.5:1 overcommitment ratio by dividing 288 by 2.5 to get 115.2 cores and properly rounds up to 116 physical cores as the final answer.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:54:23.477920+00:00"
+}

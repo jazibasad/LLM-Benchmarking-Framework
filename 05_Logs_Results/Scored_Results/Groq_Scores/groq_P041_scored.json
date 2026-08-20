@@ -1,0 +1,31 @@
+{
+  "id": "P041",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "A neural network layer has 512 input features and 128 output neurons with bias terms enabled. Calculate the exact total number of trainable model parameters (weights and biases) in this layer.",
+  "response_text": "For a fully‑connected (dense) layer the trainable parameters consist of  \n\n* **Weights:** one weight for every connection from each input feature to each output neuron.  \n  \\[\n  \\text{#weights}= (\\text{input features}) \\times (\\text{output neurons}) = 512 \\times 128 = 65\\,536\n  \\]\n\n* **Biases:** one bias term per output neuron (since bias is enabled).  \n  \\[\n  \\text{#biases}= \\text{output neurons}=128\n  \\]\n\n**Total trainable parameters**\n\n\\[\n\\text{total}= 65\\,536 \\;(\\text{weights}) + 128 \\;(\\text{biases}) = 65\\,664\n\\]\n\nSo the layer has **65,664 trainable parameters**.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 7.0221,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Weight Calculation",
+      "score": 5,
+      "justification": "The response correctly computes the weight parameters as the product of input features (512) and output neurons (128), yielding 65,536.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Bias Addition",
+      "score": 5,
+      "justification": "The response correctly adds one bias per output neuron (128) and sums with weights to give the total of 65,664 trainable parameters.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:53:56.546301+00:00"
+}

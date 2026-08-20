@@ -1,0 +1,31 @@
+{
+  "id": "P039",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "In a RAID 5 disk array comprising four 2TB drives, calculate the total usable storage capacity and determine how many individual drives can fail simultaneously without data loss. Explain the parity calculation logic.",
+  "response_text": "**RAID 5 with four 2 TB drives**\n\n| Item | Value |\n|------|-------|\n| Number of drives (N) | 4 |\n| Size of each drive | 2 TB |\n| Raw (sum of all drives) | 4 × 2 TB = **8 TB** |\n| Usable capacity (data space) | (N – 1) × drive size = **3 × 2 TB = 6 TB** |\n| Capacity used for parity | 1 × 2 TB = **2 TB** |\n| Maximum simultaneous drive failures without data loss | **1 drive** (any single drive) |\n\n---\n\n## Why the usable capacity is 6 TB\n\nRAID 5 stores **one parity block per stripe** and spreads that parity block across all drives (rotating parity).  \nA *stripe* is a set of blocks that are written together:\n\n```\nStripe i:\n   Data block A (Drive 0)\n   Data block B (Drive 1)\n   Data block C (Drive 2)\n   Parity P  (Drive 3)   ← parity for this stripe\n```\n\nFor the next stripe the parity moves to the next drive, e.g.:\n\n```\nStripe i+1:\n   Data block D (Drive 0)\n   Data block E (Drive 1)\n   Parity P' (Drive 2)   ← parity for this stripe\n   Data block F (Drive 3)\n```\n\nBecause each stripe contains **N‑1 data blocks** and **1 parity block**, the total amount of space that can hold user data is:\n\n\\[\n\\text{Usable} = (N-1) \\times \\text{size of one drive}\n\\]\n\nWith N = 4 and each drive 2 TB:\n\n\\[\n\\text{Usable} = (4-1) \\times 2\\text{ TB} = 3 \\times 2\\text{ TB} = 6\\text{ TB}\n\\]\n\nThe remaining 2 TB (one whole drive’s worth) is occupied by the parity information that protects the array.\n\n---\n\n## How parity is calculated (the XOR logic)\n\n1. **Write operation** – When a set of data blocks is written to a stripe, the RAID controller computes a parity block **P** by performing a bit‑wise XOR of all data blocks in that stripe:\n\n   \\[\n   P = D_0 \\oplus D_1 \\oplus D_2 \\; (\\text{for a 4‑drive RAID 5})\n   \\]\n\n   - `⊕` = XOR (exclusive‑or).  \n   - Example (simplified to 8‑bit values):\n     ```\n     D0 = 0b11001010\n     D1 = 0b01110101\n     D2 = 0b10101100\n     P  = D0 ⊕ D1 ⊕ D2 = 0b00010001\n     ```\n\n2. **Distribution** – The resulting parity block **P** is stored on the drive designated for parity in that stripe. The parity drive rotates so that no single drive becomes a bottleneck and the load is balanced.\n\n3. **Reconstruction after a drive failure** – If one drive fails, the missing data block **M** can be rebuilt by XOR‑ing the remaining data blocks with the stored parity:\n\n   \\[\n   M = P \\oplus (\\text{all other data blocks})\n   \\]\n\n   Continuing the example above, suppose `D1` is lost:\n\n   ```\n   D1 = P ⊕ D0 ⊕ D2\n      = 0b00010001 ⊕ 0b11001010 ⊕ 0b10101100\n      = 0b01110101   (original D1)\n   ```\n\n   Because XOR is its own inverse, the missing block is recovered exactly.\n\n4. **Failure tolerance** – The XOR relationship holds **only if a single block (i.e., one drive) is missing**. If two drives are lost, there are two unknowns but only one parity equation, making reconstruction impossible without additional redundancy (e.g., RAID 6 or a separate backup).\n\n---\n\n## How many drives can fail?\n\n- **RAID 5 can survive the loss of **_one_** drive**.  \n- With four drives, any one of the four can fail, and the array will stay online; the controller will rebuild the missing data onto a replacement drive using the parity information.\n- If **two drives fail simultaneously**, the array loses more information than the single parity block can describe, so data is unrecoverable (unless you have an external backup).\n\n---\n\n### Quick recap\n\n| Parameter | Value |\n|-----------|-------|\n| Raw capacity (sum of disks) | 8 TB |\n| Usable data capacity | **6 TB** |\n| Parity overhead | 2 TB (≈ one drive) |\n| Simultaneous drive failures tolerated | **1** (any single drive) |\n| Parity calculation | `Parity = XOR(all data blocks in a stripe)` |\n| Reconstruction formula | `Missing block = Parity XOR all remaining data blocks` |\n\nFeel free to ask if you’d like a deeper dive into stripe sizing, write‑penalty considerations, or how RAID 5 behaves during rebuilds!",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 6.3472,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Capacity Calculation",
+      "score": 5,
+      "justification": "The response correctly computes usable capacity as (N-1)×drive size = 6 TB and explains the formula clearly.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Fault Tolerance Logic",
+      "score": 5,
+      "justification": "It accurately states that RAID 5 tolerates a single drive failure and provides a thorough XOR parity explanation with a reconstruction example.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:53:48.662632+00:00"
+}

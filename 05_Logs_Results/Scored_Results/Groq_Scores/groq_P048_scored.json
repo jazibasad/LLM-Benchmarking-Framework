@@ -1,0 +1,31 @@
+{
+  "id": "P048",
+  "category": "Instruction Following",
+  "difficulty": "Easy",
+  "prompt": "Write a short sentence about cybersecurity. NEGATIVE CONSTRAINT: Do not use any vowels (A, E, I, O, U, lowercase or uppercase).",
+  "response_text": "Cybr sfty prtcts d v c nd thrt hck.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 2.0069,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Vowel Exclusion",
+      "score": 5,
+      "justification": "Score 5 because the response contains no letters A, E, I, O, or U in either case.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Readability Or Intent",
+      "score": 1,
+      "justification": "Score 1 because although the response attempts to convey a cybersecurity meaning, the consonant-only text is largely unintelligible and fails to communicate a clear idea.",
+      "outcome": "Failure"
+    }
+  ],
+  "total_score": 6,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:56:04.241099+00:00"
+}

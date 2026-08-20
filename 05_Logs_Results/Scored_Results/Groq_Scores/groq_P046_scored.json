@@ -1,0 +1,31 @@
+{
+  "id": "P046",
+  "category": "Instruction Following",
+  "difficulty": "Easy",
+  "prompt": "List three benefits of cloud computing. NEGATIVE CONSTRAINT: Do not use the letter 'e' or 'E' anywhere in the response. Format as bullet points.",
+  "response_text": "- Scalability: adapt to workload shifts without big upfront outlay.  \n- Low cost: pay only for actual run, cutting outlay.  \n- Online data reach: get files from any tool, any hour.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 6.4275,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Negative Constraint",
+      "score": 1,
+      "justification": "The response includes 'online' which contains the letter 'e', violating the constraint.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Formatting",
+      "score": 5,
+      "justification": "The response correctly uses bullet points with consistent structure and no formatting errors.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 6,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T17:55:34.417391+00:00"
+}
