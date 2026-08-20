@@ -1,0 +1,31 @@
+{
+  "id": "P089",
+  "category": "Coding & System Architecture",
+  "difficulty": "Easy",
+  "prompt": "Write a Python function to check if a given string is a palindrome, ignoring spaces and case sensitivity.",
+  "response_text": "Here is the Python function to check if a string is a palindrome, ignoring spaces and case sensitivity:\n\n```python\ndef is_palindrome(s: str) -> bool:\n    # Convert the string to lowercase and remove all spaces\n    cleaned_string = \"\".join(s.lower().split())\n\n    # Compare the cleaned string with its reverse\n    return cleaned_string == cleaned_string[::-1]\n\n\n# --- Example usage ---\nprint(is_palindrome(\"A man a plan a canal Panama\"))  # Output: True\nprint(is_palindrome(\"racecar\"))  # Output: True\nprint(is_palindrome(\"Hello\"))  # Output: False\nprint(is_palindrome(\"No 'x' in Nixon\"))  # Output: False (Note: punctuation isn't removed)\n```\n\n### How it works:\n1. **`s.lower()`**: Converts all characters to lowercase to make the check case-insensitive.\n2. **`.split()`**: Splits the string by any whitespace, and **`\"\".join(...)`** joins the words back together without any spaces. \n3. **`cleaned_string[::-1]`**: Uses Python's slice notation to reverse the cleaned string.\n4. **`==`**: Checks if the forward string is equal to the backward string.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.8242,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Syntax Correctness",
+      "score": 5,
+      "justification": "The Python function uses correct syntax with proper type hints, indentation, and valid string operations that execute without errors.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Edge Case Handling",
+      "score": 3,
+      "justification": "The function correctly handles spaces and case sensitivity as required, but fails to handle punctuation which the example explicitly shows is not removed despite the note.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 8,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T13:21:51.069542+00:00"
+}

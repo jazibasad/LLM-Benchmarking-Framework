@@ -1,0 +1,31 @@
+{
+  "id": "P044",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "An enterprise cluster runs 3 tiers of virtual machines: Web tier (16 VMs at 2 vCPU each), App tier (32 VMs at 4 vCPU each), and DB tier (8 VMs at 16 vCPU each). If hypervisor overcommitment ratio is set to 2.5:1, calculate the physical host CPU core count required.",
+  "response_text": "To calculate the required physical host CPU core count, we need to determine the total vCPU demand of all virtual machines and then apply the hypervisor overcommitment ratio.\n\n### Step 1: Calculate the total vCPU count for each tier\n* **Web tier:** 16 VMs × 2 vCPUs = 32 vCPUs\n* **App tier:** 32 VMs × 4 vCPUs = 128 vCPUs\n* **DB tier:** 8 VMs × 16 vCPUs = 128 vCPUs\n\n### Step 2: Calculate the total vCPU demand across the enterprise cluster\n$$\\text{Total vCPUs} = 32 + 128 + 128 = 288 \\text{ vCPUs}$$\n\n### Step 3: Apply the hypervisor overcommitment ratio\nThe overcommitment ratio is given as $2.5:1$, meaning each physical core can support $2.5$ vCPUs on average.\n\n$$\\text{Physical Cores Required} = \\frac{\\text{Total vCPUs}}{\\text{Overcommitment Ratio}}$$\n\n$$\\text{Physical Cores Required} = \\frac{288}{2.5} = 115.2$$\n\n### Conclusion\nSince you cannot have a fraction of a physical core, you must round up to the nearest whole number. \n\nThe physical host CPU core count required is **116 cores**.",
+  "run_number": 3,
+  "temperature": 0.7,
+  "latency_seconds": 2.1433,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Virtual Cpu Sum",
+      "score": 5,
+      "justification": "The response accurately calculates the total vCPU demand for each tier (Web: 32, App: 128, DB: 128) and sums them correctly to 288, demonstrating complete success in aggregation.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Overcommitment Division",
+      "score": 5,
+      "justification": "The response correctly applies the 2.5:1 overcommitment ratio by dividing the total vCPUs (288) by 2.5 to get 115.2 and rounds up to 116, which is mathematically precise.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T12:59:03.480247+00:00"
+}

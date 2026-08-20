@@ -1,0 +1,31 @@
+{
+  "id": "P045",
+  "category": "Instruction Following",
+  "difficulty": "Easy",
+  "prompt": "Provide a summary of the OSI model layers. NEGATIVE CONSTRAINT: Do NOT mention the physical layer or the application layer anywhere in your response. Format the output strictly as a numbered list.",
+  "response_text": "1. Data Link: Responsible for node-to-node data transfer and error detection over the local network media.\n2. Network: Handles routing, forwarding, and logical addressing to move packets across multiple interconnected networks.\n3. Transport: Ensures reliable, ordered, and error-checked delivery of data streams between end systems.\n4. Session: Manages and maintains connections, dialogs, and synchronization between communicating applications.\n5. Presentation: Translates, encrypts, and compresses data so that it is readable by the receiving system.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.1305,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Negative Constraint Adherence",
+      "score": 5,
+      "justification": "The response completely omits mention of both the physical layer (layer 1) and application layer (layer 7), strictly adhering to the negative constraint.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Formatting Adherence",
+      "score": 5,
+      "justification": "The response is formatted as a strictly numbered list from 1 to 5, meeting the exact structural requirements specified.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T12:59:35.521405+00:00"
+}

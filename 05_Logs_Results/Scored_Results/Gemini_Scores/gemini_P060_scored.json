@@ -1,0 +1,31 @@
+{
+  "id": "P060",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Explain the concept of encapsulation in object-oriented programming. NEGATIVE CONSTRAINT 1: Do not use the words 'data', 'hide', or 'class'. NEGATIVE CONSTRAINT 2: Format the output as a Markdown table with two columns: 'Concept' and 'Description'.",
+  "response_text": "| Concept | Description | |---|---| | Encapsulation | The bundling of variables and methods within a single structural unit to restrict direct external access to internal states and behaviors. |",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.8814,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Negative Constraints",
+      "score": 0,
+      "justification": "The response uses the forbidden word 'class' in the description, violating the negative constraints completely.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Markdown Table",
+      "score": 5,
+      "justification": "The response is formatted as a proper Markdown table with exactly two columns named 'Concept' and 'Description' and correct header-row syntax.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 5,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T13:06:56.973373+00:00"
+}

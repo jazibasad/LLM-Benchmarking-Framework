@@ -1,0 +1,31 @@
+{
+  "id": "P066",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Describe cloud storage redundancy. NEGATIVE CONSTRAINT 1: Every sentence must start with the exact word 'Data'. NEGATIVE CONSTRAINT 2: Exactly three sentences.",
+  "response_text": "Data redundancy ensures your files remain accessible even if a primary server fails completely. Data is automatically copied and stored across multiple geographically separated physical locations. Data protection of this magnitude prevents catastrophic loss from hardware crashes or natural disasters.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.8454,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Sentence Starter",
+      "score": 5,
+      "justification": "All three sentences in the response start with the exact word 'Data', meeting the constraint perfectly with no gaps.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Sentence Count",
+      "score": 5,
+      "justification": "The response contains exactly three sentences, satisfying the constraint precisely.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T13:10:06.541384+00:00"
+}

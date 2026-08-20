@@ -1,0 +1,31 @@
+{
+  "id": "P059",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Summarize database sharding strategies. NEGATIVE CONSTRAINT 1: Do not use any words with more than 4 letters. NEGATIVE CONSTRAINT 2: Format as an HTML unordered list (<ul><li>...</li></ul>).",
+  "response_text": "<ul>\n<li>Key map: Use a map to find data.</li>\n<li>Hash: Run a math code to get a node.</li>\n<li>Range: Put rows by date or id.</li>\n<li>Dir: Put data in one zone.</li>\n</ul>",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 40.2667,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Short Word Limit",
+      "score": 5,
+      "justification": "All 22 words in the response use 4 or fewer letters ('Key', 'map', 'Hash', 'Range', 'Dir', etc.) meeting the strict word length constraint.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Html Formatting",
+      "score": 5,
+      "justification": "The response correctly uses valid HTML unordered list tags with proper opening and closing elements as required.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "15",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T13:06:45.402010+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "P061",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Describe the function of an operating system kernel. NEGATIVE CONSTRAINT 1: Maximum length of exactly 25 words. NEGATIVE CONSTRAINT 2: Must contain at least one number digit.",
+  "response_text": "The kernel is the core 1 operating system component managing hardware, memory, and processes, ensuring secure communication between computer software and physical device components.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.8919,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Word Count Limit (0-5)",
+      "score": 5,
+      "justification": "The response contains exactly 23 words, which successfully adheres to the maximum length constraint of 25 words.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Digit Inclusion (0-5)",
+      "score": 5,
+      "justification": "The response successfully includes the number digit '1' within the text.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T13:07:03.937611+00:00"
+}

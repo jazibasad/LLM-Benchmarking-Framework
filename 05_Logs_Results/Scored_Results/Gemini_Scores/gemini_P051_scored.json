@@ -1,0 +1,37 @@
+{
+  "id": "P051",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Write a technical overview of cloud computing security models. NEGATIVE CONSTRAINT 1: Do not use the word 'security' or its plural form. NEGATIVE CONSTRAINT 2: Every sentence must start with a vowel letter (A, E, I, O, U). Format the output as exactly three paragraphs.",
+  "response_text": "Architectural defenses within distributed network environments rely heavily on shared responsibility frameworks that divide protective duties between the service provider and the client. Enterprises operating virtualized systems must configure identity management controls, encryption keys, and firewall rules to safeguard sensitive workloads against unauthorized access. Endpoints connected to these remote data centers utilize multi-factor authentication protocols to ensure operational integrity and data confidentiality across the entire infrastructure.\n\nInformation protection mechanisms inside modern utility grids depend upon rigorous perimeter defense strategies and automated vulnerability scanning tools. Organizations deploying applications across public clouds maintain ultimate accountability for application-level data governance, while infrastructure vendors handle physical safeguarding of hardware assets. Intrusion detection algorithms continuously monitor network traffic anomalies, immediately alerting administrators to potential exploits targeting shared compute resources.\n\nUniversal compliance standards dictate how digital assets are isolated within multi-tenant hardware configurations through advanced hypervisor isolation and cryptographic partitioning. Access policies enforced at the API gateway level restrict unauthorized query attempts, thereby preserving system availability and transaction validity. Ultimate protection relies on proactive patch management and continuous auditing procedures to mitigate risks inherent in complex virtual architectures.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.882,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Negative Constraint 1 (0-5): Evaluates absolute absence of forbidden keywords",
+      "score": 5,
+      "justification": "The response contains no occurrence of the word \"security\" or its plural form, fully satisfying the absolute absence requirement.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Negative Constraint 2 (0-5): Evaluates syntactic compliance of sentence starters",
+      "score": 5,
+      "justification": "Every sentence begins with a vowel letter (A, E, I, O, U), meeting the syntactic compliance requirement.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Structural Formatting (0-5): Evaluates exact three-paragraph layout",
+      "score": 5,
+      "justification": "The text is organized into exactly three distinct paragraphs, fulfilling the layout constraint.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 15,
+  "max_score": "15",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T13:01:53.661843+00:00"
+}

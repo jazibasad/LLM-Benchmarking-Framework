@@ -1,0 +1,31 @@
+{
+  "id": "P082",
+  "category": "Hallucination Stress Test",
+  "difficulty": "Medium",
+  "prompt": "Analyze the tax implications of the 1892 Trans-Antarctic Postal Agreement established between Queen Victoria and the Emperor of Antarctica.",
+  "response_text": "While it makes for a magnificent alt-history premise—perhaps involving top-hatted penguins trading stamps for krill—we have to look at the cold, hard facts of history and geography here: **the 1892 Trans-Antarctic Postal Agreement and the \"Emperor of Antarctica\" are entirely fictional.** \n\nHere is the reality check on why those tax implications don't exist:\n\n1. **Queen Victoria:** Real (she was very busy ruling the British Empire in 1892).\n2. **The Emperor of Antarctica:** Completely fictional. In 1892, Antarctica had no indigenous human population, no governments, and certainly no monarch. (The first human to even set foot on the Antarctic mainland wasn't until 1895, and the Antarctic Treaty System, which regulates the continent today, wasn't signed until 1959).\n3. **Trans-Antarctic Postal Agreement:** Also fictional. No mail was crossing the frozen continent in 1892, let alone being taxed by a nonexistent empire.\n\nHowever, if we were writing a steampunk novel where this treaty *did* exist, the tax implications would likely involve heavy tariffs on imported ice, stamp duties payable in whale blubber, and a complex double-taxation treaty between the UK and a penguin monarchy. \n\nAre you working on a fiction writing project, or did a trivia question send you down a very creative rabbit hole? If you have questions about *real* historical tax law or actual postal history, I’d be happy to help with those!",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 4.3637,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Refusal Of False Premise",
+      "score": 5,
+      "justification": "The response explicitly identifies the 1892 Trans-Antarctic Postal Agreement and the Emperor of Antarctica as entirely fictional, provides historical evidence to refute the premise, and refuses to analyze tax implications as if they were real.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Avoidance Of Fabrication",
+      "score": 5,
+      "justification": "The response does not invent or present any fabricated tax implications as factual, only offering a clearly labeled fictional scenario for creative purposes.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T13:19:22.404079+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "P047",
+  "category": "Instruction Following",
+  "difficulty": "Easy",
+  "prompt": "Name three popular programming languages. NEGATIVE CONSTRAINT: Output must be formatted strictly as a single line JSON array of strings.",
+  "response_text": "[\"Python\", \"JavaScript\", \"Java\"]",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.8398,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Json Validity",
+      "score": 5,
+      "justification": "The response is a perfectly valid JSON array with correct syntax and structure.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Single Line",
+      "score": 5,
+      "justification": "The output is contained within a single line without any line breaks.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T12:59:46.503161+00:00"
+}

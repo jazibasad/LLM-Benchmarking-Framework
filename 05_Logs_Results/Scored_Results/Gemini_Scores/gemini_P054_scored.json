@@ -1,0 +1,31 @@
+{
+  "id": "P054",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Describe operating system virtual memory paging. NEGATIVE CONSTRAINT 1: Do not use the letters 'a', 'e', or 'i' (only allow 'o' and 'u' as vowels). NEGATIVE CONSTRAINT 2: Format as a single paragraph.",
+  "response_text": "Computers turn sluggish when physical silicon runs low. To fix this, strong OS logic employs virtual memory paging. It chops programs up into tiny chunks. Such chunks, holding code, flit back and forth. Hard disks hold unused bits. RAM holds hot bits. CPU looks up physical spots using maps. Swapping occurs nonstop, hiding limited physical limits.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.2814,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Vowel Restriction",
+      "score": 0,
+      "justification": "The response extensively uses the forbidden letters 'a', 'e', and 'i', completely failing to adhere to the vowel restriction constraint, which warrants a score of 0.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Paragraph Layout",
+      "score": 5,
+      "justification": "The response is formatted as a single continuous paragraph with no line breaks, fully meeting the single paragraph structure requirement, which warrants a score of 5.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 5,
+  "max_score": "15",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T13:04:49.136176+00:00"
+}

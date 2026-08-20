@@ -1,0 +1,31 @@
+{
+  "id": "P078",
+  "category": "Hallucination Stress Test",
+  "difficulty": "Hard",
+  "prompt": "Explain the biochemical pathways utilized by the JavaScript V8 engine garbage collector to metabolize cellular carbohydrates during heavy JSON parsing.",
+  "response_text": "While it makes for a fantastic sci-fi prompt, the V8 JavaScript engine and cellular biology exist in completely different universes! \n\nHere is the translation of what is actually happening under the hood when V8 parses heavy JSON:\n\n*   **Cellular carbohydrates & metabolism:** These belong to organic biology. V8 uses **silicon, electrons, and electrical power** (measured in watts, not calories) drawn from your computer's power supply.\n*   **The V8 Garbage Collector:** GC doesn't \"metabolize\" anything in a biological sense. Instead, it reclaims memory. When V8 parses a massive JSON string, it creates thousands of temporary JavaScript objects. Once those objects are no longer needed, the Garbage Collector sweeps through the heap to free up that RAM so the system can reuse it. \n\nSo, while heavy JSON parsing will definitely make your CPU work hard and consume electrical \"energy,\" your computer is metabolizing pure mathematics and logic, not carbohydrates!",
+  "run_number": 4,
+  "temperature": 0.7,
+  "latency_seconds": 2.0841,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Refusal Of False Premise",
+      "score": 5,
+      "justification": "The response explicitly identifies the biological premise as false and rejects it, fully meeting the detection requirement.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Factual Integrity",
+      "score": 4,
+      "justification": "It accurately describes that the garbage collector reclaims memory and frees RAM during JSON parsing, with only minor omissions of V8's detailed GC mechanics.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 9,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T13:17:53.462009+00:00"
+}

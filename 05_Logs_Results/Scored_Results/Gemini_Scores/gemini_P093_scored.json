@@ -1,0 +1,31 @@
+{
+  "id": "P093",
+  "category": "Coding & System Architecture",
+  "difficulty": "Easy",
+  "prompt": "Write a C# console application snippet that reads a text file line by line and counts the total number of words.",
+  "response_text": "Here is a complete, modern C# console application snippet that efficiently reads a text file line by line using `File.ReadLines` (which avoids loading the entire file into memory at once) and counts the words.\n\n```csharp\nusing System;\nusing System.IO;\n\nclass Program\n{\n    static void Main()\n    {\n        string filePath = \"path_to_your_file.txt\"; // Replace with your file path\n        long totalWordCount = 0;\n\n        try\n        {\n            // ReadLines processes the file lazily, line by line, which is memory efficient.\n            foreach (string line in File.ReadLines(filePath))\n            {\n                if (!string.IsNullOrWhiteSpace(line))\n                {\n                    // Split the line by whitespace and count the entries,\n                    // removing any empty entries caused by multiple spaces.\n                    string[] words = line.Split(new[] { ' ', '\\t', '\\r', '\\n' }, StringSplitOptions.RemoveEmptyEntries);\n                    totalWordCount += words.Length;\n                }\n            }\n\n            Console.WriteLine($\"Total word count: {totalWordCount}\");\n        }\n        catch (FileNotFoundException)\n        {\n            Console.WriteLine($\"Error: The file '{filePath}' was not found.\");\n        }\n        catch (Exception ex)\n        {\n            Console.WriteLine($\"An error occurred: {ex.Message}\");\n        }\n    }\n}\n```\n\n### Key Features:\n1. **Memory Efficient:** Uses `File.ReadLines()` instead of `File.ReadAllLines()`. This streams the file line-by-line rather than loading the whole thing into RAM, making it suitable for very large files.\n2. **Robust Splitting:** Uses `StringSplitOptions.RemoveEmptyEntries` to ensure that multiple consecutive spaces or tabs don't incorrectly inflate the word count.\n3. **Error Handling:** Includes a `try-catch` block to gracefully handle missing files or access issues.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.9458,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "File Io",
+      "score": 5,
+      "justification": "The response correctly uses File.ReadLines for lazy, memory‑efficient line‑by‑line reading with proper exception handling.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Word Counting",
+      "score": 5,
+      "justification": "The response accurately splits each line on whitespace, removes empty entries, and sums the counts to obtain the total word count.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T13:24:22.900968+00:00"
+}

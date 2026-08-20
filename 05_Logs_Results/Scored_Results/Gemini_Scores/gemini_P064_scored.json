@@ -1,0 +1,31 @@
+{
+  "id": "P064",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Describe version control branching. NEGATIVE CONSTRAINT 1: Do not use any punctuation marks. NEGATIVE CONSTRAINT 2: Must be written as a single continuous line of text.",
+  "response_text": "branching in version control is a method where you create an independent copy of a repository allowing developers to work on features or fixes simultaneously without disrupting the main codebase which is later merged back together when the work is complete",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.8211,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Punctuation Exclusion",
+      "score": 5,
+      "justification": "The response contains no punctuation marks whatsoever which constitutes a Complete Success for this criterion.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Single Line",
+      "score": 5,
+      "justification": "The response is written as a single continuous line without any newlines which constitutes a Complete Success for this criterion.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T13:07:29.330574+00:00"
+}

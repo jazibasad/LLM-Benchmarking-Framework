@@ -1,0 +1,31 @@
+{
+  "id": "P044",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "An enterprise cluster runs 3 tiers of virtual machines: Web tier (16 VMs at 2 vCPU each), App tier (32 VMs at 4 vCPU each), and DB tier (8 VMs at 16 vCPU each). If hypervisor overcommitment ratio is set to 2.5:1, calculate the physical host CPU core count required.",
+  "response_text": "To calculate the required physical host CPU core count, we need to follow these steps:\n\n### Step 1: Calculate the total vCPU count for each tier\n* **Web tier:** $16 \\text{ VMs} \\times 2 \\text{ vCPUs} = 32 \\text{ vCPUs}$\n* **App tier:** $32 \\text{ VMs} \\times 4 \\text{ vCPUs} = 128 \\text{ vCPUs}$\n* **DB tier:** $8 \\text{ VMs} \\times 16 \\text{ vCPUs} = 128 \\text{ vCPUs}$\n\n### Step 2: Calculate the total vCPUs across the entire cluster\n$$\\text{Total vCPUs} = 32 + 128 + 128 = 288 \\text{ vCPUs}$$\n\n### Step 3: Apply the overcommitment ratio\nThe overcommitment ratio is given as $2.5:1$. This means every 1 physical core can support 2.5 vCPUs. To find the required physical cores, divide the total vCPUs by the overcommitment ratio:\n\n$$\\text{Physical Cores Required} = \\frac{\\text{Total vCPUs}}{\\text{Overcommitment Ratio}}$$\n\n$$\\text{Physical Cores Required} = \\frac{288}{2.5} = 115.2$$\n\n### Conclusion\nSince you cannot have a fraction of a physical CPU core in practical server deployments, you would need to round up to the nearest whole number (or match standard hardware configurations). \n\n* **Exact calculation:** **115.2 physical cores**\n* **Practical requirement:** **116 physical cores** (assuming standard multi-core processors, you would configure servers to meet or exceed this capacity).",
+  "run_number": 4,
+  "temperature": 0.7,
+  "latency_seconds": 1.8418,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Virtual Cpu Sum (0-5)",
+      "score": 5,
+      "justification": "The response accurately calculates the total vCPUs for each tier and sums them correctly to 288, meeting the requirement flawlessly.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Overcommitment Division (0-5)",
+      "score": 5,
+      "justification": "The response correctly applies the 2.5:1 overcommitment ratio by dividing total vCPUs (288) by 2.5, yielding 115.2, and properly addresses rounding up to 116 cores for practical implementation.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T12:59:08.287885+00:00"
+}

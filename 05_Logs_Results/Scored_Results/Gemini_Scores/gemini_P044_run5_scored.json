@@ -1,0 +1,31 @@
+{
+  "id": "P044",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "An enterprise cluster runs 3 tiers of virtual machines: Web tier (16 VMs at 2 vCPU each), App tier (32 VMs at 4 vCPU each), and DB tier (8 VMs at 16 vCPU each). If hypervisor overcommitment ratio is set to 2.5:1, calculate the physical host CPU core count required.",
+  "response_text": "To calculate the required physical host CPU core count, we need to follow these steps:\n\n### Step 1: Calculate the total vCPU count for each tier\n* **Web tier:** $16 \\text{ VMs} \\times 2 \\text{ vCPUs} = 32 \\text{ vCPUs}$\n* **App tier:** $32 \\text{ VMs} \\times 4 \\text{ vCPUs} = 128 \\text{ vCPUs}$\n* **DB tier:** $8 \\text{ VMs} \\times 16 \\text{ vCPUs} = 128 \\text{ vCPUs}$\n\n### Step 2: Calculate the total vCPUs required across the entire cluster\n$$\\text{Total vCPUs} = 32 + 128 + 128 = 288 \\text{ vCPUs}$$\n\n### Step 3: Apply the hypervisor overcommitment ratio\nThe overcommitment ratio is given as $2.5:1$ (meaning $2.5$ vCPUs are allocated per $1$ physical CPU core). \n\n$$\\text{Physical Cores Required} = \\frac{\\text{Total vCPUs}}{\\text{Overcommitment Ratio}}$$\n\n$$\\text{Physical Cores Required} = \\frac{288}{2.5} = 115.2$$\n\n### Conclusion\nSince you cannot have a fraction of a physical CPU core, you must round up to the next whole number. \n\nThe enterprise cluster requires **116 physical host CPU cores** (or 115 cores if deploying exact fractions is possible, though hardware configurations typically require rounding up to standard socket/core counts).",
+  "run_number": 5,
+  "temperature": 0.7,
+  "latency_seconds": 1.9492,
+  "model": "gemini",
+  "criterion_scores": [
+    {
+      "name": "Virtual Cpu Sum",
+      "score": 5,
+      "justification": "The response correctly aggregates vCPUs for each tier and sums them to 288, fully meeting the requirement.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Overcommitment Division",
+      "score": 5,
+      "justification": "The response accurately applies the 2.5:1 ratio, calculates 115.2 cores, and correctly rounds up to 116, fully satisfying the criterion.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T12:59:18.672742+00:00"
+}
