@@ -1,0 +1,18 @@
+{
+  "id": "P215",
+  "category": "Multilingual Tasks",
+  "difficulty": "Medium",
+  "prompt": "Translate this sentence into Spanish AND explain one idiom or phrase in your translation that doesn't translate literally: 'It's raining cats and dogs outside, so let's stay in tonight.'",
+  "evaluation_criteria": "Tone/Register Accuracy: 0-5 (Evaluates whether formality level, politeness, or professional register is correctly preserved)\nLinguistic Explanation Quality: 0-5 (Evaluates whether any requested explanation of translation choices is accurate and clear)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "**Spanish translation**\n\n> **«Está lloviendo a cántaros fuera, así que quedémonos en casa esta noche.»**\n\n---\n\n### Explicación de la expresión idiomática  \n**«Llover a cántaros»**  \n\n- **Qué significa:** Esta frase se usa en español para describir una lluvia muy intensa, como cuando el agua cae con la fuerza y la cantidad de un cántaro (un gran recipiente de agua) que se vierte del cielo.  \n- **Por qué no se traduce literalmente:** En inglés la expresión “It’s raining cats and dogs” (literalmente “está lloviendo gatos y perros”) tampoco tiene sentido literal; es una forma figurada de decir que llueve mucho. En español, en lugar de intentar traducir literalmente “cats and dogs”, usamos nuestro propio modismo “llover a cántaros”, que cumple la misma función expresiva sin mencionar animales.  \n- **Equivalencia:** Ambas expresiones son idiomáticas y se entienden como “llueve a cántaros / está lloviendo a mares / está lloviendo muy fuerte”. No se interpreta literalmente ni se espera que literalmente caigan objetos del cielo.  \n\nAsí, la traducción mantiene el sentido original y emplea un modismo propio del español que, al igual que el inglés, no se traduce palabra por palabra.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.5214,
+  "timestamp_utc": "2026-08-20T11:00:37.079240+00:00",
+  "run_number": 1,
+  "repeat_count": 5
+}

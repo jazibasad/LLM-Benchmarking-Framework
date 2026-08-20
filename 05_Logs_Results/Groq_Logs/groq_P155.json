@@ -1,0 +1,18 @@
+{
+  "id": "P155",
+  "category": "Data Transformation",
+  "difficulty": "Easy",
+  "prompt": "Convert this CSV row to JSON: name,age,city\\nAlice,30,Boston",
+  "evaluation_criteria": "Conversion Accuracy: 0-5 (Evaluates whether the output value is mathematically or structurally correct)\nFormat Compliance: 0-5 (Evaluates whether the output exactly matches the requested target format)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "```json\n{\n  \"name\": \"Alice\",\n  \"age\": 30,\n  \"city\": \"Boston\"\n}\n```",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 2.0434,
+  "timestamp_utc": "2026-08-20T10:54:17.892708+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

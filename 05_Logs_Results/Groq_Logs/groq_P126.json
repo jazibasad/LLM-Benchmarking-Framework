@@ -1,0 +1,18 @@
+{
+  "id": "P126",
+  "category": "Ambiguity Handling",
+  "difficulty": "Medium",
+  "prompt": "Fix the bug in my code.",
+  "evaluation_criteria": "Missing Context Identification: 0-5 (Evaluates whether the response identifies exactly what information is missing, e.g. which code, which document, which app)\nConstructive Response: 0-5 (Evaluates whether the response still provides useful general guidance despite the ambiguity)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "I’m happy to help you debug your code! Could you please paste the snippet (or the whole file) that’s causing the problem, along with any error messages or unexpected behavior you’re seeing? That way I can pinpoint the issue and suggest a fix.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 17.909,
+  "timestamp_utc": "2026-08-20T10:50:38.547095+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

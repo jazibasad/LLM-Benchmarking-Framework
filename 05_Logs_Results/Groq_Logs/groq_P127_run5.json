@@ -1,0 +1,18 @@
+{
+  "id": "P127",
+  "category": "Ambiguity Handling",
+  "difficulty": "Medium",
+  "prompt": "Can you make this report better?",
+  "evaluation_criteria": "Missing Context Identification: 0-5 (Evaluates whether the response identifies exactly what information is missing, e.g. which code, which document, which app)\nConstructive Response: 0-5 (Evaluates whether the response still provides useful general guidance despite the ambiguity)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "Sure! I’d be happy to help polish and strengthen your report. Could you please paste the text (or the portion you’d like revised) here? If there are any specific goals—such as improving clarity, tightening the language, enhancing the structure, or tailoring it for a particular audience—let me know, and I’ll keep those in mind while editing.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.7955,
+  "timestamp_utc": "2026-08-20T10:50:47.351329+00:00",
+  "run_number": 5,
+  "repeat_count": 5
+}

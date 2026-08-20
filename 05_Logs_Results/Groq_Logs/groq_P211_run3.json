@@ -1,0 +1,18 @@
+{
+  "id": "P211",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this poem excerpt into Spanish, prioritizing preserving the rhythm and emotional tone over literal word-for-word accuracy, and briefly explain one place where you deviated from literal translation to preserve the poetic effect: 'The quiet hum of evening falls, soft shadows stretch along the walls.'",
+  "evaluation_criteria": "Translation Precision Score: 0-5 (Evaluates whether the translation is accurate at the level of precision the task requires - legal, technical, or poetic as specified)\nCultural/Linguistic Adaptation Score: 0-5 (Evaluates whether cultural or structural adaptations, where appropriate, are handled thoughtfully rather than overly literal)\nMeta-Explanation Quality Score: 0-5 (Evaluates whether any requested explanation of translation choices, ambiguity resolution, or back-translation comparison is accurate and insightful)\nRound-Trip/Consistency Score: 0-5 (Evaluates whether any self-comparison, such as back-translation analysis, is performed correctly and honestly, e.g. genuinely identifying meaning loss where it exists)",
+  "max_score": "20",
+  "model": "groq",
+  "response_text": "**Spanish translation (preserving rhythm and tone)**  \n\n*El susurro tenue del atardecer cae,  \nsombras suaves se alargan en la pared.*  \n\n**Explanation of a poetic deviation**  \nIn the original line “quiet hum” the word *hum* evokes a low, continuous sound. I chose **“susurro”** (whisper) instead of a literal *zumbido* or *hum* because “susurro” carries a softer, more intimate connotation in Spanish and fits the gentle, almost secretive mood of the verse, while also matching the syllable count and flow of the line. This slight shift maintains the poem’s emotional tone and musicality.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.4203,
+  "timestamp_utc": "2026-08-20T11:00:24.076207+00:00",
+  "run_number": 3,
+  "repeat_count": 5
+}

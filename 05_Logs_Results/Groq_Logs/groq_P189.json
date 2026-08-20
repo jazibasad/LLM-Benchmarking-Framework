@@ -1,0 +1,18 @@
+{
+  "id": "P189",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this two-sided debate transcript into a balanced summary of exactly 3 sentences: one stating side A's strongest argument, one stating side B's strongest argument, and one stating the actual point of disagreement between them (not just restating both sides): 'Person A: We should definitely adopt the new framework, it's faster and has better community support. Person B: I hear you, but our team has zero experience with it, and the migration cost alone could set us back a full quarter. Person A: Sure, but staying on the old framework means accumulating more technical debt every month we wait. Person B: That's fair, but I'd rather pay down debt gradually than risk a rushed migration breaking production.'",
+  "evaluation_criteria": "Structural Compliance Score: 0-5 (Evaluates whether the exact requested structure - sentence count, labeled sections, audience level - is followed precisely)\nFidelity Under Constraint Score: 0-5 (Evaluates whether meaning is preserved despite the tight length/format constraints, without fabricating information not in the source)\nNuance Preservation Score: 0-5 (Evaluates whether important caveats, limitations, or competing viewpoints from the source are retained, not flattened away)\nAudience Appropriateness Score: 0-5 (Evaluates whether jargon is correctly translated for the specified target audience)",
+  "max_score": "20",
+  "model": "groq",
+  "response_text": "Side A argues that adopting the new framework is essential because it offers superior speed, stronger community support, and prevents the continual buildup of technical debt. Side B counters that the team’s lack of experience and the quarter‑long migration cost pose a significant risk to production stability. The core disagreement is whether the immediate benefits of the new framework outweigh the short‑term expense and risk of a rushed migration.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.6088,
+  "timestamp_utc": "2026-08-20T10:59:27.486777+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

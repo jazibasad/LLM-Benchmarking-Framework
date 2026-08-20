@@ -1,0 +1,18 @@
+{
+  "id": "P133",
+  "category": "Long-context Retention",
+  "difficulty": "Easy",
+  "prompt": "Note 1: The server room temperature was recorded at 22 degrees Celsius on Monday. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: On Tuesday, the recorded temperature was 24 degrees Celsius. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: On Wednesday, the recorded temperature was 21 degrees Celsius. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: What was the temperature recorded on Tuesday?",
+  "evaluation_criteria": "Fact Recall Accuracy: 0-5 (Evaluates whether the specific fact requested is retrieved correctly from the earlier context)\nDistraction Resistance: 0-5 (Evaluates whether the response is not confused by the surrounding filler text)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "The temperature recorded on Tuesday was **24 °C**.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 12.691,
+  "timestamp_utc": "2026-08-20T10:51:13.669050+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

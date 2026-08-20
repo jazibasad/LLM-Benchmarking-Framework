@@ -1,0 +1,18 @@
+{
+  "id": "P177",
+  "category": "Summarization",
+  "difficulty": "Easy",
+  "prompt": "Summarize this paragraph in one sentence: 'The company reported strong quarterly earnings, driven by increased demand for its cloud services division. Revenue grew 15% year-over-year, while operating costs remained flat, leading to improved profit margins.'",
+  "evaluation_criteria": "Conciseness Compliance: 0-5 (Evaluates whether the length constraint, if specified, is followed exactly)\nCore Meaning Preservation: 0-5 (Evaluates whether the summary captures the main point of the source text)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "The company posted robust quarterly earnings, with a 15% YoY revenue rise from higher cloud services demand and flat operating costs boosting profit margins.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.4783,
+  "timestamp_utc": "2026-08-20T10:58:10.644493+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

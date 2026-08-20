@@ -1,0 +1,18 @@
+{
+  "id": "P203",
+  "category": "Multilingual Tasks",
+  "difficulty": "Easy",
+  "prompt": "Translate 'Happy birthday!' into Italian.",
+  "evaluation_criteria": "Translation Accuracy: 0-5 (Evaluates whether the translation correctly conveys the original meaning)\nNatural Phrasing: 0-5 (Evaluates whether the translation sounds natural to a native speaker rather than overly literal)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "**Buon compleanno!**",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.5733,
+  "timestamp_utc": "2026-08-20T11:00:02.467235+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

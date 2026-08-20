@@ -1,0 +1,18 @@
+{
+  "id": "P150",
+  "category": "Long-context Retention",
+  "difficulty": "Medium",
+  "prompt": "Note 1: Server cluster A has 8 nodes, each with 16GB RAM. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Server cluster B has 12 nodes, each with 8GB RAM. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Server cluster C has 4 nodes, each with 32GB RAM. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Which cluster has the most total RAM, and what is the exact total for each cluster?",
+  "evaluation_criteria": "Multi-Fact Synthesis: 0-5 (Evaluates whether the response correctly combines information from multiple, sequentially updated facts)\nNumerical Accuracy: 0-5 (Evaluates whether any calculations or comparisons across the facts are computed correctly)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "**Total RAM per cluster**\n\n| Cluster | Nodes | RAM per node | Total RAM |\n|---------|-------|--------------|-----------|\n| A | 8 | 16 GB | **128 GB** |\n| B | 12 | 8 GB | **96 GB** |\n| C | 4 | 32 GB | **128 GB** |\n\n**Which cluster has the most total RAM?**  \nClusters **A** and **C** are tied for the highest total memory, each providing **128 GB** of RAM. Cluster **B** has the least, with **96 GB**.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 2.9615,
+  "timestamp_utc": "2026-08-20T10:53:46.040884+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

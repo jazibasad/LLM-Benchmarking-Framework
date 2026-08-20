@@ -1,0 +1,18 @@
+{
+  "id": "P161",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this deeply nested JSON representing an e-commerce order into a set of THREE normalized CSV tables (orders, order_items, customers) with proper foreign key columns linking them:\n{\"order_id\": \"O1001\", \"customer\": {\"id\": \"C55\", \"name\": \"Ivan\"}, \"items\": [{\"sku\": \"A1\", \"qty\": 2, \"price\": 15.0}, {\"sku\": \"B2\", \"qty\": 1, \"price\": 40.0}]}",
+  "evaluation_criteria": "Relational Integrity Score: 0-5 (Evaluates whether relationships/references between the transformed structures are correctly preserved)\nEdge Case Handling Score: 0-5 (Evaluates whether irregular or inconsistent source data is handled correctly rather than causing errors or silent data loss)\nOutput Validity Score: 0-5 (Evaluates whether the output is syntactically valid in its target format)\nCompleteness Score: 0-5 (Evaluates whether all source data is represented in the output with nothing silently dropped)",
+  "max_score": "20",
+  "model": "groq",
+  "response_text": "Below are the three normalized CSV tables that capture the same information as the original JSON.  \nEach table includes a header row and uses foreign‑key columns to link the records together.\n\n---\n\n### **customers.csv**\n| customer_id | name |\n|-------------|------|\n| C55         | Ivan |\n\n```csv\ncustomer_id,name\nC55,Ivan\n```\n\n---\n\n### **orders.csv**\n| order_id | customer_id |\n|----------|-------------|\n| O1001    | C55         |\n\n```csv\norder_id,customer_id\nO1001,C55\n```\n\n---\n\n### **order_items.csv**\n| order_id | sku | qty | price |\n|----------|-----|-----|-------|\n| O1001    | A1  | 2   | 15.0 |\n| O1001    | B2  | 1   | 40.0 |\n\n```csv\norder_id,sku,qty,price\nO1001,A1,2,15.0\nO1001,B2,1,40.0\n```\n\nThese three CSV files are fully normalized:\n\n* **customers** holds one row per customer.  \n* **orders** references a customer via `customer_id`.  \n* **order_items** references its parent order via `order_id` and stores each line‑item’s SKU, quantity, and price.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.4534,
+  "timestamp_utc": "2026-08-20T10:54:29.356775+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

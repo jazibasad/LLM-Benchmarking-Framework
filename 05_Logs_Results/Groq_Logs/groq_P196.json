@@ -1,0 +1,18 @@
+{
+  "id": "P196",
+  "category": "Summarization",
+  "difficulty": "Medium",
+  "prompt": "Summarize this meeting transcript excerpt into 3 clear action items: 'So I think we all agree the current onboarding flow is too long. Sarah mentioned she'll look into cutting the form fields down. Mike said he can have the new tutorial video ready by next Friday. We also need someone to update the help docs to match - I can take that if no one else wants it.'",
+  "evaluation_criteria": "Format Compliance: 0-5 (Evaluates whether the specified structure - bullet points, sentence count, audience level - is followed)\nBalanced Coverage: 0-5 (Evaluates whether all key points from the source, including any competing or nuanced ones, are represented)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "**Action Items**\n\n1. **Simplify the onboarding form** – Sarah will review the current form and identify which fields can be removed or combined.  \n2. **Create a new tutorial video** – Mike will produce and deliver the updated onboarding tutorial video by next Friday.  \n3. **Update the help documentation** – [Your Name] (or the speaker) will revise the help docs to reflect the streamlined form and new video, unless another team member volunteers.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.6535,
+  "timestamp_utc": "2026-08-20T10:59:48.541684+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

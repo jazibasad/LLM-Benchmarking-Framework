@@ -1,0 +1,18 @@
+{
+  "id": "P211",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this poem excerpt into Spanish, prioritizing preserving the rhythm and emotional tone over literal word-for-word accuracy, and briefly explain one place where you deviated from literal translation to preserve the poetic effect: 'The quiet hum of evening falls, soft shadows stretch along the walls.'",
+  "evaluation_criteria": "Translation Precision Score: 0-5 (Evaluates whether the translation is accurate at the level of precision the task requires - legal, technical, or poetic as specified)\nCultural/Linguistic Adaptation Score: 0-5 (Evaluates whether cultural or structural adaptations, where appropriate, are handled thoughtfully rather than overly literal)\nMeta-Explanation Quality Score: 0-5 (Evaluates whether any requested explanation of translation choices, ambiguity resolution, or back-translation comparison is accurate and insightful)\nRound-Trip/Consistency Score: 0-5 (Evaluates whether any self-comparison, such as back-translation analysis, is performed correctly and honestly, e.g. genuinely identifying meaning loss where it exists)",
+  "max_score": "20",
+  "model": "groq",
+  "response_text": "**Traducción poética**\n\nEl susurro tenue de la tarde cae,  \ny sombras suaves se alargan en la pared.\n\n**Explicación de la desviación**\n\nEn la versión literal “quiet hum” sería *zumbido silencioso* y “soft shadows stretch along the walls” *sombras suaves se estiran a lo largo de las paredes*. Para mantener la musicalidad y el ritmo de dos versos de ocho sílabas cada uno, cambié *zumbido* por *susurro* (más suave y melódico) y reorganicé la frase a *se alargan en la pared* (singular) en lugar de *las paredes*. Esta adaptación sacrifica la exactitud léxica pero conserva la atmósfera delicada y el flujo rítmico del original.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.8967,
+  "timestamp_utc": "2026-08-20T11:00:27.553934+00:00",
+  "run_number": 5,
+  "repeat_count": 5
+}

@@ -1,0 +1,18 @@
+{
+  "id": "P181",
+  "category": "Summarization",
+  "difficulty": "Easy",
+  "prompt": "Summarize this weather report in one sentence: 'Expect partly cloudy skies today with a high of 75 degrees. Winds will be light from the northwest. There is a slight chance of scattered showers in the evening.'",
+  "evaluation_criteria": "Conciseness Compliance: 0-5 (Evaluates whether the length constraint, if specified, is followed exactly)\nCore Meaning Preservation: 0-5 (Evaluates whether the summary captures the main point of the source text)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "Partly cloudy with a high of 75°F, light northwest winds, and a slight chance of scattered evening showers.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.4661,
+  "timestamp_utc": "2026-08-20T10:58:18.634861+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

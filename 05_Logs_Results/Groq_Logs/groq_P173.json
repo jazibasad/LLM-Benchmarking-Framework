@@ -1,0 +1,18 @@
+{
+  "id": "P173",
+  "category": "Data Transformation",
+  "difficulty": "Medium",
+  "prompt": "Convert this list of key-value pairs into a properly formatted Python dictionary literal: name=Eve, role=admin, active=true",
+  "evaluation_criteria": "Structural Correctness: 0-5 (Evaluates whether the output structure correctly represents the source data's relationships)\nData Fidelity: 0-5 (Evaluates whether every value from the source is preserved accurately, with none dropped or altered)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "```python\n{\n    \"name\": \"Eve\",\n    \"role\": \"admin\",\n    \"active\": True\n}\n```",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.7018,
+  "timestamp_utc": "2026-08-20T10:58:02.864059+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

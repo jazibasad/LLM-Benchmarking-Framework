@@ -1,0 +1,18 @@
+{
+  "id": "P217",
+  "category": "Multilingual Tasks",
+  "difficulty": "Medium",
+  "prompt": "Translate this sentence into Japanese, and note any difference in politeness level you had to choose between: 'Could you please send me the report by Friday?'",
+  "evaluation_criteria": "Tone/Register Accuracy: 0-5 (Evaluates whether formality level, politeness, or professional register is correctly preserved)\nLinguistic Explanation Quality: 0-5 (Evaluates whether any requested explanation of translation choices is accurate and clear)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "**Japanese translation (polite request)**  \n> **金曜日までにレポートを送っていただけますか？**  \n\n**Why this level of politeness?**  \n- The original English sentence uses “Could you please…?” which is a courteous, indirect request.  \n- In Japanese, the most natural way to convey that same level of politeness is to use the **‑ていただく** construction (送っていただけますか), which adds a respectful “please do for me” nuance.  \n- The sentence also ends with the question particle **か**, keeping it a polite inquiry rather than a command.\n\n**Possible less‑polite alternatives and the difference in tone**\n\n| Politeness level | Japanese phrasing | Nuance |\n|------------------|-------------------|--------|\n| **Casual** (to a close colleague or friend) | 金曜日までにレポートを送ってくれる？ | Direct but friendly; no honorifics. |\n| **Neutral polite** (standard business email) | 金曜日までにレポートを送ってください。 | A straightforward request; still polite but less deferential than いただけますか. |\n| **Very formal keigo** (to a senior manager or client) | 金曜日までにレポートをご送付賜りますようお願い申し上げます。 | Uses honorific **ご送付** and the humble **賜ります**; very formal and deferential. |\n\nSo, to match the tone of the English “Could you please…?” the most appropriate Japanese rendering is **金曜日までにレポートを送っていただけますか？**. If the relationship calls for a different level of formality, you can choose one of the alternatives above.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.4954,
+  "timestamp_utc": "2026-08-20T11:00:49.059246+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

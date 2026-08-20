@@ -1,0 +1,18 @@
+{
+  "id": "P208",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this marketing slogan into German AND into Mandarin Chinese, explaining for EACH language one adaptation you made for cultural resonance rather than literal accuracy: 'Just do it - unleash your inner champion.'",
+  "evaluation_criteria": "Translation Precision Score: 0-5 (Evaluates whether the translation is accurate at the level of precision the task requires - legal, technical, or poetic as specified)\nCultural/Linguistic Adaptation Score: 0-5 (Evaluates whether cultural or structural adaptations, where appropriate, are handled thoughtfully rather than overly literal)\nMeta-Explanation Quality Score: 0-5 (Evaluates whether any requested explanation of translation choices, ambiguity resolution, or back-translation comparison is accurate and insightful)\nRound-Trip/Consistency Score: 0-5 (Evaluates whether any self-comparison, such as back-translation analysis, is performed correctly and honestly, e.g. genuinely identifying meaning loss where it exists)",
+  "max_score": "20",
+  "model": "groq",
+  "response_text": "**German (Deutsch)**  \n\n**Translation**  \n*„Mach es einfach – lass den Champion in dir frei.“*  \n\n**Cultural adaptation**  \nThe original Nike slogan “Just do it” is famously rendered in German as **„Einfach machen“** or **„Mach es einfach“** in many campaigns.  The literal “Nur tu es” sounds stiff and un‑idiomatic to German speakers. By using the colloquial imperative **„Mach es einfach“**, the phrase feels natural, motivational and matches the punchy style of German advertising.  The word **„Champion“** is kept because it is widely understood and carries a strong, aspirational connotation in German sports culture, while the verb **„frei lassen“** (literally “let free”) is more dynamic than a literal “unleash” and fits the rhythm of the slogan.\n\n---\n\n**Mandarin Chinese (中文)**  \n\n**Translation**  \n*「行动起来，释放你的冠军精神。」*  \n\n**Cultural adaptation**  \nThe literal rendering of “Just do it” (e.g., “只管去做”) sounds awkward in Mandarin and lacks the motivational punch that Chinese advertising usually employs. The phrase **「行动起来」** (“take action”) is a common rallying call in Chinese marketing and sports slogans, conveying immediacy and determination.  \n\nFor “inner champion,” the literal “内在冠军” is rarely used in everyday Chinese; instead, the concept is expressed as **「冠军精神」** (“champion spirit”), which captures the idea of an inner drive or mindset rather than a physical champion. This phrasing resonates better with Chinese audiences who associate “精神” with personal motivation and perseverance.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.781,
+  "timestamp_utc": "2026-08-20T11:00:14.040791+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

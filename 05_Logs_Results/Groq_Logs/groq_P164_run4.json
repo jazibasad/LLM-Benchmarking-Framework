@@ -1,0 +1,18 @@
+{
+  "id": "P164",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this Markdown table with merged-looking header groups into a properly normalized JSON array, correctly attributing each sub-column to its parent header:\n| Name | Q1 | | Q2 | |\n|------|-----|-----|-----|-----|\n| | Sales | Cost | Sales | Cost |\n| Alice | 100 | 40 | 120 | 45 |",
+  "evaluation_criteria": "Relational Integrity Score: 0-5 (Evaluates whether relationships/references between the transformed structures are correctly preserved)\nEdge Case Handling Score: 0-5 (Evaluates whether irregular or inconsistent source data is handled correctly rather than causing errors or silent data loss)\nOutput Validity Score: 0-5 (Evaluates whether the output is syntactically valid in its target format)\nCompleteness Score: 0-5 (Evaluates whether all source data is represented in the output with nothing silently dropped)",
+  "max_score": "20",
+  "model": "groq",
+  "response_text": "Here’s the table expressed as a normalized JSON array.  \nEach sub‑column (“Sales”, “Cost”) is nested under its parent quarter (“Q1”, “Q2”) so the relationship is clear.\n\n```json\n[\n  {\n    \"Name\": \"Alice\",\n    \"Q1\": {\n      \"Sales\": 100,\n      \"Cost\": 40\n    },\n    \"Q2\": {\n      \"Sales\": 120,\n      \"Cost\": 45\n    }\n  }\n]\n```\n\n**Explanation of the mapping**\n\n| Markdown column | JSON key (nested) |\n|-----------------|-------------------|\n| Name            | `Name` |\n| Q1 → Sales      | `Q1.Sales` |\n| Q1 → Cost       | `Q1.Cost` |\n| Q2 → Sales      | `Q2.Sales` |\n| Q2 → Cost       | `Q2.Cost` |\n\nIf you prefer a flat structure instead of nesting, the equivalent would be:\n\n```json\n[\n  {\n    \"Name\": \"Alice\",\n    \"Q1_Sales\": 100,\n    \"Q1_Cost\": 40,\n    \"Q2_Sales\": 120,\n    \"Q2_Cost\": 45\n  }\n]\n```\n\nLet me know if you need any other format or additional rows added!",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 5.08,
+  "timestamp_utc": "2026-08-20T10:55:12.262160+00:00",
+  "run_number": 4,
+  "repeat_count": 5
+}

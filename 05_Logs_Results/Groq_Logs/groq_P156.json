@@ -1,0 +1,18 @@
+{
+  "id": "P156",
+  "category": "Data Transformation",
+  "difficulty": "Easy",
+  "prompt": "Convert this JSON to a CSV row: {\"name\": \"Bob\", \"age\": 25, \"city\": \"Denver\"}",
+  "evaluation_criteria": "Conversion Accuracy: 0-5 (Evaluates whether the output value is mathematically or structurally correct)\nFormat Compliance: 0-5 (Evaluates whether the output exactly matches the requested target format)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "**CSV (with header row)**  \n\n```csv\nname,age,city\nBob,25,Denver\n```",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.6031,
+  "timestamp_utc": "2026-08-20T10:54:18.501837+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

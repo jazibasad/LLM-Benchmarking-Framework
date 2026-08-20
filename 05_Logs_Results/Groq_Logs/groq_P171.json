@@ -1,0 +1,18 @@
+{
+  "id": "P171",
+  "category": "Data Transformation",
+  "difficulty": "Medium",
+  "prompt": "Convert this nested JSON into a flat CSV with dot-notation column names:\n{\"user\": {\"name\": \"Dana\", \"address\": {\"city\": \"Austin\", \"zip\": \"73301\"}}}",
+  "evaluation_criteria": "Structural Correctness: 0-5 (Evaluates whether the output structure correctly represents the source data's relationships)\nData Fidelity: 0-5 (Evaluates whether every value from the source is preserved accurately, with none dropped or altered)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "**CSV**\n\n```csv\nuser.name,user.address.city,user.address.zip\nDana,Austin,73301\n```",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.7106,
+  "timestamp_utc": "2026-08-20T10:57:58.871126+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

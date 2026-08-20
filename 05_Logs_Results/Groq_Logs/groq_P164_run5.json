@@ -1,0 +1,18 @@
+{
+  "id": "P164",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this Markdown table with merged-looking header groups into a properly normalized JSON array, correctly attributing each sub-column to its parent header:\n| Name | Q1 | | Q2 | |\n|------|-----|-----|-----|-----|\n| | Sales | Cost | Sales | Cost |\n| Alice | 100 | 40 | 120 | 45 |",
+  "evaluation_criteria": "Relational Integrity Score: 0-5 (Evaluates whether relationships/references between the transformed structures are correctly preserved)\nEdge Case Handling Score: 0-5 (Evaluates whether irregular or inconsistent source data is handled correctly rather than causing errors or silent data loss)\nOutput Validity Score: 0-5 (Evaluates whether the output is syntactically valid in its target format)\nCompleteness Score: 0-5 (Evaluates whether all source data is represented in the output with nothing silently dropped)",
+  "max_score": "20",
+  "model": "groq",
+  "response_text": "**Normalized JSON**\n\n```json\n[\n  {\n    \"Name\": \"Alice\",\n    \"Q1\": {\n      \"Sales\": 100,\n      \"Cost\": 40\n    },\n    \"Q2\": {\n      \"Sales\": 120,\n      \"Cost\": 45\n    }\n  }\n]\n```\n\n**Explanation**\n\n- The first header row defines the *parent* columns: **Name**, **Q1**, and **Q2**.  \n- The second header row supplies the *sub‑columns* for each parent (except **Name**, which has no sub‑columns): **Sales** and **Cost** under both **Q1** and **Q2**.  \n- Each data row is therefore represented as an object where:\n  * `Name` is a simple scalar value.\n  * `Q1` and `Q2` are nested objects containing the corresponding `Sales` and `Cost` values.  \n\nThis structure keeps the relationship between sub‑columns and their parent headers explicit and is fully JSON‑compatible.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 5.9744,
+  "timestamp_utc": "2026-08-20T10:55:18.241736+00:00",
+  "run_number": 5,
+  "repeat_count": 5
+}

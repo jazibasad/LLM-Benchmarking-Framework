@@ -1,0 +1,18 @@
+{
+  "id": "P164",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this Markdown table with merged-looking header groups into a properly normalized JSON array, correctly attributing each sub-column to its parent header:\n| Name | Q1 | | Q2 | |\n|------|-----|-----|-----|-----|\n| | Sales | Cost | Sales | Cost |\n| Alice | 100 | 40 | 120 | 45 |",
+  "evaluation_criteria": "Relational Integrity Score: 0-5 (Evaluates whether relationships/references between the transformed structures are correctly preserved)\nEdge Case Handling Score: 0-5 (Evaluates whether irregular or inconsistent source data is handled correctly rather than causing errors or silent data loss)\nOutput Validity Score: 0-5 (Evaluates whether the output is syntactically valid in its target format)\nCompleteness Score: 0-5 (Evaluates whether all source data is represented in the output with nothing silently dropped)",
+  "max_score": "20",
+  "model": "groq",
+  "response_text": "**Resulting JSON (normalized with nested objects for each quarter)**\n\n```json\n[\n  {\n    \"Name\": \"Alice\",\n    \"Q1\": {\n      \"Sales\": 100,\n      \"Cost\": 40\n    },\n    \"Q2\": {\n      \"Sales\": 120,\n      \"Cost\": 45\n    }\n  }\n]\n```\n\n**How the conversion was done**\n\n| Markdown header row | Meaning |\n|---------------------|---------|\n| **Name**            | Top‑level field (kept as‑is) |\n| **Q1** → *Sales* / *Cost* | Sub‑fields grouped under the parent key **Q1** |\n| **Q2** → *Sales* / *Cost* | Sub‑fields grouped under the parent key **Q2** |\n\nThe second header row supplies the sub‑column names (“Sales”, “Cost”). By pairing each sub‑column with its parent (“Q1” or “Q2”), we can create a clean, hierarchical JSON structure where each quarter is an object containing its own “Sales” and “Cost” values. This representation is fully normalized and ready for programmatic consumption.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 12.5856,
+  "timestamp_utc": "2026-08-20T10:54:58.541689+00:00",
+  "run_number": 1,
+  "repeat_count": 5
+}

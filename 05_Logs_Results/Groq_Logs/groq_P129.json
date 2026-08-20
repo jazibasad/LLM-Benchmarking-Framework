@@ -1,0 +1,18 @@
+{
+  "id": "P129",
+  "category": "Ambiguity Handling",
+  "difficulty": "Medium",
+  "prompt": "Optimize this function.",
+  "evaluation_criteria": "Missing Context Identification: 0-5 (Evaluates whether the response identifies exactly what information is missing, e.g. which code, which document, which app)\nConstructive Response: 0-5 (Evaluates whether the response still provides useful general guidance despite the ambiguity)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "Sure! I’d be happy to help you optimize the function. Could you please paste the code you’d like to improve (or describe what it does, its inputs/outputs, and any performance concerns you’ve noticed)? That way I can give you concrete, targeted suggestions.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.6902,
+  "timestamp_utc": "2026-08-20T10:50:51.249006+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

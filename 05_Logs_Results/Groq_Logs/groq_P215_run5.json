@@ -1,0 +1,18 @@
+{
+  "id": "P215",
+  "category": "Multilingual Tasks",
+  "difficulty": "Medium",
+  "prompt": "Translate this sentence into Spanish AND explain one idiom or phrase in your translation that doesn't translate literally: 'It's raining cats and dogs outside, so let's stay in tonight.'",
+  "evaluation_criteria": "Tone/Register Accuracy: 0-5 (Evaluates whether formality level, politeness, or professional register is correctly preserved)\nLinguistic Explanation Quality: 0-5 (Evaluates whether any requested explanation of translation choices is accurate and clear)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "**Traducción al español**\n\n> *Está lloviendo a cántaros fuera, así que quedémonos en casa esta noche.*\n\n**Explicación de la expresión “llover a cántaros”**\n\nEn inglés la frase *“raining cats and dogs”* es un modismo que significa que está lloviendo muy fuerte. Si se tradujera literalmente al español (“lloviendo gatos y perros”) no tendría sentido para un hablante hispano, porque esa combinación de palabras no se usa para describir una lluvia intensa.\n\nEn español usamos la expresión **“llover a cántaros”** (o también “llover a mares”, “llover a chorros”) para expresar la misma idea de una lluvia muy abundante. La palabra *cántaro* es un recipiente grande para líquidos; decir que “llueve a cántaros” sugiere que el cielo está derramando agua como si fuera de varios cántaros al mismo tiempo. Es una metáfora que, al igual que *cats and dogs* en inglés, se basa en una imagen exagerada y no se traduce literalmente.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.0029,
+  "timestamp_utc": "2026-08-20T11:00:44.564751+00:00",
+  "run_number": 5,
+  "repeat_count": 5
+}

@@ -1,0 +1,18 @@
+{
+  "id": "P128",
+  "category": "Ambiguity Handling",
+  "difficulty": "Medium",
+  "prompt": "Translate this document for me.",
+  "evaluation_criteria": "Missing Context Identification: 0-5 (Evaluates whether the response identifies exactly what information is missing, e.g. which code, which document, which app)\nConstructive Response: 0-5 (Evaluates whether the response still provides useful general guidance despite the ambiguity)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "Sure! Please paste the text you’d like translated, and let me know which language you’d like it translated into.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.5362,
+  "timestamp_utc": "2026-08-20T10:50:49.093222+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

@@ -1,0 +1,18 @@
+{
+  "id": "P151",
+  "category": "Long-context Retention",
+  "difficulty": "Medium",
+  "prompt": "Note 1: Policy revision 1 required manager approval for expenses over $500. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Policy revision 2 lowered that threshold to $300. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Policy revision 3 raised it back up to $400. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: What is the CURRENT approval threshold, and how did it change over the three revisions?",
+  "evaluation_criteria": "Multi-Fact Synthesis: 0-5 (Evaluates whether the response correctly combines information from multiple, sequentially updated facts)\nNumerical Accuracy: 0-5 (Evaluates whether any calculations or comparisons across the facts are computed correctly)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "**Current approval threshold:** **$400** (manager approval is required for expenses over $400).\n\n**How the threshold changed over the three revisions**\n\n| Revision | Threshold (approval needed for expenses over…) | Direction of change |\n|----------|-----------------------------------------------|---------------------|\n| 1        | $500                                          | – (initial setting) |\n| 2        | $300                                          | Decreased (lowered) |\n| 3        | $400                                          | Increased (raised) relative to Revision 2, but still below the original $500 |\n\nSo the sequence was: **$500 → $300 → $400**, ending at the current $400 threshold.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 2.8625,
+  "timestamp_utc": "2026-08-20T10:53:48.910052+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

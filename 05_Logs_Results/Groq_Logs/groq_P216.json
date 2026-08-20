@@ -1,0 +1,18 @@
+{
+  "id": "P216",
+  "category": "Multilingual Tasks",
+  "difficulty": "Medium",
+  "prompt": "Translate this business email into German, maintaining professional register throughout: 'Following our call yesterday, I wanted to confirm the revised delivery timeline and outline the next steps for both teams.'",
+  "evaluation_criteria": "Tone/Register Accuracy: 0-5 (Evaluates whether formality level, politeness, or professional register is correctly preserved)\nLinguistic Explanation Quality: 0-5 (Evaluates whether any requested explanation of translation choices is accurate and clear)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "Nach unserem gestrigen Telefonat möchte ich die überarbeitete Lieferzeit bestätigen und die nächsten Schritte für beide Teams darlegen.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.7333,
+  "timestamp_utc": "2026-08-20T11:00:46.296107+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

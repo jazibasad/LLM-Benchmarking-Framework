@@ -1,0 +1,18 @@
+{
+  "id": "P215",
+  "category": "Multilingual Tasks",
+  "difficulty": "Medium",
+  "prompt": "Translate this sentence into Spanish AND explain one idiom or phrase in your translation that doesn't translate literally: 'It's raining cats and dogs outside, so let's stay in tonight.'",
+  "evaluation_criteria": "Tone/Register Accuracy: 0-5 (Evaluates whether formality level, politeness, or professional register is correctly preserved)\nLinguistic Explanation Quality: 0-5 (Evaluates whether any requested explanation of translation choices is accurate and clear)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "**Spanish translation**\n\n> *Está lloviendo a cántaros afuera, así que quedémonos en casa esta noche.*\n\n---\n\n### Explicación de la expresión idiomática  \n\n**“Llover a cántaros”** (literalmente “to rain into pitchers”) es la forma idiomática que se usa en español para expresar que está lloviendo muy fuerte, de manera similar a la expresión inglesa *“raining cats and dogs.”*  \n\n- **Origen:** La expresión hace referencia a la imagen de que el agua cae con la intensidad de si se estuviera vertiendo de grandes jarras o cántaros.  \n- **Por qué no se traduce literalmente:** En inglés la frase *“raining cats and dogs”* es una metáfora histórica que no tiene sentido literal (gatos y perros no caen del cielo). En español, sin embargo, la metáfora típica es la de los **cántaros**, por lo que traducir palabra por palabra (*“lloviendo gatos y perros”*) no transmitiría la idea de una lluvia torrencial y, de hecho, resultaría confuso o cómico.  \n\nEn otras regiones hispanohablantes también se oye **“llover a mares”** o **“llover a cántaros”**, pero la idea subyacente es la misma: una lluvia muy intensa.  \n\nAsí, la traducción mantiene el sentido original sin conservar la imagen literal del inglés, sustituyéndola por la expresión idiomática propia del español.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.3816,
+  "timestamp_utc": "2026-08-20T11:00:38.940070+00:00",
+  "run_number": 2,
+  "repeat_count": 5
+}

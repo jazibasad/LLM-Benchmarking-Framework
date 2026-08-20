@@ -1,0 +1,18 @@
+{
+  "id": "P200",
+  "category": "Multilingual Tasks",
+  "difficulty": "Easy",
+  "prompt": "Translate 'Thank you very much' into Japanese.",
+  "evaluation_criteria": "Translation Accuracy: 0-5 (Evaluates whether the translation correctly conveys the original meaning)\nNatural Phrasing: 0-5 (Evaluates whether the translation sounds natural to a native speaker rather than overly literal)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "**Japanese translation**\n\n- **どうもありがとうございます** (dōmo arigatō gozaimasu) – the most common, polite way to say “Thank you very much.”\n- **本当にありがとうございます** (hontō ni arigatō gozaimasu) – adds “truly” for extra emphasis.\n- **心から感謝します** (kokoro kara kansha shimasu) – literally “I thank you from the heart,” a slightly more formal/expressive version.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.9453,
+  "timestamp_utc": "2026-08-20T10:59:56.837083+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

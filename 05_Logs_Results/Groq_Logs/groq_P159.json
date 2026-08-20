@@ -1,0 +1,18 @@
+{
+  "id": "P159",
+  "category": "Data Transformation",
+  "difficulty": "Easy",
+  "prompt": "Convert this list of items into a comma-separated string: [\"apple\", \"banana\", \"cherry\"]",
+  "evaluation_criteria": "Conversion Accuracy: 0-5 (Evaluates whether the output value is mathematically or structurally correct)\nFormat Compliance: 0-5 (Evaluates whether the output exactly matches the requested target format)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "apple, banana, cherry",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.4381,
+  "timestamp_utc": "2026-08-20T10:54:24.339912+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

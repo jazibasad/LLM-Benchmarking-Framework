@@ -1,0 +1,18 @@
+{
+  "id": "P186",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this multi-stakeholder meeting transcript into a decision log with exactly one entry per DISTINCT decision made (not per speaker turn), noting who owns follow-up for each: 'Alright, let's talk about the vendor contract. I think we should go with Vendor A given the pricing. Sarah: I agree, but we need legal to review the SLA terms first - I'll send that over today. Also, on the office move, we've decided to push it to Q3. Mike will coordinate with facilities. One more thing - we're NOT moving forward with the rebrand this year, budget's too tight. That's final for now.'",
+  "evaluation_criteria": "Structural Compliance Score: 0-5 (Evaluates whether the exact requested structure - sentence count, labeled sections, audience level - is followed precisely)\nFidelity Under Constraint Score: 0-5 (Evaluates whether meaning is preserved despite the tight length/format constraints, without fabricating information not in the source)\nNuance Preservation Score: 0-5 (Evaluates whether important caveats, limitations, or competing viewpoints from the source are retained, not flattened away)\nAudience Appropriateness Score: 0-5 (Evaluates whether jargon is correctly translated for the specified target audience)",
+  "max_score": "20",
+  "model": "groq",
+  "response_text": "**Decision Log**\n\n| # | Decision | Owner of Follow‑up |\n|---|----------|--------------------|\n| 1 | Select **Vendor A** for the contract (pricing approved). Legal must review the SLA terms before final sign‑off. | **Sarah** – will send the SLA to Legal today and track the review. |\n| 2 | postpone the **office move** to **Q3**. | **Mike** – will coordinate the new timeline with Facilities. |\n| 3 | **Do not proceed** with the rebrand this year due to budget constraints (decision final). | **Meeting Chair** – ensures the rebrand is removed from the current budget and communicates the cancellation to the branding team. |",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 3.2307,
+  "timestamp_utc": "2026-08-20T10:58:31.402665+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

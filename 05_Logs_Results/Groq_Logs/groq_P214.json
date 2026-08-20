@@ -1,0 +1,18 @@
+{
+  "id": "P214",
+  "category": "Multilingual Tasks",
+  "difficulty": "Medium",
+  "prompt": "Translate this short paragraph into French, preserving the polite/formal tone: 'We are pleased to inform you that your application has been approved. Please contact our office at your earliest convenience to complete the remaining paperwork.'",
+  "evaluation_criteria": "Tone/Register Accuracy: 0-5 (Evaluates whether formality level, politeness, or professional register is correctly preserved)\nLinguistic Explanation Quality: 0-5 (Evaluates whether any requested explanation of translation choices is accurate and clear)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "Nous avons le plaisir de vous informer que votre demande a été approuvée. Veuillez contacter notre bureau dès que possible afin de finaliser les formalités restantes.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.5535,
+  "timestamp_utc": "2026-08-20T11:00:34.110687+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

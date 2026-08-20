@@ -1,0 +1,18 @@
+{
+  "id": "P116",
+  "category": "Ambiguity Handling",
+  "difficulty": "Easy",
+  "prompt": "What time should I set my alarm for?",
+  "evaluation_criteria": "Clarification Recognition: 0-5 (Evaluates whether the response recognizes the question lacks necessary context)\nHelpful Framing: 0-5 (Evaluates whether the response offers a reasonable default or asks a clarifying question rather than guessing confidently)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "I’m happy to help you pick the right alarm time! To give you the most useful suggestion, could you let me know a few details?\n\n1. **When do you need to be up?** (e.g., what time you have to be at work, school, an appointment, etc.)  \n2. **How much sleep do you usually need** to feel rested? (Most adults aim for 7–9 hours, but everyone’s ideal amount varies.)  \n3. **Do you prefer a “soft” wake‑up** with a gradual light or sound, or a more abrupt alarm?  \n4. **Any other constraints?** (e.g., you need time to get ready, commute, exercise, or you want a few minutes of “snooze” before actually getting out of bed.)\n\nWith that information I can suggest an optimal wake‑up time and even a simple routine to help you start the day smoothly.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 7.1618,
+  "timestamp_utc": "2026-08-20T10:47:22.652616+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

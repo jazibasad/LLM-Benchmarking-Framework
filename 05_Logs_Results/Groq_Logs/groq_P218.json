@@ -1,0 +1,18 @@
+{
+  "id": "P218",
+  "category": "Multilingual Tasks",
+  "difficulty": "Medium",
+  "prompt": "Translate this product description into Portuguese, keeping any brand names untranslated: 'The UltraClean Pro vacuum features a HEPA filter and a 45-minute battery life.'",
+  "evaluation_criteria": "Tone/Register Accuracy: 0-5 (Evaluates whether formality level, politeness, or professional register is correctly preserved)\nLinguistic Explanation Quality: 0-5 (Evaluates whether any requested explanation of translation choices is accurate and clear)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "O aspirador UltraClean Pro possui um filtro HEPA e uma bateria com duração de 45 minutos.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.7262,
+  "timestamp_utc": "2026-08-20T11:00:50.291101+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

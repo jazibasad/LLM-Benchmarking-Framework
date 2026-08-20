@@ -1,0 +1,18 @@
+{
+  "id": "P152",
+  "category": "Long-context Retention",
+  "difficulty": "Medium",
+  "prompt": "Note 1: Team Alpha's velocity was 30 story points in Sprint 1. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Team Alpha's velocity dropped to 22 points in Sprint 2 due to illness. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Team Alpha's velocity recovered to 35 points in Sprint 3. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Describe the trend in Team Alpha's velocity across all three sprints with specific numbers.",
+  "evaluation_criteria": "Multi-Fact Synthesis: 0-5 (Evaluates whether the response correctly combines information from multiple, sequentially updated facts)\nNumerical Accuracy: 0-5 (Evaluates whether any calculations or comparisons across the facts are computed correctly)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "**Team Alpha’s velocity over the three sprints**\n\n| Sprint | Velocity (story points) |\n|--------|--------------------------|\n| Sprint 1 | **30** |\n| Sprint 2 | **22** |\n| Sprint 3 | **35** |\n\n**Trend description**\n\n1. **Sprint 1 → Sprint 2:** Velocity **decreased** from 30 points to 22 points, a drop of **8 points** (‑26.7%). This dip is attributed to illness affecting the team.\n\n2. **Sprint 2 → Sprint 3:** Velocity **increased** from 22 points to 35 points, a rise of **13 points** (+59.1%). The team not only recovered but exceeded the original Sprint 1 level.\n\n3. **Overall (Sprint 1 → Sprint 3):** The net change is an **increase** of **5 points**, moving from 30 points to 35 points (+16.7%).  \n\n**Summary:** The velocity shows a **U‑shaped pattern**: a dip in Sprint 2 followed by a strong rebound in Sprint 3, ending higher than the starting point.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 3.9914,
+  "timestamp_utc": "2026-08-20T10:53:57.203773+00:00",
+  "run_number": 2,
+  "repeat_count": 5
+}

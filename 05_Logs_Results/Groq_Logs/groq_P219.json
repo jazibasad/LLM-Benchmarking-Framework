@@ -1,0 +1,18 @@
+{
+  "id": "P219",
+  "category": "Multilingual Tasks",
+  "difficulty": "Medium",
+  "prompt": "Translate this sentence into Korean, and explain why you chose formal or informal speech level: 'Hey, are you free this weekend?'",
+  "evaluation_criteria": "Tone/Register Accuracy: 0-5 (Evaluates whether formality level, politeness, or professional register is correctly preserved)\nLinguistic Explanation Quality: 0-5 (Evaluates whether any requested explanation of translation choices is accurate and clear)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "**Korean translation (informal speech level):**  \n**“이번 주말에 시간 있어?”**\n\n### Why I chose the informal speech level\n\n1. **Tone of the original English** – The sentence begins with “Hey,” which is a casual, friendly greeting. In Korean, the equivalent casual tone is expressed with informal speech (반말).  \n2. **Relationship implied** – “Hey, are you free this weekend?” is typically said to a peer, a close friend, or someone of the same age or younger. In Korean culture, speakers use informal speech with people they know well or with whom there is no hierarchical distance.  \n3. **Verb ending** – The ending **‑어?** (as in *시간 있어?*) is the standard informal interrogative ending. It conveys a relaxed, conversational feel, matching the English “Hey” and the overall casual vibe.  \n\n---\n\n#### If you needed a formal version (e.g., speaking to a senior, a colleague you’re not close with)\n\n**“이번 주말에 시간 있으세요?”**  \n\n- Uses the polite ending **‑세요** to show respect.  \n- Appropriate when the speaker wants to maintain a courteous distance or when the listener is older, a superior, or a stranger.  \n\nSo, because the original English is informal, the natural Korean rendering is the informal **“이번 주말에 시간 있어?”**. If you intend to be polite or formal, switch the ending to **‑세요** as shown above.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.2855,
+  "timestamp_utc": "2026-08-20T11:00:52.851197+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

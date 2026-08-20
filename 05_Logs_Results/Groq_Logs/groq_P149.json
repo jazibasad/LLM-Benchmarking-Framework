@@ -1,0 +1,18 @@
+{
+  "id": "P149",
+  "category": "Long-context Retention",
+  "difficulty": "Medium",
+  "prompt": "Note 1: The initial budget for the marketing campaign was $50,000. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: After the Q2 review, the budget was increased by $15,000. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Following a cost-cutting measure in Q3, the budget was reduced by $10,000. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: What is the current budget after all adjustments, and can you show the calculation?",
+  "evaluation_criteria": "Multi-Fact Synthesis: 0-5 (Evaluates whether the response correctly combines information from multiple, sequentially updated facts)\nNumerical Accuracy: 0-5 (Evaluates whether any calculations or comparisons across the facts are computed correctly)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "**Current budget:** **$55,000**\n\n**Calculation**\n\n1. **Initial budget**: $50,000  \n2. **Q2 increase**: +$15,000 → $50,000 + $15,000 = **$65,000**  \n3. **Q3 reduction**: –$10,000 → $65,000 – $10,000 = **$55,000**\n\nSo after all the adjustments, the marketing campaign budget stands at **$55,000**.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 2.8622,
+  "timestamp_utc": "2026-08-20T10:53:43.072437+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

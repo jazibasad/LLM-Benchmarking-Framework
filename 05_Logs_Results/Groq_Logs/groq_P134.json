@@ -1,0 +1,18 @@
+{
+  "id": "P134",
+  "category": "Long-context Retention",
+  "difficulty": "Easy",
+  "prompt": "Note 1: Employee A was hired in March 2021. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Employee B was hired in July 2022. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Employee C was hired in January 2020. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Who was hired first?",
+  "evaluation_criteria": "Fact Recall Accuracy: 0-5 (Evaluates whether the specific fact requested is retrieved correctly from the earlier context)\nDistraction Resistance: 0-5 (Evaluates whether the response is not confused by the surrounding filler text)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "Employee C was hired first (January 2020).",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.6331,
+  "timestamp_utc": "2026-08-20T10:51:15.308218+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

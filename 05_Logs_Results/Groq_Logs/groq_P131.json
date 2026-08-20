@@ -1,0 +1,18 @@
+{
+  "id": "P131",
+  "category": "Ambiguity Handling",
+  "difficulty": "Medium",
+  "prompt": "Summarize the attached file.",
+  "evaluation_criteria": "Missing Context Identification: 0-5 (Evaluates whether the response identifies exactly what information is missing, e.g. which code, which document, which app)\nConstructive Response: 0-5 (Evaluates whether the response still provides useful general guidance despite the ambiguity)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "I’m not able to view any attachment in our chat. Could you please copy and paste the text you’d like summarized (or describe its contents)? Once I have the material, I’ll be happy to provide a concise summary for you.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.9096,
+  "timestamp_utc": "2026-08-20T10:50:56.469550+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

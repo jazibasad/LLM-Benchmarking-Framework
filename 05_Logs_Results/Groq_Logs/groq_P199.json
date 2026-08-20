@@ -1,0 +1,18 @@
+{
+  "id": "P199",
+  "category": "Multilingual Tasks",
+  "difficulty": "Easy",
+  "prompt": "Translate 'Good morning, how are you?' into French.",
+  "evaluation_criteria": "Translation Accuracy: 0-5 (Evaluates whether the translation correctly conveys the original meaning)\nNatural Phrasing: 0-5 (Evaluates whether the translation sounds natural to a native speaker rather than overly literal)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "**French:** « Bon matin, comment ça va ? » \n\n*(A more common way to say it in French is “Bonjour, comment ça va ?”)*",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.4932,
+  "timestamp_utc": "2026-08-20T10:59:54.384010+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

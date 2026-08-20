@@ -1,0 +1,18 @@
+{
+  "id": "P152",
+  "category": "Long-context Retention",
+  "difficulty": "Medium",
+  "prompt": "Note 1: Team Alpha's velocity was 30 story points in Sprint 1. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Team Alpha's velocity dropped to 22 points in Sprint 2 due to illness. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Team Alpha's velocity recovered to 35 points in Sprint 3. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Describe the trend in Team Alpha's velocity across all three sprints with specific numbers.",
+  "evaluation_criteria": "Multi-Fact Synthesis: 0-5 (Evaluates whether the response correctly combines information from multiple, sequentially updated facts)\nNumerical Accuracy: 0-5 (Evaluates whether any calculations or comparisons across the facts are computed correctly)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "**Trend Summary for Team Alpha’s Velocity**\n\n| Sprint | Velocity (story points) | Observation |\n|--------|------------------------|-------------|\n| Sprint 1 | **30** | Baseline performance under normal conditions. |\n| Sprint 2 | **22** | Decrease of **8 points** (≈ 27 % drop) due to illness affecting the team. |\n| Sprint 3 | **35** | Increase of **13 points** from Sprint 2 (≈ 59 % rise) and **5 points** above the original Sprint 1 level, indicating a strong recovery. |\n\n**Overall Trend**\n\n- **Initial level:** 30 points.  \n- **Mid‑sprint dip:** A noticeable dip to 22 points in Sprint 2, directly linked to team illness.  \n- **Recovery and improvement:** By Sprint 3, the velocity not only rebounded but surpassed the original level, reaching 35 points.\n\nThus, the pattern is: **stable → decline → rebound to a higher peak**, with the specific numeric progression **30 → 22 → 35** story points.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 5.0244,
+  "timestamp_utc": "2026-08-20T10:54:05.613433+00:00",
+  "run_number": 4,
+  "repeat_count": 5
+}

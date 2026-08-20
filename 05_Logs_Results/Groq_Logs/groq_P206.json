@@ -1,0 +1,18 @@
+{
+  "id": "P206",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this sentence containing a culturally-specific idiom into Japanese, choosing between a literal translation and a culturally-equivalent Japanese idiom, and justify your choice: 'He really let the cat out of the bag at the meeting.'",
+  "evaluation_criteria": "Translation Precision Score: 0-5 (Evaluates whether the translation is accurate at the level of precision the task requires - legal, technical, or poetic as specified)\nCultural/Linguistic Adaptation Score: 0-5 (Evaluates whether cultural or structural adaptations, where appropriate, are handled thoughtfully rather than overly literal)\nMeta-Explanation Quality Score: 0-5 (Evaluates whether any requested explanation of translation choices, ambiguity resolution, or back-translation comparison is accurate and insightful)\nRound-Trip/Consistency Score: 0-5 (Evaluates whether any self-comparison, such as back-translation analysis, is performed correctly and honestly, e.g. genuinely identifying meaning loss where it exists)",
+  "max_score": "20",
+  "model": "groq",
+  "response_text": "**Translation (culturally‑equivalent idiom)**  \n\n> 彼は会議で秘密をばらしてしまった。  \n\n**Why we chose a Japanese idiom instead of a literal translation**\n\n| Aspect | Literal rendering of “let the cat out of the bag” | Japanese idiomatic equivalent |\n|--------|---------------------------------------------------|-------------------------------|\n| **Clarity** | 「袋から猫を出す」や「袋の中の猫を放す」などは、文字通りの映像は浮かびますが、英語の意味（「秘密を漏らす」）は日本語話者にはほとんど伝わりません。 | 「秘密をばらす」「口を滑らす」などは、すでに日本で広く使われている表現で、聞いた瞬間に「秘密が漏れた」ことが分かります。 |\n| **Naturalness** | 文脈上不自然で、まるで奇妙なエピソードを語っているかのように受け取られます。 | 「～してしまった」と過去形にすれば、会議中にうっかり言ってしまったという自然な出来事として受け取れます。 |\n| **Cultural resonance** | 英語圏の慣用句は、語源や歴史的背景が日本語圏と異なるため、比喩的なイメージが共有されません。 | 「秘密をばらす」は日本人が日常的に経験・目撃するシーン（噂が広がる、内緒が漏れる）に合致し、感情的なインパクトも同等です。 |\n| **Tone & register** | 文字通りの訳はややユーモラス・奇抜に聞こえることがあり、元の文が持つ「ちょっとした失態」や「軽い非難」のニュアンスが失われます。 | 「ばらす」や「口を滑らす」は、軽い過失や不注意を示すニュアンスがあり、原文の「really」‑>「～てしまった」で強調を保てます。 |\n\n**Resulting nuance**\n\n- **He really let the cat out of the bag at the meeting.**  \n  → *彼は会議で秘密をばらしてしまった。*  \n\nHere, 「ばらす」 conveys “to expose” or “to reveal (a secret)”, and the auxiliary 「しまった」 adds the sense of “unintentionally” and the speaker’s mild reproach, matching the English “really” (i.e., he definitely did it, and it was a noticeable slip).\n\nIf one insisted on a literal rendering for stylistic or humorous effect, it would be:\n\n> 彼は会議で袋から猫を出してしまった。  \n\nbut this would sound odd to a Japanese audience and would likely require an explanatory note, which defeats the purpose of a smooth, idiomatic translation. Therefore, the culturally‑equivalent idiom is the appropriate choice.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 2.3555,
+  "timestamp_utc": "2026-08-20T11:00:10.252529+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

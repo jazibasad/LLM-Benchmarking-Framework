@@ -1,0 +1,18 @@
+{
+  "id": "P148",
+  "category": "Long-context Retention",
+  "difficulty": "Medium",
+  "prompt": "Note 1: Project Alpha's deadline was moved from May 1 to May 15 due to resourcing. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Project Beta's deadline remains June 1 as originally planned. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Project Gamma's deadline was moved up from July 1 to June 20 due to client request. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: List each project and its FINAL deadline, noting which ones changed from their original date.",
+  "evaluation_criteria": "Multi-Fact Synthesis: 0-5 (Evaluates whether the response correctly combines information from multiple, sequentially updated facts)\nNumerical Accuracy: 0-5 (Evaluates whether any calculations or comparisons across the facts are computed correctly)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "**Project Deadlines (Final)**  \n\n| Project | Final Deadline | Changed from Original? |\n|---------|----------------|------------------------|\n| **Alpha** | May 15 | **Yes** – moved from May 1 |\n| **Beta**  | June 1 | No – unchanged |\n| **Gamma** | June 20 | **Yes** – moved from July 1 |",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 4.8056,
+  "timestamp_utc": "2026-08-20T10:53:40.204326+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

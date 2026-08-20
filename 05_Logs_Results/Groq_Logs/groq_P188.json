@@ -1,0 +1,18 @@
+{
+  "id": "P188",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this software architecture design doc into a summary for a NON-technical stakeholder audience, explicitly translating each technical term into its business impact (e.g., not just 'reduces latency' but what that means for the user), in exactly 4 sentences: 'The proposed architecture introduces a read-replica database layer to offload query traffic from the primary write instance, reducing p99 latency from 800ms to 150ms. A CDN edge caching layer will be added for static assets, cutting bandwidth costs by an estimated 30%. The migration requires a two-week phased rollout to avoid downtime, using a blue-green deployment strategy.'",
+  "evaluation_criteria": "Structural Compliance Score: 0-5 (Evaluates whether the exact requested structure - sentence count, labeled sections, audience level - is followed precisely)\nFidelity Under Constraint Score: 0-5 (Evaluates whether meaning is preserved despite the tight length/format constraints, without fabricating information not in the source)\nNuance Preservation Score: 0-5 (Evaluates whether important caveats, limitations, or competing viewpoints from the source are retained, not flattened away)\nAudience Appropriateness Score: 0-5 (Evaluates whether jargon is correctly translated for the specified target audience)",
+  "max_score": "20",
+  "model": "groq",
+  "response_text": "We will add a secondary copy of our database that handles read‑only requests, which will speed up the slowest user interactions from about 0.8 seconds to 0.15 seconds, meaning customers will see information almost instantly. We’ll also place a content‑delivery network in front of our static files, delivering images and scripts from locations closer to users while lowering our bandwidth expenses by roughly 30%, freeing budget for new features. The switch to the new setup will be carried out over a two‑week, step‑by‑step rollout that keeps the current system running while the new one is tested, ensuring the service stays available. By using a “blue‑green” deployment approach, we can instantly revert to the old version if any issue appears, guaranteeing a seamless experience for users during the upgrade.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 2.342,
+  "timestamp_utc": "2026-08-20T10:58:55.272540+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

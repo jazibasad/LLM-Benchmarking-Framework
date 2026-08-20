@@ -1,0 +1,18 @@
+{
+  "id": "P211",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this poem excerpt into Spanish, prioritizing preserving the rhythm and emotional tone over literal word-for-word accuracy, and briefly explain one place where you deviated from literal translation to preserve the poetic effect: 'The quiet hum of evening falls, soft shadows stretch along the walls.'",
+  "evaluation_criteria": "Translation Precision Score: 0-5 (Evaluates whether the translation is accurate at the level of precision the task requires - legal, technical, or poetic as specified)\nCultural/Linguistic Adaptation Score: 0-5 (Evaluates whether cultural or structural adaptations, where appropriate, are handled thoughtfully rather than overly literal)\nMeta-Explanation Quality Score: 0-5 (Evaluates whether any requested explanation of translation choices, ambiguity resolution, or back-translation comparison is accurate and insightful)\nRound-Trip/Consistency Score: 0-5 (Evaluates whether any self-comparison, such as back-translation analysis, is performed correctly and honestly, e.g. genuinely identifying meaning loss where it exists)",
+  "max_score": "20",
+  "model": "groq",
+  "response_text": "**Traducción al español (con ritmo y tono poético)**  \n\n*El susurro tenue de la tarde cae,  \nsombras suaves se alargan en los muros.*\n\n---\n\n**Explicación de una desviación literal**\n\nEn la versión original dice *“quiet hum of evening”* (un zumbido silencioso). En español el verbo *susurrar* (“susurro”) captura mejor la sensación de un sonido leve y envolvente, mientras que *zumbido* suena más mecánico y rompería el ritmo suave del verso. Cambiar “hum” por “susurro” mantiene la atmósfera íntima y permite que el verso fluya con la métrica de ocho sílabas por línea.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.9616,
+  "timestamp_utc": "2026-08-20T11:00:21.616407+00:00",
+  "run_number": 2,
+  "repeat_count": 5
+}

@@ -1,0 +1,18 @@
+{
+  "id": "P152",
+  "category": "Long-context Retention",
+  "difficulty": "Medium",
+  "prompt": "Note 1: Team Alpha's velocity was 30 story points in Sprint 1. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Team Alpha's velocity dropped to 22 points in Sprint 2 due to illness. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Team Alpha's velocity recovered to 35 points in Sprint 3. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Describe the trend in Team Alpha's velocity across all three sprints with specific numbers.",
+  "evaluation_criteria": "Multi-Fact Synthesis: 0-5 (Evaluates whether the response correctly combines information from multiple, sequentially updated facts)\nNumerical Accuracy: 0-5 (Evaluates whether any calculations or comparisons across the facts are computed correctly)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "**Team Alpha’s velocity over the three sprints**\n\n| Sprint | Velocity (story points) |\n|--------|--------------------------|\n| 1      | **30** |\n| 2      | **22** |\n| 3      | **35** |\n\n**Trend description**\n\n1. **Sprint 1 → Sprint 2:** Velocity fell from **30** to **22** points, a decrease of **8 points** (≈ ‑27 %).  \n2. **Sprint 2 → Sprint 3:** Velocity rose sharply from **22** to **35** points, an increase of **13 points** (≈ +59 %).  \n3. **Overall (Sprint 1 → Sprint 3):** The net change is an increase of **5 points**, moving from **30** to **35** points (≈ +17 %).\n\nSo the pattern is a dip in Sprint 2 followed by a recovery and improvement in Sprint 3 that not only recovers the loss but also exceeds the original Sprint 1 level.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 4.2815,
+  "timestamp_utc": "2026-08-20T10:54:09.900281+00:00",
+  "run_number": 5,
+  "repeat_count": 5
+}

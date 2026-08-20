@@ -1,0 +1,18 @@
+{
+  "id": "P119",
+  "category": "Ambiguity Handling",
+  "difficulty": "Hard",
+  "prompt": "Refactor 'the legacy module' to be 'more maintainable' while preserving 'all existing functionality' and 'not breaking anything downstream'.",
+  "evaluation_criteria": "Ambiguity Surfacing Score: 0-5 (Evaluates whether the response explicitly identifies the multiple undefined terms/requirements before proceeding)\nAssumption Documentation Score: 0-5 (Evaluates whether any assumptions made to proceed are clearly stated and justified)\nStructural Soundness Score: 0-5 (Evaluates whether the proposed design is technically coherent despite the ambiguity)\nPractical Usefulness Score: 0-5 (Evaluates whether the response would still be actionable for a real engineer despite the missing specifics)",
+  "max_score": "20",
+  "model": "groq",
+  "response_text": "I’d be happy to help refactor the legacy module for better maintainability while keeping its existing behavior intact. To get started, could you please share:\n\n1. **The current source code** of the module (or the relevant parts you’d like refactored).  \n2. **Any unit/integration tests** that currently cover the module’s functionality.  \n3. **Key constraints or conventions** you follow in your codebase (e.g., naming style, dependency injection framework, target Python version, etc.).  \n4. **Specific pain points** you’ve identified (e.g., large functions, duplicated logic, unclear responsibilities, heavy coupling, etc.).  \n\nWith that information I can propose a concrete refactor—splitting responsibilities, adding type hints, improving documentation, extracting helper utilities, etc.—and ensure that the existing test suite still passes, so downstream code remains unaffected.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 18.2259,
+  "timestamp_utc": "2026-08-20T10:48:12.841242+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}
