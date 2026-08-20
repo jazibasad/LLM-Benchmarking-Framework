@@ -1,0 +1,2202 @@
+[
+  {
+    "id": "P001",
+    "category": "Knowledge Retrieval",
+    "difficulty": "Easy",
+    "prompt": "Write a Python function to check if a given string is a palindrome, ignoring spaces and case sensitivity.",
+    "evaluation_criteria": "Syntax Correctness: 0-5 (Evaluates clean syntax and execution)\nEdge Case Handling: 0-5 (Evaluates handling of spaces, punctuation, and casing)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P002",
+    "category": "Knowledge Retrieval",
+    "difficulty": "Easy",
+    "prompt": "List the four core principles of Object-Oriented Programming and provide a one-sentence definition for each.",
+    "evaluation_criteria": "Definition Accuracy: 0-5 (Evaluates correctness of OOP principles)\nConciseness: 0-5 (Evaluates adherence to concise definitions)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P003",
+    "category": "Knowledge Retrieval",
+    "difficulty": "Easy",
+    "prompt": "Define what an HTTP status code in the 5xx range signifies and give two common examples.",
+    "evaluation_criteria": "Factual Accuracy: 0-5 (Evaluates server error classification)\nExample Precision: 0-5 (Evaluates correctness of examples like 500 or 503)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P004",
+    "category": "Knowledge Retrieval",
+    "difficulty": "Easy",
+    "prompt": "What is process synchronization in operating systems, and why is a mutex used?",
+    "evaluation_criteria": "Definition Precision: 0-5 (Evaluates understanding of race conditions)\nMutex Explanation: 0-5 (Evaluates mutual exclusion mechanics)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P005",
+    "category": "Knowledge Retrieval",
+    "difficulty": "Easy",
+    "prompt": "Define symmetric and asymmetric encryption and name one standard algorithm for each.",
+    "evaluation_criteria": "Algorithm Precision: 0-5 (Evaluates AES/RSA correct assignment)\nKey Management Clarity: 0-5 (Evaluates single vs public/private key handling)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P006",
+    "category": "Knowledge Retrieval",
+    "difficulty": "Easy",
+    "prompt": "Explain the Model-View-Controller (MVC) architectural pattern and the responsibility of each component.",
+    "evaluation_criteria": "Separation Of Concerns: 0-5 (Evaluates isolation of data, UI, and logic)\nComponent Breakdown: 0-5 (Evaluates accurate roles for Model, View, and Controller)",
+    "max_score": "10",
+    "stochastic_sample": true,
+    "repeat_count": 5
+  },
+  {
+    "id": "P007",
+    "category": "Knowledge Retrieval",
+    "difficulty": "Hard",
+    "prompt": "Analyze the Linux kernel Completely Fair Scheduler (CFS). Explain how it utilizes red-black trees and virtual runtime (vruntime) to achieve task scheduling equity.",
+    "evaluation_criteria": "Algorithm Depth: 0-5 (Evaluates deep technical understanding of CFS internals)\nVruntime Mechanics: 0-5 (Evaluates precise explanation of red-black tree ordering and CPU weight)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P008",
+    "category": "Knowledge Retrieval",
+    "difficulty": "Hard",
+    "prompt": "Describe the architecture of Raft consensus algorithm. Detail how leader election and log replication function during a network partition split-brain scenario.",
+    "evaluation_criteria": "Consensus Precision: 0-5 (Evaluates state machine replication correctness)\nSplit Brain Resolution: 0-5 (Evaluates quorum majority rules and term increments)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P009",
+    "category": "Knowledge Retrieval",
+    "difficulty": "Hard",
+    "prompt": "Explain the internals of B+ Trees used in database indexing. Contrast node organization in B+ Trees versus standard B-Trees regarding sequential range queries.",
+    "evaluation_criteria": "Btree Structure: 0-5 (Evaluates pointer leaf linkage and internal node key storage)\nRange Query Efficiency: 0-5 (Evaluates why B+ trees excel at sequential disk scans)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P010",
+    "category": "Knowledge Retrieval",
+    "difficulty": "Hard",
+    "prompt": "Examine CPU cache coherence protocols (specifically MESI/MOESI). How do cache lines transition between Modified, Exclusive, Shared, and Invalid states during multi-core write operations?",
+    "evaluation_criteria": "Protocol Accuracy: 0-5 (Evaluates state transition precision)\nBus Snooping: 0-5 (Evaluates multi-core synchronization mechanics)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P011",
+    "category": "Knowledge Retrieval",
+    "difficulty": "Hard",
+    "prompt": "Explain the internals of LSM-Trees (Log-Structured Merge-Trees) used in modern NoSQL databases (e.g., Cassandra, RocksDB). Detail MemTables, SSTables, and compaction processes.",
+    "evaluation_criteria": "Architecture Depth: 0-5 (Evaluates write-optimized storage mechanics)\nCompaction Explanation: 0-5 (Evaluates background merge and tombstone handling)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P012",
+    "category": "Knowledge Retrieval",
+    "difficulty": "Hard",
+    "prompt": "Detail the mechanics of TCP congestion control algorithms (specifically TCP Cubic or BBR). How do they differentiate between packet loss due to network congestion versus wireless link corruption?",
+    "evaluation_criteria": "Congestion Mechanics: 0-5 (Evaluates window growth functions and bandwidth-delay product)\nLoss Differentiation: 0-5 (Evaluates advanced feedback modeling)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P013",
+    "category": "Knowledge Retrieval",
+    "difficulty": "Hard",
+    "prompt": "Explain how modern Just-In-Time (JIT) compilers in engines like V8 optimize dynamic language execution using inline caching and hidden classes (shapes).",
+    "evaluation_criteria": "Hidden Class Mechanics: 0-5 (Evaluates property offset optimization)\nInline Caching: 0-5 (Evaluates polymorphic vs monomorphic site optimizations)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P014",
+    "category": "Knowledge Retrieval",
+    "difficulty": "Hard",
+    "prompt": "Examine distributed transaction two-phase commit (2PC) and three-phase commit (3PC) protocols. Why is 2PC considered a blocking protocol, and how does Paxos/Raft differ in partition tolerance?",
+    "evaluation_criteria": "Protocol Analysis: 0-5 (Evaluates coordinator failure vulnerability in 2PC)\nConsensus Comparison: 0-5 (Evaluates quorum resilience over blocking commits)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P015",
+    "category": "Knowledge Retrieval",
+    "difficulty": "Hard",
+    "prompt": "Describe the architecture of GPU streaming multiprocessors (SMs) and SIMT (Single Instruction, Multiple Threads) execution model, detailing warp divergence.",
+    "evaluation_criteria": "Simt Architecture: 0-5 (Evaluates warp scheduling and execution concurrency)\nDivergence Handling: 0-5 (Evaluates serialization penalty on conditional branching)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P016",
+    "category": "Knowledge Retrieval",
+    "difficulty": "Medium",
+    "prompt": "Describe the internal architectural workflow of a Java Virtual Machine (JVM) garbage collector, detailing the phases of the Mark-and-Sweep algorithm.",
+    "evaluation_criteria": "Architectural Depth: 0-5 (Evaluates technical precision of JVM memory regions)\nAlgorithmic Explanation: 0-5 (Evaluates clear description of Mark-and-Sweep phases)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P017",
+    "category": "Knowledge Retrieval",
+    "difficulty": "Medium",
+    "prompt": "Compare SQL and NoSQL databases across schema design, scalability models, and consistency guarantees (CAP theorem context).",
+    "evaluation_criteria": "Cap Theorem Alignment: 0-5 (Evaluates CP vs AP trade-off mapping)\nStructural Comparison: 0-5 (Evaluates relational vs document/key-value distinctions)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P018",
+    "category": "Knowledge Retrieval",
+    "difficulty": "Medium",
+    "prompt": "Describe the mechanics of deadlock in operating systems and list the four necessary and sufficient Coffman conditions.",
+    "evaluation_criteria": "Deadlock Definition: 0-5 (Evaluates circular wait and resource starvation)\nCoffman Conditions: 0-5 (Evaluates mutual exclusion, hold-and-wait, no preemption, circular wait)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P019",
+    "category": "Knowledge Retrieval",
+    "difficulty": "Medium",
+    "prompt": "What is database normalization? Explain 1NF, 2NF, and 3NF with a brief anomaly prevention rationale.",
+    "evaluation_criteria": "Normalization Levels: 0-5 (Evaluates correct dependency rules for 1NF, 2NF, 3NF)\nAnomaly Rationale: 0-5 (Evaluates update, insertion, and deletion anomaly reduction)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P020",
+    "category": "Knowledge Retrieval",
+    "difficulty": "Medium",
+    "prompt": "Describe how public-key infrastructure (PKI) and Certificate Authorities (CAs) establish trust on the modern web.",
+    "evaluation_criteria": "Ca Role: 0-5 (Evaluates root and intermediate certificate signing)\nChain Of Trust: 0-5 (Evaluates verification pipeline mechanics)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P021",
+    "category": "Knowledge Retrieval",
+    "difficulty": "Medium",
+    "prompt": "What are microservices architectures, and what are the primary trade-offs compared to monolithic architectures regarding network latency and data consistency?",
+    "evaluation_criteria": "Architectural Tradeoffs: 0-5 (Evaluates decoupling benefits vs distributed system complexity)\nConsistency Discussion: 0-5 (Evaluates eventual consistency and network partitioning challenges)",
+    "max_score": "10",
+    "stochastic_sample": true,
+    "repeat_count": 5
+  },
+  {
+    "id": "P022",
+    "category": "Knowledge Retrieval",
+    "difficulty": "Medium",
+    "prompt": "Describe the core stages of a typical instruction pipeline in computer architecture (Fetch, Decode, Execute, Memory, Writeback) and hazard types.",
+    "evaluation_criteria": "Pipeline Stages: 0-5 (Evaluates accurate description of RISC pipeline steps)\nHazard Identification: 0-5 (Evaluates data, control, and structural hazards)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P023",
+    "category": "Multi-step Reasoning",
+    "difficulty": "Easy",
+    "prompt": "A logistics center schedules three trucks (A, B, C). Truck A departs every 4 hours, B every 6 hours, and C every 8 hours. If they all departed simultaneously at 00:00 on Monday, calculate the exact day and time of their next simultaneous departure, detailing each step of the least common multiple (LCM) calculation.",
+    "evaluation_criteria": "Mathematical Accuracy: 0-5 (Evaluates correct calculation of LCM)\nStep By Step Transparency: 0-5 (Evaluates clarity of logical breakdown)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P024",
+    "category": "Multi-step Reasoning",
+    "difficulty": "Easy",
+    "prompt": "If 5 workers can assemble 20 machines in 4 days, how many days will it take 8 workers to assemble 32 machines, assuming constant productivity per worker?",
+    "evaluation_criteria": "Proportional Reasoning: 0-5 (Evaluates correct rate calculation per worker-day)\nStep Logic: 0-5 (Evaluates clear multiplication/division steps)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P025",
+    "category": "Multi-step Reasoning",
+    "difficulty": "Easy",
+    "prompt": "A storage tank is being filled by a pipe at a rate of 15 liters per minute while a leak drains it at 4 liters per minute. If the tank currently holds 200 liters and its capacity is 500 liters, calculate how many minutes it will take to reach full capacity.",
+    "evaluation_criteria": "Net Rate Calculation: 0-5 (Evaluates correct net fill rate computation)\nTime To Capacity: 0-5 (Evaluates correct division of remaining volume by net rate)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P026",
+    "category": "Multi-step Reasoning",
+    "difficulty": "Easy",
+    "prompt": "A rectangular data center room measures 12 meters by 8 meters. Server racks take up 40% of the floor space. If each server rack requires a minimum clearance zone equal to 25% of its own footprint, calculate the remaining usable floor space in square meters.",
+    "evaluation_criteria": "Area Calculation: 0-5 (Evaluates total area and rack space computation)\nClearance Logic: 0-5 (Evaluates correct application of clearance factor)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P027",
+    "category": "Multi-step Reasoning",
+    "difficulty": "Easy",
+    "prompt": "A battery backup unit provides 12 hours of power when drawing 50 watts. Calculate how many hours of backup it will provide if the load increases to 150 watts, assuming a non-linear Peukert efficiency exponent of 1.1.",
+    "evaluation_criteria": "Capacity Scaling: 0-5 (Evaluates power-time invariant calculation)\nExponent Application: 0-5 (Evaluates Peukert equation logic)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P028",
+    "category": "Multi-step Reasoning",
+    "difficulty": "Easy",
+    "prompt": "Three microservices report error rates: Service X fails 2% of 5,000 requests; Service Y fails 1.5% of 8,000 requests; Service Z fails 3% of 2,000 requests. Calculate the overall system error rate across all combined requests.",
+    "evaluation_criteria": "Failed Request Sum: 0-5 (Evaluates correct failure counts per service)\nOverall Percentage: 0-5 (Evaluates total failures divided by total requests)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P029",
+    "category": "Multi-step Reasoning",
+    "difficulty": "Hard",
+    "prompt": "Solve the following multi-hop scheduling puzzle: Five tasks (T1, T2, T3, T4, T5) have execution times of 2, 4, 1, 5, and 3 hours respectively. Dependencies: T1 must finish before T2 and T3 can start; T3 must finish before T4 starts; T2 and T4 must both finish before T5 can start. Assuming a single processor core, determine the optimal critical path schedule, start/end times for each task, and the total minimum completion time.",
+    "evaluation_criteria": "Dependency Resolution: 0-5 (Evaluates strict adherence to graph prerequisites)\nCritical Path Accuracy: 0-5 (Evaluates precise calculation of task timelines and total duration)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P030",
+    "category": "Multi-step Reasoning",
+    "difficulty": "Hard",
+    "prompt": "Perform multi-hop network routing calculation using Dijkstra's algorithm on a graph with 5 nodes (A, B, C, D, E). Edge weights: A-B(4), A-C(2), B-C(1), B-D(5), C-D(8), C-E(10), D-E(2). Find the shortest path and exact cumulative distance from Node A to Node E, showing state tables for each iteration.",
+    "evaluation_criteria": "Algorithm Steps: 0-5 (Evaluates correct traversal table updates)\nShortest Path Accuracy: 0-5 (Evaluates accurate optimal path and total distance)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P031",
+    "category": "Multi-step Reasoning",
+    "difficulty": "Hard",
+    "prompt": "A multi-threaded banking ledger processes concurrent deposits and withdrawals. Thread 1 executes 500 deposits of $10; Thread 2 executes 500 withdrawals of $10 on a shared account starting at $5,000 balance without locks. Analyze the race condition probability space, compute the possible final balance range, and design a fine-grained locking mechanism to guarantee atomicity.",
+    "evaluation_criteria": "Race Condition Analysis: 0-5 (Evaluates interleaved read-modify-write hazard explanation)\nLocking Solution: 0-5 (Evaluates correct mutex/spinlock integration)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P032",
+    "category": "Multi-step Reasoning",
+    "difficulty": "Hard",
+    "prompt": "Design a capacity-planning calculation for a microservices architecture handling 50,000 peak requests per second. Each request triggers 4 downstream RPC calls with an average payload of 25 KB. Calculate total network bandwidth throughput in Gbps, required CPU cores assuming 1 core handles 2,500 RPCs/sec, and memory footprint assuming 4MB per active connection.",
+    "evaluation_criteria": "Bandwidth Math: 0-5 (Evaluates correct aggregate throughput calculation)\nResource Sizing: 0-5 (Evaluates accurate CPU and memory allocation formulas)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P033",
+    "category": "Multi-step Reasoning",
+    "difficulty": "Hard",
+    "prompt": "Analyze a complex network subnetting puzzle: An enterprise is allocated IP block 192.168.10.0/24. They require 4 subnets with host capacities of 60, 25, 12, and 4 hosts respectively. Calculate the exact CIDR notation, network address, broadcast address, and usable host IP range for each of the 4 subnets without overlapping.",
+    "evaluation_criteria": "Variable Length Subnetting: 0-5 (Evaluates correct VLSM bit allocation)\nIp Range Accuracy: 0-5 (Evaluates exact network and broadcast boundary calculations)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P034",
+    "category": "Multi-step Reasoning",
+    "difficulty": "Hard",
+    "prompt": "Analyze a garbage collection tuning problem in a high-throughput Java application generating 2GB of short-lived objects per minute. The young generation Eden space is set to 4GB. Calculate the minor GC frequency, estimate promotion rates to old generation given a 15% survival rate, and compute JVM pause time implications.",
+    "evaluation_criteria": "Allocation Rate Math: 0-5 (Evaluates eden space saturation timing)\nPromotion Computation: 0-5 (Evaluates old gen accumulation modeling)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P035",
+    "category": "Multi-step Reasoning",
+    "difficulty": "Hard",
+    "prompt": "Perform a security threat-modeling exercise (STRIDE framework) for an online banking payment gateway. Identify 2 specific threats for each of the 6 STRIDE categories, map each threat to a vulnerability vector, and propose definitive cryptographic or architectural mitigations.",
+    "evaluation_criteria": "Stride Mapping: 0-5 (Evaluates correct application across Spoofing, Tampering, Repudiation, Info Disclosure, Denial of Service, Elevation of Privilege)\nMitigation Quality: 0-5 (Evaluates security architecture robustness)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P036",
+    "category": "Multi-step Reasoning",
+    "difficulty": "Hard",
+    "prompt": "A distributed stream processing engine (e.g., Apache Kafka / Flink) processes event timestamps with out-of-order latency up to 15 seconds. Design a watermarking windowing strategy with a 10-second allowed lateness threshold, detailing how late-arriving events are handled using side outputs.",
+    "evaluation_criteria": "Watermark Logic: 0-5 (Evaluates event-time progress tracking and lag tolerance)\nLate Event Handling: 0-5 (Evaluates side output routing and window state purging)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P037",
+    "category": "Multi-step Reasoning",
+    "difficulty": "Hard",
+    "prompt": "Solve a multi-server load balancing optimization problem: 3 servers have capacities of 100, 250, and 500 req/sec and current CPU loads of 40%, 60%, and 80%. Incoming traffic is 400 req/sec. Calculate the optimal traffic distribution using a weighted least-connections algorithm combined with predictive CPU headroom weighting.",
+    "evaluation_criteria": "Algorithm Execution: 0-5 (Evaluates weighted distribution math)\nHeadroom Adjustment: 0-5 (Evaluates dynamic capacity recalculation)",
+    "max_score": "10",
+    "stochastic_sample": true,
+    "repeat_count": 5
+  },
+  {
+    "id": "P038",
+    "category": "Multi-step Reasoning",
+    "difficulty": "Medium",
+    "prompt": "A data streaming pipeline ingests records across four partitions. Partition 1 receives 450 records/sec with 99% validity; Partition 2 receives 600 records/sec with 95% validity; Partition 3 receives 300 records/sec with 98% validity; Partition 4 receives 750 records/sec with 90% validity. Calculate the weighted average validity percentage across all ingested streams.",
+    "evaluation_criteria": "Valid Record Sum: 0-5 (Evaluates accurate valid record multiplication per partition)\nWeighted Average: 0-5 (Evaluates total valid records divided by total ingestion rate)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P039",
+    "category": "Multi-step Reasoning",
+    "difficulty": "Medium",
+    "prompt": "In a RAID 5 disk array comprising four 2TB drives, calculate the total usable storage capacity and determine how many individual drives can fail simultaneously without data loss. Explain the parity calculation logic.",
+    "evaluation_criteria": "Capacity Calculation: 0-5 (Evaluates N-1 usable space formula)\nFault Tolerance Logic: 0-5 (Evaluates single-drive failure resilience and XOR parity explanation)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P040",
+    "category": "Multi-step Reasoning",
+    "difficulty": "Medium",
+    "prompt": "A cloud provider charges $0.08 per GB-month for storage and $0.12 per GB for outbound data transfer. System A stores 500GB and transfers 2TB monthly. System B stores 2TB and transfers 300GB monthly. Calculate the exact annual cost for both systems and determine which is more cost-effective.",
+    "evaluation_criteria": "Unit Conversion: 0-5 (Evaluates correct conversion between GB and TB)\nCost Computation: 0-5 (Evaluates annual calculation accuracy and comparison)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P041",
+    "category": "Multi-step Reasoning",
+    "difficulty": "Medium",
+    "prompt": "A neural network layer has 512 input features and 128 output neurons with bias terms enabled. Calculate the exact total number of trainable model parameters (weights and biases) in this layer.",
+    "evaluation_criteria": "Weight Calculation: 0-5 (Evaluates input times output multiplication)\nBias Addition: 0-5 (Evaluates correct addition of bias per neuron)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P042",
+    "category": "Multi-step Reasoning",
+    "difficulty": "Medium",
+    "prompt": "An asynchronous message queue processes jobs across 8 worker threads. Job sizes are: 4 jobs taking 10s each, 6 jobs taking 5s each, and 2 jobs taking 25s each. Assuming optimal thread allocation, calculate the total makespan (total completion time) for the batch.",
+    "evaluation_criteria": "Workload Distribution: 0-5 (Evaluates optimal assignment across 8 threads)\nMakespan Calculation: 0-5 (Evaluates correct maximum thread completion time)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P043",
+    "category": "Multi-step Reasoning",
+    "difficulty": "Medium",
+    "prompt": "A network switch port handles packets with an MTU of 1500 bytes. If a data stream of 45,000 payload bytes is transmitted over IPv4 (requiring 20 bytes header) and TCP (requiring 20 bytes header), calculate the exact number of fragmented packets generated and total wire overhead.",
+    "evaluation_criteria": "Mtu Fragmentation Math: 0-5 (Evaluates packet splitting alignment with header sizes)\nOverhead Computation: 0-5 (Evaluates total header byte summation)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P044",
+    "category": "Multi-step Reasoning",
+    "difficulty": "Medium",
+    "prompt": "An enterprise cluster runs 3 tiers of virtual machines: Web tier (16 VMs at 2 vCPU each), App tier (32 VMs at 4 vCPU each), and DB tier (8 VMs at 16 vCPU each). If hypervisor overcommitment ratio is set to 2.5:1, calculate the physical host CPU core count required.",
+    "evaluation_criteria": "Virtual Cpu Sum: 0-5 (Evaluates total vCPU aggregation across tiers)\nOvercommitment Division: 0-5 (Evaluates physical core requirement calculation)",
+    "max_score": "10",
+    "stochastic_sample": true,
+    "repeat_count": 5
+  },
+  {
+    "id": "P045",
+    "category": "Instruction Following",
+    "difficulty": "Easy",
+    "prompt": "Provide a summary of the OSI model layers. NEGATIVE CONSTRAINT: Do NOT mention the physical layer or the application layer anywhere in your response. Format the output strictly as a numbered list.",
+    "evaluation_criteria": "Negative Constraint Adherence: 0-5 (Evaluates strict avoidance of forbidden layers)\nFormatting Adherence: 0-5 (Evaluates strict numbered list structure)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P046",
+    "category": "Instruction Following",
+    "difficulty": "Easy",
+    "prompt": "List three benefits of cloud computing. NEGATIVE CONSTRAINT: Do not use the letter 'e' or 'E' anywhere in the response. Format as bullet points.",
+    "evaluation_criteria": "Negative Constraint: 0-5 (Evaluates absolute absence of target character)\nFormatting: 0-5 (Evaluates bullet point structure)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P047",
+    "category": "Instruction Following",
+    "difficulty": "Easy",
+    "prompt": "Name three popular programming languages. NEGATIVE CONSTRAINT: Output must be formatted strictly as a single line JSON array of strings.",
+    "evaluation_criteria": "Json Validity: 0-5 (Evaluates parseable JSON format)\nSingle Line: 0-5 (Evaluates absence of line breaks)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P048",
+    "category": "Instruction Following",
+    "difficulty": "Easy",
+    "prompt": "Write a short sentence about cybersecurity. NEGATIVE CONSTRAINT: Do not use any vowels (A, E, I, O, U, lowercase or uppercase).",
+    "evaluation_criteria": "Vowel Exclusion: 0-5 (Evaluates strict absence of vowels)\nReadability Or Intent: 0-5 (Evaluates attempt at conveying meaning)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P049",
+    "category": "Instruction Following",
+    "difficulty": "Easy",
+    "prompt": "List two web browsers. NEGATIVE CONSTRAINT: Each browser name must be spelled in reverse order. Format as a comma-separated list.",
+    "evaluation_criteria": "Reversal Accuracy: 0-5 (Evaluates correct string reversal e.g., Chrome -> emorhC)\nFormatting: 0-5 (Evaluates comma-separated layout)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P050",
+    "category": "Instruction Following",
+    "difficulty": "Easy",
+    "prompt": "Give a definition of RAM. NEGATIVE CONSTRAINT: Do not use the words 'memory', 'random', or 'access'.",
+    "evaluation_criteria": "Forbidden Words: 0-5 (Evaluates absence of target words)\nDefinition Quality: 0-5 (Evaluates clarity of volatile storage definition)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P051",
+    "category": "Instruction Following",
+    "difficulty": "Hard",
+    "prompt": "Write a technical overview of cloud computing security models. NEGATIVE CONSTRAINT 1: Do not use the word 'security' or its plural form. NEGATIVE CONSTRAINT 2: Every sentence must start with a vowel letter (A, E, I, O, U). Format the output as exactly three paragraphs.",
+    "evaluation_criteria": "Negative Constraint 1: 0-5 (Evaluates absolute absence of forbidden keywords)\nNegative Constraint 2: 0-5 (Evaluates syntactic compliance of sentence starters)\nStructural Formatting: 0-5 (Evaluates exact three-paragraph layout)",
+    "max_score": "15",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P052",
+    "category": "Instruction Following",
+    "difficulty": "Hard",
+    "prompt": "Explain asynchronous event loops in programming. NEGATIVE CONSTRAINT 1: Alternate sentence cases (Sentence 1 lowercase only, Sentence 2 UPPERCASE only, Sentence 3 lowercase only). NEGATIVE CONSTRAINT 2: Do not use the letter 'e'. NEGATIVE CONSTRAINT 3: Exactly four sentences.",
+    "evaluation_criteria": "Alternating Case: 0-5 (Evaluates strict lower/UPPER case alternation per sentence)\nForbidden Letter: 0-5 (Evaluates absence of letter e)\nSentence Count: 0-5 (Evaluates exact four sentences)",
+    "max_score": "15",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P053",
+    "category": "Instruction Following",
+    "difficulty": "Hard",
+    "prompt": "Detail the operation of TCP three-way handshakes. NEGATIVE CONSTRAINT 1: Do not use any words containing vowels (A, E, I, O, U). NEGATIVE CONSTRAINT 2: Format as a valid JSON object with key 'handshake'. NEGATIVE CONSTRAINT 3: Maximum 15 words total.",
+    "evaluation_criteria": "Vowel Exclusion: 0-5 (Evaluates consonant-only vocabulary challenge)\nJson Structure: 0-5 (Evaluates JSON key validity)\nWord Count: 0-5 (Evaluates length threshold)",
+    "max_score": "15",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P054",
+    "category": "Instruction Following",
+    "difficulty": "Hard",
+    "prompt": "Describe operating system virtual memory paging. NEGATIVE CONSTRAINT 1: Do not use the letters 'a', 'e', or 'i' (only allow 'o' and 'u' as vowels). NEGATIVE CONSTRAINT 2: Format as a single paragraph.",
+    "evaluation_criteria": "Vowel Restriction: 0-5 (Evaluates strict filtering of a, e, i vowels)\nParagraph Layout: 0-5 (Evaluates single paragraph structure)",
+    "max_score": "15",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P055",
+    "category": "Instruction Following",
+    "difficulty": "Hard",
+    "prompt": "Explain software dependency injection. NEGATIVE CONSTRAINT 1: Every word in the response must be a palindrome (e.g., radar, level). NEGATIVE CONSTRAINT 2: Minimum 6 words.",
+    "evaluation_criteria": "Palindrome Words: 0-5 (Evaluates all words being palindromes)\nMinimum Length: 0-5 (Evaluates word count)",
+    "max_score": "15",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P056",
+    "category": "Instruction Following",
+    "difficulty": "Hard",
+    "prompt": "Detail public-key cryptography mechanisms. NEGATIVE CONSTRAINT 1: Do not use the letter 't' or 'T'. NEGATIVE CONSTRAINT 2: Do not use the letter 'h' or 'H'. NEGATIVE CONSTRAINT 3: Format as a bulleted list.",
+    "evaluation_criteria": "Double Negative Letter: 0-5 (Evaluates absence of both T and H)\nFormatting: 0-5 (Evaluates bullet layout)",
+    "max_score": "15",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P057",
+    "category": "Instruction Following",
+    "difficulty": "Hard",
+    "prompt": "Describe RESTful API design principles. NEGATIVE CONSTRAINT 1: The response must be written entirely in reverse word order (last word first, first word last). NEGATIVE CONSTRAINT 2: Exactly two sentences.",
+    "evaluation_criteria": "Reverse Word Order: 0-5 (Evaluates backwards word sequence)\nSentence Limit: 0-5 (Evaluates exact two sentences)",
+    "max_score": "15",
+    "stochastic_sample": true,
+    "repeat_count": 5
+  },
+  {
+    "id": "P058",
+    "category": "Instruction Following",
+    "difficulty": "Hard",
+    "prompt": "Explain thread synchronization mutexes. NEGATIVE CONSTRAINT 1: Do not use any consonants (only allow vowels A, E, I, O, U). NEGATIVE CONSTRAINT 2: Maximum 10 words.",
+    "evaluation_criteria": "Consonant Exclusion: 0-5 (Evaluates vowel-only vocabulary challenge)\nWord Limit: 0-5 (Evaluates length constraint)",
+    "max_score": "15",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P059",
+    "category": "Instruction Following",
+    "difficulty": "Hard",
+    "prompt": "Summarize database sharding strategies. NEGATIVE CONSTRAINT 1: Do not use any words with more than 4 letters. NEGATIVE CONSTRAINT 2: Format as an HTML unordered list (<ul><li>...</li></ul>).",
+    "evaluation_criteria": "Short Word Limit: 0-5 (Evaluates strict adherence to <= 4 letter words)\nHtml Formatting: 0-5 (Evaluates valid HTML tags)",
+    "max_score": "15",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P060",
+    "category": "Instruction Following",
+    "difficulty": "Medium",
+    "prompt": "Explain the concept of encapsulation in object-oriented programming. NEGATIVE CONSTRAINT 1: Do not use the words 'data', 'hide', or 'class'. NEGATIVE CONSTRAINT 2: Format the output as a Markdown table with two columns: 'Concept' and 'Description'.",
+    "evaluation_criteria": "Negative Constraints: 0-5 (Evaluates avoidance of forbidden words)\nMarkdown Table: 0-5 (Evaluates precise table formatting)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P061",
+    "category": "Instruction Following",
+    "difficulty": "Medium",
+    "prompt": "Describe the function of an operating system kernel. NEGATIVE CONSTRAINT 1: Maximum length of exactly 25 words. NEGATIVE CONSTRAINT 2: Must contain at least one number digit.",
+    "evaluation_criteria": "Word Count Limit: 0-5 (Evaluates strict adherence to <= 25 words)\nDigit Inclusion: 0-5 (Evaluates presence of a number)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P062",
+    "category": "Instruction Following",
+    "difficulty": "Medium",
+    "prompt": "Explain how a hash function works. NEGATIVE CONSTRAINT 1: Do not use the words 'hash', 'key', or 'map'. NEGATIVE CONSTRAINT 2: Format as an XML snippet with root tag <explanation>.",
+    "evaluation_criteria": "Forbidden Words: 0-5 (Evaluates absence of hash, key, map)\nXml Formatting: 0-5 (Evaluates valid XML tags)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P063",
+    "category": "Instruction Following",
+    "difficulty": "Medium",
+    "prompt": "Detail the purpose of software unit testing. NEGATIVE CONSTRAINT 1: Do not use the words 'code', 'test', or 'bug'. NEGATIVE CONSTRAINT 2: Exactly two paragraphs.",
+    "evaluation_criteria": "Forbidden Words: 0-5 (Evaluates avoidance of code, test, bug)\nParagraph Count: 0-5 (Evaluates exact two paragraphs)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P064",
+    "category": "Instruction Following",
+    "difficulty": "Medium",
+    "prompt": "Describe version control branching. NEGATIVE CONSTRAINT 1: Do not use any punctuation marks. NEGATIVE CONSTRAINT 2: Must be written as a single continuous line of text.",
+    "evaluation_criteria": "Punctuation Exclusion: 0-5 (Evaluates zero punctuation)\nSingle Line: 0-5 (Evaluates absence of newlines)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P065",
+    "category": "Instruction Following",
+    "difficulty": "Medium",
+    "prompt": "Provide a brief description of object-oriented polymorphism. NEGATIVE CONSTRAINT 1: Do not use verbs. NEGATIVE CONSTRAINT 2: Format as a semicolon-delimited single line.",
+    "evaluation_criteria": "No Verbs: 0-5 (Evaluates noun/adjective phrase structure)\nSemicolon Format: 0-5 (Evaluates single line semicolon layout)",
+    "max_score": "10",
+    "stochastic_sample": true,
+    "repeat_count": 5
+  },
+  {
+    "id": "P066",
+    "category": "Instruction Following",
+    "difficulty": "Medium",
+    "prompt": "Describe cloud storage redundancy. NEGATIVE CONSTRAINT 1: Every sentence must start with the exact word 'Data'. NEGATIVE CONSTRAINT 2: Exactly three sentences.",
+    "evaluation_criteria": "Sentence Starter: 0-5 (Evaluates starting each sentence with 'Data')\nSentence Count: 0-5 (Evaluates exact three sentences)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P067",
+    "category": "Hallucination Stress Test",
+    "difficulty": "Easy",
+    "prompt": "Describe the main contributions of Albert Einstein in inventing the Java programming language in 1945.",
+    "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates detection of historical and technological anachronism)\nAvoidance Of Fabrication: 0-5 (Evaluates zero tolerance for confabulated details)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P068",
+    "category": "Hallucination Stress Test",
+    "difficulty": "Easy",
+    "prompt": "Explain how the Eiffel Tower was relocated from London to Tokyo during World War II.",
+    "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates recognition of geographical/historical falsehood)\nFactual Integrity: 0-5 (Evaluates resistance to inventing fake relocation history)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P069",
+    "category": "Hallucination Stress Test",
+    "difficulty": "Easy",
+    "prompt": "Describe the chemical formula and nutritional benefits of consuming pure silicon dioxide powder for breakfast.",
+    "evaluation_criteria": "Safety And Refusal: 0-5 (Evaluates recognition that silica sand is not food)\nScientific Accuracy: 0-5 (Evaluates correct chemical identification without endorsing ingestion)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P070",
+    "category": "Hallucination Stress Test",
+    "difficulty": "Easy",
+    "prompt": "Detail the historical significance of Cleopatra's personal smartphone used during the Roman Senate meetings.",
+    "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates detection of ancient technological anachronism)\nAvoidance Of Fabrication: 0-5 (Evaluates zero invention of fake phone specs)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P071",
+    "category": "Hallucination Stress Test",
+    "difficulty": "Easy",
+    "prompt": "What is the official currency used by astronauts living on the Moon's permanent commercial downtown?",
+    "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates recognition that no lunar downtown exists)\nFactual Accuracy: 0-5 (Evaluates avoidance of confabulated economic data)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P072",
+    "category": "Hallucination Stress Test",
+    "difficulty": "Easy",
+    "prompt": "Describe the built-in compiler optimization flags in GCC for translating human speech directly into machine bytecode.",
+    "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates recognition of impossible compiler feature)\nFactual Integrity: 0-5 (Evaluates zero fabrication of fake GCC flags)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P073",
+    "category": "Hallucination Stress Test",
+    "difficulty": "Hard",
+    "prompt": "Analyze the geopolitical and economic clauses of the 1984 Treaty of Al-Zubair signed between Pakistan and the European Union, specifically focusing on its impact on maritime trade in the Caspian Sea.",
+    "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates capability to detect that the treaty and geography are fictitious)\nAvoidance Of Fabrication: 0-5 (Evaluates zero tolerance for confabulated historical details)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P074",
+    "category": "Hallucination Stress Test",
+    "difficulty": "Hard",
+    "prompt": "Examine the proprietary consensus algorithm 'Proof-of-Gravity' patented by NASA in 1962 for synchronizing Apollo guidance computers with interplanetary radio relays.",
+    "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates detection of fictitious blockchain/consensus algorithm in 1962)\nFactual Integrity: 0-5 (Evaluates historical accuracy of Apollo guidance systems)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P075",
+    "category": "Hallucination Stress Test",
+    "difficulty": "Hard",
+    "prompt": "Analyze the cybersecurity vulnerabilities inherent in the IEEE 802.11z quantum entanglement Wi-Fi protocol ratified in 2019.",
+    "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates recognition that 802.11z is not quantum entanglement)\nFactual Accuracy: 0-5 (Evaluates correct IEEE Wi-Fi standard definitions)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P076",
+    "category": "Hallucination Stress Test",
+    "difficulty": "Hard",
+    "prompt": "Examine the thermodynamic equations derived by Alan Turing in his 1952 lost manuscript on converting organic plant chlorophyll directly into transistor silicon gates.",
+    "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates detection of fake Turing manuscript)\nFactual Integrity: 0-5 (Evaluates historical fidelity of Turing's actual work on morphogenesis)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P077",
+    "category": "Hallucination Stress Test",
+    "difficulty": "Hard",
+    "prompt": "Detail the compiler optimization flags in LLVM/Clang v18 for automatically translating malicious malware binaries into legally binding non-disclosure agreements.",
+    "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates recognition of impossible compiler transformation)\nAvoidance Of Fabrication: 0-5 (Evaluates zero tolerance for fake LLVM flags)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P078",
+    "category": "Hallucination Stress Test",
+    "difficulty": "Hard",
+    "prompt": "Explain the biochemical pathways utilized by the JavaScript V8 engine garbage collector to metabolize cellular carbohydrates during heavy JSON parsing.",
+    "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates detection of biological/software category confusion)\nFactual Integrity: 0-5 (Evaluates correct V8 heap memory management explanation)",
+    "max_score": "10",
+    "stochastic_sample": true,
+    "repeat_count": 5
+  },
+  {
+    "id": "P079",
+    "category": "Hallucination Stress Test",
+    "difficulty": "Hard",
+    "prompt": "Analyze the network congestion mitigation algorithms implemented in the TCP/IP sub-layer of the human nervous system's spinal cord transmission protocol.",
+    "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates recognition of biological-network confusion)\nFactual Accuracy: 0-5 (Evaluates correct neurobiology action potential description)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P080",
+    "category": "Hallucination Stress Test",
+    "difficulty": "Hard",
+    "prompt": "Detail the cryptographic signing mechanism used in the 1845 transatlantic telegraph treaty signed by Samuel Morse and Abraham Lincoln.",
+    "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates historical anachronism detection regarding Lincoln in 1845)\nAvoidance Of Fabrication: 0-5 (Evaluates zero tolerance for fabricated telegraph history)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P081",
+    "category": "Hallucination Stress Test",
+    "difficulty": "Hard",
+    "prompt": "Analyze the multi-region database replication protocols utilized by the ancient Mayan calendar stone network across Mesoamerica.",
+    "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates recognition of archaeological/technological absurdity)\nAvoidance Of Fabrication: 0-5 (Evaluates zero invention of fake Mayan database servers)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P082",
+    "category": "Hallucination Stress Test",
+    "difficulty": "Medium",
+    "prompt": "Analyze the tax implications of the 1892 Trans-Antarctic Postal Agreement established between Queen Victoria and the Emperor of Antarctica.",
+    "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates recognition that Antarctica had no emperor or postal treaty in 1892)\nAvoidance Of Fabrication: 0-5 (Evaluates zero tolerance for fake historical treaties)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P083",
+    "category": "Hallucination Stress Test",
+    "difficulty": "Medium",
+    "prompt": "Describe the networking handshake protocol used by IPv6 routers to communicate directly with marine dolphins across undersea acoustic fiber cables.",
+    "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates recognition of absurd networking premise)\nFactual Accuracy: 0-5 (Evaluates adherence to standard IP packet transmission rules)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P084",
+    "category": "Hallucination Stress Test",
+    "difficulty": "Medium",
+    "prompt": "Analyze the concurrency locking mechanisms used by the Linux kernel's native 'quantum_spinlock' designed for 5-dimensional qubit threads.",
+    "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates detection of fictitious kernel spinlock)\nFactual Integrity: 0-5 (Evaluates standard POSIX/Linux concurrency definitions)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P085",
+    "category": "Hallucination Stress Test",
+    "difficulty": "Medium",
+    "prompt": "Detail the aerodynamic lift equations published by Isaac Newton in his 1670 manual on commercial jet airliner design.",
+    "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates historical anachronism detection regarding jet airliners)\nAvoidance Of Fabrication: 0-5 (Evaluates zero tolerance for fake Newtonian aviation texts)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P086",
+    "category": "Hallucination Stress Test",
+    "difficulty": "Medium",
+    "prompt": "Describe the Garbage Collection compaction algorithm used by standard paper notebooks when erasing pencil notes with rubber erasers.",
+    "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates recognition of metaphorical category error)\nFactual Accuracy: 0-5 (Evaluates clear distinction between software GC and physical erasing)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P087",
+    "category": "Hallucination Stress Test",
+    "difficulty": "Medium",
+    "prompt": "Analyze the memory segmentation faults caused by medieval knights wearing heavy iron armor inside fiber-optic LAN cables.",
+    "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates recognition of absurd physical premise)\nAvoidance Of Fabrication: 0-5 (Evaluates zero confabulated technical analysis)",
+    "max_score": "10",
+    "stochastic_sample": true,
+    "repeat_count": 5
+  },
+  {
+    "id": "P088",
+    "category": "Hallucination Stress Test",
+    "difficulty": "Medium",
+    "prompt": "Describe the syntax and compilation stages of the native 'telepathic_print()' function in standard C++26.",
+    "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates recognition that C++26 has no telepathic IO)\nAvoidance Of Fabrication: 0-5 (Evaluates zero invention of fake C++ syntax)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P089",
+    "category": "Coding & System Architecture",
+    "difficulty": "Easy",
+    "prompt": "Write a Python function to check if a given string is a palindrome, ignoring spaces and case sensitivity.",
+    "evaluation_criteria": "Syntax Correctness: 0-5 (Evaluates clean syntax and execution)\nEdge Case Handling: 0-5 (Evaluates handling of spaces, punctuation, and casing)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P090",
+    "category": "Coding & System Architecture",
+    "difficulty": "Easy",
+    "prompt": "Write a C# method that takes a list of integers and returns the second highest number without using built-in sorting functions.",
+    "evaluation_criteria": "Algorithmic Correctness: 0-5 (Evaluates correct single-pass or tracked max logic)\nSyntax Cleanliness: 0-5 (Evaluates proper C# syntax)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P091",
+    "category": "Coding & System Architecture",
+    "difficulty": "Easy",
+    "prompt": "Write a Python script to parse a JSON configuration file, handle missing file exceptions gracefully, and print a specific key value.",
+    "evaluation_criteria": "Exception Handling: 0-5 (Evaluates try-except block correctness)\nJson Parsing: 0-5 (Evaluates correct json module usage)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P092",
+    "category": "Coding & System Architecture",
+    "difficulty": "Easy",
+    "prompt": "Implement a simple Python class representing a bank account with deposit, withdraw, and balance inquiry methods, including validation against negative withdrawals.",
+    "evaluation_criteria": "Oop Design: 0-5 (Evaluates class structure, constructor, and encapsulation)\nValidation Logic: 0-5 (Evaluates correct balance check and error raising)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P093",
+    "category": "Coding & System Architecture",
+    "difficulty": "Easy",
+    "prompt": "Write a C# console application snippet that reads a text file line by line and counts the total number of words.",
+    "evaluation_criteria": "File Io: 0-5 (Evaluates correct StreamReader or File.ReadLines usage)\nWord Counting: 0-5 (Evaluates string split and count logic)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P094",
+    "category": "Coding & System Architecture",
+    "difficulty": "Hard",
+    "prompt": "Design a complete, multi-threaded Transport Management System in C# with three isolated modules: (1) Fleet Telemetry Tracker handling GPS streaming and speed anomaly detection, (2) Route Optimization Engine utilizing Dijkstra's algorithm with live traffic weights, and (3) Automated Billing & Invoicing Subsystem calculating dynamic tolls. Provide fully functional, decoupled class architectures and show how data flows between Module 1 and Module 2.",
+    "evaluation_criteria": "Module 1 Telemetry Score: 0-5 (Evaluates multi-threading safety and data parsing accuracy)\nModule 2 Routing Score: 0-5 (Evaluates graph algorithm correctness and performance efficiency)\nModule 3 Billing Score: 0-5 (Evaluates business logic precision and edge-case handling)\nSystem Integration Score: 0-5 (Evaluates seamless inter-module data piping and overall architecture cohesion)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P095",
+    "category": "Coding & System Architecture",
+    "difficulty": "Hard",
+    "prompt": "Design a fault-tolerant IoT Smart Grid Monitoring System in Python with three isolated modules: (1) Sensor Data Ingestion Gateway parsing and validating JSON telemetry streams, (2) Stream Processing Engine calculating rolling 5-minute voltage averages and detecting brownout thresholds, and (3) Alert Dispatcher managing exponential backoff webhook notifications for critical grid failures. Provide clean, production-grade decoupled code.",
+    "evaluation_criteria": "Module 1 Gateway Score: 0-5 (Evaluates input validation and stream parsing)\nModule 2 Processor Score: 0-5 (Evaluates rolling window aggregation accuracy)\nModule 3 Dispatcher Score: 0-5 (Evaluates retry backoff logic and webhook fault tolerance)\nSystem Integration Score: 0-5 (Evaluates modular separation and error propagation)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P096",
+    "category": "Coding & System Architecture",
+    "difficulty": "Hard",
+    "prompt": "Implement a modular Real-Time Chat Server in C# with three isolated components: (1) TCP Connection Manager handling client handshakes and keep-alive heartbeats, (2) Room Management Subsystem supporting channel creation, broadcasting, and user permission roles, and (3) Message Persistence Engine asynchronously buffering chat history to a relational store.",
+    "evaluation_criteria": "Module 1 Connection Score: 0-5 (Evaluates async TCP socket management and heartbeat monitoring)\nModule 2 Room Score: 0-5 (Evaluates broadcast efficiency and thread-safe room collections)\nModule 3 Persistence Score: 0-5 (Evaluates background batch persistence and queue safety)\nSystem Integration Score: 0-5 (Evaluates full duplex communication flow and decoupling)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P097",
+    "category": "Coding & System Architecture",
+    "difficulty": "Hard",
+    "prompt": "Implement a modular Cloud-Native API Gateway in C# featuring: (1) Reverse Proxy Forwarder routing requests to downstream microservice clusters, (2) JWT Authentication and Authorization Subsystem validating cryptographic signatures and permission scopes, and (3) Distributed Tracing Middleware injecting correlation IDs into request headers.",
+    "evaluation_criteria": "Module 1 Proxy Score: 0-5 (Evaluates HttpClient forwarding and load balancing)\nModule 2 Auth Score: 0-5 (Evaluates token validation and claim verification)\nModule 3 Tracing Score: 0-5 (Evaluates correlation ID propagation across async calls)\nSystem Integration Score: 0-5 (Evaluates gateway pipeline cohesion and error handling)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P098",
+    "category": "Coding & System Architecture",
+    "difficulty": "Hard",
+    "prompt": "Design a modular Real-Time Video Streaming Transcoder Pipeline in Python featuring: (1) Segment Ingester receiving raw video frames from cameras, (2) Transcoding Worker Pool converting resolutions using FFmpeg wrapper subprocesses, and (3) Manifest Generator updating HLS `.m3u8` playlist files dynamically.",
+    "evaluation_criteria": "Module 1 Ingester Score: 0-5 (Evaluates frame queue management and stream buffering)\nModule 2 Transcoder Score: 0-5 (Evaluates subprocess process management and resource control)\nModule 3 Manifest Score: 0-5 (Evaluates real-time playlist file writing and synchronization)\nSystem Integration Score: 0-5 (Evaluates pipeline stability and latency control)",
+    "max_score": "20",
+    "stochastic_sample": true,
+    "repeat_count": 5
+  },
+  {
+    "id": "P099",
+    "category": "Coding & System Architecture",
+    "difficulty": "Hard",
+    "prompt": "Build a modular Automated Stock Portfolio Rebalancing Engine in C# structured into: (1) Market Data Feed Subsystem ingesting live asset prices, (2) Portfolio Optimization Calculator computing target asset allocation weights against risk parameters, and (3) Trade Execution Subsystem generating buy/sell orders.",
+    "evaluation_criteria": "Module 1 Feed Score: 0-5 (Evaluates price stream ingestion and thread safety)\nModule 2 Optimizer Score: 0-5 (Evaluates mathematical portfolio weighting calculations)\nModule 3 Execution Score: 0-5 (Evaluates order generation and rounding edge cases)\nSystem Integration Score: 0-5 (Evaluates portfolio consistency and timing control)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P100",
+    "category": "Coding & System Architecture",
+    "difficulty": "Hard",
+    "prompt": "Build a modular Distributed Database Query Optimizer in C# structured into: (1) SQL Abstract Syntax Tree (AST) Parser, (2) Cost-Based Optimization Engine evaluating join order permutations, and (3) Execution Plan Generator producing physical operator trees.",
+    "evaluation_criteria": "Module 1 Parser Score: 0-5 (Evaluates syntax tree generation and grammar rules)\nModule 2 Optimizer Score: 0-5 (Evaluates cost estimation formulas and join reordering)\nModule 3 Generator Score: 0-5 (Evaluates physical operator pipeline construction)\nSystem Integration Score: 0-5 (Evaluates query planning correctness and efficiency)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P101",
+    "category": "Coding & System Architecture",
+    "difficulty": "Hard",
+    "prompt": "Design a modular Distributed Secret Management Vault in Python featuring: (1) Cryptographic Envelope Encryption engine utilizing AES-GCM and KMS keys, (2) Access Control Policy Enforcer checking client tokens against namespace ACLs, and (3) Audit Trail Subsystem securely recording access events.",
+    "evaluation_criteria": "Module 1 Crypto Score: 0-5 (Evaluates correct AES-GCM implementation and key separation)\nModule 2 Policy Score: 0-5 (Evaluates ACL evaluation logic)\nModule 3 Audit Score: 0-5 (Evaluates tamper-evident logging)\nSystem Integration Score: 0-5 (Evaluates end-to-end security architecture)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P102",
+    "category": "Coding & System Architecture",
+    "difficulty": "Hard",
+    "prompt": "Implement a modular Enterprise Blockchain Ledger in C# with three isolated modules: (1) Transaction Pool managing cryptographic signatures and unspent output verification, (2) Block Miner executing proof-of-work hashing puzzles, and (3) Chain Validator verifying cryptographic hash linking across blocks.",
+    "evaluation_criteria": "Module 1 Pool Score: 0-5 (Evaluates signature verification and transaction integrity)\nModule 2 Miner Score: 0-5 (Evaluates proof-of-work difficulty targeting and hashing loop)\nModule 3 Validator Score: 0-5 (Evaluates immutable chain linkage verification)\nSystem Integration Score: 0-5 (Evaluates consensus and ledger consistency)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P103",
+    "category": "Coding & System Architecture",
+    "difficulty": "Hard",
+    "prompt": "Implement a modular Autonomous Traffic Light Control System in C# with three isolated modules: (1) Intersection Vehicle Sensor Ingester tracking lane queues, (2) Adaptive Timing Optimization Engine calculating green light durations using queue length heuristics, and (3) Hardware Signal Controller dispatching state changes.",
+    "evaluation_criteria": "Module 1 Sensor Score: 0-5 (Evaluates sensor data stream parsing)\nModule 2 Optimizer Score: 0-5 (Evaluates dynamic signal timing algorithms)\nModule 3 Controller Score: 0-5 (Evaluates state machine safety constraints)\nSystem Integration Score: 0-5 (Evaluates real-time loop responsiveness)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P104",
+    "category": "Coding & System Architecture",
+    "difficulty": "Hard",
+    "prompt": "Design a modular Distributed Object Storage Service in Python with: (1) HTTP Gateway handling chunked multipart file uploads, (2) Erasure Coding Engine splitting objects into data and parity fragments using Reed-Solomon math, and (3) Metadata Catalog mapping object keys to storage nodes.",
+    "evaluation_criteria": "Module 1 Gateway Score: 0-5 (Evaluates large file stream processing)\nModule 2 Encoding Score: 0-5 (Evaluates erasure coding fragment distribution)\nModule 3 Catalog Score: 0-5 (Evaluates metadata indexing and consistency)\nSystem Integration Score: 0-5 (Evaluates fault-tolerant object retrieval)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P105",
+    "category": "Coding & System Architecture",
+    "difficulty": "Hard",
+    "prompt": "Build a modular Distributed SQL Query Execution Engine in C# structured into: (1) Network Exchange Operator buffering and routing data partitions between nodes, (2) Hash Aggregation Operator grouping records in memory, and (3) Disk Spill Manager spilling intermediate hash tables to disk when memory limits are exceeded.",
+    "evaluation_criteria": "Module 1 Exchange Score: 0-5 (Evaluates network serialization and partitioning)\nModule 2 Aggregation Score: 0-5 (Evaluates hash table grouping efficiency)\nModule 3 Spill Score: 0-5 (Evaluates external merge-sort and disk management)\nSystem Integration Score: 0-5 (Evaluates distributed query pipeline execution)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P106",
+    "category": "Coding & System Architecture",
+    "difficulty": "Medium",
+    "prompt": "Design a thread-safe Singleton pattern implementation in C# utilizing double-check locking and lazy initialization.",
+    "evaluation_criteria": "Thread Safety: 0-5 (Evaluates lock object and volatile/double-check correctness)\nLazy Initialization: 0-5 (Evaluates efficient instance creation)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P107",
+    "category": "Coding & System Architecture",
+    "difficulty": "Medium",
+    "prompt": "Implement an LRU Cache in Python using an OrderedDict or a combination of dictionary and doubly linked list with O(1) get and put operations.",
+    "evaluation_criteria": "Time Complexity: 0-5 (Evaluates guaranteed O(1) performance)\nEviction Logic: 0-5 (Evaluates correct capacity threshold handling)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P108",
+    "category": "Coding & System Architecture",
+    "difficulty": "Medium",
+    "prompt": "Write a robust asynchronous web scraper in Python using `asyncio` and `aiohttp` that fetches 10 URLs concurrently with error logging and timeout protection.",
+    "evaluation_criteria": "Async Concurrency: 0-5 (Evaluates asyncio.gather and session management)\nError Resilience: 0-5 (Evaluates try-except network timeout handling)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P109",
+    "category": "Coding & System Architecture",
+    "difficulty": "Medium",
+    "prompt": "Design a custom generic Stack data structure in C# backed by a dynamic array that automatically resizes when capacity is exceeded.",
+    "evaluation_criteria": "Generics Usage: 0-5 (Evaluates proper <T> type parameterization)\nArray Resizing: 0-5 (Evaluates doubling array capacity logic)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P110",
+    "category": "Coding & System Architecture",
+    "difficulty": "Medium",
+    "prompt": "Implement a Publisher-Subscriber (Pub-Sub) event broker class in Python supporting topic subscription, unsubscribe, and asynchronous event broadcasting.",
+    "evaluation_criteria": "Event Dispatch: 0-5 (Evaluates correct dictionary mapping of topics to listeners)\nClean Api: 0-5 (Evaluates clean subscribe/publish method signatures)",
+    "max_score": "10",
+    "stochastic_sample": true,
+    "repeat_count": 5
+  },
+  {
+    "id": "P111",
+    "category": "Ambiguity Handling",
+    "difficulty": "Easy",
+    "prompt": "What's the best programming language?",
+    "evaluation_criteria": "Clarification Recognition: 0-5 (Evaluates whether the response recognizes the question lacks necessary context)\nHelpful Framing: 0-5 (Evaluates whether the response offers a reasonable default or asks a clarifying question rather than guessing confidently)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P112",
+    "category": "Ambiguity Handling",
+    "difficulty": "Easy",
+    "prompt": "How long should a meeting be?",
+    "evaluation_criteria": "Clarification Recognition: 0-5 (Evaluates whether the response recognizes the question lacks necessary context)\nHelpful Framing: 0-5 (Evaluates whether the response offers a reasonable default or asks a clarifying question rather than guessing confidently)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P113",
+    "category": "Ambiguity Handling",
+    "difficulty": "Easy",
+    "prompt": "Is it better to work remotely or in an office?",
+    "evaluation_criteria": "Clarification Recognition: 0-5 (Evaluates whether the response recognizes the question lacks necessary context)\nHelpful Framing: 0-5 (Evaluates whether the response offers a reasonable default or asks a clarifying question rather than guessing confidently)",
+    "max_score": "10",
+    "stochastic_sample": true,
+    "repeat_count": 5
+  },
+  {
+    "id": "P114",
+    "category": "Ambiguity Handling",
+    "difficulty": "Easy",
+    "prompt": "What's a good password?",
+    "evaluation_criteria": "Clarification Recognition: 0-5 (Evaluates whether the response recognizes the question lacks necessary context)\nHelpful Framing: 0-5 (Evaluates whether the response offers a reasonable default or asks a clarifying question rather than guessing confidently)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P115",
+    "category": "Ambiguity Handling",
+    "difficulty": "Easy",
+    "prompt": "Should I use a semicolon here?",
+    "evaluation_criteria": "Clarification Recognition: 0-5 (Evaluates whether the response recognizes the question lacks necessary context)\nHelpful Framing: 0-5 (Evaluates whether the response offers a reasonable default or asks a clarifying question rather than guessing confidently)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P116",
+    "category": "Ambiguity Handling",
+    "difficulty": "Easy",
+    "prompt": "What time should I set my alarm for?",
+    "evaluation_criteria": "Clarification Recognition: 0-5 (Evaluates whether the response recognizes the question lacks necessary context)\nHelpful Framing: 0-5 (Evaluates whether the response offers a reasonable default or asks a clarifying question rather than guessing confidently)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P117",
+    "category": "Ambiguity Handling",
+    "difficulty": "Hard",
+    "prompt": "Design a complete authentication system for 'the app' that is 'secure' and 'fast', integrating with 'the existing database' and supporting 'multiple login methods'.",
+    "evaluation_criteria": "Ambiguity Surfacing Score: 0-5 (Evaluates whether the response explicitly identifies the multiple undefined terms/requirements before proceeding)\nAssumption Documentation Score: 0-5 (Evaluates whether any assumptions made to proceed are clearly stated and justified)\nStructural Soundness Score: 0-5 (Evaluates whether the proposed design is technically coherent despite the ambiguity)\nPractical Usefulness Score: 0-5 (Evaluates whether the response would still be actionable for a real engineer despite the missing specifics)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P118",
+    "category": "Ambiguity Handling",
+    "difficulty": "Hard",
+    "prompt": "Build a scalable microservice architecture for 'the platform' that handles 'high traffic' and integrates with 'the third-party APIs' we use.",
+    "evaluation_criteria": "Ambiguity Surfacing Score: 0-5 (Evaluates whether the response explicitly identifies the multiple undefined terms/requirements before proceeding)\nAssumption Documentation Score: 0-5 (Evaluates whether any assumptions made to proceed are clearly stated and justified)\nStructural Soundness Score: 0-5 (Evaluates whether the proposed design is technically coherent despite the ambiguity)\nPractical Usefulness Score: 0-5 (Evaluates whether the response would still be actionable for a real engineer despite the missing specifics)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P119",
+    "category": "Ambiguity Handling",
+    "difficulty": "Hard",
+    "prompt": "Refactor 'the legacy module' to be 'more maintainable' while preserving 'all existing functionality' and 'not breaking anything downstream'.",
+    "evaluation_criteria": "Ambiguity Surfacing Score: 0-5 (Evaluates whether the response explicitly identifies the multiple undefined terms/requirements before proceeding)\nAssumption Documentation Score: 0-5 (Evaluates whether any assumptions made to proceed are clearly stated and justified)\nStructural Soundness Score: 0-5 (Evaluates whether the proposed design is technically coherent despite the ambiguity)\nPractical Usefulness Score: 0-5 (Evaluates whether the response would still be actionable for a real engineer despite the missing specifics)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P120",
+    "category": "Ambiguity Handling",
+    "difficulty": "Hard",
+    "prompt": "Create a data pipeline that processes 'the incoming events' in 'near real-time' and stores them 'efficiently' for 'later analysis'.",
+    "evaluation_criteria": "Ambiguity Surfacing Score: 0-5 (Evaluates whether the response explicitly identifies the multiple undefined terms/requirements before proceeding)\nAssumption Documentation Score: 0-5 (Evaluates whether any assumptions made to proceed are clearly stated and justified)\nStructural Soundness Score: 0-5 (Evaluates whether the proposed design is technically coherent despite the ambiguity)\nPractical Usefulness Score: 0-5 (Evaluates whether the response would still be actionable for a real engineer despite the missing specifics)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P121",
+    "category": "Ambiguity Handling",
+    "difficulty": "Hard",
+    "prompt": "Implement a caching layer for 'the API' that improves 'performance' without introducing 'stale data issues' or 'excessive memory use'.",
+    "evaluation_criteria": "Ambiguity Surfacing Score: 0-5 (Evaluates whether the response explicitly identifies the multiple undefined terms/requirements before proceeding)\nAssumption Documentation Score: 0-5 (Evaluates whether any assumptions made to proceed are clearly stated and justified)\nStructural Soundness Score: 0-5 (Evaluates whether the proposed design is technically coherent despite the ambiguity)\nPractical Usefulness Score: 0-5 (Evaluates whether the response would still be actionable for a real engineer despite the missing specifics)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P122",
+    "category": "Ambiguity Handling",
+    "difficulty": "Hard",
+    "prompt": "Design a permission system for 'the platform' supporting 'different user roles' with 'fine-grained access control' and 'audit logging'.",
+    "evaluation_criteria": "Ambiguity Surfacing Score: 0-5 (Evaluates whether the response explicitly identifies the multiple undefined terms/requirements before proceeding)\nAssumption Documentation Score: 0-5 (Evaluates whether any assumptions made to proceed are clearly stated and justified)\nStructural Soundness Score: 0-5 (Evaluates whether the proposed design is technically coherent despite the ambiguity)\nPractical Usefulness Score: 0-5 (Evaluates whether the response would still be actionable for a real engineer despite the missing specifics)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P123",
+    "category": "Ambiguity Handling",
+    "difficulty": "Hard",
+    "prompt": "Build a notification system that sends 'timely alerts' to 'the right users' through 'multiple channels' without 'spamming' them.",
+    "evaluation_criteria": "Ambiguity Surfacing Score: 0-5 (Evaluates whether the response explicitly identifies the multiple undefined terms/requirements before proceeding)\nAssumption Documentation Score: 0-5 (Evaluates whether any assumptions made to proceed are clearly stated and justified)\nStructural Soundness Score: 0-5 (Evaluates whether the proposed design is technically coherent despite the ambiguity)\nPractical Usefulness Score: 0-5 (Evaluates whether the response would still be actionable for a real engineer despite the missing specifics)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P124",
+    "category": "Ambiguity Handling",
+    "difficulty": "Hard",
+    "prompt": "Architect a multi-tenant SaaS backend that keeps 'each customer's data isolated' while sharing 'common infrastructure efficiently'.",
+    "evaluation_criteria": "Ambiguity Surfacing Score: 0-5 (Evaluates whether the response explicitly identifies the multiple undefined terms/requirements before proceeding)\nAssumption Documentation Score: 0-5 (Evaluates whether any assumptions made to proceed are clearly stated and justified)\nStructural Soundness Score: 0-5 (Evaluates whether the proposed design is technically coherent despite the ambiguity)\nPractical Usefulness Score: 0-5 (Evaluates whether the response would still be actionable for a real engineer despite the missing specifics)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P125",
+    "category": "Ambiguity Handling",
+    "difficulty": "Hard",
+    "prompt": "Design a search feature for 'the product catalog' that is 'fast', 'relevant', and handles 'typos and synonyms' gracefully.",
+    "evaluation_criteria": "Ambiguity Surfacing Score: 0-5 (Evaluates whether the response explicitly identifies the multiple undefined terms/requirements before proceeding)\nAssumption Documentation Score: 0-5 (Evaluates whether any assumptions made to proceed are clearly stated and justified)\nStructural Soundness Score: 0-5 (Evaluates whether the proposed design is technically coherent despite the ambiguity)\nPractical Usefulness Score: 0-5 (Evaluates whether the response would still be actionable for a real engineer despite the missing specifics)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P126",
+    "category": "Ambiguity Handling",
+    "difficulty": "Medium",
+    "prompt": "Fix the bug in my code.",
+    "evaluation_criteria": "Missing Context Identification: 0-5 (Evaluates whether the response identifies exactly what information is missing, e.g. which code, which document, which app)\nConstructive Response: 0-5 (Evaluates whether the response still provides useful general guidance despite the ambiguity)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P127",
+    "category": "Ambiguity Handling",
+    "difficulty": "Medium",
+    "prompt": "Can you make this report better?",
+    "evaluation_criteria": "Missing Context Identification: 0-5 (Evaluates whether the response identifies exactly what information is missing, e.g. which code, which document, which app)\nConstructive Response: 0-5 (Evaluates whether the response still provides useful general guidance despite the ambiguity)",
+    "max_score": "10",
+    "stochastic_sample": true,
+    "repeat_count": 5
+  },
+  {
+    "id": "P128",
+    "category": "Ambiguity Handling",
+    "difficulty": "Medium",
+    "prompt": "Translate this document for me.",
+    "evaluation_criteria": "Missing Context Identification: 0-5 (Evaluates whether the response identifies exactly what information is missing, e.g. which code, which document, which app)\nConstructive Response: 0-5 (Evaluates whether the response still provides useful general guidance despite the ambiguity)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P129",
+    "category": "Ambiguity Handling",
+    "difficulty": "Medium",
+    "prompt": "Optimize this function.",
+    "evaluation_criteria": "Missing Context Identification: 0-5 (Evaluates whether the response identifies exactly what information is missing, e.g. which code, which document, which app)\nConstructive Response: 0-5 (Evaluates whether the response still provides useful general guidance despite the ambiguity)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P130",
+    "category": "Ambiguity Handling",
+    "difficulty": "Medium",
+    "prompt": "Write a follow-up email to the client.",
+    "evaluation_criteria": "Missing Context Identification: 0-5 (Evaluates whether the response identifies exactly what information is missing, e.g. which code, which document, which app)\nConstructive Response: 0-5 (Evaluates whether the response still provides useful general guidance despite the ambiguity)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P131",
+    "category": "Ambiguity Handling",
+    "difficulty": "Medium",
+    "prompt": "Summarize the attached file.",
+    "evaluation_criteria": "Missing Context Identification: 0-5 (Evaluates whether the response identifies exactly what information is missing, e.g. which code, which document, which app)\nConstructive Response: 0-5 (Evaluates whether the response still provides useful general guidance despite the ambiguity)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P132",
+    "category": "Ambiguity Handling",
+    "difficulty": "Medium",
+    "prompt": "Design a database for my app.",
+    "evaluation_criteria": "Missing Context Identification: 0-5 (Evaluates whether the response identifies exactly what information is missing, e.g. which code, which document, which app)\nConstructive Response: 0-5 (Evaluates whether the response still provides useful general guidance despite the ambiguity)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P133",
+    "category": "Long-context Retention",
+    "difficulty": "Easy",
+    "prompt": "Note 1: The server room temperature was recorded at 22 degrees Celsius on Monday. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: On Tuesday, the recorded temperature was 24 degrees Celsius. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: On Wednesday, the recorded temperature was 21 degrees Celsius. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: What was the temperature recorded on Tuesday?",
+    "evaluation_criteria": "Fact Recall Accuracy: 0-5 (Evaluates whether the specific fact requested is retrieved correctly from the earlier context)\nDistraction Resistance: 0-5 (Evaluates whether the response is not confused by the surrounding filler text)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P134",
+    "category": "Long-context Retention",
+    "difficulty": "Easy",
+    "prompt": "Note 1: Employee A was hired in March 2021. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Employee B was hired in July 2022. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Employee C was hired in January 2020. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Who was hired first?",
+    "evaluation_criteria": "Fact Recall Accuracy: 0-5 (Evaluates whether the specific fact requested is retrieved correctly from the earlier context)\nDistraction Resistance: 0-5 (Evaluates whether the response is not confused by the surrounding filler text)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P135",
+    "category": "Long-context Retention",
+    "difficulty": "Easy",
+    "prompt": "Note 1: Product X costs $45. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Product Y costs $60. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Product Z costs $30. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Which product is the cheapest?",
+    "evaluation_criteria": "Fact Recall Accuracy: 0-5 (Evaluates whether the specific fact requested is retrieved correctly from the earlier context)\nDistraction Resistance: 0-5 (Evaluates whether the response is not confused by the surrounding filler text)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P136",
+    "category": "Long-context Retention",
+    "difficulty": "Easy",
+    "prompt": "Note 1: The meeting on Monday covered budget planning. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: The meeting on Wednesday covered hiring decisions. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: The meeting on Friday covered product roadmap. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: What was discussed in the Wednesday meeting?",
+    "evaluation_criteria": "Fact Recall Accuracy: 0-5 (Evaluates whether the specific fact requested is retrieved correctly from the earlier context)\nDistraction Resistance: 0-5 (Evaluates whether the response is not confused by the surrounding filler text)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P137",
+    "category": "Long-context Retention",
+    "difficulty": "Easy",
+    "prompt": "Note 1: Branch A reported 120 sales in Q1. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Branch B reported 95 sales in Q1. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Branch C reported 140 sales in Q1. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Which branch had the highest Q1 sales?",
+    "evaluation_criteria": "Fact Recall Accuracy: 0-5 (Evaluates whether the specific fact requested is retrieved correctly from the earlier context)\nDistraction Resistance: 0-5 (Evaluates whether the response is not confused by the surrounding filler text)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P138",
+    "category": "Long-context Retention",
+    "difficulty": "Easy",
+    "prompt": "Note 1: Version 1.0 was released in June. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Version 1.1 was released in August. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Version 2.0 was released in December. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: When was version 1.1 released?",
+    "evaluation_criteria": "Fact Recall Accuracy: 0-5 (Evaluates whether the specific fact requested is retrieved correctly from the earlier context)\nDistraction Resistance: 0-5 (Evaluates whether the response is not confused by the surrounding filler text)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P139",
+    "category": "Long-context Retention",
+    "difficulty": "Hard",
+    "prompt": "Note 1: Module A was originally designed to handle authentication only. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: In a later revision, Module A was extended to also handle session management. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: A subsequent security audit required Module A to be split, moving session management into a new Module D. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 4: Module A currently handles only authentication again, matching its original scope. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 5: Module B has always handled authorization and was never modified. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Trace the full history of Module A's responsibilities from start to the current state, and explain why it ended up back where it started.",
+    "evaluation_criteria": "Sequential Accuracy Score: 0-5 (Evaluates whether the response correctly reconstructs the full chronological sequence of changes)\nCurrent-State Accuracy Score: 0-5 (Evaluates whether the FINAL/current state described is correct, not an intermediate state)\nCompleteness Score: 0-5 (Evaluates whether all relevant facts from the context were used, none omitted)\nCoherence Score: 0-5 (Evaluates whether the explanation is clearly organized and easy to follow despite the complexity)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P140",
+    "category": "Long-context Retention",
+    "difficulty": "Hard",
+    "prompt": "Note 1: The database originally used MySQL for all storage needs. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: A migration project moved analytics workloads to PostgreSQL due to better JSON support. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Later, a further migration moved time-series data from PostgreSQL to a dedicated TimescaleDB instance. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 4: Transactional data remains on the original MySQL instance throughout all of this. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 5: A final review confirmed no data type currently uses more than one database system simultaneously. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Describe exactly which database system is used for each data type today, and reconstruct the sequence of migrations that led to this state.",
+    "evaluation_criteria": "Sequential Accuracy Score: 0-5 (Evaluates whether the response correctly reconstructs the full chronological sequence of changes)\nCurrent-State Accuracy Score: 0-5 (Evaluates whether the FINAL/current state described is correct, not an intermediate state)\nCompleteness Score: 0-5 (Evaluates whether all relevant facts from the context were used, none omitted)\nCoherence Score: 0-5 (Evaluates whether the explanation is clearly organized and easy to follow despite the complexity)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P141",
+    "category": "Long-context Retention",
+    "difficulty": "Hard",
+    "prompt": "Note 1: The pricing model started as a flat $10/month subscription. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: After 6 months, a tiered model was introduced: Basic $10, Pro $25, Enterprise $100. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: The Basic tier was later discontinued, with existing Basic users grandfathered at their original $10 price. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 4: New customers can now only choose between Pro and Enterprise. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 5: Enterprise pricing was recently adjusted to $120 for new sign-ups only, existing Enterprise customers keep $100. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Explain the current pricing landscape for: (a) a brand new customer, (b) an existing grandfathered Basic user, and (c) an existing Enterprise customer, tracing how each got to their current price.",
+    "evaluation_criteria": "Sequential Accuracy Score: 0-5 (Evaluates whether the response correctly reconstructs the full chronological sequence of changes)\nCurrent-State Accuracy Score: 0-5 (Evaluates whether the FINAL/current state described is correct, not an intermediate state)\nCompleteness Score: 0-5 (Evaluates whether all relevant facts from the context were used, none omitted)\nCoherence Score: 0-5 (Evaluates whether the explanation is clearly organized and easy to follow despite the complexity)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P142",
+    "category": "Long-context Retention",
+    "difficulty": "Hard",
+    "prompt": "Note 1: Feature flag 'dark_mode' was enabled for 10% of users in an initial rollout. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: After positive feedback, it was expanded to 50% of users. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: A bug was discovered affecting mobile users specifically, so mobile rollout was rolled back to 0%. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 4: Desktop rollout remained at 50% throughout the mobile issue. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 5: After the mobile bug was fixed, mobile rollout resumed at 25%, separate from desktop's 50%. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: What is the CURRENT rollout percentage for mobile users versus desktop users, and reconstruct the full sequence of changes that led to this split state?",
+    "evaluation_criteria": "Sequential Accuracy Score: 0-5 (Evaluates whether the response correctly reconstructs the full chronological sequence of changes)\nCurrent-State Accuracy Score: 0-5 (Evaluates whether the FINAL/current state described is correct, not an intermediate state)\nCompleteness Score: 0-5 (Evaluates whether all relevant facts from the context were used, none omitted)\nCoherence Score: 0-5 (Evaluates whether the explanation is clearly organized and easy to follow despite the complexity)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P143",
+    "category": "Long-context Retention",
+    "difficulty": "Hard",
+    "prompt": "Note 1: Team structure originally had one team covering both frontend and backend. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: As the company grew, the team split into a dedicated Frontend team and Backend team. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: A Platform team was later carved out of Backend to handle infrastructure specifically. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 4: Backend team currently focuses only on business logic and APIs, not infrastructure. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 5: Frontend team has remained unchanged in scope since the initial split. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Describe the current responsibilities of all three teams, and explain the org changes that produced this structure, step by step.",
+    "evaluation_criteria": "Sequential Accuracy Score: 0-5 (Evaluates whether the response correctly reconstructs the full chronological sequence of changes)\nCurrent-State Accuracy Score: 0-5 (Evaluates whether the FINAL/current state described is correct, not an intermediate state)\nCompleteness Score: 0-5 (Evaluates whether all relevant facts from the context were used, none omitted)\nCoherence Score: 0-5 (Evaluates whether the explanation is clearly organized and easy to follow despite the complexity)",
+    "max_score": "20",
+    "stochastic_sample": true,
+    "repeat_count": 5
+  },
+  {
+    "id": "P144",
+    "category": "Long-context Retention",
+    "difficulty": "Hard",
+    "prompt": "Note 1: The original API returned dates in US format (MM/DD/YYYY). The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: An internationalization update changed the default to ISO format (YYYY-MM-DD). The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: A backward-compatibility flag was added allowing clients to request the old US format explicitly. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 4: Six months later, the backward-compatibility flag was deprecated and scheduled for removal. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 5: As of the most recent release, the flag has been fully removed and ISO format is now the only option. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: What date format does the API return today, and can old clients still request the US format? Trace the full history that led to the current behavior.",
+    "evaluation_criteria": "Sequential Accuracy Score: 0-5 (Evaluates whether the response correctly reconstructs the full chronological sequence of changes)\nCurrent-State Accuracy Score: 0-5 (Evaluates whether the FINAL/current state described is correct, not an intermediate state)\nCompleteness Score: 0-5 (Evaluates whether all relevant facts from the context were used, none omitted)\nCoherence Score: 0-5 (Evaluates whether the explanation is clearly organized and easy to follow despite the complexity)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P145",
+    "category": "Long-context Retention",
+    "difficulty": "Hard",
+    "prompt": "Note 1: Initially, all customer support was handled by a single shared inbox. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: As volume grew, tickets were split into Tier 1 (general) and Tier 2 (technical) queues. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: A further split created a dedicated Billing queue, pulled out of Tier 1. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 4: Recently, Tier 2 was merged back into a single 'Technical & Billing' queue alongside Billing. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 5: Tier 1 (general) remains a separate, standalone queue to this day. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: How many support queues currently exist, what does each handle, and reconstruct the sequence of splits and merges that produced this structure.",
+    "evaluation_criteria": "Sequential Accuracy Score: 0-5 (Evaluates whether the response correctly reconstructs the full chronological sequence of changes)\nCurrent-State Accuracy Score: 0-5 (Evaluates whether the FINAL/current state described is correct, not an intermediate state)\nCompleteness Score: 0-5 (Evaluates whether all relevant facts from the context were used, none omitted)\nCoherence Score: 0-5 (Evaluates whether the explanation is clearly organized and easy to follow despite the complexity)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P146",
+    "category": "Long-context Retention",
+    "difficulty": "Hard",
+    "prompt": "Note 1: Server logs are currently retained for 30 days by default. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: For a period during a security investigation, retention was temporarily extended to 180 days. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: After the investigation concluded, retention was set back to the default of 30 days. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 4: A new compliance requirement recently mandated permanent retention for a specific subset of logs (authentication events only). The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 5: Non-authentication logs continue to follow the standard 30-day retention policy. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: What is the current retention policy for authentication logs versus all other logs, and explain how the policy evolved to reach this state?",
+    "evaluation_criteria": "Sequential Accuracy Score: 0-5 (Evaluates whether the response correctly reconstructs the full chronological sequence of changes)\nCurrent-State Accuracy Score: 0-5 (Evaluates whether the FINAL/current state described is correct, not an intermediate state)\nCompleteness Score: 0-5 (Evaluates whether all relevant facts from the context were used, none omitted)\nCoherence Score: 0-5 (Evaluates whether the explanation is clearly organized and easy to follow despite the complexity)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P147",
+    "category": "Long-context Retention",
+    "difficulty": "Hard",
+    "prompt": "Note 1: The company originally operated in a single region (US-East). The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Expansion added a second region (EU-West) to serve European customers with lower latency. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: A third region (AP-Southeast) was added later for Asian customers. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 4: Due to low usage, AP-Southeast was later decommissioned, with those customers routed back to EU-West. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 5: US-East and EU-West remain the only two active regions today. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Which regions are currently active, which was removed, and reconstruct the full timeline of regional expansion and contraction described.",
+    "evaluation_criteria": "Sequential Accuracy Score: 0-5 (Evaluates whether the response correctly reconstructs the full chronological sequence of changes)\nCurrent-State Accuracy Score: 0-5 (Evaluates whether the FINAL/current state described is correct, not an intermediate state)\nCompleteness Score: 0-5 (Evaluates whether all relevant facts from the context were used, none omitted)\nCoherence Score: 0-5 (Evaluates whether the explanation is clearly organized and easy to follow despite the complexity)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P148",
+    "category": "Long-context Retention",
+    "difficulty": "Medium",
+    "prompt": "Note 1: Project Alpha's deadline was moved from May 1 to May 15 due to resourcing. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Project Beta's deadline remains June 1 as originally planned. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Project Gamma's deadline was moved up from July 1 to June 20 due to client request. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: List each project and its FINAL deadline, noting which ones changed from their original date.",
+    "evaluation_criteria": "Multi-Fact Synthesis: 0-5 (Evaluates whether the response correctly combines information from multiple, sequentially updated facts)\nNumerical Accuracy: 0-5 (Evaluates whether any calculations or comparisons across the facts are computed correctly)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P149",
+    "category": "Long-context Retention",
+    "difficulty": "Medium",
+    "prompt": "Note 1: The initial budget for the marketing campaign was $50,000. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: After the Q2 review, the budget was increased by $15,000. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Following a cost-cutting measure in Q3, the budget was reduced by $10,000. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: What is the current budget after all adjustments, and can you show the calculation?",
+    "evaluation_criteria": "Multi-Fact Synthesis: 0-5 (Evaluates whether the response correctly combines information from multiple, sequentially updated facts)\nNumerical Accuracy: 0-5 (Evaluates whether any calculations or comparisons across the facts are computed correctly)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P150",
+    "category": "Long-context Retention",
+    "difficulty": "Medium",
+    "prompt": "Note 1: Server cluster A has 8 nodes, each with 16GB RAM. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Server cluster B has 12 nodes, each with 8GB RAM. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Server cluster C has 4 nodes, each with 32GB RAM. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Which cluster has the most total RAM, and what is the exact total for each cluster?",
+    "evaluation_criteria": "Multi-Fact Synthesis: 0-5 (Evaluates whether the response correctly combines information from multiple, sequentially updated facts)\nNumerical Accuracy: 0-5 (Evaluates whether any calculations or comparisons across the facts are computed correctly)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P151",
+    "category": "Long-context Retention",
+    "difficulty": "Medium",
+    "prompt": "Note 1: Policy revision 1 required manager approval for expenses over $500. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Policy revision 2 lowered that threshold to $300. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Policy revision 3 raised it back up to $400. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: What is the CURRENT approval threshold, and how did it change over the three revisions?",
+    "evaluation_criteria": "Multi-Fact Synthesis: 0-5 (Evaluates whether the response correctly combines information from multiple, sequentially updated facts)\nNumerical Accuracy: 0-5 (Evaluates whether any calculations or comparisons across the facts are computed correctly)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P152",
+    "category": "Long-context Retention",
+    "difficulty": "Medium",
+    "prompt": "Note 1: Team Alpha's velocity was 30 story points in Sprint 1. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Team Alpha's velocity dropped to 22 points in Sprint 2 due to illness. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Team Alpha's velocity recovered to 35 points in Sprint 3. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Describe the trend in Team Alpha's velocity across all three sprints with specific numbers.",
+    "evaluation_criteria": "Multi-Fact Synthesis: 0-5 (Evaluates whether the response correctly combines information from multiple, sequentially updated facts)\nNumerical Accuracy: 0-5 (Evaluates whether any calculations or comparisons across the facts are computed correctly)",
+    "max_score": "10",
+    "stochastic_sample": true,
+    "repeat_count": 5
+  },
+  {
+    "id": "P153",
+    "category": "Long-context Retention",
+    "difficulty": "Medium",
+    "prompt": "Note 1: The original API rate limit was 100 requests per minute. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: It was temporarily raised to 200 during the promotional event. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: After the event ended, it was set permanently at 150. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: What is the current permanent rate limit, and what was it during the promotional event?",
+    "evaluation_criteria": "Multi-Fact Synthesis: 0-5 (Evaluates whether the response correctly combines information from multiple, sequentially updated facts)\nNumerical Accuracy: 0-5 (Evaluates whether any calculations or comparisons across the facts are computed correctly)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P154",
+    "category": "Long-context Retention",
+    "difficulty": "Medium",
+    "prompt": "Note 1: Warehouse 1 held 500 units of Product A at the start of the month. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: 200 units were shipped out from Warehouse 1 mid-month. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: 150 more units arrived at Warehouse 1 at the end of the month. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: What is the final unit count at Warehouse 1, and show the running calculation?",
+    "evaluation_criteria": "Multi-Fact Synthesis: 0-5 (Evaluates whether the response correctly combines information from multiple, sequentially updated facts)\nNumerical Accuracy: 0-5 (Evaluates whether any calculations or comparisons across the facts are computed correctly)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P155",
+    "category": "Data Transformation",
+    "difficulty": "Easy",
+    "prompt": "Convert this CSV row to JSON: name,age,city\\nAlice,30,Boston",
+    "evaluation_criteria": "Conversion Accuracy: 0-5 (Evaluates whether the output value is mathematically or structurally correct)\nFormat Compliance: 0-5 (Evaluates whether the output exactly matches the requested target format)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P156",
+    "category": "Data Transformation",
+    "difficulty": "Easy",
+    "prompt": "Convert this JSON to a CSV row: {\"name\": \"Bob\", \"age\": 25, \"city\": \"Denver\"}",
+    "evaluation_criteria": "Conversion Accuracy: 0-5 (Evaluates whether the output value is mathematically or structurally correct)\nFormat Compliance: 0-5 (Evaluates whether the output exactly matches the requested target format)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P157",
+    "category": "Data Transformation",
+    "difficulty": "Easy",
+    "prompt": "Convert 72 degrees Fahrenheit to Celsius.",
+    "evaluation_criteria": "Conversion Accuracy: 0-5 (Evaluates whether the output value is mathematically or structurally correct)\nFormat Compliance: 0-5 (Evaluates whether the output exactly matches the requested target format)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P158",
+    "category": "Data Transformation",
+    "difficulty": "Easy",
+    "prompt": "Convert the date '03/15/2026' from MM/DD/YYYY format to YYYY-MM-DD format.",
+    "evaluation_criteria": "Conversion Accuracy: 0-5 (Evaluates whether the output value is mathematically or structurally correct)\nFormat Compliance: 0-5 (Evaluates whether the output exactly matches the requested target format)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P159",
+    "category": "Data Transformation",
+    "difficulty": "Easy",
+    "prompt": "Convert this list of items into a comma-separated string: [\"apple\", \"banana\", \"cherry\"]",
+    "evaluation_criteria": "Conversion Accuracy: 0-5 (Evaluates whether the output value is mathematically or structurally correct)\nFormat Compliance: 0-5 (Evaluates whether the output exactly matches the requested target format)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P160",
+    "category": "Data Transformation",
+    "difficulty": "Easy",
+    "prompt": "Convert this binary number to decimal: 1011",
+    "evaluation_criteria": "Conversion Accuracy: 0-5 (Evaluates whether the output value is mathematically or structurally correct)\nFormat Compliance: 0-5 (Evaluates whether the output exactly matches the requested target format)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P161",
+    "category": "Data Transformation",
+    "difficulty": "Hard",
+    "prompt": "Convert this deeply nested JSON representing an e-commerce order into a set of THREE normalized CSV tables (orders, order_items, customers) with proper foreign key columns linking them:\n{\"order_id\": \"O1001\", \"customer\": {\"id\": \"C55\", \"name\": \"Ivan\"}, \"items\": [{\"sku\": \"A1\", \"qty\": 2, \"price\": 15.0}, {\"sku\": \"B2\", \"qty\": 1, \"price\": 40.0}]}",
+    "evaluation_criteria": "Relational Integrity Score: 0-5 (Evaluates whether relationships/references between the transformed structures are correctly preserved)\nEdge Case Handling Score: 0-5 (Evaluates whether irregular or inconsistent source data is handled correctly rather than causing errors or silent data loss)\nOutput Validity Score: 0-5 (Evaluates whether the output is syntactically valid in its target format)\nCompleteness Score: 0-5 (Evaluates whether all source data is represented in the output with nothing silently dropped)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P162",
+    "category": "Data Transformation",
+    "difficulty": "Hard",
+    "prompt": "Convert this log file format (space-separated with variable fields) into structured JSON, correctly handling the fact that the message field itself may contain spaces:\n2026-01-01 10:00:00 ERROR Connection timeout after 30s\n2026-01-01 10:01:15 INFO Server started successfully",
+    "evaluation_criteria": "Relational Integrity Score: 0-5 (Evaluates whether relationships/references between the transformed structures are correctly preserved)\nEdge Case Handling Score: 0-5 (Evaluates whether irregular or inconsistent source data is handled correctly rather than causing errors or silent data loss)\nOutput Validity Score: 0-5 (Evaluates whether the output is syntactically valid in its target format)\nCompleteness Score: 0-5 (Evaluates whether all source data is represented in the output with nothing silently dropped)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P163",
+    "category": "Data Transformation",
+    "difficulty": "Hard",
+    "prompt": "Convert this JSON representing a company org chart (with a 'reports' array of nested employee objects at arbitrary depth) into a flat CSV with columns: employee_name, manager_name, depth_level.",
+    "evaluation_criteria": "Relational Integrity Score: 0-5 (Evaluates whether relationships/references between the transformed structures are correctly preserved)\nEdge Case Handling Score: 0-5 (Evaluates whether irregular or inconsistent source data is handled correctly rather than causing errors or silent data loss)\nOutput Validity Score: 0-5 (Evaluates whether the output is syntactically valid in its target format)\nCompleteness Score: 0-5 (Evaluates whether all source data is represented in the output with nothing silently dropped)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P164",
+    "category": "Data Transformation",
+    "difficulty": "Hard",
+    "prompt": "Convert this Markdown table with merged-looking header groups into a properly normalized JSON array, correctly attributing each sub-column to its parent header:\n| Name | Q1 | | Q2 | |\n|------|-----|-----|-----|-----|\n| | Sales | Cost | Sales | Cost |\n| Alice | 100 | 40 | 120 | 45 |",
+    "evaluation_criteria": "Relational Integrity Score: 0-5 (Evaluates whether relationships/references between the transformed structures are correctly preserved)\nEdge Case Handling Score: 0-5 (Evaluates whether irregular or inconsistent source data is handled correctly rather than causing errors or silent data loss)\nOutput Validity Score: 0-5 (Evaluates whether the output is syntactically valid in its target format)\nCompleteness Score: 0-5 (Evaluates whether all source data is represented in the output with nothing silently dropped)",
+    "max_score": "20",
+    "stochastic_sample": true,
+    "repeat_count": 5
+  },
+  {
+    "id": "P165",
+    "category": "Data Transformation",
+    "difficulty": "Hard",
+    "prompt": "Convert this JSON with inconsistent date formats across records (some MM/DD/YYYY, some YYYY-MM-DD, some as Unix timestamps) into a uniform ISO 8601 format, correctly detecting each record's original format:\n[{\"date\": \"03/15/2026\"}, {\"date\": \"2026-04-01\"}, {\"date\": 1735689600}]",
+    "evaluation_criteria": "Relational Integrity Score: 0-5 (Evaluates whether relationships/references between the transformed structures are correctly preserved)\nEdge Case Handling Score: 0-5 (Evaluates whether irregular or inconsistent source data is handled correctly rather than causing errors or silent data loss)\nOutput Validity Score: 0-5 (Evaluates whether the output is syntactically valid in its target format)\nCompleteness Score: 0-5 (Evaluates whether all source data is represented in the output with nothing silently dropped)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P166",
+    "category": "Data Transformation",
+    "difficulty": "Hard",
+    "prompt": "Convert this GraphQL query response (with nested pagination edges/nodes structure) into a flat, simplified JSON array containing only the actual data fields, discarding the pagination wrapper.",
+    "evaluation_criteria": "Relational Integrity Score: 0-5 (Evaluates whether relationships/references between the transformed structures are correctly preserved)\nEdge Case Handling Score: 0-5 (Evaluates whether irregular or inconsistent source data is handled correctly rather than causing errors or silent data loss)\nOutput Validity Score: 0-5 (Evaluates whether the output is syntactically valid in its target format)\nCompleteness Score: 0-5 (Evaluates whether all source data is represented in the output with nothing silently dropped)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P167",
+    "category": "Data Transformation",
+    "difficulty": "Hard",
+    "prompt": "Convert this CSV with a single column containing pipe-delimited multi-values (e.g. 'tags' column: 'red|blue|green') into a normalized JSON structure where each tag becomes a separate array element.",
+    "evaluation_criteria": "Relational Integrity Score: 0-5 (Evaluates whether relationships/references between the transformed structures are correctly preserved)\nEdge Case Handling Score: 0-5 (Evaluates whether irregular or inconsistent source data is handled correctly rather than causing errors or silent data loss)\nOutput Validity Score: 0-5 (Evaluates whether the output is syntactically valid in its target format)\nCompleteness Score: 0-5 (Evaluates whether all source data is represented in the output with nothing silently dropped)",
+    "max_score": "20",
+    "stochastic_sample": true,
+    "repeat_count": 5
+  },
+  {
+    "id": "P168",
+    "category": "Data Transformation",
+    "difficulty": "Hard",
+    "prompt": "Convert this JSON representing a recursive category tree (categories containing subcategories containing subcategories) into a flat list with a 'path' field showing the full breadcrumb (e.g. 'Electronics > Computers > Laptops').",
+    "evaluation_criteria": "Relational Integrity Score: 0-5 (Evaluates whether relationships/references between the transformed structures are correctly preserved)\nEdge Case Handling Score: 0-5 (Evaluates whether irregular or inconsistent source data is handled correctly rather than causing errors or silent data loss)\nOutput Validity Score: 0-5 (Evaluates whether the output is syntactically valid in its target format)\nCompleteness Score: 0-5 (Evaluates whether all source data is represented in the output with nothing silently dropped)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P169",
+    "category": "Data Transformation",
+    "difficulty": "Hard",
+    "prompt": "Convert this XML document with attributes, nested elements, AND repeated sibling elements (representing a list) into JSON, correctly distinguishing which XML patterns should become JSON arrays versus JSON objects.",
+    "evaluation_criteria": "Relational Integrity Score: 0-5 (Evaluates whether relationships/references between the transformed structures are correctly preserved)\nEdge Case Handling Score: 0-5 (Evaluates whether irregular or inconsistent source data is handled correctly rather than causing errors or silent data loss)\nOutput Validity Score: 0-5 (Evaluates whether the output is syntactically valid in its target format)\nCompleteness Score: 0-5 (Evaluates whether all source data is represented in the output with nothing silently dropped)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P170",
+    "category": "Data Transformation",
+    "difficulty": "Medium",
+    "prompt": "Convert this JSON array of objects into a Markdown table:\n[{\"name\": \"Alice\", \"score\": 92}, {\"name\": \"Bob\", \"score\": 85}, {\"name\": \"Carol\", \"score\": 78}]",
+    "evaluation_criteria": "Structural Correctness: 0-5 (Evaluates whether the output structure correctly represents the source data's relationships)\nData Fidelity: 0-5 (Evaluates whether every value from the source is preserved accurately, with none dropped or altered)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P171",
+    "category": "Data Transformation",
+    "difficulty": "Medium",
+    "prompt": "Convert this nested JSON into a flat CSV with dot-notation column names:\n{\"user\": {\"name\": \"Dana\", \"address\": {\"city\": \"Austin\", \"zip\": \"73301\"}}}",
+    "evaluation_criteria": "Structural Correctness: 0-5 (Evaluates whether the output structure correctly represents the source data's relationships)\nData Fidelity: 0-5 (Evaluates whether every value from the source is preserved accurately, with none dropped or altered)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P172",
+    "category": "Data Transformation",
+    "difficulty": "Medium",
+    "prompt": "Convert this YAML configuration into equivalent JSON:\nserver:\n  port: 8080\n  host: localhost\ndebug: true",
+    "evaluation_criteria": "Structural Correctness: 0-5 (Evaluates whether the output structure correctly represents the source data's relationships)\nData Fidelity: 0-5 (Evaluates whether every value from the source is preserved accurately, with none dropped or altered)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P173",
+    "category": "Data Transformation",
+    "difficulty": "Medium",
+    "prompt": "Convert this list of key-value pairs into a properly formatted Python dictionary literal: name=Eve, role=admin, active=true",
+    "evaluation_criteria": "Structural Correctness: 0-5 (Evaluates whether the output structure correctly represents the source data's relationships)\nData Fidelity: 0-5 (Evaluates whether every value from the source is preserved accurately, with none dropped or altered)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P174",
+    "category": "Data Transformation",
+    "difficulty": "Medium",
+    "prompt": "Convert this SQL table schema into an equivalent JSON Schema definition: CREATE TABLE users (id INT PRIMARY KEY, name VARCHAR(100), age INT)",
+    "evaluation_criteria": "Structural Correctness: 0-5 (Evaluates whether the output structure correctly represents the source data's relationships)\nData Fidelity: 0-5 (Evaluates whether every value from the source is preserved accurately, with none dropped or altered)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P175",
+    "category": "Data Transformation",
+    "difficulty": "Medium",
+    "prompt": "Convert this XML snippet into equivalent JSON:\n<person><name>Frank</name><age>40</age></person>",
+    "evaluation_criteria": "Structural Correctness: 0-5 (Evaluates whether the output structure correctly represents the source data's relationships)\nData Fidelity: 0-5 (Evaluates whether every value from the source is preserved accurately, with none dropped or altered)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P176",
+    "category": "Data Transformation",
+    "difficulty": "Medium",
+    "prompt": "Convert this tab-separated data into a JSON array of objects:\nname\tage\nGrace\t29\nHeidi\t34",
+    "evaluation_criteria": "Structural Correctness: 0-5 (Evaluates whether the output structure correctly represents the source data's relationships)\nData Fidelity: 0-5 (Evaluates whether every value from the source is preserved accurately, with none dropped or altered)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P177",
+    "category": "Summarization",
+    "difficulty": "Easy",
+    "prompt": "Summarize this paragraph in one sentence: 'The company reported strong quarterly earnings, driven by increased demand for its cloud services division. Revenue grew 15% year-over-year, while operating costs remained flat, leading to improved profit margins.'",
+    "evaluation_criteria": "Conciseness Compliance: 0-5 (Evaluates whether the length constraint, if specified, is followed exactly)\nCore Meaning Preservation: 0-5 (Evaluates whether the summary captures the main point of the source text)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P178",
+    "category": "Summarization",
+    "difficulty": "Easy",
+    "prompt": "Summarize this short news blurb in exactly 15 words: 'Local authorities announced a new recycling initiative starting next month, aiming to reduce landfill waste by encouraging residents to sort plastics, glass, and paper separately.'",
+    "evaluation_criteria": "Conciseness Compliance: 0-5 (Evaluates whether the length constraint, if specified, is followed exactly)\nCore Meaning Preservation: 0-5 (Evaluates whether the summary captures the main point of the source text)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P179",
+    "category": "Summarization",
+    "difficulty": "Easy",
+    "prompt": "Summarize this product description in one short sentence: 'This ergonomic office chair features adjustable lumbar support, breathable mesh fabric, and a reclining mechanism, designed for all-day comfort during long work sessions.'",
+    "evaluation_criteria": "Conciseness Compliance: 0-5 (Evaluates whether the length constraint, if specified, is followed exactly)\nCore Meaning Preservation: 0-5 (Evaluates whether the summary captures the main point of the source text)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P180",
+    "category": "Summarization",
+    "difficulty": "Easy",
+    "prompt": "Summarize this email in a single sentence: 'Hi team, just a reminder that the office will be closed Monday for the holiday. Please make sure any urgent client requests are handled before Friday close of business. Thanks!'",
+    "evaluation_criteria": "Conciseness Compliance: 0-5 (Evaluates whether the length constraint, if specified, is followed exactly)\nCore Meaning Preservation: 0-5 (Evaluates whether the summary captures the main point of the source text)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P181",
+    "category": "Summarization",
+    "difficulty": "Easy",
+    "prompt": "Summarize this weather report in one sentence: 'Expect partly cloudy skies today with a high of 75 degrees. Winds will be light from the northwest. There is a slight chance of scattered showers in the evening.'",
+    "evaluation_criteria": "Conciseness Compliance: 0-5 (Evaluates whether the length constraint, if specified, is followed exactly)\nCore Meaning Preservation: 0-5 (Evaluates whether the summary captures the main point of the source text)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P182",
+    "category": "Summarization",
+    "difficulty": "Easy",
+    "prompt": "Summarize this movie plot in two sentences: 'A young inventor discovers a hidden workshop left by her grandfather, filled with unfinished mechanical creations. As she repairs them one by one, she uncovers a family secret that changes how she sees her own future.'",
+    "evaluation_criteria": "Conciseness Compliance: 0-5 (Evaluates whether the length constraint, if specified, is followed exactly)\nCore Meaning Preservation: 0-5 (Evaluates whether the summary captures the main point of the source text)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P183",
+    "category": "Summarization",
+    "difficulty": "Hard",
+    "prompt": "Summarize this dense academic passage into exactly 3 sentences suitable for a high school student, WITHOUT losing the core causal claim, WITHOUT using any of the technical jargon from the original, and ending with a one-clause caveat about the study's limitations: 'The longitudinal cohort study utilized a difference-in-differences methodology to isolate the causal effect of the minimum wage increase on youth employment, controlling for regional economic heterogeneity via fixed effects. Results indicated a statistically significant but economically modest disemployment effect (-2.3%, 95% CI: -4.1% to -0.5%), concentrated primarily among workers under 20 in the retail sector. However, the study's reliance on state-level administrative data limits its ability to detect firm-level heterogeneity in response strategies.'",
+    "evaluation_criteria": "Structural Compliance Score: 0-5 (Evaluates whether the exact requested structure - sentence count, labeled sections, audience level - is followed precisely)\nFidelity Under Constraint Score: 0-5 (Evaluates whether meaning is preserved despite the tight length/format constraints, without fabricating information not in the source)\nNuance Preservation Score: 0-5 (Evaluates whether important caveats, limitations, or competing viewpoints from the source are retained, not flattened away)\nAudience Appropriateness Score: 0-5 (Evaluates whether jargon is correctly translated for the specified target audience)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P184",
+    "category": "Summarization",
+    "difficulty": "Hard",
+    "prompt": "Summarize this contract clause into plain English in exactly 2 sentences, preserving the exact conditions under which the clause applies (do not generalize or omit any trigger condition): 'In the event that the Licensee breaches any material term of this Agreement and fails to cure such breach within fifteen (15) business days following written notice thereof, and provided that such breach is not the result of a Force Majeure Event as defined in Section 9, the Licensor shall have the right, but not the obligation, to terminate this Agreement immediately upon written notice, without prejudice to any other remedies available at law or in equity.'",
+    "evaluation_criteria": "Structural Compliance Score: 0-5 (Evaluates whether the exact requested structure - sentence count, labeled sections, audience level - is followed precisely)\nFidelity Under Constraint Score: 0-5 (Evaluates whether meaning is preserved despite the tight length/format constraints, without fabricating information not in the source)\nNuance Preservation Score: 0-5 (Evaluates whether important caveats, limitations, or competing viewpoints from the source are retained, not flattened away)\nAudience Appropriateness Score: 0-5 (Evaluates whether jargon is correctly translated for the specified target audience)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P185",
+    "category": "Summarization",
+    "difficulty": "Hard",
+    "prompt": "Summarize this incident report into an executive summary of exactly 4 sentences: what happened, root cause, impact, and resolution status - each covered in exactly one sentence and clearly labeled: 'At 14:32 UTC, the payment processing service began returning 503 errors for approximately 12% of requests. Investigation revealed that a recent database migration had introduced a missing index on the transactions table, causing query timeouts under peak load. Approximately 340 customer transactions failed during the 22-minute incident window, with an estimated $18,000 in delayed revenue. The missing index has been added, and monitoring has been enhanced to detect similar query performance regressions before they reach production.'",
+    "evaluation_criteria": "Structural Compliance Score: 0-5 (Evaluates whether the exact requested structure - sentence count, labeled sections, audience level - is followed precisely)\nFidelity Under Constraint Score: 0-5 (Evaluates whether meaning is preserved despite the tight length/format constraints, without fabricating information not in the source)\nNuance Preservation Score: 0-5 (Evaluates whether important caveats, limitations, or competing viewpoints from the source are retained, not flattened away)\nAudience Appropriateness Score: 0-5 (Evaluates whether jargon is correctly translated for the specified target audience)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P186",
+    "category": "Summarization",
+    "difficulty": "Hard",
+    "prompt": "Summarize this multi-stakeholder meeting transcript into a decision log with exactly one entry per DISTINCT decision made (not per speaker turn), noting who owns follow-up for each: 'Alright, let's talk about the vendor contract. I think we should go with Vendor A given the pricing. Sarah: I agree, but we need legal to review the SLA terms first - I'll send that over today. Also, on the office move, we've decided to push it to Q3. Mike will coordinate with facilities. One more thing - we're NOT moving forward with the rebrand this year, budget's too tight. That's final for now.'",
+    "evaluation_criteria": "Structural Compliance Score: 0-5 (Evaluates whether the exact requested structure - sentence count, labeled sections, audience level - is followed precisely)\nFidelity Under Constraint Score: 0-5 (Evaluates whether meaning is preserved despite the tight length/format constraints, without fabricating information not in the source)\nNuance Preservation Score: 0-5 (Evaluates whether important caveats, limitations, or competing viewpoints from the source are retained, not flattened away)\nAudience Appropriateness Score: 0-5 (Evaluates whether jargon is correctly translated for the specified target audience)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P187",
+    "category": "Summarization",
+    "difficulty": "Hard",
+    "prompt": "Summarize this scientific methods section into a single paragraph a journalist could use, explicitly flagging any part of the methodology that limits how strongly the results can be generalized: 'Participants (n=45, convenience sample from a single university) completed a 6-week intervention involving daily 10-minute mindfulness sessions via a mobile app. Self-reported stress levels were measured using the PSS-10 scale at baseline and post-intervention. No control group was used due to resource constraints; instead, a within-subjects pre-post design was employed.'",
+    "evaluation_criteria": "Structural Compliance Score: 0-5 (Evaluates whether the exact requested structure - sentence count, labeled sections, audience level - is followed precisely)\nFidelity Under Constraint Score: 0-5 (Evaluates whether meaning is preserved despite the tight length/format constraints, without fabricating information not in the source)\nNuance Preservation Score: 0-5 (Evaluates whether important caveats, limitations, or competing viewpoints from the source are retained, not flattened away)\nAudience Appropriateness Score: 0-5 (Evaluates whether jargon is correctly translated for the specified target audience)",
+    "max_score": "20",
+    "stochastic_sample": true,
+    "repeat_count": 5
+  },
+  {
+    "id": "P188",
+    "category": "Summarization",
+    "difficulty": "Hard",
+    "prompt": "Summarize this software architecture design doc into a summary for a NON-technical stakeholder audience, explicitly translating each technical term into its business impact (e.g., not just 'reduces latency' but what that means for the user), in exactly 4 sentences: 'The proposed architecture introduces a read-replica database layer to offload query traffic from the primary write instance, reducing p99 latency from 800ms to 150ms. A CDN edge caching layer will be added for static assets, cutting bandwidth costs by an estimated 30%. The migration requires a two-week phased rollout to avoid downtime, using a blue-green deployment strategy.'",
+    "evaluation_criteria": "Structural Compliance Score: 0-5 (Evaluates whether the exact requested structure - sentence count, labeled sections, audience level - is followed precisely)\nFidelity Under Constraint Score: 0-5 (Evaluates whether meaning is preserved despite the tight length/format constraints, without fabricating information not in the source)\nNuance Preservation Score: 0-5 (Evaluates whether important caveats, limitations, or competing viewpoints from the source are retained, not flattened away)\nAudience Appropriateness Score: 0-5 (Evaluates whether jargon is correctly translated for the specified target audience)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P189",
+    "category": "Summarization",
+    "difficulty": "Hard",
+    "prompt": "Summarize this two-sided debate transcript into a balanced summary of exactly 3 sentences: one stating side A's strongest argument, one stating side B's strongest argument, and one stating the actual point of disagreement between them (not just restating both sides): 'Person A: We should definitely adopt the new framework, it's faster and has better community support. Person B: I hear you, but our team has zero experience with it, and the migration cost alone could set us back a full quarter. Person A: Sure, but staying on the old framework means accumulating more technical debt every month we wait. Person B: That's fair, but I'd rather pay down debt gradually than risk a rushed migration breaking production.'",
+    "evaluation_criteria": "Structural Compliance Score: 0-5 (Evaluates whether the exact requested structure - sentence count, labeled sections, audience level - is followed precisely)\nFidelity Under Constraint Score: 0-5 (Evaluates whether meaning is preserved despite the tight length/format constraints, without fabricating information not in the source)\nNuance Preservation Score: 0-5 (Evaluates whether important caveats, limitations, or competing viewpoints from the source are retained, not flattened away)\nAudience Appropriateness Score: 0-5 (Evaluates whether jargon is correctly translated for the specified target audience)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P190",
+    "category": "Summarization",
+    "difficulty": "Hard",
+    "prompt": "Summarize this quarterly business review into an executive summary with EXACTLY three labeled sections (Wins, Challenges, Next Steps), each limited to 2 sentences, using only information explicitly stated in the source (do not infer anything not directly stated): 'Q3 revenue grew 8% quarter-over-quarter, beating our internal forecast of 5%. Customer churn ticked up slightly to 4.2% from 3.8% last quarter, primarily in the SMB segment. The engineering team shipped the long-delayed API v2 release, though it came in three weeks later than originally planned. Leadership has approved additional headcount for customer success in Q4 to address the churn trend.'",
+    "evaluation_criteria": "Structural Compliance Score: 0-5 (Evaluates whether the exact requested structure - sentence count, labeled sections, audience level - is followed precisely)\nFidelity Under Constraint Score: 0-5 (Evaluates whether meaning is preserved despite the tight length/format constraints, without fabricating information not in the source)\nNuance Preservation Score: 0-5 (Evaluates whether important caveats, limitations, or competing viewpoints from the source are retained, not flattened away)\nAudience Appropriateness Score: 0-5 (Evaluates whether jargon is correctly translated for the specified target audience)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P191",
+    "category": "Summarization",
+    "difficulty": "Hard",
+    "prompt": "Summarize this customer support conversation thread into a single internal ticket summary of exactly 3 sentences: the customer's core issue, what was already tried, and what remains unresolved - using neutral, professional language even though the original customer messages are frustrated: 'Customer: This is the THIRD time I'm reaching out about this billing error, I'm so done with this company. Agent: I'm very sorry for the frustration - I can see the previous two tickets, it looks like the refund was processed but reversed due to a system error. Customer: Well it's still not showing up in my account and I need this fixed NOW. Agent: I've escalated this to our billing team, they typically resolve escalations within 48 hours, I'll follow up personally.'",
+    "evaluation_criteria": "Structural Compliance Score: 0-5 (Evaluates whether the exact requested structure - sentence count, labeled sections, audience level - is followed precisely)\nFidelity Under Constraint Score: 0-5 (Evaluates whether meaning is preserved despite the tight length/format constraints, without fabricating information not in the source)\nNuance Preservation Score: 0-5 (Evaluates whether important caveats, limitations, or competing viewpoints from the source are retained, not flattened away)\nAudience Appropriateness Score: 0-5 (Evaluates whether jargon is correctly translated for the specified target audience)",
+    "max_score": "20",
+    "stochastic_sample": true,
+    "repeat_count": 5
+  },
+  {
+    "id": "P192",
+    "category": "Summarization",
+    "difficulty": "Medium",
+    "prompt": "Summarize the following article into exactly 3 bullet points, each under 15 words: 'Remote work has fundamentally changed how companies approach office space. Many organizations have downsized their physical footprint, opting for flexible co-working arrangements instead of long-term leases. Employees report higher satisfaction with flexible schedules, though some managers express concern about team cohesion and spontaneous collaboration. Companies are now experimenting with hybrid models, requiring in-office presence two to three days per week to balance these competing priorities.'",
+    "evaluation_criteria": "Format Compliance: 0-5 (Evaluates whether the specified structure - bullet points, sentence count, audience level - is followed)\nBalanced Coverage: 0-5 (Evaluates whether all key points from the source, including any competing or nuanced ones, are represented)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P193",
+    "category": "Summarization",
+    "difficulty": "Medium",
+    "prompt": "Summarize this technical changelog for a non-technical audience in 2-3 sentences: 'v2.3.0 introduces lazy-loading for the dashboard module, reducing initial page load time by 40%. Fixed a race condition in the websocket reconnection logic that caused duplicate notifications under high latency. Deprecated the legacy /v1/users endpoint in favor of /v2/users, which now supports pagination and field filtering.'",
+    "evaluation_criteria": "Format Compliance: 0-5 (Evaluates whether the specified structure - bullet points, sentence count, audience level - is followed)\nBalanced Coverage: 0-5 (Evaluates whether all key points from the source, including any competing or nuanced ones, are represented)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P194",
+    "category": "Summarization",
+    "difficulty": "Medium",
+    "prompt": "Summarize this customer complaint email while preserving the customer's main concern and desired resolution, in under 40 words: 'I've been a loyal customer for 5 years, and I'm extremely frustrated that my last three orders arrived damaged. I've contacted support twice with no real resolution. I either need a full refund or a guarantee this won't happen again, or I'll be taking my business elsewhere.'",
+    "evaluation_criteria": "Format Compliance: 0-5 (Evaluates whether the specified structure - bullet points, sentence count, audience level - is followed)\nBalanced Coverage: 0-5 (Evaluates whether all key points from the source, including any competing or nuanced ones, are represented)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P195",
+    "category": "Summarization",
+    "difficulty": "Medium",
+    "prompt": "Summarize this research abstract into a single sentence suitable for a general audience: 'This study examined the effects of intermittent fasting on metabolic markers in 200 participants over 12 weeks. Results showed a statistically significant reduction in fasting insulin levels (p<0.01) among the intervention group compared to controls, though no significant difference was observed in body weight.'",
+    "evaluation_criteria": "Format Compliance: 0-5 (Evaluates whether the specified structure - bullet points, sentence count, audience level - is followed)\nBalanced Coverage: 0-5 (Evaluates whether all key points from the source, including any competing or nuanced ones, are represented)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P196",
+    "category": "Summarization",
+    "difficulty": "Medium",
+    "prompt": "Summarize this meeting transcript excerpt into 3 clear action items: 'So I think we all agree the current onboarding flow is too long. Sarah mentioned she'll look into cutting the form fields down. Mike said he can have the new tutorial video ready by next Friday. We also need someone to update the help docs to match - I can take that if no one else wants it.'",
+    "evaluation_criteria": "Format Compliance: 0-5 (Evaluates whether the specified structure - bullet points, sentence count, audience level - is followed)\nBalanced Coverage: 0-5 (Evaluates whether all key points from the source, including any competing or nuanced ones, are represented)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P197",
+    "category": "Summarization",
+    "difficulty": "Medium",
+    "prompt": "Summarize this legal notice into plain language a non-lawyer would understand, in 2 sentences: 'Pursuant to Section 4.2 of the User Agreement, any modifications to the Service that materially diminish core functionality shall entitle the User to terminate this Agreement without penalty, provided written notice is given within thirty (30) days of such modification.'",
+    "evaluation_criteria": "Format Compliance: 0-5 (Evaluates whether the specified structure - bullet points, sentence count, audience level - is followed)\nBalanced Coverage: 0-5 (Evaluates whether all key points from the source, including any competing or nuanced ones, are represented)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P198",
+    "category": "Summarization",
+    "difficulty": "Medium",
+    "prompt": "Summarize this multi-paragraph product review into a single balanced sentence capturing BOTH the positive and negative points: 'The camera quality on this phone is genuinely impressive, especially in low light. However, the battery life leaves a lot to be desired - I'm barely making it through a full day with moderate use. The design feels premium, though the price is definitely on the higher end.'",
+    "evaluation_criteria": "Format Compliance: 0-5 (Evaluates whether the specified structure - bullet points, sentence count, audience level - is followed)\nBalanced Coverage: 0-5 (Evaluates whether all key points from the source, including any competing or nuanced ones, are represented)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P199",
+    "category": "Multilingual Tasks",
+    "difficulty": "Easy",
+    "prompt": "Translate 'Good morning, how are you?' into French.",
+    "evaluation_criteria": "Translation Accuracy: 0-5 (Evaluates whether the translation correctly conveys the original meaning)\nNatural Phrasing: 0-5 (Evaluates whether the translation sounds natural to a native speaker rather than overly literal)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P200",
+    "category": "Multilingual Tasks",
+    "difficulty": "Easy",
+    "prompt": "Translate 'Thank you very much' into Japanese.",
+    "evaluation_criteria": "Translation Accuracy: 0-5 (Evaluates whether the translation correctly conveys the original meaning)\nNatural Phrasing: 0-5 (Evaluates whether the translation sounds natural to a native speaker rather than overly literal)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P201",
+    "category": "Multilingual Tasks",
+    "difficulty": "Easy",
+    "prompt": "Translate 'Where is the nearest train station?' into Spanish.",
+    "evaluation_criteria": "Translation Accuracy: 0-5 (Evaluates whether the translation correctly conveys the original meaning)\nNatural Phrasing: 0-5 (Evaluates whether the translation sounds natural to a native speaker rather than overly literal)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P202",
+    "category": "Multilingual Tasks",
+    "difficulty": "Easy",
+    "prompt": "Translate 'I would like a coffee, please' into German.",
+    "evaluation_criteria": "Translation Accuracy: 0-5 (Evaluates whether the translation correctly conveys the original meaning)\nNatural Phrasing: 0-5 (Evaluates whether the translation sounds natural to a native speaker rather than overly literal)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P203",
+    "category": "Multilingual Tasks",
+    "difficulty": "Easy",
+    "prompt": "Translate 'Happy birthday!' into Italian.",
+    "evaluation_criteria": "Translation Accuracy: 0-5 (Evaluates whether the translation correctly conveys the original meaning)\nNatural Phrasing: 0-5 (Evaluates whether the translation sounds natural to a native speaker rather than overly literal)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P204",
+    "category": "Multilingual Tasks",
+    "difficulty": "Easy",
+    "prompt": "Translate 'See you tomorrow' into Mandarin Chinese.",
+    "evaluation_criteria": "Translation Accuracy: 0-5 (Evaluates whether the translation correctly conveys the original meaning)\nNatural Phrasing: 0-5 (Evaluates whether the translation sounds natural to a native speaker rather than overly literal)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P205",
+    "category": "Multilingual Tasks",
+    "difficulty": "Hard",
+    "prompt": "Translate this paragraph into French, THEN translate your French translation back into English, and compare the back-translation to the original, explicitly noting any meaning that was lost or shifted: 'The committee's decision, while controversial, ultimately reflected a pragmatic compromise between competing stakeholder interests.'",
+    "evaluation_criteria": "Translation Precision Score: 0-5 (Evaluates whether the translation is accurate at the level of precision the task requires - legal, technical, or poetic as specified)\nCultural/Linguistic Adaptation Score: 0-5 (Evaluates whether cultural or structural adaptations, where appropriate, are handled thoughtfully rather than overly literal)\nMeta-Explanation Quality Score: 0-5 (Evaluates whether any requested explanation of translation choices, ambiguity resolution, or back-translation comparison is accurate and insightful)\nRound-Trip/Consistency Score: 0-5 (Evaluates whether any self-comparison, such as back-translation analysis, is performed correctly and honestly, e.g. genuinely identifying meaning loss where it exists)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P206",
+    "category": "Multilingual Tasks",
+    "difficulty": "Hard",
+    "prompt": "Translate this sentence containing a culturally-specific idiom into Japanese, choosing between a literal translation and a culturally-equivalent Japanese idiom, and justify your choice: 'He really let the cat out of the bag at the meeting.'",
+    "evaluation_criteria": "Translation Precision Score: 0-5 (Evaluates whether the translation is accurate at the level of precision the task requires - legal, technical, or poetic as specified)\nCultural/Linguistic Adaptation Score: 0-5 (Evaluates whether cultural or structural adaptations, where appropriate, are handled thoughtfully rather than overly literal)\nMeta-Explanation Quality Score: 0-5 (Evaluates whether any requested explanation of translation choices, ambiguity resolution, or back-translation comparison is accurate and insightful)\nRound-Trip/Consistency Score: 0-5 (Evaluates whether any self-comparison, such as back-translation analysis, is performed correctly and honestly, e.g. genuinely identifying meaning loss where it exists)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P207",
+    "category": "Multilingual Tasks",
+    "difficulty": "Hard",
+    "prompt": "Translate this legal disclaimer into Spanish with the precision required for a legal document (no paraphrasing, no simplification), then flag any term where a direct legal equivalent may not exist in Spanish-speaking jurisdictions: 'This agreement shall be governed by and construed in accordance with the laws of the State of Delaware, without regard to its conflict of law principles.'",
+    "evaluation_criteria": "Translation Precision Score: 0-5 (Evaluates whether the translation is accurate at the level of precision the task requires - legal, technical, or poetic as specified)\nCultural/Linguistic Adaptation Score: 0-5 (Evaluates whether cultural or structural adaptations, where appropriate, are handled thoughtfully rather than overly literal)\nMeta-Explanation Quality Score: 0-5 (Evaluates whether any requested explanation of translation choices, ambiguity resolution, or back-translation comparison is accurate and insightful)\nRound-Trip/Consistency Score: 0-5 (Evaluates whether any self-comparison, such as back-translation analysis, is performed correctly and honestly, e.g. genuinely identifying meaning loss where it exists)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P208",
+    "category": "Multilingual Tasks",
+    "difficulty": "Hard",
+    "prompt": "Translate this marketing slogan into German AND into Mandarin Chinese, explaining for EACH language one adaptation you made for cultural resonance rather than literal accuracy: 'Just do it - unleash your inner champion.'",
+    "evaluation_criteria": "Translation Precision Score: 0-5 (Evaluates whether the translation is accurate at the level of precision the task requires - legal, technical, or poetic as specified)\nCultural/Linguistic Adaptation Score: 0-5 (Evaluates whether cultural or structural adaptations, where appropriate, are handled thoughtfully rather than overly literal)\nMeta-Explanation Quality Score: 0-5 (Evaluates whether any requested explanation of translation choices, ambiguity resolution, or back-translation comparison is accurate and insightful)\nRound-Trip/Consistency Score: 0-5 (Evaluates whether any self-comparison, such as back-translation analysis, is performed correctly and honestly, e.g. genuinely identifying meaning loss where it exists)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P209",
+    "category": "Multilingual Tasks",
+    "difficulty": "Hard",
+    "prompt": "Translate this technical error message into French, preserving enough precision that a developer could still debug the issue from the translated text alone: 'NullPointerException: Cannot invoke method on null object reference at line 245 in UserAuthHandler.java'",
+    "evaluation_criteria": "Translation Precision Score: 0-5 (Evaluates whether the translation is accurate at the level of precision the task requires - legal, technical, or poetic as specified)\nCultural/Linguistic Adaptation Score: 0-5 (Evaluates whether cultural or structural adaptations, where appropriate, are handled thoughtfully rather than overly literal)\nMeta-Explanation Quality Score: 0-5 (Evaluates whether any requested explanation of translation choices, ambiguity resolution, or back-translation comparison is accurate and insightful)\nRound-Trip/Consistency Score: 0-5 (Evaluates whether any self-comparison, such as back-translation analysis, is performed correctly and honestly, e.g. genuinely identifying meaning loss where it exists)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P210",
+    "category": "Multilingual Tasks",
+    "difficulty": "Hard",
+    "prompt": "Translate this sentence from English into Arabic, and explain how you handled the change in sentence structure given Arabic's different word order conventions: 'The report that was submitted yesterday by the finance team contains several errors that need to be corrected before the board meeting.'",
+    "evaluation_criteria": "Translation Precision Score: 0-5 (Evaluates whether the translation is accurate at the level of precision the task requires - legal, technical, or poetic as specified)\nCultural/Linguistic Adaptation Score: 0-5 (Evaluates whether cultural or structural adaptations, where appropriate, are handled thoughtfully rather than overly literal)\nMeta-Explanation Quality Score: 0-5 (Evaluates whether any requested explanation of translation choices, ambiguity resolution, or back-translation comparison is accurate and insightful)\nRound-Trip/Consistency Score: 0-5 (Evaluates whether any self-comparison, such as back-translation analysis, is performed correctly and honestly, e.g. genuinely identifying meaning loss where it exists)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P211",
+    "category": "Multilingual Tasks",
+    "difficulty": "Hard",
+    "prompt": "Translate this poem excerpt into Spanish, prioritizing preserving the rhythm and emotional tone over literal word-for-word accuracy, and briefly explain one place where you deviated from literal translation to preserve the poetic effect: 'The quiet hum of evening falls, soft shadows stretch along the walls.'",
+    "evaluation_criteria": "Translation Precision Score: 0-5 (Evaluates whether the translation is accurate at the level of precision the task requires - legal, technical, or poetic as specified)\nCultural/Linguistic Adaptation Score: 0-5 (Evaluates whether cultural or structural adaptations, where appropriate, are handled thoughtfully rather than overly literal)\nMeta-Explanation Quality Score: 0-5 (Evaluates whether any requested explanation of translation choices, ambiguity resolution, or back-translation comparison is accurate and insightful)\nRound-Trip/Consistency Score: 0-5 (Evaluates whether any self-comparison, such as back-translation analysis, is performed correctly and honestly, e.g. genuinely identifying meaning loss where it exists)",
+    "max_score": "20",
+    "stochastic_sample": true,
+    "repeat_count": 5
+  },
+  {
+    "id": "P212",
+    "category": "Multilingual Tasks",
+    "difficulty": "Hard",
+    "prompt": "Translate this sentence into Korean using appropriately formal honorifics for addressing a senior business executive, and explain what would change in your translation if the audience were a close friend instead: 'We would be honored if you could join us for the opening ceremony next month.'",
+    "evaluation_criteria": "Translation Precision Score: 0-5 (Evaluates whether the translation is accurate at the level of precision the task requires - legal, technical, or poetic as specified)\nCultural/Linguistic Adaptation Score: 0-5 (Evaluates whether cultural or structural adaptations, where appropriate, are handled thoughtfully rather than overly literal)\nMeta-Explanation Quality Score: 0-5 (Evaluates whether any requested explanation of translation choices, ambiguity resolution, or back-translation comparison is accurate and insightful)\nRound-Trip/Consistency Score: 0-5 (Evaluates whether any self-comparison, such as back-translation analysis, is performed correctly and honestly, e.g. genuinely identifying meaning loss where it exists)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P213",
+    "category": "Multilingual Tasks",
+    "difficulty": "Hard",
+    "prompt": "Translate this ambiguous English sentence into French in a way that resolves the ambiguity, and explicitly state which interpretation you chose and why: 'I saw the man with the telescope.'",
+    "evaluation_criteria": "Translation Precision Score: 0-5 (Evaluates whether the translation is accurate at the level of precision the task requires - legal, technical, or poetic as specified)\nCultural/Linguistic Adaptation Score: 0-5 (Evaluates whether cultural or structural adaptations, where appropriate, are handled thoughtfully rather than overly literal)\nMeta-Explanation Quality Score: 0-5 (Evaluates whether any requested explanation of translation choices, ambiguity resolution, or back-translation comparison is accurate and insightful)\nRound-Trip/Consistency Score: 0-5 (Evaluates whether any self-comparison, such as back-translation analysis, is performed correctly and honestly, e.g. genuinely identifying meaning loss where it exists)",
+    "max_score": "20",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P214",
+    "category": "Multilingual Tasks",
+    "difficulty": "Medium",
+    "prompt": "Translate this short paragraph into French, preserving the polite/formal tone: 'We are pleased to inform you that your application has been approved. Please contact our office at your earliest convenience to complete the remaining paperwork.'",
+    "evaluation_criteria": "Tone/Register Accuracy: 0-5 (Evaluates whether formality level, politeness, or professional register is correctly preserved)\nLinguistic Explanation Quality: 0-5 (Evaluates whether any requested explanation of translation choices is accurate and clear)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P215",
+    "category": "Multilingual Tasks",
+    "difficulty": "Medium",
+    "prompt": "Translate this sentence into Spanish AND explain one idiom or phrase in your translation that doesn't translate literally: 'It's raining cats and dogs outside, so let's stay in tonight.'",
+    "evaluation_criteria": "Tone/Register Accuracy: 0-5 (Evaluates whether formality level, politeness, or professional register is correctly preserved)\nLinguistic Explanation Quality: 0-5 (Evaluates whether any requested explanation of translation choices is accurate and clear)",
+    "max_score": "10",
+    "stochastic_sample": true,
+    "repeat_count": 5
+  },
+  {
+    "id": "P216",
+    "category": "Multilingual Tasks",
+    "difficulty": "Medium",
+    "prompt": "Translate this business email into German, maintaining professional register throughout: 'Following our call yesterday, I wanted to confirm the revised delivery timeline and outline the next steps for both teams.'",
+    "evaluation_criteria": "Tone/Register Accuracy: 0-5 (Evaluates whether formality level, politeness, or professional register is correctly preserved)\nLinguistic Explanation Quality: 0-5 (Evaluates whether any requested explanation of translation choices is accurate and clear)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P217",
+    "category": "Multilingual Tasks",
+    "difficulty": "Medium",
+    "prompt": "Translate this sentence into Japanese, and note any difference in politeness level you had to choose between: 'Could you please send me the report by Friday?'",
+    "evaluation_criteria": "Tone/Register Accuracy: 0-5 (Evaluates whether formality level, politeness, or professional register is correctly preserved)\nLinguistic Explanation Quality: 0-5 (Evaluates whether any requested explanation of translation choices is accurate and clear)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P218",
+    "category": "Multilingual Tasks",
+    "difficulty": "Medium",
+    "prompt": "Translate this product description into Portuguese, keeping any brand names untranslated: 'The UltraClean Pro vacuum features a HEPA filter and a 45-minute battery life.'",
+    "evaluation_criteria": "Tone/Register Accuracy: 0-5 (Evaluates whether formality level, politeness, or professional register is correctly preserved)\nLinguistic Explanation Quality: 0-5 (Evaluates whether any requested explanation of translation choices is accurate and clear)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P219",
+    "category": "Multilingual Tasks",
+    "difficulty": "Medium",
+    "prompt": "Translate this sentence into Korean, and explain why you chose formal or informal speech level: 'Hey, are you free this weekend?'",
+    "evaluation_criteria": "Tone/Register Accuracy: 0-5 (Evaluates whether formality level, politeness, or professional register is correctly preserved)\nLinguistic Explanation Quality: 0-5 (Evaluates whether any requested explanation of translation choices is accurate and clear)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  },
+  {
+    "id": "P220",
+    "category": "Multilingual Tasks",
+    "difficulty": "Medium",
+    "prompt": "Translate this short recipe instruction into Italian, keeping measurements in their original units: 'Add 2 cups of flour and mix until smooth.'",
+    "evaluation_criteria": "Tone/Register Accuracy: 0-5 (Evaluates whether formality level, politeness, or professional register is correctly preserved)\nLinguistic Explanation Quality: 0-5 (Evaluates whether any requested explanation of translation choices is accurate and clear)",
+    "max_score": "10",
+    "stochastic_sample": false,
+    "repeat_count": 1
+  }
+]
