@@ -1,0 +1,18 @@
+{
+  "id": "P026",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Easy",
+  "prompt": "A rectangular data center room measures 12 meters by 8 meters. Server racks take up 40% of the floor space. If each server rack requires a minimum clearance zone equal to 25% of its own footprint, calculate the remaining usable floor space in square meters.",
+  "evaluation_criteria": "Area Calculation: 0-5 (Evaluates total area and rack space computation)\nClearance Logic: 0-5 (Evaluates correct application of clearance factor)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "**Step‑by‑step calculation**\n\n| Item | Calculation | Result |\n|------|-------------|--------|\n| Total floor area of the room | \\(12 \\text{ m} \\times 8 \\text{ m}\\) | \\(96 \\text{ m}^2\\) |\n| Area occupied by the server racks | \\(40\\% \\times 96 \\text{ m}^2\\) | \\(0.40 \\times 96 = 38.4 \\text{ m}^2\\) |\n| Clearance zone required (25 % of rack footprint) | \\(25\\% \\times 38.4 \\text{ m}^2\\) | \\(0.25 \\times 38.4 = 9.6 \\text{ m}^2\\) |\n| Total area taken up (racks + clearance) | \\(38.4 \\text{ m}^2 + 9.6 \\text{ m}^2\\) | \\(48.0 \\text{ m}^2\\) |\n| Remaining usable floor space | \\(96 \\text{ m}^2 - 48.0 \\text{ m}^2\\) | **48 m²** |\n\n**Answer:** The remaining usable floor space in the data‑center room is **48 square meters**.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 3.6026,
+  "timestamp_utc": "2026-08-20T10:13:45.456804+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

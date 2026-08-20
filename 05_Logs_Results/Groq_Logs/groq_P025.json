@@ -1,0 +1,18 @@
+{
+  "id": "P025",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Easy",
+  "prompt": "A storage tank is being filled by a pipe at a rate of 15 liters per minute while a leak drains it at 4 liters per minute. If the tank currently holds 200 liters and its capacity is 500 liters, calculate how many minutes it will take to reach full capacity.",
+  "evaluation_criteria": "Net Rate Calculation: 0-5 (Evaluates correct net fill rate computation)\nTime To Capacity: 0-5 (Evaluates correct division of remaining volume by net rate)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "The net rate at which the tank is gaining water is the difference between the inflow and the leak:\n\n\\[\n\\text{Net rate} = 15\\ \\text{L/min} - 4\\ \\text{L/min} = 11\\ \\text{L/min}.\n\\]\n\nThe tank currently holds \\(200\\) L and must reach its capacity of \\(500\\) L, so it needs:\n\n\\[\n500\\ \\text{L} - 200\\ \\text{L} = 300\\ \\text{L}\n\\]\n\nmore water.\n\nTime required:\n\n\\[\n\\text{Time} = \\frac{\\text{Volume needed}}{\\text{Net rate}} = \\frac{300\\ \\text{L}}{11\\ \\text{L/min}} \\approx 27.27\\ \\text{minutes}.\n\\]\n\n**Result:** It will take about **27.3 minutes** (≈ 27 minutes 16 seconds) for the tank to become full.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 3.1409,
+  "timestamp_utc": "2026-08-20T10:13:41.844485+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}
