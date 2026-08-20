@@ -1,0 +1,18 @@
+{
+  "id": "P005",
+  "category": "Knowledge Retrieval",
+  "difficulty": "Easy",
+  "prompt": "Define symmetric and asymmetric encryption and name one standard algorithm for each.",
+  "evaluation_criteria": "Algorithm Precision: 0-5 (Evaluates AES/RSA correct assignment)\nKey Management Clarity: 0-5 (Evaluates single vs public/private key handling)",
+  "max_score": "10",
+  "model": "mistral",
+  "response_text": "### **Symmetric Encryption**\n**Definition:**\nSymmetric encryption uses the **same key** for both **encryption** and **decryption**. It is fast and efficient for bulk data but requires secure key distribution.\n\n**Standard Algorithm:**\n- **AES (Advanced Encryption Standard)** – A widely used symmetric cipher (e.g., AES-256).\n\n---\n\n### **Asymmetric Encryption**\n**Definition:**\nAsymmetric encryption uses **two different keys**:\n- **Public Key** (for encryption)\n- **Private Key** (for decryption)\n\nIt is slower than symmetric encryption but solves the key distribution problem securely.\n\n**Standard Algorithm:**\n- **RSA (Rivest-Shamir-Adleman)** – A popular asymmetric encryption algorithm.\n\n---\nBoth methods are often used together in **hybrid encryption** (e.g., RSA for key exchange + AES for bulk data).",
+  "raw": {
+    "model": "open-mistral-nemo"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 2.2713,
+  "timestamp_utc": "2026-08-20T09:11:54.004591+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}
