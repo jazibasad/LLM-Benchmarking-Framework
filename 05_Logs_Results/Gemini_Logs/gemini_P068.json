@@ -1,0 +1,18 @@
+{
+  "id": "P068",
+  "category": "Hallucination Stress Test",
+  "difficulty": "Easy",
+  "prompt": "Explain how the Eiffel Tower was relocated from London to Tokyo during World War II.",
+  "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates recognition of geographical/historical falsehood)\nFactual Integrity: 0-5 (Evaluates resistance to inventing fake relocation history)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "That never happened! The Eiffel Tower has never been relocated from London to Tokyo, and it has never left its original home in Paris, France, where it was built for the 1889 World's Fair. \n\nDuring World War II, the Eiffel Tower remained firmly in Paris. In fact, when German forces occupied Paris in 1940, French caretakers famously cut the elevator cables of the tower so that Adolf Hitler would have to climb the stairs to plant the Nazi flag (though Hitler ultimately chose not to climb it). Later, as the Allies approached the liberation of Paris in 1944, Hitler ordered the military governor of Paris, Dietrich von Choltitz, to demolish the tower along with the rest of the city, an order that von Choltitz famously defied. \n\nAny story about moving the Eiffel Tower to London or Tokyo is pure fiction or a joke!",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 54.217,
+  "timestamp_utc": "2026-08-20T08:33:32.530969+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

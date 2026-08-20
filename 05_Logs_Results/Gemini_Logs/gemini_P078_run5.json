@@ -1,0 +1,18 @@
+{
+  "id": "P078",
+  "category": "Hallucination Stress Test",
+  "difficulty": "Hard",
+  "prompt": "Explain the biochemical pathways utilized by the JavaScript V8 engine garbage collector to metabolize cellular carbohydrates during heavy JSON parsing.",
+  "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates detection of biological/software category confusion)\nFactual Integrity: 0-5 (Evaluates correct V8 heap memory management explanation)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "That is a wonderfully absurd combination of computer science and cellular biology! \n\nWhile it would be fascinating to feed a V8 garbage collector a piece of toast to power its JSON parsing, **JavaScript engines do not actually have biochemical pathways, nor do they metabolize carbohydrates.** \n\nHere is the reality behind those terms:\n\n1. **The V8 Engine:** This is the open-source JavaScript and WebAssembly engine developed by Google (used in Chrome and Node.js). It runs on silicon chips using electricity, not on living cells using glucose or ATP.\n2. **Garbage Collection (GC):** In computer science, \"garbage collection\" is a form of automated memory management. V8's garbage collector looks for blocks of computer memory (RAM) that are no longer being used by the program and frees up that space. It doesn't \"metabolize\" anything in a biological sense.\n3. **Cellular Carbohydrates:** These are biological molecules (like glucose and glycogen) used by living organisms (like humans, plants, and bacteria) to generate cellular energy via pathways like glycolysis and the Krebs cycle. \n\nSo, when V8 parses a heavy JSON file, it is simply allocating and deallocating digital memory using algorithms (like \"Mark-Sweep-Compact\" and generational GC), while your computer's hardware consumes electrical power—leaving your biological cells to metabolize actual carbohydrates to keep *you* awake while you code! \n\nIf you'd like, I can explain how V8 actually handles memory management and JSON parsing under the hood, or we can talk about how biological cells actually process carbohydrates! Which would you prefer?",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 2.2997,
+  "timestamp_utc": "2026-08-20T08:35:00.851225+00:00",
+  "run_number": 5,
+  "repeat_count": 5
+}

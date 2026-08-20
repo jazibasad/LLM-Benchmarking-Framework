@@ -1,0 +1,18 @@
+{
+  "id": "P065",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Provide a brief description of object-oriented polymorphism. NEGATIVE CONSTRAINT 1: Do not use verbs. NEGATIVE CONSTRAINT 2: Format as a semicolon-delimited single line.",
+  "evaluation_criteria": "No Verbs: 0-5 (Evaluates noun/adjective phrase structure)\nSemicolon Format: 0-5 (Evaluates single line semicolon layout)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "Same interface; multiple underlying types; interchangeable execution; dynamic behavior selection.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.9104,
+  "timestamp_utc": "2026-08-20T08:31:21.507204+00:00",
+  "run_number": 1,
+  "repeat_count": 5
+}

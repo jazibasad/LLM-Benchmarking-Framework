@@ -1,0 +1,18 @@
+{
+  "id": "P060",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Explain the concept of encapsulation in object-oriented programming. NEGATIVE CONSTRAINT 1: Do not use the words 'data', 'hide', or 'class'. NEGATIVE CONSTRAINT 2: Format the output as a Markdown table with two columns: 'Concept' and 'Description'.",
+  "evaluation_criteria": "Negative Constraints: 0-5 (Evaluates avoidance of forbidden words)\nMarkdown Table: 0-5 (Evaluates precise table formatting)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "| Concept | Description | |---|---| | Encapsulation | The bundling of variables and methods within a single structural unit to restrict direct external access to internal states and behaviors. |",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.8814,
+  "timestamp_utc": "2026-08-20T08:30:58.974490+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

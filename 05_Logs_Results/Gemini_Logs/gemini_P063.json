@@ -1,0 +1,18 @@
+{
+  "id": "P063",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Detail the purpose of software unit testing. NEGATIVE CONSTRAINT 1: Do not use the words 'code', 'test', or 'bug'. NEGATIVE CONSTRAINT 2: Exactly two paragraphs.",
+  "evaluation_criteria": "Forbidden Words: 0-5 (Evaluates avoidance of code, test, bug)\nParagraph Count: 0-5 (Evaluates exact two paragraphs)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "Software unit verification serves the critical purpose of isolating individual components within a digital architecture to ensure they function precisely as designed. By evaluating these distinct modules independently long before system integration, developers can systematically confirm that foundational logic executes without errors. This proactive methodology establishes a reliable baseline of operational correctness, making future expansions and modifications significantly more manageable and robust.\n\nFurthermore, executing these isolated examinations dramatically enhances long-term software maintainability and streamlines the diagnostic workflow. When a functional failure eventually arises, having a comprehensive suite of verified components allows engineers to quickly pinpoint the exact source of the anomaly rather than searching blindly across an entire program. Ultimately, this disciplined approach reduces deployment risks and fosters greater confidence in the overall stability of the digital product.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.496,
+  "timestamp_utc": "2026-08-20T08:31:13.091268+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

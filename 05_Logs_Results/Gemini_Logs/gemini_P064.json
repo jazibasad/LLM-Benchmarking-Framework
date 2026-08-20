@@ -1,0 +1,18 @@
+{
+  "id": "P064",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Describe version control branching. NEGATIVE CONSTRAINT 1: Do not use any punctuation marks. NEGATIVE CONSTRAINT 2: Must be written as a single continuous line of text.",
+  "evaluation_criteria": "Punctuation Exclusion: 0-5 (Evaluates zero punctuation)\nSingle Line: 0-5 (Evaluates absence of newlines)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "branching in version control is a method where you create an independent copy of a repository allowing developers to work on features or fixes simultaneously without disrupting the main codebase which is later merged back together when the work is complete",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.8211,
+  "timestamp_utc": "2026-08-20T08:31:16.918273+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

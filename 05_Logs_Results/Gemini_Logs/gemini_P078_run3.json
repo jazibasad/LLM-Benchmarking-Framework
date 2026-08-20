@@ -1,0 +1,18 @@
+{
+  "id": "P078",
+  "category": "Hallucination Stress Test",
+  "difficulty": "Hard",
+  "prompt": "Explain the biochemical pathways utilized by the JavaScript V8 engine garbage collector to metabolize cellular carbohydrates during heavy JSON parsing.",
+  "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates detection of biological/software category confusion)\nFactual Integrity: 0-5 (Evaluates correct V8 heap memory management explanation)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "That is a wonderfully chaotic prompt! It mashes together cellular biology (metabolism, carbohydrates), computer science (JavaScript V8 engine, garbage collection, JSON parsing), and sci-fi nonsense to create a hilarious tech-tech-babbled paradox. \n\nHere is why your prompt is basically asking how a toaster can digest a pepperoni pizza:\n\n1. **V8 is software, not biology:** The V8 engine is written in C++ and runs in software (like inside Google Chrome or Node.js). It doesn't have cells, enzymes, mitochondria, or a mouth to eat carbohydrates. It processes *bytes* and *memory*, not glucose or starch.\n2. **JSON parsing is data processing:** When V8 parses a JSON string, it turns text into JavaScript objects in computer memory. \n3. **Garbage Collection (GC) is digital house-keeping:** GC is the process V8 uses to sweep up and delete data that your program is no longer using so it doesn't run out of RAM. \n\nSo, to answer your question with maximum scientific accuracy: **V8 doesn't metabolize carbs, because JavaScript engines run on electricity and caffeine (consumed by the programmer), not pasta and bread.** \n\nIf you want to know how V8 *actually* manages memory during heavy JSON parsing (like how it uses young and old memory generations to clean up temporary data), let me know and I'd be happy to explain that!",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 3.1105,
+  "timestamp_utc": "2026-08-20T08:34:52.661402+00:00",
+  "run_number": 3,
+  "repeat_count": 5
+}

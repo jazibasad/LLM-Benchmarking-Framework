@@ -1,0 +1,18 @@
+{
+  "id": "P090",
+  "category": "Coding & System Architecture",
+  "difficulty": "Easy",
+  "prompt": "Write a C# method that takes a list of integers and returns the second highest number without using built-in sorting functions.",
+  "evaluation_criteria": "Algorithmic Correctness: 0-5 (Evaluates correct single-pass or tracked max logic)\nSyntax Cleanliness: 0-5 (Evaluates proper C# syntax)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "Here is an efficient C# method that finds the second highest number in a list of integers in a single pass ($O(n)$ time complexity) without using any built-in sorting functions.\n\n```csharp\nusing System;\nusing System.Collections.Generic;\n\npublic class Program\n{\n    public static int? GetSecondHighest(List<int> numbers)\n    {\n        // Handle edge cases where there are fewer than 2 numbers\n        if (numbers == null || numbers.Count < 2)\n        {\n            return null; \n        }\n\n        int highest = int.MinValue;\n        int secondHighest = int.MinValue;\n\n        foreach (int num in numbers)\n        {\n            if (num > highest)\n            {\n                // The current highest becomes the second highest,\n                // and the current number becomes the new highest.\n                secondHighest = highest;\n                highest = num;\n            }\n            else if (num > secondHighest && num != highest)\n            {\n                // The current number is greater than the second highest\n                // but not equal to the highest (handles duplicates).\n                secondHighest = num;\n            }\n        }\n\n        // If secondHighest was never updated (e.g., all numbers in the list are identical),\n        // we return null to indicate no valid second highest exists.\n        if (secondHighest == int.MinValue)\n        {\n            return null;\n        }\n\n        return secondHighest;\n    }\n\n    public static void Main()\n    {\n        List<int> nums = new List<int> { 10, 5, 20, 8, 20, 3 };\n        \n        int? result = GetSecondHighest(nums);\n        \n        if (result.HasValue)\n        {\n            Console.WriteLine($\"The second highest number is: {result.Value}\"); // Output: 10\n        }\n        else\n        {\n            Console.WriteLine(\"There is no second highest number.\");\n        }\n    }\n}\n```\n\n### How it works:\n1. **Edge Case Check**: It first checks if the list is `null` or contains fewer than 2 elements, returning `null` if so.\n2. **Tracking Variables**: It uses two variables, `highest` and `secondHighest`, initialized to `int.MinValue`.\n3. **Iteration**: It loops through the list only once:\n   * If the current number is greater than `highest`, the old `highest` value is pushed down to `secondHighest`, and `highest` is updated.\n   * If the current number is strictly between `secondHighest` and `highest`, only `secondHighest` is updated. The `num != highest` check ensures we correctly handle duplicate maximum values (e.g., in `{10, 20, 20}`, the second highest is `10`, not `20`).\n4. **Return**: It returns the `secondHighest`. If all numbers in the list are identical, `secondHighest` will remain `int.MinValue`, and the method returns `null`.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 5.3122,
+  "timestamp_utc": "2026-08-20T08:36:24.309166+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

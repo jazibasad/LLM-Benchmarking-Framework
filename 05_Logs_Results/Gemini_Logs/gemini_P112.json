@@ -1,0 +1,18 @@
+{
+  "id": "P112",
+  "category": "Ambiguity Handling",
+  "difficulty": "Easy",
+  "prompt": "How long should a meeting be?",
+  "evaluation_criteria": "Clarification Recognition: 0-5 (Evaluates whether the response recognizes the question lacks necessary context)\nHelpful Framing: 0-5 (Evaluates whether the response offers a reasonable default or asks a clarifying question rather than guessing confidently)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "As a general rule of thumb, **most meetings should be 15 to 30 minutes long.** \n\nHowever, the \"right\" length depends entirely on the purpose of the meeting. Here is a breakdown of ideal meeting lengths based on common types:\n\n### 1. 15 Minutes: The Quick Sync\n* **Best for:** Daily stand-ups, quick status updates, unblocking a teammate, or rapid decision-making between two to four people.\n* **Why:** It forces people to get straight to the point without wasting time on small talk.\n\n### 2. 30 Minutes: The Standard Business Meeting\n* **Best for:** 1-on-1s, project kickoffs, reviewing a specific report, or discussing a single well-defined problem.\n* **Why:** This is the sweet spot for modern business. It’s long enough to dive into details, but short enough to maintain focus and leave buffer time before the next task.\n\n### 3. 45–50 Minutes: The \"Deep Dive\" (Alternative to 60 mins)\n* **Best for:** Complex problem-solving, team retrospectives, or collaborative brainstorming.\n* **Why:** **Pro-tip:** If you must schedule a 60-minute meeting, make it 45 or 50 minutes instead. This gives participants a 10-to-15-minute mental break to use the restroom, grab water, or transition to their next meeting without being late. \n\n### 4. 60+ Minutes: The Exception, Not the Rule\n* **Best for:** Workshops, strategic planning sessions, all-hands meetings, or interviews.\n* **Why:** Human attention spans drop drastically after 45–50 minutes. If a meeting *must* go for an hour or more, you **must** include a mandatory 5-minute break halfway through.\n\n---\n\n### 3 Golden Rules for Perfect Meeting Lengths\n\n1. **Parkinson’s Law applies to meetings:** Work expands to fill the time allotted to it. If you schedule an hour for a topic that takes 20 minutes, people will talk for an hour just to fill the time. **Default your calendar invites to 25 or 50 minutes** instead of 30 or 60.\n2. **Set an agenda and stick to it:** If you cover all your bullet points in 12 minutes, **end the meeting early.** Your team will love you for giving them back their time.\n3. **Audit your recurring meetings:** If a 30-minute weekly meeting consistently ends in 15 minutes, formally shorten it on the calendar.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 3.0661,
+  "timestamp_utc": "2026-08-20T08:40:13.481236+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

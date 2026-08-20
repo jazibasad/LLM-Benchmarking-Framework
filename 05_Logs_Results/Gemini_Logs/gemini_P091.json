@@ -1,0 +1,18 @@
+{
+  "id": "P091",
+  "category": "Coding & System Architecture",
+  "difficulty": "Easy",
+  "prompt": "Write a Python script to parse a JSON configuration file, handle missing file exceptions gracefully, and print a specific key value.",
+  "evaluation_criteria": "Exception Handling: 0-5 (Evaluates try-except block correctness)\nJson Parsing: 0-5 (Evaluates correct json module usage)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "Here is a complete Python script that reads a JSON configuration file, handles the case where the file is missing (or invalid), and safely retrieves a specific key value.\n\n### Prerequisites\nCreate a sample configuration file named `config.json` in the same directory as your script:\n```json\n{\n    \"app_name\": \"MyAwesomeApp\",\n    \"version\": \"1.0.0\",\n    \"database\": {\n        \"host\": \"localhost\",\n        \"port\": 5432\n    }\n}\n```\n\n### Python Script (`parse_config.py`)\n\n```python\nimport json\nimport sys\n\n\ndef load_config(file_path):\n    \"\"\"Loads a JSON configuration file with error handling.\"\"\"\n    try:\n        with open(file_path, \"r\") as file:\n            config_data = json.load(file)\n            return config_data\n\n    except FileNotFoundError:\n        print(\n            f\"Error: The configuration file '{file_path}' was not found.\",\n            file=sys.stderr,\n        )\n        return None\n\n    except json.JSONDecodeError:\n        print(\n            f\"Error: The file '{file_path}' is not a valid JSON.\",\n            file=sys.stderr,\n        )\n        return None\n\n\ndef main():\n    config_file = \"config.json\"\n    target_key = \"app_name\"  # The specific key you want to print\n\n    # 1. Load the configuration\n    config = load_config(config_file)\n\n    # Exit if loading failed\n    if config is None:\n        sys.exit(1)\n\n    # 2. Print the specific key value safely\n    # Using .get() prevents KeyError if the key doesn't exist in the JSON\n    value = config.get(target_key)\n\n    if value is not None:\n        print(f\"The value for '{target_key}' is: {value}\")\n    else:\n        print(f\"Notice: Key '{target_key}' not found in the configuration.\")\n\n\nif __name__ == \"__main__\":\n    main()\n```\n\n### Key Features of this Script:\n1. **`FileNotFoundError` Handling:** Catches the exception if `config.json` doesn't exist and prints a user-friendly error message to `stderr`.\n2. **`json.JSONDecodeError` Handling:** Also handles cases where the file exists, but the JSON syntax is broken.\n3. **Safe Key Retrieval (`.get()`):** Using `config.get('key')` instead of `config['key']` prevents the script from crashing with a `KeyError` if the specific key happens to be missing inside a valid JSON file.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 2.453,
+  "timestamp_utc": "2026-08-20T08:36:26.769480+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

@@ -1,0 +1,18 @@
+{
+  "id": "P062",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Explain how a hash function works. NEGATIVE CONSTRAINT 1: Do not use the words 'hash', 'key', or 'map'. NEGATIVE CONSTRAINT 2: Format as an XML snippet with root tag <explanation>.",
+  "evaluation_criteria": "Forbidden Words: 0-5 (Evaluates absence of hash, key, map)\nXml Formatting: 0-5 (Evaluates valid XML tags)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "<explanation>\n<process>\nA cryptographic mixer accepts digital information of any size, whether a single sentence or an entire encyclopedia. This machine processes the input data through a series of mathematical operations, including bitwise rotations and substitutions, to thoroughly scramble the original values. Regardless of whether the starting text is short or long, the device always yields a fixed-size string of characters as its output. This resulting signature acts as a unique digital fingerprint for that specific input. Even if a single character in the source material changes, the final generated token alters drastically, making it impossible to reverse-engineer the original content solely by inspecting the final output.\n</process>\n</explanation>",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.512,
+  "timestamp_utc": "2026-08-20T08:31:08.606707+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

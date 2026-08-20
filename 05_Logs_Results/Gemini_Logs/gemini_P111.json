@@ -1,0 +1,18 @@
+{
+  "id": "P111",
+  "category": "Ambiguity Handling",
+  "difficulty": "Easy",
+  "prompt": "What's the best programming language?",
+  "evaluation_criteria": "Clarification Recognition: 0-5 (Evaluates whether the response recognizes the question lacks necessary context)\nHelpful Framing: 0-5 (Evaluates whether the response offers a reasonable default or asks a clarifying question rather than guessing confidently)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "The short answer is: **There is no single \"best\" programming language.** \n\nThe best language is entirely dependent on **what you are trying to build**, your personal background, and the ecosystem you want to work in. \n\nInstead of a single best language, here is the \"best\" language depending on your goal:\n\n### 1. If you want to get a job quickly / Web Development: **JavaScript (and TypeScript)**\n* **Why:** JavaScript runs the web. Combined with HTML and CSS, it powers the frontend of almost every website. With Node.js, it’s used for the backend too. TypeScript (a superset of JS) is currently dominating the industry for large-scale applications.\n* **Use cases:** Websites, web apps, mobile apps (React Native), backend servers.\n\n### 2. If you are into Artificial Intelligence & Data Science: **Python**\n* **Why:** Python has an unmatched ecosystem of libraries for machine learning, data analysis, and AI (like TensorFlow, PyTorch, Pandas, and NumPy). It’s also famous for having a clean, readable syntax that reads almost like English, making it the best language for beginners.\n* **Use cases:** AI, Machine Learning, Data Science, automation, backend web development (Django/Flask).\n\n### 3. If you want maximum performance / Systems Programming: **C++ or Rust**\n* **Why:** When you need software to run as fast as humanly possible with direct control over computer hardware, you use these. **C++** is the industry veteran for game engines and high-frequency trading. **Rust** is the modern darling, offering C++-level performance while preventing memory safety bugs.\n* **Use cases:** Video game engines (Unreal), operating systems, embedded systems, high-performance applications.\n\n### 4. If you want to build iOS Apps: **Swift**\n* **Why:** Created by Apple, Swift is modern, fast, and safe. If you want to build apps for iPhones, iPads, Macs, and Apple Watches, this is the standard.\n* **Use cases:** iOS/macOS app development.\n\n### 5. If you want to build Android Apps: **Kotlin**\n* **Why:** Endorsed by Google, Kotlin is the modern, preferred language for native Android development. \n* **Use cases:** Android apps, cross-platform development, backend services.\n\n### 6. If you are building enterprise backend systems: **Java or C#**\n* **Why:** Both are robust, typed, object-oriented languages that have powered massive corporate, banking, and enterprise systems for decades. C# is also the primary language for game development using the Unity engine.\n* **Use cases:** Enterprise software, Android apps (Java), Windows apps, Game development (C# with Unity).\n\n---\n\n### How to choose your \"best\" language:\n* **If you are a complete beginner:** Start with **Python** (for ease of learning) or **JavaScript** (if you want to build visual things for the web immediately).\n* **If you have a specific project in mind:** Learn the language that industry uses for that project (e.g., Swift for iPhone apps, Python for AI).\n\nWhat are you hoping to build? Tell me, and I can point you to the exact language you need.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 3.5719,
+  "timestamp_utc": "2026-08-20T08:40:09.485875+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

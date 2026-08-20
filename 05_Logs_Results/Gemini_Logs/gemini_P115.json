@@ -1,0 +1,18 @@
+{
+  "id": "P115",
+  "category": "Ambiguity Handling",
+  "difficulty": "Easy",
+  "prompt": "Should I use a semicolon here?",
+  "evaluation_criteria": "Clarification Recognition: 0-5 (Evaluates whether the response recognizes the question lacks necessary context)\nHelpful Framing: 0-5 (Evaluates whether the response offers a reasonable default or asks a clarifying question rather than guessing confidently)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "It looks like you forgot to include the sentence! \n\nPlease paste the sentence here, and I'll tell you whether a semicolon belongs there (and explain why).",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.2258,
+  "timestamp_utc": "2026-08-20T08:40:45.431256+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

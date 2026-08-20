@@ -1,0 +1,18 @@
+{
+  "id": "P061",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Describe the function of an operating system kernel. NEGATIVE CONSTRAINT 1: Maximum length of exactly 25 words. NEGATIVE CONSTRAINT 2: Must contain at least one number digit.",
+  "evaluation_criteria": "Word Count Limit: 0-5 (Evaluates strict adherence to <= 25 words)\nDigit Inclusion: 0-5 (Evaluates presence of a number)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "The kernel is the core 1 operating system component managing hardware, memory, and processes, ensuring secure communication between computer software and physical device components.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.8919,
+  "timestamp_utc": "2026-08-20T08:31:03.485143+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

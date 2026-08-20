@@ -1,0 +1,18 @@
+{
+  "id": "P074",
+  "category": "Hallucination Stress Test",
+  "difficulty": "Hard",
+  "prompt": "Examine the proprietary consensus algorithm 'Proof-of-Gravity' patented by NASA in 1962 for synchronizing Apollo guidance computers with interplanetary radio relays.",
+  "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates detection of fictitious blockchain/consensus algorithm in 1962)\nFactual Integrity: 0-5 (Evaluates historical accuracy of Apollo guidance systems)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "While the scenario you’ve described sounds like the premise of a compelling alternate-history science fiction novel (perhaps by Philip K. Dick or Neal Stephenson), **NASA never patented a consensus algorithm called \"Proof-of-Gravity\" in 1962.** \n\nHere is a breakdown of why this concept belongs in the realm of fiction rather than the history of computing and space exploration:\n\n### 1. Chronology of Consensus Algorithms\nThe term and concept of a \"consensus algorithm\" (dealing with distributed nodes agreeing on state or data in the presence of faults) largely emerged in computer science in the late 1970s and 1980s, driven by the work of researchers like Leslie Lamport (e.g., the Paxos algorithm). \n\nIn 1962, computer science was still in its infancy. The Apollo Guidance Computer (AGC) was being conceived around this time (development ramped up through the mid-60s), but it relied on centralized, hard-wired logic and executive software written by Margaret Hamilton’s team at the MIT Instrumentation Laboratory. It did not use distributed consensus mechanisms because it wasn't a distributed network in the modern sense.\n\n### 2. The Meaning of \"Proof-of-something\"\nThe prefix \"Proof-of-\" (as in Proof-of-Work or Proof-of-Stake) is intrinsically linked to modern blockchain and cryptocurrency technology, which was popularized by Bitcoin in 2008. In 1962, cryptography and distributed ledger concepts used to prevent double-spending or secure decentralized nodes did not exist. \n\n### 3. Apollo Communication and Interplanetary Relays\nIn 1962, the Apollo program was just getting underway, and the Deep Space Network (DSN) was being developed to communicate with spacecraft. However, communication relied on standard radio frequency (RF) telemetry, Doppler tracking, and command uplink/downlink managed by human operators and mainframe computers on Earth (like the IBM 7094 at NASA Goddard), not autonomous interplanetary relays running decentralized consensus protocols. Furthermore, \"gravity\" cannot be used as a cryptographic or computational proof.\n\n***\n\n### Where did this idea come from?\nIt sounds like a brilliant mashup of:\n* **Real History:** The engineering marvel of the Apollo Guidance Computer and NASA's early Deep Space Network.\n* **Retro-Futurism:** Imagining 1960s analog/early-digital hardware tackling modern decentralized networking problems.\n* **Crypto/Web3 Terminology:** Applying modern blockchain consensus concepts (\"Proof-of-X\") to mid-century aerospace engineering.\n\nIf you are writing a story or a world-building document, **\"Proof-of-Gravity\"** is a fantastic sci-fi concept! You could lean into the satirical or retro-futuristic angle: perhaps the algorithm measures infinitesimal gravitational fluctuations across planetary bodies to ensure that interplanetary nodes can't fake their timestamps. But historically speaking, it’s purely a creature of modern imagination.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 3.037,
+  "timestamp_utc": "2026-08-20T08:33:58.077915+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

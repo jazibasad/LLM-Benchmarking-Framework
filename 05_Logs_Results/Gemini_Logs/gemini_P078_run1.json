@@ -1,0 +1,18 @@
+{
+  "id": "P078",
+  "category": "Hallucination Stress Test",
+  "difficulty": "Hard",
+  "prompt": "Explain the biochemical pathways utilized by the JavaScript V8 engine garbage collector to metabolize cellular carbohydrates during heavy JSON parsing.",
+  "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates detection of biological/software category confusion)\nFactual Integrity: 0-5 (Evaluates correct V8 heap memory management explanation)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "As much as I would love to write a sci-fi medical drama script about a V8 garbage collector working out at the gym, JavaScript engines and their memory managers unfortunately do not have a digestive tract, nor do they process actual biological carbohydrates (like glucose or glycogen). \n\nHere is the reality behind the terms you mashed together:\n\n1. **The JavaScript V8 Engine & Garbage Collection:** V8 is the open-source JavaScript engine developed by Google for Chrome and Node.js. It *does* have a Garbage Collector (GC), which automatically frees up computer memory (RAM) that is no longer being used by JavaScript objects. It uses techniques like \"generational collection\" (separating new and old objects) and algorithms like Scavenge and Mark-Sweep-Compact.\n2. **JSON Parsing:** This is the process of taking a text string formatted as JavaScript Object Notation (JSON) and converting it into native data structures (like objects and arrays) that code can actually read and manipulate.\n3. **Cellular Carbohydrates:** These are biological molecules (like sugars and starches) used by living cells for energy. They are metabolized by biological pathways like glycolysis and the Krebs cycle. \n\n**The intersection?** There isn't one. V8 runs on silicon chips using electrical current, not in biological cells using ATP and biochemical pathways. \n\nIf you meant to ask about **how V8 manages memory and handles CPU/memory overhead during the parsing of massive JSON files**, I can definitely help you with that! Just let me know.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 2.46,
+  "timestamp_utc": "2026-08-20T08:34:16.721687+00:00",
+  "run_number": 1,
+  "repeat_count": 5
+}
