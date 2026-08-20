@@ -1,0 +1,31 @@
+{
+  "id": "P089",
+  "category": "Coding & System Architecture",
+  "difficulty": "Easy",
+  "prompt": "Write a Python function to check if a given string is a palindrome, ignoring spaces and case sensitivity.",
+  "response_text": "Here’s a compact, easy‑to‑read implementation that:\n\n* removes **all** whitespace (spaces, tabs, newlines, etc.)  \n* normalizes the case (lower‑cases the string)  \n* then checks whether the cleaned string reads the same forward and backward.\n\n```python\nimport re\n\ndef is_palindrome(s: str) -> bool:\n    \"\"\"\n    Return True if `s` is a palindrome when spaces and case are ignored.\n\n    Steps:\n        1. Strip out every whitespace character.\n        2. Convert the remaining characters to lower‑case.\n        3. Compare the cleaned string with its reverse.\n\n    Parameters\n    ----------\n    s : str\n        The string to test.\n\n    Returns\n    -------\n    bool\n        True if `s` is a palindrome under the described rules, False otherwise.\n    \"\"\"\n    # 1️⃣ Remove all whitespace (spaces, tabs, newlines, etc.)\n    # Using a regular expression is fast and concise.\n    cleaned = re.sub(r'\\s+', '', s)\n\n    # 2️⃣ Normalise case\n    cleaned = cleaned.lower()\n\n    # 3️⃣ Palindrome test – compare with the reversed string\n    return cleaned == cleaned[::-1]\n\n\n# ----------------------------------------------------------------------\n# Example usage\n# ----------------------------------------------------------------------\nif __name__ == \"__main__\":\n    test_cases = [\n        \"Racecar\",\n        \"A man a plan a canal Panama\",\n        \"No lemon, no melon\",\n        \"Hello, World!\",\n        \"  \",\n        \"\",\n        \"Was it a car or a cat I saw\"\n    ]\n\n    for txt in test_cases:\n        result = is_palindrome(txt)\n        print(f\"{txt!r:40} → {result}\")\n```\n\n### How it works\n\n| Step | What happens | Why it matters |\n|------|--------------|----------------|\n| **Remove whitespace** (`re.sub(r'\\s+', '', s)`) | Strips spaces, tabs, newlines, etc. | Palindromes are often defined ignoring spacing. |\n| **Lower‑case** (`cleaned.lower()`) | Converts everything to the same case. | Makes the check case‑insensitive. |\n| **Reverse comparison** (`cleaned == cleaned[::-1]`) | `[::-1]` creates a reversed copy of the string. | If the string equals its reverse, it’s a palindrome. |\n\n### Variations\n\n* **Keep punctuation?** If you also want to ignore punctuation, replace the cleaning line with:  \n\n  ```python\n  cleaned = re.sub(r'[\\W_]+', '', s.lower())\n  ```\n  (`\\W` matches any non‑alphanumeric character; the extra `_` handles underscores.)\n\n* **Unicode awareness** – the above works for most Unicode letters. For full Unicode case folding you could use `casefold()` instead of `lower()`:\n\n  ```python\n  cleaned = re.sub(r'\\s+', '', s).casefold()\n  ```\n\nFeel free to adapt the function to the exact definition of “palindrome” you need!",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 6.0321,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Syntax Correctness",
+      "score": 5,
+      "justification": "The code is syntactically flawless, with proper imports, type hints, docstring, and a runnable main block that executes without errors.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Edge Case Handling",
+      "score": 5,
+      "justification": "The function correctly handles all required edge cases: it removes all whitespace (spaces, tabs, newlines), normalizes case, and works for empty strings, strings with only whitespace, and mixed-case palindromes, fully satisfying the prompt's specifications.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T18:12:40.192745+00:00"
+}
