@@ -1,0 +1,31 @@
+{
+  "id": "P064",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Describe version control branching. NEGATIVE CONSTRAINT 1: Do not use any punctuation marks. NEGATIVE CONSTRAINT 2: Must be written as a single continuous line of text.",
+  "response_text": "Version control branching allows developers to create separate lines of development from a shared main codebase without immediately merging them back into the primary branch like main or master this enables parallel work on different features bug fixes or experiments without disrupting the stable version each branch represents an independent path that can evolve independently with its own commits changes and history when work on a branch completes it can be merged back into the main branch or another target branch through a process called pull request or merge conflict resolution may occur if changes overlap between branches requiring manual intervention to synchronize code changes effectively branching helps manage complex projects by isolating changes improving collaboration and reducing risks to the stable codebase",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.197,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Punctuation Exclusion",
+      "score": 5,
+      "justification": "The response contains no punctuation marks such as periods commas or hyphens so it fully satisfies the zero‑punctuation requirement which corresponds to a complete success.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Single Line",
+      "score": 5,
+      "justification": "The entire answer is presented as one uninterrupted line without any newline characters meeting the single‑line constraint for a perfect rating.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T15:48:46.872622+00:00"
+}

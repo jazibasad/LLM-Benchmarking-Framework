@@ -1,0 +1,31 @@
+{
+  "id": "P060",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Explain the concept of encapsulation in object-oriented programming. NEGATIVE CONSTRAINT 1: Do not use the words 'data', 'hide', or 'class'. NEGATIVE CONSTRAINT 2: Format the output as a Markdown table with two columns: 'Concept' and 'Description'.",
+  "response_text": "Here’s the requested explanation formatted as a Markdown table:\n\n| **Concept**               | **Description**                                                                                                                                                                                                 |\n|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| **Encapsulation**         | A mechanism where internal details of a component are bundled and controlled access is enforced, ensuring interactions occur through defined interfaces. This promotes modularity by restricting direct manipulation of internal logic. |\n| **Abstraction Boundary**  | Defines a clear separation between what a component exposes (public behavior) and what remains private (implementation specifics). Users interact with simplified representations without needing to understand underlying complexity.                     |\n| **Controlled Exposure**   | Limits how external elements interact with internal structures, often via methods or properties. This prevents unintended modifications and enforces consistency in how the component is utilized.                                                                 |\n| **State Management**      | Encapsulates the logic governing how internal states are modified, validated, or transitioned. External code cannot alter states arbitrarily; changes must adhere to predefined rules or triggers.                                                                 |\n| **Dependency Isolation**  | Reduces coupling by restricting direct dependencies between components. Internal changes are insulated from external systems, minimizing ripple effects during updates or debugging.                                                                   |\n| **Interface Definition**  | Specifies a contract (e.g., methods or parameters) that external code must follow to interact with the component. The actual implementation details are concealed, allowing flexibility in how the component operates internally.                     |\n| **Error Localization**    | Confines potential issues to encapsulated boundaries, preventing cascading failures. Invalid operations are intercepted and handled within the component rather than propagating to dependent systems.                                                                   |\n| **Maintainability**       | Simplifies updates or refactoring by isolating changes to specific encapsulated units. Internal logic can evolve without affecting unrelated parts of the system.                                                                                   |",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 3.2885,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Negative Constraints",
+      "score": 5,
+      "justification": "The response contains no occurrences of the prohibited words 'data', 'hide', or 'class', fully satisfying the constraint.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Markdown Table",
+      "score": 4,
+      "justification": "The table is correctly structured with two columns named Concept and Description, though it includes extra bold formatting which is a trivial gap.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 9,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T15:48:03.901137+00:00"
+}

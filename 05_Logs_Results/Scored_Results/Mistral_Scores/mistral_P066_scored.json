@@ -1,0 +1,31 @@
+{
+  "id": "P066",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Describe cloud storage redundancy. NEGATIVE CONSTRAINT 1: Every sentence must start with the exact word 'Data'. NEGATIVE CONSTRAINT 2: Exactly three sentences.",
+  "response_text": "Data redundancy in cloud storage ensures critical information is mirrored across multiple servers. Data backups are automatically distributed to prevent loss from hardware failures. Data availability remains high even if one storage node experiences downtime or corruption.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.658,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "Sentence Starter (0-5)",
+      "score": 5,
+      "justification": "Every sentence in the response starts with the exact word 'Data', fully satisfying the negative constraint.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Sentence Count (0-5)",
+      "score": 5,
+      "justification": "The response contains exactly three sentences, meeting the requirement precisely.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T15:50:52.301790+00:00"
+}

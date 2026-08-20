@@ -1,0 +1,31 @@
+{
+  "id": "P065",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Provide a brief description of object-oriented polymorphism. NEGATIVE CONSTRAINT 1: Do not use verbs. NEGATIVE CONSTRAINT 2: Format as a semicolon-delimited single line.",
+  "response_text": "Flexibility in behavior through shared interface; multiple forms of same operation; runtime binding; inheritance or interfaces; dynamic method resolution; abstracted differences; unified access; type-specific variations; runtime determination; no fixed implementation; consistent interaction; diverse class responses; single abstraction, multiple realities.",
+  "run_number": 3,
+  "temperature": 0.7,
+  "latency_seconds": 0.8032,
+  "model": "mistral",
+  "criterion_scores": [
+    {
+      "name": "No Verbs (0-5): Evaluates noun/adjective phrase structure",
+      "score": 5,
+      "justification": "The response consists entirely of noun phrases and adjectives with no verbs, fully satisfying the no‑verb constraint.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Semicolon Format (0-5): Evaluates single line semicolon layout",
+      "score": 5,
+      "justification": "All items are separated by semicolons in a single line, meeting the semicolon‑delimited format requirement.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T15:49:59.168177+00:00"
+}
