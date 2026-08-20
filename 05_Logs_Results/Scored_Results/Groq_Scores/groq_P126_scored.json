@@ -1,0 +1,31 @@
+{
+  "id": "P126",
+  "category": "Ambiguity Handling",
+  "difficulty": "Medium",
+  "prompt": "Fix the bug in my code.",
+  "response_text": "I’m happy to help you debug your code! Could you please paste the snippet (or the whole file) that’s causing the problem, along with any error messages or unexpected behavior you’re seeing? That way I can pinpoint the issue and suggest a fix.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 17.909,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Missing Context Identification",
+      "score": 3,
+      "justification": "The response asks for the missing code snippet and error messages, which identifies what information is needed, though it does not explicitly state the absence of the code as a problem.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Constructive Response",
+      "score": 5,
+      "justification": "The response provides clear, helpful guidance on how to proceed despite the missing details, offering a constructive way forward for the user.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 8,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T18:42:05.891389+00:00"
+}

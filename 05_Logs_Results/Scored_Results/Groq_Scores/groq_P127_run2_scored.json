@@ -1,0 +1,31 @@
+{
+  "id": "P127",
+  "category": "Ambiguity Handling",
+  "difficulty": "Medium",
+  "prompt": "Can you make this report better?",
+  "response_text": "Absolutely—I’d be happy to help polish your report! To give you the most useful feedback and revisions, could you please share:\n\n1. **The current draft** (or the sections you’d like revised).  \n2. **The purpose and audience** (e.g., a business proposal for executives, a research paper for a journal, an internal status update, etc.).  \n3. **Any specific goals** you have for the rewrite (e.g., clearer arguments, stronger executive summary, tighter language, better visual organization, compliance with a style guide).  \n4. **Preferred length or word‑count constraints** and any formatting requirements (headings, bullet points, tables, citations, etc.).  \n\nOnce I have that information, I can:\n\n- Edit for clarity, concision, and flow.  \n- Strengthen the structure (intro, methods, findings, conclusions, recommendations).  \n- Enhance readability with headings, bullet points, and visual cues.  \n- Adjust tone to suit the target audience (formal, persuasive, technical, etc.).  \n- Ensure proper citation/style (APA, MLA, Chicago, company style guide, etc.).  \n\nFeel free to paste the text directly or attach the document, and let me know any extra details you think are important. I’ll get to work on a polished, professional version for you!",
+  "run_number": 2,
+  "temperature": 0.7,
+  "latency_seconds": 1.2694,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Missing Context Identification",
+      "score": 3,
+      "justification": "The response asks for missing details such as draft, purpose, audience, and goals, but does not specify a particular code or document, falling short of the exact identification required.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Constructive Response",
+      "score": 5,
+      "justification": "It offers comprehensive, actionable guidance on how to improve the report, fully meeting the requirement for useful general advice despite the ambiguity.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 8,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T18:42:17.947881+00:00"
+}

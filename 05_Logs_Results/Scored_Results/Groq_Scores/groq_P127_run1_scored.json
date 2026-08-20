@@ -1,0 +1,31 @@
+{
+  "id": "P127",
+  "category": "Ambiguity Handling",
+  "difficulty": "Medium",
+  "prompt": "Can you make this report better?",
+  "response_text": "Sure thing! Could you please share the text of the report you’d like improved? That way I can see what you’ve got and help you polish it up.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.711,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Missing Context Identification",
+      "score": 0,
+      "justification": "The response does not identify any specific missing information (e.g., code, document, app) and instead requests general 'text of the report,' failing to pinpoint the exact context needed for improvement.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Constructive Response",
+      "score": 3,
+      "justification": "The response provides useful general guidance by asking for the report text, which is a necessary first step to address the prompt's request despite the lack of specific context identification.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 3,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T18:42:12.486651+00:00"
+}
