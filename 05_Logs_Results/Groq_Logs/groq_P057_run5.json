@@ -1,0 +1,18 @@
+{
+  "id": "P057",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Describe RESTful API design principles. NEGATIVE CONSTRAINT 1: The response must be written entirely in reverse word order (last word first, first word last). NEGATIVE CONSTRAINT 2: Exactly two sentences.",
+  "evaluation_criteria": "Reverse Word Order: 0-5 (Evaluates backwards word sequence)\nSentence Limit: 0-5 (Evaluates exact two sentences)",
+  "max_score": "15",
+  "model": "groq",
+  "response_text": "paths. endpoint in verbs avoid and forms, plural employ resources, for nouns use should API RESTful A. URL. the via versioned be and links, hypermedia provide codes, status proper support methods, HTTP standard use stateless, be should It",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 9.0063,
+  "timestamp_utc": "2026-08-20T10:22:22.377863+00:00",
+  "run_number": 5,
+  "repeat_count": 5
+}

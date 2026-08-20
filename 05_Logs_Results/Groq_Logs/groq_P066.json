@@ -1,0 +1,18 @@
+{
+  "id": "P066",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Describe cloud storage redundancy. NEGATIVE CONSTRAINT 1: Every sentence must start with the exact word 'Data'. NEGATIVE CONSTRAINT 2: Exactly three sentences.",
+  "evaluation_criteria": "Sentence Starter: 0-5 (Evaluates starting each sentence with 'Data')\nSentence Count: 0-5 (Evaluates exact three sentences)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "Data in cloud storage is replicated across multiple physical locations to protect against hardware failures. Data redundancy strategies such as multi‑zone, multi‑region, and erasure coding ensure that a single point of failure does not result in data loss. Data availability is maintained through automatic failover mechanisms that redirect requests to healthy replicas, providing seamless access for users.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 5.2184,
+  "timestamp_utc": "2026-08-20T10:23:28.426066+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

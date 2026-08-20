@@ -1,0 +1,18 @@
+{
+  "id": "P061",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Describe the function of an operating system kernel. NEGATIVE CONSTRAINT 1: Maximum length of exactly 25 words. NEGATIVE CONSTRAINT 2: Must contain at least one number digit.",
+  "evaluation_criteria": "Word Count Limit: 0-5 (Evaluates strict adherence to <= 25 words)\nDigit Inclusion: 0-5 (Evaluates presence of a number)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "The kernel manages hardware resources, schedules processes, handles memory allocation, enforces security, and provides system calls, enabling applications to run efficiently on 1 core CPU.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 4.4029,
+  "timestamp_utc": "2026-08-20T10:22:44.496082+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

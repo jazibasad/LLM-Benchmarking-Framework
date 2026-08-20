@@ -1,0 +1,18 @@
+{
+  "id": "P038",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "A data streaming pipeline ingests records across four partitions. Partition 1 receives 450 records/sec with 99% validity; Partition 2 receives 600 records/sec with 95% validity; Partition 3 receives 300 records/sec with 98% validity; Partition 4 receives 750 records/sec with 90% validity. Calculate the weighted average validity percentage across all ingested streams.",
+  "evaluation_criteria": "Valid Record Sum: 0-5 (Evaluates accurate valid record multiplication per partition)\nWeighted Average: 0-5 (Evaluates total valid records divided by total ingestion rate)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "**Step‑by‑step calculation**\n\n| Partition | Records / sec | Validity % | Valid records / sec |\n|-----------|--------------|------------|---------------------|\n| 1 | 450 | 99 % | 450 × 0.99 = **445.5** |\n| 2 | 600 | 95 % | 600 × 0.95 = **570** |\n| 3 | 300 | 98 % | 300 × 0.98 = **294** |\n| 4 | 750 | 90 % | 750 × 0.90 = **675** |\n| **Total** | **2 100** | – | **1 984.5** |\n\n**Weighted average validity**\n\n\\[\n\\text{Weighted validity} = \n\\frac{\\text{Total valid records}}{\\text{Total records}}\n= \\frac{1 984.5}{2 100}\n\\approx 0.9450\n\\]\n\nConvert to a percentage:\n\n\\[\n0.9450 \\times 100 \\approx \\mathbf{94.5\\%}\n\\]\n\n---\n\n**Answer:** The weighted average validity across all four partitions is **≈ 94.5 %**.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 15.4503,
+  "timestamp_utc": "2026-08-20T10:18:22.657698+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

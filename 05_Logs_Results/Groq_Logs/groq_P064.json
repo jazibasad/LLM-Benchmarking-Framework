@@ -1,0 +1,18 @@
+{
+  "id": "P064",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Describe version control branching. NEGATIVE CONSTRAINT 1: Do not use any punctuation marks. NEGATIVE CONSTRAINT 2: Must be written as a single continuous line of text.",
+  "evaluation_criteria": "Punctuation Exclusion: 0-5 (Evaluates zero punctuation)\nSingle Line: 0-5 (Evaluates absence of newlines)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "Version control branching is a technique that allows developers to create independent lines of development within a repository each branch representing a separate set of changes that can be worked on in isolation and later merged back into the main line of development often called the main or master branch branches enable parallel work on features bug fixes or experiments without affecting the stable code base they are created from a base commit and can be named to reflect their purpose developers can switch between branches to test new ideas or to prepare releases and when a branch reaches a stable state it can be merged back into the main line using a merge operation which combines the changes and resolves any conflicts the history of the repository records the creation and merging of branches providing a clear picture of how the code evolved branching also supports workflows such as feature branching git flow or trunk based development allowing teams to coordinate work and maintain code quality",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 6.4452,
+  "timestamp_utc": "2026-08-20T10:23:01.801726+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

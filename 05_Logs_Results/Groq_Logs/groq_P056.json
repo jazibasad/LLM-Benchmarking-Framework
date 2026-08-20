@@ -1,0 +1,18 @@
+{
+  "id": "P056",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Detail public-key cryptography mechanisms. NEGATIVE CONSTRAINT 1: Do not use the letter 't' or 'T'. NEGATIVE CONSTRAINT 2: Do not use the letter 'h' or 'H'. NEGATIVE CONSTRAINT 3: Format as a bulleted list.",
+  "evaluation_criteria": "Double Negative Letter: 0-5 (Evaluates absence of both T and H)\nFormatting: 0-5 (Evaluates bullet layout)",
+  "max_score": "15",
+  "model": "groq",
+  "response_text": "",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 10.9455,
+  "timestamp_utc": "2026-08-20T10:21:28.721072+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

@@ -1,0 +1,18 @@
+{
+  "id": "P041",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "A neural network layer has 512 input features and 128 output neurons with bias terms enabled. Calculate the exact total number of trainable model parameters (weights and biases) in this layer.",
+  "evaluation_criteria": "Weight Calculation: 0-5 (Evaluates input times output multiplication)\nBias Addition: 0-5 (Evaluates correct addition of bias per neuron)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "For a fully‑connected (dense) layer the trainable parameters consist of  \n\n* **Weights:** one weight for every connection from each input feature to each output neuron.  \n  \\[\n  \\text{#weights}= (\\text{input features}) \\times (\\text{output neurons}) = 512 \\times 128 = 65\\,536\n  \\]\n\n* **Biases:** one bias term per output neuron (since bias is enabled).  \n  \\[\n  \\text{#biases}= \\text{output neurons}=128\n  \\]\n\n**Total trainable parameters**\n\n\\[\n\\text{total}= 65\\,536 \\;(\\text{weights}) + 128 \\;(\\text{biases}) = 65\\,664\n\\]\n\nSo the layer has **65,664 trainable parameters**.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 7.0221,
+  "timestamp_utc": "2026-08-20T10:18:46.993818+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

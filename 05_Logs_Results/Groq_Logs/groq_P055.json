@@ -1,0 +1,18 @@
+{
+  "id": "P055",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Explain software dependency injection. NEGATIVE CONSTRAINT 1: Every word in the response must be a palindrome (e.g., radar, level). NEGATIVE CONSTRAINT 2: Minimum 6 words.",
+  "evaluation_criteria": "Palindrome Words: 0-5 (Evaluates all words being palindromes)\nMinimum Length: 0-5 (Evaluates word count)",
+  "max_score": "15",
+  "model": "groq",
+  "response_text": "civic level radar rotor refer deified reviver",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 18.6328,
+  "timestamp_utc": "2026-08-20T10:21:17.768647+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

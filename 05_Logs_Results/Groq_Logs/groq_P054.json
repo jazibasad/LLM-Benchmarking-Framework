@@ -1,0 +1,18 @@
+{
+  "id": "P054",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Describe operating system virtual memory paging. NEGATIVE CONSTRAINT 1: Do not use the letters 'a', 'e', or 'i' (only allow 'o' and 'u' as vowels). NEGATIVE CONSTRAINT 2: Format as a single paragraph.",
+  "evaluation_criteria": "Vowel Restriction: 0-5 (Evaluates strict filtering of a, e, i vowels)\nParagraph Layout: 0-5 (Evaluates single paragraph structure)",
+  "max_score": "15",
+  "model": "groq",
+  "response_text": "",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 15.9729,
+  "timestamp_utc": "2026-08-20T10:20:59.130879+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

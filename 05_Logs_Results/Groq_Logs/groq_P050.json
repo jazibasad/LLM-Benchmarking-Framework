@@ -1,0 +1,18 @@
+{
+  "id": "P050",
+  "category": "Instruction Following",
+  "difficulty": "Easy",
+  "prompt": "Give a definition of RAM. NEGATIVE CONSTRAINT: Do not use the words 'memory', 'random', or 'access'.",
+  "evaluation_criteria": "Forbidden Words: 0-5 (Evaluates absence of target words)\nDefinition Quality: 0-5 (Evaluates clarity of volatile storage definition)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "A type of computer storage that temporarily holds data and program instructions while the system is running, enabling the processor to read and write information rapidly. Its contents are lost when power is turned off.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 2.0319,
+  "timestamp_utc": "2026-08-20T10:20:04.442497+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

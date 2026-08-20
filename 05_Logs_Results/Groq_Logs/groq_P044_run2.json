@@ -1,0 +1,18 @@
+{
+  "id": "P044",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "An enterprise cluster runs 3 tiers of virtual machines: Web tier (16 VMs at 2 vCPU each), App tier (32 VMs at 4 vCPU each), and DB tier (8 VMs at 16 vCPU each). If hypervisor overcommitment ratio is set to 2.5:1, calculate the physical host CPU core count required.",
+  "evaluation_criteria": "Virtual Cpu Sum: 0-5 (Evaluates total vCPU aggregation across tiers)\nOvercommitment Division: 0-5 (Evaluates physical core requirement calculation)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "**Step 1 – Compute the total number of virtual CPUs (vCPUs)**  \n\n| Tier | # VMs | vCPU per VM | Total vCPU |\n|------|------|-------------|------------|\n| Web  | 16   | 2           | 16 × 2 = 32 |\n| App  | 32   | 4           | 32 × 4 = 128 |\n| DB   | 8    | 16          | 8 × 16 = 128 |\n| **Total** | – | – | **32 + 128 + 128 = 288 vCPU** |\n\n**Step 2 – Apply the hypervisor over‑commitment ratio**\n\nThe over‑commitment ratio of **2.5 : 1** means you can assign **2.5 vCPU for every physical core**.\n\n\\[\n\\text{Physical cores required} = \\frac{\\text{Total vCPU}}{\\text{Over‑commit ratio}} = \\frac{288}{2.5} = 115.2\n\\]\n\n**Step 3 – Round up to a whole core count**\n\nYou cannot provision a fraction of a core, so you round up:\n\n\\[\n\\boxed{116\\ \\text{physical CPU cores (minimum)}}\n\\]\n\nThus, the cluster needs at least **116 physical CPU cores** to host the described VMs with a 2.5 : 1 over‑commitment ratio.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 4.5486,
+  "timestamp_utc": "2026-08-20T10:19:21.527342+00:00",
+  "run_number": 2,
+  "repeat_count": 5
+}

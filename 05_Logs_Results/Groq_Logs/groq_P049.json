@@ -1,0 +1,18 @@
+{
+  "id": "P049",
+  "category": "Instruction Following",
+  "difficulty": "Easy",
+  "prompt": "List two web browsers. NEGATIVE CONSTRAINT: Each browser name must be spelled in reverse order. Format as a comma-separated list.",
+  "evaluation_criteria": "Reversal Accuracy: 0-5 (Evaluates correct string reversal e.g., Chrome -> emorhC)\nFormatting: 0-5 (Evaluates comma-separated layout)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "emorhC, xofirF",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 5.8645,
+  "timestamp_utc": "2026-08-20T10:20:02.395581+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

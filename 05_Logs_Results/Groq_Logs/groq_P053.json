@@ -1,0 +1,18 @@
+{
+  "id": "P053",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Detail the operation of TCP three-way handshakes. NEGATIVE CONSTRAINT 1: Do not use any words containing vowels (A, E, I, O, U). NEGATIVE CONSTRAINT 2: Format as a valid JSON object with key 'handshake'. NEGATIVE CONSTRAINT 3: Maximum 15 words total.",
+  "evaluation_criteria": "Vowel Exclusion: 0-5 (Evaluates consonant-only vocabulary challenge)\nJson Structure: 0-5 (Evaluates JSON key validity)\nWord Count: 0-5 (Evaluates length threshold)",
+  "max_score": "15",
+  "model": "groq",
+  "response_text": "{\n  \"handshake\": \"clnt snd syn; svr rcv syn snd synrcv; clnt rcv synrcv snd\"\n}",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 18.8371,
+  "timestamp_utc": "2026-08-20T10:20:43.151052+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

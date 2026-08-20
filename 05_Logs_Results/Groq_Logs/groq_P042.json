@@ -1,0 +1,18 @@
+{
+  "id": "P042",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "An asynchronous message queue processes jobs across 8 worker threads. Job sizes are: 4 jobs taking 10s each, 6 jobs taking 5s each, and 2 jobs taking 25s each. Assuming optimal thread allocation, calculate the total makespan (total completion time) for the batch.",
+  "evaluation_criteria": "Workload Distribution: 0-5 (Evaluates optimal assignment across 8 threads)\nMakespan Calculation: 0-5 (Evaluates correct maximum thread completion time)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "**Step 1 – Compute the total amount of work**\n\n\\[\n\\begin{aligned}\n4 \\times 10\\text{s} &= 40\\text{s}\\\\\n6 \\times 5\\text{s}  &= 30\\text{s}\\\\\n2 \\times 25\\text{s} &= 50\\text{s}\\\\[2mm]\n\\text{Total work} &= 40 + 30 + 50 = 120\\text{ seconds}\n\\end{aligned}\n\\]\n\n**Step 2 – Theoretical lower bound**\n\nWith 8 parallel worker threads the absolute lower bound on the makespan is\n\n\\[\n\\frac{\\text{total work}}{\\text{#threads}} = \\frac{120\\text{s}}{8}=15\\text{s}\n\\]\n\nbut we also cannot finish faster than the longest single job, which is **25 s**.  \nHence the makespan must be at least **25 s**.\n\n**Step 3 – Can we actually achieve 25 s?**\n\n- The two 25‑second jobs each occupy a whole thread for the entire interval.  \n  → 2 threads are locked for 25 s.\n\n- The remaining 6 threads have a capacity of \\(6 \\times 25 = 150\\) s of processing time over the interval, while the remaining work is\n\n\\[\n120\\text{s} - 2 \\times 25\\text{s} = 70\\text{s}\n\\]\n\n  Since \\(70\\text{s} < 150\\text{s}\\), the work can fit.\n\nNow we pack the 10‑s and 5‑s jobs onto the six free threads without exceeding 25 s on any thread.\n\nA simple feasible packing:\n\n| Thread | Jobs (seconds) | Total |\n|--------|----------------|-------|\n| 1 (long) | 25 | 25 |\n| 2 (long) | 25 | 25 |\n| 3 | 10 + 5 + 5 | 20 |\n| 4 | 10 + 5 + 5 | 20 |\n| 5 | 10 + 5 + 5 | 20 |\n| 6 | 10 | 10 |\n| 7 | – (idle) | 0 |\n| 8 | – (idle) | 0 |\n\nAll threads finish no later than **25 seconds**.\n\n**Step 4 – Result**\n\nThe optimal schedule therefore achieves the lower bound imposed by the longest job.\n\n\\[\n\\boxed{\\text{Makespan} = 25\\ \\text{seconds}}\n\\]",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 5.2522,
+  "timestamp_utc": "2026-08-20T10:18:52.252107+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

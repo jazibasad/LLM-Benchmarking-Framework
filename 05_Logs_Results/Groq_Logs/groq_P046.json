@@ -1,0 +1,18 @@
+{
+  "id": "P046",
+  "category": "Instruction Following",
+  "difficulty": "Easy",
+  "prompt": "List three benefits of cloud computing. NEGATIVE CONSTRAINT: Do not use the letter 'e' or 'E' anywhere in the response. Format as bullet points.",
+  "evaluation_criteria": "Negative Constraint: 0-5 (Evaluates absolute absence of target character)\nFormatting: 0-5 (Evaluates bullet point structure)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "- Scalability: adapt to workload shifts without big upfront outlay.  \n- Low cost: pay only for actual run, cutting outlay.  \n- Online data reach: get files from any tool, any hour.",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 6.4275,
+  "timestamp_utc": "2026-08-20T10:19:46.625833+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

@@ -1,0 +1,18 @@
+{
+  "id": "P059",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Summarize database sharding strategies. NEGATIVE CONSTRAINT 1: Do not use any words with more than 4 letters. NEGATIVE CONSTRAINT 2: Format as an HTML unordered list (<ul><li>...</li></ul>).",
+  "evaluation_criteria": "Short Word Limit: 0-5 (Evaluates strict adherence to <= 4 letter words)\nHtml Formatting: 0-5 (Evaluates valid HTML tags)",
+  "max_score": "15",
+  "model": "groq",
+  "response_text": "<ul>\n<li>rng shrd: cut by key rng; each node gets a key span; good for seq key.</li>\n<li>hash shrd: key -> hash -> node; even load, easy add.</li>\n<li>dir shrd: map key to node via dir list; flex, but list can grow.</li>\n<li>mix shrd: use rng + hash or oth mix; can fix hot spot.</li>\n</ul>",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 4.7976,
+  "timestamp_utc": "2026-08-20T10:22:32.308723+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

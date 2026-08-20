@@ -1,0 +1,18 @@
+{
+  "id": "P062",
+  "category": "Instruction Following",
+  "difficulty": "Medium",
+  "prompt": "Explain how a hash function works. NEGATIVE CONSTRAINT 1: Do not use the words 'hash', 'key', or 'map'. NEGATIVE CONSTRAINT 2: Format as an XML snippet with root tag <explanation>.",
+  "evaluation_criteria": "Forbidden Words: 0-5 (Evaluates absence of hash, key, map)\nXml Formatting: 0-5 (Evaluates valid XML tags)",
+  "max_score": "10",
+  "model": "groq",
+  "response_text": "```xml\n<explanation>\n    <paragraph>\n        A deterministic algorithm takes an arbitrary amount of data and transforms it into a short, fixed‑length sequence of characters or numbers. This transformation mixes the input bits many times so that even a tiny change in the original data produces a dramatically different result.\n    </paragraph>\n    <paragraph>\n        The process usually involves splitting the input into blocks, applying a series of mathematical operations (such as modular addition, bitwise rotations, and exclusive‑or), and combining the results into a final value of a predetermined size (for example, 128, 256, or 512 bits).\n    </paragraph>\n    <paragraph>\n        Because the same input always yields the same output, the resulting value can serve as a compact identifier for the original data. It is useful for quickly checking whether two pieces of data are identical, for organizing large collections of items, and for verifying that data has not been altered.\n    </paragraph>\n    <paragraph>\n        Although many different inputs can produce the same short identifier (a situation called a collision), a well‑designed algorithm makes such occurrences extremely unlikely, and it strives to ensure that the output appears random and evenly distributed across the possible range.\n    </paragraph>\n</explanation>\n```",
+  "raw": {
+    "model": "openai/gpt-oss-120b"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 5.1111,
+  "timestamp_utc": "2026-08-20T10:22:49.614153+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}
