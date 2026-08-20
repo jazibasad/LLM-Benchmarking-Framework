@@ -1,0 +1,31 @@
+{
+  "id": "P116",
+  "category": "Ambiguity Handling",
+  "difficulty": "Easy",
+  "prompt": "What time should I set my alarm for?",
+  "response_text": "I’m happy to help you pick the right alarm time! To give you the most useful suggestion, could you let me know a few details?\n\n1. **When do you need to be up?** (e.g., what time you have to be at work, school, an appointment, etc.)  \n2. **How much sleep do you usually need** to feel rested? (Most adults aim for 7–9 hours, but everyone’s ideal amount varies.)  \n3. **Do you prefer a “soft” wake‑up** with a gradual light or sound, or a more abrupt alarm?  \n4. **Any other constraints?** (e.g., you need time to get ready, commute, exercise, or you want a few minutes of “snooze” before actually getting out of bed.)\n\nWith that information I can suggest an optimal wake‑up time and even a simple routine to help you start the day smoothly.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 7.1618,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Clarification Recognition",
+      "score": 5,
+      "justification": "The response explicitly acknowledges the prompt lacks necessary context and requests specific details before proposing an alarm time, fully meeting the criterion.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Helpful Framing",
+      "score": 5,
+      "justification": "The response asks clarifying questions about wake-up time, sleep needs, alarm preference, and constraints rather than guessing a time, thereby offering a helpful framework instead of confident speculation.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T18:31:06.431084+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "P114",
+  "category": "Ambiguity Handling",
+  "difficulty": "Easy",
+  "prompt": "What's a good password?",
+  "response_text": "A good password is one that’s long, random (or based on a memorable but unpredictable phrase), unique to each account, and stored securely. Here are some practical guidelines you can follow to create strong passwords:\n\n---\n\n## 1. Aim for Length Over Complexity\n- **Target length:** at least **12‑16 characters**; the longer, the better.\n- **Why it matters:** Attackers can brute‑force short passwords quickly, but the number of possible combinations grows exponentially with each additional character.\n\n## 2. Use a Passphrase Approach\n- **Pick 4‑5 random words** and combine them with a few symbols or numbers.  \n  Example: `BlueElephant!42MangoRiver`\n- **Why it works:** A series of unrelated words is easier to remember than a random jumble, yet it provides high entropy (≈ 60‑80 bits).\n\n## 3. Add Unpredictable Elements\n- Insert **symbols**, **numbers**, or **mixed case** in non‑obvious places (e.g., not just at the beginning or end).  \n  Example: `c0ffee!Sun$et#2024`\n- Avoid predictable substitutions like “@” for “a” or “123” at the end.\n\n## 4. Make It Unique per Site\n- Never reuse the same password across different services. If one site is breached, all your other accounts stay safe.\n\n## 5. Use a Password Manager\n- **Generate** truly random passwords (e.g., 20+ characters) for each account.\n- **Store** them securely so you only need to remember one master password.\n- Popular options: Bitwarden, 1Password, LastPass, KeePassXC, Dashlane.\n\n## 6. Protect Your Master Password\n- This is the only password you’ll need to remember. Make it:\n  - **Long** (≥ 16 characters)  \n  - **Memorable** (e.g., a personal passphrase)  \n  - **Unique** (never used elsewhere)  \n  - **Stored** only in your mind or a secure offline location.\n\n## 7. Enable Multi‑Factor Authentication (MFA)\n- Even a perfect password can be compromised if an attacker obtains it. Adding a second factor (authenticator app, hardware token, biometric) dramatically increases security.\n\n## 8. Regularly Review and Update\n- Change passwords for critical accounts (email, banking, admin portals) at least **once a year** or immediately after any known breach.\n- Remove accounts you no longer use.\n\n---\n\n### Quick “Do‑It‑Yourself” Checklist\n\n| ✅ | Checklist Item |\n|---|----------------|\n| ✔️ | Minimum 12‑16 characters (more is better) |\n| ✔️ | No dictionary words alone (use random words or a password manager) |\n| ✔️ | Mix uppercase, lowercase, numbers, symbols |\n| ✔️ | No personal info (birthdates, names, common phrases) |\n| ✔️ | Unique per service |\n| ✔️ | Stored in a reputable password manager |\n| ✔️ | MFA enabled wherever possible |\n\n---\n\n## Example of a Strong, Memorable Passphrase\n\n> **`River!Saffron-42Moonlight*`**\n\n- **Length:** 24 characters  \n- **Components:** 3 random words (`River`, `Saffron`, `Moonlight`), two numbers (`42`), three symbols (`!`, `-`, `*`), mixed case.  \n- **Why it’s good:** High entropy, easy to recall, not tied to personal data.\n\n---\n\n### Final Thought\nThe *best* password strategy is one you can consistently maintain. If remembering many complex passwords feels overwhelming, a reliable password manager combined with a strong master passphrase and MFA is the most secure and user‑friendly solution. Stay safe!",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 12.3625,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Clarification Recognition",
+      "score": 3,
+      "justification": "The response does not address the lack of context in the original question ('What's a good password?'), as it provides a comprehensive answer without acknowledging or requesting clarification on potential missing details.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Helpful Framing",
+      "score": 3,
+      "justification": "The response offers guidance without asking clarifying questions or specifying assumptions (e.g., user technical proficiency), assuming a general audience and proceeding with broad recommendations.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 6,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T18:30:36.163237+00:00"
+}

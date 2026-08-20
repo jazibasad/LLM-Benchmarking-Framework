@@ -1,0 +1,31 @@
+{
+  "id": "P115",
+  "category": "Ambiguity Handling",
+  "difficulty": "Easy",
+  "prompt": "Should I use a semicolon here?",
+  "response_text": "A semicolon can be a handy punctuation mark, but it’s only appropriate in a few specific situations. Since I can’t see the exact sentence you have in mind, let me walk you through the most common rules for using a semicolon. Then you can decide if it fits your case—or feel free to paste the sentence here and I can give a definitive answer.\n\n---\n\n## When a Semicolon Is Appropriate\n\n| Situation | How It Works | Example |\n|-----------|--------------|---------|\n| **Linking two independent clauses that are closely related** | Both parts could stand as separate sentences, but the semicolon shows a tighter connection than a period. | “I finished the report; the client will review it tomorrow.” |\n| **Separating items in a complex list** | When list items themselves contain commas, a semicolon clarifies the divisions. | “The conference attracted attendees from Paris, France; Berlin, Germany; and Tokyo, Japan.” |\n| **Before a conjunctive adverb or transitional phrase** | Use a semicolon before words like however, therefore, moreover, consequently, etc., when they join two independent clauses. | “The deadline is Friday; however, we can request an extension if needed.” |\n| **Connecting clauses with a coordinating conjunction where the clauses are lengthy or already contain commas** (less common) | The semicolon can replace a comma before the conjunction to avoid confusion. | “The committee approved the budget, which included travel, accommodation, and meals; and it also set new performance metrics.” |\n\n---\n\n## Common Mistakes (What *Not* to Do)\n\n| Mistake | Why It’s Wrong | Corrected Version |\n|---------|----------------|-------------------|\n| Using a semicolon to join a dependent clause with an independent clause | A dependent clause can’t stand alone, so a comma (or no punctuation) is needed. | ❌ “Because it was raining; we stayed inside.” → ✅ “Because it was raining, we stayed inside.” |\n| Replacing a colon with a semicolon when introducing a list, explanation, or quote | A colon signals “i.e.,” or “that is.” | ❌ “She had one goal; to win the championship.” → ✅ “She had one goal: to win the championship.” |\n| Using a semicolon where a period would be clearer | If the two ideas are not tightly related, a period is usually better. | ❌ “He loves hiking; she prefers the beach.” → ✅ “He loves hiking. She prefers the beach.” (or use “but” if you want a contrast) |\n| Over‑using semicolons in short, simple sentences | It can make prose feel choppy or overly formal. | ❌ “I ate; I slept; I worked.” → ✅ “I ate, slept, and worked.” (or separate sentences) |\n\n---\n\n## Quick Checklist for Your Sentence\n\n1. **Two independent clauses?**  \n   - Both parts could be sentences on their own.  \n   - If yes → a semicolon *could* work (or a period, or a conjunction).\n\n2. **Do you need a stronger connection than a period provides?**  \n   - If the ideas are closely linked, the semicolon adds that nuance.\n\n3. **Is there a conjunction (and, but, or, nor, for, so, yet) connecting the clauses?**  \n   - If the clauses are short and clear, a comma + conjunction is usually smoother.  \n   - If the clauses are long or already contain commas, a semicolon *before* the conjunction can help.\n\n4. **Is this a list where items have internal commas?**  \n   - If yes → semicolons separate the items.\n\n5. **Are you about to use a transitional word/phrase (however, therefore, consequently, etc.)?**  \n   - Then a semicolon *before* the transition is correct.\n\nIf you answer “yes” to any of the applicable points, a semicolon is likely appropriate. If you’re still unsure, feel free to share the exact sentence and I’ll give you a concrete recommendation.\n\n---\n\n### Example Walk‑through\n\n**Your draft:**  \n*“I love reading mystery novels; however I don’t have much time for them.”*\n\n**Analysis:**  \n- Two independent clauses? Yes.  \n- Transitional word “however”? Yes.  \n- Need a semicolon before “however”? Yes.\n\n**Corrected version:**  \n*“I love reading mystery novels; however, I don’t have much time for them.”*  \n(Notice the added comma after the transitional word—this is standard style.)\n\n---\n\n## TL;DR\n\n- **Use a semicolon** when linking two *independent* clauses that are closely related, when separating complex list items, or before a transitional phrase that joins two independent clauses.  \n- **Don’t use it** for dependent clauses, to introduce a list/explanation (use a colon), or when a simple period or comma would be clearer.\n\n---\n\n**Got the sentence?** Drop it in the chat and I’ll tell you definitively whether a semicolon belongs there (and, if needed, where the punctuation should go).",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 8.0907,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Clarification Recognition (0-5)",
+      "score": 5,
+      "justification": "The response explicitly acknowledges that the exact sentence is missing and explains that a definitive answer requires seeing the specific sentence in question.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Helpful Framing (0-5)",
+      "score": 5,
+      "justification": "The response provides a thorough explanation of semicolon rules and invites the user to paste the sentence for a concrete recommendation, rather than guessing confidently.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T18:30:40.243834+00:00"
+}

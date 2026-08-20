@@ -1,0 +1,43 @@
+{
+  "id": "P119",
+  "category": "Ambiguity Handling",
+  "difficulty": "Hard",
+  "prompt": "Refactor 'the legacy module' to be 'more maintainable' while preserving 'all existing functionality' and 'not breaking anything downstream'.",
+  "response_text": "I’d be happy to help refactor the legacy module for better maintainability while keeping its existing behavior intact. To get started, could you please share:\n\n1. **The current source code** of the module (or the relevant parts you’d like refactored).  \n2. **Any unit/integration tests** that currently cover the module’s functionality.  \n3. **Key constraints or conventions** you follow in your codebase (e.g., naming style, dependency injection framework, target Python version, etc.).  \n4. **Specific pain points** you’ve identified (e.g., large functions, duplicated logic, unclear responsibilities, heavy coupling, etc.).  \n\nWith that information I can propose a concrete refactor—splitting responsibilities, adding type hints, improving documentation, extracting helper utilities, etc.—and ensure that the existing test suite still passes, so downstream code remains unaffected.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 18.2259,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Ambiguity Surfacing Score",
+      "score": 5,
+      "justification": "The response explicitly lists four categories of missing information (source code, tests, conventions, pain points) required before proceeding, fully surfacing ambiguity.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Assumption Documentation Score",
+      "score": 4,
+      "justification": "The response makes no assumptions and instead requests necessary information, meeting the requirement well with only the trivial gap of not explicitly stating the absence of assumptions.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Structural Soundness Score",
+      "score": 4,
+      "justification": "The response outlines a coherent high-level refactor strategy (modularization, type hints, documentation, test preservation) that is technically sound despite lacking module-specific details.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Practical Usefulness Score",
+      "score": 5,
+      "justification": "The response provides a clear, actionable checklist for the engineer to supply the missing artifacts, enabling immediate progress once provided.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 18,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-20T18:32:55.536889+00:00"
+}
