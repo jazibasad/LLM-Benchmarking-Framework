@@ -1,0 +1,18 @@
+{
+  "id": "P145",
+  "category": "Long-context Retention",
+  "difficulty": "Hard",
+  "prompt": "Note 1: Initially, all customer support was handled by a single shared inbox. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: As volume grew, tickets were split into Tier 1 (general) and Tier 2 (technical) queues. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: A further split created a dedicated Billing queue, pulled out of Tier 1. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 4: Recently, Tier 2 was merged back into a single 'Technical & Billing' queue alongside Billing. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 5: Tier 1 (general) remains a separate, standalone queue to this day. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: How many support queues currently exist, what does each handle, and reconstruct the sequence of splits and merges that produced this structure.",
+  "evaluation_criteria": "Sequential Accuracy Score: 0-5 (Evaluates whether the response correctly reconstructs the full chronological sequence of changes)\nCurrent-State Accuracy Score: 0-5 (Evaluates whether the FINAL/current state described is correct, not an intermediate state)\nCompleteness Score: 0-5 (Evaluates whether all relevant facts from the context were used, none omitted)\nCoherence Score: 0-5 (Evaluates whether the explanation is clearly organized and easy to follow despite the complexity)",
+  "max_score": "20",
+  "model": "gemini",
+  "response_text": "Based on the provided notes, here are the answers to your questions:\n\n### 1. How many support queues currently exist and what does each handle?\nThere are currently **2** support queues:\n*   **Tier 1 Queue:** Handles general customer support inquiries.\n*   **'Technical & Billing' Queue:** Handles both technical issues and billing inquiries (formed by merging Tier 2 and the dedicated Billing queue).\n\n---\n\n### 2. Sequence of Splits and Merges\n*   **Initial State (Note 1):** Started as a **single shared inbox** handling all customer support.\n*   **First Split (Note 2):** Volume growth caused the single inbox to split into **Tier 1 (general)** and **Tier 2 (technical)** queues.\n*   **Second Split (Note 3):** A dedicated **Billing** queue was created by being pulled out of the Tier 1 queue, resulting in three queues: Tier 1 (general), Tier 2 (technical), and Billing.\n*   **Merge (Note 4):** Tier 2 (technical) was merged with the Billing queue to form a single **'Technical & Billing'** queue. \n*   **Current State (Note 5):** Tier 1 (general) remains a separate, standalone queue alongside the newly formed Technical & Billing queue.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.7928,
+  "timestamp_utc": "2026-08-20T08:43:53.069144+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

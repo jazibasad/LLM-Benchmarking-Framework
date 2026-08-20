@@ -1,0 +1,18 @@
+{
+  "id": "P128",
+  "category": "Ambiguity Handling",
+  "difficulty": "Medium",
+  "prompt": "Translate this document for me.",
+  "evaluation_criteria": "Missing Context Identification: 0-5 (Evaluates whether the response identifies exactly what information is missing, e.g. which code, which document, which app)\nConstructive Response: 0-5 (Evaluates whether the response still provides useful general guidance despite the ambiguity)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "I would be happy to help you translate your document! \n\nPlease paste the text here, and let me know:\n1. **What language** it is currently in (if you aren't sure, that's okay, I can usually detect it).\n2. **What language** you would like it translated into.\n\n*(Note: If you have a file you'd like to upload, you can use the attachment feature if your interface supports it, or simply copy and paste the text directly into our chat.)*",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.3576,
+  "timestamp_utc": "2026-08-20T08:42:18.110683+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

@@ -1,0 +1,18 @@
+{
+  "id": "P167",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this CSV with a single column containing pipe-delimited multi-values (e.g. 'tags' column: 'red|blue|green') into a normalized JSON structure where each tag becomes a separate array element.",
+  "evaluation_criteria": "Relational Integrity Score: 0-5 (Evaluates whether relationships/references between the transformed structures are correctly preserved)\nEdge Case Handling Score: 0-5 (Evaluates whether irregular or inconsistent source data is handled correctly rather than causing errors or silent data loss)\nOutput Validity Score: 0-5 (Evaluates whether the output is syntactically valid in its target format)\nCompleteness Score: 0-5 (Evaluates whether all source data is represented in the output with nothing silently dropped)",
+  "max_score": "20",
+  "model": "gemini",
+  "response_text": "It looks like you forgot to include the CSV data! \n\nPlease paste your CSV data (or a representative sample) in a reply, and I will convert it into the normalized JSON structure for you. \n\n*(Optional: Let me know if you want the output to be a flat array of objects, or grouped by row ID).*",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.8576,
+  "timestamp_utc": "2026-08-20T08:46:16.165629+00:00",
+  "run_number": 3,
+  "repeat_count": 5
+}

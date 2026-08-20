@@ -1,0 +1,18 @@
+{
+  "id": "P116",
+  "category": "Ambiguity Handling",
+  "difficulty": "Easy",
+  "prompt": "What time should I set my alarm for?",
+  "evaluation_criteria": "Clarification Recognition: 0-5 (Evaluates whether the response recognizes the question lacks necessary context)\nHelpful Framing: 0-5 (Evaluates whether the response offers a reasonable default or asks a clarifying question rather than guessing confidently)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "To help you figure that out, I need a little more information! \n\n* **What time do you need to wake up, or what time do you need to be somewhere?**\n* **How much time do you need to get ready (shower, breakfast, commute)?**\n* **What time do you usually like to fall asleep?** \n\nLet me know your schedule, and we can calculate the best time for your alarm!",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.4392,
+  "timestamp_utc": "2026-08-20T08:40:50.145269+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

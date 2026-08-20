@@ -1,0 +1,18 @@
+{
+  "id": "P135",
+  "category": "Long-context Retention",
+  "difficulty": "Easy",
+  "prompt": "Note 1: Product X costs $45. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Product Y costs $60. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Product Z costs $30. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Which product is the cheapest?",
+  "evaluation_criteria": "Fact Recall Accuracy: 0-5 (Evaluates whether the specific fact requested is retrieved correctly from the earlier context)\nDistraction Resistance: 0-5 (Evaluates whether the response is not confused by the surrounding filler text)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "Based on the provided notes:\n* Product X costs $45\n* Product Y costs $60\n* Product Z costs $30\n\n**Product Z** is the cheapest, costing $30.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.794,
+  "timestamp_utc": "2026-08-20T08:42:49.053548+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

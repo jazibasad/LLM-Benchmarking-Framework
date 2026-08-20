@@ -1,0 +1,18 @@
+{
+  "id": "P183",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this dense academic passage into exactly 3 sentences suitable for a high school student, WITHOUT losing the core causal claim, WITHOUT using any of the technical jargon from the original, and ending with a one-clause caveat about the study's limitations: 'The longitudinal cohort study utilized a difference-in-differences methodology to isolate the causal effect of the minimum wage increase on youth employment, controlling for regional economic heterogeneity via fixed effects. Results indicated a statistically significant but economically modest disemployment effect (-2.3%, 95% CI: -4.1% to -0.5%), concentrated primarily among workers under 20 in the retail sector. However, the study's reliance on state-level administrative data limits its ability to detect firm-level heterogeneity in response strategies.'",
+  "evaluation_criteria": "Structural Compliance Score: 0-5 (Evaluates whether the exact requested structure - sentence count, labeled sections, audience level - is followed precisely)\nFidelity Under Constraint Score: 0-5 (Evaluates whether meaning is preserved despite the tight length/format constraints, without fabricating information not in the source)\nNuance Preservation Score: 0-5 (Evaluates whether important caveats, limitations, or competing viewpoints from the source are retained, not flattened away)\nAudience Appropriateness Score: 0-5 (Evaluates whether jargon is correctly translated for the specified target audience)",
+  "max_score": "20",
+  "model": "gemini",
+  "response_text": "Researchers tracked young workers over time to figure out if raising the minimum wage causes job losses. They discovered that higher wages lead to a slight decrease in employment, mainly affecting teenagers working in stores. However, this research is limited because it only looks at state-level data rather than examining individual businesses.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.9953,
+  "timestamp_utc": "2026-08-20T08:47:37.319669+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

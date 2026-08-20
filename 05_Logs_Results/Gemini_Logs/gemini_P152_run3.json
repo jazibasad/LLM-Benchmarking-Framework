@@ -1,0 +1,18 @@
+{
+  "id": "P152",
+  "category": "Long-context Retention",
+  "difficulty": "Medium",
+  "prompt": "Note 1: Team Alpha's velocity was 30 story points in Sprint 1. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Team Alpha's velocity dropped to 22 points in Sprint 2 due to illness. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Team Alpha's velocity recovered to 35 points in Sprint 3. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Describe the trend in Team Alpha's velocity across all three sprints with specific numbers.",
+  "evaluation_criteria": "Multi-Fact Synthesis: 0-5 (Evaluates whether the response correctly combines information from multiple, sequentially updated facts)\nNumerical Accuracy: 0-5 (Evaluates whether any calculations or comparisons across the facts are computed correctly)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "Based on the provided notes, Team Alpha's velocity across the three sprints shows the following trend:\n\n* **Sprint 1:** The velocity was **30 story points**.\n* **Sprint 2:** The velocity dropped to **22 points** (a decrease of 8 points compared to Sprint 1).\n* **Sprint 3:** The velocity recovered to **35 points** (an increase of 13 points compared to Sprint 2, and 5 points higher than Sprint 1).\n\nOverall, the trend shows an initial drop followed by a strong recovery, going from 30 to 22, and then up to 35 story points.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.0184,
+  "timestamp_utc": "2026-08-20T08:44:32.804462+00:00",
+  "run_number": 3,
+  "repeat_count": 5
+}

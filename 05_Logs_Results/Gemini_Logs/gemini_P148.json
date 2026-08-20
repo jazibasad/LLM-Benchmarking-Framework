@@ -1,0 +1,18 @@
+{
+  "id": "P148",
+  "category": "Long-context Retention",
+  "difficulty": "Medium",
+  "prompt": "Note 1: Project Alpha's deadline was moved from May 1 to May 15 due to resourcing. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Project Beta's deadline remains June 1 as originally planned. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Project Gamma's deadline was moved up from July 1 to June 20 due to client request. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: List each project and its FINAL deadline, noting which ones changed from their original date.",
+  "evaluation_criteria": "Multi-Fact Synthesis: 0-5 (Evaluates whether the response correctly combines information from multiple, sequentially updated facts)\nNumerical Accuracy: 0-5 (Evaluates whether any calculations or comparisons across the facts are computed correctly)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "Based on the provided notes, here is the list of each project, its final deadline, and whether the date changed:\n\n1. **Project Alpha**\n   * **Final Deadline:** May 15\n   * **Status:** Changed (moved from May 1 due to resourcing)\n\n2. **Project Beta**\n   * **Final Deadline:** June 1\n   * **Status:** Did not change (remains as originally planned)\n\n3. **Project Gamma**\n   * **Final Deadline:** June 20\n   * **Status:** Changed (moved up from July 1 due to client request)",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.9457,
+  "timestamp_utc": "2026-08-20T08:44:05.724869+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

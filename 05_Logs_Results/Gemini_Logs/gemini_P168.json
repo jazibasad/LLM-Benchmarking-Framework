@@ -1,0 +1,18 @@
+{
+  "id": "P168",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this JSON representing a recursive category tree (categories containing subcategories containing subcategories) into a flat list with a 'path' field showing the full breadcrumb (e.g. 'Electronics > Computers > Laptops').",
+  "evaluation_criteria": "Relational Integrity Score: 0-5 (Evaluates whether relationships/references between the transformed structures are correctly preserved)\nEdge Case Handling Score: 0-5 (Evaluates whether irregular or inconsistent source data is handled correctly rather than causing errors or silent data loss)\nOutput Validity Score: 0-5 (Evaluates whether the output is syntactically valid in its target format)\nCompleteness Score: 0-5 (Evaluates whether all source data is represented in the output with nothing silently dropped)",
+  "max_score": "20",
+  "model": "gemini",
+  "response_text": "It looks like you forgot to include the JSON! \n\nPlease paste your JSON data in a reply, and let me know:\n1. What the name of the category name field is (e.g., `name`, `title`).\n2. What the name of the subcategory array field is (e.g., `subcategories`, `children`, `items`).\n3. Your preferred programming language for the solution (e.g., JavaScript/TypeScript, Python, PHP), or if you just want the converted JSON output directly. \n\nOnce you provide the JSON, I'll convert it for you right away!",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.1661,
+  "timestamp_utc": "2026-08-20T08:46:29.976562+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

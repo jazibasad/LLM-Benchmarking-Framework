@@ -1,0 +1,18 @@
+{
+  "id": "P147",
+  "category": "Long-context Retention",
+  "difficulty": "Hard",
+  "prompt": "Note 1: The company originally operated in a single region (US-East). The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Expansion added a second region (EU-West) to serve European customers with lower latency. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: A third region (AP-Southeast) was added later for Asian customers. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 4: Due to low usage, AP-Southeast was later decommissioned, with those customers routed back to EU-West. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 5: US-East and EU-West remain the only two active regions today. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Which regions are currently active, which was removed, and reconstruct the full timeline of regional expansion and contraction described.",
+  "evaluation_criteria": "Sequential Accuracy Score: 0-5 (Evaluates whether the response correctly reconstructs the full chronological sequence of changes)\nCurrent-State Accuracy Score: 0-5 (Evaluates whether the FINAL/current state described is correct, not an intermediate state)\nCompleteness Score: 0-5 (Evaluates whether all relevant facts from the context were used, none omitted)\nCoherence Score: 0-5 (Evaluates whether the explanation is clearly organized and easy to follow despite the complexity)",
+  "max_score": "20",
+  "model": "gemini",
+  "response_text": "Based on the provided notes, here are the answers to your questions:\n\n### 1. Currently Active Regions\n* **US-East** (Note 5)\n* **EU-West** (Note 5)\n\n### 2. Removed Region\n* **AP-Southeast** (Note 4)\n\n---\n\n### 3. Full Timeline of Regional Expansion and Contraction\n\n* **Phase 1 (Origin):** The company originally operated in a single region: **US-East**. *(Note 1)*\n* **Phase 2 (First Expansion):** A second region, **EU-West**, was added to serve European customers with lower latency. *(Note 2)*\n* **Phase 3 (Second Expansion):** A third region, **AP-Southeast**, was added later to serve Asian customers. *(Note 3)*\n* **Phase 4 (Contraction):** Due to low usage, **AP-Southeast** was decommissioned, and its customers were routed back to **EU-West**. *(Note 4)*\n* **Phase 5 (Present Day):** **US-East** and **EU-West** remain the only two active regions. *(Note 5)*",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.2069,
+  "timestamp_utc": "2026-08-20T08:44:01.485480+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

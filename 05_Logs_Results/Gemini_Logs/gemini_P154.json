@@ -1,0 +1,18 @@
+{
+  "id": "P154",
+  "category": "Long-context Retention",
+  "difficulty": "Medium",
+  "prompt": "Note 1: Warehouse 1 held 500 units of Product A at the start of the month. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: 200 units were shipped out from Warehouse 1 mid-month. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: 150 more units arrived at Warehouse 1 at the end of the month. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: What is the final unit count at Warehouse 1, and show the running calculation?",
+  "evaluation_criteria": "Multi-Fact Synthesis: 0-5 (Evaluates whether the response correctly combines information from multiple, sequentially updated facts)\nNumerical Accuracy: 0-5 (Evaluates whether any calculations or comparisons across the facts are computed correctly)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "Based on the provided notes, here is the running calculation and the final unit count for Product A at Warehouse 1:\n\n* **Starting Inventory (Note 1):** 500 units\n* **Mid-month Shipment (Note 2):** 500 - 200 = 300 units remaining\n* **End-of-month Arrival (Note 3):** 300 + 150 = 450 units remaining\n\n**Answer:**\nThe final unit count at Warehouse 1 is **450 units**.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.9772,
+  "timestamp_utc": "2026-08-20T08:44:50.766890+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

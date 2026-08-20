@@ -1,0 +1,18 @@
+{
+  "id": "P131",
+  "category": "Ambiguity Handling",
+  "difficulty": "Medium",
+  "prompt": "Summarize the attached file.",
+  "evaluation_criteria": "Missing Context Identification: 0-5 (Evaluates whether the response identifies exactly what information is missing, e.g. which code, which document, which app)\nConstructive Response: 0-5 (Evaluates whether the response still provides useful general guidance despite the ambiguity)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "It looks like you forgot to attach or paste the file! \n\nPlease upload the file or paste the text you would like me to summarize, and I'll be happy to help.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.8137,
+  "timestamp_utc": "2026-08-20T08:42:31.069627+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

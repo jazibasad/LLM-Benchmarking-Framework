@@ -1,0 +1,18 @@
+{
+  "id": "P162",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this log file format (space-separated with variable fields) into structured JSON, correctly handling the fact that the message field itself may contain spaces:\n2026-01-01 10:00:00 ERROR Connection timeout after 30s\n2026-01-01 10:01:15 INFO Server started successfully",
+  "evaluation_criteria": "Relational Integrity Score: 0-5 (Evaluates whether relationships/references between the transformed structures are correctly preserved)\nEdge Case Handling Score: 0-5 (Evaluates whether irregular or inconsistent source data is handled correctly rather than causing errors or silent data loss)\nOutput Validity Score: 0-5 (Evaluates whether the output is syntactically valid in its target format)\nCompleteness Score: 0-5 (Evaluates whether all source data is represented in the output with nothing silently dropped)",
+  "max_score": "20",
+  "model": "gemini",
+  "response_text": "Here is the structured JSON representation of your log file. \n\nTo handle the variable-length message field correctly, the log line is split into a maximum of 4 parts: **Date**, **Time**, **Log Level**, and the remaining string as the **Message**.\n\n```json\n[\n  {\n    \"date\": \"2026-01-01\",\n    \"time\": \"10:00:00\",\n    \"level\": \"ERROR\",\n    \"message\": \"Connection timeout after 30s\"\n  },\n  {\n    \"date\": \"2026-01-01\",\n    \"time\": \"10:01:15\",\n    \"level\": \"INFO\",\n    \"message\": \"Server started successfully\"\n  }\n]\n```\n\n### Python snippet used for parsing:\nIf you need to parse a file containing logs in this format yourself, you can use this Python snippet which safely extracts the first 3 space-separated tokens and leaves the rest intact:\n\n```python\nimport json\n\nlog_lines = [\n    \"2026-01-01 10:00:00 ERROR Connection timeout after 30s\",\n    \"2026-01-01 10:01:15 INFO Server started successfully\"\n]\n\nstructured_logs = []\n\nfor line in log_lines:\n    # Split by whitespace into a maximum of 4 parts\n    date, time, level, message = line.split(\" \", 3)\n    \n    structured_logs.append({\n        \"date\": date,\n        \"time\": time,\n        \"level\": level,\n        \"message\": message\n    })\n\nprint(json.dumps(structured_logs, indent=2))\n```",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.9296,
+  "timestamp_utc": "2026-08-20T08:45:27.728588+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

@@ -1,0 +1,18 @@
+{
+  "id": "P166",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this GraphQL query response (with nested pagination edges/nodes structure) into a flat, simplified JSON array containing only the actual data fields, discarding the pagination wrapper.",
+  "evaluation_criteria": "Relational Integrity Score: 0-5 (Evaluates whether relationships/references between the transformed structures are correctly preserved)\nEdge Case Handling Score: 0-5 (Evaluates whether irregular or inconsistent source data is handled correctly rather than causing errors or silent data loss)\nOutput Validity Score: 0-5 (Evaluates whether the output is syntactically valid in its target format)\nCompleteness Score: 0-5 (Evaluates whether all source data is represented in the output with nothing silently dropped)",
+  "max_score": "20",
+  "model": "gemini",
+  "response_text": "It looks like you forgot to include the GraphQL response and the specific query/structure! \n\nPlease paste:\n1. The **GraphQL response JSON** (with the `edges`/`node` pagination wrapper).\n2. *(Optional)* Any specific fields you want to keep or discard.\n\nOnce you provide that, I will gladly transform it into a flat, clean JSON array for you!",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.5322,
+  "timestamp_utc": "2026-08-20T08:46:03.337822+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

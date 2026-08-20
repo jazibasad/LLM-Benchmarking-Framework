@@ -1,0 +1,18 @@
+{
+  "id": "P169",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this XML document with attributes, nested elements, AND repeated sibling elements (representing a list) into JSON, correctly distinguishing which XML patterns should become JSON arrays versus JSON objects.",
+  "evaluation_criteria": "Relational Integrity Score: 0-5 (Evaluates whether relationships/references between the transformed structures are correctly preserved)\nEdge Case Handling Score: 0-5 (Evaluates whether irregular or inconsistent source data is handled correctly rather than causing errors or silent data loss)\nOutput Validity Score: 0-5 (Evaluates whether the output is syntactically valid in its target format)\nCompleteness Score: 0-5 (Evaluates whether all source data is represented in the output with nothing silently dropped)",
+  "max_score": "20",
+  "model": "gemini",
+  "response_text": "It looks like you forgot to include the XML document! \n\nPlease paste the XML you would like to convert, and I will transform it into JSON for you, ensuring that:\n* **Repeated sibling elements** become JSON arrays.\n* **Attributes** are handled correctly (usually via an `@` prefix or merged depending on standard conventions like BadgerFish or Parker).\n* **Nested elements** become nested JSON objects.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.9212,
+  "timestamp_utc": "2026-08-20T08:46:34.232952+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

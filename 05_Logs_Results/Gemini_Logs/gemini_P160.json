@@ -1,0 +1,18 @@
+{
+  "id": "P160",
+  "category": "Data Transformation",
+  "difficulty": "Easy",
+  "prompt": "Convert this binary number to decimal: 1011",
+  "evaluation_criteria": "Conversion Accuracy: 0-5 (Evaluates whether the output value is mathematically or structurally correct)\nFormat Compliance: 0-5 (Evaluates whether the output exactly matches the requested target format)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "To convert the binary number **1011** to decimal, you can calculate the value of each digit based on its position (powers of 2), starting from the right (which is $2^0$):\n\n* $1 \\times 2^3 = 1 \\times 8 = 8$\n* $0 \\times 2^2 = 0 \\times 4 = 0$\n* $1 \\times 2^1 = 1 \\times 2 = 2$\n* $1 \\times 2^0 = 1 \\times 1 = 1$\n\nNow, add the values together:\n$8 + 0 + 2 + 1 = 11$\n\nSo, the binary number 1011 in decimal is **11**.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.9858,
+  "timestamp_utc": "2026-08-20T08:45:17.782471+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

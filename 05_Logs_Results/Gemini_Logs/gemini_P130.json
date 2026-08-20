@@ -1,0 +1,18 @@
+{
+  "id": "P130",
+  "category": "Ambiguity Handling",
+  "difficulty": "Medium",
+  "prompt": "Write a follow-up email to the client.",
+  "evaluation_criteria": "Missing Context Identification: 0-5 (Evaluates whether the response identifies exactly what information is missing, e.g. which code, which document, which app)\nConstructive Response: 0-5 (Evaluates whether the response still provides useful general guidance despite the ambiguity)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "To give you the best possible follow-up email, I need just a little more context! \n\nCould you please let me know:\n1. **What is the purpose of the follow-up?** (e.g., following up on a proposal, checking in after a meeting, asking for an invoice payment, or seeing if they reviewed a draft?)\n2. **What tone should it have?** (e.g., professional, casual, urgent, friendly)\n3. **Are there any specific details to include?** (e.g., a deadline, a specific date of your last conversation, a meeting link)\n\n***\n\nIn the meantime, here are a few templates you can use depending on the situation:\n\n### Option 1: General Check-in (After a proposal or quote)\n**Subject:** Following up / [Project Name]\n\nHi [Client Name],\n\nI hope you’re having a great week. \n\nI’m just circling back to see if you’ve had a chance to review the [proposal/quote/documents] I sent over on [Day of week/Date]. \n\nI’d love to answer any questions you might have or discuss potential next steps. Let me know if you have time for a brief call this week—[insert link to calendar, e.g., here is a link to my calendar]—or feel free to reply directly to this email.\n\nBest regards,\n\n[Your Name]  \n[Your Title/Company]\n\n***\n\n### Option 2: Following up after a meeting\n**Subject:** Great speaking with you today / Next steps for [Project Name]\n\nHi [Client Name],\n\nIt was great chatting with you earlier today! I really enjoyed learning more about [mention one specific thing you discussed].\n\nAs promised, I’ve attached [any documents/notes/portfolio pieces you promised]. \n\nPlease let me know if you have any initial feedback or questions. Otherwise, I look forward to connecting again on [Date of next meeting/Action item deadline].\n\nBest,\n\n[Your Name]  \n[Your Title/Company]\n\n***\n\n### Option 3: Gentle nudge (Waiting on a response/decision)\n**Subject:** Checking in: [Project Name]\n\nHi [Client Name],\n\nI hope all is well on your end. \n\nI wanted to quickly touch base regarding [Project Name]. I know you have a lot on your plate right now, but I wanted to make sure this stayed on your radar. \n\nAre you still interested in moving forward? If so, please let me know when you might have availability to discuss. If your priorities have shifted, I completely understand—just give me a quick heads-up so I can plan accordingly.\n\nThanks so much,\n\n[Your Name]  \n[Your Title/Company]\n\n***\n\n*Just reply with a few details about your specific situation, and I will tailor one of these for you!*",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 2.9939,
+  "timestamp_utc": "2026-08-20T08:42:28.749499+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

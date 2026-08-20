@@ -1,0 +1,18 @@
+{
+  "id": "P164",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this Markdown table with merged-looking header groups into a properly normalized JSON array, correctly attributing each sub-column to its parent header:\n| Name | Q1 | | Q2 | |\n|------|-----|-----|-----|-----|\n| | Sales | Cost | Sales | Cost |\n| Alice | 100 | 40 | 120 | 45 |",
+  "evaluation_criteria": "Relational Integrity Score: 0-5 (Evaluates whether relationships/references between the transformed structures are correctly preserved)\nEdge Case Handling Score: 0-5 (Evaluates whether irregular or inconsistent source data is handled correctly rather than causing errors or silent data loss)\nOutput Validity Score: 0-5 (Evaluates whether the output is syntactically valid in its target format)\nCompleteness Score: 0-5 (Evaluates whether all source data is represented in the output with nothing silently dropped)",
+  "max_score": "20",
+  "model": "gemini",
+  "response_text": "Here is the Markdown table converted into a properly normalized JSON array. \n\nThe sub-columns are structured as nested objects or combined keys to ensure each data point is correctly attributed to both its parent quarter (Q1, Q2) and its sub-category (Sales, Cost).\n\n```json\n[\n  {\n    \"Name\": \"Alice\",\n    \"Q1\": {\n      \"Sales\": 100,\n      \"Cost\": 40\n    },\n    \"Q2\": {\n      \"Sales\": 120,\n      \"Cost\": 45\n    }\n  }\n]\n```",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.0544,
+  "timestamp_utc": "2026-08-20T08:45:40.355882+00:00",
+  "run_number": 2,
+  "repeat_count": 5
+}

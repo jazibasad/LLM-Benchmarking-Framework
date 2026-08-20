@@ -1,0 +1,18 @@
+{
+  "id": "P129",
+  "category": "Ambiguity Handling",
+  "difficulty": "Medium",
+  "prompt": "Optimize this function.",
+  "evaluation_criteria": "Missing Context Identification: 0-5 (Evaluates whether the response identifies exactly what information is missing, e.g. which code, which document, which app)\nConstructive Response: 0-5 (Evaluates whether the response still provides useful general guidance despite the ambiguity)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "It looks like you forgot to include the function! \n\nPlease paste the code you would like me to optimize, and let me know:\n1. **What language** it is written in.\n2. **What it is supposed to do** (if it's not immediately obvious).\n3. **Any performance bottlenecks** you've already noticed (e.g., is it too slow with large datasets, uses too much memory, etc.). \n\nWhenever you're ready, share the code!",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.9452,
+  "timestamp_utc": "2026-08-20T08:42:22.200998+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

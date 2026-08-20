@@ -1,0 +1,18 @@
+{
+  "id": "P176",
+  "category": "Data Transformation",
+  "difficulty": "Medium",
+  "prompt": "Convert this tab-separated data into a JSON array of objects:\nname\tage\nGrace\t29\nHeidi\t34",
+  "evaluation_criteria": "Structural Correctness: 0-5 (Evaluates whether the output structure correctly represents the source data's relationships)\nData Fidelity: 0-5 (Evaluates whether every value from the source is preserved accurately, with none dropped or altered)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "```json\n[\n  {\n    \"name\": \"Grace\",\n    \"age\": 29\n  },\n  {\n    \"name\": \"Heidi\",\n    \"age\": 34\n  }\n]\n```",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.794,
+  "timestamp_utc": "2026-08-20T08:47:05.610808+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

@@ -1,0 +1,18 @@
+{
+  "id": "P182",
+  "category": "Summarization",
+  "difficulty": "Easy",
+  "prompt": "Summarize this movie plot in two sentences: 'A young inventor discovers a hidden workshop left by her grandfather, filled with unfinished mechanical creations. As she repairs them one by one, she uncovers a family secret that changes how she sees her own future.'",
+  "evaluation_criteria": "Conciseness Compliance: 0-5 (Evaluates whether the length constraint, if specified, is followed exactly)\nCore Meaning Preservation: 0-5 (Evaluates whether the summary captures the main point of the source text)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "A young inventor discovers her grandfather's hidden workshop filled with unfinished mechanical creations. By repairing them, she uncovers a family secret that transforms her perspective on the future.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.7044,
+  "timestamp_utc": "2026-08-20T08:47:32.527552+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

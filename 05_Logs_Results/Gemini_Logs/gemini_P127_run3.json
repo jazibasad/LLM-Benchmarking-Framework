@@ -1,0 +1,18 @@
+{
+  "id": "P127",
+  "category": "Ambiguity Handling",
+  "difficulty": "Medium",
+  "prompt": "Can you make this report better?",
+  "evaluation_criteria": "Missing Context Identification: 0-5 (Evaluates whether the response identifies exactly what information is missing, e.g. which code, which document, which app)\nConstructive Response: 0-5 (Evaluates whether the response still provides useful general guidance despite the ambiguity)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "I would love to help! However, it looks like you forgot to include the report. \n\nPlease paste the text of the report here, and let me know:\n1. **Who is the audience?** (e.g., your boss, a client, the general public, a technical team)\n2. **What is the main goal?** (e.g., to inform, to persuade, to summarize data, to recommend an action)\n3. **What style do you prefer?** (e.g., formal, concise, persuasive, creative)\n\nOnce you share it, I can improve its clarity, tone, structure, and grammar!",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.2907,
+  "timestamp_utc": "2026-08-20T08:42:04.541750+00:00",
+  "run_number": 3,
+  "repeat_count": 5
+}

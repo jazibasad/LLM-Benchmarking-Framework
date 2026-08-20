@@ -1,0 +1,18 @@
+{
+  "id": "P180",
+  "category": "Summarization",
+  "difficulty": "Easy",
+  "prompt": "Summarize this email in a single sentence: 'Hi team, just a reminder that the office will be closed Monday for the holiday. Please make sure any urgent client requests are handled before Friday close of business. Thanks!'",
+  "evaluation_criteria": "Conciseness Compliance: 0-5 (Evaluates whether the length constraint, if specified, is followed exactly)\nCore Meaning Preservation: 0-5 (Evaluates whether the summary captures the main point of the source text)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "The office will be closed on Monday for the holiday, so please resolve any urgent client requests by the end of the day on Friday.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.9681,
+  "timestamp_utc": "2026-08-20T08:47:23.789055+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

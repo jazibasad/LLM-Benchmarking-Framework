@@ -1,0 +1,18 @@
+{
+  "id": "P143",
+  "category": "Long-context Retention",
+  "difficulty": "Hard",
+  "prompt": "Note 1: Team structure originally had one team covering both frontend and backend. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: As the company grew, the team split into a dedicated Frontend team and Backend team. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: A Platform team was later carved out of Backend to handle infrastructure specifically. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 4: Backend team currently focuses only on business logic and APIs, not infrastructure. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 5: Frontend team has remained unchanged in scope since the initial split. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Describe the current responsibilities of all three teams, and explain the org changes that produced this structure, step by step.",
+  "evaluation_criteria": "Sequential Accuracy Score: 0-5 (Evaluates whether the response correctly reconstructs the full chronological sequence of changes)\nCurrent-State Accuracy Score: 0-5 (Evaluates whether the FINAL/current state described is correct, not an intermediate state)\nCompleteness Score: 0-5 (Evaluates whether all relevant facts from the context were used, none omitted)\nCoherence Score: 0-5 (Evaluates whether the explanation is clearly organized and easy to follow despite the complexity)",
+  "max_score": "20",
+  "model": "gemini",
+  "response_text": "Based on the provided notes, here is the step-by-step evolution of the organizational changes and the current responsibilities of the three teams:\n\n### **Organizational Changes (Step-by-Step)**\n\n1. **Initial State:** The organization began with a single, unified team responsible for covering both frontend and backend development (Note 1).\n2. **First Split:** As the company grew, this original team split into two distinct, dedicated units: a **Frontend team** and a **Backend team** (Note 2).\n3. **Second Split (Platform Carve-Out):** As the organization scaled further, a dedicated **Platform team** was carved directly out of the Backend team to specifically handle infrastructure (Note 3).\n\n---\n\n### **Current Team Responsibilities**\n\n* **Frontend Team:** Has remained unchanged in scope since it was initially split from the original combined team (Note 5). Its responsibilities are focused strictly on frontend development.\n* **Backend Team:** Currently focuses exclusively on business logic and APIs, and no longer handles infrastructure (Note 4).\n* **Platform Team:** Responsible specifically for handling infrastructure, having been carved out of the Backend team for this purpose (Note 3).",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.5524,
+  "timestamp_utc": "2026-08-20T08:43:39.324278+00:00",
+  "run_number": 4,
+  "repeat_count": 5
+}

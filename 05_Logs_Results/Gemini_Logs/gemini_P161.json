@@ -1,0 +1,18 @@
+{
+  "id": "P161",
+  "category": "Data Transformation",
+  "difficulty": "Hard",
+  "prompt": "Convert this deeply nested JSON representing an e-commerce order into a set of THREE normalized CSV tables (orders, order_items, customers) with proper foreign key columns linking them:\n{\"order_id\": \"O1001\", \"customer\": {\"id\": \"C55\", \"name\": \"Ivan\"}, \"items\": [{\"sku\": \"A1\", \"qty\": 2, \"price\": 15.0}, {\"sku\": \"B2\", \"qty\": 1, \"price\": 40.0}]}",
+  "evaluation_criteria": "Relational Integrity Score: 0-5 (Evaluates whether relationships/references between the transformed structures are correctly preserved)\nEdge Case Handling Score: 0-5 (Evaluates whether irregular or inconsistent source data is handled correctly rather than causing errors or silent data loss)\nOutput Validity Score: 0-5 (Evaluates whether the output is syntactically valid in its target format)\nCompleteness Score: 0-5 (Evaluates whether all source data is represented in the output with nothing silently dropped)",
+  "max_score": "20",
+  "model": "gemini",
+  "response_text": "Here are the three normalized CSV tables representing the e-commerce order, with proper foreign key relationships:\n\n### 1. `customers.csv`\nContains unique customer information.\n\n```csv\ncustomer_id,name\nC55,Ivan\n```\n\n### 2. `orders.csv`\nContains order-level details and links back to the customer via `customer_id` (Foreign Key).\n\n```csv\norder_id,customer_id\nO1001,C55\n```\n\n### 3. `order_items.csv`\nContains the line items for each order and links back to the order via `order_id` (Foreign Key).\n\n```csv\norder_id,sku,qty,price\nO1001,A1,2,15.0\nO1001,B2,1,40.0\n```",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.5865,
+  "timestamp_utc": "2026-08-20T08:45:22.883684+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

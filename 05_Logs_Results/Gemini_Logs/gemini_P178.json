@@ -1,0 +1,18 @@
+{
+  "id": "P178",
+  "category": "Summarization",
+  "difficulty": "Easy",
+  "prompt": "Summarize this short news blurb in exactly 15 words: 'Local authorities announced a new recycling initiative starting next month, aiming to reduce landfill waste by encouraging residents to sort plastics, glass, and paper separately.'",
+  "evaluation_criteria": "Conciseness Compliance: 0-5 (Evaluates whether the length constraint, if specified, is followed exactly)\nCore Meaning Preservation: 0-5 (Evaluates whether the summary captures the main point of the source text)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "Starting next month, authorities launch a recycling initiative to reduce landfill waste through separate sorting.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.7616,
+  "timestamp_utc": "2026-08-20T08:47:14.580496+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}
