@@ -1,0 +1,62 @@
+{
+  "week": "Week_5",
+  "script_under_test": "llm_judge_scorer.py",
+  "run_timestamp_utc": "2026-08-20T12:28:57.013620+00:00",
+  "total_tests": 10,
+  "passed": 10,
+  "failed": 0,
+  "skipped": 0,
+  "exit_code": 0,
+  "tests": [
+    {
+      "test_name": "03_Code/tests/test_llm_judge_scorer.py::test_criteria_parsing",
+      "outcome": "passed",
+      "duration_seconds": 0.0012
+    },
+    {
+      "test_name": "03_Code/tests/test_llm_judge_scorer.py::test_judge_prompt_includes_score_anchors",
+      "outcome": "passed",
+      "duration_seconds": 0.0005
+    },
+    {
+      "test_name": "03_Code/tests/test_llm_judge_scorer.py::test_extract_json_handles_markdown_fences",
+      "outcome": "passed",
+      "duration_seconds": 0.0015
+    },
+    {
+      "test_name": "03_Code/tests/test_llm_judge_scorer.py::test_single_run_prompt_scored_correctly",
+      "outcome": "passed",
+      "duration_seconds": 0.355
+    },
+    {
+      "test_name": "03_Code/tests/test_llm_judge_scorer.py::test_multi_run_prompt_scored_separately_per_run",
+      "outcome": "passed",
+      "duration_seconds": 0.1231
+    },
+    {
+      "test_name": "03_Code/tests/test_llm_judge_scorer.py::test_success_failure_outcome_boundary",
+      "outcome": "passed",
+      "duration_seconds": 0.0906
+    },
+    {
+      "test_name": "03_Code/tests/test_llm_judge_scorer.py::test_resume_skips_already_scored_runs",
+      "outcome": "passed",
+      "duration_seconds": 0.0651
+    },
+    {
+      "test_name": "03_Code/tests/test_llm_judge_scorer.py::test_backoff_retries_then_succeeds",
+      "outcome": "passed",
+      "duration_seconds": 0.0961
+    },
+    {
+      "test_name": "03_Code/tests/test_llm_judge_scorer.py::test_persistent_error_stops_on_first_run",
+      "outcome": "passed",
+      "duration_seconds": 0.077
+    },
+    {
+      "test_name": "03_Code/tests/test_llm_judge_scorer.py::test_atomic_write_leaves_no_tmp_files",
+      "outcome": "passed",
+      "duration_seconds": 0.1401
+    }
+  ]
+}
