@@ -1,0 +1,18 @@
+{
+  "id": "P054",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Describe operating system virtual memory paging. NEGATIVE CONSTRAINT 1: Do not use the letters 'a', 'e', or 'i' (only allow 'o' and 'u' as vowels). NEGATIVE CONSTRAINT 2: Format as a single paragraph.",
+  "evaluation_criteria": "Vowel Restriction: 0-5 (Evaluates strict filtering of a, e, i vowels)\nParagraph Layout: 0-5 (Evaluates single paragraph structure)",
+  "max_score": "15",
+  "model": "gemini",
+  "response_text": "Computers turn sluggish when physical silicon runs low. To fix this, strong OS logic employs virtual memory paging. It chops programs up into tiny chunks. Such chunks, holding code, flit back and forth. Hard disks hold unused bits. RAM holds hot bits. CPU looks up physical spots using maps. Swapping occurs nonstop, hiding limited physical limits.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.2814,
+  "timestamp_utc": "2026-08-20T08:29:38.595265+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

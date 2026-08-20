@@ -1,0 +1,18 @@
+{
+  "id": "P045",
+  "category": "Instruction Following",
+  "difficulty": "Easy",
+  "prompt": "Provide a summary of the OSI model layers. NEGATIVE CONSTRAINT: Do NOT mention the physical layer or the application layer anywhere in your response. Format the output strictly as a numbered list.",
+  "evaluation_criteria": "Negative Constraint Adherence: 0-5 (Evaluates strict avoidance of forbidden layers)\nFormatting Adherence: 0-5 (Evaluates strict numbered list structure)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "1. Data Link: Responsible for node-to-node data transfer and error detection over the local network media.\n2. Network: Handles routing, forwarding, and logical addressing to move packets across multiple interconnected networks.\n3. Transport: Ensures reliable, ordered, and error-checked delivery of data streams between end systems.\n4. Session: Manages and maintains connections, dialogs, and synchronization between communicating applications.\n5. Presentation: Translates, encrypts, and compresses data so that it is readable by the receiving system.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.1305,
+  "timestamp_utc": "2026-08-20T08:28:57.937356+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

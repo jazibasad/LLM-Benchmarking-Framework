@@ -1,0 +1,18 @@
+{
+  "id": "P040",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "A cloud provider charges $0.08 per GB-month for storage and $0.12 per GB for outbound data transfer. System A stores 500GB and transfers 2TB monthly. System B stores 2TB and transfers 300GB monthly. Calculate the exact annual cost for both systems and determine which is more cost-effective.",
+  "evaluation_criteria": "Unit Conversion: 0-5 (Evaluates correct conversion between GB and TB)\nCost Computation: 0-5 (Evaluates annual calculation accuracy and comparison)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "To determine the exact annual cost for both systems, we first need to calculate their monthly costs and then multiply by 12 months. \n\n**Pricing Rates:**\n*   Storage: $0.08 per GB-month\n*   Outbound Data Transfer: $0.12 per GB\n*   *Note: 1 Terabyte (TB) = 1,024 Gigabytes (GB)*\n\n---\n\n### **System A Calculation**\n*   **Storage:** 500 GB\n*   **Outbound Transfer:** 2 TB = $2 \\times 1,024 = 2,048$ GB\n\n1. **Monthly Storage Cost:**  \n   $500 \\text{ GB} \\times \\$0.08 = \\$40.00$\n2. **Monthly Transfer Cost:**  \n   $2,048 \\text{ GB} \\times \\$0.12 = \\$245.76$\n3. **Total Monthly Cost:**  \n   $\\$40.00 + \\$245.76 = \\$285.76$\n4. **Total Annual Cost:**  \n   $\\$285.76 \\times 12 = \\mathbf{\\$3,429.12}$\n\n---\n\n### **System B Calculation**\n*   **Storage:** 2 TB = $2 \\times 1,024 = 2,048$ GB\n*   **Outbound Transfer:** 300 GB\n\n1. **Monthly Storage Cost:**  \n   $2,048 \\text{ GB} \\times \\$0.08 = \\$163.84$\n2. **Monthly Transfer Cost:**  \n   $300 \\text{ GB} \\times \\$0.12 = \\$36.00$\n3. **Total Monthly Cost:**  \n   $\\$163.84 + \\$36.00 = \\$199.84$\n4. **Total Annual Cost:**  \n   $\\$199.84 \\times 12 = \\mathbf{\\$2,398.08}$\n\n---\n\n### **Conclusion**\n*   **System A Annual Cost:** $3,429.12\n*   **System B Annual Cost:** $2,398.08\n\n**System B** is more cost-effective, saving **$1,031.04** per year compared to System A.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.9704,
+  "timestamp_utc": "2026-08-20T08:28:06.331108+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

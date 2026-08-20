@@ -1,0 +1,18 @@
+{
+  "id": "P003",
+  "category": "Knowledge Retrieval",
+  "difficulty": "Easy",
+  "prompt": "Define what an HTTP status code in the 5xx range signifies and give two common examples.",
+  "evaluation_criteria": "Factual Accuracy: 0-5 (Evaluates server error classification)\nExample Precision: 0-5 (Evaluates correctness of examples like 500 or 503)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "An HTTP status code in the **5xx range** signifies a **Server Error**. This means that while the client’s request was valid and successfully received, the server itself encountered an unexpected condition, failure, or inability to fulfill the request. \n\nTwo common examples of 5xx status codes are:\n\n1. **500 Internal Server Error:** A generic \"catch-all\" error message. It indicates that the server encountered an unexpected condition that prevented it from fulfilling the request (e.g., a crashed application, a coding bug, or a misconfigured server).\n2. **502 Bad Gateway:** This indicates that the server, while acting as a gateway or proxy to fulfill the request, received an invalid response from an inbound server it accessed to process the request.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.6276,
+  "timestamp_utc": "2026-08-20T08:22:55.242634+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

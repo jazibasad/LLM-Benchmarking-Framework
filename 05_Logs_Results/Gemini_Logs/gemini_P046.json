@@ -1,0 +1,18 @@
+{
+  "id": "P046",
+  "category": "Instruction Following",
+  "difficulty": "Easy",
+  "prompt": "List three benefits of cloud computing. NEGATIVE CONSTRAINT: Do not use the letter 'e' or 'E' anywhere in the response. Format as bullet points.",
+  "evaluation_criteria": "Negative Constraint: 0-5 (Evaluates absolute absence of target character)\nFormatting: 0-5 (Evaluates bullet point structure)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "* Cost savings\n* High growth capability\n* Data safety",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.932,
+  "timestamp_utc": "2026-08-20T08:29:02.239933+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

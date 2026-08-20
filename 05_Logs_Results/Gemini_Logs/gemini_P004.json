@@ -1,0 +1,18 @@
+{
+  "id": "P004",
+  "category": "Knowledge Retrieval",
+  "difficulty": "Easy",
+  "prompt": "What is process synchronization in operating systems, and why is a mutex used?",
+  "evaluation_criteria": "Definition Precision: 0-5 (Evaluates understanding of race conditions)\nMutex Explanation: 0-5 (Evaluates mutual exclusion mechanics)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "Here is a clear breakdown of **process synchronization** and the role of a **mutex** in operating systems.\n\n---\n\n### Part 1: What is Process Synchronization?\n\nIn a modern operating system, multiple processes (or threads) often run concurrently and may need to share resources, such as memory, files, or hardware devices. \n\n**Process synchronization** is the coordination of the execution of multiple processes to ensure that they execute in an orderly fashion when accessing shared resources. \n\n#### Why is it needed?\nWhen independent processes run concurrently, they are executed asynchronously (their speed and exact timing are unpredictable). If two or more processes try to **read and write to the same shared data** at the same time, the final outcome can depend on the exact order in which the instructions are executed. This is known as a **Race Condition**.\n\nTo prevent race conditions, operating systems divide code into sections:\n1. **Critical Section:** The part of the code that accesses shared resources (like a global variable or database).\n2. **Remainder Section:** The rest of the code.\n\nProper process synchronization ensures that **only one process can execute in its critical section at any given time**, maintaining data consistency.\n\n---\n\n### Part 2: Why is a Mutex Used?\n\nA **Mutex** (short for **Mut**ual **Ex**clusion lock) is a synchronization primitive used to protect a critical section and prevent race conditions. \n\nThink of a mutex as a **bathroom key** in a small office:\n* There is only one key.\n* If you want to use the bathroom (enter the critical section), you must take the key.\n* While you are inside, the key is gone, and anyone else wanting to use the bathroom must wait outside.\n* When you leave, you return (release) the key so the next person can use it.\n\n#### How a Mutex Works:\n1. **Lock (Acquire):** Before a process enters its critical section, it must successfully acquire the mutex. If the mutex is already held by another process, the current process is put to sleep (blocked) until the mutex becomes available.\n2. **Unlock (Release):** Once the process finishes executing its critical section, it releases the mutex, waking up one of the waiting processes.\n\n#### Key Characteristics of a Mutex:\n* **Binary State:** A mutex has only two states—**locked** or **unlocked** (owned or not owned).\n* **Ownership:** A mutex has the concept of *ownership*. Only the thread that locked the mutex is allowed to unlock it. This makes it ideal for protecting exclusive access to a single resource.\n\n### Summary\n* **Process Synchronization** keeps concurrent processes from stepping on each other's toes when accessing shared data.\n* A **Mutex** is the specific tool used to enforce this by ensuring **mutual exclusion**—allowing only one process at a time inside a critical section.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 2.8566,
+  "timestamp_utc": "2026-08-20T08:23:00.972539+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

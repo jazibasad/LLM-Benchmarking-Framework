@@ -1,0 +1,43 @@
+{
+  "timestamp_utc": "2026-08-20T08:16:01.289001+00:00",
+  "hardware": {
+    "cpu": "Intel64 Family 6 Model 142 Stepping 9, GenuineIntel",
+    "ram_gb": 15.9,
+    "machine_type": "AMD64"
+  },
+  "operating_system": {
+    "system": "Windows",
+    "release": "10",
+    "version": "10.0.19045"
+  },
+  "python": {
+    "version": "3.11.8",
+    "implementation": "CPython",
+    "executable": "C:\\Users\\User\\Desktop\\LLM-Benchmarking-Framework\\.venv\\Scripts\\python.exe"
+  },
+  "sdk_versions": {
+    "google-genai": "unknown",
+    "mistralai": "unknown",
+    "groq": "1.6.0",
+    "openai": "2.53.0",
+    "python-dotenv": "unknown"
+  },
+  "network": {
+    "internet_status": "connected",
+    "hostname": "PC-Jazib"
+  },
+  "model_endpoints": {
+    "gemini": {
+      "model": "gemini-3.5-flash-lite",
+      "temperature": 0.7
+    },
+    "mistral": {
+      "model": "open-mistral-nemo",
+      "temperature": 0.7
+    },
+    "groq": {
+      "model": "llama-3.3-70b-versatile",
+      "temperature": 0.7
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "P002",
+  "category": "Knowledge Retrieval",
+  "difficulty": "Easy",
+  "prompt": "List the four core principles of Object-Oriented Programming and provide a one-sentence definition for each.",
+  "evaluation_criteria": "Definition Accuracy: 0-5 (Evaluates correctness of OOP principles)\nConciseness: 0-5 (Evaluates adherence to concise definitions)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "The four core principles of Object-Oriented Programming are:\n\n1. **Encapsulation:** The bundling of data and the methods that operate on that data within a single unit, while restricting direct access to some of the object's components.\n2. **Abstraction:** The process of hiding complex implementation details and showing only the essential features of an object.\n3. **Inheritance:** A mechanism where a new class derives properties and behaviors from an existing class, promoting code reuse.\n4. **Polymorphism:** The ability of different classes to respond to the same message or method call in their own unique ways.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.0039,
+  "timestamp_utc": "2026-08-20T08:22:50.117902+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

@@ -1,0 +1,18 @@
+{
+  "id": "P005",
+  "category": "Knowledge Retrieval",
+  "difficulty": "Easy",
+  "prompt": "Define symmetric and asymmetric encryption and name one standard algorithm for each.",
+  "evaluation_criteria": "Algorithm Precision: 0-5 (Evaluates AES/RSA correct assignment)\nKey Management Clarity: 0-5 (Evaluates single vs public/private key handling)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "Here are the definitions of symmetric and asymmetric encryption, along with a standard algorithm for each:\n\n### 1. Symmetric Encryption\n**Definition:** \nSymmetric encryption is a type of encryption where **the same secret key** is used for both encrypting the plaintext and decrypting the ciphertext. Because both the sender and the receiver must share this exact same key, the primary challenge of symmetric encryption is securely sharing and managing the key (key distribution). However, it is computationally fast and ideal for encrypting large amounts of data.\n\n*   **Standard Algorithm:** **AES (Advanced Encryption Standard)**. \n    *   *Details:* AES is currently the global standard for symmetric encryption, trusted by governments and financial institutions to secure sensitive data. It uses key lengths of 128, 192, or 256 bits.\n\n---\n\n### 2. Asymmetric Encryption (Public-Key Cryptography)\n**Definition:** \nAsymmetric encryption uses **a pair of mathematically related keys**: a **public key** and a **private key**. The public key is shared openly with anyone and is used to *encrypt* the message. The private key is kept secret by the owner and is required to *decrypt* the message. This solves the key distribution problem of symmetric encryption, as you never need to transmit the secret key across the network. However, it is computationally intensive and slower than symmetric encryption.\n\n*   **Standard Algorithm:** **RSA (Rivest–Shamir–Adleman)**.\n    *   *Details:* RSA is one of the oldest and most widely used asymmetric algorithms. It relies on the mathematical difficulty of factoring the product of two large prime numbers. It is commonly used to securely exchange symmetric keys over the internet (such as in HTTPS/TLS).",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.8714,
+  "timestamp_utc": "2026-08-20T08:23:04.487922+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

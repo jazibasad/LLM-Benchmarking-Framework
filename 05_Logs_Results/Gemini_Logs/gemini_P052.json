@@ -1,0 +1,18 @@
+{
+  "id": "P052",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Explain asynchronous event loops in programming. NEGATIVE CONSTRAINT 1: Alternate sentence cases (Sentence 1 lowercase only, Sentence 2 UPPERCASE only, Sentence 3 lowercase only). NEGATIVE CONSTRAINT 2: Do not use the letter 'e'. NEGATIVE CONSTRAINT 3: Exactly four sentences.",
+  "evaluation_criteria": "Alternating Case: 0-5 (Evaluates strict lower/UPPER case alternation per sentence)\nForbidden Letter: 0-5 (Evaluates absence of letter e)\nSentence Count: 0-5 (Evaluates exact four sentences)",
+  "max_score": "15",
+  "model": "gemini",
+  "response_text": "this digital construct runs tasks in a loop without pausing.\nA FAST WORKER KEEPS TASKS IN A QUEUE UNTIL A SLOT OPENS.\nwaiting actions stay dormant until data flows back.\nPROGRAM RUNS FLUIDLY.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.168,
+  "timestamp_utc": "2026-08-20T08:29:29.479648+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

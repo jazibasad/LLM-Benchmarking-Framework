@@ -1,0 +1,18 @@
+{
+  "id": "P026",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Easy",
+  "prompt": "A rectangular data center room measures 12 meters by 8 meters. Server racks take up 40% of the floor space. If each server rack requires a minimum clearance zone equal to 25% of its own footprint, calculate the remaining usable floor space in square meters.",
+  "evaluation_criteria": "Area Calculation: 0-5 (Evaluates total area and rack space computation)\nClearance Logic: 0-5 (Evaluates correct application of clearance factor)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "To calculate the remaining usable floor space in the data center, we can break the problem down into a few simple steps:\n\n**1. Calculate the total floor space of the room:**\n* Room dimensions = 12 meters $\\times$ 8 meters\n* Total area = $12 \\times 8 = 96\\text{ square meters}$\n\n**2. Calculate the floor space taken up by the server racks:**\n* Server racks take up 40% of the total floor space.\n* Rack area = $40\\%\\text{ of } 96\\text{ m}^2 = 0.40 \\times 96 = 38.4\\text{ square meters}$\n\n**3. Calculate the required clearance zone:**\n* Each server rack requires a clearance zone equal to 25% of its own footprint.\n* Clearance area = $25\\%\\text{ of } 38.4\\text{ m}^2 = 0.25 \\times 38.4 = 9.6\\text{ square meters}$\n\n**4. Calculate the total space occupied (racks + clearance):**\n* Total occupied space = Rack area + Clearance area\n* Total occupied space = $38.4 + 9.6 = 48\\text{ square meters}$\n\n**5. Calculate the remaining usable floor space:**\n* Remaining space = Total area - Total occupied space\n* Remaining space = $96 - 48 = 48\\text{ square meters}$\n\n*(Alternatively, since the racks (100%) plus their clearance (25%) equal 125% of the rack footprint: $38.4 \\times 1.25 = 48\\text{ m}^2$ total occupied space. $96 - 48 = 48\\text{ m}^2$ remaining).*\n\n**Answer:**\nThe remaining usable floor space is **48 square meters**.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.9013,
+  "timestamp_utc": "2026-08-20T08:26:29.718573+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

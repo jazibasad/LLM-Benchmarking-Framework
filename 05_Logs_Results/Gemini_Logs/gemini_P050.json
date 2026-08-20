@@ -1,0 +1,18 @@
+{
+  "id": "P050",
+  "category": "Instruction Following",
+  "difficulty": "Easy",
+  "prompt": "Give a definition of RAM. NEGATIVE CONSTRAINT: Do not use the words 'memory', 'random', or 'access'.",
+  "evaluation_criteria": "Forbidden Words: 0-5 (Evaluates absence of target words)\nDefinition Quality: 0-5 (Evaluates clarity of volatile storage definition)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "RAM is a type of volatile computer hardware that stores data currently in active use by the central processing unit. This digital workspace allows the processor to quickly read and write information needed for running applications and the operating system. Because it is volatile, all stored content disappears completely the moment the machine loses power.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.3692,
+  "timestamp_utc": "2026-08-20T08:29:20.679932+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

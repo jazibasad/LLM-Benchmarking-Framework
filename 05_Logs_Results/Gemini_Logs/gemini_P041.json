@@ -1,0 +1,18 @@
+{
+  "id": "P041",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "A neural network layer has 512 input features and 128 output neurons with bias terms enabled. Calculate the exact total number of trainable model parameters (weights and biases) in this layer.",
+  "evaluation_criteria": "Weight Calculation: 0-5 (Evaluates input times output multiplication)\nBias Addition: 0-5 (Evaluates correct addition of bias per neuron)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "To calculate the total number of trainable parameters in a standard neural network (Dense/Fully Connected) layer, we use the following formula:\n\n$$\\text{Total Parameters} = (\\text{Input Features} \\times \\text{Output Neurons}) + \\text{Output Neurons}$$\n\nWhere:\n* $(\\text{Input Features} \\times \\text{Output Neurons})$ represents the **weights**.\n* $\\text{Output Neurons}$ represents the **bias terms** (one bias per output neuron).\n\nGiven the values:\n* Input features = $512$\n* Output neurons = $128$\n\nCalculation:\n1. **Weights:** $512 \\times 128 = 65,536$\n2. **Biases:** $128$\n3. **Total Parameters:** $65,536 + 128 = 65,664$\n\nThe exact total number of trainable model parameters in this layer is **65,664**.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 14.7757,
+  "timestamp_utc": "2026-08-20T08:28:23.636859+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

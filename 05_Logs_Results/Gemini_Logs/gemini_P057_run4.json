@@ -1,0 +1,18 @@
+{
+  "id": "P057",
+  "category": "Instruction Following",
+  "difficulty": "Hard",
+  "prompt": "Describe RESTful API design principles. NEGATIVE CONSTRAINT 1: The response must be written entirely in reverse word order (last word first, first word last). NEGATIVE CONSTRAINT 2: Exactly two sentences.",
+  "evaluation_criteria": "Reverse Word Order: 0-5 (Evaluates backwards word sequence)\nSentence Limit: 0-5 (Evaluates exact two sentences)",
+  "max_score": "15",
+  "model": "gemini",
+  "response_text": ".methods HTTP standard use APIs RESTful **.** resources represent URLs descriptive use should You",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 0.9028,
+  "timestamp_utc": "2026-08-20T08:30:05.220313+00:00",
+  "run_number": 4,
+  "repeat_count": 5
+}

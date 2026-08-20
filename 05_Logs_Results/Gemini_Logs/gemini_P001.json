@@ -1,0 +1,18 @@
+{
+  "id": "P001",
+  "category": "Knowledge Retrieval",
+  "difficulty": "Easy",
+  "prompt": "Write a Python function to check if a given string is a palindrome, ignoring spaces and case sensitivity.",
+  "evaluation_criteria": "Syntax Correctness: 0-5 (Evaluates clean syntax and execution)\nEdge Case Handling: 0-5 (Evaluates handling of spaces, punctuation, and casing)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "Here is the Python function to check if a string is a palindrome, ignoring spaces and case sensitivity:\n\n```python\ndef is_palindrome(s: str) -> bool:\n    # Convert to lowercase and remove all spaces\n    cleaned_string = \"\".join(s.lower().split())\n\n    # Check if the cleaned string is equal to its reverse\n    return cleaned_string == cleaned_string[::-1]\n\n\n# --- Examples ---\nprint(is_palindrome(\"A man a plan a canal Panama\"))  # Output: True\nprint(is_palindrome(\"Racecar\"))  # Output: True\nprint(is_palindrome(\"Hello\"))  # Output: False\n```\n\n### How it works:\n1. **`s.lower()`**: Converts the entire string to lowercase to make it case-insensitive.\n2. **`.split()`** combined with **`\"\".join(...)`**: Removes all whitespace characters (spaces, tabs, newlines) from the string.\n3. **`cleaned_string[::-1]`**: Reverses the cleaned string using Python's slice notation.\n4. **`==`**: Compares the cleaned string with its reverse and returns `True` if they match, otherwise `False`.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.7211,
+  "timestamp_utc": "2026-08-20T08:22:46.334291+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

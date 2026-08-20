@@ -1,0 +1,18 @@
+{
+  "id": "P044",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "prompt": "An enterprise cluster runs 3 tiers of virtual machines: Web tier (16 VMs at 2 vCPU each), App tier (32 VMs at 4 vCPU each), and DB tier (8 VMs at 16 vCPU each). If hypervisor overcommitment ratio is set to 2.5:1, calculate the physical host CPU core count required.",
+  "evaluation_criteria": "Virtual Cpu Sum: 0-5 (Evaluates total vCPU aggregation across tiers)\nOvercommitment Division: 0-5 (Evaluates physical core requirement calculation)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "To calculate the required physical host CPU core count, we need to follow these steps:\n\n### Step 1: Calculate the total vCPU count for each tier\n* **Web tier:** 16 VMs × 2 vCPU = 32 vCPUs\n* **App tier:** 32 VMs × 4 vCPU = 128 vCPUs\n* **DB tier:** 8 VMs × 16 vCPU = 128 vCPUs\n\n### Step 2: Calculate the total vCPUs across the entire cluster\n$$\\text{Total vCPUs} = 32 + 128 + 128 = 288\\text{ vCPUs}$$\n\n### Step 3: Apply the hypervisor overcommitment ratio\nThe overcommitment ratio is given as $2.5:1$, meaning each physical core can support $2.5$ vCPUs.\n\n$$\\text{Required Physical Cores} = \\frac{\\text{Total vCPUs}}{\\text{Overcommitment Ratio}}$$\n\n$$\\text{Required Physical Cores} = \\frac{288}{2.5} = 115.2$$\n\n### Conclusion\nSince you cannot have a fraction of a physical CPU core, you must round up to the nearest whole number. \n\nThe enterprise cluster requires **116 physical host CPU cores**.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 1.5312,
+  "timestamp_utc": "2026-08-20T08:28:40.334338+00:00",
+  "run_number": 2,
+  "repeat_count": 5
+}

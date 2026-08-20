@@ -1,0 +1,18 @@
+{
+  "id": "P023",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Easy",
+  "prompt": "A logistics center schedules three trucks (A, B, C). Truck A departs every 4 hours, B every 6 hours, and C every 8 hours. If they all departed simultaneously at 00:00 on Monday, calculate the exact day and time of their next simultaneous departure, detailing each step of the least common multiple (LCM) calculation.",
+  "evaluation_criteria": "Mathematical Accuracy: 0-5 (Evaluates correct calculation of LCM)\nStep By Step Transparency: 0-5 (Evaluates clarity of logical breakdown)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "To find out when Trucks A, B, and C will next depart simultaneously, we need to find the **Least Common Multiple (LCM)** of their departure intervals: 4 hours, 6 hours, and 8 hours. \n\nHere is the step-by-step calculation and the final schedule determination.\n\n---\n\n### Step 1: Find the Prime Factorization of Each Interval\n\nTo calculate the LCM, we first break down each number into its prime factors:\n*   **Truck A (4 hours):** \n    $4 = 2 \\times 2 = 2^2$\n*   **Truck B (6 hours):** \n    $6 = 2 \\times 3 = 2^1 \\times 3^1$\n*   **Truck C (8 hours):** \n    $8 = 2 \\times 2 \\times 2 = 2^3$\n\n---\n\n### Step 2: Determine the Least Common Multiple (LCM)\n\nThe rule for finding the LCM from prime factorizations is to take the **highest power of every prime number** present in the factors (in this case, the prime numbers are 2 and 3).\n\n*   For the prime number **2**, the highest power among our factorizations is $2^3$ (from Truck C).\n*   For the prime number **3**, the highest power is $3^1$ (from Truck B).\n\nNow, multiply these highest powers together:\n$$\\text{LCM} = 2^3 \\times 3^1$$\n$$\\text{LCM} = 8 \\times 3 = 24$$\n\nThe trucks will next depart simultaneously after **24 hours**.\n\n---\n\n### Step 3: Calculate the Exact Day and Time\n\n*   **Initial Departure:** Monday at 00:00 (Midnight)\n*   **Time Elapsed:** 24 hours (which equals exactly 1 full day)\n\n$$\\text{Monday 00:00} + 24 \\text{ hours} = \\text{Tuesday 00:00}$$\n\n---\n\n### Final Answer\n\nThe three trucks will next depart simultaneously on **Tuesday at 00:00 (Midnight)**.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 7.2633,
+  "timestamp_utc": "2026-08-20T08:26:18.810322+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}

@@ -1,0 +1,18 @@
+{
+  "id": "P024",
+  "category": "Multi-step Reasoning",
+  "difficulty": "Easy",
+  "prompt": "If 5 workers can assemble 20 machines in 4 days, how many days will it take 8 workers to assemble 32 machines, assuming constant productivity per worker?",
+  "evaluation_criteria": "Proportional Reasoning: 0-5 (Evaluates correct rate calculation per worker-day)\nStep Logic: 0-5 (Evaluates clear multiplication/division steps)",
+  "max_score": "10",
+  "model": "gemini",
+  "response_text": "To find out how many days it will take 8 workers to assemble 32 machines, we can break the problem down into steps using the concept of \"worker-days.\"\n\n1. **Calculate the work rate of a single worker:**\n   * 5 workers take 4 days to assemble 20 machines.\n   * Total worker-days needed for 20 machines = $5 \\text{ workers} \\times 4 \\text{ days} = 20 \\text{ worker-days}$.\n   * Therefore, the time it takes to build 1 machine = $\\frac{20 \\text{ worker-days}}{20 \\text{ machines}} = 1 \\text{ worker-day per machine}$. \n   *(This means it takes 1 day of work for one person to build one machine).*\n\n2. **Calculate the worker-days needed for the new task:**\n   * We need to assemble 32 machines.\n   * At 1 worker-day per machine, the total work required = $32 \\text{ machines} \\times 1 \\text{ worker-day} = 32 \\text{ worker-days}$.\n\n3. **Calculate the time it takes for 8 workers:**\n   * We have 8 workers available.\n   * Number of days = $\\frac{\\text{Total worker-days}}{\\text{Number of workers}}$\n   * Number of days = $\\frac{32 \\text{ worker-days}}{8 \\text{ workers}} = 4 \\text{ days}$.\n\nIt will take **4 days** for 8 workers to assemble 32 machines.",
+  "raw": {
+    "model": "gemini-3.5-flash-lite"
+  },
+  "temperature": 0.7,
+  "latency_seconds": 2.0405,
+  "timestamp_utc": "2026-08-20T08:26:20.856750+00:00",
+  "run_number": 1,
+  "repeat_count": 1
+}
