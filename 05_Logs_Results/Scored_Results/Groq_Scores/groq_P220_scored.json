@@ -1,0 +1,31 @@
+{
+  "id": "P220",
+  "category": "Multilingual Tasks",
+  "difficulty": "Medium",
+  "prompt": "Translate this short recipe instruction into Italian, keeping measurements in their original units: 'Add 2 cups of flour and mix until smooth.'",
+  "response_text": "Aggiungi 2 tazze di farina e mescola fino a ottenere un composto liscio.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 2.6346,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Tone/Register Accuracy",
+      "score": 4,
+      "justification": "The translation maintains the neutral, instructional register of the original without deviation.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Linguistic Explanation Quality",
+      "score": 0,
+      "justification": "The response provides no explanation of the translation choices, failing to meet the criterion.",
+      "outcome": "Failure"
+    }
+  ],
+  "total_score": 4,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-21T05:25:36.094916+00:00"
+}

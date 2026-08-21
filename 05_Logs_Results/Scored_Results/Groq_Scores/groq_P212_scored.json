@@ -1,0 +1,43 @@
+{
+  "id": "P212",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this sentence into Korean using appropriately formal honorifics for addressing a senior business executive, and explain what would change in your translation if the audience were a close friend instead: 'We would be honored if you could join us for the opening ceremony next month.'",
+  "response_text": "**1. Formal, honorific version (for a senior business executive)**  \n\n> **저희는 귀하께서 다음 달 개막식에 참석해 주시면 영광으로 생각하겠습니다.**  \n\n*Break‑down*  \n- **저희는** – “we” (humble form)  \n- **귀하께서** – honorific subject marker for “you” (very formal; can be replaced with the person’s title, e.g., “홍 대표님께서”)  \n- **다음 달** – “next month”  \n- **개막식에** – “for the opening ceremony”  \n- **참석해 주시면** – “if you could attend” (verb ‘참석하다’ + honorific auxiliary ‘‑시‑’ + polite ending ‘‑ㅂ니다/‑ㅂ시다’ → ‘‑시면’)  \n- **영광으로 생각하겠습니다** – “we would consider it an honor” (humble, deferential ending ‘‑겠습니다’)  \n\nYou could also phrase it as:  \n\n> **다음 달 개막식에 귀하께서 참석해 주시면 저희에게 큰 영광이 될 것입니다.**  \n\nBoth sentences keep the high level of respect by using:\n\n- **귀하/OO님** (title + honorific suffix) instead of plain “you”.  \n- The honorific verb ending **‑시‑** (as in *참석하시다* → *참석해 주시다*).  \n- The overall polite‑deferential ending **‑겠습니다 / ‑될 것입니다**.  \n\n---\n\n**2. How the translation would change for a close friend (informal, 친근한 반말)**  \n\n| Element | Formal version | Informal (friend) version |\n|---------|----------------|---------------------------|\n| Subject (“we”) | **저희는** (humble) | **우리** (plain) |\n| Addressing “you” | **귀하께서 / OO님께서** (honorific) | **네가 / 너** (plain) |\n| Verb honorifics | **‑시‑** (참석해 주시면) | No honorifics (참석하면) |\n| Politeness level | **‑겠습니다 / ‑될 것입니다** (deferential) | **‑아/어** ending (casual) |\n| Overall tone | Very respectful, business‑like | Friendly, relaxed |\n\n**Possible informal translation:**  \n\n> **우리 다음 달 개막식에 네가 와 주면 정말 영광이야.**  \n\n*Explanation of the informal changes*  \n\n1. **저희 → 우리** – “We” becomes the plain “우리” because humility is no longer required.  \n2. **귀하께서 → 네가** – The honorific “귀하” is dropped; the plain pronoun “네가” (or simply “너”) is used.  \n3. **참석해 주시면 → 와 주면** – The honorific verb stem “‑시‑” is omitted, and the verb is simplified to “와 주면” (come and do me a favor).  \n4. **영광으로 생각하겠습니다 / …될 것입니다 → 영광이야** – The deferential ending “‑겠습니다/‑될 것입니다” is replaced by the casual declarative “‑이야”.  \n5. **Politeness** – The whole sentence switches from the *존댓말* (formal polite) register to *반말* (informal speech), which is appropriate only with people you are close to, such as a good friend.\n\nIn short, the formal version keeps honorific nouns, the honorific verb suffix **‑시‑**, and deferential endings, whereas the informal version removes all honorific markers, uses plain pronouns and verbs, and ends with a casual declarative. This shift reflects the difference in social distance and the level of respect required in each context.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 2.8905,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Translation Precision Score",
+      "score": 5,
+      "justification": "The translations accurately reflect the required formality levels with appropriate honorifics, verbs, and endings, matching the task's precision requirements.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Cultural/Linguistic Adaptation Score",
+      "score": 5,
+      "justification": "The response thoroughly explains cultural nuances like the shift from *존댓말* to *반말* and honorific usage, which are critical for contextual adaptation.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Meta-Explanation Quality Score",
+      "score": 5,
+      "justification": "The detailed breakdowns and explanations (e.g., honorific markers, politeness levels) are accurate, insightful, and directly address the task's explanation demand.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Round-Trip/Consistency Score",
+      "score": 2,
+      "justification": "The response lacks a back-translation comparison or consistency check, missing a key aspect of verifying meaning preservation between source and target texts.",
+      "outcome": "Failure"
+    }
+  ],
+  "total_score": 17,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-21T05:20:30.627531+00:00"
+}

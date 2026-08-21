@@ -1,0 +1,43 @@
+{
+  "id": "P208",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this marketing slogan into German AND into Mandarin Chinese, explaining for EACH language one adaptation you made for cultural resonance rather than literal accuracy: 'Just do it - unleash your inner champion.'",
+  "response_text": "**German (Deutsch)**  \n\n**Translation**  \n*„Mach es einfach – lass den Champion in dir frei.“*  \n\n**Cultural adaptation**  \nThe original Nike slogan “Just do it” is famously rendered in German as **„Einfach machen“** or **„Mach es einfach“** in many campaigns.  The literal “Nur tu es” sounds stiff and un‑idiomatic to German speakers. By using the colloquial imperative **„Mach es einfach“**, the phrase feels natural, motivational and matches the punchy style of German advertising.  The word **„Champion“** is kept because it is widely understood and carries a strong, aspirational connotation in German sports culture, while the verb **„frei lassen“** (literally “let free”) is more dynamic than a literal “unleash” and fits the rhythm of the slogan.\n\n---\n\n**Mandarin Chinese (中文)**  \n\n**Translation**  \n*「行动起来，释放你的冠军精神。」*  \n\n**Cultural adaptation**  \nThe literal rendering of “Just do it” (e.g., “只管去做”) sounds awkward in Mandarin and lacks the motivational punch that Chinese advertising usually employs. The phrase **「行动起来」** (“take action”) is a common rallying call in Chinese marketing and sports slogans, conveying immediacy and determination.  \n\nFor “inner champion,” the literal “内在冠军” is rarely used in everyday Chinese; instead, the concept is expressed as **「冠军精神」** (“champion spirit”), which captures the idea of an inner drive or mindset rather than a physical champion. This phrasing resonates better with Chinese audiences who associate “精神” with personal motivation and perseverance.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.781,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Translation Precision Score",
+      "score": 5,
+      "justification": "Both German and Mandarin translations are highly accurate and capture the literal meaning of the original slogan with appropriate wording for each language.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Cultural/Linguistic Adaptation Score",
+      "score": 5,
+      "justification": "The response provides thoughtful cultural adaptations for both languages, explaining why certain phrases like 'Mach es einfach' and '行动起来' are more resonant than literal translations.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Meta-Explanation Quality Score",
+      "score": 5,
+      "justification": "The explanations for cultural adaptations are detailed, insightful, and accurately identify linguistic nuances that affect cultural resonance in each language.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Round-Trip/Consistency Score",
+      "score": 4,
+      "justification": "The response includes self-comparison by referencing existing Nike translations and explaining why certain literal translations would be ineffective, demonstrating good consistency awareness.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 19,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-21T05:16:16.367842+00:00"
+}

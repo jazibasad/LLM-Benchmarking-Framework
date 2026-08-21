@@ -1,0 +1,43 @@
+{
+  "id": "P207",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this legal disclaimer into Spanish with the precision required for a legal document (no paraphrasing, no simplification), then flag any term where a direct legal equivalent may not exist in Spanish-speaking jurisdictions: 'This agreement shall be governed by and construed in accordance with the laws of the State of Delaware, without regard to its conflict of law principles.'",
+  "response_text": "**Traducción literal al español (estilo de documento legal)**  \n\n> **Este acuerdo se regirá y será interpretado de conformidad con las leyes del Estado de Delaware, sin tener en cuenta sus principios de conflicto de leyes.**  \n\n---\n\n### Términos que pueden no contar con un equivalente legal exacto en jurisdicciones hispanohablantes  \n\n| Término en inglés | Traducción usada | Comentario sobre la equivalencia legal |\n|-------------------|------------------|----------------------------------------|\n| **governed by** | *se regirá* | En muchos sistemas civiles se emplea “se regirá por” o “estará sujeto a”, pero la noción de que una parte externa (un estado extranjero) imponga su normativa completa puede no estar plenamente reconocida o requerir disposiciones adicionales. |\n| **construed in accordance with** | *será interpretado de conformidad con* | La frase “interpretado de conformidad con” es habitual en el derecho anglosajón; en derecho civil se suele usar “interpretado de acuerdo con” o “según”. La precisión de “construir” como acto de interpretación jurídica puede variar. |\n| **conflict of law principles** | *principios de conflicto de leyes* | La doctrina de “conflict of laws” (conflicto de leyes) existe en algunos países hispanohablantes, pero su alcance y aplicación difieren significativamente de la tradición anglosajona. En algunos sistemas se habla de “normas de conflicto de normas” o “normas de competencia internacional”. Por ello, el concepto puede requerir aclaración o adaptación específica al ordenamiento local. |\n| **State of Delaware** | *Estado de Delaware* | Aunque la traducción es directa, la referencia a un estado de EE. UU. como fuente de derecho puede no tener un análogo exacto en jurisdicciones que no reconozcan la autoridad de entidades subnacionales extranjeras. En la práctica, se suele mantener el nombre propio, pero su efecto legal puede requerir reconocimiento explícito por parte del tribunal local. |\n\n**Nota:** La traducción presentada mantiene la estructura y el vocabulario del texto original, tal como se solicita para un documento legal. Los avisos anteriores indican dónde podrían surgir dudas de interpretación o aplicación en sistemas jurídicos de habla hispana y sugieren que, en caso de uso práctico, se considere la inclusión de una cláusula aclaratoria o la consulta a un experto local.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.9405,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Translation Precision Score",
+      "score": 5,
+      "justification": "The model provided a literal translation that strictly adheres to the legal structure and terminology required, using precise legal phrases like 'se regirá' and 'principios de conflicto de leyes' without simplification or paraphrasing.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Cultural/Linguistic Adaptation Score",
+      "score": 4,
+      "justification": "The translation maintains a formal legal tone but could better address regional nuances (e.g., 'Estado de Delaware' directly mirrors the original, and the advisory note clarifies interpretability in civil law jurisdictions where the translation might otherwise lack contextualization).",
+      "outcome": "Success"
+    },
+    {
+      "name": "Meta-Explanation Quality Score",
+      "score": 5,
+      "justification": "The detailed flagging of potential non-equivalents, such as 'construed in accordance with' versus civil law practices, and the recommendation to consult local experts demonstrates thorough insight into legal ambiguities.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Round-Trip/Consistency Score",
+      "score": 5,
+      "justification": "The model explicitly compares the English phrase 'interpreted de novo' (implied by 'construed in accordance with') to civil law's 'interpreted of({) agreement with} according to,' highlighting that the translation preserves intent while acknowledging regional stylistic differences.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 19,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-21T05:16:00.206584+00:00"
+}

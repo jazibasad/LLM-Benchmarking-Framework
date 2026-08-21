@@ -1,0 +1,31 @@
+{
+  "id": "P214",
+  "category": "Multilingual Tasks",
+  "difficulty": "Medium",
+  "prompt": "Translate this short paragraph into French, preserving the polite/formal tone: 'We are pleased to inform you that your application has been approved. Please contact our office at your earliest convenience to complete the remaining paperwork.'",
+  "response_text": "Nous avons le plaisir de vous informer que votre demande a été approuvée. Veuillez contacter notre bureau dès que possible afin de finaliser les formalités restantes.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.5535,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Tone/Register Accuracy",
+      "score": 4,
+      "justification": "The translation preserves the formal/polite register accurately through appropriate use of 'nous avons le plaisir de vous informer', 'veuillez contacter', and 'dès que possible / formalités restantes', which are standard and natural in formal French, with only trivial lexical gaps.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Linguistic Explanation Quality",
+      "score": 0,
+      "justification": "The response provides no explanation of translation choices, so it does not attempt this criterion at all.",
+      "outcome": "Failure"
+    }
+  ],
+  "total_score": 4,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-21T05:21:54.014181+00:00"
+}

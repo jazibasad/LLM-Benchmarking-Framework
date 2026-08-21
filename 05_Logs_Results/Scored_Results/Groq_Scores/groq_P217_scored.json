@@ -1,0 +1,31 @@
+{
+  "id": "P217",
+  "category": "Multilingual Tasks",
+  "difficulty": "Medium",
+  "prompt": "Translate this sentence into Japanese, and note any difference in politeness level you had to choose between: 'Could you please send me the report by Friday?'",
+  "response_text": "**Japanese translation (polite request)**  \n> **金曜日までにレポートを送っていただけますか？**  \n\n**Why this level of politeness?**  \n- The original English sentence uses “Could you please…?” which is a courteous, indirect request.  \n- In Japanese, the most natural way to convey that same level of politeness is to use the **‑ていただく** construction (送っていただけますか), which adds a respectful “please do for me” nuance.  \n- The sentence also ends with the question particle **か**, keeping it a polite inquiry rather than a command.\n\n**Possible less‑polite alternatives and the difference in tone**\n\n| Politeness level | Japanese phrasing | Nuance |\n|------------------|-------------------|--------|\n| **Casual** (to a close colleague or friend) | 金曜日までにレポートを送ってくれる？ | Direct but friendly; no honorifics. |\n| **Neutral polite** (standard business email) | 金曜日までにレポートを送ってください。 | A straightforward request; still polite but less deferential than いただけますか. |\n| **Very formal keigo** (to a senior manager or client) | 金曜日までにレポートをご送付賜りますようお願い申し上げます。 | Uses honorific **ご送付** and the humble **賜ります**; very formal and deferential. |\n\nSo, to match the tone of the English “Could you please…?” the most appropriate Japanese rendering is **金曜日までにレポートを送っていただけますか？**. If the relationship calls for a different level of formality, you can choose one of the alternatives above.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.4954,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Tone/Register Accuracy",
+      "score": 5,
+      "justification": "The response accurately preserves the polite request from the original English and clearly explains the choice of politeness markers in Japanese, including alternatives for different contexts.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Linguistic Explanation Quality",
+      "score": 5,
+      "justification": "The explanation is thorough, accurate, and clearly distinguishes between politeness levels with precise linguistic reasoning.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-21T05:25:06.400820+00:00"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "P211",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this poem excerpt into Spanish, prioritizing preserving the rhythm and emotional tone over literal word-for-word accuracy, and briefly explain one place where you deviated from literal translation to preserve the poetic effect: 'The quiet hum of evening falls, soft shadows stretch along the walls.'",
+  "response_text": "**Traducción poética**\n\nEl susurro tenue de la tarde cae,  \nsombras suaves se alargan en los muros.\n\n**Explicación de la desviación**\n\nEn la versión literal, *“quiet hum”* sería “zumbido silencioso” y *“soft shadows stretch along the walls”* se traduciría como “sombras suaves se estiran a lo largo de las paredes”. Opté por **“susurro tenue”** en lugar de “zumbido silencioso” porque “susurro” mantiene la idea de un sonido delicado pero encaja mejor en la métrica de ocho sílabas y aporta una sensación más íntima. Asimismo, cambié “a lo largo de las paredes” por **“en los muros”** para conservar la rima consonante “cae / muros” y lograr un ritmo más fluido.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.9134,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Translation Precision Score",
+      "score": 5,
+      "justification": "The translation accurately conveys the poem's meaning and emotional tone while preserving rhythm, fulfilling the poetic precision requirement.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Cultural/Linguistic Adaptation Score",
+      "score": 5,
+      "justification": "The adaptation of 'quiet hum' to 'susurro tenue' and 'along the walls' to 'en los muros' is handled thoughtfully to maintain rhyme and meter.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Meta-Explanation Quality Score",
+      "score": 5,
+      "justification": "The explanation clearly identifies the deviation, provides a literal comparison, and justifies the choice with metric and poetic reasoning.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Round-Trip/Consistency Score",
+      "score": 5,
+      "justification": "The response includes a self-comparison to a literal translation, honestly noting the trade-offs and maintaining consistency.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-21T05:17:23.897727+00:00"
+}

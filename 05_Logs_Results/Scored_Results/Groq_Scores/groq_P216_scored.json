@@ -1,0 +1,31 @@
+{
+  "id": "P216",
+  "category": "Multilingual Tasks",
+  "difficulty": "Medium",
+  "prompt": "Translate this business email into German, maintaining professional register throughout: 'Following our call yesterday, I wanted to confirm the revised delivery timeline and outline the next steps for both teams.'",
+  "response_text": "Nach unserem gestrigen Telefonat möchte ich die überarbeitete Lieferzeit bestätigen und die nächsten Schritte für beide Teams darlegen.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.7333,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Tone/Register Accuracy (0-5)",
+      "score": 5,
+      "justification": "The response maintains a formal and polite professional register suitable for business communication, using appropriate phrases like 'bestätigen' and 'darlegen'.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Linguistic Explanation Quality (0-5)",
+      "score": 0,
+      "justification": "No explanation of translation choices is provided in the response, which fails to meet the requirement for explaining translation decisions.",
+      "outcome": "Failure"
+    }
+  ],
+  "total_score": 5,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-21T05:24:48.020372+00:00"
+}

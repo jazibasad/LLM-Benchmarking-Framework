@@ -1,0 +1,43 @@
+{
+  "id": "P210",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this sentence from English into Arabic, and explain how you handled the change in sentence structure given Arabic's different word order conventions: 'The report that was submitted yesterday by the finance team contains several errors that need to be corrected before the board meeting.'",
+  "response_text": "**Arabic translation**\n\n> **التقرير الذي قُدِّمَ أمسَ من قبل فريق المالية يحتوي على عدة أخطاءٍ يجب تصحيحها قبل اجتماع المجلس.**\n\n---\n\n### How the sentence structure was adapted to Arabic\n\n| English element | English word order | Arabic rendering | Reason for the change |\n|-----------------|-------------------|------------------|-----------------------|\n| Main clause (subject + verb + object) | *The report … contains …* (S‑V‑O) | **التقرير … يحتوي** (subject + verb) | Arabic normally places the verb after the subject, especially in formal written style. The verb **يحتوي** follows the subject **التقرير**. |\n| Relative clause “that was submitted yesterday by the finance team” | Post‑nominal relative clause introduced by **that** (S‑V‑O) | **الذي قُدِّمَ أمسَ من قبل فريق المالية** (relative pronoun + verb + adverbial phrase) | Arabic relative clauses also follow the noun they modify, but the internal order of the clause follows Arabic V‑S‑O. The passive verb **قُدِّمَ** (was submitted) comes first, then the time adverb **أمسَ**, then the prepositional phrase **من قبل فريق المالية** (by the finance team). |\n| Object of the main verb “several errors” | Direct object after verb | **عدة أخطاءٍ** (noun phrase) | The object follows the verb **يحتوي** as in English, but the indefinite article is expressed by **عدة** (several) and the noun takes the genitive case marker **‑ٍ** because it is the object of a prepositional phrase later on. |\n| Sub‑clause “that need to be corrected before the board meeting” | Relative clause after the noun “errors” | **يجب تصحيحها قبل اجتماع المجلس** (modal verb + verbal noun + pronoun + prepositional phrase) | Arabic does not use a relative pronoun here; instead, the necessity is expressed with the impersonal verb **يجب** followed by the verbal noun **تصحيح** and the pronoun **ها** (referring back to **الأخطاء**). The time phrase **قبل اجتماع المجلس** (before the board meeting) is placed at the end, matching Arabic’s tendency to keep adverbial modifiers after the verb phrase. |\n\n#### Key structural adjustments\n\n1. **Verb‑subject order** – While English often uses S‑V‑O, Arabic prefers V‑S‑O in subordinate clauses (e.g., **قُدِّمَ** before the subject) and S‑V in main clauses (e.g., **التقرير يحتوي**).  \n2. **Relative pronoun placement** – Arabic uses **الذي / التي** after the noun it modifies, just like English, but the internal clause follows Arabic syntax (verb first).  \n3. **Passive voice** – The English passive “was submitted” is rendered with the Arabic passive form **قُدِّمَ**; this keeps the focus on the report rather than the agent.  \n4. **Pronoun reference** – The English relative clause “that need to be corrected” is rendered with an impersonal construction **يجب تصحيحها**, where **ها** is a suffix pronoun referring back to **الأخطاء**.  \n5. **Prepositional phrases** – “by the finance team” and “before the board meeting” are placed after the verbs they modify, matching Arabic’s typical post‑verbal placement of adverbials.\n\nBy reorganizing each clause to respect Arabic’s V‑S‑O pattern in sub‑clauses, using the appropriate relative pronoun, and employing an impersonal construction for “need to be corrected,” the translation conveys the same meaning while adhering to natural Arabic syntax.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 2.3868,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Translation Precision Score",
+      "score": 5,
+      "justification": "The translation accurately conveys all elements of the original sentence, including passive voice, relative clauses, and specific terms like 'finance team' and 'board meeting,' with no errors in vocabulary or syntax.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Cultural/Linguistic Adaptation Score",
+      "score": 5,
+      "justification": "The response thoroughly explains how Arabic's structural conventions (e.g., verb-subject order, passive voice, and impersonal constructions) were adapted to maintain natural and idiomatic expression.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Meta-Explanation Quality Score",
+      "score": 5,
+      "justification": "The detailed table and explanations clearly and accurately address each structural choice, linking them to Arabic syntax and cultural norms with no omissions or inaccuracies.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Round-Trip/Consistency Score",
+      "score": 5,
+      "justification": "The explanation demonstrates consistency through explicit reference to how elements like pronoun reference ('ها') and tense alignment were preserved across clauses, ensuring logical cohesion in the translation.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-21T05:16:52.143449+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "P215",
+  "category": "Multilingual Tasks",
+  "difficulty": "Medium",
+  "prompt": "Translate this sentence into Spanish AND explain one idiom or phrase in your translation that doesn't translate literally: 'It's raining cats and dogs outside, so let's stay in tonight.'",
+  "response_text": "**Spanish translation**\n\n> **«Está lloviendo a cántaros fuera, así que quedémonos en casa esta noche.»**\n\n---\n\n### Explicación de la expresión idiomática  \n**«Llover a cántaros»**  \n\n- **Qué significa:** Esta frase se usa en español para describir una lluvia muy intensa, como cuando el agua cae con la fuerza y la cantidad de un cántaro (un gran recipiente de agua) que se vierte del cielo.  \n- **Por qué no se traduce literalmente:** En inglés la expresión “It’s raining cats and dogs” (literalmente “está lloviendo gatos y perros”) tampoco tiene sentido literal; es una forma figurada de decir que llueve mucho. En español, en lugar de intentar traducir literalmente “cats and dogs”, usamos nuestro propio modismo “llover a cántaros”, que cumple la misma función expresiva sin mencionar animales.  \n- **Equivalencia:** Ambas expresiones son idiomáticas y se entienden como “llueve a cántaros / está lloviendo a mares / está lloviendo muy fuerte”. No se interpreta literalmente ni se espera que literalmente caigan objetos del cielo.  \n\nAsí, la traducción mantiene el sentido original y emplea un modismo propio del español que, al igual que el inglés, no se traduce palabra por palabra.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.5214,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Tone/Register Accuracy",
+      "score": 5,
+      "justification": "The translation preserves the original casual register and tone, with the idiom swap and phrasing aligning perfectly, fulfilling the criteria for complete success.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Linguistic Explanation Quality",
+      "score": 5,
+      "justification": "The explanation is accurate, clearly defines the idiom, explains its non-literal nature, and correctly equates it to the English expression, fully meeting the requirement for complete success.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-21T05:24:08.538192+00:00"
+}

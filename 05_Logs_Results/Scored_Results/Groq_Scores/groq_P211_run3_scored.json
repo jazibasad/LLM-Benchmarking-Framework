@@ -1,0 +1,43 @@
+{
+  "id": "P211",
+  "category": "Multilingual Tasks",
+  "difficulty": "Hard",
+  "prompt": "Translate this poem excerpt into Spanish, prioritizing preserving the rhythm and emotional tone over literal word-for-word accuracy, and briefly explain one place where you deviated from literal translation to preserve the poetic effect: 'The quiet hum of evening falls, soft shadows stretch along the walls.'",
+  "response_text": "**Spanish translation (preserving rhythm and tone)**  \n\n*El susurro tenue del atardecer cae,  \nsombras suaves se alargan en la pared.*  \n\n**Explanation of a poetic deviation**  \nIn the original line “quiet hum” the word *hum* evokes a low, continuous sound. I chose **“susurro”** (whisper) instead of a literal *zumbido* or *hum* because “susurro” carries a softer, more intimate connotation in Spanish and fits the gentle, almost secretive mood of the verse, while also matching the syllable count and flow of the line. This slight shift maintains the poem’s emotional tone and musicality.",
+  "run_number": 3,
+  "temperature": 0.7,
+  "latency_seconds": 1.4203,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Translation Precision Score",
+      "score": 5,
+      "justification": "The translation conveys the original meaning and tone with only a minor, justified lexical deviation, satisfying the required poetic precision.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Cultural/Linguistic Adaptation Score",
+      "score": 5,
+      "justification": "The choice of 'susurro' over a literal rendering shows thoughtful adaptation that preserves the poem's mood and rhythm.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Meta-Explanation Quality Score",
+      "score": 5,
+      "justification": "The explanation clearly identifies the deviation, explains the connotative and metrical reasons, and is both accurate and insightful.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Round-Trip/Consistency Score",
+      "score": 0,
+      "justification": "The response does not include any back-translation or self-comparison, so this criterion is not attempted.",
+      "outcome": "Failure"
+    }
+  ],
+  "total_score": 15,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-21T05:18:17.643081+00:00"
+}

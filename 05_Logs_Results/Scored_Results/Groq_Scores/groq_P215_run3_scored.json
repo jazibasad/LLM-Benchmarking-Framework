@@ -1,0 +1,31 @@
+{
+  "id": "P215",
+  "category": "Multilingual Tasks",
+  "difficulty": "Medium",
+  "prompt": "Translate this sentence into Spanish AND explain one idiom or phrase in your translation that doesn't translate literally: 'It's raining cats and dogs outside, so let's stay in tonight.'",
+  "response_text": "**Spanish translation**\n\n> «Está lloviendo a cántaros fuera, así que quedémonos en casa esta noche.»\n\n**Explanation of the non‑literal idiom**\n\nThe English expression **“raining cats and dogs”** is an idiom that means “raining very heavily.” No one expects actual cats and dogs to fall from the sky; the phrase is purely figurative.  \n\nIn Spanish we use a different idiom to convey the same idea: **“llover a cántaros”** (literally, “to rain from pitchers/jugs”). This expression also describes a downpour, but it does so with a metaphor that makes sense in Spanish culture—imagining water pouring out of large containers—rather than using the English animal imagery. Both idioms are vivid ways to say that it’s raining a lot, but they don’t translate word‑for‑word.",
+  "run_number": 3,
+  "temperature": 0.7,
+  "latency_seconds": 1.1056,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Tone/Register Accuracy",
+      "score": 5,
+      "justification": "The response preserves the original casual and conversational tone appropriately, using the informal suggestion 'así que quedémonos en casa esta noche' which matches the friendly register of the English source.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Linguistic Explanation Quality",
+      "score": 5,
+      "justification": "The response clearly and accurately explains the idiom 'raining cats and dogs,' contrasts it with the Spanish equivalent 'llover a cántaros,' and correctly describes why it is non-literal, fulfilling all requested components thoroughly.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-21T05:24:21.883173+00:00"
+}
