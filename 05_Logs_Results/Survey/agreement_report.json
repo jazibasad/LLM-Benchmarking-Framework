@@ -1,0 +1,173 @@
+{
+  "raters_found": [
+    1,
+    2,
+    3
+  ],
+  "human_vs_judge": {
+    "rater1": {
+      "comparison": "Rater1 vs Judge",
+      "n_criteria_compared": 178,
+      "exact_match_rate": 0.6067,
+      "within_1_point_rate": 0.8371,
+      "mean_absolute_difference": 0.7022,
+      "pearson_correlation": 0.3945,
+      "cohens_kappa": 0.223,
+      "cohens_kappa_quadratic_weighted": 0.3558,
+      "per_provider": {
+        "groq": {
+          "n": 59,
+          "exact_match_rate": 0.6441,
+          "pearson_correlation": 0.3194
+        },
+        "mistral": {
+          "n": 65,
+          "exact_match_rate": 0.5385,
+          "pearson_correlation": 0.3047
+        },
+        "gemini": {
+          "n": 54,
+          "exact_match_rate": 0.6481,
+          "pearson_correlation": 0.5429
+        }
+      }
+    },
+    "rater2": {
+      "comparison": "Rater2 vs Judge",
+      "n_criteria_compared": 178,
+      "exact_match_rate": 0.6517,
+      "within_1_point_rate": 0.8258,
+      "mean_absolute_difference": 0.7472,
+      "pearson_correlation": 0.1906,
+      "cohens_kappa": 0.198,
+      "cohens_kappa_quadratic_weighted": 0.1635,
+      "per_provider": {
+        "groq": {
+          "n": 59,
+          "exact_match_rate": 0.6271,
+          "pearson_correlation": 0.0762
+        },
+        "mistral": {
+          "n": 65,
+          "exact_match_rate": 0.6,
+          "pearson_correlation": 0.2221
+        },
+        "gemini": {
+          "n": 54,
+          "exact_match_rate": 0.7407,
+          "pearson_correlation": 0.2664
+        }
+      }
+    },
+    "rater3": {
+      "comparison": "Rater3 vs Judge",
+      "n_criteria_compared": 178,
+      "exact_match_rate": 0.6573,
+      "within_1_point_rate": 0.8596,
+      "mean_absolute_difference": 0.6798,
+      "pearson_correlation": 0.2557,
+      "cohens_kappa": 0.2314,
+      "cohens_kappa_quadratic_weighted": 0.2132,
+      "per_provider": {
+        "groq": {
+          "n": 59,
+          "exact_match_rate": 0.661,
+          "pearson_correlation": 0.3382
+        },
+        "mistral": {
+          "n": 65,
+          "exact_match_rate": 0.5846,
+          "pearson_correlation": 0.3254
+        },
+        "gemini": {
+          "n": 54,
+          "exact_match_rate": 0.7407,
+          "pearson_correlation": 0.185
+        }
+      }
+    }
+  },
+  "inter_rater": {
+    "rater1_vs_rater2": {
+      "comparison": "Rater1 vs Rater2",
+      "n_criteria_compared": 219,
+      "exact_match_rate": 0.653,
+      "within_1_point_rate": 0.8858,
+      "mean_absolute_difference": 0.5023,
+      "pearson_correlation": 0.5292,
+      "cohens_kappa": 0.2506,
+      "cohens_kappa_quadratic_weighted": 0.5237,
+      "per_provider": {
+        "groq": {
+          "n": 73,
+          "exact_match_rate": 0.7808,
+          "pearson_correlation": 0.3858
+        },
+        "mistral": {
+          "n": 73,
+          "exact_match_rate": 0.5205,
+          "pearson_correlation": 0.6193
+        },
+        "gemini": {
+          "n": 73,
+          "exact_match_rate": 0.6575,
+          "pearson_correlation": 0.3978
+        }
+      }
+    },
+    "rater1_vs_rater3": {
+      "comparison": "Rater1 vs Rater3",
+      "n_criteria_compared": 219,
+      "exact_match_rate": 0.6941,
+      "within_1_point_rate": 0.8995,
+      "mean_absolute_difference": 0.4475,
+      "pearson_correlation": 0.5145,
+      "cohens_kappa": 0.3368,
+      "cohens_kappa_quadratic_weighted": 0.5006,
+      "per_provider": {
+        "groq": {
+          "n": 73,
+          "exact_match_rate": 0.7397,
+          "pearson_correlation": 0.1371
+        },
+        "mistral": {
+          "n": 73,
+          "exact_match_rate": 0.6164,
+          "pearson_correlation": 0.7066
+        },
+        "gemini": {
+          "n": 73,
+          "exact_match_rate": 0.726,
+          "pearson_correlation": 0.3701
+        }
+      }
+    },
+    "rater2_vs_rater3": {
+      "comparison": "Rater2 vs Rater3",
+      "n_criteria_compared": 219,
+      "exact_match_rate": 0.7352,
+      "within_1_point_rate": 0.9087,
+      "mean_absolute_difference": 0.3836,
+      "pearson_correlation": 0.593,
+      "cohens_kappa": 0.3106,
+      "cohens_kappa_quadratic_weighted": 0.585,
+      "per_provider": {
+        "groq": {
+          "n": 73,
+          "exact_match_rate": 0.7534,
+          "pearson_correlation": 0.2948
+        },
+        "mistral": {
+          "n": 73,
+          "exact_match_rate": 0.6027,
+          "pearson_correlation": 0.704
+        },
+        "gemini": {
+          "n": 73,
+          "exact_match_rate": 0.8493,
+          "pearson_correlation": 0.7263
+        }
+      }
+    }
+  }
+}

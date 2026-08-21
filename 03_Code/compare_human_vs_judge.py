@@ -55,10 +55,23 @@ def load_rater_scores(filepath):
     with open(filepath, "r", encoding="utf-8") as f:
         data = json.load(f)
     scores = {}
+    skipped = 0
     for item in data["items"]:
+        # Defensive: a single malformed item (e.g. missing "your_scores" due
+        # to a manual editing mistake) should not crash the whole comparison
+        # for every rater - skip it with a warning instead, so the rest of
+        # the real scoring work isn't lost.
+        if "your_scores" not in item or not isinstance(item["your_scores"], list):
+            print(f"  WARNING: item id={item.get('id', '?')} provider={item.get('provider', '?')} "
+                  f"in {os.path.basename(filepath)} is missing 'your_scores' - skipped. "
+                  f"Run diagnose_rater_file.py for details.")
+            skipped += 1
+            continue
         for crit in item["your_scores"]:
-            if crit["your_score"] is not None:
+            if crit.get("your_score") is not None:
                 scores[(item["id"], item["provider"], crit["criterion_name"])] = crit["your_score"]
+    if skipped:
+        print(f"  ({skipped} malformed item(s) skipped in {os.path.basename(filepath)})")
     return scores
 
 
