@@ -3,205 +3,134 @@
 A reproducible framework for evaluating and comparing free-tier Large Language Models
 (Gemini, Mistral, Groq) across ten core capability dimensions, per the project proposal.
 
-## Project Goals
-
-- Build a disciplined, version-controlled research environment for LLM evaluation.
-- Define an objective, weighted scoring rubric across ten capability dimensions.
-- Collect empirical response data across multiple providers under real-world rate-limit conditions.
-- Aggregate, analyze, and compare model performance against three research hypotheses (H1, H2, H3).
-- Produce a final report synthesizing quantitative scores and qualitative failure analysis.
-
 ## Directory Structure
 
 ```
 LLM-Benchmarking-Framework/
-├── 01_Proposal/         # Official project proposal (PDF)
-├── 02_Reports/          # Weekly progress reports (Week 1–8)
-├── 03_Code/             # All automation scripts, validation scripts, and unit tests
-├── 04_Datasets/         # Curated prompt set (P001–P220) and rubric definition
+├── 01_Proposal/
+├── 02_Reports/
+├── 03_Code/
+├── 04_Datasets/         # prompts.json, rubric.docx, human_validation_sample.json
 ├── 05_Logs_Results/
-│   ├── Gemini_Logs/            # Raw per-call response files
-│   ├── Mistral_Logs/
-│   ├── Groq_Logs/
-│   ├── OpenRouter_Logs/
-│   ├── environment_specs/      # Timestamped environment snapshots
-│   ├── Combined_Results/       # Machine-readable consolidated raw JSON (per provider)
-│   ├── Readable_Results/       # Human-readable raw response Word tables (per provider)
+│   ├── Gemini_Logs/ Mistral_Logs/ Groq_Logs/ OpenRouter_Logs/
+│   ├── environment_specs/
+│   ├── Combined_Results/    Readable_Results/
 │   ├── Scored_Results/
-│   │   ├── Gemini_Scores/      # Per-run scored JSON files
-│   │   ├── Mistral_Scores/
-│   │   ├── Groq_Scores/
-│   │   ├── Combined_Scores/    # Machine-readable consolidated scores (per provider)
-│   │   └── Readable_Scores/    # Human-readable scored Word tables (per provider)
-│   └── tests_logs/
-│       ├── Week_2/
-│       └── Week_5/
-└── 06_Final_Report/     # Consolidated final research document
+│   │   ├── Gemini_Scores/ Mistral_Scores/ Groq_Scores/
+│   │   ├── Combined_Scores/ Readable_Scores/
+│   ├── Survey/
+│   │   ├── Human_Validation_Reading.docx
+│   │   ├── human_scores_rater1.json
+│   │   ├── human_scores_rater2.json
+│   │   ├── human_scores_rater3.json
+│   │   └── agreement_report.json
+│   └── tests_logs/Week_2/  Week_5/
+└── 06_Final_Report/
 ```
 
 ## Research Hypotheses
 
-- **H1:** Models will show measurable variance in multi-step reasoning performance
-  relative to simple knowledge-retrieval performance.
-- **H2:** Instruction-following accuracy will degrade as prompt complexity
-  (number of constraints) increases, at different rates across models.
-- **H3:** Models will exhibit provider-specific hallucination patterns under
-  adversarial stress-test prompts, rather than a uniform failure rate.
+- **H1:** Reasoning vs. retrieval performance variance across models.
+- **H2:** Instruction-following degradation with prompt complexity.
+- **H3:** Provider-specific hallucination patterns.
 
-## Evaluation Rubric
+## Prompt Dataset (Week 3) — Complete
 
-`04_Datasets/rubric.docx` documents the full scoring methodology: the
-standardized 0-5 score anchors (0 = Complete Failure through 5 = Complete
-Success, 3 = Minimum Success Threshold), the Success/Failure determination
-logic, all 10 benchmark categories, multi-module scoring for Hard-tier
-prompts, and the stochastic reliability sample. Each of the 220 prompts also
-carries its own specific `evaluation_criteria` in `prompts.json`, applied
-using this common scale.
+`04_Datasets/prompts.json` — 220 prompts, 10 categories (22 each), per
+proposal Section 3. 20 marked `stochastic_sample: true` for 5x repetition
+(Reliability requirement). See `rubric.docx` for scoring methodology.
 
-## Prompt Dataset (Week 3)
+## Data Collection (Week 4) — Complete
 
-`04_Datasets/prompts.json` — 220 prompts across all 10 proposal categories
-(22 each): Knowledge Retrieval, Multi-step Reasoning, Instruction Following,
-Hallucination Stress Test, Coding & System Architecture, Ambiguity Handling,
-Long-context Retention, Data Transformation, Summarization, Multilingual Tasks.
+Gemini (`gemini-3.5-flash-lite`), Mistral (`open-mistral-nemo`), Groq
+(`openai/gpt-oss-120b`) — temperature (fixed 0.7) and measured latency per
+call.
 
-20 prompts (2 per category) are marked `stochastic_sample: true`,
-`repeat_count: 5` for the proposal's Reliability requirement.
+## Automated Scoring (Week 5) — Complete
 
-Run `python 03_Code/validate_prompts.py` to verify integrity.
+`llm_judge_scorer.py` scores every response run against explicit 0-5
+anchors (3 = success threshold), Success/Failure computed in code.
 
-## Controlled Environment Specification
+## Human-in-the-Loop Validation (Week 6)
 
-`python 03_Code/capture_environment.py` — records OS, CPU, RAM, Python
-version, real SDK versions (via `importlib.metadata`, not a fragile
-`__version__` attribute lookup), network status, and model configuration.
-Run once per collection session.
+**In plain terms:** Week 5's AI judge scored 660 responses automatically —
+but an AI judge's reliability can't just be assumed, it has to be checked.
+Week 6 has real humans independently score a sample of the same responses,
+then measures whether the humans and the AI agree. If they agree well, the
+automated scores for the rest of the dataset can be trusted.
 
-## Data Collection (Week 4)
+- **`select_human_validation_sample.py`** — **stratified by category AND
+  difficulty**: 1 Easy, 1 Medium, 1 Hard prompt from EACH of the 10
+  categories = **30 prompts**, guaranteeing every difficulty tier is
+  represented in every category (not left to chance). Explicitly excludes
+  the 20 stochastic-sample prompts (verified: they don't even cover all
+  three difficulties in every category, so couldn't support this
+  stratification if reused). Fixed seed (42), fully reproducible.
+- **`build_human_validation_materials.py`** — generates a shared read-only
+  reading document plus **three separate scoring templates** (90 items
+  each: 30 prompts × 3 providers), saved in `05_Logs_Results/Survey/`.
+  Judge scores deliberately withheld for independent scoring.
+- **`compare_human_vs_judge.py`** — computes exact-match rate,
+  within-1-point rate, mean absolute difference, Pearson correlation, and
+  **Cohen's Kappa** (standard + quadratic-weighted, cross-validated against
+  scikit-learn's certified implementation) — both rater-vs-judge
+  (validation) and rater-vs-rater (inter-rater agreement).
 
-Three decoupled provider runners, each recording `temperature` (fixed 0.7)
-and measured `latency_seconds` per call, with full repeat-count support for
-the stochastic sample:
+**Total workload:** 30 prompts × 3 providers × 3 raters = 270 individual
+scoring actions.
 
-- **Gemini** — `gemini-3.5-flash-lite` → `Gemini_Logs/`
-- **Mistral** — `open-mistral-nemo` → `Mistral_Logs/`
-- **Groq** — `openai/gpt-oss-120b` → `Groq_Logs/`
+All scripts verified against controlled data with known, hand-calculable
+expected outcomes, and re-tested end-to-end after the sampling redesign.
 
-`build_results_tables.py` / `build_results_docx.py` consolidate raw
-responses into machine-readable JSON and human-readable Word tables
-(dedicated Temperature and Latency columns), correctly grouping all 5 runs
-of each stochastic-sample prompt.
+## Statistical Analysis (Week 7) — Not Started
 
-### Real incidents encountered and fixed during Week 4
+Mean/median/standard deviation/coefficient of variation on the 20
+stochastic-sample prompts' 5 scored runs each, plus confidence intervals,
+hypothesis testing, effect size, correlation, and regression.
 
-This project has repeatedly hit free-tier model catalog volatility - a
-genuine, recurring finding, not just inconvenience:
+## Automation Pipeline
 
-- **OpenRouter** (Week 2): a named free model was silently retired mid-project.
-- **Gemini**: `gemini-2.5-flash` retired → replaced with `gemini-3.5-flash`
-  → found to enforce a strict 20 requests/day cap → replaced again with
-  `gemini-3.5-flash-lite`.
-- **Cerebras**: introduced a mandatory payment-method requirement mid-project;
-  replaced entirely with Mistral (permanent free tier, no card).
-- **Groq**: `llama-3.3-70b-versatile` officially deprecated June 17, 2026
-  (confirmed via Groq's own deprecation page) → replaced with
-  `openai/gpt-oss-120b`, Groq's own recommended migration target.
-
-Each incident was caught by the persistent-error detection mechanism,
-which stops a run cleanly rather than wasting time retrying every
-remaining prompt against a dead model or expired key.
-
-## Automated Scoring (Week 5)
-
-`llm_judge_scorer.py` scores **every individual response run** (not just
-one per prompt) using a free LLM judge via OpenRouter, against the specific
-evaluation criteria for that exact prompt.
-
-**Explicit success/failure anchors** (per supervisor requirement, Aug 18):
-every criterion is scored 0-5 against a standardized, documented scale
-(full detail in `rubric.docx`). The Success/Failure outcome per criterion,
-and the overall outcome per prompt run, are **computed in code** from this
-documented threshold (score ≥ 3 = Success) — never trusted from the judge's
-own labeling. A prompt run's overall outcome is Success only if every one
-of its criteria individually succeeded.
-
-`build_scored_tables.py` / `build_scored_docx.py` consolidate scored runs
-into machine-readable JSON (with aggregate success/failure counts) and
-human-readable Word tables (color-coded Success/Failure, failed rows and
-stochastic-sample prompts visually highlighted).
-
-### Real incident encountered and fixed during Week 5
-
-Mid-scoring-run, OpenRouter returned a `401 Unauthorized: User not found`
-error - an authentication failure, not a rate limit. This exposed a real
-bug in the persistent-error detection: the keyword match for `"not_found"`
-(underscore) didn't match the actual error text `"User not found"` (space),
-so the script would have kept retrying every remaining prompt against the
-broken key instead of stopping cleanly. Fixed by broadening the keyword
-list to include `401`, `unauthorized`, `user not found`, and other common
-auth-failure phrasings. Verified against the exact real error message
-before being reused.
-
-## Automation Pipeline (All Weeks)
-
-Every script shares the same safety mechanisms:
-- **Proactive throttling**, **reactive backoff + jitter**
-- **Persistent-error detection** — stops early on systemic failures (quota,
-  retired models, auth failures, billing issues)
-- **Atomic cache writes** — no corruption from a hard interrupt
-- **Resume-by-cache-file** — operates per individual run, so any
-  interruption (including the auth failure above) never loses or repeats
-  already-completed work
+Every script shares: proactive throttling, reactive backoff + jitter,
+persistent-error detection, atomic cache writes, resume-by-cache-file.
 
 ## Environment Setup
 
 ```bash
-# In VS Code: Command Palette -> "Python: Create Environment" -> Venv
 pip install -r requirements.txt
+pip install scikit-learn   # only needed if re-validating Cohen's Kappa
 ```
 
-`.env` (never committed):
+`.env`:
 ```
-OPENROUTER_API_KEY=your_real_key_here
-GEMINI_API_KEY=your_real_key_here
-MISTRAL_API_KEY=your_real_key_here
-GROQ_API_KEY=your_real_key_here
-```
-
-## Full Run Order (Weeks 4–5) — Completed
-
-```
-1. python 03_Code/capture_environment.py
-2. python 03_Code/run_gemini_benchmark.py    (any order, independent)
-3. python 03_Code/run_mistral_benchmark.py
-4. python 03_Code/run_groq_benchmark.py
-5. python 03_Code/build_results_tables.py
-6. python 03_Code/build_results_docx.py
-7. python 03_Code/tests/test_llm_judge_scorer.py   (10 passed)
-8. python 03_Code/llm_judge_scorer.py
-9. python 03_Code/build_scored_tables.py
-10. python 03_Code/build_scored_docx.py
+OPENROUTER_API_KEY=...
+GEMINI_API_KEY=...
+MISTRAL_API_KEY=...
+GROQ_API_KEY=...
 ```
 
-All 10 steps above have been executed for real — raw responses, temperature/latency,
-environment specification, and automated scores for all 220 prompts (660 raw
-responses, 300 calls per provider including the stochastic sample) are complete
-across all three providers.
+## Full Run Order
+
+```
+Week 4:  capture_environment.py → run_{gemini,mistral,groq}_benchmark.py
+         → build_results_tables.py → build_results_docx.py
+Week 5:  test_llm_judge_scorer.py → llm_judge_scorer.py
+         → build_scored_tables.py → build_scored_docx.py
+Week 6:  select_human_validation_sample.py → build_human_validation_materials.py
+         → [3 raters independently score Survey/human_scores_raterN.json]
+         → compare_human_vs_judge.py
+```
 
 ## Status
 
 | Week | Focus | Status |
 |------|-------|--------|
 | 1 | Framework Initialization & Rubric Design | ✅ Complete |
-| 2 | Automation Pipeline, Live OpenRouter Verification & Reproducible Environment | ✅ Complete |
-| 3 | Dataset Curation (all 10 proposal categories) | ✅ Complete |
-| 4 | Multi-Provider Collection, Temperature/Latency, Environment Spec, Repeat Logic | ✅ Complete |
-| 5 | Automated Scoring with Explicit Success/Failure Anchors | ✅ Complete |
-| 6 | Human Evaluation & Score Validation | ⏳ Not started |
-| 7 | Statistical Analysis (mean, median, std dev, hypothesis testing) | ⏳ Not started |
+| 2 | Automation Pipeline & Reproducible Environment | ✅ Complete |
+| 3 | Dataset Curation (10 proposal categories) | ✅ Complete |
+| 4 | Multi-Provider Collection | ✅ Complete |
+| 5 | Automated Scoring with Success/Failure Anchors | ✅ Complete |
+| 6 | Human-in-the-Loop Validation (30-prompt stratified, 3 raters, Cohen's Kappa) | 🟡 Code complete, manual scoring + real execution pending |
+| 7 | Statistical Analysis | ⏳ Not started |
 | 8 | Final Report Compilation | ⏳ Not started |
-
-**Open item:** "surveys" (mentioned by supervisor, Aug 12) — meaning unclear,
-deferred until Week 6 when a human-evaluation form is actually needed.
 
 See `02_Reports/` for detailed week-by-week progress reports.
