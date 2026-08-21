@@ -1,0 +1,43 @@
+{
+  "id": "P184",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this contract clause into plain English in exactly 2 sentences, preserving the exact conditions under which the clause applies (do not generalize or omit any trigger condition): 'In the event that the Licensee breaches any material term of this Agreement and fails to cure such breach within fifteen (15) business days following written notice thereof, and provided that such breach is not the result of a Force Majeure Event as defined in Section 9, the Licensor shall have the right, but not the obligation, to terminate this Agreement immediately upon written notice, without prejudice to any other remedies available at law or in equity.'",
+  "response_text": "If the Licensee breaches any material term of this Agreement, receives written notice of that breach, and does not cure it within fifteen (15) business days—provided the breach is not caused by a Force Majeur Event as defined in Section 9—then the condition is met. The Licensor may, but is not required to, terminate the Agreement immediately by written notice, without affecting any other legal or equitable remedies it may have.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.1204,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Structural Compliance Score",
+      "score": 5,
+      "justification": "The response uses exactly two sentences as requested, precisely structuring the information to match the prompt's format requirements.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Fidelity Under Constraint Score",
+      "score": 5,
+      "justification": "The response retains all exact conditions (material breach, 15-day cure period, Force Majeure exclusion) without omissions or additions.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Nuance Preservation Score",
+      "score": 5,
+      "justification": "The response preserves critical nuances, including the Licensor's non-obligatory right to terminate and the retention of alternative remedies.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Audience Appropriateness Score",
+      "score": 3,
+      "justification": "The response incorrectly uses 'Force Majeur' (a French term) instead of 'Force Majeure' and mishandles 'Section 9' formatting, compromising clarity for the target audience.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 18,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-21T05:04:33.150694+00:00"
+}

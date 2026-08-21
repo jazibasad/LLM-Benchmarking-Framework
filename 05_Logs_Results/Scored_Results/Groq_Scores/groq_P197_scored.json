@@ -1,0 +1,31 @@
+{
+  "id": "P197",
+  "category": "Summarization",
+  "difficulty": "Medium",
+  "prompt": "Summarize this legal notice into plain language a non-lawyer would understand, in 2 sentences: 'Pursuant to Section 4.2 of the User Agreement, any modifications to the Service that materially diminish core functionality shall entitle the User to terminate this Agreement without penalty, provided written notice is given within thirty (30) days of such modification.'",
+  "response_text": "If the company makes a big change that takes away the main features of the service, you can end the contract without any fees. Just let them know in writing within 30 days of the change.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.5972,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Format Compliance (0-5)",
+      "score": 3,
+      "justification": "The response follows the requirement by summarizing the legal notice into plain language for a non-lawyer but uses two sentences which is within acceptable range of the unspecified exact sentence count target.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Balanced Coverage (0-5)",
+      "score": 4,
+      "justification": "The response accurately captures the core conditions of termination rights due to material service changes and the written notice requirement within 30 days, covering the main points effectively.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 7,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-21T05:12:44.812647+00:00"
+}

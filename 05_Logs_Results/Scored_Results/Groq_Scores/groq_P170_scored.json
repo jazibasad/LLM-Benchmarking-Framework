@@ -1,0 +1,31 @@
+{
+  "id": "P170",
+  "category": "Data Transformation",
+  "difficulty": "Medium",
+  "prompt": "Convert this JSON array of objects into a Markdown table:\n[{\"name\": \"Alice\", \"score\": 92}, {\"name\": \"Bob\", \"score\": 85}, {\"name\": \"Carol\", \"score\": 78}]",
+  "response_text": "Here’s the JSON data rendered as a Markdown table:\n\n| name  | score |\n|-------|-------|\n| Alice | 92    |\n| Bob   | 85    |\n| Carol | 78    |",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 15.7566,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Structural Correctness",
+      "score": 4,
+      "justification": "The response presents the data in a properly formatted Markdown table with matching headers and rows, fulfilling the structural requirement with only trivial formatting gaps, which aligns with a Strong Success (4).",
+      "outcome": "Success"
+    },
+    {
+      "name": "Data Fidelity",
+      "score": 5,
+      "justification": "Every name and score from the original JSON is preserved exactly in the table, meeting all data points without omission or alteration, which reflects a Complete Success (5).",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 9,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-21T04:58:29.695522+00:00"
+}

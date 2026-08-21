@@ -1,0 +1,43 @@
+{
+  "id": "P187",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this scientific methods section into a single paragraph a journalist could use, explicitly flagging any part of the methodology that limits how strongly the results can be generalized: 'Participants (n=45, convenience sample from a single university) completed a 6-week intervention involving daily 10-minute mindfulness sessions via a mobile app. Self-reported stress levels were measured using the PSS-10 scale at baseline and post-intervention. No control group was used due to resource constraints; instead, a within-subjects pre-post design was employed.'",
+  "response_text": "The study recruited 45 volunteers from a single university (a convenience sample) who completed a six‑week, daily 10‑minute mindfulness program delivered through a mobile app; participants’ stress was assessed with the 10‑item Perceived Stress Scale (PSS‑10) before the intervention and again at the end. Because the researchers did not include a control or comparison group—citing limited resources—they relied on a within‑subject, pre‑post design, measuring each participant’s change over time. **Key limitations that curb the broader applicability of the findings are the small, non‑random sample drawn from only one campus, the absence of a control condition to rule out alternative explanations (e.g., regression to the mean, placebo effects), and the reliance on self‑reported stress scores, which can be influenced by social desirability or response bias.** Consequently, while the results suggest the app‑based mindfulness practice may reduce perceived stress in this specific group, they cannot be confidently generalized to other populations or settings.",
+  "run_number": 4,
+  "temperature": 0.7,
+  "latency_seconds": 1.0956,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Structural Compliance Score (0-5)",
+      "score": 3,
+      "justification": "The response follows the single-paragraph structure and journalist-appropriate tone but includes extra formatting (bolded section) and exceeds the implied brevity, meeting the core requirement with only minor gaps.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Fidelity Under Constraint Score (0-5)",
+      "score": 5,
+      "justification": "The summary accurately preserves all key details—the sample size, convenience sampling from one university, 6-week app-based mindfulness protocol, PSS-10 usage, pre-post design, and the stated resource constraint—without introducing any fabricated information.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Nuance Preservation Score (0-5)",
+      "score": 5,
+      "justification": "The response explicitly and thoroughly flags all methodological limitations on generalizability—non-random convenience sample from one campus, lack of control group risking confounds like regression to the mean or placebo effects, and self-report bias—without flattening or omitting any caveat.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Audience Appropriateness Score (0-5)",
+      "score": 5,
+      "justification": "The summary effectively translates technical details into accessible language suitable for a journalist, correctly explaining concepts like within-subjects design, control groups, and self-report bias in non-technical terms while preserving meaning.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 18,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-21T05:06:52.442358+00:00"
+}

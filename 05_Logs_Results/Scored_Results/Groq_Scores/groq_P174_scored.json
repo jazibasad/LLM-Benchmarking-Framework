@@ -1,0 +1,31 @@
+{
+  "id": "P174",
+  "category": "Data Transformation",
+  "difficulty": "Medium",
+  "prompt": "Convert this SQL table schema into an equivalent JSON Schema definition: CREATE TABLE users (id INT PRIMARY KEY, name VARCHAR(100), age INT)",
+  "response_text": "Below is a **JSON Schema** that captures the same constraints as the SQL definition  \n\n```sql\nCREATE TABLE users (\n    id   INT PRIMARY KEY,\n    name VARCHAR(100),\n    age  INT\n);\n```\n\n```json\n{\n  \"$schema\": \"https://json-schema.org/draft/2020-12/schema\",\n  \"$id\": \"https://example.com/schemas/users.json\",\n  \"title\": \"User\",\n  \"type\": \"object\",\n\n  \"properties\": {\n    \"id\": {\n      \"type\": \"integer\",\n      \"description\": \"Primary‑key identifier (cannot be null).\"\n    },\n    \"name\": {\n      \"type\": \"string\",\n      \"maxLength\": 100,\n      \"description\": \"User’s name; corresponds to VARCHAR(100).\"\n    },\n    \"age\": {\n      \"type\": \"integer\",\n      \"description\": \"User’s age.\"\n    }\n  },\n\n  \"required\": [\"id\"],               /* primary‑key → NOT NULL */\n  \"additionalProperties\": false    /* no columns other than the three defined */\n}\n```\n\n### How the mapping works\n| SQL definition | JSON Schema representation |\n|----------------|----------------------------|\n| `id INT PRIMARY KEY` | `\"type\": \"integer\"` + listed in `\"required\"` (primary key must be present) |\n| `name VARCHAR(100)` | `\"type\": \"string\", \"maxLength\": 100` |\n| `age INT` | `\"type\": \"integer\"` |\n| Table columns only | `\"additionalProperties\": false` (disallows extra fields) |\n| Primary‑key non‑null | `\"required\": [\"id\"]` |\n\nYou can adjust the schema version (`$schema`) or add further constraints (e.g., `minimum`/`maximum` for `age`) as needed for your specific use‑case.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.4612,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Structural Correctness",
+      "score": 5,
+      "justification": "The response supplies a correctly structured JSON Schema with required fields, appropriate type constraints, and additionalProperties false, faithfully mirroring the SQL table definition.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Data Fidelity",
+      "score": 5,
+      "justification": "All source columns (id, name, age) are preserved with accurate types and constraints, and no values are dropped or altered.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-21T04:58:56.345492+00:00"
+}

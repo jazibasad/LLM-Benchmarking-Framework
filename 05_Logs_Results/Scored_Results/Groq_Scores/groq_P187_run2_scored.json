@@ -1,0 +1,43 @@
+{
+  "id": "P187",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this scientific methods section into a single paragraph a journalist could use, explicitly flagging any part of the methodology that limits how strongly the results can be generalized: 'Participants (n=45, convenience sample from a single university) completed a 6-week intervention involving daily 10-minute mindfulness sessions via a mobile app. Self-reported stress levels were measured using the PSS-10 scale at baseline and post-intervention. No control group was used due to resource constraints; instead, a within-subjects pre-post design was employed.'",
+  "response_text": "The study tracked 45 students from a single university who completed a six‑week, daily 10‑minute mindfulness program delivered through a mobile app, measuring their stress with the PSS‑10 questionnaire before and after the intervention; however, the convenience sampling of a modest, homogenous group (n = 45) and the absence of a control group—due to resource constraints—mean the findings are based on a within‑subjects pre‑post design and rely on self‑reported data, which **limits the extent to which the results can be generalized to broader populations or attributed solely to the mindfulness program**.",
+  "run_number": 2,
+  "temperature": 0.7,
+  "latency_seconds": 1.0675,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Structural Compliance Score",
+      "score": 4,
+      "justification": "The response provides a single paragraph that meets the single‑paragraph requirement and flags the limitation, with only trivial gaps such as lack of labeled sections.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Fidelity Under Constraint Score",
+      "score": 5,
+      "justification": "All key facts and limitation details are accurately retained without any fabricated information.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Nuance Preservation Score",
+      "score": 5,
+      "justification": "Important caveats like the lack of a control group, self‑reported data, and the homogenous convenience sample are explicitly retained.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Audience Appropriateness Score",
+      "score": 4,
+      "justification": "Technical terms are mostly translated into plain language suitable for a journalist audience, though minor jargon like “within‑subjects pre‑post design” is not fully simplified.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 18,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-21T05:05:34.722511+00:00"
+}

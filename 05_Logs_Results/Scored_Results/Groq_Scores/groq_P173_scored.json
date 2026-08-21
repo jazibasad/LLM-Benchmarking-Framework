@@ -1,0 +1,31 @@
+{
+  "id": "P173",
+  "category": "Data Transformation",
+  "difficulty": "Medium",
+  "prompt": "Convert this list of key-value pairs into a properly formatted Python dictionary literal: name=Eve, role=admin, active=true",
+  "response_text": "```python\n{\n    \"name\": \"Eve\",\n    \"role\": \"admin\",\n    \"active\": True\n}\n```",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.7018,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Structural Correctness",
+      "score": 5,
+      "justification": "The output uses a proper Python dictionary literal that correctly nests the key‑value pairs, fully matching the required structure.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Data Fidelity",
+      "score": 5,
+      "justification": "All three key‑value pairs from the source are present and each value is represented accurately without omission or alteration.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-21T04:58:50.402802+00:00"
+}

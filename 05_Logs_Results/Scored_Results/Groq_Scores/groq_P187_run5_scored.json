@@ -1,0 +1,43 @@
+{
+  "id": "P187",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this scientific methods section into a single paragraph a journalist could use, explicitly flagging any part of the methodology that limits how strongly the results can be generalized: 'Participants (n=45, convenience sample from a single university) completed a 6-week intervention involving daily 10-minute mindfulness sessions via a mobile app. Self-reported stress levels were measured using the PSS-10 scale at baseline and post-intervention. No control group was used due to resource constraints; instead, a within-subjects pre-post design was employed.'",
+  "response_text": "The study recruited 45 volunteers from a single university using a convenience sample, who each completed a six‑week program of daily 10‑minute mindfulness exercises delivered through a mobile app; participants’ stress was assessed with the 10‑item Perceived Stress Scale (PSS‑10) before the intervention and again after its completion. Because the researchers relied on a within‑subject pre‑post design and did not include a control or comparison group—citing resource constraints—the findings reflect changes over time in this specific cohort rather than effects that can be confidently attributed to the mindfulness practice itself. Consequently, the small, non‑randomized, single‑site sample and the absence of a control condition limit how broadly the results can be generalized to other populations or settings.",
+  "run_number": 5,
+  "temperature": 0.7,
+  "latency_seconds": 0.9875,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Structural Compliance Score (0-5)",
+      "score": 5,
+      "justification": "The response follows the requested format by delivering the summary as a single paragraph and clearly flagging methodological limitations, meeting the structural requirements.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Fidelity Under Constraint Score (0-5)",
+      "score": 5,
+      "justification": "The response faithfully reproduces all key methodological details (sample size, convenience recruitment, app delivery, pre‑post stress measurement, within‑subject design, resource constraints) without adding unsupportable information, preserving meaning under the tight constraints.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Nuance Preservation Score (0-5)",
+      "score": 5,
+      "justification": "The response retains the important caveats—small, non‑randomized, single‑site convenience sample and the absence of a control group—that limit the generalizability of the findings, preserving nuance.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Audience Appropriateness Score (0-5)",
+      "score": 4,
+      "justification": "While the language remains somewhat technical (e.g., “convenience sample,” “within‑subjects pre‑post design”), it is still accessible to a journalist and avoids unnecessary jargon, making it suitable for the intended audience.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 19,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-21T05:07:56.753496+00:00"
+}

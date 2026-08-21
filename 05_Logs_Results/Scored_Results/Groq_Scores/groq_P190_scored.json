@@ -1,0 +1,43 @@
+{
+  "id": "P190",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this quarterly business review into an executive summary with EXACTLY three labeled sections (Wins, Challenges, Next Steps), each limited to 2 sentences, using only information explicitly stated in the source (do not infer anything not directly stated): 'Q3 revenue grew 8% quarter-over-quarter, beating our internal forecast of 5%. Customer churn ticked up slightly to 4.2% from 3.8% last quarter, primarily in the SMB segment. The engineering team shipped the long-delayed API v2 release, though it came in three weeks later than originally planned. Leadership has approved additional headcount for customer success in Q4 to address the churn trend.'",
+  "response_text": "**Wins:** Q3 revenue grew 8% quarter‑over‑quarter, surpassing our internal forecast of 5%. The engineering team shipped the long‑delayed API v2 release.  \n\n**Challenges:** Customer churn rose to 4.2% from 3.8% last quarter, primarily in the SMB segment. The API v2 release arrived three weeks later than originally planned.  \n\n**Next Steps:** Leadership has approved additional headcount for customer success in Q4 to address the churn trend. The new hires will be focused on reducing churn.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.2906,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Structural Compliance Score (0-5)",
+      "score": 5,
+      "justification": "The response uses exactly three labeled sections (Wins, Challenges, Next Steps), each with exactly two sentences, perfectly matching the structural requirements.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Fidelity Under Constraint Score (0-5)",
+      "score": 5,
+      "justification": "Every fact included is directly supported by the source, no inferences or fabricated details are present, and the meaning is preserved accurately within the tight format constraints.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Nuance Preservation Score (0-5)",
+      "score": 5,
+      "justification": "Key nuances from the source are retained, including the 'long-delayed' API characterization, the specific churn percentages and trend, and the explicit linkage between headcount approval and addressing churn.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Audience Appropriateness Score (0-5)",
+      "score": 5,
+      "justification": "The language is appropriate for an executive summary, presenting information clearly and concisely without excessive technical jargon or overly simplified explanations.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-21T05:08:45.016082+00:00"
+}

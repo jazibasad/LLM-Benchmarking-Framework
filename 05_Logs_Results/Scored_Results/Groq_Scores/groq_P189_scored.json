@@ -1,0 +1,43 @@
+{
+  "id": "P189",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this two-sided debate transcript into a balanced summary of exactly 3 sentences: one stating side A's strongest argument, one stating side B's strongest argument, and one stating the actual point of disagreement between them (not just restating both sides): 'Person A: We should definitely adopt the new framework, it's faster and has better community support. Person B: I hear you, but our team has zero experience with it, and the migration cost alone could set us back a full quarter. Person A: Sure, but staying on the old framework means accumulating more technical debt every month we wait. Person B: That's fair, but I'd rather pay down debt gradually than risk a rushed migration breaking production.'",
+  "response_text": "Side A argues that adopting the new framework is essential because it offers superior speed, stronger community support, and prevents the continual buildup of technical debt. Side B counters that the team’s lack of experience and the quarter‑long migration cost pose a significant risk to production stability. The core disagreement is whether the immediate benefits of the new framework outweigh the short‑term expense and risk of a rushed migration.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.6088,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Structural Compliance Score (0-5)",
+      "score": 2,
+      "justification": "The response provides three clearly labeled sides and identifies the point of disagreement in one sentence, but it uses four sentences overall and lacks an explicit 'actual point of disagreement' labeled section, deviating from the required sentence count and exact structure.",
+      "outcome": "Failure"
+    },
+    {
+      "name": "Fidelity Under Constraint Score (0-5)",
+      "score": 4,
+      "justification": "The summary accurately reflects all key points from each speaker without fabricating details, though the framing of the core disagreement slightly simplifies the underlying tension between gradual debt repayment and migration risk.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Nuance Preservation Score (0-5)",
+      "score": 3,
+      "justification": "The response captures the main concerns of both sides, including the idea of gradual versus rushed resolution, but it flattens some of the conditional and comparative reasoning present in the original dialogue.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Audience Appropriateness Score (0-5)",
+      "score": 5,
+      "justification": "The language is clear, avoids unnecessary jargon, and is accessible to a general audience, appropriately translating technical concepts like technical debt and migration cost.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 14,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Failure",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-21T05:08:37.096667+00:00"
+}

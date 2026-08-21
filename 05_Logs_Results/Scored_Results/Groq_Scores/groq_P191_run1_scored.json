@@ -1,0 +1,43 @@
+{
+  "id": "P191",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this customer support conversation thread into a single internal ticket summary of exactly 3 sentences: the customer's core issue, what was already tried, and what remains unresolved - using neutral, professional language even though the original customer messages are frustrated: 'Customer: This is the THIRD time I'm reaching out about this billing error, I'm so done with this company. Agent: I'm very sorry for the frustration - I can see the previous two tickets, it looks like the refund was processed but reversed due to a system error. Customer: Well it's still not showing up in my account and I need this fixed NOW. Agent: I've escalated this to our billing team, they typically resolve escalations within 48 hours, I'll follow up personally.'",
+  "response_text": "The customer reports a billing error in which a previously issued refund is not appearing in their account. Agents confirmed that the refund was processed but subsequently reversed due to a system error and have escalated the case to the billing team for further investigation. The refund remains missing, and resolution is pending within the billing team’s standard 48‑hour escalation timeframe.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.794,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Structural Compliance Score",
+      "score": 5,
+      "justification": "The response consists of exactly three sentences that each address the core issue, prior actions, and outstanding status, meeting the prescribed structure.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Fidelity Under Constraint Score",
+      "score": 5,
+      "justification": "All factual details from the conversation—such as the refund reversal, escalation to billing, and the 48‑hour resolution window—are accurately reflected without addition or distortion.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Nuance Preservation Score",
+      "score": 4,
+      "justification": "While the summary captures the essential points, it omits the customer's repeated frustration and the fact that this is the third contact, representing a minor loss of nuanced context.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Audience Appropriateness Score",
+      "score": 5,
+      "justification": "The language is neutral, professional, and free of unnecessary jargon, making it suitable for an internal ticket summary.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 19,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-21T05:08:55.938072+00:00"
+}

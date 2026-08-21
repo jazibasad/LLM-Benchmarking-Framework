@@ -1,0 +1,43 @@
+{
+  "id": "P191",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this customer support conversation thread into a single internal ticket summary of exactly 3 sentences: the customer's core issue, what was already tried, and what remains unresolved - using neutral, professional language even though the original customer messages are frustrated: 'Customer: This is the THIRD time I'm reaching out about this billing error, I'm so done with this company. Agent: I'm very sorry for the frustration - I can see the previous two tickets, it looks like the refund was processed but reversed due to a system error. Customer: Well it's still not showing up in my account and I need this fixed NOW. Agent: I've escalated this to our billing team, they typically resolve escalations within 48 hours, I'll follow up personally.'",
+  "response_text": "The customer reports that a refund for a billing error is still missing from their account despite prior attempts to resolve the issue. The support team identified that the original refund was processed but subsequently reversed due to a system error, and the case has been escalated to the billing department for further investigation. The refund remains unapplied, and the customer is awaiting confirmation that the issue will be corrected within the stated 48‑hour escalation timeframe.",
+  "run_number": 2,
+  "temperature": 0.7,
+  "latency_seconds": 0.769,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Structural Compliance Score",
+      "score": 5,
+      "justification": "The response contains exactly 3 sentences, precisely enumerating the customer's core issue, what was already attempted, and what remains unresolved, while maintaining the requested neutral, professional tone.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Fidelity Under Constraint Score",
+      "score": 5,
+      "justification": "The response accurately relays all source details (billing error, refund processed then reversed due to system error, escalation to billing, 48-hour resolution window) without fabricating or omitting any key factual elements.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Nuance Preservation Score",
+      "score": 4,
+      "justification": "The response captures the essential operational sequence and resolution timeline but does not retain the customer's explicit \"third time\" phrasing or immediate \"NOW\" urgency, which are minor contextual nuances flattened by the neutral professional framing.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Audience Appropriateness Score",
+      "score": 5,
+      "justification": "The language uses appropriate internal-ticket terminology and a neutral professional register perfectly suited for the intended audience, with no inappropriate jargon or mistranslation.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 19,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-21T05:10:53.290603+00:00"
+}

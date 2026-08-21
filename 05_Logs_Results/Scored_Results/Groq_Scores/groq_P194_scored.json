@@ -1,0 +1,31 @@
+{
+  "id": "P194",
+  "category": "Summarization",
+  "difficulty": "Medium",
+  "prompt": "Summarize this customer complaint email while preserving the customer's main concern and desired resolution, in under 40 words: 'I've been a loyal customer for 5 years, and I'm extremely frustrated that my last three orders arrived damaged. I've contacted support twice with no real resolution. I either need a full refund or a guarantee this won't happen again, or I'll be taking my business elsewhere.'",
+  "response_text": "After five years as a loyal customer, my last three orders arrived damaged and support gave no solution; I demand a full refund or a guarantee against future damage, or I’ll take my business elsewhere.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.8694,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Format Compliance (0-5)",
+      "score": 5,
+      "justification": "The response is a single sentence under 40 words, meets the required structure and preserves the main concern and desired resolution.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Balanced Coverage (0-5)",
+      "score": 5,
+      "justification": "All key points—five‑year loyalty, three damaged orders, lack of support resolution, and the demand for refund or guarantee—are accurately represented.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-21T05:12:26.679724+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "P172",
+  "category": "Data Transformation",
+  "difficulty": "Medium",
+  "prompt": "Convert this YAML configuration into equivalent JSON:\nserver:\n  port: 8080\n  host: localhost\ndebug: true",
+  "response_text": "Here is the equivalent JSON representation of the provided YAML configuration:\n\n```json\n{\n  \"server\": {\n    \"port\": 8080,\n    \"host\": \"localhost\"\n  },\n  \"debug\": true\n}\n```",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.5566,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Structural Correctness",
+      "score": 5,
+      "justification": "The JSON structure perfectly mirrors the YAML's hierarchical and key relationships, with no deviations in nested objects or top-level keys.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Data Fidelity",
+      "score": 5,
+      "justification": "All values from the YAML (port: 8080, host: localhost, debug: true) are accurately preserved in the JSON without alteration or omission.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-21T04:58:40.860702+00:00"
+}

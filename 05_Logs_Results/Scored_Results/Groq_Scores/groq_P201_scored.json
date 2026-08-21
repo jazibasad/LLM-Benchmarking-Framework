@@ -1,0 +1,31 @@
+{
+  "id": "P201",
+  "category": "Multilingual Tasks",
+  "difficulty": "Easy",
+  "prompt": "Translate 'Where is the nearest train station?' into Spanish.",
+  "response_text": "“¿Dónde está la estación de tren más cercana?”",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.5824,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Translation Accuracy",
+      "score": 5,
+      "justification": "The translation correctly renders all components of the English sentence with precise Spanish equivalents, conveying the exact intended meaning.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Natural Phrasing",
+      "score": 5,
+      "justification": "The phrasing uses standard, idiomatic Spanish word order and vocabulary that a native speaker would naturally use to ask this question.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-21T05:14:28.640369+00:00"
+}

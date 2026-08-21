@@ -1,0 +1,43 @@
+{
+  "id": "P188",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this software architecture design doc into a summary for a NON-technical stakeholder audience, explicitly translating each technical term into its business impact (e.g., not just 'reduces latency' but what that means for the user), in exactly 4 sentences: 'The proposed architecture introduces a read-replica database layer to offload query traffic from the primary write instance, reducing p99 latency from 800ms to 150ms. A CDN edge caching layer will be added for static assets, cutting bandwidth costs by an estimated 30%. The migration requires a two-week phased rollout to avoid downtime, using a blue-green deployment strategy.'",
+  "response_text": "We will add a secondary copy of our database that handles read‑only requests, which will speed up the slowest user interactions from about 0.8 seconds to 0.15 seconds, meaning customers will see information almost instantly. We’ll also place a content‑delivery network in front of our static files, delivering images and scripts from locations closer to users while lowering our bandwidth expenses by roughly 30%, freeing budget for new features. The switch to the new setup will be carried out over a two‑week, step‑by‑step rollout that keeps the current system running while the new one is tested, ensuring the service stays available. By using a “blue‑green” deployment approach, we can instantly revert to the old version if any issue appears, guaranteeing a seamless experience for users during the upgrade.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 2.342,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Structural Compliance Score",
+      "score": 5,
+      "justification": "The response contains exactly four sentences, uses simple language for non‑technical stakeholders, and accurately reflects the design’s performance improvements and rollout plan.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Fidelity Under Constraint Score",
+      "score": 5,
+      "justification": "All factual details from the original document—latency reduction, 30% bandwidth savings, two‑week phased rollout, and blue‑green deployment—are faithfully reproduced without addition or omission.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Nuance Preservation Score",
+      "score": 5,
+      "justification": "Key business impacts such as faster customer experience, cost savings, and zero‑downtime migration are clearly explained, preserving the source’s intent.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Audience Appropriateness Score",
+      "score": 5,
+      "justification": "Technical terminology is replaced with plain‑language equivalents, making the summary accessible to non‑technical decision makers.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-21T05:08:06.990785+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "P171",
+  "category": "Data Transformation",
+  "difficulty": "Medium",
+  "prompt": "Convert this nested JSON into a flat CSV with dot-notation column names:\n{\"user\": {\"name\": \"Dana\", \"address\": {\"city\": \"Austin\", \"zip\": \"73301\"}}}",
+  "response_text": "**CSV**\n\n```csv\nuser.name,user.address.city,user.address.zip\nDana,Austin,73301\n```",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 0.7106,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Structural Correctness",
+      "score": 5,
+      "justification": "The CSV correctly flattens the nested JSON using dot-notation that accurately reflects the hierarchical structure, with proper headers and a single data row matching the single object.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Data Fidelity",
+      "score": 5,
+      "justification": "All values from the source JSON (Dana, Austin, 73301) are preserved exactly without any alterations or omissions.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 10,
+  "max_score": "10",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-21T04:58:34.302697+00:00"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "P185",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this incident report into an executive summary of exactly 4 sentences: what happened, root cause, impact, and resolution status - each covered in exactly one sentence and clearly labeled: 'At 14:32 UTC, the payment processing service began returning 503 errors for approximately 12% of requests. Investigation revealed that a recent database migration had introduced a missing index on the transactions table, causing query timeouts under peak load. Approximately 340 customer transactions failed during the 22-minute incident window, with an estimated $18,000 in delayed revenue. The missing index has been added, and monitoring has been enhanced to detect similar query performance regressions before they reach production.'",
+  "response_text": "**What happened:** At 14:32 UTC, the payment processing service began returning 503 errors for approximately 12 % of requests, lasting 22 minutes.  \n**Root cause:** A recent database migration omitted an index on the transactions table, causing query timeouts under peak load.  \n**Impact:** Approximately 340 customer transactions failed, resulting in an estimated $18,000 of delayed revenue.  \n**Resolution status:** The missing index has been added and monitoring has been enhanced to detect similar query performance regressions before they reach production.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.1297,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Structural Compliance Score",
+      "score": 5,
+      "justification": "The response perfectly adheres to the requested format of exactly four labeled sentences, each addressing one of the required aspects (what happened, root cause, impact, resolution status).",
+      "outcome": "Success"
+    },
+    {
+      "name": "Fidelity Under Constraint Score",
+      "score": 5,
+      "justification": "The summary accurately reflects all key details and figures from the source report without adding any unsupported or fabricated information, successfully compressing the text into the strict sentence limit.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Nuance Preservation Score",
+      "score": 5,
+      "justification": "Important qualifiers such as 'approximately' (for 12% and 340), 'estimated' (for $18,000), the peak load condition, and the distinction of 'delayed revenue' are all carefully retained.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Audience Appropriateness Score",
+      "score": 5,
+      "justification": "The language is clear, concise, and professional, striking an ideal balance for executives by presenting technical details (like database indexes and 503 errors) in an easily understandable context without being overly simplistic or jargon-heavy.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 20,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-21T05:04:50.302042+00:00"
+}

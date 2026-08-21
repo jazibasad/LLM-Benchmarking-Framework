@@ -1,0 +1,43 @@
+{
+  "id": "P183",
+  "category": "Summarization",
+  "difficulty": "Hard",
+  "prompt": "Summarize this dense academic passage into exactly 3 sentences suitable for a high school student, WITHOUT losing the core causal claim, WITHOUT using any of the technical jargon from the original, and ending with a one-clause caveat about the study's limitations: 'The longitudinal cohort study utilized a difference-in-differences methodology to isolate the causal effect of the minimum wage increase on youth employment, controlling for regional economic heterogeneity via fixed effects. Results indicated a statistically significant but economically modest disemployment effect (-2.3%, 95% CI: -4.1% to -0.5%), concentrated primarily among workers under 20 in the retail sector. However, the study's reliance on state-level administrative data limits its ability to detect firm-level heterogeneity in response strategies.'",
+  "response_text": "Researchers looked at how raising the minimum wage changed the number of jobs held by young people over time. They found that teen workers, especially those under 20 working in stores, lost about 2 % of their jobs after the wage went up. The study may miss differences between individual companies because it only uses state‑level data.",
+  "run_number": 1,
+  "temperature": 0.7,
+  "latency_seconds": 1.6863,
+  "model": "groq",
+  "criterion_scores": [
+    {
+      "name": "Structural Compliance Score",
+      "score": 5,
+      "justification": "The response follows the exact requested structure with precisely three sentences, uses language appropriate for a high school audience, and introduces no labeled sections or format deviations.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Fidelity Under Constraint Score",
+      "score": 3,
+      "justification": "The core finding and limitation are preserved, but methodological details like the difference-in-differences design and confidence interval are omitted, constituting minor gaps under the concise format.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Nuance Preservation Score",
+      "score": 4,
+      "justification": "The study's key limitation about state-level data is retained and highlighted, while some result-level nuances such as the \"economically modest\" qualifier are omitted, but the central caveat is not flattened.",
+      "outcome": "Success"
+    },
+    {
+      "name": "Audience Appropriateness Score",
+      "score": 5,
+      "justification": "All technical jargon from the original is successfully translated into plain, high-school-appropriate language without any retained specialized terms.",
+      "outcome": "Success"
+    }
+  ],
+  "total_score": 17,
+  "max_score": "20",
+  "success_threshold": 3,
+  "overall_outcome": "Success",
+  "judge_model": "openrouter/free",
+  "judge_timestamp_utc": "2026-08-21T05:03:50.574822+00:00"
+}
