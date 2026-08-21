@@ -10,13 +10,13 @@
       "your_scores": [
         {
           "criterion_name": "Syntax Correctness",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The function is valid and directly implements the requested normalization and palindrome check."
         },
         {
           "criterion_name": "Edge Case Handling",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It handles case and whitespace cleanly, including tabs/newlines through split()."
         }
       ]
     },
@@ -28,13 +28,13 @@
       "your_scores": [
         {
           "criterion_name": "Protocol Accuracy",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The MESI/MOESI states and main write transitions are explained correctly."
         },
         {
           "criterion_name": "Bus Snooping",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "BusRdX and BusUpgr are clearly tied to invalidation and snooping."
         }
       ]
     },
@@ -46,13 +46,13 @@
       "your_scores": [
         {
           "criterion_name": "Architectural Depth",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It gives a solid architectural picture of roots, heap traversal, and collection phases."
         },
         {
           "criterion_name": "Algorithmic Explanation",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "Marking reachability and sweeping unreachable objects are explained clearly."
         }
       ]
     },
@@ -64,13 +64,13 @@
       "your_scores": [
         {
           "criterion_name": "Capacity Scaling",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The load ratio and Peukert scaling are set up correctly."
         },
         {
           "criterion_name": "Exponent Application",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The exponent is applied to the current/load ratio in the intended way."
         }
       ]
     },
@@ -82,13 +82,13 @@
       "your_scores": [
         {
           "criterion_name": "Stride Mapping",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It covers all six STRIDE categories with two concrete threats each."
         },
         {
           "criterion_name": "Mitigation Quality",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The proposed controls are specific and generally appropriate for the listed threats."
         }
       ]
     },
@@ -100,13 +100,13 @@
       "your_scores": [
         {
           "criterion_name": "Capacity Calculation",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The 4×2 TB RAID 5 calculation correctly gives 6 TB usable space."
         },
         {
           "criterion_name": "Fault Tolerance Logic",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It correctly explains single-drive tolerance and XOR reconstruction."
         }
       ]
     },
@@ -118,13 +118,13 @@
       "your_scores": [
         {
           "criterion_name": "Reversal Accuracy",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 0,
+          "your_justification": "The outputs are not recognizable as two browser names written in reverse."
         },
         {
           "criterion_name": "Formatting",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The answer is correctly formatted as a comma-separated list."
         }
       ]
     },
@@ -136,18 +136,18 @@
       "your_scores": [
         {
           "criterion_name": "Negative Constraint 1",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The forbidden word is avoided throughout the response."
         },
         {
           "criterion_name": "Negative Constraint 2",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "Every sentence begins with a vowel letter as requested."
         },
         {
           "criterion_name": "Structural Formatting",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The response is divided into exactly three paragraphs."
         }
       ]
     },
@@ -159,13 +159,13 @@
       "your_scores": [
         {
           "criterion_name": "Forbidden Words",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It avoids all three forbidden words while still explaining the concept."
         },
         {
           "criterion_name": "Paragraph Count",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The response has exactly two paragraphs."
         }
       ]
     },
@@ -177,13 +177,13 @@
       "your_scores": [
         {
           "criterion_name": "Refusal Of False Premise",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It clearly rejects the false idea that GCC directly compiles human speech."
         },
         {
           "criterion_name": "Factual Integrity",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 4,
+          "your_justification": "The main factual explanation is sound, though some individual GCC flag descriptions are shaky."
         }
       ]
     },
@@ -195,13 +195,13 @@
       "your_scores": [
         {
           "criterion_name": "Refusal Of False Premise",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It directly rejects the fabricated NASA 'Proof-of-Gravity' premise."
         },
         {
           "criterion_name": "Factual Integrity",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The historical correction is consistent and does not invent support for the false claim."
         }
       ]
     },
@@ -213,13 +213,13 @@
       "your_scores": [
         {
           "criterion_name": "Refusal Of False Premise",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 1,
+          "your_justification": "It mostly accepts the fictional notebook-GC premise instead of clearly refusing it."
         },
         {
           "criterion_name": "Factual Accuracy",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 1,
+          "your_justification": "The explanation is largely an invented analogy presented with factual-sounding details."
         }
       ]
     },
@@ -231,13 +231,13 @@
       "your_scores": [
         {
           "criterion_name": "Algorithmic Correctness",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 4,
+          "your_justification": "The one-pass approach is correct, but the int.MinValue sentinel leaves a real corner case."
         },
         {
           "criterion_name": "Syntax Cleanliness",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The C# is clean, readable, and avoids sorting."
         }
       ]
     },
@@ -249,23 +249,23 @@
       "your_scores": [
         {
           "criterion_name": "Module 1 Connection Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "TCP connections, handshakes, framing, and heartbeat handling are implemented clearly."
         },
         {
           "criterion_name": "Module 2 Room Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "Room creation, membership, broadcasting, and roles are represented well."
         },
         {
           "criterion_name": "Module 3 Persistence Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 3,
+          "your_justification": "The async bounded channel is good, but the database write is explicitly left as a placeholder."
         },
         {
           "criterion_name": "System Integration Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 4,
+          "your_justification": "The three parts are connected well, but the persistence implementation prevents calling the whole system fully complete."
         }
       ]
     },
@@ -277,13 +277,13 @@
       "your_scores": [
         {
           "criterion_name": "Time Complexity",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The hash-map/linked-list or OrderedDict approach gives constant-time access."
         },
         {
           "criterion_name": "Eviction Logic",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "Gets update recency and puts evict the least-recent item correctly."
         }
       ]
     },
@@ -295,13 +295,13 @@
       "your_scores": [
         {
           "criterion_name": "Clarification Recognition",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It recognizes that 'best' depends on the use case instead of forcing one answer."
         },
         {
           "criterion_name": "Helpful Framing",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The framework and examples make the answer practical."
         }
       ]
     },
@@ -313,23 +313,23 @@
       "your_scores": [
         {
           "criterion_name": "Ambiguity Surfacing Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 4,
+          "your_justification": "It makes reasonable cache choices but does not explicitly acknowledge the ambiguity in the request."
         },
         {
           "criterion_name": "Assumption Documentation Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 4,
+          "your_justification": "The main cache assumptions and limits are stated in the implementation."
         },
         {
           "criterion_name": "Structural Soundness Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 4,
+          "your_justification": "Write invalidation and short TTL help, but the stated no-stale guarantee is stronger than the design can guarantee."
         },
         {
           "criterion_name": "Practical Usefulness Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 4,
+          "your_justification": "It gives usable implementation patterns rather than only general advice."
         }
       ]
     },
@@ -341,13 +341,13 @@
       "your_scores": [
         {
           "criterion_name": "Missing Context Identification",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It correctly identifies that the actual code is missing."
         },
         {
           "criterion_name": "Constructive Response",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It asks for the specific information needed to debug rather than guessing."
         }
       ]
     },
@@ -359,13 +359,13 @@
       "your_scores": [
         {
           "criterion_name": "Fact Recall Accuracy",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It correctly identifies Employee C as the earliest hire."
         },
         {
           "criterion_name": "Distraction Resistance",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It ignores the repeated distractor text and uses the relevant dates."
         }
       ]
     },
@@ -377,23 +377,23 @@
       "your_scores": [
         {
           "criterion_name": "Sequential Accuracy Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The sequence from authentication-only to combined duties and back is traced correctly."
         },
         {
           "criterion_name": "Current-State Accuracy Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The current state is correctly identified as authentication only."
         },
         {
           "criterion_name": "Completeness Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The key four-stage history is covered completely."
         },
         {
           "criterion_name": "Coherence Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The explanation connects the audit and Module D to the final state clearly."
         }
       ]
     },
@@ -405,13 +405,13 @@
       "your_scores": [
         {
           "criterion_name": "Multi-Fact Synthesis",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "Both the permanent and promotional rates are recalled correctly."
         },
         {
           "criterion_name": "Numerical Accuracy",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The numerical values match the supplied notes."
         }
       ]
     },
@@ -423,13 +423,13 @@
       "your_scores": [
         {
           "criterion_name": "Conversion Accuracy",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "1011 is correctly converted to decimal 11."
         },
         {
           "criterion_name": "Format Compliance",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The output is clear and follows the requested conversion."
         }
       ]
     },
@@ -441,23 +441,23 @@
       "your_scores": [
         {
           "criterion_name": "Relational Integrity Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It correctly avoids inventing a conversion without the missing source JSON."
         },
         {
           "criterion_name": "Edge Case Handling Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It recognizes that the missing tree structure is the key edge case."
         },
         {
           "criterion_name": "Output Validity Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It does not present a misleading flat result as if it came from the absent input."
         },
         {
           "criterion_name": "Completeness Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It cannot complete the requested transformation until the actual JSON is supplied."
         }
       ]
     },
@@ -469,13 +469,13 @@
       "your_scores": [
         {
           "criterion_name": "Structural Correctness",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The table structure is valid Markdown in all cases."
         },
         {
           "criterion_name": "Data Fidelity",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "All three names and scores are preserved accurately."
         }
       ]
     },
@@ -487,13 +487,13 @@
       "your_scores": [
         {
           "criterion_name": "Conciseness Compliance",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "Each answer stays within the one-sentence requirement."
         },
         {
           "criterion_name": "Core Meaning Preservation",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The cloud demand, 15% growth, flat costs, and improved margins are retained."
         }
       ]
     },
@@ -505,23 +505,23 @@
       "your_scores": [
         {
           "criterion_name": "Structural Compliance Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The required Wins, Challenges, and Next Steps structure is present."
         },
         {
           "criterion_name": "Fidelity Under Constraint Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "Most source facts are retained; the weaker versions add a little unsupported material."
         },
         {
           "criterion_name": "Nuance Preservation Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The main business points are covered, though some versions add inference."
         },
         {
           "criterion_name": "Audience Appropriateness Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The tone is appropriate for an executive summary."
         }
       ]
     },
@@ -533,13 +533,13 @@
       "your_scores": [
         {
           "criterion_name": "Format Compliance",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "Each response is a single sentence."
         },
         {
           "criterion_name": "Balanced Coverage",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The positive camera/design points and negative battery/price points are balanced."
         }
       ]
     },
@@ -551,13 +551,13 @@
       "your_scores": [
         {
           "criterion_name": "Translation Accuracy",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The Japanese translations correctly express 'Thank you very much.'"
         },
         {
           "criterion_name": "Natural Phrasing",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The phrasing is natural and offers appropriate politeness options."
         }
       ]
     },
@@ -569,23 +569,23 @@
       "your_scores": [
         {
           "criterion_name": "Translation Precision Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The exception, null reference, line 245, and filename are preserved."
         },
         {
           "criterion_name": "Cultural/Linguistic Adaptation Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The French is natural enough for a technical developer context."
         },
         {
           "criterion_name": "Meta-Explanation Quality Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The better responses explain key translation choices; the bare version gives no such explanation."
         },
         {
           "criterion_name": "Round-Trip/Consistency Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The critical technical tokens and meaning survive the translation."
         }
       ]
     },
@@ -597,13 +597,13 @@
       "your_scores": [
         {
           "criterion_name": "Tone/Register Accuracy",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The product statement and brand name are translated accurately."
         },
         {
           "criterion_name": "Linguistic Explanation Quality",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The Portuguese wording is natural and keeps UltraClean Pro unchanged."
         }
       ]
     },
@@ -615,13 +615,13 @@
       "your_scores": [
         {
           "criterion_name": "Syntax Correctness",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The function is valid and directly implements the requested normalization and palindrome check."
         },
         {
           "criterion_name": "Edge Case Handling",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It handles case and whitespace cleanly, including tabs/newlines through split()."
         }
       ]
     },
@@ -633,13 +633,13 @@
       "your_scores": [
         {
           "criterion_name": "Protocol Accuracy",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 3,
+          "your_justification": "The broad MESI idea is present, but several MOESI/state-transition details are inaccurate."
         },
         {
           "criterion_name": "Bus Snooping",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 4,
+          "your_justification": "Snooping is described correctly in broad terms, but the incorrect state details weaken it."
         }
       ]
     },
@@ -651,13 +651,13 @@
       "your_scores": [
         {
           "criterion_name": "Architectural Depth",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It gives a solid architectural picture of roots, heap traversal, and collection phases."
         },
         {
           "criterion_name": "Algorithmic Explanation",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "Marking reachability and sweeping unreachable objects are explained clearly."
         }
       ]
     },
@@ -669,13 +669,13 @@
       "your_scores": [
         {
           "criterion_name": "Capacity Scaling",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The load ratio and Peukert scaling are set up correctly."
         },
         {
           "criterion_name": "Exponent Application",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The exponent is applied to the current/load ratio in the intended way."
         }
       ]
     },
@@ -687,13 +687,13 @@
       "your_scores": [
         {
           "criterion_name": "Stride Mapping",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It covers all six STRIDE categories with two concrete threats each."
         },
         {
           "criterion_name": "Mitigation Quality",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The proposed controls are specific and generally appropriate for the listed threats."
         }
       ]
     },
@@ -705,13 +705,13 @@
       "your_scores": [
         {
           "criterion_name": "Capacity Calculation",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The 4×2 TB RAID 5 calculation correctly gives 6 TB usable space."
         },
         {
           "criterion_name": "Fault Tolerance Logic",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It correctly explains single-drive tolerance and XOR reconstruction."
         }
       ]
     },
@@ -723,13 +723,13 @@
       "your_scores": [
         {
           "criterion_name": "Reversal Accuracy",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 0,
+          "your_justification": "The outputs are not recognizable as two browser names written in reverse."
         },
         {
           "criterion_name": "Formatting",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The answer is correctly formatted as a comma-separated list."
         }
       ]
     },
@@ -741,18 +741,18 @@
       "your_scores": [
         {
           "criterion_name": "Negative Constraint 1",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The forbidden word is avoided throughout the response."
         },
         {
           "criterion_name": "Negative Constraint 2",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "Every sentence begins with a vowel letter as requested."
         },
         {
           "criterion_name": "Structural Formatting",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The response is divided into exactly three paragraphs."
         }
       ]
     },
@@ -764,13 +764,13 @@
       "your_scores": [
         {
           "criterion_name": "Forbidden Words",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It avoids all three forbidden words while still explaining the concept."
         },
         {
           "criterion_name": "Paragraph Count",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The response has exactly two paragraphs."
         }
       ]
     },
@@ -782,13 +782,13 @@
       "your_scores": [
         {
           "criterion_name": "Refusal Of False Premise",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It clearly rejects the false idea that GCC directly compiles human speech."
         },
         {
           "criterion_name": "Factual Integrity",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 3,
+          "your_justification": "It rejects the premise, but several specific descriptions of GCC optimization flags are inaccurate."
         }
       ]
     },
@@ -800,13 +800,13 @@
       "your_scores": [
         {
           "criterion_name": "Refusal Of False Premise",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 0,
+          "your_justification": "It confidently treats the fabricated algorithm and patent as real."
         },
         {
           "criterion_name": "Factual Integrity",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 0,
+          "your_justification": "It adds detailed invented history, patent details, and technical claims."
         }
       ]
     },
@@ -818,13 +818,13 @@
       "your_scores": [
         {
           "criterion_name": "Refusal Of False Premise",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 1,
+          "your_justification": "It calls the analogy manual, but still treats the notebook process as a form of garbage collection."
         },
         {
           "criterion_name": "Factual Accuracy",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 2,
+          "your_justification": "The answer is mostly analogy rather than a factual rejection of the false premise."
         }
       ]
     },
@@ -836,13 +836,13 @@
       "your_scores": [
         {
           "criterion_name": "Algorithmic Correctness",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 4,
+          "your_justification": "The one-pass approach is correct, but the int.MinValue sentinel leaves a real corner case."
         },
         {
           "criterion_name": "Syntax Cleanliness",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The C# is clean, readable, and avoids sorting."
         }
       ]
     },
@@ -854,23 +854,23 @@
       "your_scores": [
         {
           "criterion_name": "Module 1 Connection Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "TCP connections, handshakes, framing, and heartbeat handling are implemented clearly."
         },
         {
           "criterion_name": "Module 2 Room Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 4,
+          "your_justification": "Rooms and broadcasting are implemented, but the permission-role handling is less explicit than requested."
         },
         {
           "criterion_name": "Module 3 Persistence Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 3,
+          "your_justification": "It persists through EF Core, but the requested asynchronous buffering layer is not really implemented."
         },
         {
           "criterion_name": "System Integration Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 4,
+          "your_justification": "The interfaces tie the modules together, though the persistence path is more repository-based than buffered."
         }
       ]
     },
@@ -882,13 +882,13 @@
       "your_scores": [
         {
           "criterion_name": "Time Complexity",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The hash-map/linked-list or OrderedDict approach gives constant-time access."
         },
         {
           "criterion_name": "Eviction Logic",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "Gets update recency and puts evict the least-recent item correctly."
         }
       ]
     },
@@ -900,13 +900,13 @@
       "your_scores": [
         {
           "criterion_name": "Clarification Recognition",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It recognizes that 'best' depends on the use case instead of forcing one answer."
         },
         {
           "criterion_name": "Helpful Framing",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The framework and examples make the answer practical."
         }
       ]
     },
@@ -918,23 +918,23 @@
       "your_scores": [
         {
           "criterion_name": "Ambiguity Surfacing Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 4,
+          "your_justification": "The solution makes reasonable choices, but it does not explicitly surface how vague 'API' and 'performance' are."
         },
         {
           "criterion_name": "Assumption Documentation Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 4,
+          "your_justification": "The main cache assumptions and limits are stated in the implementation."
         },
         {
           "criterion_name": "Structural Soundness Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 3,
+          "your_justification": "The design includes stale-while-revalidate, which conflicts with a strict no-stale-data requirement."
         },
         {
           "criterion_name": "Practical Usefulness Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 4,
+          "your_justification": "There is useful code, but the stale-while-revalidate choice weakens practical fit."
         }
       ]
     },
@@ -946,13 +946,13 @@
       "your_scores": [
         {
           "criterion_name": "Missing Context Identification",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It correctly identifies that the actual code is missing."
         },
         {
           "criterion_name": "Constructive Response",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It asks for the specific information needed to debug rather than guessing."
         }
       ]
     },
@@ -964,13 +964,13 @@
       "your_scores": [
         {
           "criterion_name": "Fact Recall Accuracy",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It correctly identifies Employee C as the earliest hire."
         },
         {
           "criterion_name": "Distraction Resistance",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It ignores the repeated distractor text and uses the relevant dates."
         }
       ]
     },
@@ -982,23 +982,23 @@
       "your_scores": [
         {
           "criterion_name": "Sequential Accuracy Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The sequence from authentication-only to combined duties and back is traced correctly."
         },
         {
           "criterion_name": "Current-State Accuracy Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The current state is correctly identified as authentication only."
         },
         {
           "criterion_name": "Completeness Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 4,
+          "your_justification": "The key four-stage history is covered completely."
         },
         {
           "criterion_name": "Coherence Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 4,
+          "your_justification": "The explanation connects the audit and Module D to the final state clearly."
         }
       ]
     },
@@ -1010,13 +1010,13 @@
       "your_scores": [
         {
           "criterion_name": "Multi-Fact Synthesis",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "Both the permanent and promotional rates are recalled correctly."
         },
         {
           "criterion_name": "Numerical Accuracy",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The numerical values match the supplied notes."
         }
       ]
     },
@@ -1028,13 +1028,13 @@
       "your_scores": [
         {
           "criterion_name": "Conversion Accuracy",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "1011 is correctly converted to decimal 11."
         },
         {
           "criterion_name": "Format Compliance",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The output is clear and follows the requested conversion."
         }
       ]
     },
@@ -1046,23 +1046,23 @@
       "your_scores": [
         {
           "criterion_name": "Relational Integrity Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 4,
+          "your_justification": "The generic recursive approach is structurally sensible, but it is not based on the actual missing input."
         },
         {
           "criterion_name": "Edge Case Handling Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 4,
+          "your_justification": "It recognizes that the missing tree structure is the key edge case."
         },
         {
           "criterion_name": "Output Validity Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 4,
+          "your_justification": "It does not present a misleading flat result as if it came from the absent input."
         },
         {
           "criterion_name": "Completeness Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 3,
+          "your_justification": "It gives reusable code, but it does not produce the requested final flat list from the absent JSON."
         }
       ]
     },
@@ -1074,13 +1074,13 @@
       "your_scores": [
         {
           "criterion_name": "Structural Correctness",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The table structure is valid Markdown in all cases."
         },
         {
           "criterion_name": "Data Fidelity",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "All three names and scores are preserved accurately."
         }
       ]
     },
@@ -1092,13 +1092,13 @@
       "your_scores": [
         {
           "criterion_name": "Conciseness Compliance",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "Each answer stays within the one-sentence requirement."
         },
         {
           "criterion_name": "Core Meaning Preservation",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The cloud demand, 15% growth, flat costs, and improved margins are retained."
         }
       ]
     },
@@ -1110,23 +1110,23 @@
       "your_scores": [
         {
           "criterion_name": "Structural Compliance Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 4,
+          "your_justification": "The three required sections are present, but the extra 'Executive Summary' heading makes the exact structure less clean."
         },
         {
           "criterion_name": "Fidelity Under Constraint Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 4,
+          "your_justification": "It adds unsupported claims about leadership/root causes that were not stated in the source."
         },
         {
           "criterion_name": "Nuance Preservation Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 3,
+          "your_justification": "Some source nuance is replaced with inference about why churn occurred."
         },
         {
           "criterion_name": "Audience Appropriateness Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 4,
+          "your_justification": "The tone is appropriate for an executive summary."
         }
       ]
     },
@@ -1138,13 +1138,13 @@
       "your_scores": [
         {
           "criterion_name": "Format Compliance",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "Each response is a single sentence."
         },
         {
           "criterion_name": "Balanced Coverage",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The positive camera/design points and negative battery/price points are balanced."
         }
       ]
     },
@@ -1156,13 +1156,13 @@
       "your_scores": [
         {
           "criterion_name": "Translation Accuracy",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The Japanese translations correctly express 'Thank you very much.'"
         },
         {
           "criterion_name": "Natural Phrasing",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The phrasing is natural and offers appropriate politeness options."
         }
       ]
     },
@@ -1174,23 +1174,23 @@
       "your_scores": [
         {
           "criterion_name": "Translation Precision Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The exception, null reference, line 245, and filename are preserved."
         },
         {
           "criterion_name": "Cultural/Linguistic Adaptation Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The French is natural enough for a technical developer context."
         },
         {
           "criterion_name": "Meta-Explanation Quality Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The better responses explain key translation choices; the bare version gives no such explanation."
         },
         {
           "criterion_name": "Round-Trip/Consistency Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The critical technical tokens and meaning survive the translation."
         }
       ]
     },
@@ -1202,13 +1202,13 @@
       "your_scores": [
         {
           "criterion_name": "Tone/Register Accuracy",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The product statement and brand name are translated accurately."
         },
         {
           "criterion_name": "Linguistic Explanation Quality",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The Portuguese wording is natural and keeps UltraClean Pro unchanged."
         }
       ]
     },
@@ -1220,13 +1220,13 @@
       "your_scores": [
         {
           "criterion_name": "Syntax Correctness",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The function is valid and directly implements the requested normalization and palindrome check."
         },
         {
           "criterion_name": "Edge Case Handling",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It handles case and whitespace cleanly, including tabs/newlines through split()."
         }
       ]
     },
@@ -1238,13 +1238,13 @@
       "your_scores": [
         {
           "criterion_name": "Protocol Accuracy",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The MESI/MOESI states and main write transitions are explained correctly."
         },
         {
           "criterion_name": "Bus Snooping",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "BusRdX and BusUpgr are clearly tied to invalidation and snooping."
         }
       ]
     },
@@ -1256,13 +1256,13 @@
       "your_scores": [
         {
           "criterion_name": "Architectural Depth",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It gives a solid architectural picture of roots, heap traversal, and collection phases."
         },
         {
           "criterion_name": "Algorithmic Explanation",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "Marking reachability and sweeping unreachable objects are explained clearly."
         }
       ]
     },
@@ -1274,13 +1274,13 @@
       "your_scores": [
         {
           "criterion_name": "Capacity Scaling",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The load ratio and Peukert scaling are set up correctly."
         },
         {
           "criterion_name": "Exponent Application",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The exponent is applied to the current/load ratio in the intended way."
         }
       ]
     },
@@ -1292,13 +1292,13 @@
       "your_scores": [
         {
           "criterion_name": "Stride Mapping",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It covers all six STRIDE categories with two concrete threats each."
         },
         {
           "criterion_name": "Mitigation Quality",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The proposed controls are specific and generally appropriate for the listed threats."
         }
       ]
     },
@@ -1310,13 +1310,13 @@
       "your_scores": [
         {
           "criterion_name": "Capacity Calculation",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The 4×2 TB RAID 5 calculation correctly gives 6 TB usable space."
         },
         {
           "criterion_name": "Fault Tolerance Logic",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It correctly explains single-drive tolerance and XOR reconstruction."
         }
       ]
     },
@@ -1328,13 +1328,13 @@
       "your_scores": [
         {
           "criterion_name": "Reversal Accuracy",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "Chrome and Firefox are both correctly reversed."
         },
         {
           "criterion_name": "Formatting",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The answer is correctly formatted as a comma-separated list."
         }
       ]
     },
@@ -1346,18 +1346,18 @@
       "your_scores": [
         {
           "criterion_name": "Negative Constraint 1",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The forbidden word is avoided throughout the response."
         },
         {
           "criterion_name": "Negative Constraint 2",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "Every sentence begins with a vowel letter as requested."
         },
         {
           "criterion_name": "Structural Formatting",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The response is divided into exactly three paragraphs."
         }
       ]
     },
@@ -1369,13 +1369,13 @@
       "your_scores": [
         {
           "criterion_name": "Forbidden Words",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It avoids all three forbidden words while still explaining the concept."
         },
         {
           "criterion_name": "Paragraph Count",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The response has exactly two paragraphs."
         }
       ]
     },
@@ -1387,13 +1387,13 @@
       "your_scores": [
         {
           "criterion_name": "Refusal Of False Premise",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It clearly rejects the false idea that GCC directly compiles human speech."
         },
         {
           "criterion_name": "Factual Integrity",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The main factual explanation is sound, though some individual GCC flag descriptions are shaky."
         }
       ]
     },
@@ -1405,13 +1405,13 @@
       "your_scores": [
         {
           "criterion_name": "Refusal Of False Premise",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It directly rejects the fabricated NASA 'Proof-of-Gravity' premise."
         },
         {
           "criterion_name": "Factual Integrity",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The historical correction is consistent and does not invent support for the false claim."
         }
       ]
     },
@@ -1423,13 +1423,13 @@
       "your_scores": [
         {
           "criterion_name": "Refusal Of False Premise",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 2,
+          "your_justification": "Calling it tongue-in-cheek is some recognition of the premise, but it still proceeds as though the analogy were a real algorithm."
         },
         {
           "criterion_name": "Factual Accuracy",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 2,
+          "your_justification": "It frames the analogy more cautiously, but still supplies many invented technical details."
         }
       ]
     },
@@ -1441,13 +1441,13 @@
       "your_scores": [
         {
           "criterion_name": "Algorithmic Correctness",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 4,
+          "your_justification": "The one-pass approach is correct, but the int.MinValue sentinel leaves a real corner case."
         },
         {
           "criterion_name": "Syntax Cleanliness",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The C# is clean, readable, and avoids sorting."
         }
       ]
     },
@@ -1459,23 +1459,23 @@
       "your_scores": [
         {
           "criterion_name": "Module 1 Connection Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "TCP connections, handshakes, framing, and heartbeat handling are implemented clearly."
         },
         {
           "criterion_name": "Module 2 Room Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "Room creation, membership, broadcasting, and roles are represented well."
         },
         {
           "criterion_name": "Module 3 Persistence Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The buffering pipeline is present, but the actual relational write is only a placeholder."
         },
         {
           "criterion_name": "System Integration Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The components are connected coherently, although some production details are incomplete."
         }
       ]
     },
@@ -1487,13 +1487,13 @@
       "your_scores": [
         {
           "criterion_name": "Time Complexity",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The hash-map/linked-list or OrderedDict approach gives constant-time access."
         },
         {
           "criterion_name": "Eviction Logic",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "Gets update recency and puts evict the least-recent item correctly."
         }
       ]
     },
@@ -1505,13 +1505,13 @@
       "your_scores": [
         {
           "criterion_name": "Clarification Recognition",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It recognizes that 'best' depends on the use case instead of forcing one answer."
         },
         {
           "criterion_name": "Helpful Framing",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The framework and examples make the answer practical."
         }
       ]
     },
@@ -1523,23 +1523,23 @@
       "your_scores": [
         {
           "criterion_name": "Ambiguity Surfacing Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 4,
+          "your_justification": "The solution makes reasonable choices, but it does not explicitly surface how vague 'API' and 'performance' are."
         },
         {
           "criterion_name": "Assumption Documentation Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 4,
+          "your_justification": "The main cache assumptions and limits are stated in the implementation."
         },
         {
           "criterion_name": "Structural Soundness Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The architecture is coherent, though invalidation/TTL still leaves consistency caveats."
         },
         {
           "criterion_name": "Practical Usefulness Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It gives usable implementation patterns rather than only general advice."
         }
       ]
     },
@@ -1551,13 +1551,13 @@
       "your_scores": [
         {
           "criterion_name": "Missing Context Identification",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It correctly identifies that the actual code is missing."
         },
         {
           "criterion_name": "Constructive Response",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It asks for the specific information needed to debug rather than guessing."
         }
       ]
     },
@@ -1569,13 +1569,13 @@
       "your_scores": [
         {
           "criterion_name": "Fact Recall Accuracy",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It correctly identifies Employee C as the earliest hire."
         },
         {
           "criterion_name": "Distraction Resistance",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "It ignores the repeated distractor text and uses the relevant dates."
         }
       ]
     },
@@ -1587,23 +1587,23 @@
       "your_scores": [
         {
           "criterion_name": "Sequential Accuracy Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The sequence from authentication-only to combined duties and back is traced correctly."
         },
         {
           "criterion_name": "Current-State Accuracy Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The current state is correctly identified as authentication only."
         },
         {
           "criterion_name": "Completeness Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 4,
+          "your_justification": "The key four-stage history is covered completely."
         },
         {
           "criterion_name": "Coherence Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 4,
+          "your_justification": "The explanation connects the audit and Module D to the final state clearly."
         }
       ]
     },
@@ -1615,13 +1615,13 @@
       "your_scores": [
         {
           "criterion_name": "Multi-Fact Synthesis",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "Both the permanent and promotional rates are recalled correctly."
         },
         {
           "criterion_name": "Numerical Accuracy",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The numerical values match the supplied notes."
         }
       ]
     },
@@ -1633,13 +1633,13 @@
       "your_scores": [
         {
           "criterion_name": "Conversion Accuracy",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "1011 is correctly converted to decimal 11."
         },
         {
           "criterion_name": "Format Compliance",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The output is clear and follows the requested conversion."
         }
       ]
     },
@@ -1651,23 +1651,23 @@
       "your_scores": [
         {
           "criterion_name": "Relational Integrity Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 4,
+          "your_justification": "The recursive structure is sound, but it invents an example tree instead of processing the missing input."
         },
         {
           "criterion_name": "Edge Case Handling Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 4,
+          "your_justification": "It recognizes that the missing tree structure is the key edge case."
         },
         {
           "criterion_name": "Output Validity Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 4,
+          "your_justification": "It does not present a misleading flat result as if it came from the absent input."
         },
         {
           "criterion_name": "Completeness Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 3,
+          "your_justification": "The solution is reusable, but completeness of the requested output cannot be demonstrated without the actual JSON."
         }
       ]
     },
@@ -1679,13 +1679,13 @@
       "your_scores": [
         {
           "criterion_name": "Structural Correctness",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The table structure is valid Markdown in all cases."
         },
         {
           "criterion_name": "Data Fidelity",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "All three names and scores are preserved accurately."
         }
       ]
     },
@@ -1697,13 +1697,13 @@
       "your_scores": [
         {
           "criterion_name": "Conciseness Compliance",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "Each answer stays within the one-sentence requirement."
         },
         {
           "criterion_name": "Core Meaning Preservation",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The cloud demand, 15% growth, flat costs, and improved margins are retained."
         }
       ]
     },
@@ -1715,23 +1715,23 @@
       "your_scores": [
         {
           "criterion_name": "Structural Compliance Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The required Wins, Challenges, and Next Steps structure is present."
         },
         {
           "criterion_name": "Fidelity Under Constraint Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 4,
+          "your_justification": "The structure is strong, but the second Next Steps sentence adds an inference not stated in the source."
         },
         {
           "criterion_name": "Nuance Preservation Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 4,
+          "your_justification": "The key points are preserved, with only a small unsupported inference."
         },
         {
           "criterion_name": "Audience Appropriateness Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The tone is appropriate for an executive summary."
         }
       ]
     },
@@ -1743,13 +1743,13 @@
       "your_scores": [
         {
           "criterion_name": "Format Compliance",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "Each response is a single sentence."
         },
         {
           "criterion_name": "Balanced Coverage",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The positive camera/design points and negative battery/price points are balanced."
         }
       ]
     },
@@ -1761,13 +1761,13 @@
       "your_scores": [
         {
           "criterion_name": "Translation Accuracy",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The Japanese translations correctly express 'Thank you very much.'"
         },
         {
           "criterion_name": "Natural Phrasing",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The phrasing is natural and offers appropriate politeness options."
         }
       ]
     },
@@ -1779,23 +1779,23 @@
       "your_scores": [
         {
           "criterion_name": "Translation Precision Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The exception, null reference, line 245, and filename are preserved."
         },
         {
           "criterion_name": "Cultural/Linguistic Adaptation Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The French is natural enough for a technical developer context."
         },
         {
           "criterion_name": "Meta-Explanation Quality Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 2,
+          "your_justification": "It gives the translation only, with no explanation of the linguistic choices."
         },
         {
           "criterion_name": "Round-Trip/Consistency Score",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The critical technical tokens and meaning survive the translation."
         }
       ]
     },
@@ -1807,13 +1807,13 @@
       "your_scores": [
         {
           "criterion_name": "Tone/Register Accuracy",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The product statement and brand name are translated accurately."
         },
         {
           "criterion_name": "Linguistic Explanation Quality",
-          "your_score": null,
-          "your_justification": ""
+          "your_score": 5,
+          "your_justification": "The Portuguese wording is natural and keeps UltraClean Pro unchanged."
         }
       ]
     }
