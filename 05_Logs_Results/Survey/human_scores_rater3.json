@@ -1,0 +1,1821 @@
+{
+  "rater_id": 3,
+  "instructions": "RATER 3: For each item below, read the prompt and response in Human_Validation_Reading.docx, then fill in YOUR OWN score (integer 0-5) for each criterion, using the same scale as rubric.docx: 0=Complete Failure, 1=Major Failure, 2=Partial Failure, 3=Minimum Success (threshold), 4=Strong Success, 5=Complete Success. Do NOT look at the LLM judge's existing scores, and do NOT look at other raters' scores, while doing this - score independently. This is YOUR OWN file; do not share it with other raters until everyone has finished, to keep scoring genuinely independent.",
+  "items": [
+    {
+      "id": "P001",
+      "provider": "gemini",
+      "category": "Knowledge Retrieval",
+      "difficulty": "Easy",
+      "your_scores": [
+        {
+          "criterion_name": "Syntax Correctness",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Edge Case Handling",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P010",
+      "provider": "gemini",
+      "category": "Knowledge Retrieval",
+      "difficulty": "Hard",
+      "your_scores": [
+        {
+          "criterion_name": "Protocol Accuracy",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Bus Snooping",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P016",
+      "provider": "gemini",
+      "category": "Knowledge Retrieval",
+      "difficulty": "Medium",
+      "your_scores": [
+        {
+          "criterion_name": "Architectural Depth",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Algorithmic Explanation",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P027",
+      "provider": "gemini",
+      "category": "Multi-step Reasoning",
+      "difficulty": "Easy",
+      "your_scores": [
+        {
+          "criterion_name": "Capacity Scaling",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Exponent Application",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P035",
+      "provider": "gemini",
+      "category": "Multi-step Reasoning",
+      "difficulty": "Hard",
+      "your_scores": [
+        {
+          "criterion_name": "Stride Mapping",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Mitigation Quality",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P039",
+      "provider": "gemini",
+      "category": "Multi-step Reasoning",
+      "difficulty": "Medium",
+      "your_scores": [
+        {
+          "criterion_name": "Capacity Calculation",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Fault Tolerance Logic",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P049",
+      "provider": "gemini",
+      "category": "Instruction Following",
+      "difficulty": "Easy",
+      "your_scores": [
+        {
+          "criterion_name": "Reversal Accuracy",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Formatting",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P051",
+      "provider": "gemini",
+      "category": "Instruction Following",
+      "difficulty": "Hard",
+      "your_scores": [
+        {
+          "criterion_name": "Negative Constraint 1",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Negative Constraint 2",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Structural Formatting",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P063",
+      "provider": "gemini",
+      "category": "Instruction Following",
+      "difficulty": "Medium",
+      "your_scores": [
+        {
+          "criterion_name": "Forbidden Words",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Paragraph Count",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P072",
+      "provider": "gemini",
+      "category": "Hallucination Stress Test",
+      "difficulty": "Easy",
+      "your_scores": [
+        {
+          "criterion_name": "Refusal Of False Premise",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Factual Integrity",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P074",
+      "provider": "gemini",
+      "category": "Hallucination Stress Test",
+      "difficulty": "Hard",
+      "your_scores": [
+        {
+          "criterion_name": "Refusal Of False Premise",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Factual Integrity",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P086",
+      "provider": "gemini",
+      "category": "Hallucination Stress Test",
+      "difficulty": "Medium",
+      "your_scores": [
+        {
+          "criterion_name": "Refusal Of False Premise",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Factual Accuracy",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P090",
+      "provider": "gemini",
+      "category": "Coding & System Architecture",
+      "difficulty": "Easy",
+      "your_scores": [
+        {
+          "criterion_name": "Algorithmic Correctness",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Syntax Cleanliness",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P096",
+      "provider": "gemini",
+      "category": "Coding & System Architecture",
+      "difficulty": "Hard",
+      "your_scores": [
+        {
+          "criterion_name": "Module 1 Connection Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Module 2 Room Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Module 3 Persistence Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "System Integration Score",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P107",
+      "provider": "gemini",
+      "category": "Coding & System Architecture",
+      "difficulty": "Medium",
+      "your_scores": [
+        {
+          "criterion_name": "Time Complexity",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Eviction Logic",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P111",
+      "provider": "gemini",
+      "category": "Ambiguity Handling",
+      "difficulty": "Easy",
+      "your_scores": [
+        {
+          "criterion_name": "Clarification Recognition",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Helpful Framing",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P121",
+      "provider": "gemini",
+      "category": "Ambiguity Handling",
+      "difficulty": "Hard",
+      "your_scores": [
+        {
+          "criterion_name": "Ambiguity Surfacing Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Assumption Documentation Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Structural Soundness Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Practical Usefulness Score",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P126",
+      "provider": "gemini",
+      "category": "Ambiguity Handling",
+      "difficulty": "Medium",
+      "your_scores": [
+        {
+          "criterion_name": "Missing Context Identification",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Constructive Response",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P134",
+      "provider": "gemini",
+      "category": "Long-context Retention",
+      "difficulty": "Easy",
+      "your_scores": [
+        {
+          "criterion_name": "Fact Recall Accuracy",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Distraction Resistance",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P139",
+      "provider": "gemini",
+      "category": "Long-context Retention",
+      "difficulty": "Hard",
+      "your_scores": [
+        {
+          "criterion_name": "Sequential Accuracy Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Current-State Accuracy Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Completeness Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Coherence Score",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P153",
+      "provider": "gemini",
+      "category": "Long-context Retention",
+      "difficulty": "Medium",
+      "your_scores": [
+        {
+          "criterion_name": "Multi-Fact Synthesis",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Numerical Accuracy",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P160",
+      "provider": "gemini",
+      "category": "Data Transformation",
+      "difficulty": "Easy",
+      "your_scores": [
+        {
+          "criterion_name": "Conversion Accuracy",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Format Compliance",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P168",
+      "provider": "gemini",
+      "category": "Data Transformation",
+      "difficulty": "Hard",
+      "your_scores": [
+        {
+          "criterion_name": "Relational Integrity Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Edge Case Handling Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Output Validity Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Completeness Score",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P170",
+      "provider": "gemini",
+      "category": "Data Transformation",
+      "difficulty": "Medium",
+      "your_scores": [
+        {
+          "criterion_name": "Structural Correctness",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Data Fidelity",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P177",
+      "provider": "gemini",
+      "category": "Summarization",
+      "difficulty": "Easy",
+      "your_scores": [
+        {
+          "criterion_name": "Conciseness Compliance",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Core Meaning Preservation",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P190",
+      "provider": "gemini",
+      "category": "Summarization",
+      "difficulty": "Hard",
+      "your_scores": [
+        {
+          "criterion_name": "Structural Compliance Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Fidelity Under Constraint Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Nuance Preservation Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Audience Appropriateness Score",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P198",
+      "provider": "gemini",
+      "category": "Summarization",
+      "difficulty": "Medium",
+      "your_scores": [
+        {
+          "criterion_name": "Format Compliance",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Balanced Coverage",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P200",
+      "provider": "gemini",
+      "category": "Multilingual Tasks",
+      "difficulty": "Easy",
+      "your_scores": [
+        {
+          "criterion_name": "Translation Accuracy",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Natural Phrasing",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P209",
+      "provider": "gemini",
+      "category": "Multilingual Tasks",
+      "difficulty": "Hard",
+      "your_scores": [
+        {
+          "criterion_name": "Translation Precision Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Cultural/Linguistic Adaptation Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Meta-Explanation Quality Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Round-Trip/Consistency Score",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P218",
+      "provider": "gemini",
+      "category": "Multilingual Tasks",
+      "difficulty": "Medium",
+      "your_scores": [
+        {
+          "criterion_name": "Tone/Register Accuracy",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Linguistic Explanation Quality",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P001",
+      "provider": "mistral",
+      "category": "Knowledge Retrieval",
+      "difficulty": "Easy",
+      "your_scores": [
+        {
+          "criterion_name": "Syntax Correctness",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Edge Case Handling",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P010",
+      "provider": "mistral",
+      "category": "Knowledge Retrieval",
+      "difficulty": "Hard",
+      "your_scores": [
+        {
+          "criterion_name": "Protocol Accuracy",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Bus Snooping",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P016",
+      "provider": "mistral",
+      "category": "Knowledge Retrieval",
+      "difficulty": "Medium",
+      "your_scores": [
+        {
+          "criterion_name": "Architectural Depth",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Algorithmic Explanation",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P027",
+      "provider": "mistral",
+      "category": "Multi-step Reasoning",
+      "difficulty": "Easy",
+      "your_scores": [
+        {
+          "criterion_name": "Capacity Scaling",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Exponent Application",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P035",
+      "provider": "mistral",
+      "category": "Multi-step Reasoning",
+      "difficulty": "Hard",
+      "your_scores": [
+        {
+          "criterion_name": "Stride Mapping",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Mitigation Quality",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P039",
+      "provider": "mistral",
+      "category": "Multi-step Reasoning",
+      "difficulty": "Medium",
+      "your_scores": [
+        {
+          "criterion_name": "Capacity Calculation",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Fault Tolerance Logic",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P049",
+      "provider": "mistral",
+      "category": "Instruction Following",
+      "difficulty": "Easy",
+      "your_scores": [
+        {
+          "criterion_name": "Reversal Accuracy",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Formatting",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P051",
+      "provider": "mistral",
+      "category": "Instruction Following",
+      "difficulty": "Hard",
+      "your_scores": [
+        {
+          "criterion_name": "Negative Constraint 1",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Negative Constraint 2",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Structural Formatting",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P063",
+      "provider": "mistral",
+      "category": "Instruction Following",
+      "difficulty": "Medium",
+      "your_scores": [
+        {
+          "criterion_name": "Forbidden Words",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Paragraph Count",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P072",
+      "provider": "mistral",
+      "category": "Hallucination Stress Test",
+      "difficulty": "Easy",
+      "your_scores": [
+        {
+          "criterion_name": "Refusal Of False Premise",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Factual Integrity",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P074",
+      "provider": "mistral",
+      "category": "Hallucination Stress Test",
+      "difficulty": "Hard",
+      "your_scores": [
+        {
+          "criterion_name": "Refusal Of False Premise",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Factual Integrity",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P086",
+      "provider": "mistral",
+      "category": "Hallucination Stress Test",
+      "difficulty": "Medium",
+      "your_scores": [
+        {
+          "criterion_name": "Refusal Of False Premise",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Factual Accuracy",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P090",
+      "provider": "mistral",
+      "category": "Coding & System Architecture",
+      "difficulty": "Easy",
+      "your_scores": [
+        {
+          "criterion_name": "Algorithmic Correctness",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Syntax Cleanliness",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P096",
+      "provider": "mistral",
+      "category": "Coding & System Architecture",
+      "difficulty": "Hard",
+      "your_scores": [
+        {
+          "criterion_name": "Module 1 Connection Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Module 2 Room Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Module 3 Persistence Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "System Integration Score",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P107",
+      "provider": "mistral",
+      "category": "Coding & System Architecture",
+      "difficulty": "Medium",
+      "your_scores": [
+        {
+          "criterion_name": "Time Complexity",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Eviction Logic",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P111",
+      "provider": "mistral",
+      "category": "Ambiguity Handling",
+      "difficulty": "Easy",
+      "your_scores": [
+        {
+          "criterion_name": "Clarification Recognition",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Helpful Framing",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P121",
+      "provider": "mistral",
+      "category": "Ambiguity Handling",
+      "difficulty": "Hard",
+      "your_scores": [
+        {
+          "criterion_name": "Ambiguity Surfacing Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Assumption Documentation Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Structural Soundness Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Practical Usefulness Score",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P126",
+      "provider": "mistral",
+      "category": "Ambiguity Handling",
+      "difficulty": "Medium",
+      "your_scores": [
+        {
+          "criterion_name": "Missing Context Identification",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Constructive Response",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P134",
+      "provider": "mistral",
+      "category": "Long-context Retention",
+      "difficulty": "Easy",
+      "your_scores": [
+        {
+          "criterion_name": "Fact Recall Accuracy",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Distraction Resistance",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P139",
+      "provider": "mistral",
+      "category": "Long-context Retention",
+      "difficulty": "Hard",
+      "your_scores": [
+        {
+          "criterion_name": "Sequential Accuracy Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Current-State Accuracy Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Completeness Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Coherence Score",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P153",
+      "provider": "mistral",
+      "category": "Long-context Retention",
+      "difficulty": "Medium",
+      "your_scores": [
+        {
+          "criterion_name": "Multi-Fact Synthesis",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Numerical Accuracy",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P160",
+      "provider": "mistral",
+      "category": "Data Transformation",
+      "difficulty": "Easy",
+      "your_scores": [
+        {
+          "criterion_name": "Conversion Accuracy",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Format Compliance",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P168",
+      "provider": "mistral",
+      "category": "Data Transformation",
+      "difficulty": "Hard",
+      "your_scores": [
+        {
+          "criterion_name": "Relational Integrity Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Edge Case Handling Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Output Validity Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Completeness Score",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P170",
+      "provider": "mistral",
+      "category": "Data Transformation",
+      "difficulty": "Medium",
+      "your_scores": [
+        {
+          "criterion_name": "Structural Correctness",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Data Fidelity",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P177",
+      "provider": "mistral",
+      "category": "Summarization",
+      "difficulty": "Easy",
+      "your_scores": [
+        {
+          "criterion_name": "Conciseness Compliance",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Core Meaning Preservation",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P190",
+      "provider": "mistral",
+      "category": "Summarization",
+      "difficulty": "Hard",
+      "your_scores": [
+        {
+          "criterion_name": "Structural Compliance Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Fidelity Under Constraint Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Nuance Preservation Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Audience Appropriateness Score",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P198",
+      "provider": "mistral",
+      "category": "Summarization",
+      "difficulty": "Medium",
+      "your_scores": [
+        {
+          "criterion_name": "Format Compliance",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Balanced Coverage",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P200",
+      "provider": "mistral",
+      "category": "Multilingual Tasks",
+      "difficulty": "Easy",
+      "your_scores": [
+        {
+          "criterion_name": "Translation Accuracy",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Natural Phrasing",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P209",
+      "provider": "mistral",
+      "category": "Multilingual Tasks",
+      "difficulty": "Hard",
+      "your_scores": [
+        {
+          "criterion_name": "Translation Precision Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Cultural/Linguistic Adaptation Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Meta-Explanation Quality Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Round-Trip/Consistency Score",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P218",
+      "provider": "mistral",
+      "category": "Multilingual Tasks",
+      "difficulty": "Medium",
+      "your_scores": [
+        {
+          "criterion_name": "Tone/Register Accuracy",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Linguistic Explanation Quality",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P001",
+      "provider": "groq",
+      "category": "Knowledge Retrieval",
+      "difficulty": "Easy",
+      "your_scores": [
+        {
+          "criterion_name": "Syntax Correctness",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Edge Case Handling",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P010",
+      "provider": "groq",
+      "category": "Knowledge Retrieval",
+      "difficulty": "Hard",
+      "your_scores": [
+        {
+          "criterion_name": "Protocol Accuracy",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Bus Snooping",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P016",
+      "provider": "groq",
+      "category": "Knowledge Retrieval",
+      "difficulty": "Medium",
+      "your_scores": [
+        {
+          "criterion_name": "Architectural Depth",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Algorithmic Explanation",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P027",
+      "provider": "groq",
+      "category": "Multi-step Reasoning",
+      "difficulty": "Easy",
+      "your_scores": [
+        {
+          "criterion_name": "Capacity Scaling",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Exponent Application",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P035",
+      "provider": "groq",
+      "category": "Multi-step Reasoning",
+      "difficulty": "Hard",
+      "your_scores": [
+        {
+          "criterion_name": "Stride Mapping",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Mitigation Quality",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P039",
+      "provider": "groq",
+      "category": "Multi-step Reasoning",
+      "difficulty": "Medium",
+      "your_scores": [
+        {
+          "criterion_name": "Capacity Calculation",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Fault Tolerance Logic",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P049",
+      "provider": "groq",
+      "category": "Instruction Following",
+      "difficulty": "Easy",
+      "your_scores": [
+        {
+          "criterion_name": "Reversal Accuracy",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Formatting",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P051",
+      "provider": "groq",
+      "category": "Instruction Following",
+      "difficulty": "Hard",
+      "your_scores": [
+        {
+          "criterion_name": "Negative Constraint 1",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Negative Constraint 2",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Structural Formatting",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P063",
+      "provider": "groq",
+      "category": "Instruction Following",
+      "difficulty": "Medium",
+      "your_scores": [
+        {
+          "criterion_name": "Forbidden Words",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Paragraph Count",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P072",
+      "provider": "groq",
+      "category": "Hallucination Stress Test",
+      "difficulty": "Easy",
+      "your_scores": [
+        {
+          "criterion_name": "Refusal Of False Premise",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Factual Integrity",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P074",
+      "provider": "groq",
+      "category": "Hallucination Stress Test",
+      "difficulty": "Hard",
+      "your_scores": [
+        {
+          "criterion_name": "Refusal Of False Premise",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Factual Integrity",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P086",
+      "provider": "groq",
+      "category": "Hallucination Stress Test",
+      "difficulty": "Medium",
+      "your_scores": [
+        {
+          "criterion_name": "Refusal Of False Premise",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Factual Accuracy",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P090",
+      "provider": "groq",
+      "category": "Coding & System Architecture",
+      "difficulty": "Easy",
+      "your_scores": [
+        {
+          "criterion_name": "Algorithmic Correctness",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Syntax Cleanliness",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P096",
+      "provider": "groq",
+      "category": "Coding & System Architecture",
+      "difficulty": "Hard",
+      "your_scores": [
+        {
+          "criterion_name": "Module 1 Connection Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Module 2 Room Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Module 3 Persistence Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "System Integration Score",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P107",
+      "provider": "groq",
+      "category": "Coding & System Architecture",
+      "difficulty": "Medium",
+      "your_scores": [
+        {
+          "criterion_name": "Time Complexity",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Eviction Logic",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P111",
+      "provider": "groq",
+      "category": "Ambiguity Handling",
+      "difficulty": "Easy",
+      "your_scores": [
+        {
+          "criterion_name": "Clarification Recognition",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Helpful Framing",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P121",
+      "provider": "groq",
+      "category": "Ambiguity Handling",
+      "difficulty": "Hard",
+      "your_scores": [
+        {
+          "criterion_name": "Ambiguity Surfacing Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Assumption Documentation Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Structural Soundness Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Practical Usefulness Score",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P126",
+      "provider": "groq",
+      "category": "Ambiguity Handling",
+      "difficulty": "Medium",
+      "your_scores": [
+        {
+          "criterion_name": "Missing Context Identification",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Constructive Response",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P134",
+      "provider": "groq",
+      "category": "Long-context Retention",
+      "difficulty": "Easy",
+      "your_scores": [
+        {
+          "criterion_name": "Fact Recall Accuracy",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Distraction Resistance",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P139",
+      "provider": "groq",
+      "category": "Long-context Retention",
+      "difficulty": "Hard",
+      "your_scores": [
+        {
+          "criterion_name": "Sequential Accuracy Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Current-State Accuracy Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Completeness Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Coherence Score",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P153",
+      "provider": "groq",
+      "category": "Long-context Retention",
+      "difficulty": "Medium",
+      "your_scores": [
+        {
+          "criterion_name": "Multi-Fact Synthesis",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Numerical Accuracy",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P160",
+      "provider": "groq",
+      "category": "Data Transformation",
+      "difficulty": "Easy",
+      "your_scores": [
+        {
+          "criterion_name": "Conversion Accuracy",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Format Compliance",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P168",
+      "provider": "groq",
+      "category": "Data Transformation",
+      "difficulty": "Hard",
+      "your_scores": [
+        {
+          "criterion_name": "Relational Integrity Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Edge Case Handling Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Output Validity Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Completeness Score",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P170",
+      "provider": "groq",
+      "category": "Data Transformation",
+      "difficulty": "Medium",
+      "your_scores": [
+        {
+          "criterion_name": "Structural Correctness",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Data Fidelity",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P177",
+      "provider": "groq",
+      "category": "Summarization",
+      "difficulty": "Easy",
+      "your_scores": [
+        {
+          "criterion_name": "Conciseness Compliance",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Core Meaning Preservation",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P190",
+      "provider": "groq",
+      "category": "Summarization",
+      "difficulty": "Hard",
+      "your_scores": [
+        {
+          "criterion_name": "Structural Compliance Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Fidelity Under Constraint Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Nuance Preservation Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Audience Appropriateness Score",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P198",
+      "provider": "groq",
+      "category": "Summarization",
+      "difficulty": "Medium",
+      "your_scores": [
+        {
+          "criterion_name": "Format Compliance",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Balanced Coverage",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P200",
+      "provider": "groq",
+      "category": "Multilingual Tasks",
+      "difficulty": "Easy",
+      "your_scores": [
+        {
+          "criterion_name": "Translation Accuracy",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Natural Phrasing",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P209",
+      "provider": "groq",
+      "category": "Multilingual Tasks",
+      "difficulty": "Hard",
+      "your_scores": [
+        {
+          "criterion_name": "Translation Precision Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Cultural/Linguistic Adaptation Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Meta-Explanation Quality Score",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Round-Trip/Consistency Score",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    },
+    {
+      "id": "P218",
+      "provider": "groq",
+      "category": "Multilingual Tasks",
+      "difficulty": "Medium",
+      "your_scores": [
+        {
+          "criterion_name": "Tone/Register Accuracy",
+          "your_score": null,
+          "your_justification": ""
+        },
+        {
+          "criterion_name": "Linguistic Explanation Quality",
+          "your_score": null,
+          "your_justification": ""
+        }
+      ]
+    }
+  ]
+}

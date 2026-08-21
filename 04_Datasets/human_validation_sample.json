@@ -1,0 +1,305 @@
+{
+  "methodology": "Stratified random sample: 1 prompt per difficulty (Easy, Medium, Hard) per category = 3 per category, 10 categories = 30 total. EXPLICITLY EXCLUDES the 20 stochastic reliability sample prompts from the eligible pool (not just avoided by chance). Fixed random seed for reproducibility.",
+  "random_seed": 42,
+  "strata": "category x difficulty (10 x 3 = 30 strata, 1 prompt each)",
+  "excluded_stochastic_sample_ids": [
+    "P006",
+    "P021",
+    "P037",
+    "P044",
+    "P057",
+    "P065",
+    "P078",
+    "P087",
+    "P098",
+    "P110",
+    "P113",
+    "P127",
+    "P143",
+    "P152",
+    "P164",
+    "P167",
+    "P187",
+    "P191",
+    "P211",
+    "P215"
+  ],
+  "missing_strata": [],
+  "total_prompts_sampled": 30,
+  "total_responses_for_validation": 90,
+  "sampled_prompt_ids": [
+    "P001",
+    "P010",
+    "P016",
+    "P027",
+    "P035",
+    "P039",
+    "P049",
+    "P051",
+    "P063",
+    "P072",
+    "P074",
+    "P086",
+    "P090",
+    "P096",
+    "P107",
+    "P111",
+    "P121",
+    "P126",
+    "P134",
+    "P139",
+    "P153",
+    "P160",
+    "P168",
+    "P170",
+    "P177",
+    "P190",
+    "P198",
+    "P200",
+    "P209",
+    "P218"
+  ],
+  "overlap_with_stochastic_sample": [],
+  "prompts": [
+    {
+      "id": "P001",
+      "category": "Knowledge Retrieval",
+      "difficulty": "Easy",
+      "prompt": "Write a Python function to check if a given string is a palindrome, ignoring spaces and case sensitivity.",
+      "evaluation_criteria": "Syntax Correctness: 0-5 (Evaluates clean syntax and execution)\nEdge Case Handling: 0-5 (Evaluates handling of spaces, punctuation, and casing)",
+      "max_score": "10"
+    },
+    {
+      "id": "P010",
+      "category": "Knowledge Retrieval",
+      "difficulty": "Hard",
+      "prompt": "Examine CPU cache coherence protocols (specifically MESI/MOESI). How do cache lines transition between Modified, Exclusive, Shared, and Invalid states during multi-core write operations?",
+      "evaluation_criteria": "Protocol Accuracy: 0-5 (Evaluates state transition precision)\nBus Snooping: 0-5 (Evaluates multi-core synchronization mechanics)",
+      "max_score": "10"
+    },
+    {
+      "id": "P016",
+      "category": "Knowledge Retrieval",
+      "difficulty": "Medium",
+      "prompt": "Describe the internal architectural workflow of a Java Virtual Machine (JVM) garbage collector, detailing the phases of the Mark-and-Sweep algorithm.",
+      "evaluation_criteria": "Architectural Depth: 0-5 (Evaluates technical precision of JVM memory regions)\nAlgorithmic Explanation: 0-5 (Evaluates clear description of Mark-and-Sweep phases)",
+      "max_score": "10"
+    },
+    {
+      "id": "P027",
+      "category": "Multi-step Reasoning",
+      "difficulty": "Easy",
+      "prompt": "A battery backup unit provides 12 hours of power when drawing 50 watts. Calculate how many hours of backup it will provide if the load increases to 150 watts, assuming a non-linear Peukert efficiency exponent of 1.1.",
+      "evaluation_criteria": "Capacity Scaling: 0-5 (Evaluates power-time invariant calculation)\nExponent Application: 0-5 (Evaluates Peukert equation logic)",
+      "max_score": "10"
+    },
+    {
+      "id": "P035",
+      "category": "Multi-step Reasoning",
+      "difficulty": "Hard",
+      "prompt": "Perform a security threat-modeling exercise (STRIDE framework) for an online banking payment gateway. Identify 2 specific threats for each of the 6 STRIDE categories, map each threat to a vulnerability vector, and propose definitive cryptographic or architectural mitigations.",
+      "evaluation_criteria": "Stride Mapping: 0-5 (Evaluates correct application across Spoofing, Tampering, Repudiation, Info Disclosure, Denial of Service, Elevation of Privilege)\nMitigation Quality: 0-5 (Evaluates security architecture robustness)",
+      "max_score": "10"
+    },
+    {
+      "id": "P039",
+      "category": "Multi-step Reasoning",
+      "difficulty": "Medium",
+      "prompt": "In a RAID 5 disk array comprising four 2TB drives, calculate the total usable storage capacity and determine how many individual drives can fail simultaneously without data loss. Explain the parity calculation logic.",
+      "evaluation_criteria": "Capacity Calculation: 0-5 (Evaluates N-1 usable space formula)\nFault Tolerance Logic: 0-5 (Evaluates single-drive failure resilience and XOR parity explanation)",
+      "max_score": "10"
+    },
+    {
+      "id": "P049",
+      "category": "Instruction Following",
+      "difficulty": "Easy",
+      "prompt": "List two web browsers. NEGATIVE CONSTRAINT: Each browser name must be spelled in reverse order. Format as a comma-separated list.",
+      "evaluation_criteria": "Reversal Accuracy: 0-5 (Evaluates correct string reversal e.g., Chrome -> emorhC)\nFormatting: 0-5 (Evaluates comma-separated layout)",
+      "max_score": "10"
+    },
+    {
+      "id": "P051",
+      "category": "Instruction Following",
+      "difficulty": "Hard",
+      "prompt": "Write a technical overview of cloud computing security models. NEGATIVE CONSTRAINT 1: Do not use the word 'security' or its plural form. NEGATIVE CONSTRAINT 2: Every sentence must start with a vowel letter (A, E, I, O, U). Format the output as exactly three paragraphs.",
+      "evaluation_criteria": "Negative Constraint 1: 0-5 (Evaluates absolute absence of forbidden keywords)\nNegative Constraint 2: 0-5 (Evaluates syntactic compliance of sentence starters)\nStructural Formatting: 0-5 (Evaluates exact three-paragraph layout)",
+      "max_score": "15"
+    },
+    {
+      "id": "P063",
+      "category": "Instruction Following",
+      "difficulty": "Medium",
+      "prompt": "Detail the purpose of software unit testing. NEGATIVE CONSTRAINT 1: Do not use the words 'code', 'test', or 'bug'. NEGATIVE CONSTRAINT 2: Exactly two paragraphs.",
+      "evaluation_criteria": "Forbidden Words: 0-5 (Evaluates avoidance of code, test, bug)\nParagraph Count: 0-5 (Evaluates exact two paragraphs)",
+      "max_score": "10"
+    },
+    {
+      "id": "P072",
+      "category": "Hallucination Stress Test",
+      "difficulty": "Easy",
+      "prompt": "Describe the built-in compiler optimization flags in GCC for translating human speech directly into machine bytecode.",
+      "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates recognition of impossible compiler feature)\nFactual Integrity: 0-5 (Evaluates zero fabrication of fake GCC flags)",
+      "max_score": "10"
+    },
+    {
+      "id": "P074",
+      "category": "Hallucination Stress Test",
+      "difficulty": "Hard",
+      "prompt": "Examine the proprietary consensus algorithm 'Proof-of-Gravity' patented by NASA in 1962 for synchronizing Apollo guidance computers with interplanetary radio relays.",
+      "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates detection of fictitious blockchain/consensus algorithm in 1962)\nFactual Integrity: 0-5 (Evaluates historical accuracy of Apollo guidance systems)",
+      "max_score": "10"
+    },
+    {
+      "id": "P086",
+      "category": "Hallucination Stress Test",
+      "difficulty": "Medium",
+      "prompt": "Describe the Garbage Collection compaction algorithm used by standard paper notebooks when erasing pencil notes with rubber erasers.",
+      "evaluation_criteria": "Refusal Of False Premise: 0-5 (Evaluates recognition of metaphorical category error)\nFactual Accuracy: 0-5 (Evaluates clear distinction between software GC and physical erasing)",
+      "max_score": "10"
+    },
+    {
+      "id": "P090",
+      "category": "Coding & System Architecture",
+      "difficulty": "Easy",
+      "prompt": "Write a C# method that takes a list of integers and returns the second highest number without using built-in sorting functions.",
+      "evaluation_criteria": "Algorithmic Correctness: 0-5 (Evaluates correct single-pass or tracked max logic)\nSyntax Cleanliness: 0-5 (Evaluates proper C# syntax)",
+      "max_score": "10"
+    },
+    {
+      "id": "P096",
+      "category": "Coding & System Architecture",
+      "difficulty": "Hard",
+      "prompt": "Implement a modular Real-Time Chat Server in C# with three isolated components: (1) TCP Connection Manager handling client handshakes and keep-alive heartbeats, (2) Room Management Subsystem supporting channel creation, broadcasting, and user permission roles, and (3) Message Persistence Engine asynchronously buffering chat history to a relational store.",
+      "evaluation_criteria": "Module 1 Connection Score: 0-5 (Evaluates async TCP socket management and heartbeat monitoring)\nModule 2 Room Score: 0-5 (Evaluates broadcast efficiency and thread-safe room collections)\nModule 3 Persistence Score: 0-5 (Evaluates background batch persistence and queue safety)\nSystem Integration Score: 0-5 (Evaluates full duplex communication flow and decoupling)",
+      "max_score": "20"
+    },
+    {
+      "id": "P107",
+      "category": "Coding & System Architecture",
+      "difficulty": "Medium",
+      "prompt": "Implement an LRU Cache in Python using an OrderedDict or a combination of dictionary and doubly linked list with O(1) get and put operations.",
+      "evaluation_criteria": "Time Complexity: 0-5 (Evaluates guaranteed O(1) performance)\nEviction Logic: 0-5 (Evaluates correct capacity threshold handling)",
+      "max_score": "10"
+    },
+    {
+      "id": "P111",
+      "category": "Ambiguity Handling",
+      "difficulty": "Easy",
+      "prompt": "What's the best programming language?",
+      "evaluation_criteria": "Clarification Recognition: 0-5 (Evaluates whether the response recognizes the question lacks necessary context)\nHelpful Framing: 0-5 (Evaluates whether the response offers a reasonable default or asks a clarifying question rather than guessing confidently)",
+      "max_score": "10"
+    },
+    {
+      "id": "P121",
+      "category": "Ambiguity Handling",
+      "difficulty": "Hard",
+      "prompt": "Implement a caching layer for 'the API' that improves 'performance' without introducing 'stale data issues' or 'excessive memory use'.",
+      "evaluation_criteria": "Ambiguity Surfacing Score: 0-5 (Evaluates whether the response explicitly identifies the multiple undefined terms/requirements before proceeding)\nAssumption Documentation Score: 0-5 (Evaluates whether any assumptions made to proceed are clearly stated and justified)\nStructural Soundness Score: 0-5 (Evaluates whether the proposed design is technically coherent despite the ambiguity)\nPractical Usefulness Score: 0-5 (Evaluates whether the response would still be actionable for a real engineer despite the missing specifics)",
+      "max_score": "20"
+    },
+    {
+      "id": "P126",
+      "category": "Ambiguity Handling",
+      "difficulty": "Medium",
+      "prompt": "Fix the bug in my code.",
+      "evaluation_criteria": "Missing Context Identification: 0-5 (Evaluates whether the response identifies exactly what information is missing, e.g. which code, which document, which app)\nConstructive Response: 0-5 (Evaluates whether the response still provides useful general guidance despite the ambiguity)",
+      "max_score": "10"
+    },
+    {
+      "id": "P134",
+      "category": "Long-context Retention",
+      "difficulty": "Easy",
+      "prompt": "Note 1: Employee A was hired in March 2021. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: Employee B was hired in July 2022. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: Employee C was hired in January 2020. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Who was hired first?",
+      "evaluation_criteria": "Fact Recall Accuracy: 0-5 (Evaluates whether the specific fact requested is retrieved correctly from the earlier context)\nDistraction Resistance: 0-5 (Evaluates whether the response is not confused by the surrounding filler text)",
+      "max_score": "10"
+    },
+    {
+      "id": "P139",
+      "category": "Long-context Retention",
+      "difficulty": "Hard",
+      "prompt": "Note 1: Module A was originally designed to handle authentication only. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: In a later revision, Module A was extended to also handle session management. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: A subsequent security audit required Module A to be split, moving session management into a new Module D. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 4: Module A currently handles only authentication again, matching its original scope. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 5: Module B has always handled authorization and was never modified. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: Trace the full history of Module A's responsibilities from start to the current state, and explain why it ended up back where it started.",
+      "evaluation_criteria": "Sequential Accuracy Score: 0-5 (Evaluates whether the response correctly reconstructs the full chronological sequence of changes)\nCurrent-State Accuracy Score: 0-5 (Evaluates whether the FINAL/current state described is correct, not an intermediate state)\nCompleteness Score: 0-5 (Evaluates whether all relevant facts from the context were used, none omitted)\nCoherence Score: 0-5 (Evaluates whether the explanation is clearly organized and easy to follow despite the complexity)",
+      "max_score": "20"
+    },
+    {
+      "id": "P153",
+      "category": "Long-context Retention",
+      "difficulty": "Medium",
+      "prompt": "Note 1: The original API rate limit was 100 requests per minute. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 2: It was temporarily raised to 200 during the promotional event. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nNote 3: After the event ended, it was set permanently at 150. The system has been operating under standard conditions. No unusual events were reported during this period. Routine maintenance was performed as scheduled. All other parameters remained within expected ranges.\n\nQuestion: What is the current permanent rate limit, and what was it during the promotional event?",
+      "evaluation_criteria": "Multi-Fact Synthesis: 0-5 (Evaluates whether the response correctly combines information from multiple, sequentially updated facts)\nNumerical Accuracy: 0-5 (Evaluates whether any calculations or comparisons across the facts are computed correctly)",
+      "max_score": "10"
+    },
+    {
+      "id": "P160",
+      "category": "Data Transformation",
+      "difficulty": "Easy",
+      "prompt": "Convert this binary number to decimal: 1011",
+      "evaluation_criteria": "Conversion Accuracy: 0-5 (Evaluates whether the output value is mathematically or structurally correct)\nFormat Compliance: 0-5 (Evaluates whether the output exactly matches the requested target format)",
+      "max_score": "10"
+    },
+    {
+      "id": "P168",
+      "category": "Data Transformation",
+      "difficulty": "Hard",
+      "prompt": "Convert this JSON representing a recursive category tree (categories containing subcategories containing subcategories) into a flat list with a 'path' field showing the full breadcrumb (e.g. 'Electronics > Computers > Laptops').",
+      "evaluation_criteria": "Relational Integrity Score: 0-5 (Evaluates whether relationships/references between the transformed structures are correctly preserved)\nEdge Case Handling Score: 0-5 (Evaluates whether irregular or inconsistent source data is handled correctly rather than causing errors or silent data loss)\nOutput Validity Score: 0-5 (Evaluates whether the output is syntactically valid in its target format)\nCompleteness Score: 0-5 (Evaluates whether all source data is represented in the output with nothing silently dropped)",
+      "max_score": "20"
+    },
+    {
+      "id": "P170",
+      "category": "Data Transformation",
+      "difficulty": "Medium",
+      "prompt": "Convert this JSON array of objects into a Markdown table:\n[{\"name\": \"Alice\", \"score\": 92}, {\"name\": \"Bob\", \"score\": 85}, {\"name\": \"Carol\", \"score\": 78}]",
+      "evaluation_criteria": "Structural Correctness: 0-5 (Evaluates whether the output structure correctly represents the source data's relationships)\nData Fidelity: 0-5 (Evaluates whether every value from the source is preserved accurately, with none dropped or altered)",
+      "max_score": "10"
+    },
+    {
+      "id": "P177",
+      "category": "Summarization",
+      "difficulty": "Easy",
+      "prompt": "Summarize this paragraph in one sentence: 'The company reported strong quarterly earnings, driven by increased demand for its cloud services division. Revenue grew 15% year-over-year, while operating costs remained flat, leading to improved profit margins.'",
+      "evaluation_criteria": "Conciseness Compliance: 0-5 (Evaluates whether the length constraint, if specified, is followed exactly)\nCore Meaning Preservation: 0-5 (Evaluates whether the summary captures the main point of the source text)",
+      "max_score": "10"
+    },
+    {
+      "id": "P190",
+      "category": "Summarization",
+      "difficulty": "Hard",
+      "prompt": "Summarize this quarterly business review into an executive summary with EXACTLY three labeled sections (Wins, Challenges, Next Steps), each limited to 2 sentences, using only information explicitly stated in the source (do not infer anything not directly stated): 'Q3 revenue grew 8% quarter-over-quarter, beating our internal forecast of 5%. Customer churn ticked up slightly to 4.2% from 3.8% last quarter, primarily in the SMB segment. The engineering team shipped the long-delayed API v2 release, though it came in three weeks later than originally planned. Leadership has approved additional headcount for customer success in Q4 to address the churn trend.'",
+      "evaluation_criteria": "Structural Compliance Score: 0-5 (Evaluates whether the exact requested structure - sentence count, labeled sections, audience level - is followed precisely)\nFidelity Under Constraint Score: 0-5 (Evaluates whether meaning is preserved despite the tight length/format constraints, without fabricating information not in the source)\nNuance Preservation Score: 0-5 (Evaluates whether important caveats, limitations, or competing viewpoints from the source are retained, not flattened away)\nAudience Appropriateness Score: 0-5 (Evaluates whether jargon is correctly translated for the specified target audience)",
+      "max_score": "20"
+    },
+    {
+      "id": "P198",
+      "category": "Summarization",
+      "difficulty": "Medium",
+      "prompt": "Summarize this multi-paragraph product review into a single balanced sentence capturing BOTH the positive and negative points: 'The camera quality on this phone is genuinely impressive, especially in low light. However, the battery life leaves a lot to be desired - I'm barely making it through a full day with moderate use. The design feels premium, though the price is definitely on the higher end.'",
+      "evaluation_criteria": "Format Compliance: 0-5 (Evaluates whether the specified structure - bullet points, sentence count, audience level - is followed)\nBalanced Coverage: 0-5 (Evaluates whether all key points from the source, including any competing or nuanced ones, are represented)",
+      "max_score": "10"
+    },
+    {
+      "id": "P200",
+      "category": "Multilingual Tasks",
+      "difficulty": "Easy",
+      "prompt": "Translate 'Thank you very much' into Japanese.",
+      "evaluation_criteria": "Translation Accuracy: 0-5 (Evaluates whether the translation correctly conveys the original meaning)\nNatural Phrasing: 0-5 (Evaluates whether the translation sounds natural to a native speaker rather than overly literal)",
+      "max_score": "10"
+    },
+    {
+      "id": "P209",
+      "category": "Multilingual Tasks",
+      "difficulty": "Hard",
+      "prompt": "Translate this technical error message into French, preserving enough precision that a developer could still debug the issue from the translated text alone: 'NullPointerException: Cannot invoke method on null object reference at line 245 in UserAuthHandler.java'",
+      "evaluation_criteria": "Translation Precision Score: 0-5 (Evaluates whether the translation is accurate at the level of precision the task requires - legal, technical, or poetic as specified)\nCultural/Linguistic Adaptation Score: 0-5 (Evaluates whether cultural or structural adaptations, where appropriate, are handled thoughtfully rather than overly literal)\nMeta-Explanation Quality Score: 0-5 (Evaluates whether any requested explanation of translation choices, ambiguity resolution, or back-translation comparison is accurate and insightful)\nRound-Trip/Consistency Score: 0-5 (Evaluates whether any self-comparison, such as back-translation analysis, is performed correctly and honestly, e.g. genuinely identifying meaning loss where it exists)",
+      "max_score": "20"
+    },
+    {
+      "id": "P218",
+      "category": "Multilingual Tasks",
+      "difficulty": "Medium",
+      "prompt": "Translate this product description into Portuguese, keeping any brand names untranslated: 'The UltraClean Pro vacuum features a HEPA filter and a 45-minute battery life.'",
+      "evaluation_criteria": "Tone/Register Accuracy: 0-5 (Evaluates whether formality level, politeness, or professional register is correctly preserved)\nLinguistic Explanation Quality: 0-5 (Evaluates whether any requested explanation of translation choices is accurate and clear)",
+      "max_score": "10"
+    }
+  ]
+}
