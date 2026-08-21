@@ -7,16 +7,16 @@
       "provider": "gemini",
       "category": "Knowledge Retrieval",
       "difficulty": "Easy",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Syntax Correctness",
-          "score": 5,
-          "justification": "Clean, correct code; handles spaces/case via lower()+split/join and slice reversal."
+          "your_score": 5,
+          "your_justification": "Clean, correct code; handles spaces/case via lower()+split/join and slice reversal."
         },
         {
           "criterion_name": "Edge Case Handling",
-          "score": 4,
-          "justification": "Handles spaces/case fine but doesn't mention punctuation/unicode edge cases."
+          "your_score": 4,
+          "your_justification": "Handles spaces/case fine but doesn't mention punctuation/unicode edge cases."
         }
       ]
     },
@@ -25,16 +25,16 @@
       "provider": "gemini",
       "category": "Knowledge Retrieval",
       "difficulty": "Hard",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Protocol Accuracy",
-          "score": 5,
-          "justification": "States and transitions (M/E/S/I/O) are accurate, correctly explains BusRdX/BusUpgr and cache-to-cache transfer."
+          "your_score": 5,
+          "your_justification": "States and transitions (M/E/S/I/O) are accurate, correctly explains BusRdX/BusUpgr and cache-to-cache transfer."
         },
         {
           "criterion_name": "Bus Snooping",
-          "score": 4,
-          "justification": "Explains snooping and bus signals correctly, though it's a shorter treatment than the other two."
+          "your_score": 4,
+          "your_justification": "Explains snooping and bus signals correctly, though it's a shorter treatment than the other two."
         }
       ]
     },
@@ -43,16 +43,16 @@
       "provider": "gemini",
       "category": "Knowledge Retrieval",
       "difficulty": "Medium",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Architectural Depth",
-          "score": 5,
-          "justification": "Good architectural coverage: GC roots, bitmaps vs header flags, generational hypothesis, concurrent marking."
+          "your_score": 5,
+          "your_justification": "Good architectural coverage: GC roots, bitmaps vs header flags, generational hypothesis, concurrent marking."
         },
         {
           "criterion_name": "Algorithmic Explanation",
-          "score": 5,
-          "justification": "Marking (DFS/graph traversal) and sweeping (free-list, compaction) phases are both explained correctly and in the right order."
+          "your_score": 5,
+          "your_justification": "Marking (DFS/graph traversal) and sweeping (free-list, compaction) phases are both explained correctly and in the right order."
         }
       ]
     },
@@ -61,16 +61,16 @@
       "provider": "gemini",
       "category": "Multi-step Reasoning",
       "difficulty": "Easy",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Capacity Scaling",
-          "score": 4,
-          "justification": "Correct method and formula; final answer 3.62h has a small rounding error vs the more precise ~3.58h."
+          "your_score": 4,
+          "your_justification": "Correct method and formula; final answer 3.62h has a small rounding error vs the more precise ~3.58h."
         },
         {
           "criterion_name": "Exponent Application",
-          "score": 4,
-          "justification": "Applies the 1.1 exponent correctly, just loses a bit of precision in the intermediate power calculation."
+          "your_score": 4,
+          "your_justification": "Applies the 1.1 exponent correctly, just loses a bit of precision in the intermediate power calculation."
         }
       ]
     },
@@ -79,16 +79,16 @@
       "provider": "gemini",
       "category": "Multi-step Reasoning",
       "difficulty": "Hard",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Stride Mapping",
-          "score": 5,
-          "justification": "Delivers exactly 2 threats per all 6 STRIDE categories with clear vulnerability vectors, well organized."
+          "your_score": 5,
+          "your_justification": "Delivers exactly 2 threats per all 6 STRIDE categories with clear vulnerability vectors, well organized."
         },
         {
           "criterion_name": "Mitigation Quality",
-          "score": 5,
-          "justification": "Mitigations are concretely split into architectural + cryptographic per threat (mTLS, HSM, envelope encryption, etc.) - specific, not generic."
+          "your_score": 5,
+          "your_justification": "Mitigations are concretely split into architectural + cryptographic per threat (mTLS, HSM, envelope encryption, etc.) - specific, not generic."
         }
       ]
     },
@@ -97,16 +97,16 @@
       "provider": "gemini",
       "category": "Multi-step Reasoning",
       "difficulty": "Medium",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Capacity Calculation",
-          "score": 5,
-          "justification": "6TB usable capacity and 1-drive fault tolerance are both correct."
+          "your_score": 5,
+          "your_justification": "6TB usable capacity and 1-drive fault tolerance are both correct."
         },
         {
           "criterion_name": "Fault Tolerance Logic",
-          "score": 5,
-          "justification": "XOR parity explanation with a concrete D1⊕D2⊕D3=P reconstruction example is accurate and clear."
+          "your_score": 5,
+          "your_justification": "XOR parity explanation with a concrete D1⊕D2⊕D3=P reconstruction example is accurate and clear."
         }
       ]
     },
@@ -115,16 +115,16 @@
       "provider": "gemini",
       "category": "Instruction Following",
       "difficulty": "Easy",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Reversal Accuracy",
-          "score": 2,
-          "justification": "'elgooG' correctly reverses 'Google', but the second entry 'erfirifuoB' does not reverse to 'Firefox' - it's a garbled non-word ('Boufirifre')."
+          "your_score": 2,
+          "your_justification": "'elgooG' correctly reverses 'Google', but the second entry 'erfirifuoB' does not reverse to 'Firefox' - it's a garbled non-word ('Boufirifre')."
         },
         {
           "criterion_name": "Formatting",
-          "score": 5,
-          "justification": "Correct comma-separated, no extra text - format fully complies."
+          "your_score": 5,
+          "your_justification": "Correct comma-separated, no extra text - format fully complies."
         }
       ]
     },
@@ -133,21 +133,21 @@
       "provider": "gemini",
       "category": "Instruction Following",
       "difficulty": "Hard",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Negative Constraint 1",
-          "score": 5,
-          "justification": "Never uses 'security' or a variant anywhere in the three paragraphs; consistently uses 'protective', 'safeguard', etc."
+          "your_score": 5,
+          "your_justification": "Never uses 'security' or a variant anywhere in the three paragraphs; consistently uses 'protective', 'safeguard', etc."
         },
         {
           "criterion_name": "Negative Constraint 2",
-          "score": 5,
-          "justification": "Checked every sentence - all of them start with a vowel (A/E/E, I/O/I, U/A/U) across the three paragraphs."
+          "your_score": 5,
+          "your_justification": "Checked every sentence - all of them start with a vowel (A/E/E, I/O/I, U/A/U) across the three paragraphs."
         },
         {
           "criterion_name": "Structural Formatting",
-          "score": 5,
-          "justification": "Exactly three paragraphs as required, clean structure."
+          "your_score": 5,
+          "your_justification": "Exactly three paragraphs as required, clean structure."
         }
       ]
     },
@@ -156,16 +156,16 @@
       "provider": "gemini",
       "category": "Instruction Following",
       "difficulty": "Medium",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Forbidden Words",
-          "score": 5,
-          "justification": "Completely avoids 'code', 'test', and 'bug' (or any substring of them) - uses 'digital architecture', 'evaluating', 'anomaly' instead."
+          "your_score": 5,
+          "your_justification": "Completely avoids 'code', 'test', and 'bug' (or any substring of them) - uses 'digital architecture', 'evaluating', 'anomaly' instead."
         },
         {
           "criterion_name": "Paragraph Count",
-          "score": 5,
-          "justification": "Exactly two paragraphs as required."
+          "your_score": 5,
+          "your_justification": "Exactly two paragraphs as required."
         }
       ]
     },
@@ -174,16 +174,16 @@
       "provider": "gemini",
       "category": "Hallucination Stress Test",
       "difficulty": "Easy",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Refusal Of False Premise",
-          "score": 5,
-          "justification": "Clearly states GCC has no such flags and explains why (text vs. audio input) - correctly refuses the false premise."
+          "your_score": 5,
+          "your_justification": "Clearly states GCC has no such flags and explains why (text vs. audio input) - correctly refuses the false premise."
         },
         {
           "criterion_name": "Factual Integrity",
-          "score": 5,
-          "justification": "Everything stated about real GCC optimization flags (-O0..-O3, -march=native) is accurate."
+          "your_score": 5,
+          "your_justification": "Everything stated about real GCC optimization flags (-O0..-O3, -march=native) is accurate."
         }
       ]
     },
@@ -192,16 +192,16 @@
       "provider": "gemini",
       "category": "Hallucination Stress Test",
       "difficulty": "Hard",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Refusal Of False Premise",
-          "score": 5,
-          "justification": "Correctly identifies this as fictional, explains why (consensus algorithms are a 1970s-80s concept, blockchain terminology is 2008+)."
+          "your_score": 5,
+          "your_justification": "Correctly identifies this as fictional, explains why (consensus algorithms are a 1970s-80s concept, blockchain terminology is 2008+)."
         },
         {
           "criterion_name": "Factual Integrity",
-          "score": 5,
-          "justification": "All historical facts cited (Lamport/Paxos era, AGC specs, DSN) are accurate and used to support the refusal."
+          "your_score": 5,
+          "your_justification": "All historical facts cited (Lamport/Paxos era, AGC specs, DSN) are accurate and used to support the refusal."
         }
       ]
     },
@@ -210,16 +210,16 @@
       "provider": "gemini",
       "category": "Hallucination Stress Test",
       "difficulty": "Medium",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Refusal Of False Premise",
-          "score": 4,
-          "justification": "This prompt is a whimsical analogy request rather than a factual claim to refute, and the response correctly treats it that way rather than asserting it's real."
+          "your_score": 4,
+          "your_justification": "This prompt is a whimsical analogy request rather than a factual claim to refute, and the response correctly treats it that way rather than asserting it's real."
         },
         {
           "criterion_name": "Factual Accuracy",
-          "score": 4,
-          "justification": "The GC terminology (mark-sweep, fragmentation, compaction) is used accurately as metaphor, though it stretches 'garbage collection' further than strictly appropriate."
+          "your_score": 4,
+          "your_justification": "The GC terminology (mark-sweep, fragmentation, compaction) is used accurately as metaphor, though it stretches 'garbage collection' further than strictly appropriate."
         }
       ]
     },
@@ -228,16 +228,16 @@
       "provider": "gemini",
       "category": "Coding & System Architecture",
       "difficulty": "Easy",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Algorithmic Correctness",
-          "score": 5,
-          "justification": "Single-pass O(n) tracking of highest/secondHighest is correct, handles duplicates via the != check."
+          "your_score": 5,
+          "your_justification": "Single-pass O(n) tracking of highest/secondHighest is correct, handles duplicates via the != check."
         },
         {
           "criterion_name": "Syntax Cleanliness",
-          "score": 5,
-          "justification": "Clean, idiomatic C# with nullable return and clear comments."
+          "your_score": 5,
+          "your_justification": "Clean, idiomatic C# with nullable return and clear comments."
         }
       ]
     },
@@ -246,26 +246,26 @@
       "provider": "gemini",
       "category": "Coding & System Architecture",
       "difficulty": "Hard",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Module 1 Connection Score",
-          "score": 4,
-          "justification": "Provides a coherent three-module design; interfaces are reasonable though the response is long enough that some wiring is only sketched."
+          "your_score": 4,
+          "your_justification": "Provides a coherent three-module design; interfaces are reasonable though the response is long enough that some wiring is only sketched."
         },
         {
           "criterion_name": "Module 2 Room Score",
-          "score": 4,
-          "justification": "Room management with roles is present but not deeply detailed."
+          "your_score": 4,
+          "your_justification": "Room management with roles is present but not deeply detailed."
         },
         {
           "criterion_name": "Module 3 Persistence Score",
-          "score": 4,
-          "justification": "Persistence engine is async-buffered as asked, though the actual DB write batching logic is fairly high-level."
+          "your_score": 4,
+          "your_justification": "Persistence engine is async-buffered as asked, though the actual DB write batching logic is fairly high-level."
         },
         {
           "criterion_name": "System Integration Score",
-          "score": 4,
-          "justification": "The three modules are connected through shared interfaces sensibly, giving a workable overall design."
+          "your_score": 4,
+          "your_justification": "The three modules are connected through shared interfaces sensibly, giving a workable overall design."
         }
       ]
     },
@@ -274,16 +274,16 @@
       "provider": "gemini",
       "category": "Coding & System Architecture",
       "difficulty": "Medium",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Time Complexity",
-          "score": 5,
-          "justification": "OrderedDict-based approach correctly gives O(1) get/put via move_to_end/popitem."
+          "your_score": 5,
+          "your_justification": "OrderedDict-based approach correctly gives O(1) get/put via move_to_end/popitem."
         },
         {
           "criterion_name": "Eviction Logic",
-          "score": 4,
-          "justification": "Uses OrderedDict cleanly; less detail than groq on the manual doubly-linked-list alternative."
+          "your_score": 4,
+          "your_justification": "Uses OrderedDict cleanly; less detail than groq on the manual doubly-linked-list alternative."
         }
       ]
     },
@@ -292,16 +292,16 @@
       "provider": "gemini",
       "category": "Ambiguity Handling",
       "difficulty": "Easy",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Clarification Recognition",
-          "score": 2,
-          "justification": "Doesn't ask a clarifying question at all - jumps straight into a full breakdown, missing the chance to ask what the person is building."
+          "your_score": 2,
+          "your_justification": "Doesn't ask a clarifying question at all - jumps straight into a full breakdown, missing the chance to ask what the person is building."
         },
         {
           "criterion_name": "Helpful Framing",
-          "score": 4,
-          "justification": "Despite not clarifying, the response is genuinely useful, organizing languages by use case so the person can self-select."
+          "your_score": 4,
+          "your_justification": "Despite not clarifying, the response is genuinely useful, organizing languages by use case so the person can self-select."
         }
       ]
     },
@@ -310,26 +310,26 @@
       "provider": "gemini",
       "category": "Ambiguity Handling",
       "difficulty": "Hard",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Ambiguity Surfacing Score",
-          "score": 2,
-          "justification": "Doesn't explicitly call out that 'the API' is undefined - jumps straight into a Redis+FastAPI-specific solution."
+          "your_score": 2,
+          "your_justification": "Doesn't explicitly call out that 'the API' is undefined - jumps straight into a Redis+FastAPI-specific solution."
         },
         {
           "criterion_name": "Assumption Documentation Score",
-          "score": 2,
-          "justification": "Assumptions (FastAPI, Redis, specific TTLs) are baked into the code rather than stated as assumptions up front."
+          "your_score": 2,
+          "your_justification": "Assumptions (FastAPI, Redis, specific TTLs) are baked into the code rather than stated as assumptions up front."
         },
         {
           "criterion_name": "Structural Soundness Score",
-          "score": 5,
-          "justification": "The architecture (L1 in-memory + L2 Redis, cache-aside + write-invalidation) is technically sound and directly addresses all three stated constraints."
+          "your_score": 5,
+          "your_justification": "The architecture (L1 in-memory + L2 Redis, cache-aside + write-invalidation) is technically sound and directly addresses all three stated constraints."
         },
         {
           "criterion_name": "Practical Usefulness Score",
-          "score": 5,
-          "justification": "Production-grade, runnable code with clear mapping from each requirement (perf/staleness/memory) to a specific mechanism."
+          "your_score": 5,
+          "your_justification": "Production-grade, runnable code with clear mapping from each requirement (perf/staleness/memory) to a specific mechanism."
         }
       ]
     },
@@ -338,16 +338,16 @@
       "provider": "gemini",
       "category": "Ambiguity Handling",
       "difficulty": "Medium",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Missing Context Identification",
-          "score": 5,
-          "justification": "Correctly recognizes it can't proceed without the code and asks for it plus the expected vs actual behavior."
+          "your_score": 5,
+          "your_justification": "Correctly recognizes it can't proceed without the code and asks for it plus the expected vs actual behavior."
         },
         {
           "criterion_name": "Constructive Response",
-          "score": 5,
-          "justification": "Gives a constructive, specific list of what it needs rather than a vague 'please provide more info.'"
+          "your_score": 5,
+          "your_justification": "Gives a constructive, specific list of what it needs rather than a vague 'please provide more info.'"
         }
       ]
     },
@@ -356,16 +356,16 @@
       "provider": "gemini",
       "category": "Long-context Retention",
       "difficulty": "Easy",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Fact Recall Accuracy",
-          "score": 5,
-          "justification": "Correctly recalls all three hire dates from the notes."
+          "your_score": 5,
+          "your_justification": "Correctly recalls all three hire dates from the notes."
         },
         {
           "criterion_name": "Distraction Resistance",
-          "score": 5,
-          "justification": "Correctly identifies Employee C (Jan 2020) as hired first despite it being buried among repeated filler sentences."
+          "your_score": 5,
+          "your_justification": "Correctly identifies Employee C (Jan 2020) as hired first despite it being buried among repeated filler sentences."
         }
       ]
     },
@@ -374,26 +374,26 @@
       "provider": "gemini",
       "category": "Long-context Retention",
       "difficulty": "Hard",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Sequential Accuracy Score",
-          "score": 5,
-          "justification": "Correctly traces all four states of Module A in the right order (auth-only -> +session -> split to Module D -> auth-only again)."
+          "your_score": 5,
+          "your_justification": "Correctly traces all four states of Module A in the right order (auth-only -> +session -> split to Module D -> auth-only again)."
         },
         {
           "criterion_name": "Current-State Accuracy Score",
-          "score": 5,
-          "justification": "Correctly identifies the final/current state as authentication-only."
+          "your_score": 5,
+          "your_justification": "Correctly identifies the final/current state as authentication-only."
         },
         {
           "criterion_name": "Completeness Score",
-          "score": 5,
-          "justification": "All four notes' content is represented; nothing is dropped."
+          "your_score": 5,
+          "your_justification": "All four notes' content is represented; nothing is dropped."
         },
         {
           "criterion_name": "Coherence Score",
-          "score": 5,
-          "justification": "The explanation of *why* it returned to its original scope (security audit forcing the split) is coherent and correctly reasoned from the notes."
+          "your_score": 5,
+          "your_justification": "The explanation of *why* it returned to its original scope (security audit forcing the split) is coherent and correctly reasoned from the notes."
         }
       ]
     },
@@ -402,16 +402,16 @@
       "provider": "gemini",
       "category": "Long-context Retention",
       "difficulty": "Medium",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Multi-Fact Synthesis",
-          "score": 5,
-          "justification": "Correctly synthesizes across all three notes."
+          "your_score": 5,
+          "your_justification": "Correctly synthesizes across all three notes."
         },
         {
           "criterion_name": "Numerical Accuracy",
-          "score": 5,
-          "justification": "Both numbers (150 current, 200 during promo) are numerically correct."
+          "your_score": 5,
+          "your_justification": "Both numbers (150 current, 200 during promo) are numerically correct."
         }
       ]
     },
@@ -420,16 +420,16 @@
       "provider": "gemini",
       "category": "Data Transformation",
       "difficulty": "Easy",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Conversion Accuracy",
-          "score": 5,
-          "justification": "1011 -> 11 is correct, with the place-value math shown."
+          "your_score": 5,
+          "your_justification": "1011 -> 11 is correct, with the place-value math shown."
         },
         {
           "criterion_name": "Format Compliance",
-          "score": 5,
-          "justification": "Well formatted, easy to verify each step."
+          "your_score": 5,
+          "your_justification": "Well formatted, easy to verify each step."
         }
       ]
     },
@@ -438,26 +438,26 @@
       "provider": "gemini",
       "category": "Data Transformation",
       "difficulty": "Hard",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Relational Integrity Score",
-          "score": 3,
-          "justification": "There's no actual tree in the response to judge relational/parent-child logic against, since it correctly stopped to ask for the missing JSON instead of guessing."
+          "your_score": 3,
+          "your_justification": "There's no actual tree in the response to judge relational/parent-child logic against, since it correctly stopped to ask for the missing JSON instead of guessing."
         },
         {
           "criterion_name": "Edge Case Handling Score",
-          "score": 5,
-          "justification": "Handling the true edge case here - a prompt with no data attached - by asking rather than fabricating is the safest possible behavior."
+          "your_score": 5,
+          "your_justification": "Handling the true edge case here - a prompt with no data attached - by asking rather than fabricating is the safest possible behavior."
         },
         {
           "criterion_name": "Output Validity Score",
-          "score": 4,
-          "justification": "No invalid or hallucinated output was produced, which is the main thing 'output validity' should reward here."
+          "your_score": 4,
+          "your_justification": "No invalid or hallucinated output was produced, which is the main thing 'output validity' should reward here."
         },
         {
           "criterion_name": "Completeness Score",
-          "score": 2,
-          "justification": "Doesn't actually deliver a usable transformation/example the person could apply immediately, unlike the other two."
+          "your_score": 2,
+          "your_justification": "Doesn't actually deliver a usable transformation/example the person could apply immediately, unlike the other two."
         }
       ]
     },
@@ -466,16 +466,16 @@
       "provider": "gemini",
       "category": "Data Transformation",
       "difficulty": "Medium",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Structural Correctness",
-          "score": 5,
-          "justification": "Correct table with accurate columns/values, minimal and exactly what was asked."
+          "your_score": 5,
+          "your_justification": "Correct table with accurate columns/values, minimal and exactly what was asked."
         },
         {
           "criterion_name": "Data Fidelity",
-          "score": 5,
-          "justification": "All three rows and both fields (name, score) are faithfully reproduced."
+          "your_score": 5,
+          "your_justification": "All three rows and both fields (name, score) are faithfully reproduced."
         }
       ]
     },
@@ -484,16 +484,16 @@
       "provider": "gemini",
       "category": "Summarization",
       "difficulty": "Easy",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Conciseness Compliance",
-          "score": 5,
-          "justification": "Single sentence, as required."
+          "your_score": 5,
+          "your_justification": "Single sentence, as required."
         },
         {
           "criterion_name": "Core Meaning Preservation",
-          "score": 5,
-          "justification": "Captures revenue growth, cloud demand driver, flat costs, and improved margins - nothing important dropped."
+          "your_score": 5,
+          "your_justification": "Captures revenue growth, cloud demand driver, flat costs, and improved margins - nothing important dropped."
         }
       ]
     },
@@ -502,26 +502,26 @@
       "provider": "gemini",
       "category": "Summarization",
       "difficulty": "Hard",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Structural Compliance Score",
-          "score": 5,
-          "justification": "Exactly three labeled sections, each with exactly two sentences."
+          "your_score": 5,
+          "your_justification": "Exactly three labeled sections, each with exactly two sentences."
         },
         {
           "criterion_name": "Fidelity Under Constraint Score",
-          "score": 5,
-          "justification": "Uses only facts explicitly present in the source, including flagging 'No additional actions were stated' rather than inventing any."
+          "your_score": 5,
+          "your_justification": "Uses only facts explicitly present in the source, including flagging 'No additional actions were stated' rather than inventing any."
         },
         {
           "criterion_name": "Nuance Preservation Score",
-          "score": 5,
-          "justification": "Correctly separates positive (revenue beat, API shipped) from negative (churn, late API) framing without blending them."
+          "your_score": 5,
+          "your_justification": "Correctly separates positive (revenue beat, API shipped) from negative (churn, late API) framing without blending them."
         },
         {
           "criterion_name": "Audience Appropriateness Score",
-          "score": 5,
-          "justification": "Appropriately terse, exec-summary register throughout."
+          "your_score": 5,
+          "your_justification": "Appropriately terse, exec-summary register throughout."
         }
       ]
     },
@@ -530,16 +530,16 @@
       "provider": "gemini",
       "category": "Summarization",
       "difficulty": "Medium",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Format Compliance",
-          "score": 5,
-          "justification": "Single sentence, as required."
+          "your_score": 5,
+          "your_justification": "Single sentence, as required."
         },
         {
           "criterion_name": "Balanced Coverage",
-          "score": 5,
-          "justification": "Balances all four points (camera, battery, design, price) fairly, giving positives and negatives roughly equal weight."
+          "your_score": 5,
+          "your_justification": "Balances all four points (camera, battery, design, price) fairly, giving positives and negatives roughly equal weight."
         }
       ]
     },
@@ -548,16 +548,16 @@
       "provider": "gemini",
       "category": "Multilingual Tasks",
       "difficulty": "Easy",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Translation Accuracy",
-          "score": 5,
-          "justification": "Arigatou gozaimasu and variants are all correct and natural."
+          "your_score": 5,
+          "your_justification": "Arigatou gozaimasu and variants are all correct and natural."
         },
         {
           "criterion_name": "Natural Phrasing",
-          "score": 5,
-          "justification": "Gives appropriate register options (casual/standard/formal) - genuinely useful context."
+          "your_score": 5,
+          "your_justification": "Gives appropriate register options (casual/standard/formal) - genuinely useful context."
         }
       ]
     },
@@ -566,26 +566,26 @@
       "provider": "gemini",
       "category": "Multilingual Tasks",
       "difficulty": "Hard",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Translation Precision Score",
-          "score": 5,
-          "justification": "Technical terms (référence d'objet nulle, ligne 245, filename) are all precise enough for a developer to locate and understand the bug from the French text alone."
+          "your_score": 5,
+          "your_justification": "Technical terms (référence d'objet nulle, ligne 245, filename) are all precise enough for a developer to locate and understand the bug from the French text alone."
         },
         {
           "criterion_name": "Cultural/Linguistic Adaptation Score",
-          "score": 4,
-          "justification": "Reasonable French phrasing, though a developer used to seeing 'NullPointerException' untranslated (as here) will find it natural."
+          "your_score": 4,
+          "your_justification": "Reasonable French phrasing, though a developer used to seeing 'NullPointerException' untranslated (as here) will find it natural."
         },
         {
           "criterion_name": "Meta-Explanation Quality Score",
-          "score": 4,
-          "justification": "Short one-line explanation of the choice to keep the exception name in English is helpful but minimal."
+          "your_score": 4,
+          "your_justification": "Short one-line explanation of the choice to keep the exception name in English is helpful but minimal."
         },
         {
           "criterion_name": "Round-Trip/Consistency Score",
-          "score": 5,
-          "justification": "A French-reading developer could round-trip this back to the exact original meaning and line number without ambiguity."
+          "your_score": 5,
+          "your_justification": "A French-reading developer could round-trip this back to the exact original meaning and line number without ambiguity."
         }
       ]
     },
@@ -594,16 +594,16 @@
       "provider": "gemini",
       "category": "Multilingual Tasks",
       "difficulty": "Medium",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Tone/Register Accuracy",
-          "score": 5,
-          "justification": "Correct, natural Portuguese; product-description register maintained."
+          "your_score": 5,
+          "your_justification": "Correct, natural Portuguese; product-description register maintained."
         },
         {
           "criterion_name": "Linguistic Explanation Quality",
-          "score": 4,
-          "justification": "Straightforward and correct, though offers no explanation of translation choices."
+          "your_score": 4,
+          "your_justification": "Straightforward and correct, though offers no explanation of translation choices."
         }
       ]
     },
@@ -612,16 +612,16 @@
       "provider": "mistral",
       "category": "Knowledge Retrieval",
       "difficulty": "Easy",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Syntax Correctness",
-          "score": 5,
-          "justification": "Same correct approach, works and reads cleanly."
+          "your_score": 5,
+          "your_justification": "Same correct approach, works and reads cleanly."
         },
         {
           "criterion_name": "Edge Case Handling",
-          "score": 3,
-          "justification": "Basic case works but no discussion of edge cases like punctuation or empty string at all."
+          "your_score": 3,
+          "your_justification": "Basic case works but no discussion of edge cases like punctuation or empty string at all."
         }
       ]
     },
@@ -630,16 +630,16 @@
       "provider": "mistral",
       "category": "Knowledge Retrieval",
       "difficulty": "Hard",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Protocol Accuracy",
-          "score": 4,
-          "justification": "Mostly accurate MESI/MOESI description; the table format is a bit repetitive/wordy in wording."
+          "your_score": 4,
+          "your_justification": "Mostly accurate MESI/MOESI description; the table format is a bit repetitive/wordy in wording."
         },
         {
           "criterion_name": "Bus Snooping",
-          "score": 3,
-          "justification": "Talks about invalidation messages generally but doesn't explicitly name snooping as the coherence mechanism until late."
+          "your_score": 3,
+          "your_justification": "Talks about invalidation messages generally but doesn't explicitly name snooping as the coherence mechanism until late."
         }
       ]
     },
@@ -648,16 +648,16 @@
       "provider": "mistral",
       "category": "Knowledge Retrieval",
       "difficulty": "Medium",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Architectural Depth",
-          "score": 4,
-          "justification": "Solid overview but slightly redundant/table-heavy; covers roots, GC types comparison well."
+          "your_score": 4,
+          "your_justification": "Solid overview but slightly redundant/table-heavy; covers roots, GC types comparison well."
         },
         {
           "criterion_name": "Algorithmic Explanation",
-          "score": 4,
-          "justification": "Correctly describes mark and sweep phases with a worked example; less detail on bitmap marking than gemini/groq."
+          "your_score": 4,
+          "your_justification": "Correctly describes mark and sweep phases with a worked example; less detail on bitmap marking than gemini/groq."
         }
       ]
     },
@@ -666,16 +666,16 @@
       "provider": "mistral",
       "category": "Multi-step Reasoning",
       "difficulty": "Easy",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Capacity Scaling",
-          "score": 4,
-          "justification": "Correct formula and setup, well laid out."
+          "your_score": 4,
+          "your_justification": "Correct formula and setup, well laid out."
         },
         {
           "criterion_name": "Exponent Application",
-          "score": 3,
-          "justification": "The manual approximation of (1/3)^1.1 (~0.294) is the least precise of the three, giving 3.53h vs the true ~3.58h."
+          "your_score": 3,
+          "your_justification": "The manual approximation of (1/3)^1.1 (~0.294) is the least precise of the three, giving 3.53h vs the true ~3.58h."
         }
       ]
     },
@@ -684,16 +684,16 @@
       "provider": "mistral",
       "category": "Multi-step Reasoning",
       "difficulty": "Hard",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Stride Mapping",
-          "score": 5,
-          "justification": "Also covers 2 threats per category with vectors."
+          "your_score": 5,
+          "your_justification": "Also covers 2 threats per category with vectors."
         },
         {
           "criterion_name": "Mitigation Quality",
-          "score": 4,
-          "justification": "Mitigations are solid but sometimes labeled 'Defensive/Offensive' rather than 'Architectural/Cryptographic' as the prompt implies, slightly off-brief."
+          "your_score": 4,
+          "your_justification": "Mitigations are solid but sometimes labeled 'Defensive/Offensive' rather than 'Architectural/Cryptographic' as the prompt implies, slightly off-brief."
         }
       ]
     },
@@ -702,16 +702,16 @@
       "provider": "mistral",
       "category": "Multi-step Reasoning",
       "difficulty": "Medium",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Capacity Calculation",
-          "score": 5,
-          "justification": "Same correct capacity/fault-tolerance answers."
+          "your_score": 5,
+          "your_justification": "Same correct capacity/fault-tolerance answers."
         },
         {
           "criterion_name": "Fault Tolerance Logic",
-          "score": 4,
-          "justification": "XOR logic is correct but the explanation is cut a bit short compared to gemini/groq's worked examples."
+          "your_score": 4,
+          "your_justification": "XOR logic is correct but the explanation is cut a bit short compared to gemini/groq's worked examples."
         }
       ]
     },
@@ -720,16 +720,16 @@
       "provider": "mistral",
       "category": "Instruction Following",
       "difficulty": "Easy",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Reversal Accuracy",
-          "score": 1,
-          "justification": "Both 'browsers' are fabricated ('gnihtelpM'→'Mplething', 'elpniM'→'Minple') - neither reverses to a real browser name, so the core task fails."
+          "your_score": 1,
+          "your_justification": "Both 'browsers' are fabricated ('gnihtelpM'→'Mplething', 'elpniM'→'Minple') - neither reverses to a real browser name, so the core task fails."
         },
         {
           "criterion_name": "Formatting",
-          "score": 5,
-          "justification": "Comma-separated format is technically followed even though the content is wrong."
+          "your_score": 5,
+          "your_justification": "Comma-separated format is technically followed even though the content is wrong."
         }
       ]
     },
@@ -738,21 +738,21 @@
       "provider": "mistral",
       "category": "Instruction Following",
       "difficulty": "Hard",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Negative Constraint 1",
-          "score": 5,
-          "justification": "Also avoids 'security' entirely."
+          "your_score": 5,
+          "your_justification": "Also avoids 'security' entirely."
         },
         {
           "criterion_name": "Negative Constraint 2",
-          "score": 2,
-          "justification": "Several sentences break the vowel rule - 'Regular vulnerability...', 'Multi-factor verification...', 'Compliance frameworks...', 'Collaboration between...' all start with consonants."
+          "your_score": 2,
+          "your_justification": "Several sentences break the vowel rule - 'Regular vulnerability...', 'Multi-factor verification...', 'Compliance frameworks...', 'Collaboration between...' all start with consonants."
         },
         {
           "criterion_name": "Structural Formatting",
-          "score": 4,
-          "justification": "Three paragraphs present, though the added bold lead-in sentences are an unrequested formatting flourish."
+          "your_score": 4,
+          "your_justification": "Three paragraphs present, though the added bold lead-in sentences are an unrequested formatting flourish."
         }
       ]
     },
@@ -761,16 +761,16 @@
       "provider": "mistral",
       "category": "Instruction Following",
       "difficulty": "Medium",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Forbidden Words",
-          "score": 3,
-          "justification": "Avoids 'code' and 'test' but uses 'debugging', which contains the forbidden substring 'bug'."
+          "your_score": 3,
+          "your_justification": "Avoids 'code' and 'test' but uses 'debugging', which contains the forbidden substring 'bug'."
         },
         {
           "criterion_name": "Paragraph Count",
-          "score": 5,
-          "justification": "Exactly two paragraphs."
+          "your_score": 5,
+          "your_justification": "Exactly two paragraphs."
         }
       ]
     },
@@ -779,16 +779,16 @@
       "provider": "mistral",
       "category": "Hallucination Stress Test",
       "difficulty": "Easy",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Refusal Of False Premise",
-          "score": 5,
-          "justification": "Also correctly identifies that no such feature exists and explains the real gap between speech-to-text and compilation."
+          "your_score": 5,
+          "your_justification": "Also correctly identifies that no such feature exists and explains the real gap between speech-to-text and compilation."
         },
         {
           "criterion_name": "Factual Integrity",
-          "score": 5,
-          "justification": "The optimization flag descriptions given are factually correct."
+          "your_score": 5,
+          "your_justification": "The optimization flag descriptions given are factually correct."
         }
       ]
     },
@@ -797,16 +797,16 @@
       "provider": "mistral",
       "category": "Hallucination Stress Test",
       "difficulty": "Hard",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Refusal Of False Premise",
-          "score": 0,
-          "justification": "This is a serious failure - the response treats the fake premise as real and fabricates a specific supporting patent number and title ('US Patent 3,223,933... Method and Apparatus for Synchronizing Clock Signals') that does not exist."
+          "your_score": 0,
+          "your_justification": "This is a serious failure - the response treats the fake premise as real and fabricates a specific supporting patent number and title ('US Patent 3,223,933... Method and Apparatus for Synchronizing Clock Signals') that does not exist."
         },
         {
           "criterion_name": "Factual Integrity",
-          "score": 0,
-          "justification": "By inventing a patent number and describing 'Proof-of-Gravity' as a real historical system, it actively manufactures false facts rather than catching the error."
+          "your_score": 0,
+          "your_justification": "By inventing a patent number and describing 'Proof-of-Gravity' as a real historical system, it actively manufactures false facts rather than catching the error."
         }
       ]
     },
@@ -815,16 +815,16 @@
       "provider": "mistral",
       "category": "Hallucination Stress Test",
       "difficulty": "Medium",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Refusal Of False Premise",
-          "score": 4,
-          "justification": "Also frames it appropriately as an analogy rather than a real algorithm."
+          "your_score": 4,
+          "your_justification": "Also frames it appropriately as an analogy rather than a real algorithm."
         },
         {
           "criterion_name": "Factual Accuracy",
-          "score": 4,
-          "justification": "Technically sound mapping of mark-and-sweep concepts onto the eraser process."
+          "your_score": 4,
+          "your_justification": "Technically sound mapping of mark-and-sweep concepts onto the eraser process."
         }
       ]
     },
@@ -833,16 +833,16 @@
       "provider": "mistral",
       "category": "Coding & System Architecture",
       "difficulty": "Easy",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Algorithmic Correctness",
-          "score": 5,
-          "justification": "Same correct algorithm and duplicate handling."
+          "your_score": 5,
+          "your_justification": "Same correct algorithm and duplicate handling."
         },
         {
           "criterion_name": "Syntax Cleanliness",
-          "score": 4,
-          "justification": "Throws exceptions on edge cases instead of returning a nullable value - a valid design choice but less graceful than gemini/groq's approach."
+          "your_score": 4,
+          "your_justification": "Throws exceptions on edge cases instead of returning a nullable value - a valid design choice but less graceful than gemini/groq's approach."
         }
       ]
     },
@@ -851,26 +851,26 @@
       "provider": "mistral",
       "category": "Coding & System Architecture",
       "difficulty": "Hard",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Module 1 Connection Score",
-          "score": 4,
-          "justification": "Also gives a full connection-manager implementation with reasonable interface design."
+          "your_score": 4,
+          "your_justification": "Also gives a full connection-manager implementation with reasonable interface design."
         },
         {
           "criterion_name": "Module 2 Room Score",
-          "score": 4,
-          "justification": "Room management includes creation/broadcast/roles as requested."
+          "your_score": 4,
+          "your_justification": "Room management includes creation/broadcast/roles as requested."
         },
         {
           "criterion_name": "Module 3 Persistence Score",
-          "score": 4,
-          "justification": "Persistence engine present but this response is extremely long, which suggests some sections may be padded rather than essential."
+          "your_score": 4,
+          "your_justification": "Persistence engine present but this response is extremely long, which suggests some sections may be padded rather than essential."
         },
         {
           "criterion_name": "System Integration Score",
-          "score": 4,
-          "justification": "Modules are integrated via shared interfaces/models, workable end-to-end design."
+          "your_score": 4,
+          "your_justification": "Modules are integrated via shared interfaces/models, workable end-to-end design."
         }
       ]
     },
@@ -879,16 +879,16 @@
       "provider": "mistral",
       "category": "Coding & System Architecture",
       "difficulty": "Medium",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Time Complexity",
-          "score": 5,
-          "justification": "Correct OrderedDict implementation, also offers the manual dict+DLL version."
+          "your_score": 5,
+          "your_justification": "Correct OrderedDict implementation, also offers the manual dict+DLL version."
         },
         {
           "criterion_name": "Eviction Logic",
-          "score": 4,
-          "justification": "Both variants are correct, though the manual DLL version is presented a bit more tersely."
+          "your_score": 4,
+          "your_justification": "Both variants are correct, though the manual DLL version is presented a bit more tersely."
         }
       ]
     },
@@ -897,16 +897,16 @@
       "provider": "mistral",
       "category": "Ambiguity Handling",
       "difficulty": "Easy",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Clarification Recognition",
-          "score": 2,
-          "justification": "Same pattern - launches directly into a language-by-language rundown without first asking about the use case."
+          "your_score": 2,
+          "your_justification": "Same pattern - launches directly into a language-by-language rundown without first asking about the use case."
         },
         {
           "criterion_name": "Helpful Framing",
-          "score": 4,
-          "justification": "Content itself is accurate and reasonably comprehensive across use cases."
+          "your_score": 4,
+          "your_justification": "Content itself is accurate and reasonably comprehensive across use cases."
         }
       ]
     },
@@ -915,26 +915,26 @@
       "provider": "mistral",
       "category": "Ambiguity Handling",
       "difficulty": "Hard",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Ambiguity Surfacing Score",
-          "score": 2,
-          "justification": "Similarly doesn't flag the ambiguity in 'the API' or 'performance' before diving into an implementation."
+          "your_score": 2,
+          "your_justification": "Similarly doesn't flag the ambiguity in 'the API' or 'performance' before diving into an implementation."
         },
         {
           "criterion_name": "Assumption Documentation Score",
-          "score": 3,
-          "justification": "States some assumptions implicitly through docstring parameters (TTL, eviction policy) but doesn't call them out as assumptions."
+          "your_score": 3,
+          "your_justification": "States some assumptions implicitly through docstring parameters (TTL, eviction policy) but doesn't call them out as assumptions."
         },
         {
           "criterion_name": "Structural Soundness Score",
-          "score": 4,
-          "justification": "The design (TTL + stale-while-revalidate + memory threshold) is sound, if slightly less complete than gemini/groq's dual-tier design."
+          "your_score": 4,
+          "your_justification": "The design (TTL + stale-while-revalidate + memory threshold) is sound, if slightly less complete than gemini/groq's dual-tier design."
         },
         {
           "criterion_name": "Practical Usefulness Score",
-          "score": 4,
-          "justification": "Working code with reasonable structure, though somewhat less directly mapped to each named constraint."
+          "your_score": 4,
+          "your_justification": "Working code with reasonable structure, though somewhat less directly mapped to each named constraint."
         }
       ]
     },
@@ -943,16 +943,16 @@
       "provider": "mistral",
       "category": "Ambiguity Handling",
       "difficulty": "Medium",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Missing Context Identification",
-          "score": 4,
-          "justification": "Recognizes the missing code and asks for it."
+          "your_score": 4,
+          "your_justification": "Recognizes the missing code and asks for it."
         },
         {
           "criterion_name": "Constructive Response",
-          "score": 3,
-          "justification": "The follow-up is much shorter/vaguer than the other two - doesn't ask what the code is supposed to do or what's failing."
+          "your_score": 3,
+          "your_justification": "The follow-up is much shorter/vaguer than the other two - doesn't ask what the code is supposed to do or what's failing."
         }
       ]
     },
@@ -961,16 +961,16 @@
       "provider": "mistral",
       "category": "Long-context Retention",
       "difficulty": "Easy",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Fact Recall Accuracy",
-          "score": 5,
-          "justification": "Same correct recall of all three dates."
+          "your_score": 5,
+          "your_justification": "Same correct recall of all three dates."
         },
         {
           "criterion_name": "Distraction Resistance",
-          "score": 5,
-          "justification": "Correctly picks Employee C as earliest."
+          "your_score": 5,
+          "your_justification": "Correctly picks Employee C as earliest."
         }
       ]
     },
@@ -979,26 +979,26 @@
       "provider": "mistral",
       "category": "Long-context Retention",
       "difficulty": "Hard",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Sequential Accuracy Score",
-          "score": 5,
-          "justification": "Also traces the sequence correctly."
+          "your_score": 5,
+          "your_justification": "Also traces the sequence correctly."
         },
         {
           "criterion_name": "Current-State Accuracy Score",
-          "score": 5,
-          "justification": "Correct current state identified."
+          "your_score": 5,
+          "your_justification": "Correct current state identified."
         },
         {
           "criterion_name": "Completeness Score",
-          "score": 4,
-          "justification": "Covers all four notes but adds speculative reasoning ('may have believed', 'potential motivation') not present in the source - slightly beyond what the notes state."
+          "your_score": 4,
+          "your_justification": "Covers all four notes but adds speculative reasoning ('may have believed', 'potential motivation') not present in the source - slightly beyond what the notes state."
         },
         {
           "criterion_name": "Coherence Score",
-          "score": 4,
-          "justification": "Coherent, though the added speculation is a minor deviation from a pure trace of stated facts."
+          "your_score": 4,
+          "your_justification": "Coherent, though the added speculation is a minor deviation from a pure trace of stated facts."
         }
       ]
     },
@@ -1007,16 +1007,16 @@
       "provider": "mistral",
       "category": "Long-context Retention",
       "difficulty": "Medium",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Multi-Fact Synthesis",
-          "score": 5,
-          "justification": "Correct synthesis."
+          "your_score": 5,
+          "your_justification": "Correct synthesis."
         },
         {
           "criterion_name": "Numerical Accuracy",
-          "score": 5,
-          "justification": "Correct numbers."
+          "your_score": 5,
+          "your_justification": "Correct numbers."
         }
       ]
     },
@@ -1025,16 +1025,16 @@
       "provider": "mistral",
       "category": "Data Transformation",
       "difficulty": "Easy",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Conversion Accuracy",
-          "score": 5,
-          "justification": "Same correct result and method."
+          "your_score": 5,
+          "your_justification": "Same correct result and method."
         },
         {
           "criterion_name": "Format Compliance",
-          "score": 5,
-          "justification": "Formatted clearly with a boxed final answer."
+          "your_score": 5,
+          "your_justification": "Formatted clearly with a boxed final answer."
         }
       ]
     },
@@ -1043,26 +1043,26 @@
       "provider": "mistral",
       "category": "Data Transformation",
       "difficulty": "Hard",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Relational Integrity Score",
-          "score": 4,
-          "justification": "The recursive path-building logic (parentPath + ' > ' + name) correctly preserves parent-child relationships in its own example."
+          "your_score": 4,
+          "your_justification": "The recursive path-building logic (parentPath + ' > ' + name) correctly preserves parent-child relationships in its own example."
         },
         {
           "criterion_name": "Edge Case Handling Score",
-          "score": 3,
-          "justification": "Handles nested subcategories and an empty subcategories array, but never flags that the user's actual JSON was missing, so it doesn't handle *that* edge case."
+          "your_score": 3,
+          "your_justification": "Handles nested subcategories and an empty subcategories array, but never flags that the user's actual JSON was missing, so it doesn't handle *that* edge case."
         },
         {
           "criterion_name": "Output Validity Score",
-          "score": 4,
-          "justification": "The code and JSON output shown are valid and would run correctly."
+          "your_score": 4,
+          "your_justification": "The code and JSON output shown are valid and would run correctly."
         },
         {
           "criterion_name": "Completeness Score",
-          "score": 4,
-          "justification": "Delivers a complete, working function plus example, though built against invented data rather than the (missing) real input."
+          "your_score": 4,
+          "your_justification": "Delivers a complete, working function plus example, though built against invented data rather than the (missing) real input."
         }
       ]
     },
@@ -1071,16 +1071,16 @@
       "provider": "mistral",
       "category": "Data Transformation",
       "difficulty": "Medium",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Structural Correctness",
-          "score": 5,
-          "justification": "Correct table, wrapped in a code fence which is a reasonable formatting choice."
+          "your_score": 5,
+          "your_justification": "Correct table, wrapped in a code fence which is a reasonable formatting choice."
         },
         {
           "criterion_name": "Data Fidelity",
-          "score": 5,
-          "justification": "All data faithfully reproduced."
+          "your_score": 5,
+          "your_justification": "All data faithfully reproduced."
         }
       ]
     },
@@ -1089,16 +1089,16 @@
       "provider": "mistral",
       "category": "Summarization",
       "difficulty": "Easy",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Conciseness Compliance",
-          "score": 5,
-          "justification": "Single sentence."
+          "your_score": 5,
+          "your_justification": "Single sentence."
         },
         {
           "criterion_name": "Core Meaning Preservation",
-          "score": 5,
-          "justification": "Same core facts captured accurately."
+          "your_score": 5,
+          "your_justification": "Same core facts captured accurately."
         }
       ]
     },
@@ -1107,26 +1107,26 @@
       "provider": "mistral",
       "category": "Summarization",
       "difficulty": "Hard",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Structural Compliance Score",
-          "score": 5,
-          "justification": "Correct structure: three sections, two sentences each."
+          "your_score": 5,
+          "your_justification": "Correct structure: three sections, two sentences each."
         },
         {
           "criterion_name": "Fidelity Under Constraint Score",
-          "score": 3,
-          "justification": "Adds an unstated inference in Challenges - 'Leadership acknowledged the trend but has not yet addressed its root causes beyond planned actions' is not present anywhere in the source notes."
+          "your_score": 3,
+          "your_justification": "Adds an unstated inference in Challenges - 'Leadership acknowledged the trend but has not yet addressed its root causes beyond planned actions' is not present anywhere in the source notes."
         },
         {
           "criterion_name": "Nuance Preservation Score",
-          "score": 4,
-          "justification": "Wins/Challenges split is otherwise reasonable and faithful."
+          "your_score": 4,
+          "your_justification": "Wins/Challenges split is otherwise reasonable and faithful."
         },
         {
           "criterion_name": "Audience Appropriateness Score",
-          "score": 4,
-          "justification": "Register is appropriately executive, though the fabricated sentence undercuts overall trustworthiness."
+          "your_score": 4,
+          "your_justification": "Register is appropriately executive, though the fabricated sentence undercuts overall trustworthiness."
         }
       ]
     },
@@ -1135,16 +1135,16 @@
       "provider": "mistral",
       "category": "Summarization",
       "difficulty": "Medium",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Format Compliance",
-          "score": 5,
-          "justification": "Single sentence."
+          "your_score": 5,
+          "your_justification": "Single sentence."
         },
         {
           "criterion_name": "Balanced Coverage",
-          "score": 5,
-          "justification": "Also balances positive and negative points fairly."
+          "your_score": 5,
+          "your_justification": "Also balances positive and negative points fairly."
         }
       ]
     },
@@ -1153,16 +1153,16 @@
       "provider": "mistral",
       "category": "Multilingual Tasks",
       "difficulty": "Easy",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Translation Accuracy",
-          "score": 5,
-          "justification": "Correct translations."
+          "your_score": 5,
+          "your_justification": "Correct translations."
         },
         {
           "criterion_name": "Natural Phrasing",
-          "score": 5,
-          "justification": "Same helpful register breakdown, natural phrasing."
+          "your_score": 5,
+          "your_justification": "Same helpful register breakdown, natural phrasing."
         }
       ]
     },
@@ -1171,26 +1171,26 @@
       "provider": "mistral",
       "category": "Multilingual Tasks",
       "difficulty": "Hard",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Translation Precision Score",
-          "score": 5,
-          "justification": "Same precision preserved (line 245, file name, method-on-null description)."
+          "your_score": 5,
+          "your_justification": "Same precision preserved (line 245, file name, method-on-null description)."
         },
         {
           "criterion_name": "Cultural/Linguistic Adaptation Score",
-          "score": 5,
-          "justification": "Offers both a literal and a more natural French variant, showing good awareness of technical register."
+          "your_score": 5,
+          "your_justification": "Offers both a literal and a more natural French variant, showing good awareness of technical register."
         },
         {
           "criterion_name": "Meta-Explanation Quality Score",
-          "score": 5,
-          "justification": "Explicitly explains each translation choice term-by-term, the most thorough meta-explanation of the three."
+          "your_score": 5,
+          "your_justification": "Explicitly explains each translation choice term-by-term, the most thorough meta-explanation of the three."
         },
         {
           "criterion_name": "Round-Trip/Consistency Score",
-          "score": 4,
-          "justification": "Very information-dense; a bit more than the 'preserve enough precision to debug' brief strictly required, but not inaccurate."
+          "your_score": 4,
+          "your_justification": "Very information-dense; a bit more than the 'preserve enough precision to debug' brief strictly required, but not inaccurate."
         }
       ]
     },
@@ -1199,16 +1199,16 @@
       "provider": "mistral",
       "category": "Multilingual Tasks",
       "difficulty": "Medium",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Tone/Register Accuracy",
-          "score": 5,
-          "justification": "Correct Portuguese, brand name properly kept untranslated."
+          "your_score": 5,
+          "your_justification": "Correct Portuguese, brand name properly kept untranslated."
         },
         {
           "criterion_name": "Linguistic Explanation Quality",
-          "score": 4,
-          "justification": "Accurate but minimal - no discussion of register/word choice."
+          "your_score": 4,
+          "your_justification": "Accurate but minimal - no discussion of register/word choice."
         }
       ]
     },
@@ -1217,16 +1217,16 @@
       "provider": "groq",
       "category": "Knowledge Retrieval",
       "difficulty": "Easy",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Syntax Correctness",
-          "score": 5,
-          "justification": "Correct, idiomatic, includes docstring with doctest-style examples."
+          "your_score": 5,
+          "your_justification": "Correct, idiomatic, includes docstring with doctest-style examples."
         },
         {
           "criterion_name": "Edge Case Handling",
-          "score": 5,
-          "justification": "Explicitly calls out and offers extensions for punctuation and unicode normalization, best edge-case coverage of the three."
+          "your_score": 5,
+          "your_justification": "Explicitly calls out and offers extensions for punctuation and unicode normalization, best edge-case coverage of the three."
         }
       ]
     },
@@ -1235,16 +1235,16 @@
       "provider": "groq",
       "category": "Knowledge Retrieval",
       "difficulty": "Hard",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Protocol Accuracy",
-          "score": 5,
-          "justification": "Very thorough and accurate state tables, correct on the M/O distinction (write-back avoidance)."
+          "your_score": 5,
+          "your_justification": "Very thorough and accurate state tables, correct on the M/O distinction (write-back avoidance)."
         },
         {
           "criterion_name": "Bus Snooping",
-          "score": 5,
-          "justification": "Explicit bus-transaction table (BusRd/BusRdX/Upgrade) plus a worked multi-core example makes the snooping mechanism very clear."
+          "your_score": 5,
+          "your_justification": "Explicit bus-transaction table (BusRd/BusRdX/Upgrade) plus a worked multi-core example makes the snooping mechanism very clear."
         }
       ]
     },
@@ -1253,16 +1253,16 @@
       "provider": "groq",
       "category": "Knowledge Retrieval",
       "difficulty": "Medium",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Architectural Depth",
-          "score": 5,
-          "justification": "Extremely detailed and correct, covers states, snooping, and modern GC variants."
+          "your_score": 5,
+          "your_justification": "Extremely detailed and correct, covers states, snooping, and modern GC variants."
         },
         {
           "criterion_name": "Algorithmic Explanation",
-          "score": 5,
-          "justification": "Step-by-step phase breakdown with concrete object table example is very clear and accurate."
+          "your_score": 5,
+          "your_justification": "Step-by-step phase breakdown with concrete object table example is very clear and accurate."
         }
       ]
     },
@@ -1271,16 +1271,16 @@
       "provider": "groq",
       "category": "Multi-step Reasoning",
       "difficulty": "Easy",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Capacity Scaling",
-          "score": 5,
-          "justification": "Correct formula, and explicitly flags the constant-voltage assumption, which is good practice."
+          "your_score": 5,
+          "your_justification": "Correct formula, and explicitly flags the constant-voltage assumption, which is good practice."
         },
         {
           "criterion_name": "Exponent Application",
-          "score": 5,
-          "justification": "Uses logarithms for the exponent, giving the most numerically accurate result (~3.58h)."
+          "your_score": 5,
+          "your_justification": "Uses logarithms for the exponent, giving the most numerically accurate result (~3.58h)."
         }
       ]
     },
@@ -1289,16 +1289,16 @@
       "provider": "groq",
       "category": "Multi-step Reasoning",
       "difficulty": "Hard",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Stride Mapping",
-          "score": 5,
-          "justification": "Very complete, includes an architecture table up front which grounds the whole exercise."
+          "your_score": 5,
+          "your_justification": "Very complete, includes an architecture table up front which grounds the whole exercise."
         },
         {
           "criterion_name": "Mitigation Quality",
-          "score": 5,
-          "justification": "Mitigations explicitly framed as 'must-have' cryptographic/architectural controls per threat, matches the prompt's ask closely."
+          "your_score": 5,
+          "your_justification": "Mitigations explicitly framed as 'must-have' cryptographic/architectural controls per threat, matches the prompt's ask closely."
         }
       ]
     },
@@ -1307,16 +1307,16 @@
       "provider": "groq",
       "category": "Multi-step Reasoning",
       "difficulty": "Medium",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Capacity Calculation",
-          "score": 5,
-          "justification": "Correct numbers, presented cleanly in a summary table which is easy to verify."
+          "your_score": 5,
+          "your_justification": "Correct numbers, presented cleanly in a summary table which is easy to verify."
         },
         {
           "criterion_name": "Fault Tolerance Logic",
-          "score": 5,
-          "justification": "XOR walkthrough with an explicit stripe diagram (rotating parity across drives) is the clearest of the three."
+          "your_score": 5,
+          "your_justification": "XOR walkthrough with an explicit stripe diagram (rotating parity across drives) is the clearest of the three."
         }
       ]
     },
@@ -1325,16 +1325,16 @@
       "provider": "groq",
       "category": "Instruction Following",
       "difficulty": "Easy",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Reversal Accuracy",
-          "score": 3,
-          "justification": "'emorhC' correctly reverses to 'Chrome', but 'xofirF' reverses to 'Firfox' (missing an 'e') - a small but real typo."
+          "your_score": 3,
+          "your_justification": "'emorhC' correctly reverses to 'Chrome', but 'xofirF' reverses to 'Firfox' (missing an 'e') - a small but real typo."
         },
         {
           "criterion_name": "Formatting",
-          "score": 5,
-          "justification": "Clean comma-separated format with nothing extra."
+          "your_score": 5,
+          "your_justification": "Clean comma-separated format with nothing extra."
         }
       ]
     },
@@ -1343,21 +1343,21 @@
       "provider": "groq",
       "category": "Instruction Following",
       "difficulty": "Hard",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Negative Constraint 1",
-          "score": 5,
-          "justification": "Avoids 'security' completely."
+          "your_score": 5,
+          "your_justification": "Avoids 'security' completely."
         },
         {
           "criterion_name": "Negative Constraint 2",
-          "score": 5,
-          "justification": "Every sentence across all three paragraphs starts with a vowel (A/E/I/O pattern repeats cleanly) - fully compliant."
+          "your_score": 5,
+          "your_justification": "Every sentence across all three paragraphs starts with a vowel (A/E/I/O pattern repeats cleanly) - fully compliant."
         },
         {
           "criterion_name": "Structural Formatting",
-          "score": 5,
-          "justification": "Exactly three clean paragraphs."
+          "your_score": 5,
+          "your_justification": "Exactly three clean paragraphs."
         }
       ]
     },
@@ -1366,16 +1366,16 @@
       "provider": "groq",
       "category": "Instruction Following",
       "difficulty": "Medium",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Forbidden Words",
-          "score": 3,
-          "justification": "Also uses 'debugging' twice, which technically contains the forbidden word 'bug'."
+          "your_score": 3,
+          "your_justification": "Also uses 'debugging' twice, which technically contains the forbidden word 'bug'."
         },
         {
           "criterion_name": "Paragraph Count",
-          "score": 5,
-          "justification": "Exactly two paragraphs, well structured."
+          "your_score": 5,
+          "your_justification": "Exactly two paragraphs, well structured."
         }
       ]
     },
@@ -1384,16 +1384,16 @@
       "provider": "groq",
       "category": "Hallucination Stress Test",
       "difficulty": "Easy",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Refusal Of False Premise",
-          "score": 5,
-          "justification": "Leads with a direct 'short answer: no' - very clear refusal of the false premise."
+          "your_score": 5,
+          "your_justification": "Leads with a direct 'short answer: no' - very clear refusal of the false premise."
         },
         {
           "criterion_name": "Factual Integrity",
-          "score": 5,
-          "justification": "Optimization flag table is accurate and detailed."
+          "your_score": 5,
+          "your_justification": "Optimization flag table is accurate and detailed."
         }
       ]
     },
@@ -1402,16 +1402,16 @@
       "provider": "groq",
       "category": "Hallucination Stress Test",
       "difficulty": "Hard",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Refusal Of False Premise",
-          "score": 5,
-          "justification": "Directly states it isn't aware of any such patent/algorithm and explains why a distributed consensus mechanism wouldn't fit 1962 Apollo-era engineering."
+          "your_score": 5,
+          "your_justification": "Directly states it isn't aware of any such patent/algorithm and explains why a distributed consensus mechanism wouldn't fit 1962 Apollo-era engineering."
         },
         {
           "criterion_name": "Factual Integrity",
-          "score": 5,
-          "justification": "The real AGC/DSN/tracking details it substitutes in are accurate."
+          "your_score": 5,
+          "your_justification": "The real AGC/DSN/tracking details it substitutes in are accurate."
         }
       ]
     },
@@ -1420,16 +1420,16 @@
       "provider": "groq",
       "category": "Hallucination Stress Test",
       "difficulty": "Medium",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Refusal Of False Premise",
-          "score": 4,
-          "justification": "Same reasonable framing, explicitly labeled 'tongue-in-cheek.'"
+          "your_score": 4,
+          "your_justification": "Same reasonable framing, explicitly labeled 'tongue-in-cheek.'"
         },
         {
           "criterion_name": "Factual Accuracy",
-          "score": 5,
-          "justification": "The mapping table (heap/object/reference/fragmentation) is the most systematic and accurate of the three."
+          "your_score": 5,
+          "your_justification": "The mapping table (heap/object/reference/fragmentation) is the most systematic and accurate of the three."
         }
       ]
     },
@@ -1438,16 +1438,16 @@
       "provider": "groq",
       "category": "Coding & System Architecture",
       "difficulty": "Easy",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Algorithmic Correctness",
-          "score": 5,
-          "justification": "Correct algorithm, clearly explained in a table before the code."
+          "your_score": 5,
+          "your_justification": "Correct algorithm, clearly explained in a table before the code."
         },
         {
           "criterion_name": "Syntax Cleanliness",
-          "score": 5,
-          "justification": "Clean, well-commented, and explicitly notes complexity/space characteristics."
+          "your_score": 5,
+          "your_justification": "Clean, well-commented, and explicitly notes complexity/space characteristics."
         }
       ]
     },
@@ -1456,26 +1456,26 @@
       "provider": "groq",
       "category": "Coding & System Architecture",
       "difficulty": "Hard",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Module 1 Connection Score",
-          "score": 5,
-          "justification": "TCP connection manager with heartbeat is implemented in a focused, production-style skeleton."
+          "your_score": 5,
+          "your_justification": "TCP connection manager with heartbeat is implemented in a focused, production-style skeleton."
         },
         {
           "criterion_name": "Module 2 Room Score",
-          "score": 5,
-          "justification": "Room manager interface (IRoomManager) is cleanly separated with clear responsibilities."
+          "your_score": 5,
+          "your_justification": "Room manager interface (IRoomManager) is cleanly separated with clear responsibilities."
         },
         {
           "criterion_name": "Module 3 Persistence Score",
-          "score": 5,
-          "justification": "Persistence engine explicitly uses EF Core async writes as requested."
+          "your_score": 5,
+          "your_justification": "Persistence engine explicitly uses EF Core async writes as requested."
         },
         {
           "criterion_name": "System Integration Score",
-          "score": 5,
-          "justification": "The interface table upfront makes the module boundaries and integration points the clearest of the three."
+          "your_score": 5,
+          "your_justification": "The interface table upfront makes the module boundaries and integration points the clearest of the three."
         }
       ]
     },
@@ -1484,16 +1484,16 @@
       "provider": "groq",
       "category": "Coding & System Architecture",
       "difficulty": "Medium",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Time Complexity",
-          "score": 5,
-          "justification": "Correct OrderedDict implementation with capacity validation."
+          "your_score": 5,
+          "your_justification": "Correct OrderedDict implementation with capacity validation."
         },
         {
           "criterion_name": "Eviction Logic",
-          "score": 5,
-          "justification": "Offers both OrderedDict and a full custom doubly-linked-list variant with clear rationale for when to use each - most complete answer."
+          "your_score": 5,
+          "your_justification": "Offers both OrderedDict and a full custom doubly-linked-list variant with clear rationale for when to use each - most complete answer."
         }
       ]
     },
@@ -1502,16 +1502,16 @@
       "provider": "groq",
       "category": "Ambiguity Handling",
       "difficulty": "Easy",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Clarification Recognition",
-          "score": 2,
-          "justification": "Also skips asking a clarifying question up front."
+          "your_score": 2,
+          "your_justification": "Also skips asking a clarifying question up front."
         },
         {
           "criterion_name": "Helpful Framing",
-          "score": 5,
-          "justification": "Leads with an explicit decision framework (domain/performance/team) before the language list, which is the most constructive way to handle the ambiguity without stopping to ask."
+          "your_score": 5,
+          "your_justification": "Leads with an explicit decision framework (domain/performance/team) before the language list, which is the most constructive way to handle the ambiguity without stopping to ask."
         }
       ]
     },
@@ -1520,26 +1520,26 @@
       "provider": "groq",
       "category": "Ambiguity Handling",
       "difficulty": "Hard",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Ambiguity Surfacing Score",
-          "score": 2,
-          "justification": "Also doesn't ask about or explicitly flag the undefined 'the API'."
+          "your_score": 2,
+          "your_justification": "Also doesn't ask about or explicitly flag the undefined 'the API'."
         },
         {
           "criterion_name": "Assumption Documentation Score",
-          "score": 3,
-          "justification": "Documents its approach via a clear goal-to-mechanism table, which is closer to surfacing assumptions than the other two, though still not phrased as open questions."
+          "your_score": 3,
+          "your_justification": "Documents its approach via a clear goal-to-mechanism table, which is closer to surfacing assumptions than the other two, though still not phrased as open questions."
         },
         {
           "criterion_name": "Structural Soundness Score",
-          "score": 5,
-          "justification": "Cache-aside + TTL + event-driven invalidation + bounded LRU directly addresses all three named risks."
+          "your_score": 5,
+          "your_justification": "Cache-aside + TTL + event-driven invalidation + bounded LRU directly addresses all three named risks."
         },
         {
           "criterion_name": "Practical Usefulness Score",
-          "score": 5,
-          "justification": "Includes an architecture diagram plus multi-language notes, very practically usable."
+          "your_score": 5,
+          "your_justification": "Includes an architecture diagram plus multi-language notes, very practically usable."
         }
       ]
     },
@@ -1548,16 +1548,16 @@
       "provider": "groq",
       "category": "Ambiguity Handling",
       "difficulty": "Medium",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Missing Context Identification",
-          "score": 5,
-          "justification": "Also correctly asks for the code and error details before proceeding."
+          "your_score": 5,
+          "your_justification": "Also correctly asks for the code and error details before proceeding."
         },
         {
           "criterion_name": "Constructive Response",
-          "score": 5,
-          "justification": "Specific, friendly, and asks for exactly the two things (snippet + error/behavior) needed to actually help."
+          "your_score": 5,
+          "your_justification": "Specific, friendly, and asks for exactly the two things (snippet + error/behavior) needed to actually help."
         }
       ]
     },
@@ -1566,16 +1566,16 @@
       "provider": "groq",
       "category": "Long-context Retention",
       "difficulty": "Easy",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Fact Recall Accuracy",
-          "score": 5,
-          "justification": "Correct dates."
+          "your_score": 5,
+          "your_justification": "Correct dates."
         },
         {
           "criterion_name": "Distraction Resistance",
-          "score": 5,
-          "justification": "Correctly picks Employee C as earliest, in the most concise possible answer."
+          "your_score": 5,
+          "your_justification": "Correctly picks Employee C as earliest, in the most concise possible answer."
         }
       ]
     },
@@ -1584,26 +1584,26 @@
       "provider": "groq",
       "category": "Long-context Retention",
       "difficulty": "Hard",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Sequential Accuracy Score",
-          "score": 5,
-          "justification": "Correct sequential trace of all four states."
+          "your_score": 5,
+          "your_justification": "Correct sequential trace of all four states."
         },
         {
           "criterion_name": "Current-State Accuracy Score",
-          "score": 5,
-          "justification": "Correct current-state identification."
+          "your_score": 5,
+          "your_justification": "Correct current-state identification."
         },
         {
           "criterion_name": "Completeness Score",
-          "score": 5,
-          "justification": "All notes represented in the table."
+          "your_score": 5,
+          "your_justification": "All notes represented in the table."
         },
         {
           "criterion_name": "Coherence Score",
-          "score": 5,
-          "justification": "Clear tabular presentation makes the causal chain (audit -> split -> restore) easy to follow and accurate."
+          "your_score": 5,
+          "your_justification": "Clear tabular presentation makes the causal chain (audit -> split -> restore) easy to follow and accurate."
         }
       ]
     },
@@ -1612,16 +1612,16 @@
       "provider": "groq",
       "category": "Long-context Retention",
       "difficulty": "Medium",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Multi-Fact Synthesis",
-          "score": 5,
-          "justification": "Correct, most concise of the three."
+          "your_score": 5,
+          "your_justification": "Correct, most concise of the three."
         },
         {
           "criterion_name": "Numerical Accuracy",
-          "score": 5,
-          "justification": "Correct numbers."
+          "your_score": 5,
+          "your_justification": "Correct numbers."
         }
       ]
     },
@@ -1630,16 +1630,16 @@
       "provider": "groq",
       "category": "Data Transformation",
       "difficulty": "Easy",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Conversion Accuracy",
-          "score": 5,
-          "justification": "Correct, most concise presentation."
+          "your_score": 5,
+          "your_justification": "Correct, most concise presentation."
         },
         {
           "criterion_name": "Format Compliance",
-          "score": 5,
-          "justification": "Compact but still shows the full arithmetic for verification."
+          "your_score": 5,
+          "your_justification": "Compact but still shows the full arithmetic for verification."
         }
       ]
     },
@@ -1648,26 +1648,26 @@
       "provider": "groq",
       "category": "Data Transformation",
       "difficulty": "Hard",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Relational Integrity Score",
-          "score": 4,
-          "justification": "Correctly threads parent path through recursive calls, preserving the breadcrumb relationship."
+          "your_score": 4,
+          "your_justification": "Correctly threads parent path through recursive calls, preserving the breadcrumb relationship."
         },
         {
           "criterion_name": "Edge Case Handling Score",
-          "score": 3,
-          "justification": "Shows a well-chosen example tree with multiple nesting levels and empty-list leaves, but like mistral, doesn't address the 'no JSON provided' edge case itself."
+          "your_score": 3,
+          "your_justification": "Shows a well-chosen example tree with multiple nesting levels and empty-list leaves, but like mistral, doesn't address the 'no JSON provided' edge case itself."
         },
         {
           "criterion_name": "Output Validity Score",
-          "score": 5,
-          "justification": "The example input/output shown is valid and directly demonstrates the expected transformation shape."
+          "your_score": 5,
+          "your_justification": "The example input/output shown is valid and directly demonstrates the expected transformation shape."
         },
         {
           "criterion_name": "Completeness Score",
-          "score": 5,
-          "justification": "Most complete of the two code-based answers - lays out input format, output format, and implementation clearly."
+          "your_score": 5,
+          "your_justification": "Most complete of the two code-based answers - lays out input format, output format, and implementation clearly."
         }
       ]
     },
@@ -1676,16 +1676,16 @@
       "provider": "groq",
       "category": "Data Transformation",
       "difficulty": "Medium",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Structural Correctness",
-          "score": 5,
-          "justification": "Correct table."
+          "your_score": 5,
+          "your_justification": "Correct table."
         },
         {
           "criterion_name": "Data Fidelity",
-          "score": 5,
-          "justification": "All data faithfully reproduced, most concise presentation."
+          "your_score": 5,
+          "your_justification": "All data faithfully reproduced, most concise presentation."
         }
       ]
     },
@@ -1694,16 +1694,16 @@
       "provider": "groq",
       "category": "Summarization",
       "difficulty": "Easy",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Conciseness Compliance",
-          "score": 5,
-          "justification": "Single sentence."
+          "your_score": 5,
+          "your_justification": "Single sentence."
         },
         {
           "criterion_name": "Core Meaning Preservation",
-          "score": 5,
-          "justification": "Same core facts captured, most compact phrasing."
+          "your_score": 5,
+          "your_justification": "Same core facts captured, most compact phrasing."
         }
       ]
     },
@@ -1712,26 +1712,26 @@
       "provider": "groq",
       "category": "Summarization",
       "difficulty": "Hard",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Structural Compliance Score",
-          "score": 5,
-          "justification": "Correct three-section, two-sentence structure."
+          "your_score": 5,
+          "your_justification": "Correct three-section, two-sentence structure."
         },
         {
           "criterion_name": "Fidelity Under Constraint Score",
-          "score": 4,
-          "justification": "Mostly faithful, though 'The new hires will be focused on reducing churn' in Next Steps goes slightly beyond the literal source text (which only says headcount was approved to 'address' churn)."
+          "your_score": 4,
+          "your_justification": "Mostly faithful, though 'The new hires will be focused on reducing churn' in Next Steps goes slightly beyond the literal source text (which only says headcount was approved to 'address' churn)."
         },
         {
           "criterion_name": "Nuance Preservation Score",
-          "score": 5,
-          "justification": "Wins/Challenges are cleanly separated and accurate."
+          "your_score": 5,
+          "your_justification": "Wins/Challenges are cleanly separated and accurate."
         },
         {
           "criterion_name": "Audience Appropriateness Score",
-          "score": 5,
-          "justification": "Appropriately concise, executive-level tone."
+          "your_score": 5,
+          "your_justification": "Appropriately concise, executive-level tone."
         }
       ]
     },
@@ -1740,16 +1740,16 @@
       "provider": "groq",
       "category": "Summarization",
       "difficulty": "Medium",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Format Compliance",
-          "score": 5,
-          "justification": "Single sentence."
+          "your_score": 5,
+          "your_justification": "Single sentence."
         },
         {
           "criterion_name": "Balanced Coverage",
-          "score": 5,
-          "justification": "Balanced coverage of positives and negatives, most concise of the three."
+          "your_score": 5,
+          "your_justification": "Balanced coverage of positives and negatives, most concise of the three."
         }
       ]
     },
@@ -1758,16 +1758,16 @@
       "provider": "groq",
       "category": "Multilingual Tasks",
       "difficulty": "Easy",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Translation Accuracy",
-          "score": 5,
-          "justification": "Correct translations."
+          "your_score": 5,
+          "your_justification": "Correct translations."
         },
         {
           "criterion_name": "Natural Phrasing",
-          "score": 5,
-          "justification": "Also gives natural register options, phrasing is idiomatic."
+          "your_score": 5,
+          "your_justification": "Also gives natural register options, phrasing is idiomatic."
         }
       ]
     },
@@ -1776,26 +1776,26 @@
       "provider": "groq",
       "category": "Multilingual Tasks",
       "difficulty": "Hard",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Translation Precision Score",
-          "score": 5,
-          "justification": "Precision fully preserved in a single clean line."
+          "your_score": 5,
+          "your_justification": "Precision fully preserved in a single clean line."
         },
         {
           "criterion_name": "Cultural/Linguistic Adaptation Score",
-          "score": 4,
-          "justification": "Natural French, though offers no alternate phrasing or discussion."
+          "your_score": 4,
+          "your_justification": "Natural French, though offers no alternate phrasing or discussion."
         },
         {
           "criterion_name": "Meta-Explanation Quality Score",
-          "score": 2,
-          "justification": "Provides no meta-explanation of translation choices at all, unlike gemini/mistral."
+          "your_score": 2,
+          "your_justification": "Provides no meta-explanation of translation choices at all, unlike gemini/mistral."
         },
         {
           "criterion_name": "Round-Trip/Consistency Score",
-          "score": 5,
-          "justification": "Extremely easy to round-trip back to the original meaning given its literalness."
+          "your_score": 5,
+          "your_justification": "Extremely easy to round-trip back to the original meaning given its literalness."
         }
       ]
     },
@@ -1804,16 +1804,16 @@
       "provider": "groq",
       "category": "Multilingual Tasks",
       "difficulty": "Medium",
-      "scores": [
+      "your_scores": [
         {
           "criterion_name": "Tone/Register Accuracy",
-          "score": 5,
-          "justification": "Correct, natural Portuguese, brand kept untranslated as required."
+          "your_score": 5,
+          "your_justification": "Correct, natural Portuguese, brand kept untranslated as required."
         },
         {
           "criterion_name": "Linguistic Explanation Quality",
-          "score": 4,
-          "justification": "Accurate and clean, similarly minimal on explanation."
+          "your_score": 4,
+          "your_justification": "Accurate and clean, similarly minimal on explanation."
         }
       ]
     }
