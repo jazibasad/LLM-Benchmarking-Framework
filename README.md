@@ -3,12 +3,17 @@
 A reproducible framework for evaluating and comparing free-tier Large Language Models
 (Gemini, Mistral, Groq) across ten core capability dimensions, per the project proposal.
 
+**Project Status: Complete.** All eight weeks executed, documented, and the final
+research report, presentation, and reproducibility package delivered. Weeks 1-7
+supervisor-approved.
+
 ## Directory Structure
 
 ```
 LLM-Benchmarking-Framework/
 ├── 01_Proposal/
 ├── 02_Reports/
+│   ├── week1_progress_report.docx ... week8_progress_report.docx
 ├── 03_Code/
 ├── 04_Datasets/         # prompts.json, rubric.docx, human_validation_sample.json
 ├── 05_Logs_Results/
@@ -28,6 +33,9 @@ LLM-Benchmarking-Framework/
 │   │   └── Week7_Statistical_Report.docx
 │   └── tests_logs/Week_2/  Week_5/
 └── 06_Final_Report/
+    ├── Final_Research_Report.docx           # 53 pages
+    ├── Final_Presentation.pptx               # 15 slides
+    └── Reproducibility_Package_Checklist.docx
 ```
 
 ## Research Hypotheses
@@ -56,28 +64,34 @@ anchors (3 = success threshold), Success/Failure computed in code.
 
 3 independent raters scored a 30-prompt stratified sample (1 Easy + 1
 Medium + 1 Hard per category), compared against the automated judge and
-against each other using exact-match rate, correlation, and Cohen's Kappa.
+against each other using exact-match rate, correlation, and Cohen's kappa.
 
 ## Statistical Analysis (Week 7) — Complete
 
-Per the proposal's Statistical Analysis requirements, computed on the
-scored dataset:
+Reliability (mean/median/stdev/coefficient of variation on the stochastic
+sample), 95% confidence intervals, hypothesis testing (Welch's t-test with
+exact p-values), Cohen's d effect sizes, Pearson correlation, and
+regression — all computed on the real scored dataset. Real result: Groq's
+hosted model achieved the highest mean score, lowest score variance, and
+the study's one statistically significant, large-effect finding
+(hallucination resistance vs. Mistral, p = 0.01, d = 0.84).
 
-- **`compute_reliability_statistics.py`** — mean, median, standard
-  deviation, and coefficient of variation across the 5 scored runs of each
-  of the 20 stochastic-sample prompts, per provider (the proposal's
-  Reliability requirement).
-- **`statistical_analysis.py`** — 95% confidence intervals per provider;
-  hypothesis testing for H1 (reasoning vs. retrieval), H2
-  (instruction-following vs. difficulty), and H3 (hallucination scores
-  across providers) using Welch's t-test with an exact Student's
-  t-distribution p-value (via the regularized incomplete beta function,
-  rather than a normal approximation); Cohen's d effect sizes; Pearson
-  correlation (difficulty/latency vs. score); simple linear regression.
-  Also incorporates Week 6's inter-rater agreement results, since the
-  proposal lists this under the same Statistical Analysis section.
-- **`build_statistical_report_docx.py`** — consolidates both scripts'
-  output into one formatted Word report with color-coded tables.
+## Final Report, Presentation & Reproducibility Package (Week 8) — Complete
+
+- **`Final_Research_Report.docx`** — 53-page report covering
+  introduction, related work, full methodology, experimental setup with
+  real incident history, results, discussion (including a formal
+  construct/internal/external/conclusion validity analysis), ethical
+  considerations, conclusion, references, and six appendices (formulas,
+  reproducibility package, dataset examples, rubric walkthrough, glossary,
+  derivations). Eight figures and thirteen tables, all real data.
+- **`Final_Presentation.pptx`** — 15-slide summary deck covering
+  motivation, methodology, real results charts, the headline hallucination
+  finding, limitations, and conclusions.
+- **`Reproducibility_Package_Checklist.docx`** — inventory of all 32 real
+  deliverables across source code, dataset, configuration, logs, human
+  validation records, statistical outputs, and final documentation, each
+  traced to the week it was built.
 
 ## Automation Pipeline
 
@@ -100,7 +114,7 @@ MISTRAL_API_KEY=...
 GROQ_API_KEY=...
 ```
 
-## Full Run Order — Completed Through Week 7
+## Full Run Order
 
 ```
 Week 4:  capture_environment.py -> run_{gemini,mistral,groq}_benchmark.py
@@ -112,19 +126,21 @@ Week 6:  select_human_validation_sample.py -> build_human_validation_materials.p
          -> compare_human_vs_judge.py
 Week 7:  compute_reliability_statistics.py -> statistical_analysis.py
          -> build_statistical_report_docx.py
+Week 8:  Final report, presentation, and reproducibility checklist compiled
+         from the verified outputs of Weeks 1-7.
 ```
 
 ## Status
 
 | Week | Focus | Status |
 |------|-------|--------|
-| 1 | Framework Initialization & Rubric Design | Complete |
-| 2 | Automation Pipeline & Reproducible Environment | Complete |
-| 3 | Dataset Curation (10 proposal categories) | Complete |
-| 4 | Multi-Provider Collection | Complete |
-| 5 | Automated Scoring with Success/Failure Anchors | Complete |
-| 6 | Human-in-the-Loop Validation (3 raters, Cohen's Kappa) | Complete |
-| 7 | Statistical Analysis (Reliability, CI, Hypothesis Testing, Correlation, Regression) | Complete |
-| 8 | Final Report Compilation | Not started |
+| 1 | Framework Initialization & Rubric Design | Complete — Approved |
+| 2 | Automation Pipeline & Reproducible Environment | Complete — Approved |
+| 3 | Dataset Curation (10 proposal categories) | Complete — Approved |
+| 4 | Multi-Provider Collection | Complete — Approved |
+| 5 | Automated Scoring with Success/Failure Anchors | Complete — Approved |
+| 6 | Human-in-the-Loop Validation (3 raters, Cohen's Kappa) | Complete — Approved |
+| 7 | Statistical Analysis (Reliability, CI, Hypothesis Testing, Correlation, Regression) | Complete — Approved |
+| 8 | Final Report, Presentation & Reproducibility Package | Complete |
 
 See `02_Reports/` for detailed week-by-week progress reports.
