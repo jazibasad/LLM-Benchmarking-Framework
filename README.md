@@ -3,9 +3,9 @@
 A reproducible framework for evaluating and comparing free-tier Large Language Models
 (Gemini, Mistral, Groq) across ten core capability dimensions, per the project proposal.
 
-**Project Status: Complete.** All eight weeks executed, documented, and the final
-research report, presentation, and reproducibility package delivered. Weeks 1-7
-supervisor-approved.
+**Project Status: Complete.** All eight weeks executed, documented, and approved by
+the project supervisor. Final research report, presentation, and reproducibility
+package delivered.
 
 ## Directory Structure
 
@@ -169,6 +169,9 @@ Week 8:  Final report, presentation, and reproducibility checklist compiled
 | 5 | Automated Scoring with Success/Failure Anchors | Complete — Approved |
 | 6 | Human-in-the-Loop Validation (3 raters, Cohen's Kappa) | Complete — Approved |
 | 7 | Statistical Analysis (Reliability, CI, Hypothesis Testing, Correlation, Regression) | Complete — Approved |
-| 8 | Final Report, Presentation & Reproducibility Package | Complete |
+| 8 | Final Report, Presentation & Reproducibility Package | Complete — Approved |
+
+**All eight weeks of this project have been completed and approved by the
+project supervisor.**
 
 See `02_Reports/` for detailed week-by-week progress reports.
