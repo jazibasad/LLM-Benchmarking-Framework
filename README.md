@@ -145,6 +145,12 @@ GROQ_API_KEY=...
 ## Full Run Order
 
 ```
+Week 1:  Repository structure created -> rubric.docx authored
+         -> H1/H2/H3 hypotheses formulated
+Week 2:  test_benchmark_runner.py (9/9 passing) -> benchmark_runner.py
+         (verification run against OpenRouter)
+Week 3:  Prompt authoring (10 categories) -> validate_prompts.py
+         (structural validation of prompts.json)
 Week 4:  capture_environment.py -> run_{gemini,mistral,groq}_benchmark.py
          -> build_results_tables.py -> build_results_docx.py
 Week 5:  test_llm_judge_scorer.py -> llm_judge_scorer.py
