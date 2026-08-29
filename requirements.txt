@@ -1,8 +1,24 @@
-google-genai>=0.5.0
-openai>=1.30.0
-groq>=0.9.0
-mistralai>=1.0.0
-python-dotenv>=1.0.0
-pytest>=8.0.0
-python-docx==1.1.2
-psutil>=5.9.0
+# LLM Benchmarking Framework — Python dependencies
+# Install with: pip install -r requirements.txt
+
+# --- Provider SDKs (Week 4 data collection) ---
+google-generativeai>=0.8.0    # Gemini
+mistralai>=1.0.0              # Mistral AI
+groq>=0.11.0                  # Groq
+openai>=1.40.0                # OpenRouter (OpenAI-compatible endpoint)
+
+# --- Environment / configuration ---
+python-dotenv>=1.0.0          # .env loading (API keys)
+requests>=2.31.0              # HTTP calls, error handling
+
+# --- Reporting (Weeks 4-8) ---
+python-docx>=1.1.0            # Word report generation (results, scored results,
+                               # statistical report, final report, weekly reports)
+
+# --- Validation (Week 6) ---
+scikit-learn>=1.4.0           # Cohen's Kappa cross-validation against the
+                               # project's own custom implementation
+
+# --- Testing (Weeks 2, 5) ---
+pytest>=8.0.0                 # Unit tests: test_benchmark_runner.py,
+                               # test_llm_judge_scorer.py

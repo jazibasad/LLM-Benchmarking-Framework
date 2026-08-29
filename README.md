@@ -44,6 +44,31 @@ LLM-Benchmarking-Framework/
 - **H2:** Instruction-following degradation with prompt complexity.
 - **H3:** Provider-specific hallucination patterns.
 
+## Framework Initialization & Rubric Design (Week 1) — Complete
+
+Repository structure established (`01_Proposal/` through `06_Final_Report/`).
+Original master scoring rubric authored, defining the 0-5 score anchors
+later refined and finalized in Week 3. The three research hypotheses
+(H1, H2, H3) were formulated at this stage and carried through unchanged
+to the final hypothesis testing in Week 7.
+
+## Automation Pipeline & Reproducible Environment (Week 2) — Complete
+
+`benchmark_runner.py` built and verified against OpenRouter as an initial
+development and testing provider, establishing the core automation pattern
+used by all later provider runners: proactive throttling, reactive
+backoff with jitter, atomic cache writes, and resume-by-cache-file logic.
+`test_benchmark_runner.py` — 9/9 unit tests passing. Python virtual
+environment and `requirements.txt` established for reproducible dependency
+management.
+
+**Real incident:** a named OpenRouter free-tier model was discontinued
+mid-verification (persistent HTTP 404), correctly detected by the
+persistent-error logic after 6 retries with increasing backoff. Resolved
+by switching to OpenRouter's `openrouter/free` router, which selects a
+currently available free model rather than depending on one fixed name
+liable to disappear.
+
 ## Prompt Dataset (Week 3) — Complete
 
 `04_Datasets/prompts.json` — 220 prompts, 10 categories (22 each), per
@@ -103,8 +128,11 @@ resume-by-cache-file.
 
 ```bash
 pip install -r requirements.txt
-pip install python-docx scikit-learn
 ```
+
+`requirements.txt` includes all project dependencies, including
+`python-docx` and `scikit-learn` (used for report generation and Cohen's
+Kappa validation respectively).
 
 `.env`:
 ```
