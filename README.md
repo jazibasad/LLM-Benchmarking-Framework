@@ -26,14 +26,16 @@ LLM-Benchmarking-Framework/
 │   ├── Survey/
 │   │   ├── Human_Validation_Reading.docx
 │   │   ├── human_scores_rater1.json / rater2.json / rater3.json
-│   │   └── agreement_report.json
+│   │   ├── agreement_report.json
+│   │   ├── Cover_Sheet.docx
+│   │   └── Rater1_Response_Form.docx / Rater2_Response_Form.docx / Rater3_Response_Form.docx
 │   ├── Statistical_Analysis/
 │   │   ├── reliability_statistics.json
 │   │   ├── statistical_analysis.json
 │   │   └── Week7_Statistical_Report.docx
 │   └── tests_logs/Week_2/  Week_5/
 └── 06_Final_Report/
-    ├── Final_Research_Report.docx           # 53 pages
+    ├── Final_Research_Report.docx           # 55 pages
     ├── Final_Presentation.pptx               # 15 slides
     └── Reproducibility_Package_Checklist.docx
 ```
@@ -90,6 +92,10 @@ anchors (3 = success threshold), Success/Failure computed in code.
 3 independent raters scored a 30-prompt stratified sample (1 Easy + 1
 Medium + 1 Hard per category), compared against the automated judge and
 against each other using exact-match rate, correlation, and Cohen's kappa.
+Each rater's real, completed scores are additionally provided in a
+human-readable, hand-typed response format (Cover_Sheet.docx and
+Rater1/2/3_Response_Form.docx in `05_Logs_Results/Survey/`), alongside
+the original machine-readable JSON files.
 
 ## Statistical Analysis (Week 7) — Complete
 
